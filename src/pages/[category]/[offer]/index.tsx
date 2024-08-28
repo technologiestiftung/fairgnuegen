@@ -13,6 +13,8 @@ export default function Index() {
 
 	return (
 		<Layout>
+			<h1>Offer-Detail</h1>
+			<h2>{offer.provider}</h2>
 			<div>{JSON.stringify(offer)}</div>
 		</Layout>
 	);
