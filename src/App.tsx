@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { usePageTitle } from "./hooks/use-page-title";
 import { Route as TRoute, routes } from "./routes/routes";
-//@ts-expect-error This file is auto-generated and present only after you run `npx tsx create-data-and-routes.ts`
+// This file is auto-generated and present only after you run `npx tsx create-data-and-routes.ts`
 import { detailPagesRoutes } from "./routes/detail-pages-routes";
 
 const pages: Record<string, { default: React.FC }> = import.meta.glob(
