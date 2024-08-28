@@ -3,82 +3,88 @@ import slugify from "slugify";
 
 const filePath = "./src/assets/20240717_Berlinpass-Daten.csv";
 
+const generateSlug = (input: string) =>
+	slugify(input, {
+		replacement: "_",
+		remove: /"/g,
+		lower: true,
+		strict: true,
+		locale: "de",
+		trim: true,
+	});
+
 try {
 	const csvData = fs.readFileSync(filePath, "utf-8");
 	const data = csvData.split("\r\n").slice(1);
 
-	const processedRows: Record<string, object> = {};
-	const processedRoutes: object[] = [];
+	const processedContent: Record<string, object> = {};
+	const processedRoutes: { path: string; page: string }[] = [];
 
-	for (const row of data.entries()) {
-		const index = row[0];
-		const columns = row[1].split(";");
+	data.forEach((row, index) => {
+		const [
+			provider,
+			providerDescription,
+			offerDescription,
+			offerInformation,
+			website,
+			address,
+			city,
+			zip,
+			district,
+			isFree,
+			categories,
+			targetGroups,
+			x,
+			y,
+		] = row.split(";");
 
 		const content = {
-			title: columns[0],
+			title: provider,
 			offer: {
-				provider: columns[0],
-				providerDescription: columns[1],
-				offerDescription: columns[2],
-				offerInformation: columns[3],
-				website: columns[4],
-				address: columns[5],
-				city: columns[6],
-				zip: parseInt(columns[7]),
-				district: columns[8],
-				isFree: columns[9] === "ja",
-				category: columns[10].split(",").map((category) => category.trim()),
-				targetGroups: columns[11]
+				provider,
+				providerDescription,
+				offerDescription,
+				offerInformation,
+				website,
+				address,
+				city,
+				zip: parseInt(zip),
+				district,
+				isFree: isFree === "ja",
+				category: categories.split(",").map((category) => category.trim()),
+				targetGroups: targetGroups
 					.split(",")
 					.map((targetGroup) => targetGroup.trim()),
-				x: parseFloat(columns[12].replace(",", ".")),
-				y: parseFloat(columns[13].replace(",", ".")),
+				x: parseFloat(x.replace(",", ".")),
+				y: parseFloat(y.replace(",", ".")),
 			},
 		};
 
-		const slugTitle = slugify(`${index}_${content.offer.provider}`, {
-			replacement: "_",
-			remove: /"/g,
-			lower: true,
-			strict: true,
-			locale: "de",
-			trim: true,
-		});
+		const slugTitle = generateSlug(`${index}_${provider}`);
 
-		for (const topic of content.offer.category) {
-			const slugTopic = slugify(topic, {
-				replacement: "_",
-				remove: /"/g,
-				lower: true,
-				strict: true,
-				locale: "de",
-				trim: true,
-			});
+		content.offer.category.forEach((topic) => {
+			const slugTopic = generateSlug(topic);
+			const path = `/${slugTopic}/${slugTitle}/`;
 
-			processedRows[`/${slugTopic}/${slugTitle}/`] = content;
-
-			const path = {
-				path: `/${slugTopic}/${slugTitle}/`,
+			processedContent[path] = content;
+			processedRoutes.push({
+				path,
 				page: "./pages/[category]/[offer]/index.tsx",
-			};
+			});
+		});
+	});
 
-			processedRoutes.push(path);
-		}
-	}
+	fs.writeFileSync(
+		"./src/content/detail-pages-content.ts",
+		`export const detailPagesContent = ${JSON.stringify(processedContent, null, 2)};`,
+		"utf-8",
+	);
 
-	const content = `export const detailPagesContent = ${JSON.stringify(
-		processedRows,
-		null,
-		2,
-	)};`;
-	fs.writeFileSync("./src/content/detail-pages-content.ts", content, "utf-8");
-
-	const routes = `export const detailPagesRoutes = ${JSON.stringify(
-		processedRoutes,
-		null,
-		2,
-	)};`;
-	fs.writeFileSync("./src/routes/detail-pages-routes.ts", routes, "utf-8");
+	fs.writeFileSync(
+		"./src/routes/detail-pages-routes.ts",
+		`export const detailPagesRoutes = ${JSON.stringify(processedRoutes, null, 2)};`,
+		"utf-8",
+	);
 } catch (error) {
-	console.error("Error reading JSON file:", error);
+	console.error("Error reading CSV file:", error);
 }
