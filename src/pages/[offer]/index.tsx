@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import { content } from "../../../content/content";
-import { Layout } from "../../../layout/layout";
+import { content } from "../../content/content";
+import { Layout } from "../../layout/layout";
 
 export default function Index() {
 	const location = useLocation();

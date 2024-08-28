@@ -69,7 +69,7 @@ try {
 			processedContent[path] = content;
 			processedRoutes.push({
 				path,
-				page: "./pages/[category]/[offer]/index.tsx",
+				page: "./pages/[offer]/index.tsx",
 			});
 		});
 	});
