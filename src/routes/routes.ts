@@ -1,4 +1,4 @@
-type Route = {
+export type Route = {
 	path: string;
 	page: string;
 };

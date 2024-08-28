@@ -1,3 +1,4 @@
+//@ts-expect-error This file is auto-generated and present only after you run `npx tsx create-data-and-routes.ts`
 import { detailPagesContent } from "./detail-pages-content.js";
 
 export type Offer = {
