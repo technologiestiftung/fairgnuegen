@@ -1,9 +1,9 @@
 import fs from "node:fs";
-import path from "node:path";
+import * as nodePath from "node:path";
 import { fileURLToPath } from "node:url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const toAbsolute = (p) => path.resolve(__dirname, p);
+const __dirname = nodePath.dirname(fileURLToPath(import.meta.url));
+const toAbsolute = (p) => nodePath.resolve(__dirname, p);
 
 /**
  * The following files are missing at the beginning
@@ -35,8 +35,8 @@ function generateStaticPages() {
 	}
 }
 
-function writeFileSyncRecursive(filename, content) {
-	const dirname = path.dirname(filename);
+function writeFileSyncRecursive(filename, html) {
+	const dirname = nodePath.dirname(filename);
 
 	// Check if the directory exists
 	if (!fs.existsSync(dirname)) {
@@ -45,7 +45,7 @@ function writeFileSyncRecursive(filename, content) {
 	}
 
 	// Write the file
-	fs.writeFileSync(filename, content);
+	fs.writeFileSync(filename, html);
 }
 
 generateStaticPages();
