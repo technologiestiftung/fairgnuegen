@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { content } from "../content/content.ts";
+import { content } from "../content/content";
 
 export function usePageTitle() {
 	useEffect(() => {

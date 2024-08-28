@@ -1,10 +1,5 @@
-import Counter from "../components/Counter";
+import { Layout } from "../layout/layout";
 
 export default function Index() {
-	return (
-		<>
-			<h1>Home</h1>
-			<Counter />
-		</>
-	);
+	return <Layout>Main Page</Layout>;
 }

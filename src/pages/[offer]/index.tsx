@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { content } from "../../content/content";
+import { Layout } from "../../layout/layout";
 
 export default function Index() {
 	const location = useLocation();
@@ -8,7 +9,10 @@ export default function Index() {
 
 	return (
 		<>
-			<h1>Slug: {title}</h1>
+			<Layout>
+				Offer Page
+				<h1>Slug: {title}</h1>
+			</Layout>
 		</>
 	);
 }

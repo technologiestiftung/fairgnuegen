@@ -1,7 +1,5 @@
+import { Layout } from "../../layout/layout";
+
 export default function Index() {
-	return (
-		<>
-			<h1>All Offers</h1>
-		</>
-	);
+	return <Layout>All Offers</Layout>;
 }
