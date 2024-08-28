@@ -1,5 +1,7 @@
-import { Layout } from "../../layout/layout";
-
 export default function Index() {
-	return <Layout>Favorites</Layout>;
+  return (
+    <>
+      <h1>Favorites</h1>
+    </>
+  )
 }
