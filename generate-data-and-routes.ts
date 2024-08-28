@@ -1,7 +1,7 @@
 import fs from "fs";
 import slugify from "slugify";
 
-const filePath = "./src/assets/20240717_Berlinpass-Daten.csv";
+const filePath = "./20240717_Berlinpass-Daten.csv";
 
 const generateSlug = (input: string) =>
 	slugify(input, {
