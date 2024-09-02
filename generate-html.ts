@@ -3,7 +3,7 @@ import * as nodePath from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = nodePath.dirname(fileURLToPath(import.meta.url));
-const toAbsolute = (p) => nodePath.resolve(__dirname, p);
+const toAbsolute = (p: string) => nodePath.resolve(__dirname, p);
 
 /**
  * The following files are missing at the beginning
@@ -35,7 +35,7 @@ function generateStaticPages() {
 	}
 }
 
-function writeFileSyncRecursive(filename, html) {
+function writeFileSyncRecursive(filename: string, html: string) {
 	const dirname = nodePath.dirname(filename);
 
 	// Check if the directory exists
