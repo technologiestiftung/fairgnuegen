@@ -16,20 +16,4 @@ export const routes: Route[] = [
 		path: "/favorites/",
 		page: "./pages/favorites/index.tsx",
 	},
-	{
-		path: "/kultur/",
-		page: "./pages/[category]/index.tsx",
-	},
-	{
-		path: "/sport/",
-		page: "./pages/[category]/index.tsx",
-	},
-	{
-		path: "/freizeit/",
-		page: "./pages/[category]/index.tsx",
-	},
-	{
-		path: "/bildung/",
-		page: "./pages/[category]/index.tsx",
-	},
 ];

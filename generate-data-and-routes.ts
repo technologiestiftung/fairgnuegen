@@ -62,15 +62,11 @@ try {
 
 		const slugTitle = generateSlug(`${index}_${provider}`);
 
-		content.offer.category.forEach((topic) => {
-			const slugTopic = generateSlug(topic);
-			const path = `/${slugTopic}/${slugTitle}/`;
-
-			processedContent[path] = content;
-			processedRoutes.push({
-				path,
-				page: "./pages/[offer]/index.tsx",
-			});
+		const path = `/all-offers/${slugTitle}/`;
+		processedContent[path] = content;
+		processedRoutes.push({
+			path,
+			page: "./pages/[offer]/index.tsx",
 		});
 	});
 
