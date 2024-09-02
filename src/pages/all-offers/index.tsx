@@ -1,30 +1,39 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import FilterButton from "../../components/buttons/filter-button";
+import SortButton from "../../components/buttons/sort-button";
 import Checkbox from "../../components/checkbox/checkbox";
 import RocketIcon from "../../components/icons/rocket-icon";
-import SortAZIcon from "../../components/icons/sort-az";
 import OfferDetail from "../../components/offer/offer-detail";
 import SearchBar from "../../components/search-bar/search-bar";
 import { offers } from "../../content/content";
 import { Layout } from "../../layout/layout";
-import SortButton from "../../components/buttons/sort-button";
 
 export default function Index() {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const category = searchParams.get("category");
 	const [search, setSearch] = useState(searchParams.get("search"));
 	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(false);
+	const [sortAscending, setSortAscending] = useState(
+		(searchParams.get("sort") ?? "asc") === "asc",
+	);
 
 	const filteredOffers = useMemo(() => {
-		return offers
+		const filtered = offers
 			.filter((o) => !category || o.category.includes(category))
 			.filter(
 				(o) =>
 					!search || o.provider.toLowerCase().includes(search.toLowerCase()),
 			)
 			.filter((o) => !showFreeOffersOnly || o.isFree);
-	}, [category, search, showFreeOffersOnly]);
+		const sorted = filtered.sort((a, b) => {
+			if (sortAscending) {
+				return a.provider.localeCompare(b.provider);
+			}
+			return b.provider.localeCompare(a.provider);
+		});
+		return sorted;
+	}, [category, search, showFreeOffersOnly, sortAscending]);
 
 	return (
 		<Layout>
@@ -43,7 +52,12 @@ export default function Index() {
 					/>
 				</div>
 				<div className="flex flex-row w-full justify-between py-3">
-					<SortButton></SortButton>
+					<SortButton
+						ascending={sortAscending}
+						onOrderChange={() => {
+							setSortAscending(!sortAscending);
+						}}
+					></SortButton>
 					<FilterButton></FilterButton>
 				</div>
 				<div className="flex flex-row items-center gap-2 py-3">
