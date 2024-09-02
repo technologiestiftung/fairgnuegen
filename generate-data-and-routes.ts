@@ -62,7 +62,7 @@ try {
 
 		const slugTitle = generateSlug(`${index}_${provider}`);
 
-		const path = `/all-offers/${slugTitle}`;
+		const path = `/all-offers/${slugTitle}/`;
 		processedContent[path] = content;
 		processedRoutes.push({
 			path,
