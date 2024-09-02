@@ -8,14 +8,13 @@ import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
 import RocketIcon from "../../components/icons/rocket-icon";
 import OfferDetail from "../../components/offer/offer-detail";
 import SearchBar from "../../components/search-bar/search-bar";
-import { CategoryIdentifier, categoryMap } from "../../content/categories";
+import { categoryMap, getCategory } from "../../content/categories";
 import { offers } from "../../content/content";
 import { Layout } from "../../layout/layout";
 
 export default function Index() {
 	const [searchParams] = useSearchParams();
-	const category = (searchParams.get("category") ??
-		"all") as CategoryIdentifier;
+	const category = getCategory(searchParams.get("category"));
 	const search = searchParams.get("search");
 	const showFreeOffersOnly = searchParams.get("free") === "true";
 	const sortAscending = searchParams.get("sort") === "asc";
