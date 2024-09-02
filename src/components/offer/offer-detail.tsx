@@ -23,10 +23,10 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 		<div className="w-full">
 			<div className="flex flex-row pb-2 mx-4 sm:mx-0">
 				<div className="w-[90%] max-w-[90%] flex flex-col gap-4">
-					<div className="max-w-[90%] flex flex-col gap-2">
+					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
 					</div>
-					<div className="flex flex-row gap-2 flex-wrap max-w-[90%]">
+					<div className="flex flex-row gap-2 flex-wrap">
 						<Tag
 							title={offer.isFree ? "Freier Eintritt" : "Ermäßigter Eintritt"}
 						></Tag>
@@ -38,7 +38,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 						{offer.targetGroups.length < 4 &&
 							offer.targetGroups.map((t) => <Tag title={t} key={t}></Tag>)}
 					</div>
-					<div>{offer.providerDescription}</div>
+					<div className="break-words">{offer.providerDescription}</div>
 					<div className="flex flex-row w-full justify-end text-primary-blue">
 						<a className="flex flex-row gap-2 items-center" href={offer.path}>
 							<div>mehr Infos</div>
