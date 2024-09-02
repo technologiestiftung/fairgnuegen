@@ -4,14 +4,15 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "npm run build:content && vite",
 		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint \"src/**/*\"",
 		"prettier": "prettier --write .",
 		"prettier:ci": "prettier --check .",
-		"build:data": "tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/routes.ts src/content/content.ts",
+		"build:content": "npx tsx generate-data-and-routes.ts && npx prettier --config prettier.config.js --write src/content/detail-pages-content.ts src/routes/detail-pages-routes.ts",
+		"build:data": "tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/detail-pages-routes.ts src/content/detail-pages-content.ts && tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/routes.ts src/content/content.ts",
 		"build:csr": "tsc -b && vite build",
 		"build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-		"build": "npm run build:csr && npm run build:data && npm run build:ssr && node generate",
+		"build": "npm run build:content && npm run build:csr && npm run build:data && npm run build:ssr && node generate",
 		"preview": "npx serve dist"
 	},
 	"dependencies": {
@@ -37,6 +38,7 @@
 		"globals": "15.9.0",
 		"postcss": "8.4.41",
 		"prettier": "3.3.3",
+		"slugify": "1.6.6",
 		"tailwindcss": "3.4.10",
 		"typescript": "5.3.3",
 		"vite": "5.4.1"

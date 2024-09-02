@@ -1,4 +1,4 @@
-type Route = {
+export type Route = {
 	path: string;
 	page: string;
 };
@@ -15,13 +15,5 @@ export const routes: Route[] = [
 	{
 		path: "/favorites/",
 		page: "./pages/favorites/index.tsx",
-	},
-	{
-		path: "/kultur-einrichtung-1/",
-		page: "./pages/[offer]/index.tsx",
-	},
-	{
-		path: "/kultur-einrichtung-2/",
-		page: "./pages/[offer]/index.tsx",
 	},
 ];

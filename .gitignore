@@ -1,3 +1,7 @@
+# Auto-generated files which should not be committed
+src/content/detail-pages-content.ts
+src/routes/detail-pages-routes.ts
+
 # Logs
 logs
 *.log

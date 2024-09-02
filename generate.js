@@ -12,11 +12,13 @@ const toAbsolute = (p) => nodePath.resolve(__dirname, p);
 const template = fs.readFileSync(toAbsolute("dist/index.html"), "utf-8");
 const { render } = await import("./dist/server/entry-server.js");
 const { routes } = await import("./dist/assets/routes/routes.js");
+const { detailPagesRoutes } = await import(
+	"./dist/assets/routes/detail-pages-routes.js"
+);
 const { content } = await import("./dist/assets/content/content.js");
 
 function generateStaticPages() {
-	for (const { path } of routes) {
-		// eslint-disable-next-line no-console
+	for (const { path } of routes.concat(detailPagesRoutes)) {
 		console.log("path:", path);
 
 		const appHtml = render(path);
@@ -29,7 +31,6 @@ function generateStaticPages() {
 		const filePath = `dist${path}index.html`;
 		writeFileSyncRecursive(toAbsolute(filePath), html);
 
-		// eslint-disable-next-line no-console
 		console.log("pre-rendered:", filePath);
 	}
 }

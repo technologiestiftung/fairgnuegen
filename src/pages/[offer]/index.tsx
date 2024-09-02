@@ -5,14 +5,17 @@ import { Layout } from "../../layout/layout";
 export default function Index() {
 	const location = useLocation();
 
-	const title = content[location.pathname].title ?? "404";
+	const offer = content[location.pathname].offer;
+
+	if (!offer) {
+		return <h1>Offer not found</h1>;
+	}
 
 	return (
-		<>
-			<Layout>
-				Offer Page
-				<h1>Slug: {title}</h1>
-			</Layout>
-		</>
+		<Layout>
+			<h1>Offer-Detail</h1>
+			<h2>{offer.provider}</h2>
+			<div>{JSON.stringify(offer)}</div>
+		</Layout>
 	);
 }
