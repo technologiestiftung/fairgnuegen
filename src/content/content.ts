@@ -28,10 +28,10 @@ export const content: Record<string, Content> = {
 	"/": {
 		title: "Home",
 	},
-	"/all-offers": {
+	"/all-offers/": {
 		title: "All Offers",
 	},
-	"/favorites": {
+	"/favorites/": {
 		title: "Favorites",
 	},
 	...detailPagesContent,
