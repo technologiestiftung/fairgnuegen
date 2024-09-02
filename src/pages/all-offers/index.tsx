@@ -9,6 +9,7 @@ export default function Index() {
 	return (
 		<Layout>
 			<h1>All Offers</h1>
+			{category && <h2>Category: {category}</h2>}
 			{offers
 				.filter((o) => !category || o.category.includes(category))
 				.map((offer) => (
