@@ -11,6 +11,7 @@ export default function Index() {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const category = searchParams.get("category");
 	const [search, setSearch] = useState(searchParams.get("search"));
+	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(false);
 
 	const filteredOffers = useMemo(() => {
 		return offers
@@ -18,8 +19,9 @@ export default function Index() {
 			.filter(
 				(o) =>
 					!search || o.provider.toLowerCase().includes(search.toLowerCase()),
-			);
-	}, [category, search]);
+			)
+			.filter((o) => !showFreeOffersOnly || o.isFree);
+	}, [category, search, showFreeOffersOnly]);
 
 	return (
 		<Layout>
@@ -31,7 +33,11 @@ export default function Index() {
 							setSearchParams({ search: s });
 						}}
 					/>
-					<Checkbox id={"free-offers-only"} title="Gratisangebote zeigen" />
+					<Checkbox
+						id={"free-offers-only"}
+						title="Gratisangebote zeigen"
+						onCheck={() => setShowFreeOffersOnly(!showFreeOffersOnly)}
+					/>
 				</div>
 				<div className="w-full border-b border-[#dddddd] pt-2"></div>
 

@@ -38,9 +38,13 @@ try {
 			y,
 		] = row.split(";");
 
+		const slugTitle = generateSlug(`${index}_${provider}`);
+		const path = `/all-offers/${slugTitle}/`;
+
 		const content = {
 			title: provider,
 			offer: {
+				path: path,
 				provider,
 				providerDescription,
 				offerDescription,
@@ -60,9 +64,6 @@ try {
 			},
 		};
 
-		const slugTitle = generateSlug(`${index}_${provider}`);
-
-		const path = `/all-offers/${slugTitle}/`;
 		processedContent[path] = content;
 		processedRoutes.push({
 			path,

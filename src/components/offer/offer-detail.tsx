@@ -10,7 +10,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	return (
 		<div className="flex flex-col gap-2 border-b-2 border-[#dddddd] pb-2">
 			<h1 className="font-bold text-xl">{offer.provider}</h1>
-			<div className="flex flex-row gap-2">
+			<div className="flex flex-row gap-2 flex-wrap">
 				<div className="px-3 py-1 rounded-full border-primary-blue border-2 text-primary-blue">
 					{offer.isFree ? "Freier Eintritt" : "Ermäßigter Eintritt"}
 				</div>
