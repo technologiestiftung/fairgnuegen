@@ -28,27 +28,11 @@ export const content: Record<string, Content> = {
 	"/": {
 		title: "Home",
 	},
-	"/all-offers/": {
+	"/all-offers": {
 		title: "All Offers",
 	},
-	"/favorites/": {
+	"/favorites": {
 		title: "Favorites",
-	},
-	"/kultur/": {
-		title: "Kultur",
-		category: "Kultur",
-	},
-	"/freizeit/": {
-		title: "Freizeit",
-		category: "Freizeit",
-	},
-	"/sport/": {
-		title: "Sport",
-		category: "Sport",
-	},
-	"/bildung/": {
-		title: "Bildung",
-		category: "Bildung & Beratung",
 	},
 	...detailPagesContent,
 };

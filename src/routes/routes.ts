@@ -9,11 +9,11 @@ export const routes: Route[] = [
 		page: "./pages/index.tsx",
 	},
 	{
-		path: "/all-offers/",
+		path: "/all-offers",
 		page: "./pages/all-offers/index.tsx",
 	},
 	{
-		path: "/favorites/",
+		path: "/favorites",
 		page: "./pages/favorites/index.tsx",
 	},
 ];
