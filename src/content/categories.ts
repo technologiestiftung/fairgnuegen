@@ -56,3 +56,19 @@ export const categoryMap: CategoryMap = {
 		isRendered: false,
 	},
 };
+
+export function getCategory(value: string | null): CategoryIdentifier {
+	if (!value) {
+		return "all";
+	}
+
+	if (isValidCategory(value)) {
+		return value;
+	}
+
+	return "all";
+}
+
+function isValidCategory(value: string | null): value is CategoryIdentifier {
+	return Object.keys(categoryMap).includes(value ?? "");
+}

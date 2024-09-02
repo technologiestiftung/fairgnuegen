@@ -19,21 +19,53 @@ export type Offer = {
 	y: number | null;
 };
 
+export type Breadcrumb = {
+	href: string;
+	label: string;
+};
+
 export type Content = {
 	title: string;
+	breadcrumbs?: Breadcrumb[];
 	offer?: Offer;
 	category?: string;
 };
 
 export const content: Record<string, Content> = {
 	"/": {
-		title: "Home",
+		title: "Fairgnügen • Berlin fair und günstig erleben",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+		],
 	},
 	"/all-offers/": {
 		title: "All Offers",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/all-offers",
+				label: "Alle Angebote",
+			},
+		],
 	},
 	"/favorites/": {
 		title: "Favorites",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/favorites/",
+				label: "Favoriten",
+			},
+		],
 	},
 	...detailPagesContent,
 };
