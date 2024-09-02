@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import FilterButton from "../../components/buttons/filter-button";
 import SortButton from "../../components/buttons/sort-button";
@@ -37,7 +37,7 @@ export default function Index() {
 
 	return (
 		<Layout>
-			<div className="max-w-2xl mx-auto flex flex-col">
+			<div className="max-w-2xl mx-auto flex flex-col p-2 sm:p-0">
 				<div className="flex flex-col mb-4">
 					<SearchBar
 						onSearch={(s) => {

@@ -7,6 +7,17 @@ interface OfferDetailProps {
 	offer: Offer;
 }
 
+interface TagProp {
+	title: string;
+}
+const Tag: React.FC<TagProp> = ({ title }) => {
+	return (
+		<div className="px-3 py-1 rounded-full border-primary-blue border-2 text-primary-blue text-sm">
+			{title}
+		</div>
+	);
+};
+
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	return (
 		<div className="flex flex-row border-b-2 border-[#dddddd] pb-2">
@@ -15,32 +26,16 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<h1 className="font-bold text-xl">{offer.provider}</h1>
 				</div>
 				<div className="flex flex-row gap-2 flex-wrap max-w-[90%]">
-					<div className="px-3 py-1 rounded-full border-primary-blue border-2 text-primary-blue">
-						{offer.isFree ? "Freier Eintritt" : "Ermäßigter Eintritt"}
-					</div>
+					<Tag
+						title={offer.isFree ? "Freier Eintritt" : "Ermäßigter Eintritt"}
+					></Tag>
 
 					{offer.category.map((c) => (
-						<div
-							className="px-3 py-1 rounded-full border-primary-blue border-2 text-primary-blue"
-							key={c}
-						>
-							{c}
-						</div>
+						<Tag title={c} key={c}></Tag>
 					))}
-					{offer.targetGroups.length === 4 && (
-						<div className="px-3 py-1 rounded-full border-primary-blue border-2 text-primary-blue">
-							Für alle
-						</div>
-					)}
+					{offer.targetGroups.length === 4 && <Tag title="Für alle"></Tag>}
 					{offer.targetGroups.length < 4 &&
-						offer.targetGroups.map((t) => (
-							<div
-								className="px-3 py-1 rounded-full border-primary-blue border-2 text-primary-blue"
-								key={t}
-							>
-								{t}
-							</div>
-						))}
+						offer.targetGroups.map((t) => <Tag title={t} key={t}></Tag>)}
 				</div>
 				<div>{offer.providerDescription}</div>
 				<div className="flex flex-row w-full justify-end text-primary-blue">
