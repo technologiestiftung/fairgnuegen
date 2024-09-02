@@ -8,7 +8,7 @@ interface CheckBoxProps {
 
 const CheckBox: React.FC<CheckBoxProps> = ({ id, title, onCheck }) => {
 	return (
-		<div className="flex flex-row items-center gap-2 py-2 text-xl font-bold">
+		<div className="flex flex-row items-center gap-2 py-2 text-lg font-bold">
 			<input
 				type="checkbox"
 				id={id}

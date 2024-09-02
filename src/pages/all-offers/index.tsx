@@ -1,11 +1,14 @@
+import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import FilterButton from "../../components/buttons/filter-button";
+import Checkbox from "../../components/checkbox/checkbox";
+import RocketIcon from "../../components/icons/rocket-icon";
+import SortAZIcon from "../../components/icons/sort-az";
+import OfferDetail from "../../components/offer/offer-detail";
+import SearchBar from "../../components/search-bar/search-bar";
 import { offers } from "../../content/content";
 import { Layout } from "../../layout/layout";
-import SearchBar from "../../components/search-bar/search-bar";
-import Checkbox from "../../components/checkbox/checkbox";
-import { useMemo, useState } from "react";
-import RocketIcon from "../../components/icons/rocket-icon";
-import OfferDetail from "../../components/offer/offer-detail";
+import SortButton from "../../components/buttons/sort-button";
 
 export default function Index() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -26,7 +29,7 @@ export default function Index() {
 	return (
 		<Layout>
 			<div className="max-w-2xl mx-auto flex flex-col">
-				<div className="flex flex-col">
+				<div className="flex flex-col mb-4">
 					<SearchBar
 						onSearch={(s) => {
 							setSearch(s);
@@ -39,20 +42,17 @@ export default function Index() {
 						onCheck={() => setShowFreeOffersOnly(!showFreeOffersOnly)}
 					/>
 				</div>
-				<div className="w-full border-b border-[#dddddd] pt-2"></div>
-
+				<div className="flex flex-row w-full justify-between py-3">
+					<SortButton></SortButton>
+					<FilterButton></FilterButton>
+				</div>
 				<div className="flex flex-row items-center gap-2 py-3">
 					<RocketIcon></RocketIcon>
-					<p className="text-xl font-bold">
+					<p className="text-md text-primary-blue">
 						{filteredOffers.length} Angebote gefunden
 					</p>
 				</div>
 				<div className="w-full border-b border-[#999999]"></div>
-
-				<div className="flex flex-row w-full justify-between py-3">
-					<button className="px-3 py-1 border-black border">Sortieren</button>
-					<button className="px-3 py-1 border-black border">Filter</button>
-				</div>
 
 				<div className="flex flex-col gap-8 pt-4">
 					{filteredOffers.map((offer, idx) => (
