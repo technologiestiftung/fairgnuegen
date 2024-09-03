@@ -19,7 +19,11 @@ export default function Index() {
 					<OfferFull offer={offer}></OfferFull>
 
 					<div className="px-4 sm:px-0 pt-4 flex w-full justify-end sm:justify-start">
-						<BackButton onClick={() => {}}></BackButton>
+						<BackButton
+							onClick={() => {
+								window.history.back();
+							}}
+						></BackButton>
 					</div>
 				</div>
 			</div>

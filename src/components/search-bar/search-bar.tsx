@@ -28,8 +28,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch }) => {
 			<div className="relative row-start-1 col-start-1 pl-2 pointer-events-none">
 				<SearchIcon></SearchIcon>
 			</div>
-			<button className="relative row-start-1 col-start-1 w-full flex flex-row justify-end pr-2 pointer-events-none">
+			<div className="relative row-start-1 col-start-1 w-full flex flex-row justify-end pr-2 pointer-events-none">
 				<button
+					type="button"
 					className="w-fit pointer-events-auto"
 					onClick={() => {
 						setSearch("");
@@ -39,7 +40,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch }) => {
 					{search !== "" && <ClearIcon></ClearIcon>}
 					{search === "" && <StartSearchIcon></StartSearchIcon>}
 				</button>
-			</button>
+			</div>
 		</form>
 	);
 };
