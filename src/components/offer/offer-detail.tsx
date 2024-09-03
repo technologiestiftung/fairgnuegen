@@ -39,7 +39,17 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 
 	return (
 		<div className="w-full">
-			<div className="flex flex-row pb-2 mx-4 sm:mx-0">
+			<div className="flex flex-row pb-2 mx-4 sm:mx-0 gap-2">
+				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
+				<div className="hidden">
+					<img
+						src="/placeholder-image.jpg"
+						alt="Offer image"
+						className="w-20 h-20 object-cover"
+					/>
+					<span className="text-xs">Bildcopyright</span>
+				</div>
+
 				<div className="w-[90%] max-w-[90%] flex flex-col gap-4">
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
