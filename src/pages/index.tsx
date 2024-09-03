@@ -22,7 +22,7 @@ export const HeroCard: React.FC<HeroCardProps> = ({
 		<div className="h-56 flex flex-row gap-0 shadow-xl w-full border">
 			<div className={`${color} h-full w-[5%]`}></div>
 			<div className="w-[45%]">
-				<img src={image} alt="" className="object-cover h-full" />
+				<img src={image} alt="" className="object-cover h-full w-full" />
 			</div>
 			<div className="flex flex-col justify-between p-4 w-[50%]">
 				<div className="text-xl font-bold">{title}</div>
