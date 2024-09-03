@@ -2,6 +2,7 @@
 import { detailPagesContent } from "./detail-pages-content.js";
 
 export type Offer = {
+	path: string;
 	provider: string;
 	providerDescription: string;
 	offerDescription: string;
@@ -37,9 +38,6 @@ export const content: Record<string, Content> = {
 	...detailPagesContent,
 };
 
-export const offers = Object.entries(detailPagesContent).map(
-	([key, value]) => ({
-		path: key,
-		...value.offer,
-	}),
-);
+export const offers = Object.entries(detailPagesContent).map(([, value]) => ({
+	...value.offer,
+}));
