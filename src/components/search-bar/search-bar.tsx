@@ -21,14 +21,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch }) => {
 			<input
 				value={search}
 				type="text"
-				className="pl-8 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4"
+				className="relative pl-8 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-lg"
 				placeholder="Suche Dein Angebot"
 				onChange={(e) => setSearch(e.target.value)}
 			></input>
-			<div className="row-start-1 col-start-1 pl-2 pointer-events-none">
+			<div className="relative row-start-1 col-start-1 pl-2 pointer-events-none">
 				<SearchIcon></SearchIcon>
 			</div>
-			<button className="row-start-1 col-start-1 w-full flex flex-row justify-end pr-2 pointer-events-none">
+			<button className="relative row-start-1 col-start-1 w-full flex flex-row justify-end pr-2 pointer-events-none">
 				<button
 					className="w-fit pointer-events-auto"
 					onClick={() => {

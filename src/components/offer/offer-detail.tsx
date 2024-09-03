@@ -54,11 +54,11 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
 					</div>
-					<div className="flex flex-row gap-2 flex-wrap">
-						<Tag
-							title={offer.isFree ? "Freier Eintritt" : "Ermäßigter Eintritt"}
-						/>
-					</div>
+					{offer.isFree && (
+						<div className="flex flex-row gap-2 flex-wrap">
+							<Tag title={"Freier Eintritt"} />
+						</div>
+					)}
 					<div
 						className={`break-words text-left ${descriptionClickable ? "cursor-pointer" : "cusor-default"}`}
 						onClick={() => {

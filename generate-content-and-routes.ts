@@ -3,6 +3,10 @@ import slugify from "slugify";
 
 const filePath = "./20240717_Berlinpass-Daten.csv";
 
+const removeQuotes = (value: string) => {
+	return value.replace(/^"|"$/g, "");
+};
+
 const generateSlug = (input: string) =>
 	slugify(input, {
 		replacement: "_",
@@ -46,7 +50,7 @@ try {
 			offer: {
 				path: path,
 				provider,
-				providerDescription,
+				providerDescription: removeQuotes(providerDescription),
 				offerDescription,
 				offerInformation,
 				website,

@@ -6,6 +6,7 @@ export default {
 		extend: {},
 		colors: {
 			"primary-blue": "#132458",
+			"focus-blue": "#176fc1",
 		},
 	},
 	plugins: [],
