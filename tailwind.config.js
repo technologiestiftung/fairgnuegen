@@ -7,6 +7,7 @@ export default {
 		colors: {
 			"primary-blue": "#132458",
 			"focus-blue": "#176fc1",
+			"link-blue": "#1049cc",
 		},
 	},
 	plugins: [],
