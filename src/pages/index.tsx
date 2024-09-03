@@ -82,7 +82,11 @@ export default function Index() {
 				</div>
 				<div className="w-full border-b border-separator mb-12 mt-12"></div>
 				<div className="w-full flex flex-row justify-end px-4 sm:px-0">
-					<ShowAllButton onClick={() => {}}></ShowAllButton>
+					<ShowAllButton
+						onClick={() => {
+							window.location.href = "/all-offers/";
+						}}
+					></ShowAllButton>
 				</div>
 			</div>
 		</Layout>
