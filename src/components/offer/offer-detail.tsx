@@ -2,21 +2,11 @@ import React, { useMemo, useState } from "react";
 import { Offer } from "../../content/content";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import LikeIcon from "../icons/like-icon";
+import { Pill } from "./pill";
 
 interface OfferDetailProps {
 	offer: Offer;
 }
-
-interface TagProp {
-	title: string;
-}
-const Tag: React.FC<TagProp> = ({ title }) => {
-	return (
-		<div className="px-3 py-1 rounded-full border-primary-blue border-2 text-primary-blue text-sm">
-			{title}
-		</div>
-	);
-};
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	const [showFullDescription, setShowFullDescription] = useState(false);
@@ -56,7 +46,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</div>
 					{offer.isFree && (
 						<div className="flex flex-row gap-2 flex-wrap">
-							<Tag title={"Freier Eintritt"} />
+							<Pill title={"Freier Eintritt"} />
 						</div>
 					)}
 					<div
