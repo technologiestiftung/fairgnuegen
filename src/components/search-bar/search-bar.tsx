@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchIcon from "../icons/search-icon";
 import StartSearchIcon from "../icons/start-search-icon";
+import ClearIcon from "../icons/clear-icon";
 
 interface SearchBarProps {
 	value: string;
@@ -27,9 +28,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch }) => {
 			<div className="row-start-1 col-start-1 pl-2 pointer-events-none">
 				<SearchIcon></SearchIcon>
 			</div>
-			<div className="row-start-1 col-start-1 w-full flex flex-row justify-end pr-2 pointer-events-none">
-				<StartSearchIcon></StartSearchIcon>
-			</div>
+			<button className="row-start-1 col-start-1 w-full flex flex-row justify-end pr-2 pointer-events-none">
+				<button
+					className="w-fit pointer-events-auto"
+					onClick={() => {
+						setSearch("");
+						onSearch("");
+					}}
+				>
+					{search !== "" && <ClearIcon></ClearIcon>}
+					{search === "" && <StartSearchIcon></StartSearchIcon>}
+				</button>
+			</button>
 		</form>
 	);
 };
