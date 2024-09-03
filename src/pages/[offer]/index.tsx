@@ -15,9 +15,12 @@ export default function Index() {
 	return (
 		<Layout>
 			<div className="max-w-2xl mx-auto flex flex-col">
-				<div className="mx-4 sm:mx-0">
+				<div>
 					<OfferFull offer={offer}></OfferFull>
-					<BackButton onClick={() => {}}></BackButton>
+
+					<div className="px-4 sm:px-0 pt-4 flex w-full justify-end sm:justify-start">
+						<BackButton onClick={() => {}}></BackButton>
+					</div>
 				</div>
 			</div>
 		</Layout>

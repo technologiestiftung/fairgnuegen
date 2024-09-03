@@ -14,7 +14,11 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 
 	return (
 		<div className="w-full">
-			<div className="flex flex-row pb-2 mx-4 sm:mx-0 gap-2">
+			<div className="flex flex-row gap-2 w-full justify-end pr-4 pb-4 sm:hidden">
+				<LikeIcon isSelected={false}></LikeIcon>
+				<ShareIcon></ShareIcon>
+			</div>
+			<div className="flex flex-row pb-2 sm:mx-0 gap-2">
 				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
 				<div className="hidden">
 					<img
@@ -25,7 +29,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					<span className="text-xs">Bildcopyright</span>
 				</div>
 
-				<div className="w-[80%] max-w-[80%] flex flex-col gap-4">
+				<div className="w-full sm:w-[80%] sm:max-w-[80%] flex flex-col gap-4 mx-4 sm:mx-0">
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-2xl">{offer.provider}</h1>
 					</div>
@@ -58,18 +62,18 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						<LinkIcon></LinkIcon>
 					</a>
 				</div>
-				<div className="max-w-[20%] w-full flex flex-row justify-center items-start gap-2">
+				<div className="hidden max-w-[20%] w-full sm:flex flex-row justify-center items-start gap-2">
 					<LikeIcon isSelected={false}></LikeIcon>
 					<ShareIcon></ShareIcon>
 				</div>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
-			<div className="py-4 flex flex-col gap-2">
+			<div className="py-4 flex flex-col gap-2 mx-4 sm:mx-0">
 				<h2 className="text-lg font-bold">Ermäßigung</h2>
 				<p>{offer.offerInformation}</p>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
-			<div className="py-4 flex flex-col gap-2">
+			<div className="py-4 flex flex-col gap-2 mx-4 sm:mx-0">
 				<h2 className="text-lg font-bold">Ort</h2>
 				<div>
 					<p>{offer.provider}</p>
@@ -79,6 +83,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					</p>
 				</div>
 			</div>
+			<div className="border-b-2 border-[#dddddd] w-full"></div>
 		</div>
 	);
 };
