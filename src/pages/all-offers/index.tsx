@@ -8,6 +8,7 @@ import OfferDetail from "../../components/offer/offer-detail";
 import SearchBar from "../../components/search-bar/search-bar";
 import { offers } from "../../content/content";
 import { Layout } from "../../layout/layout";
+import BackButton from "../../components/buttons/back-button";
 
 export default function Index() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -37,47 +38,54 @@ export default function Index() {
 
 	return (
 		<Layout>
-			<div className="max-w-2xl mx-auto flex flex-col">
-				<div className="mx-4 sm:mx-0">
-					<div className="flex flex-col mb-4">
-						<SearchBar
-							onSearch={(s) => {
-								setSearch(s);
-								setSearchParams({ search: s });
-							}}
-						/>
-						<Checkbox
-							id={"free-offers-only"}
-							title="Gratisangebote zeigen"
-							onCheck={() => setShowFreeOffersOnly(!showFreeOffersOnly)}
-						/>
-					</div>
-					<div className="flex flex-row w-full justify-between py-3">
-						<SortButton
-							ascending={sortAscending}
-							onOrderChange={() => {
-								setSortAscending(!sortAscending);
-							}}
-						></SortButton>
-						<FilterButton></FilterButton>
-					</div>
-					<div className="flex flex-row items-center gap-2 py-3">
-						<RocketIcon></RocketIcon>
-						<p className="text-md text-primary-blue">
-							{filteredOffers.length} Angebote gefunden
-						</p>
-					</div>
+			<div>
+				<div className="w-full bg-primary-blue flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl">
+					Alle Angebote
 				</div>
+				<div className="max-w-2xl mx-auto flex flex-col">
+					<div className="mx-4 sm:mx-0">
+						<div className="flex flex-col mb-10">
+							<SearchBar
+								onSearch={(s) => {
+									setSearch(s);
+									setSearchParams({ search: s });
+								}}
+							/>
+							<Checkbox
+								id={"free-offers-only"}
+								title="Freier Entritt"
+								onCheck={() => setShowFreeOffersOnly(!showFreeOffersOnly)}
+							/>
+						</div>
+						<div className="flex flex-row w-full justify-between mb-6">
+							<SortButton
+								ascending={sortAscending}
+								onOrderChange={() => {
+									setSortAscending(!sortAscending);
+								}}
+							></SortButton>
+							<FilterButton></FilterButton>
+						</div>
+						<div className="flex flex-row items-center gap-2 py-3">
+							<RocketIcon></RocketIcon>
+							<p className="text-md text-primary-blue">
+								{filteredOffers.length} Angebote gefunden
+							</p>
+						</div>
+					</div>
 
-				<div className="w-full border-b border-[#999999]"></div>
+					<div className="w-full border-b border-[#999999] mb-5"></div>
 
-				<div className="flex flex-col gap-8 pt-4">
-					{filteredOffers.map((offer, idx) => (
-						<OfferDetail
-							offer={offer}
-							key={`${idx}-${offer.provider}`}
-						></OfferDetail>
-					))}
+					<div className="flex flex-col gap-8 pt-4 mb-5">
+						{filteredOffers.map((offer, idx) => (
+							<OfferDetail
+								offer={offer}
+								key={`${idx}-${offer.provider}`}
+							></OfferDetail>
+						))}
+					</div>
+
+					<BackButton onClick={() => {}}></BackButton>
 				</div>
 			</div>
 		</Layout>
