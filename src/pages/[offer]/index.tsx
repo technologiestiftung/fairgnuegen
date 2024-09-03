@@ -14,7 +14,7 @@ export default function Index() {
 
 	return (
 		<Layout>
-			<div className="max-w-2xl mx-auto flex flex-col">
+			<div className="max-w-3xl mx-auto flex flex-col">
 				<div>
 					<OfferFull offer={offer}></OfferFull>
 

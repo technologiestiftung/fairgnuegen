@@ -1,6 +1,10 @@
 import React from "react";
 
-const ArrowRightIcon: React.FC = () => {
+interface ArrowRightIconProps {
+	color?: string;
+}
+
+const ArrowRightIcon: React.FC<ArrowRightIconProps> = ({ color }) => {
 	return (
 		<svg
 			width="17"
@@ -8,11 +12,12 @@ const ArrowRightIcon: React.FC = () => {
 			viewBox="0 0 17 16"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
+			className={`${color ?? ""}`}
 		>
 			<g clipPath="url(#clip0_3592_5381)">
 				<path
 					d="M0.839844 8.22484H14.3313M8.19882 1.21484L14.8398 8.22484L7.87973 14.7148"
-					stroke="#E40422"
+					stroke={color ? "currentColor" : "#E40422"}
 					strokeWidth="3"
 				/>
 			</g>
