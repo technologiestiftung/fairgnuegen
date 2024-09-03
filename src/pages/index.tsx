@@ -3,6 +3,7 @@ import Checkbox from "../components/checkbox/checkbox";
 import SearchBar from "../components/search-bar/search-bar";
 import { Layout } from "../layout/layout";
 import ShowAllButton from "../components/buttons/show-all-button";
+import ArrowRightIcon from "../components/icons/arrow-right-icon";
 
 interface HeroCardProps {
 	title: string;
@@ -26,7 +27,10 @@ export const HeroCard: React.FC<HeroCardProps> = ({
 			<div className="flex flex-col justify-between p-4 w-[50%]">
 				<div className="text-xl font-bold">{title}</div>
 				<div>{description}</div>
-				<button className="text-primary-blue text-left">entdecken</button>
+				<button className="text-primary-blue text-left flex flex-row items-center justify-start gap-2">
+					<div>entdecken</div>
+					<ArrowRightIcon></ArrowRightIcon>
+				</button>
 			</div>
 		</div>
 	);

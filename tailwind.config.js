@@ -6,8 +6,10 @@ export default {
 		extend: {},
 		colors: {
 			"primary-blue": "#132458",
+			"primary-red": "#E40422",
 			"focus-blue": "#176fc1",
 			"link-blue": "#1049cc",
+			white: "#ffffff",
 			culture: "#0396b7",
 			sport: "#96b223",
 			education: "#fcc832",
