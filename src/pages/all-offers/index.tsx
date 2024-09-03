@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import FilterButton from "../../components/buttons/filter-button";
 import SortButton from "../../components/buttons/sort-button";
@@ -14,10 +14,20 @@ export default function Index() {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const category = searchParams.get("category");
 	const [search, setSearch] = useState(searchParams.get("search"));
-	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(false);
+	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(
+		searchParams.get("free") === "true",
+	);
 	const [sortAscending, setSortAscending] = useState(
 		(searchParams.get("sort") ?? "asc") === "asc",
 	);
+
+	useEffect(() => {
+		setSearchParams({
+			sort: sortAscending ? "asc" : "desc",
+			search: search ?? "",
+			free: showFreeOffersOnly ? "true" : "false",
+		});
+	}, [search, sortAscending, showFreeOffersOnly]);
 
 	const filteredOffers = useMemo(() => {
 		const filtered = offers
@@ -46,14 +56,15 @@ export default function Index() {
 					<div className="mx-4 sm:mx-0">
 						<div className="flex flex-col mb-10">
 							<SearchBar
+								value={search ?? ""}
 								onSearch={(s) => {
 									setSearch(s);
-									setSearchParams({ search: s });
 								}}
 							/>
 							<Checkbox
 								id={"free-offers-only"}
 								title="Freier Entritt"
+								checked={showFreeOffersOnly}
 								onCheck={() => setShowFreeOffersOnly(!showFreeOffersOnly)}
 							/>
 						</div>

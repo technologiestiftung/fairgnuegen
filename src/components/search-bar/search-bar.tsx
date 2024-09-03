@@ -3,10 +3,11 @@ import SearchIcon from "../icons/search-icon";
 import StartSearchIcon from "../icons/start-search-icon";
 
 interface SearchBarProps {
+	value: string;
 	onSearch: (search: string) => void;
 }
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-	const [search, setSearch] = useState("");
+const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch }) => {
+	const [search, setSearch] = useState(value);
 	return (
 		<form
 			action=""
@@ -17,6 +18,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 			className="grid grid-cols-1 grid-rows-1 items-center"
 		>
 			<input
+				value={search}
 				type="text"
 				className="pl-8 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4"
 				placeholder="Suche Dein Angebot"
