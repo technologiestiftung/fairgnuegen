@@ -47,14 +47,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<div className="flex flex-row gap-2 flex-wrap">
 						<Tag
 							title={offer.isFree ? "Freier Eintritt" : "Ermäßigter Eintritt"}
-						></Tag>
-
-						{offer.category.map((c) => (
-							<Tag title={c} key={c}></Tag>
-						))}
-						{offer.targetGroups.length === 4 && <Tag title="Für alle"></Tag>}
-						{offer.targetGroups.length < 4 &&
-							offer.targetGroups.map((t) => <Tag title={t} key={t}></Tag>)}
+						/>
 					</div>
 					<div
 						className={`break-words text-left ${descriptionClickable ? "cursor-pointer" : "cusor-default"}`}
