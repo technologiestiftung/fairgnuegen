@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Offer } from "../../content/content";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import LikeIcon from "../icons/like-icon";
@@ -19,6 +19,24 @@ const Tag: React.FC<TagProp> = ({ title }) => {
 };
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
+	const [showFullDescription, setShowFullDescription] = useState(false);
+
+	const MAGIC_CUTOFF_LIMIT = 165;
+
+	const cutoffDescription = useMemo(() => {
+		if (showFullDescription) {
+			return offer.providerDescription;
+		}
+		if (offer.providerDescription.length > MAGIC_CUTOFF_LIMIT) {
+			return offer.providerDescription.slice(0, MAGIC_CUTOFF_LIMIT) + "...";
+		}
+		return offer.providerDescription;
+	}, [offer.providerDescription, showFullDescription]);
+
+	const descriptionClickable = useMemo(() => {
+		return offer.providerDescription.length > MAGIC_CUTOFF_LIMIT;
+	}, [offer.providerDescription]);
+
 	return (
 		<div className="w-full">
 			<div className="flex flex-row pb-2 mx-4 sm:mx-0">
@@ -38,7 +56,14 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 						{offer.targetGroups.length < 4 &&
 							offer.targetGroups.map((t) => <Tag title={t} key={t}></Tag>)}
 					</div>
-					<div className="break-words">{offer.providerDescription}</div>
+					<div
+						className={`break-words text-left ${descriptionClickable ? "cursor-pointer" : "cusor-default"}`}
+						onClick={() => {
+							setShowFullDescription(!showFullDescription);
+						}}
+					>
+						{cutoffDescription}
+					</div>
 					<div className="flex flex-row w-full justify-end text-primary-blue">
 						<a className="flex flex-row gap-2 items-center" href={offer.path}>
 							<div>mehr Infos</div>
