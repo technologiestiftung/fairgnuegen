@@ -68,7 +68,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<LikeIcon isSelected={false}></LikeIcon>
 				</div>
 			</div>
-			<div className="border-b-2 border-[#dddddd] w-full"></div>
+			<div className="border-b border-separator w-full"></div>
 		</div>
 	);
 };

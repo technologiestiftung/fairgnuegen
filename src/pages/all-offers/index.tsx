@@ -52,7 +52,7 @@ export default function Index() {
 				<div className="w-full bg-primary-blue flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl">
 					Alle Angebote
 				</div>
-				<div className="max-w-2xl mx-auto flex flex-col">
+				<div className="max-w-3xl mx-auto flex flex-col">
 					<div className="mx-4 sm:mx-0">
 						<div className="flex flex-col mb-10">
 							<SearchBar
@@ -85,7 +85,7 @@ export default function Index() {
 						</div>
 					</div>
 
-					<div className="w-full border-b border-[#999999] mb-5"></div>
+					<div className="w-full border-b border-separator mb-5"></div>
 
 					<div className="flex flex-col gap-8 pt-4 mb-5">
 						{filteredOffers.map((offer, idx) => (
