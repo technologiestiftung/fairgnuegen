@@ -5,6 +5,8 @@ import SearchBar from "../components/search-bar/search-bar";
 import { categoryMap } from "../content/categories";
 import { Layout } from "../layout/layout";
 import { CategoryHeroCard } from "../components/categories/category-hero-card";
+import ShowMapButton from "../components/buttons/show-map-button";
+import FilterButton from "../components/buttons/filter-button";
 
 export default function Index() {
 	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(false);
@@ -32,6 +34,12 @@ export default function Index() {
 				</div>
 
 				<div className="w-full border-b border-separator mb-12 mt-2"></div>
+
+				<div className="flex flex-row w-full justify-between mb-10 px-4 sm:px-0">
+					<ShowMapButton></ShowMapButton>
+					<FilterButton></FilterButton>
+				</div>
+
 				<div className="w-full grid grid-cols-1 grid-rows-4 gap-x-8 gap-y-8 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-32 sm:gap-y-16 px-4 sm:px-0">
 					{Object.entries(categoryMap)
 						.filter(([, category]) => category.isRendered)
