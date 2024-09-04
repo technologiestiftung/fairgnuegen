@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Checkbox from "../components/checkbox/checkbox";
 import SearchBar from "../components/search-bar/search-bar";
 import { Layout } from "../layout/layout";
@@ -38,6 +38,7 @@ export const HeroCard: React.FC<HeroCardProps> = ({ identifier, category }) => {
 };
 
 export default function Index() {
+	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(false);
 	return (
 		<Layout>
 			<div className="max-w-4xl flex flex-col mx-auto">
@@ -45,12 +46,19 @@ export default function Index() {
 					<h1 className="text-2xl font-bold w-full flex flex-row justify-center my-8 text-center">
 						Was möchtest du unternehmen?
 					</h1>
-					<SearchBar value="" onSearch={() => {}}></SearchBar>
+					<SearchBar
+						value=""
+						onSearch={(s) => {
+							window.location.href = `/all-offers/?search=${s}&free=${showFreeOffersOnly ? "true" : "false"}`;
+						}}
+					/>
 					<Checkbox
 						id={"free-offers-only"}
 						title="Freier Entritt"
-						checked={true}
-						onCheck={() => {}}
+						checked={showFreeOffersOnly}
+						onCheck={() => {
+							setShowFreeOffersOnly(!showFreeOffersOnly);
+						}}
 					/>
 				</div>
 
