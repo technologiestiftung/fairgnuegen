@@ -10,6 +10,7 @@ import { offers } from "../../content/content";
 import { Layout } from "../../layout/layout";
 import BackButton from "../../components/buttons/back-button";
 import { CategoryIdentifier, categoryMap } from "../../content/categories";
+import { CategoryCard } from "../../components/categories/category-card";
 
 export default function Index() {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -114,6 +115,21 @@ export default function Index() {
 					</div>
 
 					<BackButton onClick={() => {}}></BackButton>
+
+					{category !== "all" && (
+						<div className="my-8 mx-4 sm:mx-0">
+							<div className="text-xl font-bold my-4">
+								Entdecke weitere Kategorien
+							</div>
+							<div className="w-full grid grid-cols-1 grid-rows-3 sm:grid-cols-3 sm:grid-rows-1 gap-4 ">
+								{Object.entries(categoryMap)
+									.filter(([key, c]) => c.isRendered && key !== category)
+									.map(([key, c]) => (
+										<CategoryCard key={key} identifier={key} category={c} />
+									))}
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
 		</Layout>

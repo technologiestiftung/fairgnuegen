@@ -1,41 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import ShowAllButton from "../components/buttons/show-all-button";
 import Checkbox from "../components/checkbox/checkbox";
 import SearchBar from "../components/search-bar/search-bar";
+import { categoryMap } from "../content/categories";
 import { Layout } from "../layout/layout";
-import ShowAllButton from "../components/buttons/show-all-button";
-import ArrowRightIcon from "../components/icons/arrow-right-icon";
-import { CategoryDetails, categoryMap } from "../content/categories";
-
-interface HeroCardProps {
-	identifier: string;
-	category: CategoryDetails;
-}
-
-export const HeroCard: React.FC<HeroCardProps> = ({ identifier, category }) => {
-	return (
-		<div className="h-56 flex flex-row gap-0 shadow-xl w-full border">
-			<div className={`${category.color} h-full w-[5%]`}></div>
-			<div className="w-[45%]">
-				<img
-					src={category.image}
-					alt=""
-					className="object-cover h-full w-full"
-				/>
-			</div>
-			<div className="flex flex-col justify-between p-4 w-[50%]">
-				<div className="text-xl font-bold">{category.name}</div>
-				<div>{category.description}</div>
-				<a
-					href={`/all-offers/?category=${identifier}`}
-					className="text-primary-blue text-left flex flex-row items-center justify-start gap-2"
-				>
-					<div>entdecken</div>
-					<ArrowRightIcon></ArrowRightIcon>
-				</a>
-			</div>
-		</div>
-	);
-};
+import { CategoryHeroCard } from "../components/categories/category-hero-card";
 
 export default function Index() {
 	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(false);
@@ -67,7 +36,11 @@ export default function Index() {
 					{Object.entries(categoryMap)
 						.filter(([, category]) => category.isRendered)
 						.map(([key, category]) => (
-							<HeroCard key={key} identifier={key} category={category} />
+							<CategoryHeroCard
+								key={key}
+								identifier={key}
+								category={category}
+							/>
 						))}
 				</div>
 				<div className="w-full border-b border-separator mb-12 mt-12"></div>
