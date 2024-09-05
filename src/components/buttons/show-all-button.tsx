@@ -1,14 +1,13 @@
 import React from "react";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 
-interface ShowAllButtonProps {
-	onClick: () => void;
-}
-const ShowAllButton: React.FC<ShowAllButtonProps> = ({ onClick }) => {
+const ShowAllButton: React.FC = () => {
 	return (
 		<button
 			className="h-10 border-black border opacity-100 hover:opacity-50 flex justify-center items-center w-[250px]"
-			onClick={onClick}
+			onClick={() => {
+				window.location.href = "/all-offers/";
+			}}
 		>
 			<div className="flex flex-row justify-end items-center h-full w-full">
 				<div className="w-[80%] flex flex-row items-center justify-center">
