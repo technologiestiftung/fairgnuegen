@@ -20,8 +20,8 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 	return (
 		<div className="w-full">
 			<div className="flex flex-row gap-2 w-full justify-end pr-4 pb-4 sm:hidden">
-				<LikeIcon isSelected={false}></LikeIcon>
-				<ShareButton></ShareButton>
+				<LikeIcon isSelected={false} />
+				<ShareButton offer={offer} />
 			</div>
 			<div className="flex flex-row pb-2 sm:mx-0 gap-2">
 				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
@@ -79,7 +79,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					>
 						<LikeIcon isSelected={isFavorite(offer)}></LikeIcon>
 					</button>
-					<ShareButton></ShareButton>
+					<ShareButton offer={offer} />
 				</div>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>

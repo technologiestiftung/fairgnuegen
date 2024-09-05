@@ -1,15 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import ShareFacebookIcon from "../icons/share-facebook-icon";
 import ShareIcon from "../icons/share-icon";
 import ShareLinkIcon from "../icons/share-link-icon";
 import ShareMailIcon from "../icons/share-mail-icon";
 import ShareWhatsappIcon from "../icons/share-whatsapp-icon";
+import { Offer } from "../../content/content";
 
-const ShareButton: React.FC = () => {
+interface ShareButtonProps {
+	offer: Offer;
+}
+
+const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
+	const MAGIC_CUTOFF_LIMIT = 165;
+
 	const getURL = () => window.location.href;
-	const shareTitle = () => "Fairgnügen • Berlin fair und günstig erleben";
-	const shareBody = () =>
-		`${window.location.href} *Angebote sind nur mit dem Berechtigungsnachweis nutzbar.`;
+	const shareTitle = () => offer.provider;
+	const shareBody = () => `${cutoffDescription} ${window.location.href}`;
 
 	const [showOverlay, setShowOverlay] = useState(false);
 	const [showLinkCopied, setShowLinkCopied] = useState(false);
@@ -34,6 +40,13 @@ const ShareButton: React.FC = () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
 	}, []);
+
+	const cutoffDescription = useMemo(() => {
+		if (offer.providerDescription.length > MAGIC_CUTOFF_LIMIT) {
+			return offer.providerDescription.slice(0, MAGIC_CUTOFF_LIMIT) + "...";
+		}
+		return offer.providerDescription;
+	}, [offer]);
 
 	return (
 		<div className="relative">
