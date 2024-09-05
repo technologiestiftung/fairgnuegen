@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import SearchIcon from "../icons/search-icon";
 import StartSearchIcon from "../icons/start-search-icon";
 import ClearIcon from "../icons/clear-icon";
+import { useSearchParams } from "react-router-dom";
+import useUpdateSearchParam from "../../hooks/use-update-search-params";
 
-interface SearchBarProps {
-	value: string;
-	onSearch: (search: string) => void;
-}
-const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch }) => {
-	const [search, setSearch] = useState(value);
+const SearchBar: React.FC = () => {
+	const updateSearchParam = useUpdateSearchParam();
+	const [searchParams] = useSearchParams();
+	const [search, setSearch] = useState(searchParams.get("search") ?? "");
 	return (
 		<form
 			action=""
 			onSubmit={(e) => {
 				e.preventDefault();
-				onSearch(search);
+				updateSearchParam("search", search);
 			}}
 			className="grid grid-cols-1 grid-rows-1 items-center"
 		>
@@ -34,7 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onSearch }) => {
 					className="w-fit pointer-events-auto"
 					onClick={() => {
 						setSearch("");
-						onSearch("");
+						updateSearchParam("search", "");
 					}}
 				>
 					{search !== "" && <ClearIcon></ClearIcon>}

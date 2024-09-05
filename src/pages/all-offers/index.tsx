@@ -1,37 +1,24 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
+import BackButton from "../../components/buttons/back-button";
 import FilterButton from "../../components/buttons/filter-button";
 import SortButton from "../../components/buttons/sort-button";
-import Checkbox from "../../components/checkbox/checkbox";
+import { CategoryCard } from "../../components/categories/category-card";
+import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
 import RocketIcon from "../../components/icons/rocket-icon";
 import OfferDetail from "../../components/offer/offer-detail";
 import SearchBar from "../../components/search-bar/search-bar";
+import { CategoryIdentifier, categoryMap } from "../../content/categories";
 import { offers } from "../../content/content";
 import { Layout } from "../../layout/layout";
-import BackButton from "../../components/buttons/back-button";
-import { CategoryIdentifier, categoryMap } from "../../content/categories";
-import { CategoryCard } from "../../components/categories/category-card";
 
 export default function Index() {
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 	const category = (searchParams.get("category") ??
 		"all") as CategoryIdentifier;
-	const [search, setSearch] = useState(searchParams.get("search"));
-	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(
-		searchParams.get("free") === "true",
-	);
-	const [sortAscending, setSortAscending] = useState(
-		(searchParams.get("sort") ?? "asc") === "asc",
-	);
-
-	useEffect(() => {
-		setSearchParams({
-			sort: sortAscending ? "asc" : "desc",
-			search: search ?? "",
-			free: showFreeOffersOnly ? "true" : "false",
-			category: category ?? "",
-		});
-	}, [search, sortAscending, showFreeOffersOnly]);
+	const search = searchParams.get("search");
+	const showFreeOffersOnly = searchParams.get("free") === "true";
+	const sortAscending = searchParams.get("sort") === "asc";
 
 	const filteredOffers = useMemo(() => {
 		const filtered = offers
@@ -72,26 +59,11 @@ export default function Index() {
 				<div className="max-w-3xl mx-auto flex flex-col">
 					<div className="mx-4 sm:mx-0">
 						<div className="flex flex-col mb-10">
-							<SearchBar
-								value={search ?? ""}
-								onSearch={(s) => {
-									setSearch(s);
-								}}
-							/>
-							<Checkbox
-								id={"free-offers-only"}
-								title="Freier Entritt"
-								checked={showFreeOffersOnly}
-								onCheck={() => setShowFreeOffersOnly(!showFreeOffersOnly)}
-							/>
+							<SearchBar />
+							<FreeOffersCheckbox />
 						</div>
 						<div className="flex flex-row w-full justify-between mb-6">
-							<SortButton
-								ascending={sortAscending}
-								onOrderChange={() => {
-									setSortAscending(!sortAscending);
-								}}
-							></SortButton>
+							<SortButton></SortButton>
 							<FilterButton></FilterButton>
 						</div>
 						<div className="flex flex-row items-center gap-2 py-3">
@@ -114,7 +86,7 @@ export default function Index() {
 						))}
 					</div>
 
-					<BackButton onClick={() => {}}></BackButton>
+					<BackButton></BackButton>
 
 					{category !== "all" && (
 						<div className="my-8 mx-4 sm:mx-0">
