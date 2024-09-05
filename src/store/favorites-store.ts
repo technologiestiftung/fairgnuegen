@@ -4,27 +4,30 @@ import { Offer } from "../content/content";
 
 interface FavoritesState {
 	favorites: string[];
-	addFavorite: (fav: string) => void;
-	removeFavorite: (fav: string) => void;
+	addFavorite: (offer: Offer) => void;
+	removeFavorite: (offer: Offer) => void;
 	isFavorite: (offer: Offer) => boolean;
+	getKey: (offer: Offer) => string;
 }
 
 export const useFavoritesStore = create<FavoritesState>()(
 	persist(
 		(set, get) => ({
 			favorites: [],
-			addFavorite: (fav) =>
+			addFavorite: (offer) =>
 				set((state) => ({
-					favorites: state.favorites.includes(fav)
+					favorites: state.favorites.includes(get().getKey(offer))
 						? state.favorites
-						: [...state.favorites, fav],
+						: [...state.favorites, get().getKey(offer)],
 				})),
-			removeFavorite: (fav) =>
+			removeFavorite: (offer) =>
 				set((state) => ({
-					favorites: state.favorites.filter((item) => item !== fav),
+					favorites: state.favorites.filter(
+						(item) => item !== get().getKey(offer),
+					),
 				})),
-			isFavorite: (offer) =>
-				get().favorites.includes(offer.path.split("/").slice(-2)[0]),
+			isFavorite: (offer) => get().favorites.includes(get().getKey(offer)),
+			getKey: (offer) => offer.path.split("/").slice(-2)[0],
 		}),
 		{
 			name: "favorites-storage",

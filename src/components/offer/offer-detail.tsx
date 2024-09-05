@@ -18,8 +18,6 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 
 	const MAGIC_CUTOFF_LIMIT = 165;
 
-	const key = offer.path.split("/").slice(-2)[0];
-
 	const cutoffDescription = useMemo(() => {
 		if (showFullDescription) {
 			return offer.providerDescription;
@@ -75,9 +73,9 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<button
 						onClick={() => {
 							if (isFavorite(offer)) {
-								removeFavorite(key);
+								removeFavorite(offer);
 							} else {
-								addFavorite(key);
+								addFavorite(offer);
 							}
 						}}
 					>

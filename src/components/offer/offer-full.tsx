@@ -11,8 +11,6 @@ interface OfferFullProps {
 }
 
 const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
-	const key = offer.path.split("/").slice(-2)[0];
-
 	const [addFavorite, removeFavorite, isFavorite] = useFavoritesStore(
 		(state) => [state.addFavorite, state.removeFavorite, state.isFavorite],
 	);
@@ -73,9 +71,9 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					<button
 						onClick={() => {
 							if (isFavorite(offer)) {
-								removeFavorite(key);
+								removeFavorite(offer);
 							} else {
-								addFavorite(key);
+								addFavorite(offer);
 							}
 						}}
 					>
