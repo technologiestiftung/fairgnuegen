@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ShareFacebookIcon from "../icons/share-facebook-icon";
 import ShareIcon from "../icons/share-icon";
 import ShareLinkIcon from "../icons/share-link-icon";
@@ -12,20 +12,47 @@ const ShareButton: React.FC = () => {
 		`${window.location.href} *Angebote sind nur mit dem Berechtigungsnachweis nutzbar.`;
 
 	const [showOverlay, setShowOverlay] = useState(false);
+	const [showLinkCopied, setShowLinkCopied] = useState(false);
+
+	const buttonRef = useRef<HTMLButtonElement>(null);
+	const overlayRef = useRef<HTMLDivElement>(null);
+
+	const handleClickOutside = (event: MouseEvent) => {
+		if (
+			buttonRef.current &&
+			!buttonRef.current.contains(event.target as Node) &&
+			overlayRef.current &&
+			!overlayRef.current.contains(event.target as Node)
+		) {
+			setShowOverlay(false);
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
+
 	return (
-		<div className="relative w-fit">
+		<div className="relative">
 			<button
+				ref={buttonRef}
 				className="opacity-100 hover:opacity-50 flex justify-center items-center text-primary-blue"
 				onClick={() => {
 					setShowOverlay(!showOverlay);
 				}}
 			>
 				<div className="flex flex-row gap-1 items-center">
-					<ShareIcon></ShareIcon>
+					<ShareIcon isSelected={showOverlay}></ShareIcon>
 				</div>
 			</button>
-			{showOverlay && (
-				<div className="flex flex-col gap-4 absolute right-0 top-full py-4 px-6 bg-white border w-fit mt-2">
+			{showOverlay && !showLinkCopied && (
+				<div
+					className="flex flex-col gap-4 absolute right-0 top-full py-2 px-6 bg-white border mt-2 w-max"
+					ref={overlayRef}
+				>
 					<a
 						className="flex flex-row items-center gap-2 border-primary-blue"
 						// No custom share text for Facebook, the data will be fetched from the open graph meta tags of the link that is shared
@@ -40,11 +67,16 @@ const ShareButton: React.FC = () => {
 					<button
 						className="flex flex-row items-center gap-2"
 						onClick={async () => {
+							setShowLinkCopied(true);
 							await navigator.clipboard.writeText(getURL());
+							setTimeout(() => {
+								setShowLinkCopied(false);
+								setShowOverlay(false);
+							}, 1000);
 						}}
 					>
 						<ShareLinkIcon></ShareLinkIcon>
-						<div>Link teilen</div>
+						<div>Link kopieren</div>
 					</button>
 
 					<a
@@ -66,6 +98,11 @@ const ShareButton: React.FC = () => {
 						<ShareWhatsappIcon></ShareWhatsappIcon>
 						<div>Whatsapp</div>
 					</a>
+				</div>
+			)}
+			{showLinkCopied && (
+				<div className="flex flex-col gap-4 absolute right-0 top-full py-2 px-4 border mt-2 w-max bg-primary-blue text-white">
+					<div>Der Link wurde kopiert!</div>
 				</div>
 			)}
 		</div>
