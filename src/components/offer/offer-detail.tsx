@@ -3,15 +3,22 @@ import { Offer } from "../../content/content";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import LikeIcon from "../icons/like-icon";
 import { Pill } from "./pill";
+import { useFavoritesStore } from "../../store/favorites-store";
 
 interface OfferDetailProps {
 	offer: Offer;
 }
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
+	const [favorites, addFavorite, removeFavorite] = useFavoritesStore(
+		(state) => [state.favorites, state.addFavorite, state.removeFavorite],
+	);
+
 	const [showFullDescription, setShowFullDescription] = useState(false);
 
 	const MAGIC_CUTOFF_LIMIT = 165;
+
+	const key = offer.path.split("/").slice(-2)[0];
 
 	const cutoffDescription = useMemo(() => {
 		if (showFullDescription) {
@@ -26,6 +33,10 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	const descriptionClickable = useMemo(() => {
 		return offer.providerDescription.length > MAGIC_CUTOFF_LIMIT;
 	}, [offer.providerDescription]);
+
+	const isFavorite = useMemo(() => {
+		return favorites.includes(key);
+	}, [favorites]);
 
 	return (
 		<div className="w-full">
@@ -43,6 +54,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				<div className="w-[90%] max-w-[90%] flex flex-col gap-4">
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
+						{JSON.stringify(offer)}
 					</div>
 					{offer.isFree && (
 						<div className="flex flex-row gap-2 flex-wrap">
@@ -65,7 +77,17 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</div>
 				</div>
 				<div className="max-w-[10%] w-full flex justify-center">
-					<LikeIcon isSelected={false}></LikeIcon>
+					<button
+						onClick={() => {
+							if (isFavorite) {
+								removeFavorite(key);
+							} else {
+								addFavorite(key);
+							}
+						}}
+					>
+						<LikeIcon isSelected={isFavorite}></LikeIcon>
+					</button>
 				</div>
 			</div>
 			<div className="border-b border-separator w-full"></div>
