@@ -30,7 +30,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 					href={`/all-offers/?category=${identifier}`}
 					className="text-primary-blue text-left flex flex-row items-center justify-start gap-2"
 				>
-					<div>mehr Infos</div>
+					<div>Angebote entdecken</div>
 					<ArrowRightIcon></ArrowRightIcon>
 				</a>
 			</div>
