@@ -57,7 +57,7 @@ export default function Index() {
 				</div>
 
 				<div className="max-w-3xl mx-auto flex flex-col">
-					<div className="mx-4 sm:mx-0">
+					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col mb-10">
 							<SearchBar />
 							<FreeOffersCheckbox />
@@ -84,7 +84,7 @@ export default function Index() {
 						))}
 					</div>
 					<BackButton></BackButton>
-					<div className="my-8 mx-4 sm:mx-0">
+					<div className="my-8 mx-4 lg:mx-0">
 						<div className="text-xl font-bold my-6">
 							{category === "all"
 								? "Entdecke die Kategorien"

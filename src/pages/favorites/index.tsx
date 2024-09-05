@@ -38,7 +38,7 @@ export default function Index() {
 				</div>
 
 				<div className="max-w-3xl mx-auto flex flex-col">
-					<div className="flex flex-row w-full justify-between mb-6">
+					<div className="flex flex-row w-full justify-between mb-6 px-4 lg:px-0">
 						<SortButton></SortButton>
 						<FilterButton></FilterButton>
 					</div>
