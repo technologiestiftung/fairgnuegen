@@ -10,8 +10,8 @@ interface OfferDetailProps {
 }
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
-	const [favorites, addFavorite, removeFavorite] = useFavoritesStore(
-		(state) => [state.favorites, state.addFavorite, state.removeFavorite],
+	const [isFavorite, addFavorite, removeFavorite] = useFavoritesStore(
+		(state) => [state.isFavorite, state.addFavorite, state.removeFavorite],
 	);
 
 	const [showFullDescription, setShowFullDescription] = useState(false);
@@ -34,10 +34,6 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 		return offer.providerDescription.length > MAGIC_CUTOFF_LIMIT;
 	}, [offer.providerDescription]);
 
-	const isFavorite = useMemo(() => {
-		return favorites.includes(key);
-	}, [favorites]);
-
 	return (
 		<div className="w-full">
 			<div className="flex flex-row pb-2 mx-4 sm:mx-0 gap-2">
@@ -54,7 +50,6 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				<div className="w-[90%] max-w-[90%] flex flex-col gap-4">
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
-						{JSON.stringify(offer)}
 					</div>
 					{offer.isFree && (
 						<div className="flex flex-row gap-2 flex-wrap">
@@ -79,14 +74,14 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				<div className="max-w-[10%] w-full flex justify-center">
 					<button
 						onClick={() => {
-							if (isFavorite) {
+							if (isFavorite(offer)) {
 								removeFavorite(key);
 							} else {
 								addFavorite(key);
 							}
 						}}
 					>
-						<LikeIcon isSelected={isFavorite}></LikeIcon>
+						<LikeIcon isSelected={isFavorite(offer)}></LikeIcon>
 					</button>
 				</div>
 			</div>
