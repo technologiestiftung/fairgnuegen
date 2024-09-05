@@ -5,7 +5,11 @@ import ClearIcon from "../icons/clear-icon";
 import { useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+	onSubmitOverride?: (search: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 	const updateSearchParam = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const [search, setSearch] = useState(searchParams.get("search") ?? "");
@@ -14,6 +18,10 @@ const SearchBar: React.FC = () => {
 			action=""
 			onSubmit={(e) => {
 				e.preventDefault();
+				if (onSubmitOverride) {
+					onSubmitOverride(search);
+					return;
+				}
 				updateSearchParam("search", search);
 			}}
 			className="grid grid-cols-1 grid-rows-1 items-center"
