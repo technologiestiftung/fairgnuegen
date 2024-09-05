@@ -6,7 +6,9 @@ import ShareMailIcon from "../icons/share-mail-icon";
 import ShareWhatsappIcon from "../icons/share-whatsapp-icon";
 
 const ShareButton: React.FC = () => {
-	const shareText = "Entdecke günstige Angebote in Berlin!";
+	const shareTitle = "Fairgnügen • Berlin fair und günstig erleben";
+	const shareBody = `${window.location.href} *Angebote sind nur mit dem Berechtigungsnachweis nutzbar.`;
+
 	const [showOverlay, setShowOverlay] = useState(false);
 	return (
 		<div className="relative w-fit">
@@ -24,6 +26,7 @@ const ShareButton: React.FC = () => {
 				<div className="flex flex-col gap-4 absolute right-0 top-full py-4 px-6 bg-white border w-fit mt-2">
 					<a
 						className="flex flex-row items-center gap-2 border-primary-blue"
+						// No custom share text for Facebook, the data will be fetched from the open graph meta tags of the link that is shared
 						href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
 						target="_blank"
 						rel="noreferrer"
@@ -44,7 +47,7 @@ const ShareButton: React.FC = () => {
 
 					<a
 						className="flex flex-row items-center gap-2"
-						href={`mailto:?subject=${shareText}&body=${shareText} ${window.location.href}`}
+						href={`mailto:?subject=${shareTitle}&body=${shareBody} ${window.location.href}`}
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -54,7 +57,7 @@ const ShareButton: React.FC = () => {
 
 					<a
 						className="flex flex-row items-center gap-2"
-						href={`https://api.whatsapp.com/send?text=${shareText} ${window.location.href}`}
+						href={`https://api.whatsapp.com/send?text=${shareTitle} ${shareBody}`}
 						target="_blank"
 						rel="noreferrer"
 					>
