@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Offer } from "../../content/content";
+import ShareButton from "../buttons/share-button";
 import LikeIcon from "../icons/like-icon";
 import LinkIcon from "../icons/link-icon";
-import ShareIcon from "../icons/share-icon";
 import { Pill } from "./pill";
 
 interface OfferFullProps {
@@ -16,7 +16,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 		<div className="w-full">
 			<div className="flex flex-row gap-2 w-full justify-end pr-4 pb-4 sm:hidden">
 				<LikeIcon isSelected={false}></LikeIcon>
-				<ShareIcon></ShareIcon>
+				<ShareButton></ShareButton>
 			</div>
 			<div className="flex flex-row pb-2 sm:mx-0 gap-2">
 				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
@@ -64,7 +64,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				</div>
 				<div className="hidden max-w-[20%] w-full sm:flex flex-row justify-center items-start gap-2">
 					<LikeIcon isSelected={false}></LikeIcon>
-					<ShareIcon></ShareIcon>
+					<ShareButton></ShareButton>
 				</div>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
