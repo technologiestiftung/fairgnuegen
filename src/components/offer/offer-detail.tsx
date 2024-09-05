@@ -3,12 +3,17 @@ import { Offer } from "../../content/content";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import LikeIcon from "../icons/like-icon";
 import { Pill } from "./pill";
+import { useFavoritesStore } from "../../store/favorites-store";
 
 interface OfferDetailProps {
 	offer: Offer;
 }
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
+	const [isFavorite, addFavorite, removeFavorite] = useFavoritesStore(
+		(state) => [state.isFavorite, state.addFavorite, state.removeFavorite],
+	);
+
 	const [showFullDescription, setShowFullDescription] = useState(false);
 
 	const MAGIC_CUTOFF_LIMIT = 165;
@@ -65,7 +70,17 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</div>
 				</div>
 				<div className="max-w-[10%] w-full flex justify-center">
-					<LikeIcon isSelected={false}></LikeIcon>
+					<button
+						onClick={() => {
+							if (isFavorite(offer)) {
+								removeFavorite(offer);
+							} else {
+								addFavorite(offer);
+							}
+						}}
+					>
+						<LikeIcon isSelected={isFavorite(offer)}></LikeIcon>
+					</button>
 				</div>
 			</div>
 			<div className="border-b border-separator w-full"></div>

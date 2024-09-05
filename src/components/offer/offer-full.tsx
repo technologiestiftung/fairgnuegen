@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Offer } from "../../content/content";
+import { useFavoritesStore } from "../../store/favorites-store";
 import ShareButton from "../buttons/share-button";
 import LikeIcon from "../icons/like-icon";
 import LinkIcon from "../icons/link-icon";
@@ -10,6 +11,10 @@ interface OfferFullProps {
 }
 
 const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
+	const [addFavorite, removeFavorite, isFavorite] = useFavoritesStore(
+		(state) => [state.addFavorite, state.removeFavorite, state.isFavorite],
+	);
+
 	const [showFullDescription, setShowFullDescription] = useState(false);
 
 	return (
@@ -63,7 +68,17 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					</a>
 				</div>
 				<div className="hidden max-w-[20%] w-full sm:flex flex-row justify-center items-start gap-2">
-					<LikeIcon isSelected={false}></LikeIcon>
+					<button
+						onClick={() => {
+							if (isFavorite(offer)) {
+								removeFavorite(offer);
+							} else {
+								addFavorite(offer);
+							}
+						}}
+					>
+						<LikeIcon isSelected={isFavorite(offer)}></LikeIcon>
+					</button>
 					<ShareButton></ShareButton>
 				</div>
 			</div>
