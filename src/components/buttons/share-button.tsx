@@ -6,8 +6,10 @@ import ShareMailIcon from "../icons/share-mail-icon";
 import ShareWhatsappIcon from "../icons/share-whatsapp-icon";
 
 const ShareButton: React.FC = () => {
-	const shareTitle = "Fairgnügen • Berlin fair und günstig erleben";
-	const shareBody = `${window.location.href} *Angebote sind nur mit dem Berechtigungsnachweis nutzbar.`;
+	const getURL = () => window.location.href;
+	const shareTitle = () => "Fairgnügen • Berlin fair und günstig erleben";
+	const shareBody = () =>
+		`${window.location.href} *Angebote sind nur mit dem Berechtigungsnachweis nutzbar.`;
 
 	const [showOverlay, setShowOverlay] = useState(false);
 	return (
@@ -27,7 +29,7 @@ const ShareButton: React.FC = () => {
 					<a
 						className="flex flex-row items-center gap-2 border-primary-blue"
 						// No custom share text for Facebook, the data will be fetched from the open graph meta tags of the link that is shared
-						href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+						href={`https://www.facebook.com/sharer/sharer.php?u=${getURL()}`}
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -38,7 +40,7 @@ const ShareButton: React.FC = () => {
 					<button
 						className="flex flex-row items-center gap-2"
 						onClick={async () => {
-							await navigator.clipboard.writeText(window.location.href);
+							await navigator.clipboard.writeText(getURL());
 						}}
 					>
 						<ShareLinkIcon></ShareLinkIcon>
@@ -47,7 +49,7 @@ const ShareButton: React.FC = () => {
 
 					<a
 						className="flex flex-row items-center gap-2"
-						href={`mailto:?subject=${shareTitle}&body=${shareBody} ${window.location.href}`}
+						href={`mailto:?subject=${shareTitle()}&body=${shareBody()}`}
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -57,7 +59,7 @@ const ShareButton: React.FC = () => {
 
 					<a
 						className="flex flex-row items-center gap-2"
-						href={`https://api.whatsapp.com/send?text=${shareTitle} ${shareBody}`}
+						href={`https://api.whatsapp.com/send?text=${shareTitle()} ${shareBody()}`}
 						target="_blank"
 						rel="noreferrer"
 					>
