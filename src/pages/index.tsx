@@ -1,15 +1,13 @@
-import { useState } from "react";
+import FilterButton from "../components/buttons/filter-button";
 import ShowAllButton from "../components/buttons/show-all-button";
-import Checkbox from "../components/checkbox/checkbox";
+import ShowMapButton from "../components/buttons/show-map-button";
+import { CategoryHeroCard } from "../components/categories/category-hero-card";
+import FreeOffersCheckbox from "../components/checkbox/free-offers-checkbox";
 import SearchBar from "../components/search-bar/search-bar";
 import { categoryMap } from "../content/categories";
 import { Layout } from "../layout/layout";
-import { CategoryHeroCard } from "../components/categories/category-hero-card";
-import ShowMapButton from "../components/buttons/show-map-button";
-import FilterButton from "../components/buttons/filter-button";
 
 export default function Index() {
-	const [showFreeOffersOnly, setShowFreeOffersOnly] = useState(false);
 	return (
 		<Layout>
 			<div className="max-w-4xl flex flex-col mx-auto">
@@ -17,20 +15,8 @@ export default function Index() {
 					<h1 className="text-2xl font-bold w-full flex flex-row justify-center my-8 text-center">
 						Was möchtest du unternehmen?
 					</h1>
-					<SearchBar
-						value=""
-						onSearch={(s) => {
-							window.location.href = `/all-offers/?search=${s}&free=${showFreeOffersOnly ? "true" : "false"}`;
-						}}
-					/>
-					<Checkbox
-						id={"free-offers-only"}
-						title="Freier Entritt"
-						checked={showFreeOffersOnly}
-						onCheck={() => {
-							setShowFreeOffersOnly(!showFreeOffersOnly);
-						}}
-					/>
+					<SearchBar />
+					<FreeOffersCheckbox />
 				</div>
 
 				<div className="w-full border-b border-separator mb-12 mt-2"></div>
@@ -53,11 +39,7 @@ export default function Index() {
 				</div>
 				<div className="w-full border-b border-separator mb-12 mt-12"></div>
 				<div className="w-full flex flex-row justify-end px-4 sm:px-0">
-					<ShowAllButton
-						onClick={() => {
-							window.location.href = "/all-offers/";
-						}}
-					></ShowAllButton>
+					<ShowAllButton />
 				</div>
 			</div>
 		</Layout>
