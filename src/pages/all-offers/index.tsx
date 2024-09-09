@@ -91,7 +91,7 @@ export default function Index() {
 								: "Entdecke weitere Kategorien"}
 						</div>
 						<div
-							className={`w-full grid ${category === "all" ? "grid-cols-1 sm:grid-cols-4 grid-rows-4 sm:grid-rows-1" : "grid-cols-1 sm:grid-cols-3  grid-rows-3  sm:grid-rows-1 "} gap-4`}
+							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-3 sm:grid-rows-1"}`}
 						>
 							{Object.entries(categoryMap)
 								.filter(([key, c]) => c.isRendered && key !== category)

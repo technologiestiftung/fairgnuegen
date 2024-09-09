@@ -3,24 +3,18 @@ import React from "react";
 const ClearIcon: React.FC = () => {
 	return (
 		<svg
-			width="26"
-			height="26"
-			viewBox="0 0 26 26"
+			width="14"
+			height="14"
+			viewBox="0 0 14 14"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<g id="clear 1" clipPath="url(#clip0_3703_18951)">
-				<path
-					id="Vector"
-					d="M16.73 13L26 22.27L22.27 26L13 16.73L3.72998 26L0 22.27L9.27002 13L0 3.72998L3.72998 0L13 9.26996L22.27 0L26 3.72998L16.73 13Z"
-					fill="#67B18D"
-				/>
-			</g>
-			<defs>
-				<clipPath id="clip0_3703_18951">
-					<rect width="26" height="26" fill="white" />
-				</clipPath>
-			</defs>
+			<path
+				fillRule="evenodd"
+				clipRule="evenodd"
+				d="M6.79328 5.58572L12.086 0.292969L13.5002 1.70718L8.20749 6.99993L13.5002 12.2927L12.086 13.7069L6.79328 8.41415L1.50113 13.7063L0.0869141 12.2921L5.37906 6.99993L0.0869141 1.70778L1.50113 0.293571L6.79328 5.58572Z"
+				fill="#9D9D9C"
+			/>
 		</svg>
 	);
 };

@@ -36,17 +36,19 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 			<div className="relative row-start-1 col-start-1 pl-2 pointer-events-none">
 				<SearchIcon></SearchIcon>
 			</div>
-			<div className="relative row-start-1 col-start-1 w-full flex flex-row justify-end pr-2 pointer-events-none">
+			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pr-2 pointer-events-none">
+				<button className="pointer-events-auto">
+					<ClearIcon></ClearIcon>
+				</button>
 				<button
 					type="button"
-					className="w-fit pointer-events-auto"
+					className="w-fit pointer-events-auto border-l pl-2 focus:border-focus-blue"
 					onClick={() => {
 						setSearch("");
 						updateSearchParam("search", "");
 					}}
 				>
-					{search !== "" && <ClearIcon></ClearIcon>}
-					{search === "" && <StartSearchIcon></StartSearchIcon>}
+					<StartSearchIcon></StartSearchIcon>
 				</button>
 			</div>
 		</form>
