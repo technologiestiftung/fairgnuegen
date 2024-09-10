@@ -24,7 +24,12 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	}, [offer.providerDescription]);
 
 	return (
-		<a className="w-full hover:bg-berlin-grey-light" href={offer.path}>
+		<button
+			className="w-full hover:bg-berlin-grey-light text-left"
+			onClick={() => {
+				window.location.href = offer.path;
+			}}
+		>
 			<div className="flex flex-row pb-2 pt-8 mx-4 lg:mx-0 gap-2">
 				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
 				<div className="hidden">
@@ -57,7 +62,9 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				</div>
 				<div className="max-w-[10%] w-full flex justify-center">
 					<button
-						onClick={() => {
+						onClick={(e) => {
+							e.stopPropagation();
+							e.preventDefault();
 							if (isFavorite(offer)) {
 								removeFavorite(offer);
 							} else {
@@ -70,7 +77,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				</div>
 			</div>
 			<div className="border-b border-separator w-full"></div>
-		</a>
+		</button>
 	);
 };
 
