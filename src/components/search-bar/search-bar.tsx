@@ -13,6 +13,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 	const updateSearchParam = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const [search, setSearch] = useState(searchParams.get("search") ?? "");
+	const [hasFocus, setHasFocus] = useState(false);
+
 	return (
 		<form
 			onSubmit={(e) => {
@@ -23,7 +25,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 				}
 				updateSearchParam("search", search);
 			}}
-			className="grid grid-cols-1 grid-rows-1 items-center"
+			className="group grid grid-cols-1 grid-rows-1 items-center"
 		>
 			<input
 				value={search}
@@ -31,6 +33,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 				className="relative pl-8 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-lg"
 				placeholder="Suche Dein Angebot"
 				onChange={(e) => setSearch(e.target.value)}
+				onFocus={() => {
+					setHasFocus(true);
+				}}
+				onBlur={() => {
+					setHasFocus(false);
+				}}
 			></input>
 			<div className="relative row-start-1 col-start-1 pl-2 pointer-events-none">
 				<SearchIcon></SearchIcon>
@@ -48,7 +56,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 				</button>
 				<button
 					type="submit"
-					className="w-fit pointer-events-auto border-l-2 pl-2 border-l-black focus:border-focus-blue"
+					className={`w-fit pointer-events-auto border-l-2 pl-2  ${hasFocus ? "border-focus-blue" : " border-l-black"}`}
 					onClick={(e) => {
 						e.preventDefault();
 						if (onSubmitOverride) {
