@@ -24,8 +24,8 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	}, [offer.providerDescription]);
 
 	return (
-		<button
-			className="w-full hover:bg-berlin-grey-light text-left"
+		<div
+			className="w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer"
 			onClick={() => {
 				window.location.href = offer.path;
 			}}
@@ -77,7 +77,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				</div>
 			</div>
 			<div className="border-b border-separator w-full"></div>
-		</button>
+		</div>
 	);
 };
 

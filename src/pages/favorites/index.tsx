@@ -52,7 +52,7 @@ export default function Index() {
 					</div>
 
 					<div className="w-full border-b border-separator mb-5"></div>
-					<div className="flex flex-col gap-8 pt-4 mb-5">
+					<div className="flex flex-col pt-4 mb-5">
 						{filteredOffers.map((offer, idx) => (
 							<OfferDetail offer={offer} key={`${idx}-${offer.provider}`} />
 						))}
