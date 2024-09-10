@@ -15,7 +15,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 	const [search, setSearch] = useState(searchParams.get("search") ?? "");
 	return (
 		<form
-			action=""
 			onSubmit={(e) => {
 				e.preventDefault();
 				if (onSubmitOverride) {
@@ -37,15 +36,26 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 				<SearchIcon></SearchIcon>
 			</div>
 			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pr-2 pointer-events-none">
-				<button className="pointer-events-auto">
+				<button
+					type="button"
+					className="pointer-events-auto"
+					onClick={(e) => {
+						e.preventDefault();
+						setSearch("");
+					}}
+				>
 					<ClearIcon></ClearIcon>
 				</button>
 				<button
-					type="button"
-					className="w-fit pointer-events-auto border-l pl-2 focus:border-focus-blue"
-					onClick={() => {
-						setSearch("");
-						updateSearchParam("search", "");
+					type="submit"
+					className="w-fit pointer-events-auto border-l-2 pl-2 border-l-black focus:border-focus-blue"
+					onClick={(e) => {
+						e.preventDefault();
+						if (onSubmitOverride) {
+							onSubmitOverride(search);
+							return;
+						}
+						updateSearchParam("search", search);
 					}}
 				>
 					<StartSearchIcon></StartSearchIcon>

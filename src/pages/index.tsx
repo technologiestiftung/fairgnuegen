@@ -21,6 +21,7 @@ export default function Index() {
 					</h1>
 					<SearchBar
 						onSubmitOverride={(search) => {
+							console.log(search);
 							window.location.href = `/all-offers/?search=${search}&free=${showFreeOffersOnly ? "true" : "false"}`;
 						}}
 					/>

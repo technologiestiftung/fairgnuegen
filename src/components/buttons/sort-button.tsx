@@ -6,14 +6,14 @@ import useUpdateSearchParam from "../../hooks/use-update-search-params";
 const FilterButton: React.FC = () => {
 	const updateSearchParam = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
-	const sortAscending = (searchParams.get("sort") ?? "desc") === "asc";
+	const sortAscending = (searchParams.get("sort") ?? "asc") === "asc";
 	return (
 		<button
 			className="px-3 py-1 border-black border opacity-100 hover:opacity-50 flex justify-center items-center text-primary-blue"
 			onClick={() => {
 				updateSearchParam(
 					"sort",
-					searchParams.get("sort") === "asc" ? "desc" : "asc",
+					(searchParams.get("sort") ?? "asc") === "asc" ? "desc" : "asc",
 				);
 			}}
 		>

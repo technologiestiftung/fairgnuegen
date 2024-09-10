@@ -17,7 +17,7 @@ export default function Index() {
 	const category = getCategory(searchParams.get("category"));
 	const search = searchParams.get("search");
 	const showFreeOffersOnly = searchParams.get("free") === "true";
-	const sortAscending = searchParams.get("sort") === "asc";
+	const sortAscending = (searchParams.get("sort") ?? "asc") === "asc";
 
 	const filteredOffers = useMemo(() => {
 		const filtered = offers
@@ -69,12 +69,13 @@ export default function Index() {
 							<RocketIcon></RocketIcon>
 							<p className="text-md text-primary-blue">
 								{filteredOffers.length} Angebote gefunden
-								{category !== "all" && ` für "${categoryMap[category].name}"`}
+								{search !== null && search !== "" && ` für "${search}"`}
+								{category !== "all" && ` in "${categoryMap[category].name}"`}
 							</p>
 						</div>
 					</div>
 					<div className="w-full border-b border-separator mb-5"></div>
-					<div className="flex flex-col gap-8 pt-4 mb-5">
+					<div className="flex flex-col pt-4 mb-5">
 						{filteredOffers.map((offer, idx) => (
 							<OfferDetail
 								offer={offer}
