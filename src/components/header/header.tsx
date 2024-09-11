@@ -19,7 +19,7 @@ export function Header() {
 	];
 
 	return (
-		<header className="text-xl leading-[122.2%] tracking-[0.3px]">
+		<header className="sticky top-0 z-[20] bg-white text-xl leading-[122.2%] tracking-[0.3px]">
 			<div className="py-1.5 px-7 border-b">
 				<a href="https://www.berlin.de">
 					<img
@@ -50,7 +50,7 @@ export function Header() {
 				</a>
 
 				<nav className="hidden desktop:block">
-					<ul className="flex justify-center space-x-4">
+					<ul className="flex justify-center space-x-[30px]">
 						{navLinks.map((link) => (
 							<li key={link.href}>
 								<a href={link.href} className="hover:underline">
