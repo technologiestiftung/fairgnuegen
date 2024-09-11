@@ -46,7 +46,7 @@ export default function Index() {
 						))}
 				</div>
 				<div className="w-full border-b border-separator mb-12 mt-12"></div>
-				<div className="w-full flex flex-row justify-end px-4 lg:px-0">
+				<div className="w-full flex flex-row justify-end px-4 lg:px-0 mb-10">
 					<ShowAllButton />
 				</div>
 			</div>

@@ -13,7 +13,7 @@ import { categoryMap } from "../../content/categories";
 
 export default function Index() {
 	const { category, categoryDetails } = useCategory();
-	const filteredSortedOffers = useFilteredAndSortedOffers();
+	const { filteredAndSortedOffers, search } = useFilteredAndSortedOffers();
 
 	return (
 		<Layout>
@@ -44,14 +44,15 @@ export default function Index() {
 						<div className="flex flex-row items-center gap-2 py-3">
 							<RocketIcon></RocketIcon>
 							<p className="text-md text-primary-blue">
-								{filteredSortedOffers.length} Angebote gefunden
-								{category !== "all" && ` für "${categoryDetails.name}"`}
+								{filteredAndSortedOffers.length} Angebote gefunden
+								{search !== null && search !== "" && ` für "${search}"`}
+								{category !== "all" && ` in "${categoryMap[category].name}"`}
 							</p>
 						</div>
 					</div>
 					<div className="w-full border-b border-separator mb-5"></div>
 					<div className="flex flex-col gap-8 pt-4 mb-5">
-						{filteredSortedOffers.map((offer, idx) => (
+						{filteredAndSortedOffers.map((offer, idx) => (
 							<OfferDetail
 								offer={offer}
 								key={`${idx}-${offer.provider}`}
@@ -66,7 +67,7 @@ export default function Index() {
 								: "Entdecke weitere Kategorien"}
 						</div>
 						<div
-							className={`w-full grid ${category === "all" ? "grid-cols-1 sm:grid-cols-4 grid-rows-4 sm:grid-rows-1" : "grid-cols-1 sm:grid-cols-3  grid-rows-3  sm:grid-rows-1 "} gap-4`}
+							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-3 sm:grid-rows-1"}`}
 						>
 							{Object.entries(categoryMap)
 								.filter(

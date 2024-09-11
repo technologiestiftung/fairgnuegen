@@ -9,7 +9,7 @@ export function useFilteredAndSortedOffers() {
 	const category = getCategory(searchParams.get("category"));
 	const search = searchParams.get("search");
 	const showFreeOffersOnly = searchParams.get("free") === "true";
-	const sortAscending = searchParams.get("sort") === "asc";
+	const sortAscending = (searchParams.get("sort") ?? "asc") === "asc";
 
 	const [filteredAndSortedOffers, setFilteredAndSortedOffers] =
 		useState(offers);
@@ -36,5 +36,5 @@ export function useFilteredAndSortedOffers() {
 		setFilteredAndSortedOffers(filteredAndSorted);
 	}, [category, search, showFreeOffersOnly, sortAscending]);
 
-	return filteredAndSortedOffers;
+	return { filteredAndSortedOffers, search };
 }

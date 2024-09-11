@@ -2,6 +2,10 @@
 // eslint-disable-next-line @technologiestiftung/no-default-export
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+	// https://github.com/tailwindlabs/tailwindcss/pull/8394
+	future: {
+		hoverOnlyWhenSupported: true,
+	},
 	theme: {
 		fontFamily: {
 			sans: "Arial, sans-serif",
@@ -25,6 +29,9 @@ export default {
 			},
 			screens: {
 				desktop: "1181px",
+			},
+			boxShadow: {
+				default: "0 0 5px 1px rgba(23, 111, 193, 0.3)",
 			},
 		},
 	},
