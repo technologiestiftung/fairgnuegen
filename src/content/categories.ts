@@ -10,7 +10,7 @@ export type CategoryDetails = {
 	name: string;
 	image: string;
 	description: string;
-	isRendered: boolean;
+	isRenderedInCategoryCards: boolean;
 };
 
 export type CategoryMap = {
@@ -23,7 +23,7 @@ export const categoryMap: CategoryMap = {
 		name: "Kultur",
 		image: "/kultur.jpg",
 		description: "Angebote fürs Museum, Theater, Konzerte und vieles mehr",
-		isRendered: true,
+		isRenderedInCategoryCards: true,
 	},
 	sport: {
 		color: "bg-sport",
@@ -31,14 +31,14 @@ export const categoryMap: CategoryMap = {
 		image: "/sport.jpg",
 		description:
 			"Angebote um körperlich fit zu bleiben oder den Sport zu feiern",
-		isRendered: true,
+		isRenderedInCategoryCards: true,
 	},
 	bildung_beratung: {
 		color: "bg-education",
 		name: "Bildung & Beratung",
 		image: "/bildung.jpg",
 		description: "Weiterbildungs- und Beratungsangebote",
-		isRendered: true,
+		isRenderedInCategoryCards: true,
 	},
 	freizeit: {
 		color: "bg-leisure",
@@ -46,14 +46,14 @@ export const categoryMap: CategoryMap = {
 		image: "/freizeit.jpg",
 		description:
 			"Angebote fürs Kino, Restaurants, Bars und Aktivitäten an der freien Luft",
-		isRendered: true,
+		isRenderedInCategoryCards: true,
 	},
 	all: {
 		color: "bg-primary-blue",
 		name: "Alle Angebote",
 		image: "",
 		description: "",
-		isRendered: false,
+		isRenderedInCategoryCards: false,
 	},
 };
 

@@ -36,7 +36,7 @@ export default function Index() {
 
 				<div className="w-full grid grid-cols-1 grid-rows-4 gap-x-8 gap-y-8 md:grid-cols-2 md:grid-rows-2 px-4 lg:px-0 lg:gap-x-16">
 					{Object.entries(categoryMap)
-						.filter(([, category]) => category.isRendered)
+						.filter(([, category]) => category.isRenderedInCategoryCards)
 						.map(([key, category]) => (
 							<CategoryHeroCard
 								key={key}
