@@ -32,7 +32,7 @@ try {
 			zip,
 			district,
 			isFree,
-			categories,
+			category,
 			targetGroups,
 			x,
 			y,
@@ -41,8 +41,24 @@ try {
 		const slugTitle = generateSlug(`${index}_${provider}`);
 		const path = `/all-offers/${slugTitle}/`;
 
+		const breadcrumbs = [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: `/all-offers/?category=${category.toLowerCase()}`,
+				label: category,
+			},
+			{
+				href: path,
+				label: provider,
+			},
+		];
+
 		const content = {
 			title: provider,
+			breadcrumbs,
 			offer: {
 				path: path,
 				provider,
@@ -55,7 +71,7 @@ try {
 				zip: parseInt(zip),
 				district,
 				isFree: isFree === "ja",
-				category: categories.split(",").map((category) => category.trim()),
+				category,
 				targetGroups: targetGroups
 					.split(",")
 					.map((targetGroup) => targetGroup.trim()),

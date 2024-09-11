@@ -13,7 +13,7 @@ export type Offer = {
 	zip: number | null;
 	district: string;
 	isFree: boolean;
-	category: string[];
+	category: string;
 	targetGroups: string[];
 	x: number | null;
 	y: number | null;
