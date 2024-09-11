@@ -41,11 +41,11 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 
 					<div className="flex flex-row gap-2 flex-wrap">
 						{offer.isFree && <Pill title={"Freier Eintritt"} />}
-						{offer.category.map((c) => (
-							<Pill title={c} key={c}></Pill>
-						))}
+
+						<Pill title={offer.category} />
+
 						{offer.targetGroups.map((t) => (
-							<Pill title={t} key={t}></Pill>
+							<Pill title={t} key={t} />
 						))}
 					</div>
 
