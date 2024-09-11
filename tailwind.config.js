@@ -26,6 +26,9 @@ export default {
 			screens: {
 				desktop: "1181px",
 			},
+			boxShadow: {
+				default: "0 0 5px 1px rgba(23, 111, 193, 0.3)",
+			},
 		},
 	},
 	plugins: [],

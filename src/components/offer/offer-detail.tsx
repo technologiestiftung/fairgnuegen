@@ -30,7 +30,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				window.location.href = offer.path;
 			}}
 		>
-			<div className="flex flex-row pb-2 pt-8 mx-4 lg:mx-0 gap-2">
+			<div className="flex flex-row py-4 mx-4 lg:mx-0 gap-2">
 				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
 				<div className="hidden">
 					<img
