@@ -49,19 +49,21 @@ export function Header() {
 					<span className="text-sm">Berlin fair und günstig erleben.*</span>
 				</a>
 
-				<nav className="hidden desktop:block">
-					<ul className="flex justify-center space-x-[30px]">
-						{navLinks.map((link) => (
-							<li key={link.href}>
-								<a href={link.href} className="hover:underline">
-									{link.label}
-								</a>
-							</li>
-						))}
-					</ul>
-				</nav>
+				<div className="flex items-center gap-x-[30px]">
+					<nav className="hidden desktop:block">
+						<ul className="flex justify-center gap-x-[30px]">
+							{navLinks.map((link) => (
+								<li key={link.href}>
+									<a href={link.href} className="hover:underline">
+										{link.label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</nav>
 
-				<SidebarButtons />
+					<SidebarButtons />
+				</div>
 			</div>
 
 			<div className="flex justify-between bg-berlin-grey-light text-berlin-grey shadow-lg pl-7 pr-9">
