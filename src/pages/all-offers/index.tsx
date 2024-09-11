@@ -14,11 +14,12 @@ import { InfoBox } from "../../components/info-box/info-box";
 
 export default function Index() {
 	const { category, categoryDetails } = useCategory();
-	const { filteredAndSortedOffers, search } = useFilteredAndSortedOffers();
+	const { filteredAndSortedOffers, search, isLoading } =
+		useFilteredAndSortedOffers();
 
 	return (
 		<Layout>
-			<div>
+			<div className={isLoading ? "invisible" : "visible"}>
 				{category !== "all" && (
 					<img
 						src={categoryDetails.image}

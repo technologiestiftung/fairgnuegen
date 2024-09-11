@@ -4,6 +4,12 @@ import { categoryMap, getCategory } from "../content/categories";
 import { useSearchParams } from "react-router-dom";
 
 export function useFilteredAndSortedOffers() {
+	/**
+	 * the loading state is used to prevent the UI from flickering
+	 * when filters from the URL-Query are applied on page load
+	 */
+	const [isLoading, setIsLoading] = useState(true);
+
 	const [searchParams] = useSearchParams();
 
 	const category = getCategory(searchParams.get("category"));
@@ -15,6 +21,8 @@ export function useFilteredAndSortedOffers() {
 		useState(offers);
 
 	useEffect(() => {
+		setIsLoading(false);
+
 		const filtered = offers
 			.filter(
 				(o) =>
@@ -36,5 +44,5 @@ export function useFilteredAndSortedOffers() {
 		setFilteredAndSortedOffers(filteredAndSorted);
 	}, [category, search, showFreeOffersOnly, sortAscending]);
 
-	return { filteredAndSortedOffers, search };
+	return { filteredAndSortedOffers, search, isLoading };
 }
