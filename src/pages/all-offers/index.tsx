@@ -1,58 +1,34 @@
-import { useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
 import BackButton from "../../components/buttons/back-button";
 import FilterButton from "../../components/buttons/filter-button";
 import SortButton from "../../components/buttons/sort-button";
-import { CategoryCard } from "../../components/categories/category-card";
 import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
 import RocketIcon from "../../components/icons/rocket-icon";
 import OfferDetail from "../../components/offer/offer-detail";
 import SearchBar from "../../components/search-bar/search-bar";
-import { categoryMap, getCategory } from "../../content/categories";
-import { offers } from "../../content/content";
 import { Layout } from "../../layout/layout";
+import { useFilteredAndSortedOffers } from "../../hooks/use-filtered-and-sorted-offers";
+import { useCategory } from "../../hooks/use-category";
+import { CategoryCard } from "../../components/categories/category-card";
+import { categoryMap } from "../../content/categories";
 
 export default function Index() {
-	const [searchParams] = useSearchParams();
-	const category = getCategory(searchParams.get("category"));
-	const search = searchParams.get("search");
-	const showFreeOffersOnly = searchParams.get("free") === "true";
-	const sortAscending = searchParams.get("sort") === "asc";
-
-	const filteredOffers = useMemo(() => {
-		const filtered = offers
-			.filter(
-				(o) =>
-					category === "all" || o.category.includes(categoryMap[category].name),
-			)
-			.filter(
-				(o) =>
-					!search || o.provider.toLowerCase().includes(search.toLowerCase()),
-			)
-			.filter((o) => !showFreeOffersOnly || o.isFree);
-		const sorted = filtered.sort((a, b) => {
-			if (sortAscending) {
-				return a.provider.localeCompare(b.provider);
-			}
-			return b.provider.localeCompare(a.provider);
-		});
-		return sorted;
-	}, [category, search, showFreeOffersOnly, sortAscending]);
+	const { category, categoryDetails } = useCategory();
+	const filteredSortedOffers = useFilteredAndSortedOffers();
 
 	return (
 		<Layout>
 			<div>
 				{category !== "all" && (
 					<img
-						src={categoryMap[category].image}
-						alt={categoryMap[category].name}
+						src={categoryDetails.image}
+						alt={categoryDetails.name}
 						className="hidden sm:block w-full h-[300px] object-cover"
 					/>
 				)}
 				<div
-					className={`w-full ${categoryMap[category].color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
+					className={`w-full ${categoryDetails.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
-					{category !== "all" ? categoryMap[category].name : "Alle Angebote"}
+					{category !== "all" ? categoryDetails.name : "Alle Angebote"}
 				</div>
 
 				<div className="max-w-3xl mx-auto flex flex-col">
@@ -68,14 +44,14 @@ export default function Index() {
 						<div className="flex flex-row items-center gap-2 py-3">
 							<RocketIcon></RocketIcon>
 							<p className="text-md text-primary-blue">
-								{filteredOffers.length} Angebote gefunden
-								{category !== "all" && ` für "${categoryMap[category].name}"`}
+								{filteredSortedOffers.length} Angebote gefunden
+								{category !== "all" && ` für "${categoryDetails.name}"`}
 							</p>
 						</div>
 					</div>
 					<div className="w-full border-b border-separator mb-5"></div>
 					<div className="flex flex-col gap-8 pt-4 mb-5">
-						{filteredOffers.map((offer, idx) => (
+						{filteredSortedOffers.map((offer, idx) => (
 							<OfferDetail
 								offer={offer}
 								key={`${idx}-${offer.provider}`}
@@ -93,7 +69,9 @@ export default function Index() {
 							className={`w-full grid ${category === "all" ? "grid-cols-1 sm:grid-cols-4 grid-rows-4 sm:grid-rows-1" : "grid-cols-1 sm:grid-cols-3  grid-rows-3  sm:grid-rows-1 "} gap-4`}
 						>
 							{Object.entries(categoryMap)
-								.filter(([key, c]) => c.isRendered && key !== category)
+								.filter(
+									([key, c]) => c.isRenderedInCategoryCards && key !== category,
+								)
 								.map(([key, c]) => (
 									<CategoryCard key={key} identifier={key} category={c} />
 								))}
