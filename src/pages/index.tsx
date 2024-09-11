@@ -7,6 +7,7 @@ import FreeOffersCheckbox from "../components/checkbox/free-offers-checkbox";
 import SearchBar from "../components/search-bar/search-bar";
 import { categoryMap } from "../content/categories";
 import { Layout } from "../layout/layout";
+import { InfoBox } from "../components/info-box/info-box";
 
 export default function Index() {
 	const [searchParams] = useSearchParams();
@@ -50,6 +51,8 @@ export default function Index() {
 					<ShowAllButton />
 				</div>
 			</div>
+
+			<InfoBox showProviderHint={true} maxWidth="max-w-4xl"></InfoBox>
 		</Layout>
 	);
 }

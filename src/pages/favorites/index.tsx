@@ -8,6 +8,7 @@ import FilterButton from "../../components/buttons/filter-button";
 import SortButton from "../../components/buttons/sort-button";
 import { useSearchParams } from "react-router-dom";
 import RocketIcon from "../../components/icons/rocket-icon";
+import { InfoBox } from "../../components/info-box/info-box";
 
 export default function Index() {
 	const [searchParams] = useSearchParams();
@@ -62,6 +63,7 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
+			<InfoBox showProviderHint={false} maxWidth="max-w-3xl"></InfoBox>
 		</Layout>
 	);
 }
