@@ -26,6 +26,7 @@ export default {
 				"berlin-grey-light": "#f5f5f5", // neutral-100
 				"berlin-pink": "#F5B4CB", // fuchsia-300
 				"berlin-green": "#67B18D", // emerald-400
+				"berlin-light-green": "#E2F1EB",
 			},
 			screens: {
 				desktop: "1181px",

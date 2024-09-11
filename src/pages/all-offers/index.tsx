@@ -10,6 +10,7 @@ import { useFilteredAndSortedOffers } from "../../hooks/use-filtered-and-sorted-
 import { useCategory } from "../../hooks/use-category";
 import { CategoryCard } from "../../components/categories/category-card";
 import { categoryMap } from "../../content/categories";
+import { InfoBox } from "../../components/info-box/info-box";
 
 export default function Index() {
 	const { category, categoryDetails } = useCategory();
@@ -80,6 +81,7 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
+			<InfoBox showProviderHint={false} maxWidth="max-w-3xl"></InfoBox>
 		</Layout>
 	);
 }
