@@ -25,7 +25,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 				}
 				updateSearchParam("search", search);
 			}}
-			className="group grid grid-cols-1 grid-rows-1 items-center"
+			className="group grid grid-cols-1 grid-rows-1 items-center z-[10]"
 		>
 			<input
 				value={search}

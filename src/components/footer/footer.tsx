@@ -1,9 +1,71 @@
-import { Informationen } from "./informationen";
-import { SocialMedia } from "./social-media";
-import { ArrowUpIcon } from "../icons/arrow-up-icon";
 import { BerlinLogoWhite } from "../icons/berlin-logo-white";
-import { FooterColumn } from "./footer-column";
+import { FooterDarkColumn } from "./footer-dark-column";
+import { ScrollToTopButton } from "../buttons/scroll-to-top-button";
+import { FooterLightColumn } from "./footer-light-column.tsx";
+import { HandsIcon } from "../icons/hands-icon.tsx";
+import { EasyLanguageIcon } from "../icons/easy-language-icon.tsx";
+import { SquareArrowIcon } from "../icons/square-arrow-icon.tsx";
 
+const upperFooterColumns = [
+	{
+		title: "Informationen",
+		links: [
+			{
+				label: "Impressum",
+				href: "/impressum",
+			},
+			{
+				label: "Kontakt",
+				href: "/kontakt",
+			},
+			{
+				label: "Datenschutzerklärung",
+				href: "/datenschutz",
+			},
+			{
+				label: "Erklärung zur Barrierefreiheit",
+				href: "/erklärung",
+			},
+			{
+				label: (
+					<>
+						<HandsIcon /> DGS
+					</>
+				),
+				href: "/dgs",
+			},
+			{
+				label: (
+					<>
+						<EasyLanguageIcon /> Leichte Sprache
+					</>
+				),
+				href: "/leichte-sprache",
+			},
+		],
+	},
+	{
+		title: "Social Media",
+		links: [
+			{
+				label: (
+					<>
+						Instagram <SquareArrowIcon />
+					</>
+				),
+				href: "/instagram",
+			},
+			{
+				label: (
+					<>
+						LinkedIn <SquareArrowIcon />{" "}
+					</>
+				),
+				href: "/linkedin",
+			},
+		],
+	},
+];
 const lowerFooterColumns = [
 	{
 		title: "Service",
@@ -176,31 +238,34 @@ const lowerFooterColumns = [
 export function Footer() {
 	return (
 		<footer>
-			<div className="flex items-start justify-between w-full bg-berlin-grey-light p-6">
-				<div className="flex flex-col desktop:flex-row w-full gap-x-10 gap-y-10">
-					<Informationen />
-
-					<div className="flex justify-between w-full">
-						<SocialMedia />
-						<button
-							className="flex gap-x-1 p-1"
-							onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-						>
-							zum Seitenanfang <ArrowUpIcon className="bg-berlin-green" />
-						</button>
+			<div className="flex items-start justify-between w-full bg-berlin-grey-light desktop:p-6">
+				<div className="flex flex-col desktop:flex-row w-full desktop:gap-x-10">
+					<div className="desktop:hidden self-end">
+						<ScrollToTopButton />
 					</div>
+
+					{upperFooterColumns.map((column) => (
+						<FooterLightColumn
+							key={column.title}
+							title={column.title}
+							links={column.links}
+						/>
+					))}
+				</div>
+				<div className="hidden desktop:block">
+					<ScrollToTopButton />
 				</div>
 			</div>
 
-			<div className="flex flex-col p-6 bg-berlin-grey-dark text-white">
-				<div>
+			<div className="flex flex-col pt-6 desktop:p-6 bg-berlin-grey-dark text-white">
+				<div className="pl-3 desktop:pl-0">
 					<a href="https://www.berlin.de" title="Zur Startseite von Berlin.de">
 						<BerlinLogoWhite />
 					</a>
 				</div>
-				<div className="flex flex-col desktop:flex-row justify-between gap-x-16 gap-y-8 pl-28 pb-16 pt-10">
+				<div className="flex flex-col desktop:flex-row justify-between gap-x-16 desktop:gap-y-8 desktop:pl-28 desktop:pb-16 pt-7 desktop:pt-10">
 					{lowerFooterColumns.map((column) => (
-						<FooterColumn
+						<FooterDarkColumn
 							key={column.title}
 							title={column.title}
 							links={column.links}
