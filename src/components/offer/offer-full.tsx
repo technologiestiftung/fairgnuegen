@@ -101,6 +101,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				<RouteButton
 					onClick={() => {
 						// This should open Apple Maps on iOS and Google Maps on Android
+						// https://stackoverflow.com/questions/18739436/create-a-link-that-opens-the-appropriate-map-app-on-any-device-with-directions
 						window.location.href = `http://maps.apple.com/?ll=${offer.y},${offer.x}&q=${encodeURIComponent(offer.provider)}`;
 					}}
 				></RouteButton>
