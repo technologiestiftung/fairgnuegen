@@ -1,4 +1,12 @@
-export function EasyLanguageIcon() {
+import React from "react";
+
+interface EasyLanguageIconProps {
+	customId: string;
+}
+
+export const EasyLanguageIcon: React.FC<EasyLanguageIconProps> = ({
+	customId,
+}) => {
 	return (
 		<svg
 			width="22"
@@ -8,7 +16,7 @@ export function EasyLanguageIcon() {
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<mask
-				id="mask0_4056_6347"
+				id={"mask0_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="7"
@@ -21,14 +29,14 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask0_4056_6347)">
+			<g mask={`url(#mask0_4056_6347${customId})`}>
 				<path
 					d="M17.4421 -1.68359H4.21021V11.5483H17.4421V-1.68359Z"
 					fill="#253276"
 				/>
 			</g>
 			<mask
-				id="mask1_4056_6347"
+				id={"mask1_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="11"
@@ -41,14 +49,14 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask1_4056_6347)">
+			<g mask={`url(#mask1_4056_6347${customId})`}>
 				<path
 					d="M23.4564 4.84863H8.42017V23.5778H23.4564V4.84863Z"
 					fill="#253276"
 				/>
 			</g>
 			<mask
-				id="mask2_4056_6347"
+				id={"mask2_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="1"
@@ -61,14 +69,14 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask2_4056_6347)">
+			<g mask={`url(#mask2_4056_6347${customId})`}>
 				<path
 					d="M13.2318 4.84863H-1.80444V23.5778H13.2318V4.84863Z"
 					fill="#253276"
 				/>
 			</g>
 			<mask
-				id="mask3_4056_6347"
+				id={"mask3_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="12"
@@ -81,14 +89,14 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask3_4056_6347)">
+			<g mask={`url(#mask3_4056_6347${customId})`}>
 				<path
 					d="M22.386 6.53906H9.58716V15.1458H22.386V6.53906Z"
 					fill="white"
 				/>
 			</g>
 			<mask
-				id="mask4_4056_6347"
+				id={"mask4_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="12"
@@ -101,14 +109,14 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask4_4056_6347)">
+			<g mask={`url(#mask4_4056_6347${customId})`}>
 				<path
 					d="M22.386 9.00488H9.58716V17.6116H22.386V9.00488Z"
 					fill="white"
 				/>
 			</g>
 			<mask
-				id="mask5_4056_6347"
+				id={"mask5_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="12"
@@ -121,14 +129,14 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask5_4056_6347)">
+			<g mask={`url(#mask5_4056_6347${customId})`}>
 				<path
 					d="M20.3952 11.7539H9.58716V20.078H20.3952V11.7539Z"
 					fill="white"
 				/>
 			</g>
 			<mask
-				id="mask6_4056_6347"
+				id={"mask6_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="4"
@@ -141,11 +149,11 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask6_4056_6347)">
+			<g mask={`url(#mask6_4056_6347${customId})`}>
 				<path d="M12.0771 8.7041H1.4375V19.3437H12.0771V8.7041Z" fill="white" />
 			</g>
 			<mask
-				id="mask7_4056_6347"
+				id={"mask7_4056_6347" + customId}
 				style={{ maskType: "luminance" }}
 				maskUnits="userSpaceOnUse"
 				x="2"
@@ -158,7 +166,7 @@ export function EasyLanguageIcon() {
 					fill="white"
 				/>
 			</mask>
-			<g mask="url(#mask7_4056_6347)">
+			<g mask={`url(#mask7_4056_6347${customId})`}>
 				<path
 					d="M9.03387 10.0391H-0.306641V19.3796H9.03387V10.0391Z"
 					fill="white"
@@ -166,4 +174,4 @@ export function EasyLanguageIcon() {
 			</g>
 		</svg>
 	);
-}
+};

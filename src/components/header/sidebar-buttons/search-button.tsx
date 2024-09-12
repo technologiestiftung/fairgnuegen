@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Drawer } from "../../drawer/drawer";
 import { SearchIconLarge } from "../../icons/search-icon-large";
+import SearchMenu from "../../menu/search-menu";
 
 export function SearchButton() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +14,7 @@ export function SearchButton() {
 				<SearchIconLarge />
 				Suche
 			</button>
-			<Drawer isOpen={isOpen} close={() => setIsOpen(false)}>
-				Suche
-			</Drawer>
+			<SearchMenu isOpen={isOpen} close={() => setIsOpen(false)}></SearchMenu>
 		</>
 	);
 }
