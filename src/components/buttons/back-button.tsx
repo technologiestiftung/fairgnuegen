@@ -4,7 +4,7 @@ import ArrowLeftIcon from "../icons/arrow-left-icon";
 const BackButton: React.FC = () => {
 	return (
 		<button
-			className="px-3 py-1 border-black border opacity-100 hover:opacity-50 flex justify-center items-center text-primary-blue w-60 h-11"
+			className="px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black w-60 h-[43px]"
 			onClick={() => {
 				window.history.back();
 			}}
