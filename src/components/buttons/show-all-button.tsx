@@ -10,10 +10,10 @@ const ShowAllButton: React.FC = () => {
 			}}
 		>
 			<div className="flex flex-row justify-end items-center h-full w-full hover:bg-berlin-grey-light">
-				<div className="w-[80%] flex flex-row items-center justify-center">
+				<div className="w-[207px] flex flex-row items-center justify-center font-normal">
 					Alle Angebote zeigen
 				</div>
-				<div className="h-full bg-primary-red w-[43px] flex flex-row items-center justify-center border-l-black border-l-2">
+				<div className="h-full bg-primary-red w-[43px] h-full flex flex-row items-center justify-center border-l-black border-l-2">
 					<ArrowRightIcon color="text-white"></ArrowRightIcon>
 				</div>
 			</div>

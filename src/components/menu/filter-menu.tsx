@@ -14,6 +14,7 @@ import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
 import ResetFilterButton from "../buttons/reset-filter-button";
 import ShowFilteredButton from "../buttons/show-filtered-button";
+import Checkbox from "../checkbox/checkbox";
 
 interface FilterRowOption {
 	title: string;
@@ -199,33 +200,28 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 									filterRow.options.map((subItem) => (
 										<div
 											key={subItem.title}
-											className="px-6 flex flex-row items-start gap-2 py-2 text-lg"
+											className="px-6 flex flex-row items-start text-lg"
 										>
-											<input
-												className="mt-2"
-												type="checkbox"
-												id={subItem.title}
-												name={subItem.value}
-												value={subItem.value}
-												onChange={() => {
-													toggleFilterOption(filterRow, subItem);
-												}}
-												checked={selectedFilters[
+											<Checkbox
+												label={
+													subItem.subtitle ? (
+														<div className="text-normal font-normal">
+															<span className="font-bold">
+																{subItem.title} {"> "}
+															</span>
+															<span>{subItem.subtitle}</span>
+														</div>
+													) : (
+														<span className="text-normal font-normal">
+															{subItem.title}
+														</span>
+													)
+												}
+												isChecked={selectedFilters[
 													filterRow.urlKey as FilterIdentifier
 												].values.includes(subItem.value)}
-											/>
-											<label htmlFor={subItem.title}>
-												{subItem.subtitle ? (
-													<div>
-														<span className="font-bold">
-															{subItem.title} {"> "}
-														</span>
-														<span>{subItem.subtitle}</span>
-													</div>
-												) : (
-													<span className="">{subItem.title}</span>
-												)}
-											</label>
+												onChange={() => toggleFilterOption(filterRow, subItem)}
+											></Checkbox>
 										</div>
 									))}
 							</div>
