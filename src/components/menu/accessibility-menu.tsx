@@ -25,7 +25,7 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 				</div>
 
 				<div className="flex flex-row gap-2 items-center ">
-					<EasyLanguageIcon />
+					<EasyLanguageIcon customId="accessibility-menu" />
 					<a
 						href="https://www.berlin.de/sen/soziales/leichte-sprache/"
 						className="text-blue-600 hover:underline"
