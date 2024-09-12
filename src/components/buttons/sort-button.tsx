@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
 
 const FilterButton: React.FC = () => {
-	const updateSearchParam = useUpdateSearchParam();
+	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const sortAscending = (searchParams.get("sort") ?? "asc") === "asc";
 	return (
