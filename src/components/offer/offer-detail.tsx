@@ -4,6 +4,7 @@ import { useFavoritesStore } from "../../store/favorites-store";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import LikeIcon from "../icons/like-icon";
 import { Pill } from "./pill";
+import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 
 interface OfferDetailProps {
 	offer: Offer;
@@ -30,18 +31,21 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				window.location.href = offer.path;
 			}}
 		>
-			<div className="flex flex-row py-4 mx-4 lg:mx-0 gap-2">
-				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
-				<div className="hidden">
+			<div className="flex flex-row py-4 mx-4 lg:mx-0 gap-4">
+				<div
+					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
+					// TODO: remove this and use the actual images as soon as they are available
+					className={`min-w-[140px] ${allowedOfferPathsWithImagesAllowed.includes(offer.path) ? "hidden md:block" : "hidden"}`}
+				>
 					<img
 						src="/images/placeholder.jpg"
 						alt="Offer image"
-						className="w-20 h-20 object-cover"
+						className="w-[140px] h-[140px] object-cover"
 					/>
-					<span className="text-xs">Bildcopyright</span>
+					<span className="text-xs">© Bildcopyright</span>
 				</div>
 
-				<div className="w-[90%] max-w-[90%] flex flex-col gap-4 px-2">
+				<div className="w-full flex flex-col gap-4 px-2">
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
 					</div>
@@ -60,7 +64,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 						</a>
 					</div>
 				</div>
-				<div className="max-w-[10%] w-full flex justify-center">
+				<div className="min-w-[43px] flex justify-center">
 					<button
 						onClick={(e) => {
 							e.stopPropagation();
