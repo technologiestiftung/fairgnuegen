@@ -18,6 +18,13 @@ export type CategoryMap = {
 };
 
 export const categoryMap: CategoryMap = {
+	all: {
+		color: "bg-primary-blue",
+		name: "Alle Angebote",
+		image: "",
+		description: "",
+		isRenderedInCategoryCards: false,
+	},
 	kultur: {
 		color: "bg-culture",
 		name: "Kultur",
@@ -47,13 +54,6 @@ export const categoryMap: CategoryMap = {
 		description:
 			"Angebote fürs Kino, Restaurants, Bars und Aktivitäten an der freien Luft",
 		isRenderedInCategoryCards: true,
-	},
-	all: {
-		color: "bg-primary-blue",
-		name: "Alle Angebote",
-		image: "",
-		description: "",
-		isRenderedInCategoryCards: false,
 	},
 };
 
