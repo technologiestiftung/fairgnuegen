@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { categoryMap } from "../../content/categories";
 import { DrawerLeft } from "../drawer/drawer-left";
 import { ChevronDown } from "../icons/chevron-down";
@@ -6,6 +6,11 @@ import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
 import FilterIcon from "../icons/filter-icon";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
+import { useCategories } from "../../hooks/use-categories";
+import { useDistricts } from "../../hooks/use-districts";
+import { useTargetAudiences } from "../../hooks/use-target-audiences";
+import { districtsMap } from "../../content/districts";
+import { targetAudiencesMap } from "../../content/target-audiences";
 
 interface FilterRowOption {
 	title: string;
@@ -33,21 +38,40 @@ const FilterButton: React.FC = () => {
 	const { updateManySearchParams } = useUpdateSearchParam();
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 	const [isOpen, setIsOpen] = React.useState(false);
+
+	const { categories } = useCategories();
+	const { districts } = useDistricts();
+	const { targetAudiences } = useTargetAudiences();
+
 	const [selectedFilters, setSelectedFilters] = useState<FilterMap>({
 		target_audience: { values: [] },
-		category: { values: [] },
+		category: { values: categories },
 		district: { values: [] },
 	} as FilterMap);
+
+	useEffect(() => {
+		setSelectedFilters({
+			["category"]: {
+				values: categories,
+			},
+			["district"]: {
+				values: districts,
+			},
+			["target_audience"]: {
+				values: targetAudiences,
+			},
+		});
+	}, [categories, districts, targetAudiences, setSelectedFilters]);
 
 	const filterRows: FilterRow[] = [
 		{
 			title: "Für wen ist das Angebot?",
-			options: [
-				{ title: "Kinder & Jugendliche", value: "children" },
-				{ title: "Erwachsene", value: "adults" },
-				{ title: "Familien", value: "family" },
-				{ title: "Senior:innen", value: "senior" },
-			],
+			options: Object.entries(targetAudiencesMap).map(
+				([key, targetAudience]) => ({
+					title: targetAudience,
+					value: key,
+				}),
+			),
 			urlKey: "target_audience",
 		},
 		{
@@ -63,26 +87,10 @@ const FilterButton: React.FC = () => {
 		},
 		{
 			title: "Wo suchst du Angebote?",
-			options: [
-				{
-					title: "Charlottenburg-Wilmersdorf",
-					value: "charlottenburg-wilmersdorf",
-				},
-				{
-					title: "Friedrichshain-Kreuzberg",
-					value: "friedrichshain-kreuzberg",
-				},
-				{ title: "Lichtenberg", value: "lichtenberg" },
-				{ title: "Marzahn-Hellersdorf", value: "marzahn-hellersdorf" },
-				{ title: "Mitte", value: "mitte" },
-				{ title: "Neukölln", value: "neukölln" },
-				{ title: "Pankow", value: "pankow" },
-				{ title: "Reinickendorf", value: "reinickendorf" },
-				{ title: "Spandau", value: "spandau" },
-				{ title: "Steglitz-Zehlendorf", value: "steglitz-zehlendorf" },
-				{ title: "Tempelhof-Schöneberg", value: "tempelhof-schöneberg" },
-				{ title: "Treptow-Köpenick", value: "treptow-köpenick" },
-			],
+			options: Object.entries(districtsMap).map(([key, district]) => ({
+				title: district,
+				value: key,
+			})),
 			urlKey: "district",
 		},
 	];
@@ -96,6 +104,26 @@ const FilterButton: React.FC = () => {
 				};
 			}),
 		);
+	};
+
+	const toggleFilterOption = (
+		filterRow: FilterRow,
+		filterRowOption: FilterRowOption,
+	) => {
+		setSelectedFilters({
+			...selectedFilters,
+			[filterRow.urlKey]: {
+				values: selectedFilters[
+					filterRow.urlKey as FilterIdentifier
+				].values.includes(filterRowOption.value)
+					? selectedFilters[filterRow.urlKey as FilterIdentifier].values.filter(
+							(v) => v !== filterRowOption.value,
+						)
+					: selectedFilters[filterRow.urlKey as FilterIdentifier].values.concat(
+							[filterRowOption.value],
+						),
+			},
+		});
 	};
 
 	return (
@@ -168,20 +196,7 @@ const FilterButton: React.FC = () => {
 													name={subItem.value}
 													value={subItem.value}
 													onChange={() => {
-														setSelectedFilters({
-															...selectedFilters,
-															[filterRow.urlKey]: {
-																values: selectedFilters[
-																	filterRow.urlKey as FilterIdentifier
-																].values.includes(subItem.value)
-																	? selectedFilters[
-																			filterRow.urlKey as FilterIdentifier
-																		].values.filter((v) => v !== subItem.value)
-																	: selectedFilters[
-																			filterRow.urlKey as FilterIdentifier
-																		].values.concat([subItem.value]),
-															},
-														});
+														toggleFilterOption(filterRow, subItem);
 													}}
 													checked={selectedFilters[
 														filterRow.urlKey as FilterIdentifier
