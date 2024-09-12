@@ -195,7 +195,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 									)}
 								</div>
 							</div>
-							<div className="pb-6">
+							<div>
 								{selectedCategories.includes(filterRow.title) &&
 									filterRow.options.map((subItem) => (
 										<div
@@ -228,7 +228,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 						</div>
 					))}
 				</div>
-				<div className="w-full flex flex-col gap-8 md:gap-2 justify-end px-4 items-end md:flex-row md:justify-between md:items-center pb-8">
+				<div className="w-full flex flex-col gap-8 md:gap-2 justify-end px-4 items-end md:flex-row md:justify-between md:items-center py-8">
 					<ResetFilterButton onClick={onResetFilters}></ResetFilterButton>
 					<ShowFilteredButton onClick={onSubmitFilters}></ShowFilteredButton>
 				</div>
