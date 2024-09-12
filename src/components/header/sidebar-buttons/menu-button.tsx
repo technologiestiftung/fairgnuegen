@@ -113,9 +113,8 @@ export function MenuButton() {
 								{link.title}
 							</a>
 						) : (
-							<>
+							<div key={link.title}>
 								<div
-									key={link.title}
 									className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 px-6 border-b`}
 									onClick={() => {
 										if (link.subItems.length === 0) {
@@ -157,7 +156,7 @@ export function MenuButton() {
 											{subItem.title}
 										</div>
 									))}
-							</>
+							</div>
 						),
 					)}
 				</div>

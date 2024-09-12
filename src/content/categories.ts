@@ -70,5 +70,12 @@ export function getCategory(value: string | null): CategoryIdentifier {
 }
 
 function isValidCategory(value: string | null): value is CategoryIdentifier {
-	return Object.keys(categoryMap).includes(value ?? "");
+	if (value) {
+		const parsed = value.split(",");
+		if (parsed.length > 1) {
+			return Object.keys(categoryMap).includes(value ?? "");
+		}
+		return Object.keys(categoryMap).includes(value ?? "");
+	}
+	return false;
 }

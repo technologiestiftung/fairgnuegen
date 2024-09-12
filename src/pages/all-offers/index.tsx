@@ -7,30 +7,36 @@ import OfferDetail from "../../components/offer/offer-detail";
 import SearchBar from "../../components/search-bar/search-bar";
 import { Layout } from "../../layout/layout";
 import { useFilteredAndSortedOffers } from "../../hooks/use-filtered-and-sorted-offers";
-import { useCategory } from "../../hooks/use-category";
 import { CategoryCard } from "../../components/categories/category-card";
 import { categoryMap } from "../../content/categories";
 import { InfoBox } from "../../components/info-box/info-box";
+import { useCategories } from "../../hooks/use-categories";
+import { useDistricts } from "../../hooks/use-districts";
+import { useTargetAudiences } from "../../hooks/use-target-audiences";
 
 export default function Index() {
-	const { category, categoryDetails } = useCategory();
+	const { category, categoryDetail } = useCategories();
+	const { categories, categoriesDetails } = useCategories();
+	const { districts, districtValues } = useDistricts();
+	const { targetAudiences, targetAudienceValues } = useTargetAudiences();
+
 	const { filteredAndSortedOffers, search, isLoading } =
 		useFilteredAndSortedOffers();
 
 	return (
 		<Layout>
 			<div className={isLoading ? "invisible" : "visible"}>
-				{category !== "all" && (
+				{categoryDetail && (
 					<img
-						src={categoryDetails.image}
-						alt={categoryDetails.name}
+						src={categoryDetail.image}
+						alt={categoryDetail.name}
 						className="hidden sm:block w-full h-[300px] object-cover"
 					/>
 				)}
 				<div
-					className={`w-full ${categoryDetails.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
+					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
-					{category !== "all" ? categoryDetails.name : "Alle Angebote"}
+					{categoryDetail ? categoryDetail.name : "Alle Angebote"}
 				</div>
 
 				<div className="max-w-3xl mx-auto flex flex-col">
@@ -44,16 +50,22 @@ export default function Index() {
 							<FilterButton></FilterButton>
 						</div>
 						<div className="flex flex-row items-center gap-2 py-3">
-							<RocketIcon></RocketIcon>
+							<div className="min-w-6">
+								<RocketIcon></RocketIcon>
+							</div>
 							<p className="text-md text-primary-blue">
 								{filteredAndSortedOffers.length} Angebote gefunden
 								{search !== null && search !== "" && ` für "${search}"`}
-								{category !== "all" && ` in "${categoryMap[category].name}"`}
+								{categories.length > 0 &&
+									` in "${categoriesDetails.map((c) => c.name).join(", ")}"`}
+								{districts.length > 0 && ` in "${districtValues.join(", ")}"`}
+								{targetAudiences.length > 0 &&
+									` für "${targetAudienceValues.map((t) => t.label).join(", ")}"`}
 							</p>
 						</div>
 					</div>
 					<div className="w-full border-b border-separator mb-5"></div>
-					<div className="flex flex-col gap-8 pt-4 mb-5">
+					<div className="flex flex-col pt-4 mb-5">
 						{filteredAndSortedOffers.map((offer, idx) => (
 							<OfferDetail
 								offer={offer}

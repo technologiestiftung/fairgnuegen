@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { offers } from "../content/content";
-import { categoryMap, getCategory } from "../content/categories";
 import { useSearchParams } from "react-router-dom";
+import { offers } from "../content/content";
+import { useCategories } from "./use-categories";
+import { useDistricts } from "./use-districts";
+import { useTargetAudiences } from "./use-target-audiences";
 
 export function useFilteredAndSortedOffers() {
 	/**
@@ -12,10 +14,13 @@ export function useFilteredAndSortedOffers() {
 
 	const [searchParams] = useSearchParams();
 
-	const category = getCategory(searchParams.get("category"));
 	const search = searchParams.get("search");
 	const showFreeOffersOnly = searchParams.get("free") === "true";
 	const sortAscending = (searchParams.get("sort") ?? "asc") === "asc";
+
+	const { category, categories, categoriesDetails } = useCategories();
+	const { districts, districtValues } = useDistricts();
+	const { targetAudiences, targetAudienceValues } = useTargetAudiences();
 
 	const [filteredAndSortedOffers, setFilteredAndSortedOffers] =
 		useState(offers);
@@ -26,13 +31,24 @@ export function useFilteredAndSortedOffers() {
 		const filtered = offers
 			.filter(
 				(o) =>
-					category === "all" || o.category.includes(categoryMap[category].name),
+					categories.length === 0 ||
+					categoriesDetails.map((c) => c.name).includes(o.category),
 			)
 			.filter(
 				(o) =>
 					!search || o.provider.toLowerCase().includes(search.toLowerCase()),
 			)
-			.filter((o) => !showFreeOffersOnly || o.isFree);
+			.filter((o) => !showFreeOffersOnly || o.isFree)
+			.filter(
+				(o) => districts.length === 0 || districtValues.includes(o.district),
+			)
+			.filter(
+				(o) =>
+					targetAudiences.length === 0 ||
+					targetAudienceValues
+						.map((t) => t.valueInData)
+						.some((item) => o.targetGroups.includes(item)),
+			);
 
 		const filteredAndSorted = filtered.sort((a, b) => {
 			if (sortAscending) {
@@ -42,7 +58,15 @@ export function useFilteredAndSortedOffers() {
 		});
 
 		setFilteredAndSortedOffers(filteredAndSorted);
-	}, [category, search, showFreeOffersOnly, sortAscending]);
+	}, [
+		category,
+		search,
+		showFreeOffersOnly,
+		sortAscending,
+		districts,
+		targetAudiences,
+		categories,
+	]);
 
 	return { filteredAndSortedOffers, search, isLoading };
 }

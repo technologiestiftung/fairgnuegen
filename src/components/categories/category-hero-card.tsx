@@ -29,7 +29,7 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 				<div>{category.description}</div>
 				<div className="text-primary-blue text-left flex flex-row items-center justify-start gap-2 hover:underline">
 					<div>entdecken</div>
-					<ArrowRightIcon></ArrowRightIcon>
+					<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 				</div>
 			</div>
 		</a>

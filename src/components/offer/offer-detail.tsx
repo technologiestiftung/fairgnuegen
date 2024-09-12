@@ -56,7 +56,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<div className="flex flex-row w-full justify-end text-primary-blue">
 						<a className="flex flex-row gap-2 items-center" href={offer.path}>
 							<div>mehr Infos</div>
-							<ArrowRightIcon></ArrowRightIcon>
+							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 						</a>
 					</div>
 				</div>

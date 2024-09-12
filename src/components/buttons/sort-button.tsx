@@ -4,12 +4,12 @@ import { useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
 
 const FilterButton: React.FC = () => {
-	const updateSearchParam = useUpdateSearchParam();
+	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const sortAscending = (searchParams.get("sort") ?? "asc") === "asc";
 	return (
 		<button
-			className="px-3 py-1 border-black border opacity-100 hover:opacity-50 flex justify-center items-center text-primary-blue"
+			className="px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black h-[43px]"
 			onClick={() => {
 				updateSearchParam(
 					"sort",

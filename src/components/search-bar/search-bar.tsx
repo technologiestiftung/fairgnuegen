@@ -10,7 +10,7 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
-	const updateSearchParam = useUpdateSearchParam();
+	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const [search, setSearch] = useState(searchParams.get("search") ?? "");
 	const [hasFocus, setHasFocus] = useState(false);

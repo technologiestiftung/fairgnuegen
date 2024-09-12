@@ -31,7 +31,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 				<div className="text-xl font-bold">{category.name}</div>
 				<div className="text-primary-blue text-left flex flex-row items-center justify-start gap-2 hover:underline">
 					<div>Angebote entdecken</div>
-					<ArrowRightIcon></ArrowRightIcon>
+					<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 				</div>
 			</div>
 		</a>
