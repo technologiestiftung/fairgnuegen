@@ -44,43 +44,43 @@ export function MenuButton() {
 			title: "Zur Senatsverwaltung",
 			subItems: [],
 			isExternalLink: true,
-			link: "",
+			link: "https://www.berlin.de/sen/asgiva/",
 		},
 		{
 			title: "Presse",
 			subItems: [],
 			isExternalLink: true,
-			link: "",
+			link: "https://www.berlin.de/sen/asgiva/presse/",
 		},
 		{
 			title: "Kontakt",
 			subItems: [],
 			isExternalLink: true,
-			link: "",
+			link: "https://www.berlin.de/sen/asgiva/ueber-uns/formular.541467.php",
 		},
 		{
 			title: "Leitung",
 			subItems: [],
 			isExternalLink: true,
-			link: "",
+			link: "https://www.berlin.de/sen/asgiva/ueber-uns/leitung/",
 		},
 		{
 			title: "Hier twittert die Senatsverwaltung",
 			subItems: [],
 			isExternalLink: true,
-			link: "",
+			link: "https://twitter.com/SenIAS_Berlin",
 		},
 		{
 			title: "Hier stellt die Senatsverwaltung ihre Videos ein",
 			subItems: [],
 			isExternalLink: true,
-			link: "",
+			link: "https://www.youtube.com/c/SenIASBerlin",
 		},
 		{
 			title: "Hier postet die Senatsverwaltung",
 			subItems: [],
 			isExternalLink: true,
-			link: "",
+			link: "https://www.instagram.com/SenIAS_berlin",
 		},
 	];
 
@@ -109,6 +109,8 @@ export function MenuButton() {
 								key={link.title}
 								href={link.link}
 								className="text-link-blue hover:underline py-4 px-6 border-b"
+								target="_blank"
+								rel="noreferrer"
 							>
 								{link.title}
 							</a>
