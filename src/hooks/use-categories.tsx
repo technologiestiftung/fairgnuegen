@@ -13,7 +13,9 @@ export function useCategories() {
 	}, [searchParams]);
 
 	return {
+		category: categories.length === 1 ? categories[0] : null,
+		categoryDetail: categories.length === 1 ? categoryMap[categories[0]] : null,
 		categories,
-		categoryDetails: categories.map((category) => categoryMap[category]),
+		categoriesDetails: categories.map((category) => categoryMap[category]),
 	};
 }

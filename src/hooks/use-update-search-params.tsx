@@ -20,6 +20,7 @@ const useUpdateSearchParam = () => {
 			newParams.set(key, value);
 		});
 		setSearchParams(newParams);
+		return newParams.toString();
 	};
 
 	return { updateSearchParam, updateManySearchParams };

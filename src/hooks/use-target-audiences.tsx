@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { TargetAudienceIdentifier } from "../components/buttons/filter-button";
+import {
+	TargetAudienceIdentifier,
+	targetAudiencesMap,
+} from "../content/target-audiences";
 
 export function useTargetAudiences() {
 	const [searchParams] = useSearchParams();
@@ -18,5 +21,6 @@ export function useTargetAudiences() {
 
 	return {
 		targetAudiences,
+		targetAudienceValues: targetAudiences.map((d) => targetAudiencesMap[d]),
 	};
 }

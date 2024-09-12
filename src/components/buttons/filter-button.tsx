@@ -11,6 +11,9 @@ import { useDistricts } from "../../hooks/use-districts";
 import { useTargetAudiences } from "../../hooks/use-target-audiences";
 import { districtsMap } from "../../content/districts";
 import { targetAudiencesMap } from "../../content/target-audiences";
+import ShowFilteredButton from "./show-filtered-button";
+import ShowAllButton from "./show-all-button";
+import ResetFilterButton from "./reset-filter-button";
 
 interface FilterRowOption {
 	title: string;
@@ -68,7 +71,7 @@ const FilterButton: React.FC = () => {
 			title: "Für wen ist das Angebot?",
 			options: Object.entries(targetAudiencesMap).map(
 				([key, targetAudience]) => ({
-					title: targetAudience,
+					title: targetAudience.label,
 					value: key,
 				}),
 			),
@@ -95,8 +98,24 @@ const FilterButton: React.FC = () => {
 		},
 	];
 
+	const onResetFilters = () => {
+		const searchParams = updateManySearchParams(
+			Object.entries(selectedFilters).map(([key]) => {
+				return {
+					key,
+					value: "",
+				};
+			}),
+		);
+		if (window.location.pathname !== "/all-offers/") {
+			window.location.href = "/all-offers/?" + searchParams;
+			return;
+		}
+		setIsOpen(false);
+	};
+
 	const onSubmitFilters = () => {
-		updateManySearchParams(
+		const searchParams = updateManySearchParams(
 			Object.entries(selectedFilters).map(([key, value]) => {
 				return {
 					key,
@@ -104,6 +123,11 @@ const FilterButton: React.FC = () => {
 				};
 			}),
 		);
+		if (window.location.pathname !== "/all-offers/") {
+			window.location.href = "/all-offers/?" + searchParams;
+			return;
+		}
+		setIsOpen(false);
 	};
 
 	const toggleFilterOption = (
@@ -220,7 +244,10 @@ const FilterButton: React.FC = () => {
 							</div>
 						))}
 					</div>
-					<button onClick={onSubmitFilters}>Zeigen</button>
+					<div className="px-6 py-4 flex flex-row justify-between items-center">
+						<ResetFilterButton onClick={onResetFilters}></ResetFilterButton>
+						<ShowFilteredButton onClick={onSubmitFilters}></ShowFilteredButton>
+					</div>
 				</div>
 			</DrawerLeft>
 		</div>

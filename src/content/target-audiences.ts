@@ -4,13 +4,18 @@ export type TargetAudienceIdentifier =
 	| "family"
 	| "senior";
 
+export type TargetAudienceDetail = {
+	label: string;
+	valueInData: string;
+};
+
 export type TargetAudienceMap = {
-	[K in TargetAudienceIdentifier]: string;
+	[K in TargetAudienceIdentifier]: TargetAudienceDetail;
 };
 
 export const targetAudiencesMap: TargetAudienceMap = {
-	children: "Kinder und Jugendliche",
-	adults: "Erwachsene",
-	family: "Familie",
-	senior: "Senioren",
+	children: { label: "Kinder und Jugendliche", valueInData: "Kinder" },
+	adults: { label: "Erwachsene", valueInData: "Erwachsene" },
+	family: { label: "Familie", valueInData: "Familie" },
+	senior: { label: "Senior:innen", valueInData: "Senioren" },
 };

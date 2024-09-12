@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { DistrictIdentifier } from "../components/buttons/filter-button";
+import { DistrictIdentifier, districtsMap } from "../content/districts";
 
 export function useDistricts() {
 	const [searchParams] = useSearchParams();
@@ -14,5 +14,6 @@ export function useDistricts() {
 
 	return {
 		districts,
+		districtValues: districts.map((d) => districtsMap[d]),
 	};
 }
