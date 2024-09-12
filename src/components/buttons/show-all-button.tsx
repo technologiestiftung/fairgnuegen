@@ -4,7 +4,7 @@ import ArrowRightIcon from "../icons/arrow-right-icon";
 const ShowAllButton: React.FC = () => {
 	return (
 		<button
-			className="h-10 border-black border opacity-100 flex justify-center items-center w-[250px]"
+			className="h-[43px] border-black border-2 opacity-100 flex justify-center items-center w-[250px]"
 			onClick={() => {
 				window.location.href = "/all-offers/";
 			}}
@@ -13,7 +13,7 @@ const ShowAllButton: React.FC = () => {
 				<div className="w-[80%] flex flex-row items-center justify-center">
 					Alle Angebote zeigen
 				</div>
-				<div className="h-full bg-primary-red w-[50px] flex flex-row items-center justify-center">
+				<div className="h-full bg-primary-red w-[43px] flex flex-row items-center justify-center border-l-black border-l-2">
 					<ArrowRightIcon color="text-white"></ArrowRightIcon>
 				</div>
 			</div>
