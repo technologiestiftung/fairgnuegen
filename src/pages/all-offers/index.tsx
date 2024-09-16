@@ -13,6 +13,7 @@ import { InfoBox } from "../../components/info-box/info-box";
 import { useCategories } from "../../hooks/use-categories";
 import { useDistricts } from "../../hooks/use-districts";
 import { useTargetAudiences } from "../../hooks/use-target-audiences";
+import { ResponsivePicture } from "../../components/responsive-picture/responsive-picture";
 
 export default function Index() {
 	const { category, categoryDetail } = useCategories();
@@ -27,9 +28,10 @@ export default function Index() {
 		<Layout>
 			<div className={isLoading ? "invisible" : "visible"}>
 				{categoryDetail && (
-					<img
+					<ResponsivePicture
 						src={categoryDetail.image}
 						alt={categoryDetail.name}
+						loading={"eager"}
 						className="hidden sm:block w-full h-[300px] object-cover"
 					/>
 				)}

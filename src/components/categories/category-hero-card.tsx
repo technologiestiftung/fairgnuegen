@@ -1,6 +1,7 @@
 import React from "react";
 import ArrowRightIcon from "../../components/icons/arrow-right-icon";
 import { CategoryDetails } from "../../content/categories";
+import { ResponsivePicture } from "../responsive-picture/responsive-picture.tsx";
 
 interface CategoryHeroCardProps {
 	identifier: string;
@@ -18,9 +19,10 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 		>
 			<div className={`${category.color} h-full w-[5%]`}></div>
 			<div className="w-[45%]">
-				<img
+				<ResponsivePicture
 					src={category.image}
 					alt={category.name}
+					loading={"lazy"}
 					className="object-cover h-full w-full"
 				/>
 			</div>
