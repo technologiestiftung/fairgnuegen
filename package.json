@@ -26,6 +26,7 @@
 		"@technologiestiftung/eslint-config": "0.2.0",
 		"@technologiestiftung/eslint-plugin": "0.1.1",
 		"@technologiestiftung/prettier-config": "1.0.0",
+		"@types/geojson": "7946.0.14",
 		"@types/node": "22.5.4",
 		"@types/react": "18.3.5",
 		"@types/react-dom": "18.3.0",

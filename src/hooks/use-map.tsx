@@ -5,7 +5,7 @@ import { useFilteredAndSortedOffers } from "./use-filtered-and-sorted-offers";
 
 export function useMap() {
 	const [isMapLoading, setIsMapLoading] = useState(true);
-	const { geojson } = useFilteredAndSortedOffers();
+	const { filteredAndSortedOffersAsGeojson } = useFilteredAndSortedOffers();
 	const mapRef = useRef<maplibregl.Map | null>(null);
 
 	useEffect(() => {
@@ -37,8 +37,7 @@ export function useMap() {
 
 			initMap.addSource("markers", {
 				type: "geojson",
-				// @ts-expect-error geojson is not null
-				data: geojson,
+				data: filteredAndSortedOffersAsGeojson,
 				cluster: false,
 			});
 
