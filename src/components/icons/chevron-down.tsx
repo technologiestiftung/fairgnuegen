@@ -1,18 +1,18 @@
 export function ChevronDown({ className }: { className?: string }) {
 	return (
 		<svg
-			width="16"
+			width="19"
 			height="11"
-			viewBox="0 0 16 11"
+			viewBox="0 0 19 11"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			className={className}
 		>
 			<path
-				d="M2 2L8 8L14 2"
-				stroke="currentColor"
+				id="Rectangle 128"
+				d="M1.5 1.12916L9.5 8.87109L17.5 1.12916"
+				stroke="black"
 				strokeWidth="3"
-				strokeLinecap="round"
 			/>
 		</svg>
 	);

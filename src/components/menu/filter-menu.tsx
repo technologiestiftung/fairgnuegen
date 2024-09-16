@@ -8,13 +8,14 @@ import { useCategories } from "../../hooks/use-categories";
 import { useDistricts } from "../../hooks/use-districts";
 import { useTargetAudiences } from "../../hooks/use-target-audiences";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
-import { DrawerLeft } from "../drawer/drawer-left";
-import { ChevronDown } from "../icons/chevron-down";
-import { ChevronUp } from "../icons/chevron-up";
-import CloseIcon from "../icons/close-icon";
 import ResetFilterButton from "../buttons/reset-filter-button";
 import ShowFilteredButton from "../buttons/show-filtered-button";
 import Checkbox from "../checkbox/checkbox";
+import FreeOffersCheckbox from "../checkbox/free-offers-checkbox";
+import { Drawer } from "../drawer/drawer";
+import { ChevronDown } from "../icons/chevron-down";
+import { ChevronUp } from "../icons/chevron-up";
+import CloseIcon from "../icons/close-icon";
 
 interface FilterRowOption {
 	title: string;
@@ -83,7 +84,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			urlKey: "target_audience",
 		},
 		{
-			title: "Welche Kategorien interessieren dich?",
+			title: "Was interessiert dich?",
 			options: Object.entries(categoryMap)
 				.filter((c) => c[1].isRenderedInCategoryCards)
 				.map(([key, category]) => ({
@@ -113,7 +114,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			}),
 		);
 		if (window.location.pathname !== "/all-offers/") {
-			window.location.href = "/all-offers/?" + searchParams;
+			window.location.href = "/all-offers/?free=false" + searchParams;
 			return;
 		}
 		close();
@@ -139,7 +140,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 		filterRow: FilterRow,
 		filterRowOption: FilterRowOption,
 	) => {
-		setSelectedFilters({
+		const newFilters = {
 			...selectedFilters,
 			[filterRow.urlKey]: {
 				values: selectedFilters[
@@ -152,10 +153,24 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 							[filterRowOption.value],
 						),
 			},
-		});
+		};
+		setSelectedFilters(newFilters);
+		applyFilters(newFilters);
 	};
+
+	const applyFilters = (newFilters: FilterMap) => {
+		updateManySearchParams(
+			Object.entries(newFilters).map(([key, value]) => {
+				return {
+					key,
+					value: value.values.join(","),
+				};
+			}),
+		);
+	};
+
 	return (
-		<DrawerLeft isOpen={isOpen} close={() => close()}>
+		<Drawer isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4 shadow-lg">
 					<p className="text-2xl font-bold">Filter</p>
@@ -167,6 +182,10 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 					Filtere Angebote nach Zielgruppe, Interesse und Bezirk.
 				</div>
 				<div className="py-4">
+					<div className="px-6 pb-2">
+						<FreeOffersCheckbox></FreeOffersCheckbox>
+					</div>
+
 					{filterRows.map((filterRow) => (
 						<div key={filterRow.title} className="">
 							<div
@@ -233,7 +252,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 					<ShowFilteredButton onClick={onSubmitFilters}></ShowFilteredButton>
 				</div>
 			</div>
-		</DrawerLeft>
+		</Drawer>
 	);
 };
 
