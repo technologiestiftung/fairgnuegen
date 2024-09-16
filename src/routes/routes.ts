@@ -16,4 +16,8 @@ export const routes: Route[] = [
 		path: "/favorites/",
 		page: "./pages/favorites/index.tsx",
 	},
+	{
+		path: "/map/",
+		page: "./pages/map/index.tsx",
+	},
 ];
