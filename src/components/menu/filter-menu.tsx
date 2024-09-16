@@ -15,6 +15,7 @@ import { Drawer } from "../drawer/drawer";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
+import FreeOffersCheckbox from "../checkbox/free-offers-checkbox";
 
 interface FilterRowOption {
 	title: string;
@@ -83,7 +84,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			urlKey: "target_audience",
 		},
 		{
-			title: "Welche Kategorien interessieren dich?",
+			title: "Was interessiert dich?",
 			options: Object.entries(categoryMap)
 				.filter((c) => c[1].isRenderedInCategoryCards)
 				.map(([key, category]) => ({
@@ -167,6 +168,10 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 					Filtere Angebote nach Zielgruppe, Interesse und Bezirk.
 				</div>
 				<div className="py-4">
+					<div className="px-6 pb-2">
+						<FreeOffersCheckbox></FreeOffersCheckbox>
+					</div>
+
 					{filterRows.map((filterRow) => (
 						<div key={filterRow.title} className="">
 							<div
