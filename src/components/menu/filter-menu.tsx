@@ -155,6 +155,18 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			},
 		});
 	};
+
+	useEffect(() => {
+		updateManySearchParams(
+			Object.entries(selectedFilters).map(([key, value]) => {
+				return {
+					key,
+					value: value.values.join(","),
+				};
+			}),
+		);
+	}, [selectedFilters]);
+
 	return (
 		<Drawer isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
