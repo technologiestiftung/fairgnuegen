@@ -10,7 +10,7 @@ const FilterButton: React.FC = () => {
 	const { categories } = useCategories();
 	const { districts } = useDistricts();
 	const { targetAudiences } = useTargetAudiences();
-	const { showFreeOffersOnly } = useFreeOffersOnly();
+	const { isShowingFreeOffersOnly } = useFreeOffersOnly();
 
 	const [isOpen, setIsOpen] = React.useState(false);
 
@@ -19,7 +19,7 @@ const FilterButton: React.FC = () => {
 			(categories.length === 0 ? 0 : 1) +
 			(districts.length === 0 ? 0 : 1) +
 			(targetAudiences.length === 0 ? 0 : 1) +
-			(showFreeOffersOnly ? 1 : 0)
+			(isShowingFreeOffersOnly ? 1 : 0)
 		);
 	}, [categories, districts, targetAudiences]);
 

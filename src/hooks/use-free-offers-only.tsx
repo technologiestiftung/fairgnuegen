@@ -4,9 +4,13 @@ import useUpdateSearchParam from "./use-update-search-params";
 export function useFreeOffersOnly() {
 	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
-	const showFreeOffersOnly = (searchParams.get("free") ?? "false") === "true";
-	const setShowFreeOffersOnly = (value: boolean) => {
-		updateSearchParam("free", value ? "true" : "false");
+	const isShowingFreeOffersOnly =
+		(searchParams.get("free") ?? "false") === "true";
+	const toggleIsShowingFreeOffersOnly = () => {
+		updateSearchParam("free", isShowingFreeOffersOnly ? "false" : "true");
 	};
-	return { showFreeOffersOnly, setShowFreeOffersOnly };
+	return {
+		isShowingFreeOffersOnly,
+		toggleIsShowingFreeOffersOnly,
+	};
 }
