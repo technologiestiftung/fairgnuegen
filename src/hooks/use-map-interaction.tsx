@@ -44,6 +44,12 @@ export function useMapInteraction(
 
 			const offer = JSON.parse(e.features[0].properties.offer);
 			setSelectedOffer(offer);
+
+			map.current.easeTo({
+				// @ts-expect-error coordinates is not null
+				center: e.features[0].geometry.coordinates,
+				zoom: 15,
+			});
 		});
 	}, []);
 
