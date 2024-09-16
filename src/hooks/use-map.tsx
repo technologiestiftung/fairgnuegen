@@ -2,6 +2,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
 import { useFilteredAndSortedOffers } from "./use-filtered-and-sorted-offers";
+import path from "path";
 
 export function useMap() {
 	const [isMapLoading, setIsMapLoading] = useState(true);
@@ -18,22 +19,17 @@ export function useMap() {
 		});
 
 		initMap.on("load", async () => {
-			const cultureMarkerData = await initMap.loadImage("/marker_culture.png");
-			initMap.addImage("culture_marker", cultureMarkerData.data);
-
-			const educationMarkerData = await initMap.loadImage(
-				"/marker_education.png",
-			);
-			initMap.addImage("education_marker", educationMarkerData.data);
-
-			const leisureMarkerData = await initMap.loadImage("/marker_leisure.png");
-			initMap.addImage("leisure_marker", leisureMarkerData.data);
-
-			const sportMarkerData = await initMap.loadImage("/marker_sport.png");
-			initMap.addImage("sport_marker", sportMarkerData.data);
-
-			const backupMarkerData = await initMap.loadImage("/marker_backup.png");
-			initMap.addImage("backup_marker", backupMarkerData.data);
+			const markers = [
+				{ path: "/marker_culture.png", name: "culture_marker" },
+				{ path: "/marker_education.png", name: "education_marker" },
+				{ path: "/marker_leisure.png", name: "leisure_marker" },
+				{ path: "/marker_sport.png", name: "sport_marker" },
+				{ path: "/marker_backup.png", name: "backup_marker" },
+			];
+			markers.forEach(async (marker) => {
+				const markerData = await initMap.loadImage(marker.path);
+				initMap.addImage(marker.name, markerData.data);
+			});
 
 			initMap.addSource("markers", {
 				type: "geojson",
