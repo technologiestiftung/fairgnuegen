@@ -1,33 +1,45 @@
 import { Breadcrumbs } from "./breadcumbs";
 import { LanguageSelect } from "./language-select";
 import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
+import { useIsHeaderLogoVisible } from "./hooks/use-is-header-logo-visible";
+
+const navLinks = [
+	{
+		href: "/",
+		label: "Startseite",
+	},
+	{
+		href: "/map/",
+		label: "Kartenansicht",
+	},
+	{
+		href: "/favorites/",
+		label: "Favoriten",
+	},
+];
 
 export function Header() {
-	const navLinks = [
-		{
-			href: "/",
-			label: "Startseite",
-		},
-		{
-			href: "/map/",
-			label: "Kartenansicht",
-		},
-		{
-			href: "/favorites/",
-			label: "Favoriten",
-		},
-	];
+	const isHeaderLogoVisible = useIsHeaderLogoVisible();
 
 	return (
-		<header className="sticky top-0 z-[20] bg-white text-xl leading-[122.2%] tracking-[0.3px]">
-			<div className="py-1.5 px-7 border-b">
-				<a href="https://www.berlin.de">
-					<img
-						title="Zur Startseite"
-						src="/images/logo_berlin_m_srgb.svg"
-						alt="Link zu www.berlin.de"
-					/>
-				</a>
+		<header
+			className={`${!isHeaderLogoVisible ? "sticky" : ""} top-0 z-[20] bg-white text-xl leading-[122.2%] tracking-[0.3px]`}
+		>
+			<div
+				className={`${isHeaderLogoVisible ? "h-11 border-b py-[0.25em]" : "h-1 bg-berlin-grey-dark"}  px-6 motion-safe:transition-[height, background-color] duration-200 ease-in-out `}
+			>
+				<div
+					className={`${isHeaderLogoVisible ? "opacity-1" : "opacity-0"} motion-safe:transition-opacity duration-100 ease-in-out`}
+				>
+					<a href="https://www.berlin.de">
+						<img
+							title="Zur Startseite"
+							src="/images/logo_berlin_m_srgb.svg"
+							alt="Link zu www.berlin.de"
+							className="w-[100px]"
+						/>
+					</a>
+				</div>
 			</div>
 
 			<div className="flex justify-between items-center">
