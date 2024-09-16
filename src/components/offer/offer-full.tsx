@@ -6,6 +6,7 @@ import LikeIcon from "../icons/like-icon";
 import LinkIcon from "../icons/link-icon";
 import { Pill } from "./pill";
 import RouteButton from "../buttons/route-button";
+import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 
 interface OfferFullProps {
 	offer: Offer;
@@ -24,17 +25,19 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				<LikeIcon isSelected={false} />
 				<ShareButton offer={offer} />
 			</div>
-			<div className="flex flex-row pb-2 slg0 gap-2">
-				{/* This acts as a placeholder for when we want to introduce images. We hide it for now. */}
-				<div className="hidden">
+			<div className="flex flex-row pb-2 slg0 gap-4">
+				<div
+					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
+					// TODO: remove this and use the actual images as soon as they are available
+					className={`min-w-[140px] ${allowedOfferPathsWithImagesAllowed.includes(offer.path) ? "hidden md:block" : "hidden"}`}
+				>
 					<img
-						src="/placeholder-image.jpg"
+						src="/images/placeholder.jpg"
 						alt="Offer image"
-						className="w-20 h-20 object-cover"
+						className="w-[140px] h-[140px] object-cover"
 					/>
-					<span className="text-xs">Bildcopyright</span>
+					<span className="text-xs">© Bildcopyright</span>
 				</div>
-
 				<div className="w-full sm:w-[80%] sm:max-w-[80%] flex flex-col gap-4 mx-4 lg:mx-0">
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-2xl">{offer.provider}</h1>
