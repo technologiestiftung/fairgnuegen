@@ -72,7 +72,10 @@ export function useFilteredAndSortedOffers() {
 		const features = filteredAndSortedOffers.map((offer) => {
 			return {
 				type: "Feature",
-				properties: {},
+				properties: {
+					title: offer.provider,
+					category: offer.category,
+				},
 				geometry: {
 					type: "Point",
 					coordinates: [offer.x, offer.y],

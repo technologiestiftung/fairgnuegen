@@ -18,74 +18,64 @@ export default function Index() {
 			zoom: 11,
 		});
 
-		initMap.on("load", () => {
-			// Add a new source from our GeoJSON data and
-			// set the 'cluster' option to true. GL-JS will
-			// add the point_count property to your source data.
+		initMap.on("load", async () => {
+			const cultureMarkerData = await initMap.loadImage("/marker_culture.png");
+			initMap.addImage("culture_marker", cultureMarkerData.data);
+
+			const educationMarkerData = await initMap.loadImage(
+				"/marker_education.png",
+			);
+			initMap.addImage("education_marker", educationMarkerData.data);
+
+			const leisureMarkerData = await initMap.loadImage("/marker_leisure.png");
+			initMap.addImage("leisure_marker", leisureMarkerData.data);
+
+			const sportMarkerData = await initMap.loadImage("/marker_sport.png");
+			initMap.addImage("sport_marker", sportMarkerData.data);
+
+			const backupMarkerData = await initMap.loadImage("/marker_backup.png");
+			initMap.addImage("backup_marker", backupMarkerData.data);
+
 			initMap.addSource("markers", {
 				type: "geojson",
-				// Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-				// from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
 				data: geojson,
-				cluster: true,
-				clusterMaxZoom: 14, // Max zoom to cluster points on
-				clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
-			});
-
-			initMap.addLayer({
-				id: "clusters",
-				type: "circle",
-				source: "markers",
-				filter: ["has", "point_count"],
-				paint: {
-					// Use step expressions (https://maplibre.org/maplibre-style-spec/#expressions-step)
-					// with three steps to implement three types of circles:
-					//   * Blue, 20px circles when point count is less than 100
-					//   * Yellow, 30px circles when point count is between 100 and 750
-					//   * Pink, 40px circles when point count is greater than or equal to 750
-					"circle-color": [
-						"step",
-						["get", "point_count"],
-						"#51bbd6",
-						100,
-						"#f1f075",
-						750,
-						"#f28cb1",
-					],
-					"circle-radius": [
-						"step",
-						["get", "point_count"],
-						20,
-						100,
-						30,
-						750,
-						40,
-					],
-				},
-			});
-
-			initMap.addLayer({
-				id: "cluster-count",
-				type: "symbol",
-				source: "markers",
-				filter: ["has", "point_count"],
-				layout: {
-					"text-field": "{point_count_abbreviated}",
-					"text-font": ["Noto Sans Regular"],
-					"text-size": 12,
-				},
+				cluster: false,
 			});
 
 			initMap.addLayer({
 				id: "unclustered-point",
-				type: "circle",
+				type: "symbol",
 				source: "markers",
-				filter: ["!", ["has", "point_count"]],
-				paint: {
-					"circle-color": "#00ff00",
-					"circle-radius": 10,
-					"circle-stroke-width": 1,
-					"circle-stroke-color": "#ffffff",
+				layout: {
+					"icon-image": [
+						"match",
+						["get", "category"],
+						// Kultur
+						"Kultur",
+						"culture_marker",
+						//Sport
+						"Sport",
+						"sport_marker",
+						//Freizeit
+						"Freizeit",
+						"leisure_marker",
+						// Bildung & Beratung
+						"Bildung & Beratung",
+						"education_marker",
+						//Backup
+						"backup_marker",
+					],
+					"icon-size": [
+						"interpolate",
+						["linear"],
+						["zoom"],
+						0,
+						0.1, // At zoom level 0, the icon size is 0.1 (10% of its original size)
+						12,
+						0.5, // At zoom level 12, the icon size is 0.5 (50% of its original size)
+						22,
+						1, // At zoom level 22, the icon size is 1 (100% of its original size)
+					],
 				},
 			});
 
@@ -104,12 +94,6 @@ export default function Index() {
 				});
 			});
 
-			initMap.on("mouseenter", "clusters", () => {
-				initMap.getCanvas().style.cursor = "pointer";
-			});
-			initMap.on("mouseleave", "clusters", () => {
-				initMap.getCanvas().style.cursor = "";
-			});
 			initMap.on("mouseenter", "unclustered-point", () => {
 				initMap.getCanvas().style.cursor = "pointer";
 			});
