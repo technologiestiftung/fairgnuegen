@@ -140,7 +140,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 		filterRow: FilterRow,
 		filterRowOption: FilterRowOption,
 	) => {
-		setSelectedFilters({
+		const newFilters = {
 			...selectedFilters,
 			[filterRow.urlKey]: {
 				values: selectedFilters[
@@ -153,19 +153,21 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 							[filterRowOption.value],
 						),
 			},
-		});
+		};
+		setSelectedFilters(newFilters);
+		applyFilters(newFilters);
 	};
 
-	useEffect(() => {
+	const applyFilters = (newFilters: FilterMap) => {
 		updateManySearchParams(
-			Object.entries(selectedFilters).map(([key, value]) => {
+			Object.entries(newFilters).map(([key, value]) => {
 				return {
 					key,
 					value: value.values.join(","),
 				};
 			}),
 		);
-	}, [selectedFilters]);
+	};
 
 	return (
 		<Drawer isOpen={isOpen} close={() => close()}>
