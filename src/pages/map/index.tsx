@@ -38,6 +38,7 @@ export default function Index() {
 
 			initMap.addSource("markers", {
 				type: "geojson",
+				// @ts-expect-error geojson is not null
 				data: geojson,
 				cluster: false,
 			});
@@ -77,21 +78,6 @@ export default function Index() {
 						1, // At zoom level 22, the icon size is 1 (100% of its original size)
 					],
 				},
-			});
-
-			// inspect a cluster on click
-			initMap.on("click", "clusters", async (e) => {
-				const features = initMap.queryRenderedFeatures(e.point, {
-					layers: ["clusters"],
-				});
-				const clusterId = features[0].properties.cluster_id;
-				const zoom = await initMap
-					.getSource("markers")
-					.getClusterExpansionZoom(clusterId);
-				initMap.easeTo({
-					center: features[0].geometry.coordinates,
-					zoom,
-				});
 			});
 
 			initMap.on("mouseenter", "unclustered-point", () => {
