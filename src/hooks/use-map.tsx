@@ -6,7 +6,7 @@ import { useFilteredAndSortedOffers } from "./use-filtered-and-sorted-offers";
 export function useMap() {
 	const [isMapLoading, setIsMapLoading] = useState(true);
 	const { geojson } = useFilteredAndSortedOffers();
-	const map = useRef<maplibregl.Map | null>(null);
+	const mapRef = useRef<maplibregl.Map | null>(null);
 
 	useEffect(() => {
 		const initMap = new maplibregl.Map({
@@ -79,43 +79,14 @@ export function useMap() {
 				},
 			});
 
-			initMap.on("mouseenter", "unclustered-point", () => {
-				initMap.getCanvas().style.cursor = "pointer";
-			});
-			initMap.on("mouseleave", "unclustered-point", () => {
-				initMap.getCanvas().style.cursor = "";
-			});
-
-			initMap.on("click", "unclustered-point", (e) => {
-				if (!e.features) {
-					return;
-				}
-
-				//@ts-expect-error coordinates is not null
-				const coordinates = e.features[0].geometry.coordinates.slice();
-				const title = e.features[0].properties.title;
-
-				// Ensure that if the map is zoomed out such that
-				// multiple copies of the feature are visible, the
-				// popup appears over the copy being pointed to.
-				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-					coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-				}
-
-				new maplibregl.Popup({ closeButton: false })
-					.setLngLat(coordinates)
-					.setHTML(`${title}`)
-					.addTo(initMap);
-			});
-
 			setIsMapLoading(false);
 		});
 
-		map.current = initMap;
+		mapRef.current = initMap;
 	}, []);
 
 	return {
-		map,
+		mapRef,
 		isMapLoading,
 	};
 }
