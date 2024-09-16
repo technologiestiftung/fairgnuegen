@@ -2,7 +2,6 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
 import { useFilteredAndSortedOffers } from "./use-filtered-and-sorted-offers";
-import path from "path";
 
 export function useMap() {
 	const [isMapLoading, setIsMapLoading] = useState(true);
