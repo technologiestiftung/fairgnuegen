@@ -37,7 +37,7 @@ const upperFooterColumns = [
 			{
 				label: (
 					<>
-						<EasyLanguageIcon /> Leichte Sprache
+						<EasyLanguageIcon customId="footer" /> Leichte Sprache
 					</>
 				),
 				href: "/leichte-sprache",

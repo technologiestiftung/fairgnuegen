@@ -5,6 +5,7 @@ import ShareButton from "../buttons/share-button";
 import LikeIcon from "../icons/like-icon";
 import LinkIcon from "../icons/link-icon";
 import { Pill } from "./pill";
+import RouteButton from "../buttons/route-button";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 
 interface OfferFullProps {
@@ -91,7 +92,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				<p>{offer.offerInformation}</p>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
-			<div className="py-4 flex flex-col gap-2 mx-4 lg:mx-0">
+			<div className="py-8 flex flex-col gap-2 mx-4 lg:mx-0">
 				<h2 className="text-lg font-bold">Ort</h2>
 				<div>
 					<p>{offer.provider}</p>
@@ -100,6 +101,13 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						{offer.zip} {offer.city}
 					</p>
 				</div>
+				<RouteButton
+					onClick={() => {
+						// This should open Apple Maps on iOS and Google Maps on Android
+						// https://stackoverflow.com/questions/18739436/create-a-link-that-opens-the-appropriate-map-app-on-any-device-with-directions
+						window.location.href = `http://maps.apple.com/?ll=${offer.y},${offer.x}&q=${encodeURIComponent(offer.provider)}`;
+					}}
+				></RouteButton>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
 		</div>

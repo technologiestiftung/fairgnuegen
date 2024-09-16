@@ -2,6 +2,8 @@ import React from "react";
 
 import { Drawer } from "../drawer/drawer";
 import CloseIcon from "../icons/close-icon";
+import { EasyLanguageIcon } from "../icons/easy-language-icon";
+import { HandsIcon } from "../icons/hands-icon";
 
 interface AccessibilityMenuProps {
 	isOpen: boolean;
@@ -22,11 +24,37 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 					</button>
 				</div>
 
+				<div className="flex flex-row gap-2 items-center ">
+					<EasyLanguageIcon customId="accessibility-menu" />
+					<a
+						href="https://www.berlin.de/sen/soziales/leichte-sprache/"
+						className="text-blue-600 hover:underline"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Leichte Sprache
+					</a>
+				</div>
+
+				<div className="flex flex-row gap-2 items-center mb-4">
+					<HandsIcon />
+					<a
+						href="https://www.berlin.de/sen/soziales/gebaerdensprache/"
+						className="text-blue-600 hover:underline"
+						target="_blank"
+						rel="noreferrer"
+					>
+						DGS
+					</a>
+				</div>
+
 				<div>
 					<p className="font-bold">Wie barrierefrei ist diese Webseite?</p>
 					<a
 						href="https://www.berlin.de/wir-ueber-uns/8100503-4219174-erklaerung-zur-barrierefreiheit.html"
 						className="text-blue-600 hover:underline"
+						target="_blank"
+						rel="noreferrer"
 					>
 						Erklärung zur Barrierefreiheit
 					</a>
@@ -40,6 +68,8 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 					<a
 						className="text-link-blue hover:underline"
 						href="https://www.berlin.de/wir-ueber-uns/8100503-4219174-erklaerung-zur-barrierefreiheit.html#hansprechperson"
+						target="_blank"
+						rel="noreferrer"
 					>
 						Kontakt zur Ansprechperson
 					</a>
@@ -53,6 +83,8 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 					<a
 						className="text-link-blue hover:underline"
 						href="https://www.berlin.de/moderne-verwaltung/barrierefreie-it/anlaufstellen/kompetenzstelle/artikel.988002.php"
+						target="_blank"
+						rel="noreferrer"
 					>
 						Barrierefreie Informations- und Kommunikationstechnik (IKT)
 					</a>
