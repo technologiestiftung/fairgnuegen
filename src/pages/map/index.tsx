@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Layout } from "../../layout/layout";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -8,6 +8,7 @@ export default function Index() {
 	const { geojson } = useFilteredAndSortedOffers();
 	const mapRef = useRef<HTMLDivElement>(null);
 	const map = useRef<maplibregl.Map | null>(null);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const initMap = new maplibregl.Map({
@@ -108,6 +109,8 @@ export default function Index() {
 					.setHTML(`${title}`)
 					.addTo(initMap);
 			});
+
+			setIsLoading(false);
 		});
 
 		map.current = initMap;
@@ -115,7 +118,22 @@ export default function Index() {
 
 	return (
 		<Layout>
-			<div id="map" className="w-full h-[500px]" ref={mapRef}></div>
+			<div className="grid grid-cols-1 grid-rows-1">
+				<div
+					id="map"
+					className="row-start-1 col-start-1 w-full h-[500px]"
+					ref={mapRef}
+				/>
+				{isLoading && (
+					<div
+						id="map"
+						className="row-start-1 col-start-1 w-full h-full flex flex-row items-center justify-center "
+						ref={mapRef}
+					>
+						Kartenansicht wird geladen...
+					</div>
+				)}
+			</div>
 		</Layout>
 	);
 }
