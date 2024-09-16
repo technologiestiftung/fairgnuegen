@@ -73,8 +73,7 @@ export function useFilteredAndSortedOffers() {
 			return {
 				type: "Feature",
 				properties: {
-					title: offer.provider,
-					category: offer.category,
+					offer: offer,
 				},
 				geometry: {
 					type: "Point",

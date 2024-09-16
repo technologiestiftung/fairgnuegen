@@ -26,7 +26,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 
 	return (
 		<div
-			className="w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer"
+			className="w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white"
 			onClick={() => {
 				window.location.href = offer.path;
 			}}

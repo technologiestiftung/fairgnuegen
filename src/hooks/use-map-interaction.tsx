@@ -1,10 +1,12 @@
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { MutableRefObject, useEffect } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
 export function useMapInteraction(
 	map: MutableRefObject<maplibregl.Map | null>,
 ) {
+	const [selectedOffer, setSelectedOffer] = useState(null);
+
 	useEffect(() => {
 		if (!map.current) {
 			return;
@@ -26,28 +28,24 @@ export function useMapInteraction(
 
 		map.current.on("click", "unclustered-point", (e) => {
 			if (!map.current) {
+				setSelectedOffer(null);
 				return;
 			}
 
 			if (!e.features) {
+				setSelectedOffer(null);
 				return;
 			}
 
-			//@ts-expect-error coordinates is not null
-			const coordinates = e.features[0].geometry.coordinates.slice();
-			const title = e.features[0].properties.title;
-
-			// Ensure that if the map is zoomed out such that
-			// multiple copies of the feature are visible, the
-			// popup appears over the copy being pointed to.
-			while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-				coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+			if (e.features.length === 0) {
+				setSelectedOffer(null);
+				return;
 			}
 
-			new maplibregl.Popup({ closeButton: false })
-				.setLngLat(coordinates)
-				.setHTML(`${title}`)
-				.addTo(map.current);
+			const offer = JSON.parse(e.features[0].properties.offer);
+			setSelectedOffer(offer);
 		});
 	}, []);
+
+	return { selectedOffer };
 }

@@ -49,7 +49,7 @@ export function useMap() {
 				layout: {
 					"icon-image": [
 						"match",
-						["get", "category"],
+						["get", "category", ["get", "offer", ["properties"]]],
 						// Kultur
 						"Kultur",
 						"culture_marker",
