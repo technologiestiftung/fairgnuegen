@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import * as GeoJSON from "geojson";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { offers } from "../content/content";
 import { useCategories } from "./use-categories";
@@ -68,5 +69,29 @@ export function useFilteredAndSortedOffers() {
 		categories,
 	]);
 
-	return { filteredAndSortedOffers, search, isLoading };
+	const filteredAndSortedOffersAsGeojson = useMemo(() => {
+		const features = filteredAndSortedOffers.map((offer) => {
+			return {
+				type: "Feature",
+				properties: {
+					offer: offer,
+				},
+				geometry: {
+					type: "Point",
+					coordinates: [offer.x, offer.y],
+				},
+			};
+		});
+		return {
+			type: "FeatureCollection",
+			features: features,
+		} as GeoJSON.GeoJSON;
+	}, [filteredAndSortedOffers]);
+
+	return {
+		filteredAndSortedOffers,
+		search,
+		isLoading,
+		filteredAndSortedOffersAsGeojson,
+	};
 }

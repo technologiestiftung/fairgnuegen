@@ -67,6 +67,19 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
+	"/map/": {
+		title: "Kartenansicht",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/map/",
+				label: "Kartenansicht",
+			},
+		],
+	},
 	...detailPagesContent,
 };
 
