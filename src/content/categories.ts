@@ -28,14 +28,14 @@ export const categoryMap: CategoryMap = {
 	kultur: {
 		color: "bg-culture",
 		name: "Kultur",
-		image: "/kultur.jpg",
+		image: "kultur",
 		description: "Angebote fürs Museum, Theater, Konzerte und vieles mehr",
 		isRenderedInCategoryCards: true,
 	},
 	sport: {
 		color: "bg-sport",
 		name: "Sport",
-		image: "/sport.jpg",
+		image: "sport",
 		description:
 			"Angebote um körperlich fit zu bleiben oder den Sport zu feiern",
 		isRenderedInCategoryCards: true,
@@ -43,14 +43,14 @@ export const categoryMap: CategoryMap = {
 	bildung_beratung: {
 		color: "bg-education",
 		name: "Bildung & Beratung",
-		image: "/bildung.jpg",
+		image: "bildung",
 		description: "Weiterbildungs- und Beratungsangebote",
 		isRenderedInCategoryCards: true,
 	},
 	freizeit: {
 		color: "bg-leisure",
 		name: "Freizeit",
-		image: "/freizeit.jpg",
+		image: "freizeit",
 		description:
 			"Angebote fürs Kino, Restaurants, Bars und Aktivitäten an der freien Luft",
 		isRenderedInCategoryCards: true,
