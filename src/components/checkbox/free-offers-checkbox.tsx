@@ -1,18 +1,15 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
-import useUpdateSearchParam from "../../hooks/use-update-search-params";
+import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
 import { CheckIcon } from "../icons/check-icon";
 
 const FreeOffersCheckbox: React.FC = () => {
 	const label = "Freier Eintritt";
-	const { updateSearchParam } = useUpdateSearchParam();
-	const [searchParams] = useSearchParams();
-	const showFreeOffersOnly = (searchParams.get("free") ?? "false") === "true";
+	const { showFreeOffersOnly, setShowFreeOffersOnly } = useFreeOffersOnly();
 	return (
 		<div
 			className="w-fit flex flex-row items-center gap-3 py-2 text-lg font-bold hover:cursor-pointer"
 			onClick={() => {
-				updateSearchParam("free", showFreeOffersOnly ? "false" : "true");
+				setShowFreeOffersOnly(!showFreeOffersOnly);
 			}}
 		>
 			<div

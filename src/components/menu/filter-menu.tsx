@@ -11,11 +11,11 @@ import useUpdateSearchParam from "../../hooks/use-update-search-params";
 import ResetFilterButton from "../buttons/reset-filter-button";
 import ShowFilteredButton from "../buttons/show-filtered-button";
 import Checkbox from "../checkbox/checkbox";
+import FreeOffersCheckbox from "../checkbox/free-offers-checkbox";
 import { Drawer } from "../drawer/drawer";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
-import FreeOffersCheckbox from "../checkbox/free-offers-checkbox";
 
 interface FilterRowOption {
 	title: string;
@@ -114,7 +114,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			}),
 		);
 		if (window.location.pathname !== "/all-offers/") {
-			window.location.href = "/all-offers/?" + searchParams;
+			window.location.href = "/all-offers/?free=false" + searchParams;
 			return;
 		}
 		close();
