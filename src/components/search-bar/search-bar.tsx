@@ -43,7 +43,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 			<div className="relative row-start-1 col-start-1 pl-2 pointer-events-none">
 				<SearchIcon></SearchIcon>
 			</div>
-			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pr-2 pointer-events-none">
+			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pointer-events-none">
 				<button
 					type="button"
 					className="pointer-events-auto"
@@ -56,7 +56,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 				</button>
 				<button
 					type="submit"
-					className={`w-fit pointer-events-auto border-l-2 pl-2  ${hasFocus ? "border-focus-blue" : " border-l-black"}`}
+					className={`w-fit pointer-events-auto border-l-2 pl-2 pr-2 ${hasFocus ? "border-focus-blue" : " border-l-black"} hover:bg-berlin-grey-light border-2 border-black`}
 					onClick={(e) => {
 						e.preventDefault();
 						if (onSubmitOverride) {

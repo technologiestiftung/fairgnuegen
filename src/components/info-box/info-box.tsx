@@ -12,7 +12,7 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 	maxWidth,
 }) => {
 	return (
-		<div className="w-full py-10 bg-berlin-light-green flex flex-col gap-8 px-8 sm:px-0">
+		<div className="w-full py-10 bg-berlin-light-green flex flex-col gap-8 px-4 lg:px-0">
 			<div
 				className={`${maxWidth} flex flex-col mx-auto flex flex-row justify-center items-center`}
 			>
