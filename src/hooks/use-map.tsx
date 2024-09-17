@@ -11,8 +11,7 @@ export function useMap() {
 	useEffect(() => {
 		const initMap = new maplibregl.Map({
 			container: "map",
-			style:
-				"https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_gry.json", // style URL
+			style: "/map_style.json",
 			center: [13.404954, 52.520008],
 			zoom: 11,
 		});
