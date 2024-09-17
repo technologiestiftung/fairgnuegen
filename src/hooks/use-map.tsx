@@ -11,8 +11,7 @@ export function useMap() {
 	useEffect(() => {
 		const initMap = new maplibregl.Map({
 			container: "map",
-			style:
-				"https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_gry.json", // style URL
+			style: "/map_style.json",
 			center: [13.404954, 52.520008],
 			zoom: 11,
 		});
@@ -41,6 +40,8 @@ export function useMap() {
 				type: "symbol",
 				source: "markers",
 				layout: {
+					"icon-allow-overlap": true,
+					"icon-ignore-placement": true,
 					"icon-image": [
 						"match",
 						["get", "category", ["get", "offer", ["properties"]]],
@@ -73,11 +74,33 @@ export function useMap() {
 				},
 			});
 
+			initMap.addControl(
+				new maplibregl.GeolocateControl({
+					positionOptions: {
+						enableHighAccuracy: true,
+					},
+					trackUserLocation: true,
+				}),
+				"bottom-left",
+			);
+
 			setIsMapLoading(false);
 		});
 
 		mapRef.current = initMap;
 	}, []);
+
+	useEffect(() => {
+		if (!mapRef.current) {
+			return;
+		}
+		const source = mapRef.current.getSource(
+			"markers",
+		) as maplibregl.GeoJSONSource;
+		if (source && !isMapLoading) {
+			source.setData(filteredAndSortedOffersAsGeojson);
+		}
+	}, [mapRef, filteredAndSortedOffersAsGeojson, isMapLoading]);
 
 	return {
 		mapRef,
