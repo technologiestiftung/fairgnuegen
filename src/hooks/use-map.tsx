@@ -74,6 +74,16 @@ export function useMap() {
 				},
 			});
 
+			initMap.addControl(
+				new maplibregl.GeolocateControl({
+					positionOptions: {
+						enableHighAccuracy: true,
+					},
+					trackUserLocation: true,
+				}),
+				"bottom-left",
+			);
+
 			setIsMapLoading(false);
 		});
 
