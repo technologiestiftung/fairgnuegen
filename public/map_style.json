@@ -7,7 +7,7 @@
 		"mapbox:type": "template",
 		"maputnik:renderer": "mbgljs"
 	},
-	"center": [13.3964, 52.5143],
+	"center": [13.3825, 52.5129],
 	"zoom": 6,
 	"sprite": "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/sprites/bm_web_gry_sprite",
 	"glyphs": "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/fonts/{fontstack}/{range}.pbf",
@@ -9545,7 +9545,7 @@
 				["in", "art", "Hauptstadt", "Landeshauptstadt", "Stadt"],
 				[">=", "einwohnerzahl", 25000]
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"circle-color": "rgb(153,153,153)",
 				"circle-opacity": 1,
@@ -9569,7 +9569,7 @@
 				["in", "art", "Hauptstadt", "Landeshauptstadt", "Stadt"],
 				[">=", "einwohnerzahl", 100000]
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"circle-color": "rgb(153,153,153)",
 				"circle-opacity": 1,
@@ -9593,7 +9593,7 @@
 				["in", "art", "Hauptstadt", "Landeshauptstadt", "Stadt"],
 				[">=", "einwohnerzahl", 500000]
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"circle-color": "rgb(153,153,153)",
 				"circle-opacity": 1,
@@ -9617,7 +9617,7 @@
 				["in", "art", "Hauptstadt", "Landeshauptstadt", "Stadt"],
 				[">=", "einwohnerzahl", 1000000]
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"circle-color": "rgb(153,153,153)",
 				"circle-opacity": 1,
@@ -9648,7 +9648,7 @@
 				"Wiesbaden",
 				"Potsdam"
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"circle-color": "rgb(153,153,153)",
 				"circle-opacity": 1,
@@ -10027,7 +10027,7 @@
 				"Grabhügel",
 				"Grab"
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"line-blur": 3,
 				"line-color": "rgb(51,51,51)",
@@ -10056,7 +10056,7 @@
 				"Sonstiges",
 				"Steinmal"
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"line-blur": {
 					"stops": [
@@ -10090,7 +10090,7 @@
 				"Schanze",
 				"Höckerlinie"
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"line-blur": 3,
 				"line-color": "rgb(51,51,51)",
@@ -10112,7 +10112,7 @@
 			"minzoom": 12,
 			"maxzoom": 22,
 			"filter": ["in", "klasse", "Aquädukt", "Historische Wasserleitung"],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"line-color": "rgb(153,153,153)",
 				"line-width": {
@@ -10141,7 +10141,7 @@
 						[20, 1]
 					]
 				},
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"line-color": "rgb(51,51,51)",
@@ -10169,7 +10169,7 @@
 			"minzoom": 13,
 			"maxzoom": 22,
 			"filter": ["==", "klasse", "Historische Mauer"],
-			"layout": { "line-cap": "square", "visibility": "visible" },
+			"layout": { "line-cap": "square", "visibility": "none" },
 			"paint": {
 				"line-color": "rgb(153,153,153)",
 				"line-opacity": 0.6,
@@ -10189,7 +10189,7 @@
 			"minzoom": 13,
 			"maxzoom": 22,
 			"filter": ["==", "klasse", "Historische Mauer"],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"line-color": "rgb(255,255,255)",
 				"line-dasharray": {
@@ -10221,7 +10221,7 @@
 				"Großsteingrab (Dolmen, Hünenbett)",
 				"Sonstiges"
 			],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"line-blur": {
 					"stops": [
@@ -10720,7 +10720,7 @@
 					"bottom-left",
 					"bottom-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -11972,7 +11972,7 @@
 						[20, 14]
 					]
 				},
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -12003,7 +12003,7 @@
 						[20, 14]
 					]
 				},
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -12095,7 +12095,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -12458,7 +12458,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -13264,7 +13264,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(153,153,153)",
@@ -13312,7 +13312,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -13365,7 +13365,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -13417,7 +13417,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -13464,7 +13464,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -13510,7 +13510,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -14049,7 +14049,7 @@
 					]
 				},
 				"text-variable-anchor": ["bottom", "center", "top"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -15030,7 +15030,7 @@
 			"minzoom": 13,
 			"maxzoom": 22,
 			"filter": ["==", "klasse", "Besonderer_Hoehenpunkt"],
-			"layout": { "visibility": "visible" },
+			"layout": { "visibility": "none" },
 			"paint": {
 				"circle-color": "rgb(102,102,102)",
 				"circle-radius": {
@@ -16412,7 +16412,7 @@
 						[20, 1.2]
 					]
 				},
-				"visibility": "visible"
+				"visibility": "none"
 			}
 		},
 		{
@@ -17045,7 +17045,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17091,7 +17091,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17137,7 +17137,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17183,7 +17183,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17229,7 +17229,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17275,7 +17275,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17321,7 +17321,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17362,7 +17362,7 @@
 					]
 				},
 				"text-variable-anchor": ["center", "top", "top-left"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17422,7 +17422,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -17482,7 +17482,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -17542,7 +17542,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17602,7 +17602,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17662,7 +17662,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17722,7 +17722,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17783,7 +17783,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17843,7 +17843,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17903,7 +17903,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -17963,7 +17963,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -18023,7 +18023,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -18083,7 +18083,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -18144,7 +18144,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -18204,7 +18204,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -18265,7 +18265,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(102,102,102)",
@@ -18325,7 +18325,7 @@
 					"top",
 					"bottom"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18379,7 +18379,7 @@
 					"top",
 					"bottom"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18431,7 +18431,7 @@
 					"top",
 					"bottom"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18497,7 +18497,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18564,7 +18564,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18632,7 +18632,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18700,7 +18700,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18766,7 +18766,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18832,7 +18832,7 @@
 					]
 				},
 				"text-variable-anchor": ["left", "right"],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18908,7 +18908,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",
@@ -18975,7 +18975,7 @@
 					"top-left",
 					"top-right"
 				],
-				"visibility": "visible"
+				"visibility": "none"
 			},
 			"paint": {
 				"text-color": "rgb(51,51,51)",

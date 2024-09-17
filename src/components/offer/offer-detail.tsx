@@ -80,7 +80,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</button>
 				</div>
 			</div>
-			<div className="border-b border-separator w-full"></div>
+			<div className="border-b border-berlin-grey-light w-full"></div>
 		</div>
 	);
 };
