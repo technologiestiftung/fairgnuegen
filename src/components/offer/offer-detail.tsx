@@ -26,12 +26,12 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 
 	return (
 		<div
-			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white`}
+			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white px-3`}
 			onClick={() => {
 				window.location.href = offer.path;
 			}}
 		>
-			<div className="flex flex-row py-4 mx-4 lg:mx-0 gap-4">
+			<div className="flex flex-row py-4 mx-2 lg:mx-0 gap-4">
 				<div
 					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
 					// TODO: remove this and use the actual images as soon as they are available
@@ -45,7 +45,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<span className="text-xs">© Bildcopyright</span>
 				</div>
 
-				<div className="w-full flex flex-col gap-4 px-2">
+				<div className="w-full flex flex-col gap-4">
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
 					</div>

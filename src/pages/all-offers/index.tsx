@@ -69,21 +69,21 @@ export default function Index() {
 					<div className="w-full border-b border-separator mb-5"></div>
 					<div className="flex flex-col pt-4 mb-5">
 						{filteredAndSortedOffers.map((offer, idx) => (
-							<OfferDetail
-								offer={offer}
-								key={`${idx}-${offer.provider}`}
-							></OfferDetail>
+							<OfferDetail offer={offer} key={`${idx}-${offer.provider}`} />
 						))}
 					</div>
-					<BackButton></BackButton>
-					<div className="my-8 mx-4 lg:mx-0">
+					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
+						<BackButton></BackButton>
+					</div>
+
+					<div className="my-8 mx-4 md:mx-2 lg:mx-0">
 						<div className="text-xl font-bold my-6">
-							{category === "all"
+							{!category || category === "all"
 								? "Entdecke die Kategorien"
 								: "Entdecke weitere Kategorien"}
 						</div>
 						<div
-							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-3 sm:grid-rows-1"}`}
+							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-2 sm:grid-rows-2"}`}
 						>
 							{Object.entries(categoryMap)
 								.filter(
