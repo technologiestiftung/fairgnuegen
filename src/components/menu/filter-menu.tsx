@@ -222,14 +222,15 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 											className="px-6 flex flex-row items-start text-lg"
 										>
 											<Checkbox
+												id={subItem.title}
 												label={
 													subItem.subtitle ? (
-														<div className="text-normal font-normal">
+														<span className="text-normal font-normal">
 															<span className="font-bold">
 																{subItem.title} {"> "}
 															</span>
 															<span>{subItem.subtitle}</span>
-														</div>
+														</span>
 													) : (
 														<span className="text-normal font-normal">
 															{subItem.title}
