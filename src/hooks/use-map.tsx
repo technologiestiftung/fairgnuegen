@@ -41,6 +41,8 @@ export function useMap() {
 				type: "symbol",
 				source: "markers",
 				layout: {
+					"icon-allow-overlap": true,
+					"icon-ignore-placement": true,
 					"icon-image": [
 						"match",
 						["get", "category", ["get", "offer", ["properties"]]],
@@ -78,6 +80,18 @@ export function useMap() {
 
 		mapRef.current = initMap;
 	}, []);
+
+	useEffect(() => {
+		if (!mapRef.current) {
+			return;
+		}
+		const source = mapRef.current.getSource(
+			"markers",
+		) as maplibregl.GeoJSONSource;
+		if (source) {
+			source.setData(filteredAndSortedOffersAsGeojson);
+		}
+	}, [mapRef, filteredAndSortedOffersAsGeojson]);
 
 	return {
 		mapRef,

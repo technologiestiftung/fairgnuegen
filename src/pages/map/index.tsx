@@ -4,6 +4,8 @@ import OfferPopup from "../../components/offer/offer-popup";
 import { useMap } from "../../hooks/use-map";
 import { useMapInteraction } from "../../hooks/use-map-interaction";
 import { Layout } from "../../layout/layout";
+import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
+import ShowListButton from "../../components/buttons/show-list-button";
 
 export default function Index() {
 	const { mapRef, isMapLoading } = useMap();
@@ -46,6 +48,12 @@ export default function Index() {
 						Kartenansicht wird geladen...
 					</div>
 				)}
+			</div>
+			<div className="max-w-3xl mx-auto flex flex-col my-4">
+				<div className="flex flex-row justify-between">
+					<ShowListButton></ShowListButton>
+					<FreeOffersCheckbox></FreeOffersCheckbox>
+				</div>
 			</div>
 		</Layout>
 	);
