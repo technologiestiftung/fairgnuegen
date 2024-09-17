@@ -31,7 +31,7 @@ export default function Index() {
 
 				{selectedOffer && (
 					<div
-						className={`absolute left-0 right-0 w-[500px] mx-auto`}
+						className={`absolute left-0 right-0 w-[90vw] sm:w-[500px] mx-auto`}
 						ref={popupRef}
 						style={{
 							top: `${topAnchor}px`,
@@ -50,7 +50,7 @@ export default function Index() {
 				)}
 			</div>
 			<div className="max-w-3xl mx-auto flex flex-col my-4">
-				<div className="flex flex-row justify-between">
+				<div className="flex flex-row justify-between mx-4 md:mx-0">
 					<ShowListButton></ShowListButton>
 					<FreeOffersCheckbox></FreeOffersCheckbox>
 				</div>
