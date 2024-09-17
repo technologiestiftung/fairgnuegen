@@ -8,14 +8,15 @@ import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers
 
 interface OfferDetailProps {
 	offer: Offer;
+	isMapPopup?: boolean;
 }
 
-const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
+const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isMapPopup }) => {
 	const [isFavorite, addFavorite, removeFavorite] = useFavoritesStore(
 		(state) => [state.isFavorite, state.addFavorite, state.removeFavorite],
 	);
 
-	const MAGIC_CUTOFF_LIMIT = 165;
+	const MAGIC_CUTOFF_LIMIT = isMapPopup ? 80 : 165;
 
 	const cutoffDescription = useMemo(() => {
 		if (offer.providerDescription.length > MAGIC_CUTOFF_LIMIT) {
@@ -26,7 +27,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 
 	return (
 		<div
-			className="w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white"
+			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white ${isMapPopup && "p-2 shadow-default"}`}
 			onClick={() => {
 				window.location.href = offer.path;
 			}}
@@ -35,7 +36,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				<div
 					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
 					// TODO: remove this and use the actual images as soon as they are available
-					className={`min-w-[140px] ${allowedOfferPathsWithImagesAllowed.includes(offer.path) ? "hidden md:block" : "hidden"}`}
+					className={`min-w-[140px] ${!isMapPopup && allowedOfferPathsWithImagesAllowed.includes(offer.path) ? "hidden md:block" : "hidden"}`}
 				>
 					<img
 						src="/images/placeholder.jpg"
@@ -80,7 +81,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</button>
 				</div>
 			</div>
-			<div className="border-b border-separator w-full"></div>
+			{!isMapPopup && <div className="border-b border-separator w-full"></div>}
 		</div>
 	);
 };

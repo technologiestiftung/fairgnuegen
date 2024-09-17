@@ -1,6 +1,6 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
-import OfferPopup from "../../components/offer/offer-popup";
+import OfferDetail from "../../components/offer/offer-detail";
 import { useMap } from "../../hooks/use-map";
 import { useMapInteraction } from "../../hooks/use-map-interaction";
 import { Layout } from "../../layout/layout";
@@ -30,7 +30,7 @@ export default function Index() {
 							top: `${600 / 2 - height - 30}px`,
 						}}
 					>
-						<OfferPopup offer={selectedOffer}></OfferPopup>
+						<OfferDetail offer={selectedOffer} isMapPopup={true}></OfferDetail>
 					</div>
 				)}
 				{isMapLoading && (
