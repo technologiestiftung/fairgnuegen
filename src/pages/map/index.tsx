@@ -1,6 +1,6 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
-import OfferDetail from "../../components/offer/offer-detail";
+import OfferPopup from "../../components/offer/offer-popup";
 import { useMap } from "../../hooks/use-map";
 import { useMapInteraction } from "../../hooks/use-map-interaction";
 import { Layout } from "../../layout/layout";
@@ -9,11 +9,16 @@ export default function Index() {
 	const { mapRef, isMapLoading } = useMap();
 	const { selectedOffer } = useMapInteraction(mapRef);
 	const popupRef = useRef<HTMLDivElement | null>(null);
-	const [height, setHeight] = useState(0);
+	const [topAnchor, setTopAnchor] = useState(0);
+
+	const mapVerticalBaseline = 600 / 2;
+	const iconOffset = 30;
 
 	useEffect(() => {
 		if (popupRef.current) {
-			setHeight(popupRef.current.clientHeight);
+			setTopAnchor(
+				mapVerticalBaseline - popupRef.current.clientHeight - iconOffset,
+			);
 		}
 	}, [selectedOffer, popupRef]);
 
@@ -27,10 +32,10 @@ export default function Index() {
 						className={`absolute left-0 right-0 w-[500px] mx-auto`}
 						ref={popupRef}
 						style={{
-							top: `${600 / 2 - height - 30}px`,
+							top: `${topAnchor}px`,
 						}}
 					>
-						<OfferDetail offer={selectedOffer} isMapPopup={true}></OfferDetail>
+						<OfferPopup offer={selectedOffer} />
 					</div>
 				)}
 				{isMapLoading && (
