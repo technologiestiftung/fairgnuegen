@@ -15,7 +15,7 @@ export default function Index() {
 		if (popupRef.current) {
 			setHeight(popupRef.current.clientHeight);
 		}
-	}, [selectedOffer, popupRef, popupRef.current]);
+	}, [selectedOffer, popupRef]);
 
 	return (
 		<Layout>
