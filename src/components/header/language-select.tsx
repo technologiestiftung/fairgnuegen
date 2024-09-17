@@ -18,7 +18,7 @@ export function LanguageSelect() {
 
 	return (
 		<>
-			<div className="relative text-black" ref={languageSelectRef}>
+			<div className="relative text-black z-[10]" ref={languageSelectRef}>
 				<button
 					className="flex items-center"
 					onClick={() => setIsOpen(!isOpen)}
