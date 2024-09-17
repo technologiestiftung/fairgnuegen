@@ -97,10 +97,10 @@ export function useMap() {
 		const source = mapRef.current.getSource(
 			"markers",
 		) as maplibregl.GeoJSONSource;
-		if (source) {
+		if (source && !isMapLoading) {
 			source.setData(filteredAndSortedOffersAsGeojson);
 		}
-	}, [mapRef, filteredAndSortedOffersAsGeojson]);
+	}, [mapRef, filteredAndSortedOffersAsGeojson, isMapLoading]);
 
 	return {
 		mapRef,

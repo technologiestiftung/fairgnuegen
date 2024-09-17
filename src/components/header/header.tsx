@@ -2,24 +2,26 @@ import { Breadcrumbs } from "./breadcumbs";
 import { LanguageSelect } from "./language-select";
 import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
 import { useIsHeaderLogoVisible } from "./hooks/use-is-header-logo-visible";
-
-const navLinks = [
-	{
-		href: "/",
-		label: "Startseite",
-	},
-	{
-		href: "/map/",
-		label: "Kartenansicht",
-	},
-	{
-		href: "/favorites/",
-		label: "Favoriten",
-	},
-];
+import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
 
 export function Header() {
 	const isHeaderLogoVisible = useIsHeaderLogoVisible();
+	const { isShowingFreeOffersOnly } = useFreeOffersOnly();
+
+	const navLinks = [
+		{
+			href: "/",
+			label: "Startseite",
+		},
+		{
+			href: `/map/?free=${isShowingFreeOffersOnly ? "true" : "false"}`,
+			label: "Kartenansicht",
+		},
+		{
+			href: "/favorites/",
+			label: "Favoriten",
+		},
+	];
 
 	return (
 		<header
