@@ -7,6 +7,10 @@ import LinkIcon from "../icons/link-icon";
 import { Pill } from "./pill";
 import RouteButton from "../buttons/route-button";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
+import {
+	categoryMap,
+	getCategoryDetailsFromName,
+} from "../../content/categories";
 
 interface OfferFullProps {
 	offer: Offer;
@@ -44,9 +48,15 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					</div>
 
 					<div className="flex flex-row gap-2 flex-wrap">
-						{offer.isFree && <Pill title={"Freier Eintritt"} />}
+						<Pill
+							title={offer.category}
+							backgroundColor={
+								getCategoryDetailsFromName(offer.category)?.color
+							}
+							textColor={getCategoryDetailsFromName(offer.category)?.textColor}
+						/>
 
-						<Pill title={offer.category} />
+						{offer.isFree && <Pill title={"Freier Eintritt"} />}
 
 						{offer.targetGroups.map((t) => (
 							<Pill title={t} key={t} />
