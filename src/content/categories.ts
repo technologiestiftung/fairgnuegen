@@ -82,7 +82,6 @@ export function getCategoryDetailsFromName(
 		return null;
 	}
 	const category = Object.entries(categoryMap).find(([, c]) => c.name === name);
-	console.log(category);
 	if (category) {
 		return category[1];
 	}

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
+import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
+import { getCategoryDetailsFromName } from "../../content/categories";
 import { Offer } from "../../content/content";
 import { useFavoritesStore } from "../../store/favorites-store";
+import RouteButton from "../buttons/route-button";
 import ShareButton from "../buttons/share-button";
 import LikeIcon from "../icons/like-icon";
 import LinkIcon from "../icons/link-icon";
 import { Pill } from "./pill";
-import RouteButton from "../buttons/route-button";
-import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
-import {
-	categoryMap,
-	getCategoryDetailsFromName,
-} from "../../content/categories";
 
 interface OfferFullProps {
 	offer: Offer;
