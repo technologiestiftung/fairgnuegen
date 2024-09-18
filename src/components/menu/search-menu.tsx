@@ -21,7 +21,12 @@ const SearchMenu: React.FC<SearchMenuProps> = ({ isOpen, close }) => {
 			</div>
 			<div className="flex flex-row justify-center">
 				<div className="w-full px-4 md:w-[50%] flex flex-col gap-2 mt-[10vh] md:mt-[30vh]">
-					<h1 className="font-bold">Suche auf der Internetseite</h1>
+					<h1 className="font-bold">
+						Suche auf der Internetseite{" "}
+						<span>
+							{'"'}Fairgnügen{'"'}
+						</span>
+					</h1>
 					<SearchBar
 						onSubmitOverride={(search) => {
 							window.location.href = `/all-offers/?search=${search}`;
