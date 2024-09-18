@@ -1,20 +1,15 @@
 import React, { useMemo } from "react";
 import { Offer } from "../../content/content";
-import { useFavoritesStore } from "../../store/favorites-store";
 import ArrowRightIcon from "../icons/arrow-right-icon";
-import LikeIcon from "../icons/like-icon";
 import { Pill } from "./pill";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
+import { LikeButton } from "../buttons/like-button.tsx";
 
 interface OfferDetailProps {
 	offer: Offer;
 }
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
-	const [isFavorite, addFavorite, removeFavorite] = useFavoritesStore(
-		(state) => [state.isFavorite, state.addFavorite, state.removeFavorite],
-	);
-
 	const MAGIC_CUTOFF_LIMIT = 165;
 
 	const cutoffDescription = useMemo(() => {
@@ -65,19 +60,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</div>
 				</div>
 				<div className="min-w-[43px] flex justify-center">
-					<button
-						onClick={(e) => {
-							e.stopPropagation();
-							e.preventDefault();
-							if (isFavorite(offer)) {
-								removeFavorite(offer);
-							} else {
-								addFavorite(offer);
-							}
-						}}
-					>
-						<LikeIcon isSelected={isFavorite(offer)}></LikeIcon>
-					</button>
+					<LikeButton offer={offer} />
 				</div>
 			</div>
 			<div className="border-b border-berlin-grey-light w-full"></div>

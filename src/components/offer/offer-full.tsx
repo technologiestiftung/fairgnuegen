@@ -1,28 +1,23 @@
 import React, { useState } from "react";
 import { Offer } from "../../content/content";
-import { useFavoritesStore } from "../../store/favorites-store";
 import ShareButton from "../buttons/share-button";
-import LikeIcon from "../icons/like-icon";
 import LinkIcon from "../icons/link-icon";
 import { Pill } from "./pill";
 import RouteButton from "../buttons/route-button";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
+import { LikeButton } from "../buttons/like-button.tsx";
 
 interface OfferFullProps {
 	offer: Offer;
 }
 
 const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
-	const [addFavorite, removeFavorite, isFavorite] = useFavoritesStore(
-		(state) => [state.addFavorite, state.removeFavorite, state.isFavorite],
-	);
-
 	const [showFullDescription, setShowFullDescription] = useState(false);
 
 	return (
 		<div className="w-full">
 			<div className="flex flex-row gap-2 w-full justify-end pr-4 pb-4 sm:hidden">
-				<LikeIcon isSelected={false} />
+				<LikeButton offer={offer} />
 				<ShareButton offer={offer} />
 			</div>
 			<div className="flex flex-row pb-2 slg0 gap-4">
@@ -72,17 +67,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					</a>
 				</div>
 				<div className="hidden max-w-[20%] w-full sm:flex flex-row justify-center items-start gap-2">
-					<button
-						onClick={() => {
-							if (isFavorite(offer)) {
-								removeFavorite(offer);
-							} else {
-								addFavorite(offer);
-							}
-						}}
-					>
-						<LikeIcon isSelected={isFavorite(offer)}></LikeIcon>
-					</button>
+					<LikeButton offer={offer} />
 					<ShareButton offer={offer} />
 				</div>
 			</div>
