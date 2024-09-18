@@ -29,12 +29,12 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 							href={
 								"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/"
 							}
-							className="text-link-blue flex flex-row items-start gap-1 justify-start md:justify-end hover:underline"
+							className="text-link-blue flex flex-row items-center gap-1 justify-start md:justify-end hover:underline"
 							target="_blank"
 							rel="noreferrer"
 						>
-							<div>Mehr Infos zum Berechtigungsnachweis</div>
-							<div className="">
+							<div className="">Mehr Infos zum Berechtigungsnachweis</div>
+							<div className="min-w-20 md:min-w-10">
 								<LinkIcon></LinkIcon>
 							</div>
 						</a>

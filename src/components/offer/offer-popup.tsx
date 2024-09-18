@@ -4,6 +4,7 @@ import { useFavoritesStore } from "../../store/favorites-store";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import LikeIcon from "../icons/like-icon";
 import { Pill } from "./pill";
+import { getCategoryDetailsFromName } from "../../content/categories";
 
 interface OfferPopupProps {
 	offer: Offer;
@@ -35,6 +36,16 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 					<div className="flex flex-col gap-2">
 						<h1 className="font-bold text-xl">{offer.provider}</h1>
 					</div>
+					<div className="w-fit">
+						<Pill
+							title={offer.category}
+							backgroundColor={
+								getCategoryDetailsFromName(offer.category)?.color
+							}
+							textColor={getCategoryDetailsFromName(offer.category)?.textColor}
+						/>
+					</div>
+
 					{offer.isFree && (
 						<div className="flex flex-row gap-2 flex-wrap">
 							<Pill title={"Freier Eintritt"} />
