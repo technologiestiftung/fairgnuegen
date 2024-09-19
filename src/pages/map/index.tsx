@@ -7,6 +7,7 @@ import { Layout } from "../../layout/layout";
 import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
 import ShowListButton from "../../components/buttons/show-list-button";
 import FilterButton from "../../components/buttons/filter-button";
+import MapLegend from "../../components/map/map-legend";
 
 export default function Index() {
 	const { mapRef, isMapLoading } = useMap();
@@ -30,12 +31,17 @@ export default function Index() {
 			<div className="grid grid-cols-1 grid-rows-1 relative">
 				<div
 					id="map"
-					className="row-start-1 col-start-1 w-full h-[400px] md:h-[600px]"
+					className="row-start-1 col-start-1 w-full h-[40vh] md:h-[600px]"
 				/>
+				{selectedOffer && (
+					<div className="block md:hidden">
+						<OfferPopup offer={selectedOffer} />
+					</div>
+				)}
 
 				{selectedOffer && (
 					<div
-						className={`absolute left-0 right-0 w-[90vw] sm:w-[500px] mx-auto`}
+						className={`hidden md:block absolute left-0 right-0 w-[90vw] sm:w-[500px] mx-auto`}
 						ref={popupRef}
 						style={{
 							top: `${topAnchor}px`,
@@ -44,6 +50,7 @@ export default function Index() {
 						<OfferPopup offer={selectedOffer} />
 					</div>
 				)}
+
 				{isMapLoading && (
 					<div
 						id="map"
@@ -54,19 +61,28 @@ export default function Index() {
 				)}
 			</div>
 
-			<div className="grid grid-cols-2 grid-rows-2 m-4 gap-2 md:grid-cols-4 md:grid-rows-1">
-				<div className="order-1 col-span-2 md:col-span-1 md:order-2 md:opacity-0">
-					<FreeOffersCheckbox></FreeOffersCheckbox>
+			<div className="grid grid-cols-1 grid-rows-3 gap-2 pb-8 md:grid-cols-2 md:grid-rows-1 p-2 md:p-4">
+				<div className="hidden md:flex">
+					<MapLegend></MapLegend>
 				</div>
-				<div className="order-3 w-fit md:order-1">
+
+				<div className="hidden md:flex flex-row gap-4 items-center justify-end">
+					<FreeOffersCheckbox></FreeOffersCheckbox>
+					<FilterButton></FilterButton>
 					<ShowListButton></ShowListButton>
 				</div>
-				<div className="hidden md:block md:order-3"></div>
-				<div className="order-4 flex flex-row justify-end md:order-4">
-					<div className="hidden md:block mr-4">
-						<FreeOffersCheckbox></FreeOffersCheckbox>
-					</div>
+
+				<div className="flex md:hidden md:opacity-0">
+					<FreeOffersCheckbox></FreeOffersCheckbox>
+				</div>
+
+				<div className="flex md:hidden md:opacity-0 flex-row gap-4">
+					<ShowListButton></ShowListButton>
 					<FilterButton></FilterButton>
+				</div>
+
+				<div className="flex md:hidden">
+					<MapLegend></MapLegend>
 				</div>
 			</div>
 		</Layout>

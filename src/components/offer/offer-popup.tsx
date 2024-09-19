@@ -1,19 +1,15 @@
 import React, { useMemo } from "react";
 import { Offer } from "../../content/content";
-import { useFavoritesStore } from "../../store/favorites-store";
 import ArrowRightIcon from "../icons/arrow-right-icon";
-import LikeIcon from "../icons/like-icon";
 import { Pill } from "./pill";
+import { LikeButton } from "../buttons/like-button";
+import { getCategoryDetailsFromName } from "../../content/categories";
 
 interface OfferPopupProps {
 	offer: Offer;
 }
 
 const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
-	const [isFavorite, addFavorite, removeFavorite] = useFavoritesStore(
-		(state) => [state.isFavorite, state.addFavorite, state.removeFavorite],
-	);
-
 	const MAGIC_CUTOFF_LIMIT = 80;
 
 	const cutoffDescription = useMemo(() => {
@@ -25,22 +21,42 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 
 	return (
 		<div
-			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white p-2 shadow-default`}
+			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default px-2 py-4 border-b md:border-0`}
 			onClick={() => {
 				window.location.href = offer.path;
 			}}
 		>
-			<div className="flex flex-row py-4 mx-4 lg:mx-0 gap-4">
+			<div className="flex flex-row gap-2">
 				<div className="w-full flex flex-col gap-4 px-2">
-					<div className="flex flex-col gap-2">
-						<h1 className="font-bold text-xl">{offer.provider}</h1>
-					</div>
-					{offer.isFree && (
-						<div className="flex flex-row gap-2 flex-wrap">
-							<Pill title={"Freier Eintritt"} />
+					<div className="w-full flex flex-row justify-between gap-4">
+						<div className="h-fit flex flex-col gap-2">
+							<div className="w-fit flex flex-row items-center gap-2">
+								<Pill
+									title={offer.category}
+									backgroundColor={
+										getCategoryDetailsFromName(offer.category)?.color
+									}
+									textColor={
+										getCategoryDetailsFromName(offer.category)?.textColor
+									}
+								/>
+
+								{offer.isFree && (
+									<div className="flex flex-row gap-2 flex-wrap">
+										<Pill title={"Freier Eintritt"} />
+									</div>
+								)}
+							</div>
+							<h1 className="font-bold text-xl flex flex-row items-center h-full">
+								{offer.provider}
+							</h1>
 						</div>
-					)}
-					<div className={`break-words text-left cusor-default`}>
+						<div className="min-w-[43px] flex justify-center">
+							<LikeButton offer={offer} />
+						</div>
+					</div>
+
+					<div className={`break-words text-left cursor-default`}>
 						{cutoffDescription}
 					</div>
 					<div className="flex flex-row w-full justify-end text-primary-blue">
@@ -49,21 +65,6 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 						</a>
 					</div>
-				</div>
-				<div className="min-w-[43px] flex justify-center">
-					<button
-						onClick={(e) => {
-							e.stopPropagation();
-							e.preventDefault();
-							if (isFavorite(offer)) {
-								removeFavorite(offer);
-							} else {
-								addFavorite(offer);
-							}
-						}}
-					>
-						<LikeIcon isSelected={isFavorite(offer)}></LikeIcon>
-					</button>
 				</div>
 			</div>
 		</div>
