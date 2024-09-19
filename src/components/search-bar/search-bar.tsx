@@ -4,7 +4,7 @@ import StartSearchIcon from "../icons/start-search-icon";
 import ClearIcon from "../icons/clear-icon";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
-import { trackInteraction } from "../../analytics/matomo";
+import { trackSiteSearch } from "../../analytics/matomo";
 
 const SearchBar: React.FC = () => {
 	const { updateSearchParam } = useUpdateSearchParam();
@@ -19,9 +19,8 @@ const SearchBar: React.FC = () => {
 			onSubmit={(e) => {
 				e.preventDefault();
 
-				trackInteraction({
-					eventAction: "search-submit",
-					eventName: `search: ${search}`,
+				trackSiteSearch({
+					searchTerm: search,
 				});
 
 				if (!location.pathname.includes("/all-offers/")) {

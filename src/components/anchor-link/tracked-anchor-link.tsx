@@ -27,7 +27,7 @@ export function TrackedAnchorLink({
 			onClick={() =>
 				trackInteraction({
 					eventAction: "anchor-link click",
-					eventName: `to: ${href} (from: ${window.location.pathname}) ${additionalTrackingContext}`,
+					eventName: `to: ${href} (from: ${window.location.pathname}) ${additionalTrackingContext ?? ""}`,
 				})
 			}
 		>

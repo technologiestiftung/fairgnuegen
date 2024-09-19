@@ -114,6 +114,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 						{!link.isExternalLink && link.subItems.length === 0 && (
 							<TrackedAnchorLink
 								href={link.link}
+								additionalTrackingContext={"(drawer menu)"}
 								className="hover:bg-berlin-grey-light py-4 px-6 border-b"
 							>
 								{link.title}
