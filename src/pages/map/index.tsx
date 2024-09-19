@@ -14,17 +14,23 @@ export default function Index() {
 	const { selectedOffer } = useMapInteraction(mapRef);
 	const popupRef = useRef<HTMLDivElement | null>(null);
 	const [topAnchor, setTopAnchor] = useState(0);
-	const [windowHeight, setWindowHeight] = useState(window.innerWidth);
+	const [windowHeight, setWindowHeight] = useState(0);
 
+	// TODO: find a cleaner way to handle this, it seems messy
 	const mapHeight = useMemo(() => {
-		const header = document.getElementById("header");
-		const mapLegend = document.getElementById("map-legend");
-		const headerHeight = header ? header.clientHeight : 0;
-		const mapLegendHeight = mapLegend ? mapLegend.clientHeight : 0;
-		return window.innerHeight - headerHeight - mapLegendHeight;
+		if (typeof document !== "undefined") {
+			const header = document.getElementById("header");
+			const mapLegend = document.getElementById("map-legend");
+			const headerHeight = header ? header.clientHeight : 0;
+			const mapLegendHeight = mapLegend ? mapLegend.clientHeight : 0;
+			return window.innerHeight - headerHeight - mapLegendHeight;
+		}
+		return 0;
 	}, [
-		document.getElementById("header"),
-		document.getElementById("map-legend"),
+		typeof document !== "undefined" ? document.getElementById("header") : null,
+		typeof document !== "undefined"
+			? document.getElementById("map-legend")
+			: null,
 		windowHeight,
 	]);
 
