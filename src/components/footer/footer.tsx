@@ -237,7 +237,7 @@ const lowerFooterColumns = [
 
 export function Footer() {
 	return (
-		<footer>
+		<footer id="footer">
 			<div className="flex items-start justify-between w-full bg-berlin-grey-light desktop:p-6">
 				<div className="flex flex-col desktop:flex-row w-full desktop:gap-x-10">
 					<div className="desktop:hidden self-end">
