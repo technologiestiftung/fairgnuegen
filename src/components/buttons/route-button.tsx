@@ -12,7 +12,7 @@ const RouteButton: React.FC<RouteButtonProps> = ({ onClick }) => {
 				onClick={onClick}
 			>
 				<div className="flex flex-row gap-1 items-center">
-					<div>Route planen</div>
+					<div>Adresse kopieren</div>
 				</div>
 			</button>
 		</div>
