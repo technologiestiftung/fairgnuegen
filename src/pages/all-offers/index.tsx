@@ -45,7 +45,9 @@ export default function Index() {
 					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col mb-10">
 							<SearchBar />
-							<FreeOffersCheckbox />
+							<div className="pt-2">
+								<FreeOffersCheckbox />
+							</div>
 						</div>
 						<div className="flex flex-row w-full justify-between mb-6">
 							<SortButton></SortButton>
