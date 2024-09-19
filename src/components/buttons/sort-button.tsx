@@ -2,6 +2,7 @@ import React from "react";
 import SortIcon from "../icons/sort-az";
 import { useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
+import { trackInteraction } from "../../analytics/matomo.ts";
 
 const FilterButton: React.FC = () => {
 	const { updateSearchParam } = useUpdateSearchParam();
@@ -11,6 +12,10 @@ const FilterButton: React.FC = () => {
 		<button
 			className="px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black h-[43px]"
 			onClick={() => {
+				trackInteraction({
+					eventAction: "button click",
+					eventName: `toggle sort order (from: ${window.location.pathname})`,
+				});
 				updateSearchParam(
 					"sort",
 					(searchParams.get("sort") ?? "asc") === "asc" ? "desc" : "asc",

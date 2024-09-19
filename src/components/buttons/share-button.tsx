@@ -5,6 +5,8 @@ import ShareLinkIcon from "../icons/share-link-icon";
 import ShareMailIcon from "../icons/share-mail-icon";
 import ShareWhatsappIcon from "../icons/share-whatsapp-icon";
 import { Offer } from "../../content/content";
+import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
+import { trackInteraction } from "../../analytics/matomo.ts";
 
 interface ShareButtonProps {
 	offer: Offer;
@@ -54,6 +56,10 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 				ref={buttonRef}
 				className="opacity-100 hover:opacity-50 flex justify-center items-center text-primary-blue"
 				onClick={() => {
+					trackInteraction({
+						eventAction: "button click",
+						eventName: "button open sharing options",
+					});
 					setShowOverlay(!showOverlay);
 				}}
 			>
@@ -66,7 +72,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					className="flex flex-col gap-4 absolute right-0 top-full py-2 px-6 bg-white border mt-2 w-max"
 					ref={overlayRef}
 				>
-					<a
+					<TrackedAnchorLink
 						className="flex flex-row items-center gap-2 border-primary-blue"
 						// No custom share text for Facebook, the data will be fetched from the open graph meta tags of the link that is shared
 						href={`https://www.facebook.com/sharer/sharer.php?u=${getURL()}`}
@@ -75,11 +81,15 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					>
 						<ShareFacebookIcon></ShareFacebookIcon>
 						<div>Facebook</div>
-					</a>
+					</TrackedAnchorLink>
 
 					<button
 						className="flex flex-row items-center gap-2"
 						onClick={async () => {
+							trackInteraction({
+								eventAction: "button click",
+								eventName: "sharing: copy link",
+							});
 							setShowLinkCopied(true);
 							await navigator.clipboard.writeText(getURL());
 							setTimeout(() => {
@@ -92,7 +102,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 						<div>Link kopieren</div>
 					</button>
 
-					<a
+					<TrackedAnchorLink
 						className="flex flex-row items-center gap-2"
 						href={`mailto:?subject=${shareTitle()}&body=${shareBody()}`}
 						target="_blank"
@@ -100,9 +110,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					>
 						<ShareMailIcon></ShareMailIcon>
 						<div>E-Mail</div>
-					</a>
+					</TrackedAnchorLink>
 
-					<a
+					<TrackedAnchorLink
 						className="flex flex-row items-center gap-2"
 						href={`https://api.whatsapp.com/send?text=${shareTitle()} ${shareBody()}`}
 						target="_blank"
@@ -110,7 +120,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					>
 						<ShareWhatsappIcon></ShareWhatsappIcon>
 						<div>Whatsapp</div>
-					</a>
+					</TrackedAnchorLink>
 				</div>
 			)}
 			{showLinkCopied && (

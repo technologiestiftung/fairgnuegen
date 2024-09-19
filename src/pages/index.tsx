@@ -1,4 +1,3 @@
-import { useSearchParams } from "react-router-dom";
 import FilterButton from "../components/buttons/filter-button";
 import ShowAllButton from "../components/buttons/show-all-button";
 import ShowMapButton from "../components/buttons/show-map-button";
@@ -10,9 +9,6 @@ import { Layout } from "../layout/layout";
 import { InfoBox } from "../components/info-box/info-box";
 
 export default function Index() {
-	const [searchParams] = useSearchParams();
-	const showFreeOffersOnly = (searchParams.get("free") ?? "false") === "true";
-
 	return (
 		<Layout>
 			<div className="max-w-4xl flex flex-col mx-auto">
@@ -21,11 +17,7 @@ export default function Index() {
 						Was möchtest du unternehmen?
 					</h1>
 					<div className="flex flex-col gap-2">
-						<SearchBar
-							onSubmitOverride={(search) => {
-								window.location.href = `/all-offers/?search=${search}&free=${showFreeOffersOnly ? "true" : "false"}`;
-							}}
-						/>
+						<SearchBar />
 						<FreeOffersCheckbox />
 					</div>
 				</div>

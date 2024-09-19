@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useEffect, useState } from "react";
 import { categoryMap } from "../../content/categories";
 import { districtsMap } from "../../content/districts";

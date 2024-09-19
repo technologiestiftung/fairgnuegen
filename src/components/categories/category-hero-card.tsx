@@ -2,6 +2,7 @@ import React from "react";
 import ArrowRightIcon from "../../components/icons/arrow-right-icon";
 import { CategoryDetails } from "../../content/categories";
 import { ResponsivePicture } from "../responsive-picture/responsive-picture.tsx";
+import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
 
 interface CategoryHeroCardProps {
 	identifier: string;
@@ -13,8 +14,9 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 	category,
 }) => {
 	return (
-		<a
+		<TrackedAnchorLink
 			className="h-56 flex flex-row gap-0 shadow-md w-full border border-berlin-grey-light hover:bg-berlin-grey-light"
+			additionalTrackingContext="(category hero card)"
 			href={`/all-offers/?category=${identifier}`}
 		>
 			<div className={`${category.color} h-full w-[5%]`}></div>
@@ -34,6 +36,6 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 					<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 				</div>
 			</div>
-		</a>
+		</TrackedAnchorLink>
 	);
 };
