@@ -41,8 +41,13 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				</div>
 
 				<div className="w-full flex flex-col gap-4">
-					<div className="flex flex-col gap-2">
-						<h1 className="font-bold text-xl">{offer.provider}</h1>
+					<div className="flex flex-row justify-between items-start gap-4">
+						<h1 className="font-bold text-xl flex flex-row items-center h-full">
+							{offer.provider}
+						</h1>
+						<div className="min-w-[43px] flex justify-center">
+							<LikeButton offer={offer} />
+						</div>
 					</div>
 					{offer.isFree && (
 						<div className="flex flex-row gap-2 flex-wrap">
@@ -52,15 +57,12 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					<div className={`break-words text-left cusor-default`}>
 						{cutoffDescription}
 					</div>
-					<div className="flex flex-row w-full justify-end text-primary-blue">
+					<div className="flex flex-row w-full justify-start text-primary-blue">
 						<a className="flex flex-row gap-2 items-center" href={offer.path}>
 							<div>mehr Infos</div>
 							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 						</a>
 					</div>
-				</div>
-				<div className="min-w-[43px] flex justify-center">
-					<LikeButton offer={offer} />
 				</div>
 			</div>
 			<div className="border-b border-berlin-grey-light w-full"></div>
