@@ -73,6 +73,7 @@ export function Header() {
 									<TrackedAnchorLink
 										href={link.href}
 										className="hover:underline"
+										additionalTrackingContext="(header nav link)"
 									>
 										{link.label}
 									</TrackedAnchorLink>
