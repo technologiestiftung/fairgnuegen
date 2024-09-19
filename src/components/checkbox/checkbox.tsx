@@ -24,7 +24,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				id={id}
 				checked={isChecked}
 				onChange={onChange}
-				className="appearance-none focus:outline-none peer"
+				className="appearance-none focus:outline-none peer w-0"
 			/>
 			<span
 				className={`
