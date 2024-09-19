@@ -33,10 +33,10 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 							target="_blank"
 							rel="noreferrer"
 						>
-							<div className="">Mehr Infos zum Berechtigungsnachweis</div>
-							<div className="min-w-20 md:min-w-10">
-								<LinkIcon></LinkIcon>
-							</div>
+							<span className="w-min md:w-auto">
+								Mehr Infos zum Berechtigungsnachweis
+							</span>
+							<LinkIcon></LinkIcon>
 						</a>
 					</div>
 					<div className="pointer-events-none row-start-1 col-start-1 w-[50%] border-t-4 border-b-4 border-l-4 border-berlin-pink"></div>
