@@ -62,27 +62,27 @@ export default function Index() {
 				)}
 			</div>
 
-			<div className="flex flex-col gap-4 py-8 md:flex-row md:justify-between px-4 md:p-4">
-				<div className="hidden md:flex">
+			<div className="flex flex-col gap-4 py-8 lg:flex-row lg:justify-between px-4 lg:p-4">
+				<div className="hidden lg:flex">
 					<MapLegend></MapLegend>
 				</div>
 
-				<div className="hidden md:flex flex-row gap-4 items-center justify-end">
+				<div className="hidden lg:flex flex-row gap-4 items-center justify-end">
 					<FreeOffersCheckbox></FreeOffersCheckbox>
 					<FilterButton></FilterButton>
 					<ShowListButton></ShowListButton>
 				</div>
 
-				<div className="flex md:hidden md:opacity-0">
+				<div className="flex lg:hidden lg:opacity-0">
 					<FreeOffersCheckbox></FreeOffersCheckbox>
 				</div>
 
-				<div className="flex md:hidden md:opacity-0 flex-row gap-4">
+				<div className="flex lg:hidden lg:opacity-0 flex-row gap-4">
 					<ShowListButton></ShowListButton>
 					<FilterButton></FilterButton>
 				</div>
 
-				<div className="flex md:hidden">
+				<div className="flex lg:hidden">
 					<MapLegend></MapLegend>
 				</div>
 			</div>
