@@ -61,7 +61,7 @@ export default function Index() {
 				)}
 			</div>
 
-			<div className="grid grid-cols-1 grid-rows-3 gap-2 pb-8 md:grid-cols-2 md:grid-rows-1 p-2 md:p-4">
+			<div className="flex flex-col gap-4 py-8 md:flex-row md:justify-between px-4 md:p-4">
 				<div className="hidden md:flex">
 					<MapLegend></MapLegend>
 				</div>

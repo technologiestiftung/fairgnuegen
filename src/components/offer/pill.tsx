@@ -13,7 +13,7 @@ export const Pill: React.FC<PillProp> = ({
 }) => {
 	return (
 		<div
-			className={`text-sm md:text-default px-3 py-1 rounded-full ${!backgroundColor && "border-primary-blue border-2"} ${textColor ?? "text-primary-blue"} text-sm ${backgroundColor} flex text-center items-center`}
+			className={`text-xs md:text-base px-3 py-1 rounded-full ${!backgroundColor && "border-primary-blue border-2"} ${textColor ?? "text-primary-blue"} text-sm ${backgroundColor} flex text-center items-center`}
 		>
 			{title}
 		</div>

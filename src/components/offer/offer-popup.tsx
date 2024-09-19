@@ -21,13 +21,13 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 
 	return (
 		<div
-			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default px-2 py-4 border-b md:border-0`}
+			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default py-4 border-b md:border-0`}
 			onClick={() => {
 				window.location.href = offer.path;
 			}}
 		>
 			<div className="flex flex-row gap-2">
-				<div className="w-full flex flex-col gap-4 px-2">
+				<div className="w-full flex flex-col gap-4 px-4">
 					<div className="w-full flex flex-row justify-between gap-4">
 						<div className="h-fit flex flex-col gap-2">
 							<div className="w-fit flex flex-row items-center gap-2">
