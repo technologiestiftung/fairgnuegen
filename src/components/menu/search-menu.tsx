@@ -27,11 +27,7 @@ const SearchMenu: React.FC<SearchMenuProps> = ({ isOpen, close }) => {
 							{'"'}Fairgnügen{'"'}
 						</span>
 					</h1>
-					<SearchBar
-						onSubmitOverride={(search) => {
-							window.location.href = `/all-offers/?search=${search}`;
-						}}
-					></SearchBar>
+					<SearchBar />
 				</div>
 			</div>
 		</DrawerSearch>

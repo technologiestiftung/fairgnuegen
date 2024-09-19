@@ -4,6 +4,8 @@ import { Drawer } from "../drawer/drawer";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
+import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
+
 interface MainMenuProps {
 	isOpen: boolean;
 	close: () => void;
@@ -13,7 +15,7 @@ interface MenuItem {
 	title: string;
 	subItems: MenuItem[];
 	isExternalLink: boolean;
-	link?: string;
+	link: string;
 }
 
 const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
@@ -86,6 +88,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 	];
 
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
 	return (
 		<Drawer isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
@@ -95,28 +98,33 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 						<CloseIcon></CloseIcon>
 					</button>
 				</div>
-				{links.map((link) =>
-					link.isExternalLink ? (
-						<a
-							key={link.title}
-							href={link.link}
-							className="text-link-blue hover:underline py-4 px-6 border-b"
-							target="_blank"
-							rel="noreferrer"
-						>
-							{link.title}
-						</a>
-					) : (
-						<div key={link.title}>
-							<div
-								className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 px-6 border-b`}
-								onClick={() => {
-									if (link.subItems.length === 0) {
-										window.location.href = link.link ?? "/";
-									}
-								}}
+				{links.map((link) => (
+					<React.Fragment key={link.title}>
+						{link.isExternalLink && (
+							<a
+								href={link.link}
+								className="text-link-blue hover:underline py-4 px-6 border-b"
+								target="_blank"
+								rel="noreferrer"
 							>
-								{link.subItems.length > 0 ? (
+								{link.title}
+							</a>
+						)}
+
+						{!link.isExternalLink && link.subItems.length === 0 && (
+							<TrackedAnchorLink
+								href={link.link}
+								className="hover:bg-berlin-grey-light py-4 px-6 border-b"
+							>
+								{link.title}
+							</TrackedAnchorLink>
+						)}
+
+						{!link.isExternalLink && link.subItems.length > 0 && (
+							<>
+								<div
+									className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 px-6 border-b`}
+								>
 									<div
 										className="flex flex-row justify-between items-center"
 										onClick={() => {
@@ -134,25 +142,26 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 											<ChevronDown></ChevronDown>
 										)}
 									</div>
-								) : (
-									<div>{link.title}</div>
-								)}
-							</div>
-							{selectedCategory === link.title &&
-								link.subItems.map((subItem) => (
-									<div
-										key={subItem.title}
-										className="px-12 py-4 bg-berlin-grey-light hover:cursor-pointer hover:bg-berlin-grey-medium"
-										onClick={() => {
-											window.location.href = subItem.link ?? "/";
-										}}
-									>
-										{subItem.title}
+								</div>
+
+								{selectedCategory === link.title && (
+									<div className="flex flex-col">
+										{link.subItems.map((subItem) => (
+											<TrackedAnchorLink
+												key={subItem.link}
+												href={subItem.link}
+												additionalTrackingContext={"(drawer menu)"}
+												className="px-12 py-4 bg-berlin-grey-light hover:bg-berlin-grey-medium"
+											>
+												{subItem.title}
+											</TrackedAnchorLink>
+										))}
 									</div>
-								))}
-						</div>
-					),
-				)}
+								)}
+							</>
+						)}
+					</React.Fragment>
+				))}
 			</div>
 		</Drawer>
 	);

@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import SearchIcon from "../icons/search-icon";
 import StartSearchIcon from "../icons/start-search-icon";
 import ClearIcon from "../icons/clear-icon";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
+import { trackInteraction } from "../../analytics/matomo";
 
-interface SearchBarProps {
-	onSubmitOverride?: (search: string) => void;
-}
-
-const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
+const SearchBar: React.FC = () => {
 	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
+	const location = useLocation();
+	const navigate = useNavigate();
 	const [search, setSearch] = useState(searchParams.get("search") ?? "");
 	const [hasFocus, setHasFocus] = useState(false);
 
@@ -19,10 +18,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 		<form
 			onSubmit={(e) => {
 				e.preventDefault();
-				if (onSubmitOverride) {
-					onSubmitOverride(search);
+
+				trackInteraction({
+					eventAction: "search-submit",
+					eventName: `search: ${search}`,
+				});
+
+				if (!location.pathname.includes("/all-offers/")) {
+					searchParams.set("search", search);
+					navigate(`/all-offers/?${searchParams.toString()}`);
 					return;
 				}
+
 				updateSearchParam("search", search);
 			}}
 			className="group grid grid-cols-1 grid-rows-1 items-center z-[10]"
@@ -57,14 +64,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmitOverride }) => {
 				<button
 					type="submit"
 					className={`w-fit pointer-events-auto border-l-2 pl-2 pr-2 ${hasFocus ? "border-focus-blue" : " border-l-black"} hover:bg-berlin-grey-light border-2 border-black`}
-					onClick={(e) => {
-						e.preventDefault();
-						if (onSubmitOverride) {
-							onSubmitOverride(search);
-							return;
-						}
-						updateSearchParam("search", search);
-					}}
 				>
 					<StartSearchIcon></StartSearchIcon>
 				</button>

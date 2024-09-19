@@ -15,7 +15,7 @@ const ShowFilteredButton: React.FC<ShowFilteredButtonProps> = ({ onClick }) => {
 				<div className="w-[207px] flex flex-row items-center justify-center font-normal">
 					Angebote zeigen
 				</div>
-				<div className="h-full bg-primary-red w-[43px] h-full flex flex-row items-center justify-center border-l-black border-l-2">
+				<div className="h-full bg-primary-red w-[43px] flex flex-row items-center justify-center border-l-black border-l-2">
 					<ArrowRightIcon color="text-white"></ArrowRightIcon>
 				</div>
 			</div>

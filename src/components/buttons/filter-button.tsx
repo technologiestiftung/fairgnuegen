@@ -5,6 +5,7 @@ import { useCategories } from "../../hooks/use-categories";
 import { useDistricts } from "../../hooks/use-districts";
 import { useTargetAudiences } from "../../hooks/use-target-audiences";
 import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
+import { trackInteraction } from "../../analytics/matomo.ts";
 
 const FilterButton: React.FC = () => {
 	const { categories } = useCategories();
@@ -29,6 +30,10 @@ const FilterButton: React.FC = () => {
 				className="relative px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black h-[43px]"
 				onClick={() => {
 					setIsOpen(true);
+					trackInteraction({
+						eventAction: "button click",
+						eventName: `toggle filter drawer menu (from: ${window.location.pathname})`,
+					});
 				}}
 			>
 				<div className="flex flex-row gap-1 items-center">

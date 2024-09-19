@@ -3,6 +3,7 @@ import { LanguageSelect } from "./language-select";
 import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
 import { useIsHeaderLogoVisible } from "./hooks/use-is-header-logo-visible";
 import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
+import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
 
 export function Header() {
 	const isHeaderLogoVisible = useIsHeaderLogoVisible();
@@ -68,9 +69,12 @@ export function Header() {
 						<ul className="flex justify-center gap-x-[30px]">
 							{navLinks.map((link) => (
 								<li key={link.href}>
-									<a href={link.href} className="hover:underline">
+									<TrackedAnchorLink
+										href={link.href}
+										className="hover:underline"
+									>
 										{link.label}
-									</a>
+									</TrackedAnchorLink>
 								</li>
 							))}
 						</ul>
