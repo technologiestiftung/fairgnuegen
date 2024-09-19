@@ -15,6 +15,7 @@ const MapLegend: React.FC = () => {
 							key={c[0]}
 							backgroundColor={c[1].color}
 							textColor={c[1].textColor}
+							textSize="text-xs md:text-base"
 						></Pill>
 					))}
 			</div>
