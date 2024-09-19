@@ -15,7 +15,8 @@ export default function Index() {
 	const popupRef = useRef<HTMLDivElement | null>(null);
 	const [topAnchor, setTopAnchor] = useState(0);
 
-	const mapVerticalBaseline = 600 / 2;
+	const mapHeightPx = 700;
+	const mapVerticalBaseline = mapHeightPx / 2;
 	const iconOffset = 30;
 
 	useEffect(() => {
@@ -31,7 +32,7 @@ export default function Index() {
 			<div className="grid grid-cols-1 grid-rows-1 relative">
 				<div
 					id="map"
-					className="row-start-1 col-start-1 w-full h-[40vh] md:h-[70vh]"
+					className={`row-start-1 col-start-1 w-full h-[40vh] md:h-[${mapHeightPx}px]`}
 				/>
 				{selectedOffer && (
 					<div className="block md:hidden">
