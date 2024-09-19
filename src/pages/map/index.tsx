@@ -31,7 +31,7 @@ export default function Index() {
 			<div className="grid grid-cols-1 grid-rows-1 relative">
 				<div
 					id="map"
-					className="row-start-1 col-start-1 w-full h-[40vh] md:h-[600px]"
+					className="row-start-1 col-start-1 w-full h-[40vh] md:h-[70vh]"
 				/>
 				{selectedOffer && (
 					<div className="block md:hidden">
