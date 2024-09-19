@@ -43,7 +43,7 @@ export default function Index() {
 
 				<div className="max-w-3xl mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0">
-						<div className="flex flex-col mb-10">
+						<div className="flex flex-col gap-2 mb-10">
 							<SearchBar />
 							<FreeOffersCheckbox />
 						</div>

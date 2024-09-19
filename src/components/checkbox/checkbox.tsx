@@ -16,7 +16,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
 	return (
 		<label
-			className="flex flex-row items-center mt-2 text-lg font-bold cursor-pointer"
+			className="flex flex-row items-center text-lg font-bold cursor-pointer"
 			htmlFor={id}
 		>
 			<input
