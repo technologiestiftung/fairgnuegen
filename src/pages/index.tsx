@@ -25,7 +25,9 @@ export default function Index() {
 							window.location.href = `/all-offers/?search=${search}&free=${showFreeOffersOnly ? "true" : "false"}`;
 						}}
 					/>
-					<FreeOffersCheckbox />
+					<div className="pt-2">
+						<FreeOffersCheckbox />
+					</div>
 				</div>
 
 				<div className="w-full border-b border-separator mb-12 mt-2"></div>
