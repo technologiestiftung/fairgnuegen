@@ -49,8 +49,8 @@ export default function Index() {
 					</div>
 				)}
 			</div>
-			<div className="max-w-3xl mx-auto flex flex-col my-4">
-				<div className="flex flex-row justify-between mx-4 md:mx-0">
+			<div className="w-full flex flex-col my-4">
+				<div className="flex flex-row justify-between mx-4">
 					<ShowListButton></ShowListButton>
 					<FreeOffersCheckbox></FreeOffersCheckbox>
 				</div>
