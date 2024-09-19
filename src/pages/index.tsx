@@ -20,12 +20,12 @@ export default function Index() {
 					<h1 className="text-2xl font-bold w-full flex flex-row justify-center my-8 text-center">
 						Was möchtest du unternehmen?
 					</h1>
-					<SearchBar
-						onSubmitOverride={(search) => {
-							window.location.href = `/all-offers/?search=${search}&free=${showFreeOffersOnly ? "true" : "false"}`;
-						}}
-					/>
-					<div className="pt-2">
+					<div className="flex flex-col gap-2">
+						<SearchBar
+							onSubmitOverride={(search) => {
+								window.location.href = `/all-offers/?search=${search}&free=${showFreeOffersOnly ? "true" : "false"}`;
+							}}
+						/>
 						<FreeOffersCheckbox />
 					</div>
 				</div>
