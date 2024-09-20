@@ -1,41 +1,44 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
+import FilterButton from "../../components/buttons/filter-button";
+import ShowListButton from "../../components/buttons/show-list-button";
+import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
+import MapLegend from "../../components/map/map-legend";
 import OfferPopup from "../../components/offer/offer-popup";
 import { useMap } from "../../hooks/use-map";
+import { useMapHeight } from "../../hooks/use-map-height";
 import { useMapInteraction } from "../../hooks/use-map-interaction";
 import { Layout } from "../../layout/layout";
-import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
-import ShowListButton from "../../components/buttons/show-list-button";
-import FilterButton from "../../components/buttons/filter-button";
-import MapLegend from "../../components/map/map-legend";
 
 export default function Index() {
 	const { mapRef, isMapLoading } = useMap();
 	const { selectedOffer } = useMapInteraction(mapRef);
 	const popupRef = useRef<HTMLDivElement | null>(null);
 	const [topAnchor, setTopAnchor] = useState(0);
-
-	const mapHeightPx = 700;
-	const mapVerticalBaseline = mapHeightPx / 2;
-	const iconOffset = 30;
+	const { mapHeight } = useMapHeight();
 
 	useEffect(() => {
 		if (popupRef.current) {
+			const mapVerticalBaseline = mapHeight / 2;
+			const iconOffset = 30;
 			setTopAnchor(
 				mapVerticalBaseline - popupRef.current.clientHeight - iconOffset,
 			);
 		}
-	}, [selectedOffer, popupRef]);
+	}, [selectedOffer, popupRef, mapHeight]);
 
 	return (
 		<Layout>
 			<div className="grid grid-cols-1 grid-rows-1 relative">
 				<div
 					id="map"
-					className={`row-start-1 col-start-1 w-full h-[40vh] md:h-[${mapHeightPx}px]`}
+					className={`row-start-1 col-start-1 w-full`}
+					style={{
+						height: `${mapHeight}px`,
+					}}
 				/>
 				{selectedOffer && (
-					<div className="block md:hidden">
+					<div id="mobile-popup" className="block md:hidden">
 						<OfferPopup offer={selectedOffer} />
 					</div>
 				)}
@@ -62,7 +65,10 @@ export default function Index() {
 				)}
 			</div>
 
-			<div className="flex flex-col gap-4 py-8 lg:flex-row lg:justify-between px-4 lg:p-4">
+			<div
+				id="map-legend"
+				className="flex flex-col gap-4 py-4 lg:flex-row lg:justify-between px-4 lg:p-4"
+			>
 				<div className="hidden lg:flex">
 					<MapLegend></MapLegend>
 				</div>
