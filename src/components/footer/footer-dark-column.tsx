@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDown } from "../icons/chevron-down.tsx";
+import { Collapsible } from "../collapsible/collapsible";
 
 type FooterColumnProps = {
 	title: string;
@@ -9,20 +9,30 @@ type FooterColumnProps = {
 export function FooterDarkColumn({ title, links }: FooterColumnProps) {
 	return (
 		<>
-			<div className="flex flex-col desktop:gap-3.5">
-				<div
-					className={`
-					font-bold
-					flex justify-between items-center border-t-[0.5px] p-4
-					desktop:border-none desktop:p-0 
-				`}
-				>
+			{/* Mobile */}
+			<div className="flex flex-col desktop:hidden">
+				<Collapsible title={title}>
+					<ul className="flex flex-col bg-black">
+						{links.map((link) => (
+							<li key={link.href}>
+								<a
+									href={link.href}
+									className="flex hover:underline pl-7 gap-x-1.5  py-4"
+								>
+									{link.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</Collapsible>
+			</div>
+
+			{/* Desktop */}
+			<div className="hidden desktop:flex flex-col gap-3.5">
+				<div className="font-bold flex justify-between items-center">
 					<span className="text-lg">{title}</span>
-					<div className="desktop:hidden">
-						<ChevronDown />
-					</div>
 				</div>
-				<ul className="flex flex-col desktop:gap-3.5 bg-black desktop:bg-inherit">
+				<ul className="flex flex-col gap-3.5 bg-inherit">
 					{links.map((link) => (
 						<li key={link.href}>
 							<a
