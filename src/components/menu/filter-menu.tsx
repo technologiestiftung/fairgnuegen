@@ -112,7 +112,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 				};
 			}),
 		);
-		if (window.location.pathname !== "/all-offers/") {
+		if (window.location.pathname === "/") {
 			window.location.href = "/all-offers/?free=false" + searchParams;
 			return;
 		}
