@@ -14,6 +14,7 @@ export default function Index() {
 	const { mapRef, isMapLoading } = useMap();
 	const { selectedOffer } = useMapInteraction(mapRef);
 	const popupRef = useRef<HTMLDivElement | null>(null);
+	const mobilePopupRef = useRef<HTMLDivElement | null>(null);
 	const [topAnchor, setTopAnchor] = useState(0);
 	const { mapHeight } = useMapHeight();
 
@@ -27,6 +28,16 @@ export default function Index() {
 		}
 	}, [selectedOffer, popupRef, mapHeight]);
 
+	useEffect(() => {
+		if (mobilePopupRef.current) {
+			const divBottom = mobilePopupRef.current.getBoundingClientRect().bottom;
+			const windowHeight = window.innerHeight;
+			window.scrollBy({
+				top: divBottom - windowHeight,
+			});
+		}
+	}, [mobilePopupRef, selectedOffer]);
+
 	return (
 		<Layout>
 			<div className="grid grid-cols-1 grid-rows-1 relative">
@@ -38,7 +49,11 @@ export default function Index() {
 					}}
 				/>
 				{selectedOffer && (
-					<div id="mobile-popup" className="block md:hidden">
+					<div
+						id="mobile-popup"
+						className="block md:hidden"
+						ref={mobilePopupRef}
+					>
 						<OfferPopup offer={selectedOffer} />
 					</div>
 				)}
