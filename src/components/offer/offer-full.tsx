@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 import { getCategoryDetailsFromName } from "../../content/categories";
 import { Offer } from "../../content/content";
-import RouteButton from "../buttons/route-button";
+import CopyToClipboardButton from "../buttons/copy-to-clipboard-button";
 import ShareButton from "../buttons/share-button";
 import LinkIcon from "../icons/link-icon";
 import { Pill } from "./pill";
-import { LikeButton } from "../buttons/like-button.tsx";
+import { LikeButton } from "../buttons/like-button";
 
 interface OfferFullProps {
 	offer: Offer;
@@ -14,8 +14,9 @@ interface OfferFullProps {
 
 const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 	const [showFullDescription, setShowFullDescription] = useState(false);
-	const [showLinkCopied, setShowLinkCopied] = useState(false);
+
 	const fullAddress = `${offer.provider}, ${offer.address}, ${offer.zip} ${offer.city}`;
+
 	return (
 		<div className="w-full">
 			<div className="flex flex-row gap-2 w-full justify-end pr-4 pb-4 sm:hidden">
@@ -94,21 +95,8 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						{offer.zip} {offer.city}
 					</p>
 				</div>
-				<div className="flex flex-row items-center gap-2">
-					<RouteButton
-						onClick={async () => {
-							setShowLinkCopied(true);
-							await navigator.clipboard.writeText(fullAddress);
-							setTimeout(() => {
-								setShowLinkCopied(false);
-							}, 1000);
-						}}
-					></RouteButton>
-					{showLinkCopied && (
-						<div className="w-fit flex flex-col gap-4 py-2 px-4 border w-max bg-primary-blue text-white">
-							<div>Die Adresse wurde kopiert!</div>
-						</div>
-					)}
+				<div className="flex flex-row items-center w-full">
+					<CopyToClipboardButton text={fullAddress} />
 				</div>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
