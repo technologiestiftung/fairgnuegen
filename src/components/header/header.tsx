@@ -52,9 +52,8 @@ export function Header() {
 					className="hidden desktop:flex flex-col justify-center px-7 h-24"
 				>
 					<span className="font-bold">
-						Fairgnügen • Berlin fair und günstig erleben*
+						Fairgnügen • Berlin fair und günstig erleben
 					</span>
-					<span>*Angebote sind nur mit dem Berechtigungsnachweis nutzbar.</span>
 				</a>
 
 				<a
@@ -62,7 +61,7 @@ export function Header() {
 					className="flex desktop:hidden flex-col justify-center px-7 h-24"
 				>
 					<span className="font-bold text-2xl">Fairgnügen</span>
-					<span className="text-sm">Berlin fair und günstig erleben.*</span>
+					<span className="text-sm">Berlin fair und günstig erleben</span>
 				</a>
 
 				<div className="flex items-center gap-x-[30px]">
