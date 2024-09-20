@@ -1,38 +1,21 @@
 import "maplibre-gl/dist/maplibre-gl.css";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import FilterButton from "../../components/buttons/filter-button";
+import ShowListButton from "../../components/buttons/show-list-button";
+import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
+import MapLegend from "../../components/map/map-legend";
 import OfferPopup from "../../components/offer/offer-popup";
 import { useMap } from "../../hooks/use-map";
+import { useMapHeight } from "../../hooks/use-map-height";
 import { useMapInteraction } from "../../hooks/use-map-interaction";
 import { Layout } from "../../layout/layout";
-import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
-import ShowListButton from "../../components/buttons/show-list-button";
-import FilterButton from "../../components/buttons/filter-button";
-import MapLegend from "../../components/map/map-legend";
 
 export default function Index() {
 	const { mapRef, isMapLoading } = useMap();
 	const { selectedOffer } = useMapInteraction(mapRef);
 	const popupRef = useRef<HTMLDivElement | null>(null);
 	const [topAnchor, setTopAnchor] = useState(0);
-	const [windowHeight, setWindowHeight] = useState(0);
-
-	// TODO: find a cleaner way to handle this, it seems messy
-	const mapHeight = useMemo(() => {
-		if (typeof document !== "undefined") {
-			const header = document.getElementById("header");
-			const mapLegend = document.getElementById("map-legend");
-			const headerHeight = header ? header.clientHeight : 0;
-			const mapLegendHeight = mapLegend ? mapLegend.clientHeight : 0;
-			return window.innerHeight - headerHeight - mapLegendHeight;
-		}
-		return 0;
-	}, [
-		typeof document !== "undefined" ? document.getElementById("header") : null,
-		typeof document !== "undefined"
-			? document.getElementById("map-legend")
-			: null,
-		windowHeight,
-	]);
+	const { mapHeight } = useMapHeight();
 
 	useEffect(() => {
 		if (popupRef.current) {
@@ -43,16 +26,6 @@ export default function Index() {
 			);
 		}
 	}, [selectedOffer, popupRef, mapHeight]);
-
-	useEffect(() => {
-		const handleResize = () => {
-			setWindowHeight(window.innerHeight);
-		};
-		window.addEventListener("resize", handleResize);
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
 
 	return (
 		<Layout>
