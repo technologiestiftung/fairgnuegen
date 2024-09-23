@@ -11,11 +11,16 @@ export function Breadcrumbs() {
 	const [updatedBreadcrumbs] = useUpdateBreadcrumbsWithCategory();
 
 	return (
-		<div className="text-sm flex items-center gap-x-3">
+		<div className="text-sm items-center gap-x-3 flex flex-row">
 			{updatedBreadcrumbs?.map(({ label, href }, index) => (
 				<React.Fragment key={label}>
 					{index > 0 && <ChevronRight />}
-					<a href={href}>{label}</a>
+					<a
+						href={href}
+						className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[20vw] sm:max-w-[30vw] md:max-w-[40vw]"
+					>
+						{label}
+					</a>
 				</React.Fragment>
 			))}
 		</div>
