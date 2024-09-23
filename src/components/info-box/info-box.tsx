@@ -19,6 +19,10 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 			>
 				<div className="grid grid-rows-1 grid-cols-1">
 					<div className="row-start-1 col-start-1 p-8 bg-white flex flex-col gap-4">
+						<h1 className="font-bold text-lg">
+							Freier oder ermäßigter Eintritt nur mit Berechtigungsnachweis!
+						</h1>
+
 						<div>
 							Mit dem Berechtigungsnachweis Berlin-Ticket S können Menschen, die
 							Sozialhilfe erhalten, den öffentlichen Nahverkehr sowie Sport-,

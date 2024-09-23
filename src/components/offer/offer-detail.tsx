@@ -4,12 +4,15 @@ import ArrowRightIcon from "../icons/arrow-right-icon";
 import { Pill } from "./pill";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 import { LikeButton } from "../buttons/like-button.tsx";
+import { useNavigate } from "react-router-dom";
 
 interface OfferDetailProps {
 	offer: Offer;
 }
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
+	const navigate = useNavigate();
+
 	const MAGIC_CUTOFF_LIMIT = 165;
 
 	const cutoffDescription = useMemo(() => {
@@ -23,7 +26,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 		<div
 			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white px-3`}
 			onClick={() => {
-				window.location.href = offer.path;
+				navigate(offer.path);
 			}}
 		>
 			<div className="flex flex-row py-4 mx-2 lg:mx-0 gap-4">
@@ -54,7 +57,9 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 							<Pill title={"Freier Eintritt"} />
 						</div>
 					)}
-					<div className={`break-words text-left cusor-default`}>
+					<div
+						className={`break-words text-left cusor-default pr-0 md:pr-[59px]`}
+					>
 						{cutoffDescription}
 					</div>
 					<div className="flex flex-row w-full justify-start text-primary-blue">

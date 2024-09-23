@@ -15,6 +15,7 @@ import { Drawer } from "../drawer/drawer";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
+import { useNavigate } from "react-router-dom";
 
 interface FilterRowOption {
 	title: string;
@@ -44,6 +45,8 @@ interface FilterMenuProps {
 }
 
 const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
+	const navigate = useNavigate();
+
 	const { updateManySearchParams } = useUpdateSearchParam();
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
@@ -113,7 +116,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			}),
 		);
 		if (window.location.pathname === "/") {
-			window.location.href = "/all-offers/?free=false" + searchParams;
+			navigate("/all-offers/?free=false" + searchParams);
 			return;
 		}
 		close();
@@ -129,7 +132,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			}),
 		);
 		if (window.location.pathname === "/") {
-			window.location.href = "/all-offers/?" + searchParams;
+			navigate("/all-offers/?" + searchParams);
 			return;
 		}
 		close();
