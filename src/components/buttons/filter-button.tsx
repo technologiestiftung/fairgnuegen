@@ -22,7 +22,7 @@ const FilterButton: React.FC = () => {
 			targetAudiences.length +
 			(isShowingFreeOffersOnly ? 1 : 0)
 		);
-	}, [categories, districts, targetAudiences]);
+	}, [categories, districts, targetAudiences, isShowingFreeOffersOnly]);
 
 	return (
 		<div className="">
