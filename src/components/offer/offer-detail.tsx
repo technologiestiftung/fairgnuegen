@@ -54,7 +54,9 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 							<Pill title={"Freier Eintritt"} />
 						</div>
 					)}
-					<div className={`break-words text-left cusor-default`}>
+					<div
+						className={`break-words text-left cusor-default pr-0 md:pr-[59px]`}
+					>
 						{cutoffDescription}
 					</div>
 					<div className="flex flex-row w-full justify-start text-primary-blue">
