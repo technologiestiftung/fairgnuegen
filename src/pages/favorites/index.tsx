@@ -58,7 +58,7 @@ export default function Index() {
 							<OfferDetail offer={offer} key={`${idx}-${offer.provider}`} />
 						))}
 					</div>
-					<div className="mb-10">
+					<div className="mb-10 px-5 lg:px-0">
 						<BackButton></BackButton>
 					</div>
 				</div>
