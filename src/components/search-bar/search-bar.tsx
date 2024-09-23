@@ -36,7 +36,7 @@ const SearchBar: React.FC = () => {
 			<input
 				value={search}
 				type="text"
-				className="relative pl-8 pr-20 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none"
+				className="relative pl-8 pr-20 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none placeholder-[#9D9D9C]"
 				placeholder="Suchbegriff eingeben"
 				onChange={(e) => setSearch(e.target.value)}
 				onFocus={() => {

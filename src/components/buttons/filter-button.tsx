@@ -17,12 +17,12 @@ const FilterButton: React.FC = () => {
 
 	const numActiveFilters = useMemo(() => {
 		return (
-			(categories.length === 0 ? 0 : 1) +
-			(districts.length === 0 ? 0 : 1) +
-			(targetAudiences.length === 0 ? 0 : 1) +
+			categories.length +
+			districts.length +
+			targetAudiences.length +
 			(isShowingFreeOffersOnly ? 1 : 0)
 		);
-	}, [categories, districts, targetAudiences]);
+	}, [categories, districts, targetAudiences, isShowingFreeOffersOnly]);
 
 	return (
 		<div className="">
@@ -41,7 +41,7 @@ const FilterButton: React.FC = () => {
 					<div>Filter</div>
 				</div>
 				{numActiveFilters > 0 && (
-					<div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-primary-blue flex flex-row items-center justify-center text-white font-bold">
+					<div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-berlin-green flex flex-row items-center justify-center text-white font-bold">
 						{numActiveFilters}
 					</div>
 				)}
