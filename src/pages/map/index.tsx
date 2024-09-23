@@ -21,7 +21,7 @@ export default function Index() {
 	useEffect(() => {
 		if (popupRef.current) {
 			const mapVerticalBaseline = mapHeight / 2;
-			const iconOffset = 30;
+			const iconOffset = 55;
 			setTopAnchor(
 				mapVerticalBaseline - popupRef.current.clientHeight - iconOffset,
 			);
