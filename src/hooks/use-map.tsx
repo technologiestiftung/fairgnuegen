@@ -24,10 +24,12 @@ export function useMap() {
 				{ path: "/marker_sport.png", name: "sport_marker" },
 				{ path: "/marker_backup.png", name: "backup_marker" },
 			];
-			markers.forEach(async (marker) => {
-				const markerData = await initMap.loadImage(marker.path);
-				initMap.addImage(marker.name, markerData.data);
-			});
+			await Promise.all(
+				markers.map(async (marker) => {
+					const markerData = await initMap.loadImage(marker.path);
+					initMap.addImage(marker.name, markerData.data);
+				}),
+			);
 
 			initMap.addSource("markers", {
 				type: "geojson",

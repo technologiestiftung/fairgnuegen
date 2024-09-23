@@ -13,6 +13,43 @@ export function useMapInteraction(
 			return;
 		}
 
+		if (!map.current.isStyleLoaded()) {
+			return;
+		}
+
+		if (selectedOffer) {
+			map.current.setLayoutProperty("unclustered-point", "icon-size", [
+				"interpolate",
+				["linear"],
+				["zoom"],
+				0,
+				["match", ["get", "id"], selectedOffer.path, 0.15, 0.1],
+				12,
+				["match", ["get", "id"], selectedOffer.path, 0.75, 0.5],
+				22,
+				["match", ["get", "id"], selectedOffer.path, 1.5, 1.0],
+			]);
+			return;
+		}
+
+		map.current.setLayoutProperty("unclustered-point", "icon-size", [
+			"interpolate",
+			["linear"],
+			["zoom"],
+			0,
+			0.1,
+			12,
+			0.5,
+			22,
+			1.0,
+		]);
+	}, [map, selectedOffer]);
+
+	useEffect(() => {
+		if (!map.current) {
+			return;
+		}
+
 		map.current.on("mouseenter", "unclustered-point", () => {
 			if (!map.current) {
 				return;
@@ -47,18 +84,6 @@ export function useMapInteraction(
 
 			setSelectedOffer(offer);
 
-			map.current.setLayoutProperty("unclustered-point", "icon-size", [
-				"interpolate",
-				["linear"],
-				["zoom"],
-				0,
-				["match", ["get", "id"], e.features[0].properties.id, 0.15, 0.1],
-				12,
-				["match", ["get", "id"], e.features[0].properties.id, 0.75, 0.5],
-				22,
-				["match", ["get", "id"], e.features[0].properties.id, 1.5, 1.0],
-			]);
-
 			map.current.easeTo({
 				// @ts-expect-error coordinates is not null
 				center: e.features[0].geometry.coordinates,
@@ -75,24 +100,15 @@ export function useMapInteraction(
 			});
 			if (!features || features.length === 0) {
 				setSelectedOffer(null);
-
-				map.current.setLayoutProperty("unclustered-point", "icon-size", [
-					"interpolate",
-					["linear"],
-					["zoom"],
-					0,
-					0.1,
-					12,
-					0.5,
-					22,
-					1.0,
-				]);
 				return;
 			}
 		});
 
 		if (window.innerWidth > 768) {
 			map.current.on("dragstart", () => {
+				if (!map.current) {
+					return;
+				}
 				setSelectedOffer(null);
 			});
 		}
