@@ -37,7 +37,7 @@ const upperFooterColumns = [
 			{
 				label: (
 					<>
-						<EasyLanguageIcon customId="footer" /> Leichte Sprache
+						<EasyLanguageIcon /> Leichte Sprache
 					</>
 				),
 				href: "/leichte-sprache",
@@ -263,7 +263,7 @@ export function Footer() {
 						<BerlinLogoWhite />
 					</a>
 				</div>
-				<div className="flex flex-col desktop:flex-row justify-between gap-x-16 desktop:gap-y-8 desktop:pl-28 desktop:pb-16 pt-7 desktop:pt-10">
+				<div className="flex flex-col desktop:flex-row justify-between gap-x-16 border-b-[0.5px] desktop:border-b-0 desktop:gap-y-8 desktop:pl-28 desktop:pb-16 pt-7 desktop:pt-10">
 					{lowerFooterColumns.map((column) => (
 						<FooterDarkColumn
 							key={column.title}
@@ -272,7 +272,7 @@ export function Footer() {
 						/>
 					))}
 				</div>
-				<div className="pl-28 pb-44 pt-6">
+				<div className="pl-4 desktop:pl-28 pb-20 pt-6">
 					Berlin.de ist ein Angebot des Landes Berlin.
 				</div>
 			</div>

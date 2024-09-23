@@ -5,8 +5,8 @@ import ShareLinkIcon from "../icons/share-link-icon";
 import ShareMailIcon from "../icons/share-mail-icon";
 import ShareWhatsappIcon from "../icons/share-whatsapp-icon";
 import { Offer } from "../../content/content";
-import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
-import { trackInteraction } from "../../analytics/matomo.ts";
+import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
+import { trackInteraction } from "../../analytics/matomo";
 
 interface ShareButtonProps {
 	offer: Offer;
@@ -69,22 +69,11 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 			</button>
 			{showOverlay && !showLinkCopied && (
 				<div
-					className="flex flex-col gap-4 absolute right-0 top-full py-2 px-6 bg-white border mt-2 w-max"
+					className="flex flex-col absolute right-0 top-full bg-white border-[1.5px] border-primary-blue mt-2 w-max"
 					ref={overlayRef}
 				>
-					<TrackedAnchorLink
-						className="flex flex-row items-center gap-2 border-primary-blue"
-						// No custom share text for Facebook, the data will be fetched from the open graph meta tags of the link that is shared
-						href={`https://www.facebook.com/sharer/sharer.php?u=${getURL()}`}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<ShareFacebookIcon></ShareFacebookIcon>
-						<div>Facebook</div>
-					</TrackedAnchorLink>
-
 					<button
-						className="flex flex-row items-center gap-2"
+						className="flex flex-col items-center hover:bg-separator px-4"
 						onClick={async () => {
 							trackInteraction({
 								eventAction: "button click",
@@ -98,12 +87,42 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 							}, 1000);
 						}}
 					>
-						<ShareLinkIcon></ShareLinkIcon>
-						<div>Link kopieren</div>
+						<span className="flex items-center gap-2 py-2">
+							<ShareLinkIcon></ShareLinkIcon>
+							<span>Link kopieren</span>
+						</span>
+						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
 					</button>
 
 					<TrackedAnchorLink
-						className="flex flex-row items-center gap-2"
+						className="flex flex-col hover:bg-separator px-4 -mt-[1.5px] border-t-[1.5px] border-t-transparent"
+						href={`https://api.whatsapp.com/send?text=${shareTitle()} ${shareBody()}`}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<span className="flex items-center gap-2 py-2">
+							<ShareWhatsappIcon></ShareWhatsappIcon>
+							<span>Whatsapp</span>
+						</span>
+						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
+					</TrackedAnchorLink>
+
+					<TrackedAnchorLink
+						className="flex flex-col hover:bg-separator px-4 -mt-[1.5px] border-t-[1.5px] border-t-transparent"
+						// No custom share text for Facebook, the data will be fetched from the open graph meta tags of the link that is shared
+						href={`https://www.facebook.com/sharer/sharer.php?u=${getURL()}`}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<span className="flex items-center gap-2 py-2">
+							<ShareFacebookIcon></ShareFacebookIcon>
+							<span>Facebook</span>
+						</span>
+						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
+					</TrackedAnchorLink>
+
+					<TrackedAnchorLink
+						className="flex flex-row items-center gap-2 hover:bg-separator py-2 px-4 -mt-[1.5px] border-t-[1.5px] border-t-transparent"
 						href={`mailto:?subject=${shareTitle()}&body=${shareBody()}`}
 						target="_blank"
 						rel="noreferrer"
@@ -111,20 +130,10 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 						<ShareMailIcon></ShareMailIcon>
 						<div>E-Mail</div>
 					</TrackedAnchorLink>
-
-					<TrackedAnchorLink
-						className="flex flex-row items-center gap-2"
-						href={`https://api.whatsapp.com/send?text=${shareTitle()} ${shareBody()}`}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<ShareWhatsappIcon></ShareWhatsappIcon>
-						<div>Whatsapp</div>
-					</TrackedAnchorLink>
 				</div>
 			)}
 			{showLinkCopied && (
-				<div className="flex flex-col gap-4 absolute right-0 top-full py-2 px-4 border mt-2 w-max bg-primary-blue text-white">
+				<div className="flex flex-col gap-4 absolute right-0 top-full py-2 px-4 border border-primary-blue mt-2 w-max bg-primary-blue text-white">
 					<div>Der Link wurde kopiert!</div>
 				</div>
 			)}
