@@ -4,12 +4,15 @@ import ArrowRightIcon from "../icons/arrow-right-icon";
 import { Pill } from "./pill";
 import { LikeButton } from "../buttons/like-button";
 import { getCategoryDetailsFromName } from "../../content/categories";
+import { useNavigate } from "react-router-dom";
 
 interface OfferPopupProps {
 	offer: Offer;
 }
 
 const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
+	const navigate = useNavigate();
+
 	const MAGIC_CUTOFF_LIMIT = 80;
 
 	const cutoffDescription = useMemo(() => {
@@ -23,7 +26,7 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 		<div
 			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default py-4 border-b md:border-0`}
 			onClick={() => {
-				window.location.href = offer.path;
+				navigate(offer.path);
 			}}
 		>
 			<div className="flex flex-row gap-2">
