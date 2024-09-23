@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
-import { getCategoryDetailsFromName } from "../../content/categories";
 import { Offer } from "../../content/content";
-import CopyToClipboardButton from "../buttons/copy-to-clipboard-button";
+import { LikeButton } from "../buttons/like-button.tsx";
 import ShareButton from "../buttons/share-button";
 import LinkIcon from "../icons/link-icon";
-import { Pill } from "./pill";
-import { LikeButton } from "../buttons/like-button";
+import OfferTags from "./offer-tags.tsx";
+import CopyToClipboardButton from "../buttons/copy-to-clipboard-button.tsx";
 
 interface OfferFullProps {
 	offer: Offer;
@@ -19,10 +18,6 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 
 	return (
 		<div className="w-full">
-			<div className="flex flex-row gap-2 w-full justify-end pr-4 pb-4 sm:hidden">
-				<LikeButton offer={offer} />
-				<ShareButton offer={offer} />
-			</div>
 			<div className="flex flex-row pb-4 slg0 gap-4">
 				<div
 					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
@@ -37,24 +32,22 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					<span className="text-xs">© Bildcopyright</span>
 				</div>
 				<div className="w-full sm:w-[80%] sm:max-w-[80%] flex flex-col gap-4 mx-4 lg:mx-0">
-					<div className="flex flex-col gap-2">
+					<div className="hidden sm:flex flex-col gap-2">
 						<h1 className="font-bold text-2xl">{offer.provider}</h1>
 					</div>
+					<div className="flex flex-row gap-2 justify-between sm:hidden">
+						<div className="flex flex-col gap-2">
+							<h1 className="font-bold text-2xl ">{offer.provider}</h1>
+							<OfferTags offer={offer} />
+						</div>
+						<div className="flex flex-col gap-2">
+							<LikeButton offer={offer} />
+							<ShareButton offer={offer} />
+						</div>
+					</div>
 
-					<div className="flex flex-row gap-2 flex-wrap">
-						<Pill
-							title={offer.category}
-							backgroundColor={
-								getCategoryDetailsFromName(offer.category)?.color
-							}
-							textColor={getCategoryDetailsFromName(offer.category)?.textColor}
-						/>
-
-						{offer.isFree && <Pill title={"Freier Eintritt"} />}
-
-						{offer.targetGroups.map((t) => (
-							<Pill title={t} key={t} />
-						))}
+					<div className="hidden sm:flex">
+						<OfferTags offer={offer} />
 					</div>
 
 					<div

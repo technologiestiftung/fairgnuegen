@@ -26,7 +26,9 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 				title: category.name,
 				subItems: [],
 				isExternalLink: false,
-				link: `/all-offers/?category=${key}`,
+				link: category.isRenderedInCategoryCards
+					? `/all-offers/?category=${key}`
+					: "/all-offers/",
 			})),
 			isExternalLink: false,
 			link: "/",
