@@ -45,6 +45,7 @@ export function useMap() {
 				layout: {
 					"icon-allow-overlap": true,
 					"icon-ignore-placement": true,
+					"icon-anchor": "bottom",
 					"icon-image": [
 						"match",
 						["get", "category", ["get", "offer", ["properties"]]],
