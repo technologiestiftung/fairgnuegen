@@ -7,6 +7,7 @@ import SearchBar from "../components/search-bar/search-bar";
 import { categoryMap } from "../content/categories";
 import { Layout } from "../layout/layout";
 import { InfoBox } from "../components/info-box/info-box";
+import { FeedbackForm } from "../components/feedback-form/feedback-form";
 
 export default function Index() {
 	return (
@@ -41,11 +42,12 @@ export default function Index() {
 						))}
 				</div>
 				<div className="w-full border-b border-separator mb-12 mt-12"></div>
-				<div className="w-full flex flex-row justify-end px-4 lg:px-0 mb-10">
+				<div className="w-full flex flex-row justify-end px-4 lg:px-0 mb-12">
 					<ShowAllButton />
 				</div>
-			</div>
 
+				<FeedbackForm />
+			</div>
 			<InfoBox showProviderHint={true} maxWidth="max-w-4xl"></InfoBox>
 		</Layout>
 	);
