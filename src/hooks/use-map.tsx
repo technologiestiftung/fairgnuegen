@@ -33,6 +33,7 @@ export function useMap() {
 				type: "geojson",
 				data: filteredAndSortedOffersAsGeojson,
 				cluster: false,
+				promoteId: "id",
 			});
 
 			initMap.addLayer({
