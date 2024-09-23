@@ -22,7 +22,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				<LikeButton offer={offer} />
 				<ShareButton offer={offer} />
 			</div>
-			<div className="flex flex-row pb-2 slg0 gap-4">
+			<div className="flex flex-row pb-4 slg0 gap-4">
 				<div
 					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
 					// TODO: remove this and use the actual images as soon as they are available
@@ -85,7 +85,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				<p>{offer.offerInformation}</p>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
-			<div className="py-8 flex flex-col gap-2 mx-4 lg:mx-0">
+			<div className="py-4 flex flex-col gap-2 mx-4 lg:mx-0">
 				<h2 className="text-lg font-bold">Ort</h2>
 				<div>
 					<p>{offer.provider}</p>
