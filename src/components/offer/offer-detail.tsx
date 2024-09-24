@@ -59,13 +59,10 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 						{cutoffDescription}
 					</div>
 					<div className="flex flex-row w-full justify-start text-primary-blue">
-						<TrackedAnchorLink
-							className="flex flex-row gap-2 items-center"
-							href={offer.path}
-						>
+						<div className="flex flex-row gap-2 items-center">
 							<div>mehr Infos</div>
 							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
-						</TrackedAnchorLink>
+						</div>
 					</div>
 				</div>
 			</div>

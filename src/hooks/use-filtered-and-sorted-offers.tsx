@@ -5,6 +5,7 @@ import { offers } from "../content/content";
 import { useCategories } from "./use-categories";
 import { useDistricts } from "./use-districts";
 import { useTargetAudiences } from "./use-target-audiences";
+import { useLanguage } from "./use-language.tsx";
 
 export function useFilteredAndSortedOffers() {
 	/**
@@ -23,6 +24,8 @@ export function useFilteredAndSortedOffers() {
 	const { districts, districtValues } = useDistricts();
 	const { targetAudiences, targetAudienceValues } = useTargetAudiences();
 
+	const language = useLanguage();
+
 	const [filteredAndSortedOffers, setFilteredAndSortedOffers] =
 		useState(offers);
 
@@ -30,6 +33,7 @@ export function useFilteredAndSortedOffers() {
 		setIsLoading(false);
 
 		const filtered = offers
+			.filter((offer) => offer.language === language)
 			.filter(
 				(o) =>
 					categories.length === 0 ||

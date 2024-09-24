@@ -17,11 +17,11 @@ const { detailPagesRoutes } = await import(
 );
 const { content } = await import("./dist/assets/content/content.js");
 
-function generateStaticPages() {
+async function generateStaticPages() {
 	for (const { path } of routes.concat(detailPagesRoutes)) {
 		console.log("path:", path);
 
-		const appHtml = render(path);
+		const appHtml = await render(path);
 		const pageTitle = content[path].title;
 
 		const html = template

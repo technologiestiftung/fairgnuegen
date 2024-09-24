@@ -3,7 +3,7 @@ export type Route = {
 	page: string;
 };
 
-export const routes: Route[] = [
+const baseRoutes: Route[] = [
 	{
 		path: "/",
 		page: "./pages/index.tsx",
@@ -21,3 +21,10 @@ export const routes: Route[] = [
 		page: "./pages/map/index.tsx",
 	},
 ];
+
+const i18nRoutes: Route[] = baseRoutes.map(({ path, page }) => ({
+	path: `/en${path}`,
+	page,
+}));
+
+export const routes = [...baseRoutes, ...i18nRoutes];
