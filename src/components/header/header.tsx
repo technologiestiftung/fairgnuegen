@@ -1,12 +1,10 @@
+import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
+import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
 import { Breadcrumbs } from "./breadcumbs";
 import { LanguageSelect } from "./language-select";
 import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
-import { useIsHeaderLogoVisible } from "./hooks/use-is-header-logo-visible";
-import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
-import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
 
 export function Header() {
-	const isHeaderLogoVisible = useIsHeaderLogoVisible();
 	const { isShowingFreeOffersOnly } = useFreeOffersOnly();
 
 	const navLinks = [
@@ -27,14 +25,10 @@ export function Header() {
 	return (
 		<header
 			id="header"
-			className={`${!isHeaderLogoVisible ? "sticky" : ""} top-0 z-[20] bg-white text-xl leading-[122.2%] tracking-[0.3px]`}
+			className={`sticky top-0 z-[20] bg-white text-xl leading-[122.2%] tracking-[0.3px]`}
 		>
-			<div
-				className={`${isHeaderLogoVisible ? "h-11 border-b py-[0.25em]" : "h-1 bg-berlin-grey-dark"}  px-6 motion-safe:transition-[height, background-color] duration-200 ease-in-out `}
-			>
-				<div
-					className={`${isHeaderLogoVisible ? "opacity-1" : "opacity-0"} motion-safe:transition-opacity duration-100 ease-in-out`}
-				>
+			<div className={`"h-11 border-b py-[0.25em] px-6 `}>
+				<div className={`opacity-1 motion-safe:transition-opacity`}>
 					<a href="https://www.berlin.de">
 						<img
 							title="Zur Startseite"
