@@ -1,7 +1,10 @@
 import fs from "fs";
 import slugify from "slugify";
+import { useI18n } from "./src/i18n/use-i18n";
 
 const filePath = "./20240717_Berlinpass-Daten.csv";
+
+const existingPaths: string[] = [];
 
 const generateSlug = (input: string) =>
 	slugify(input, {
@@ -13,6 +16,21 @@ const generateSlug = (input: string) =>
 		trim: true,
 	});
 
+function generatePath({ slug, language }: { slug: string; language: string }) {
+	const slugTitle = generateSlug(slug);
+
+	const languageSlug = language === "de" ? "" : `/${language}`;
+
+	const path = `${languageSlug}/all-offers/${slugTitle}/`;
+
+	if (existingPaths.includes(path)) {
+		return generatePath({ slug: `${slug}-1`, language });
+	}
+
+	existingPaths.push(path);
+	return path;
+}
+
 try {
 	const csvData = fs.readFileSync(filePath, "utf-8");
 	const data = csvData.split("\r\n").slice(1);
@@ -20,7 +38,7 @@ try {
 	const processedContent: Record<string, object> = {};
 	const processedRoutes: { path: string; page: string }[] = [];
 
-	data.forEach((row, index) => {
+	data.forEach((row) => {
 		const [
 			provider,
 			providerDescription,
@@ -36,15 +54,18 @@ try {
 			targetGroups,
 			x,
 			y,
+			language,
+			slug,
 		] = row.split(";");
 
-		const slugTitle = generateSlug(`${index}_${provider}`);
-		const path = `/all-offers/${slugTitle}/`;
+		const path = generatePath({ slug, language });
+
+		const t = useI18n(language);
 
 		const breadcrumbs = [
 			{
 				href: "/",
-				label: "Startseite",
+				label: t["home.title"],
 			},
 			{
 				href: `/all-offers/?category=${category.toLowerCase()}`,
@@ -60,6 +81,7 @@ try {
 			title: provider,
 			breadcrumbs,
 			offer: {
+				language,
 				path: path,
 				provider,
 				providerDescription,
@@ -83,7 +105,7 @@ try {
 		processedContent[path] = content;
 		processedRoutes.push({
 			path,
-			page: "./pages/[offer]/index.tsx",
+			page: "./pages/all-offers/[offer]/index.tsx",
 		});
 	});
 

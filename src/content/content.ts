@@ -2,6 +2,7 @@
 import { detailPagesContent } from "./detail-pages-content.js";
 
 export type Offer = {
+	language: string;
 	path: string;
 	provider: string;
 	providerDescription: string;
@@ -41,8 +42,17 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
+	"/en/": {
+		title: "Fairgnügen • Experience Berlin fairly and cheaply",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+		],
+	},
 	"/all-offers/": {
-		title: "All Offers",
+		title: "Alle Angebote",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -54,8 +64,21 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
+	"/en/all-offers/": {
+		title: "All Offers",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/all-offers",
+				label: "Alle Angebote",
+			},
+		],
+	},
 	"/favorites/": {
-		title: "Favorites",
+		title: "Favoriten",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -64,6 +87,19 @@ export const content: Record<string, Content> = {
 			{
 				href: "/favorites/",
 				label: "Favoriten",
+			},
+		],
+	},
+	"/en/favorites/": {
+		title: "Favorites",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/favorites/",
+				label: "Favorites",
 			},
 		],
 	},
@@ -77,6 +113,19 @@ export const content: Record<string, Content> = {
 			{
 				href: "/map/",
 				label: "Kartenansicht",
+			},
+		],
+	},
+	"/en/map/": {
+		title: "Map",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/map/",
+				label: "Map",
 			},
 		],
 	},

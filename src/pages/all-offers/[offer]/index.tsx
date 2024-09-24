@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
-import BackButton from "../../components/buttons/back-button";
-import OfferFull from "../../components/offer/offer-full";
-import { content } from "../../content/content";
-import { Layout } from "../../layout/layout";
+import BackButton from "../../../components/buttons/back-button";
+import OfferFull from "../../../components/offer/offer-full";
+import { content } from "../../../content/content";
+import { Layout } from "../../../layout/layout";
 
 export default function Index() {
 	const location = useLocation();
