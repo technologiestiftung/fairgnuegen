@@ -22,9 +22,9 @@ export default function Index() {
 	const favorites = useFavoritesStore((state) => state.favorites);
 
 	const filteredOffers = useMemo(() => {
-		const filtered = offers.filter((offer) => {
-			return favorites.includes(offer.path.split("/").slice(-2)[0]);
-		});
+		const filtered = offers
+			.filter((offer) => favorites.includes(offer.slug))
+			.filter((offer) => offer.language === language);
 		const sorted = filtered.sort((a, b) => {
 			if (sortAscending) {
 				return a.provider.localeCompare(b.provider);

@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 import { Offer } from "../../content/content";
-import { LikeButton } from "../buttons/like-button.tsx";
+import { LikeButton } from "../buttons/like-button";
 import ShareButton from "../buttons/share-button";
 import LinkIcon from "../icons/link-icon";
-import OfferTags from "./offer-tags.tsx";
-import CopyToClipboardButton from "../buttons/copy-to-clipboard-button.tsx";
+import OfferTags from "./offer-tags";
+import CopyToClipboardButton from "../buttons/copy-to-clipboard-button";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 interface OfferFullProps {
 	offer: Offer;
 }
 
 const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
-	const [showFullDescription, setShowFullDescription] = useState(false);
+	const language = useLanguage();
+	const i18n = useI18n(language);
 
 	const fullAddress = `${offer.provider}, ${offer.address}, ${offer.zip} ${offer.city}`;
 
@@ -50,12 +53,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						<OfferTags offer={offer} />
 					</div>
 
-					<div
-						className={`break-words text-left`}
-						onClick={() => {
-							setShowFullDescription(!showFullDescription);
-						}}
-					>
+					<div className={`break-words text-left`}>
 						{offer.providerDescription} <br></br>
 					</div>
 					<a
@@ -64,7 +62,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<div>Zur Webseite</div>
+						<div>{i18n["offer.linkToWebsite"]}</div>
 						<LinkIcon></LinkIcon>
 					</a>
 				</div>
@@ -75,12 +73,12 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
 			<div className="py-4 flex flex-col gap-2 mx-4 lg:mx-0">
-				<h2 className="text-lg font-bold">Ermäßigung</h2>
+				<h2 className="text-lg font-bold">{i18n["offer.discountDetails"]}</h2>
 				<p>{offer.offerInformation}</p>
 			</div>
 			<div className="border-b-2 border-[#dddddd] w-full"></div>
 			<div className="py-4 flex flex-col gap-2 mx-4 lg:mx-0">
-				<h2 className="text-lg font-bold">Ort</h2>
+				<h2 className="text-lg font-bold">{i18n["offer.location"]}</h2>
 				<div>
 					<p>{offer.provider}</p>
 					<p>{offer.address}</p>

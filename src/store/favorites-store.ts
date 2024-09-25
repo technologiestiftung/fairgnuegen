@@ -41,7 +41,7 @@ export const useFavoritesStore = create<FavoritesState>()(
 
 			isFavorite: (offer) => get().favorites.includes(get().getKey(offer)),
 
-			getKey: (offer) => offer.path.split("/").slice(-2)[0],
+			getKey: (offer) => offer.slug,
 		}),
 		{
 			name: "favorites-storage",

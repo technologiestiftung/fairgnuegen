@@ -10,7 +10,7 @@ export type CategoryDetails = {
 	textColor?: string;
 	name: string;
 	image: string;
-	description: string;
+	i18nKey: string;
 	isRenderedInCategoryCards: boolean;
 };
 
@@ -22,41 +22,41 @@ export const categoryMap: CategoryMap = {
 	all: {
 		color: "bg-primary-blue",
 		textColor: undefined,
-		name: "categories.all.name",
+		name: "Alle Angebote",
 		image: "",
-		description: "categories.all.description",
+		i18nKey: "categories.all",
 		isRenderedInCategoryCards: false,
 	},
 	kultur: {
 		color: "bg-culture",
 		textColor: "text-white",
-		name: "categories.kultur.name",
+		name: "Kultur",
 		image: "kultur",
-		description: "categories.kultur.description",
+		i18nKey: "categories.kultur",
 		isRenderedInCategoryCards: true,
 	},
 	sport: {
 		color: "bg-sport",
 		textColor: "text-black",
-		name: "categories.sport.name",
+		name: "Sport",
 		image: "sport",
-		description: "categories.sport.description",
+		i18nKey: "categories.sport",
 		isRenderedInCategoryCards: true,
 	},
 	bildung_beratung: {
 		color: "bg-education",
 		textColor: "text-black",
-		name: "categories.bildung_beratung.name",
+		name: "Bildung & Beratung",
 		image: "bildung",
-		description: "categories.bildung_beratung.description",
+		i18nKey: "categories.bildung_beratung",
 		isRenderedInCategoryCards: true,
 	},
 	freizeit: {
 		color: "bg-leisure",
 		textColor: "text-black",
-		name: "categories.freizeit.name",
+		name: "Freizeit",
 		image: "freizeit",
-		description: "categories.freizeit.description",
+		i18nKey: "categories.freizeit",
 		isRenderedInCategoryCards: true,
 	},
 };

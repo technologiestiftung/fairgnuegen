@@ -95,8 +95,8 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 			options: Object.entries(categoryMap)
 				.filter((c) => c[1].isRenderedInCategoryCards)
 				.map(([key, category]) => ({
-					title: i18n[category.name],
-					subtitle: i18n[category.description],
+					title: i18n[`${category.i18nKey}.name`],
+					subtitle: i18n[`${category.i18nKey}.description`],
 					value: key,
 				})),
 			urlKey: "category",

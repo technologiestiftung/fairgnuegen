@@ -7,6 +7,8 @@ import ShareWhatsappIcon from "../icons/share-whatsapp-icon";
 import { Offer } from "../../content/content";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
 import { trackInteraction } from "../../analytics/matomo";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 interface ShareButtonProps {
 	offer: Offer;
@@ -24,6 +26,8 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const overlayRef = useRef<HTMLDivElement>(null);
+	const language = useLanguage();
+	const i18n = useI18n(language);
 
 	const handleClickOutside = (event: MouseEvent) => {
 		if (
@@ -89,7 +93,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					>
 						<span className="flex items-center gap-2 py-2">
 							<ShareLinkIcon></ShareLinkIcon>
-							<span>Link kopieren</span>
+							<span>{i18n["button.copyLink"]}</span>
 						</span>
 						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
 					</button>
@@ -134,7 +138,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 			)}
 			{showLinkCopied && (
 				<div className="flex flex-col gap-4 absolute right-0 top-full py-2 px-4 border border-primary-blue mt-2 w-max bg-primary-blue text-white">
-					<div>Der Link wurde kopiert!</div>
+					<div>{i18n["button.copyLinkCopied"]}</div>
 				</div>
 			)}
 		</div>

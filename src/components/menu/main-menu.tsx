@@ -4,9 +4,9 @@ import { Drawer } from "../drawer/drawer";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
-import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
 
 interface MainMenuProps {
 	isOpen: boolean;
@@ -26,9 +26,9 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 
 	const links: MenuItem[] = [
 		{
-			title: i18n["menuItem.hompage"],
+			title: i18n["menuItem.homepage"],
 			subItems: Object.entries(categoryMap).map(([key, category]) => ({
-				title: i18n[category.name],
+				title: i18n[`${category.i18nKey}.name`],
 				subItems: [],
 				isExternalLink: false,
 				link: category.isRenderedInCategoryCards
@@ -119,13 +119,13 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 						)}
 
 						{!link.isExternalLink && link.subItems.length === 0 && (
-							<TrackedAnchorLink
+							<LocalizedTrackedAnchorLink
 								href={link.link}
 								additionalTrackingContext={"(drawer menu)"}
 								className="hover:bg-berlin-grey-light py-4 px-6 border-b"
 							>
 								{link.title}
-							</TrackedAnchorLink>
+							</LocalizedTrackedAnchorLink>
 						)}
 
 						{!link.isExternalLink && link.subItems.length > 0 && (
@@ -155,14 +155,14 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 								{selectedCategory === link.title && (
 									<div className="flex flex-col">
 										{link.subItems.map((subItem) => (
-											<TrackedAnchorLink
+											<LocalizedTrackedAnchorLink
 												key={subItem.link}
 												href={subItem.link}
 												additionalTrackingContext={"(drawer menu)"}
 												className="px-12 py-4 bg-berlin-grey-light hover:bg-berlin-grey-medium"
 											>
 												{subItem.title}
-											</TrackedAnchorLink>
+											</LocalizedTrackedAnchorLink>
 										))}
 									</div>
 								)}
