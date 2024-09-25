@@ -9,10 +9,12 @@ import { useMap } from "../../hooks/use-map";
 import { useMapHeight } from "../../hooks/use-map-height";
 import { useMapInteraction } from "../../hooks/use-map-interaction";
 import { Layout } from "../../layout/layout";
+import { useIconSizeInterpolation } from "../../hooks/use-icon-size-interpolation";
 
 export default function Index() {
+	const { calculateIconSize } = useIconSizeInterpolation();
 	const { mapRef, isMapLoading } = useMap();
-	const { selectedOffer } = useMapInteraction(mapRef);
+	const { selectedOffer, selectedOfferPosition } = useMapInteraction(mapRef);
 	const popupRef = useRef<HTMLDivElement | null>(null);
 	const mobilePopupRef = useRef<HTMLDivElement | null>(null);
 	const [topAnchor, setTopAnchor] = useState(0);
@@ -20,13 +22,15 @@ export default function Index() {
 
 	useEffect(() => {
 		if (popupRef.current) {
-			const mapVerticalBaseline = mapHeight / 2;
-			const iconOffset = 55;
+			const iconOffset = calculateIconSize(mapRef.current?.getZoom() || 0) * 51;
 			setTopAnchor(
-				mapVerticalBaseline - popupRef.current.clientHeight - iconOffset,
+				selectedOfferPosition.y -
+					popupRef.current.clientHeight -
+					iconOffset -
+					5,
 			);
 		}
-	}, [selectedOffer, popupRef, mapHeight]);
+	}, [selectedOffer, popupRef, mapHeight, selectedOfferPosition, mapRef]);
 
 	useEffect(() => {
 		if (mobilePopupRef.current) {
@@ -60,10 +64,11 @@ export default function Index() {
 
 				{selectedOffer && (
 					<div
-						className={`hidden md:block absolute left-0 right-0 w-[90vw] sm:w-[500px] mx-auto`}
+						className={`hidden md:block absolute left-0 right-0 w-[90vw] sm:w-[500px]`}
 						ref={popupRef}
 						style={{
 							top: `${topAnchor}px`,
+							left: `${selectedOfferPosition?.x - 250}px`,
 						}}
 					>
 						<OfferPopup offer={selectedOffer} />
