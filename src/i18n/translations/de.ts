@@ -69,12 +69,16 @@ const de = {
 	sort: "Sortieren",
 	moreInfo: "mehr Infos",
 	return: "Zurück",
+	listView: "Listenansicht",
 
 	"infobox.title":
 		"Freier oder ermäßigter Eintritt nur mit Berechtigungsnachweis!",
 	"infobox.content":
 		"Mit dem Berechtigungsnachweis Berlin-Ticket S können Menschen, die Sozialhilfe erhalten, den öffentlichen Nahverkehr sowie Sport-, Bildungs-, Kultur- und Freizeitangebote kostenlos oder vergünstigt nutzen. Viel Spaß!",
 	"infobox.link": "Mehr Infos zum Berechtigungsnachweis",
+	"infobox.providerHint":
+		"Sie sind Anbieter und möchten sich mit einem Angebot sozial für Berlinerinnen und Berliner engagieren? Schreiben Sie uns gerne an und wir nehmen Ihr Angebot auf. Sie haben noch weitere Fragen?",
+	"infobox.contact": "Kontaktieren Sie uns",
 };
 
 export default de;

@@ -53,15 +53,13 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 						</div>
 
 						<div>
-							Sie sind Anbieter und möchten sich mit einem Angebot sozial für
-							Berlinerinnen und Berliner engagieren? Schreiben Sie uns gerne an
-							und wir nehmen Ihr Angebot auf. Sie haben noch weitere Fragen?
+							{i18n["infobox.providerHint"]}
 							<br />
 							<TrackedAnchorLink
 								href="mailto:berechtigungsnachweis@jugendkulturservice.de"
 								className="text-link-blue hover:underline"
 							>
-								Kontaktieren Sie uns
+								{i18n["infobox.contact"]}
 							</TrackedAnchorLink>
 						</div>
 					</div>

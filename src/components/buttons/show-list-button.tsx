@@ -2,9 +2,14 @@ import React from "react";
 import ListIcon from "../icons/list-icon";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
 import { useSearchParams } from "react-router-dom";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 interface ShowListButtonProps {}
 const ShowListButton: React.FC<ShowListButtonProps> = () => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const [searchParams] = useSearchParams();
 
 	return (
@@ -15,7 +20,7 @@ const ShowListButton: React.FC<ShowListButtonProps> = () => {
 		>
 			<div className="flex flex-row gap-2 items-center">
 				<ListIcon></ListIcon>
-				<div>Listenansicht</div>
+				<div>{i18n["listView"]}</div>
 			</div>
 		</TrackedAnchorLink>
 	);
