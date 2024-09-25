@@ -78,6 +78,65 @@ const en = {
 	"infobox.providerHint":
 		"Are you an organization that would like to offer your services with the Berlin-Ticket S? Please contact us, so we can add your offer. Do you have any further questions?",
 	"infobox.contact": "Contact us",
+
+	"upperFooter.info": "Information",
+	"upperFooter.info.impressum": "Imprint",
+	"upperFooter.info.contact": "Contact",
+	"upperFooter.info.dataprivacy": "Data Privacy",
+	"upperFooter.info.accessibility": "Accessibility Statement",
+	"upperFooter.info.easyLanguage": "Easy Language",
+
+	"upperFooter.socialMedia": "Social Media",
+	"upperFooter.socialMedia.instagram": "Instagram",
+	"upperFooter.socialMedia.linkedin": "LinkedIn",
+
+	"lowerFooter.service": "Service",
+	"lowerFooter.service.serviceapp": "Service App",
+	"lowerFooter.service.appointment": "Make an Appointment",
+	"lowerFooter.service.phone": "Citizen Phone 115",
+	"lowerFooter.service.emergency": "Emergency Services",
+	"lowerFooter.service.commercial": "Commercial Service",
+
+	"lowerFooter.authorities": "Authorities",
+	"lowerFooter.authorities.az": "Authorities A-Z",
+	"lowerFooter.authorities.senat": "Senate Administrations",
+	"lowerFooter.authorities.districOffices": "District Offices",
+	"lowerFooter.authorities.civilOffices": "Citizen Offices",
+	"lowerFooter.authorities.jobcenter": "Jobcenter",
+	"lowerFooter.authorities.immigration": "Immigration Office",
+
+	"lowerFooter.politics": "Politics & Administration",
+	"lowerFooter.politics.government": "State Government",
+	"lowerFooter.politics.career": "Career in the State of Berlin",
+	"lowerFooter.politics.participation": "Citizen Participation",
+	"lowerFooter.politics.openData": "Open Data",
+	"lowerFooter.politics.allocation": "Allocation",
+	"lowerFooter.politics.volunteering": "Volunteering",
+
+	"lowerFooter.news": "News",
+	"lowerFooter.news.program": "Senate's Immediate Program",
+	"lowerFooter.news.ukraine": "Ukraine",
+	"lowerFooter.news.energy": "Energy Crisis",
+	"lowerFooter.news.press": "Press Releases",
+	"lowerFooter.news.police": "Police Reports",
+	"lowerFooter.news.events": "Events",
+
+	"lowerFooter.topics": "Topics",
+	"lowerFooter.topics.digital": "Together Digital",
+	"lowerFooter.topics.propertyTax": "Property Tax",
+	"lowerFooter.topics.mobility": "Mobility Transition",
+	"lowerFooter.topics.administration": "Modern Administration",
+	"lowerFooter.topics.wall": "Berlin Wall",
+
+	"lowerFooter.moreInfo": "More Information",
+	"lowerFooter.moreInfo.kultur": "Culture & Going Out",
+	"lowerFooter.moreInfo.tourism": "Tourism",
+	"lowerFooter.moreInfo.economy": "Economy",
+	"lowerFooter.moreInfo.cityLife": "City Life",
+	"lowerFooter.moreInfo.finder": "BerlinFinder",
+	"lowerFooter.moreInfo.map": "City Map",
+
+	"lowerFooter.note": "Berlin.de is an offer from the State of Berlin.",
 };
 
 export default en;

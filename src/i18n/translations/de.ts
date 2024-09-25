@@ -79,6 +79,65 @@ const de = {
 	"infobox.providerHint":
 		"Sie sind Anbieter und möchten sich mit einem Angebot sozial für Berlinerinnen und Berliner engagieren? Schreiben Sie uns gerne an und wir nehmen Ihr Angebot auf. Sie haben noch weitere Fragen?",
 	"infobox.contact": "Kontaktieren Sie uns",
+
+	"upperFooter.info": "Informationen",
+	"upperFooter.info.impressum": "Impressum",
+	"upperFooter.info.contact": "Kontakt",
+	"upperFooter.info.dataprivacy": "Datenschutzerklärung",
+	"upperFooter.info.accessibility": "Erklärung zur Barrierefreiheit",
+	"upperFooter.info.easyLanguage": "Leichte Sprache",
+
+	"upperFooter.socialMedia": "Social Media",
+	"upperFooter.socialMedia.instagram": "Instagram",
+	"upperFooter.socialMedia.linkedin": "LinkedIn",
+
+	"lowerFooter.service": "Service",
+	"lowerFooter.service.serviceapp": "Service-App",
+	"lowerFooter.service.appointment": "Termin vereinbaren",
+	"lowerFooter.service.phone": "Bürgertelefon 115",
+	"lowerFooter.service.emergency": "Notdienste",
+	"lowerFooter.service.commercial": "Gewerbeservice",
+
+	"lowerFooter.authorities": "Behörden",
+	"lowerFooter.authorities.az": "Behörden A-Z",
+	"lowerFooter.authorities.senat": "Senatsverwaltungen",
+	"lowerFooter.authorities.districOffices": "Bezirksämter",
+	"lowerFooter.authorities.civilOffices": "Bürgerämter",
+	"lowerFooter.authorities.jobcenter": "Jobcenter",
+	"lowerFooter.authorities.immigration": "Einwanderungsamt",
+
+	"lowerFooter.politics": "Politik & Verwaltung",
+	"lowerFooter.politics.government": "Landesregierung",
+	"lowerFooter.politics.career": "Karriere im Land Berlin",
+	"lowerFooter.politics.participation": "Bürgerbeteiligung",
+	"lowerFooter.politics.openData": "Open Data",
+	"lowerFooter.politics.allocation": "Vergabe",
+	"lowerFooter.politics.volunteering": "Ehrenamt",
+
+	"lowerFooter.news": "Aktuelles",
+	"lowerFooter.news.program": "Sofortprogramm des Senats",
+	"lowerFooter.news.ukraine": "Ukraine",
+	"lowerFooter.news.energy": "Energiekrise",
+	"lowerFooter.news.press": "Pressemitteilungen",
+	"lowerFooter.news.police": "Polizeimeldungen",
+	"lowerFooter.news.events": "Veranstaltungen",
+
+	"lowerFooter.topics": "Themen",
+	"lowerFooter.topics.digital": "Gemeinsam Digital",
+	"lowerFooter.topics.propertyTax": "Grundsteuer",
+	"lowerFooter.topics.mobility": "Mobilitätswende",
+	"lowerFooter.topics.administration": "Moderne Verwaltung",
+	"lowerFooter.topics.wall": "Berliner Mauer",
+
+	"lowerFooter.moreInfo": "Weitere Informationen",
+	"lowerFooter.moreInfo.kultur": "Kultur & Ausgehen",
+	"lowerFooter.moreInfo.tourism": "Tourismus",
+	"lowerFooter.moreInfo.economy": "Wirtschaft",
+	"lowerFooter.moreInfo.cityLife": "Stadtleben",
+	"lowerFooter.moreInfo.finder": "BerlinFinder",
+	"lowerFooter.moreInfo.map": "Stadtplan",
+
+	"lowerFooter.note": "Berlin.de ist ein Angebot des Landes Berlin.",
 };
 
 export default de;
