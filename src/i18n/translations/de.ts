@@ -70,6 +70,7 @@ const de = {
 	moreInfo: "mehr Infos",
 	return: "Zurück",
 	listView: "Listenansicht",
+	toTheTop: "zum Seitenanfang",
 
 	"infobox.title":
 		"Freier oder ermäßigter Eintritt nur mit Berechtigungsnachweis!",

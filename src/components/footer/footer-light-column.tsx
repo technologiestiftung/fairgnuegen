@@ -5,7 +5,7 @@ import { useI18n } from "../../i18n/use-i18n";
 
 type FooterColumnProps = {
 	title: string;
-	links: { label: string | React.ReactNode; href: string }[];
+	links: { label: string; icon?: React.ReactNode; href: string }[];
 };
 
 export function FooterLightColumn({ title, links }: FooterColumnProps) {
@@ -22,9 +22,10 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 							<li key={link.href}>
 								<a
 									href={link.href}
-									className="flex hover:underline pl-7 gap-x-1.5  py-4"
+									className={`flex hover:underline pl-7 gap-x-1.5 py-4 ${title === "upperFooter.socialMedia" ? "flex-row" : "flex-row-reverse  justify-end"}`}
 								>
 									{i18n[link.label]}
+									{link.icon}
 								</a>
 							</li>
 						))}
@@ -41,8 +42,12 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 					<ul className="flex flex-col gap-3.5 bg-inherit">
 						{links.map((link) => (
 							<li key={link.href}>
-								<a href={link.href} className="flex hover:underline gap-1.5">
+								<a
+									href={link.href}
+									className={`flex  hover:underline gap-1.5 ${title === "upperFooter.socialMedia" ? "flex-row" : "flex-row-reverse justify-end"}`}
+								>
 									{i18n[link.label]}
+									{link.icon}
 								</a>
 							</li>
 						))}

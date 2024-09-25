@@ -70,6 +70,7 @@ const en = {
 	moreInfo: "more info",
 	return: "Return",
 	listView: "List view",
+	toTheTop: "to the top",
 
 	"infobox.title": "Berlin-Ticket S: Free public transport and more!",
 	"infobox.content":

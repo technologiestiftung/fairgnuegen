@@ -14,55 +14,47 @@ const upperFooterColumns = [
 		links: [
 			{
 				label: "upperFooter.info.impressum",
+				icon: "",
 				href: "/impressum",
 			},
 			{
 				label: "upperFooter.info.contact",
+				icon: "",
 				href: "/kontakt",
 			},
 			{
 				label: "upperFooter.info.dataprivacy",
+				icon: "",
 				href: "/datenschutz",
 			},
 			{
 				label: "upperFooter.info.accessibility",
+				icon: "",
 				href: "/erklärung",
 			},
 			{
-				label: (
-					<>
-						<HandsIcon /> DGS
-					</>
-				),
+				label: "upperFooter.info.accessibility",
+				icon: <HandsIcon />,
 				href: "/dgs",
 			},
 			{
-				label: (
-					<>
-						<EasyLanguageIcon /> Leichte Sprache
-					</>
-				),
+				label: "upperFooter.info.easyLanguage",
+				icon: <EasyLanguageIcon />,
 				href: "/leichte-sprache",
 			},
 		],
 	},
 	{
-		title: "Social Media",
+		title: "upperFooter.socialMedia",
 		links: [
 			{
-				label: (
-					<>
-						Instagram <SquareArrowIcon />
-					</>
-				),
+				label: "upperFooter.socialMedia.instagram",
+				icon: <SquareArrowIcon />,
 				href: "/instagram",
 			},
 			{
-				label: (
-					<>
-						LinkedIn <SquareArrowIcon />{" "}
-					</>
-				),
+				label: "upperFooter.socialMedia.linkedin",
+				icon: <SquareArrowIcon />,
 				href: "/linkedin",
 			},
 		],
