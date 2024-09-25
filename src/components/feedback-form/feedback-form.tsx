@@ -5,7 +5,9 @@ import LinkIcon from "../icons/link-icon";
 export const FeedbackForm: React.FC = () => {
 	return (
 		<div className="py-4 bg-berlin-light-green flex flex-col gap-8 px-8 mb-4 text-sm">
-			<div className={`flex flex-row justify-between items-center gap-2`}>
+			<div
+				className={`flex flex-col md:flex-row md:justify-between md:items-center gap-2`}
+			>
 				<div>
 					Wie gefällt dir Fairgnügen? Beantworte uns gerne ein paar Fragen.
 				</div>
@@ -18,7 +20,7 @@ export const FeedbackForm: React.FC = () => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<span className="w-min sm:w-auto">Hier Feedback geben</span>
+						<span className="">Hier Feedback geben</span>
 						<LinkIcon></LinkIcon>
 					</TrackedAnchorLink>
 				</div>

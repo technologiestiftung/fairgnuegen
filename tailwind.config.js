@@ -34,6 +34,7 @@ export default {
 			},
 			boxShadow: {
 				default: "0 0 5px 1px rgba(23, 111, 193, 0.3)",
+				"default-black": "0 0 5px 1px rgba(0, 0, 0, 0.25)",
 			},
 		},
 	},
