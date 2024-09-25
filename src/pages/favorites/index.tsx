@@ -9,8 +9,13 @@ import SortButton from "../../components/buttons/sort-button";
 import { useSearchParams } from "react-router-dom";
 import RocketIcon from "../../components/icons/rocket-icon";
 import { InfoBox } from "../../components/info-box/info-box";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 export default function Index() {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const [searchParams] = useSearchParams();
 	const sortAscending = searchParams.get("sort") === "asc";
 
@@ -36,7 +41,7 @@ export default function Index() {
 				<div
 					className={`w-full bg-primary-blue flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
-					Favoriten
+					{i18n["menuItem.favorits"]}
 				</div>
 
 				<div className="max-w-3xl mx-auto flex flex-col">
@@ -48,7 +53,7 @@ export default function Index() {
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
 						<RocketIcon></RocketIcon>
 						<p className="text-md text-primary-blue">
-							{filteredOffers.length} Angebote gefunden
+							{filteredOffers.length} {i18n["allOffers.offerFound"]}
 						</p>
 					</div>
 

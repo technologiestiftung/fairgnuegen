@@ -69,6 +69,11 @@ const en = {
 	sort: "Sort",
 	moreInfo: "more info",
 	return: "Return",
+
+	"infobox.title": "Berlin-Ticket S: Free public transport and more!",
+	"infobox.content":
+		"Berlin-Ticket S is a ticket for Berliners who receive social benefits. With the Berlin-Ticket S, you can use public transport for free and receive discounts on various cultural and leisure activities. You can find more information about the Berlin-Ticket S on the website of the Berlin Senate Department for Social Affairs, Health, Integration and Consumer Protection. Enjoy!",
+	"infobox.link": "More information about the authorization document",
 };
 
 export default en;
