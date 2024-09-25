@@ -4,9 +4,9 @@ import ArrowRightIcon from "../icons/arrow-right-icon";
 import { Pill } from "./pill";
 import { LikeButton } from "../buttons/like-button";
 import { getCategoryDetailsFromName } from "../../content/categories";
-import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
 
 interface OfferPopupProps {
 	offer: Offer;
@@ -15,8 +15,6 @@ interface OfferPopupProps {
 const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 	const language = useLanguage();
 	const i18n = useI18n(language);
-
-	const navigate = useNavigate();
 
 	const MAGIC_CUTOFF_LIMIT = 80;
 
@@ -28,11 +26,9 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 	}, [offer.providerDescription]);
 
 	return (
-		<div
+		<LocalizedTrackedAnchorLink
 			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default-black py-4 border-b md:border-0`}
-			onClick={() => {
-				navigate(offer.path);
-			}}
+			href={offer.path}
 		>
 			<div className="flex flex-row gap-2">
 				<div className="w-full flex flex-col gap-4 px-4">
@@ -68,14 +64,14 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 						{cutoffDescription}
 					</div>
 					<div className="flex flex-row w-full justify-end text-primary-blue">
-						<a className="flex flex-row gap-2 items-center" href={offer.path}>
+						<div className="flex flex-row gap-2 items-center">
 							<div>mehr Infos</div>
 							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
-						</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</LocalizedTrackedAnchorLink>
 	);
 };
 

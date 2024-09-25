@@ -6,9 +6,9 @@ const de = {
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin fair und günstig erleben",
 
-	"menuItem.hompage": "Startseite",
+	"menuItem.homepage": "Startseite",
 	"menuItem.map": "Kartenansicht",
-	"menuItem.favorits": "Favoriten",
+	"menuItem.favorites": "Favoriten",
 	"menuItem.senat": "Zur Senatsverwaltung",
 	"menuItem.press": "Presse",
 	"menuItem.contact": "Kontakt",
@@ -37,6 +37,16 @@ const de = {
 	"targetAudience.family.label": "Familie",
 	"targetAudience.senior.label": "Senior:innen",
 
+	"button.showAllOffers": "Alle Angebote anzeigen",
+	"button.copyAddress": "Adresse kopieren",
+	"button.copyAddressCopied": "Die Adresse wurde kopiert!",
+	"button.copyLink": "Link kopieren",
+	"button.copyLinkCopied": "Der Link wurde kopiert!",
+
+	"offer.linkToWebsite": "Zur Webseite",
+	"offer.discountDetails": "Ermäßigung",
+	"offer.location": "Ort",
+
 	"categories.title": "Kategorien",
 	"categories.all.name": "Alle Angebote",
 	"categories.all.description": "",
@@ -63,6 +73,8 @@ const de = {
 	"allOffers.offerFound": "Angebote gefunden",
 	"allOffers.discoverCategories": "Entdecke die Kategorien",
 	"allOffers.discoverFurtherCategories": "Entdecke weitere Kategorien",
+	"allOffers.for": "für",
+	"allOffers.in": "in",
 
 	discover: "entdecken",
 	discoverOffers: "Angebote entdecken",

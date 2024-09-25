@@ -3,10 +3,10 @@ import { Offer } from "../../content/content";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import { Pill } from "./pill";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
-import { LikeButton } from "../buttons/like-button.tsx";
-import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
-import { useLanguage } from "../../hooks/use-language.tsx";
-import { useI18n } from "../../i18n/use-i18n.tsx";
+import { LikeButton } from "../buttons/like-button";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
 
 interface OfferDetailProps {
 	offer: Offer;
@@ -26,7 +26,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	}, [offer.providerDescription]);
 
 	return (
-		<TrackedAnchorLink
+		<LocalizedTrackedAnchorLink
 			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white px-3`}
 			href={offer.path}
 		>
@@ -58,9 +58,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 							<Pill title={i18n["filter.freeEntry"]} />
 						</div>
 					)}
-					<div
-						className={`break-words text-left cusor-default pr-0 md:pr-[59px]`}
-					>
+					<div className={`break-words text-left pr-0 md:pr-[59px]`}>
 						{cutoffDescription}
 					</div>
 					<div className="flex flex-row w-full justify-start text-primary-blue">
@@ -72,7 +70,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 				</div>
 			</div>
 			<div className="border-b border-berlin-grey-light w-full"></div>
-		</TrackedAnchorLink>
+		</LocalizedTrackedAnchorLink>
 	);
 };
 

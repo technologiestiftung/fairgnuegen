@@ -28,7 +28,7 @@ function generatePath({ slug, language }: { slug: string; language: string }) {
 	}
 
 	existingPaths.push(path);
-	return path;
+	return { path, slug: slugTitle };
 }
 
 try {
@@ -55,10 +55,13 @@ try {
 			x,
 			y,
 			language,
-			slug,
+			identifierToBeSlugified,
 		] = row.split(";");
 
-		const path = generatePath({ slug, language });
+		const { path, slug } = generatePath({
+			slug: identifierToBeSlugified,
+			language,
+		});
 
 		const t = useI18n(language);
 
@@ -99,6 +102,7 @@ try {
 					.map((targetGroup) => targetGroup.trim()),
 				x: parseFloat(x.replace(",", ".")),
 				y: parseFloat(y.replace(",", ".")),
+				slug,
 			},
 		};
 

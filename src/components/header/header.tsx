@@ -2,9 +2,9 @@ import { Breadcrumbs } from "./breadcumbs";
 import { LanguageSelect } from "./language-select";
 import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
 import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
-import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
-import { useLanguage } from "../../hooks/use-language.tsx";
-import { useI18n } from "../../i18n/use-i18n.tsx";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
 
 export function Header() {
 	const language = useLanguage();
@@ -15,7 +15,7 @@ export function Header() {
 	const navLinks = [
 		{
 			href: "/",
-			label: i18n["menuItem.hompage"],
+			label: i18n["menuItem.homepage"],
 		},
 		{
 			href: `/map/?free=${isShowingFreeOffersOnly ? "true" : "false"}`,
@@ -23,7 +23,7 @@ export function Header() {
 		},
 		{
 			href: "/favorites/",
-			label: i18n["menuItem.favorits"],
+			label: i18n["menuItem.favorites"],
 		},
 	];
 
@@ -46,33 +46,33 @@ export function Header() {
 			</div>
 
 			<div className="flex justify-between items-center">
-				<a
+				<LocalizedTrackedAnchorLink
 					href="/"
 					className="hidden desktop:flex flex-col justify-center px-7 h-24"
 				>
 					<span className="font-bold">{i18n["header.mobile"]}</span>
-				</a>
+				</LocalizedTrackedAnchorLink>
 
-				<a
+				<LocalizedTrackedAnchorLink
 					href="/"
 					className="flex desktop:hidden flex-col justify-center px-7 h-24"
 				>
 					<span className="font-bold text-2xl"> {i18n["header.title"]}</span>
 					<span className="text-sm"> {i18n["header.caption"]}</span>
-				</a>
+				</LocalizedTrackedAnchorLink>
 
 				<div className="flex items-center gap-x-[30px]">
 					<nav className="hidden desktop:block">
 						<ul className="flex justify-center gap-x-[30px]">
 							{navLinks.map((link) => (
 								<li key={link.href}>
-									<TrackedAnchorLink
+									<LocalizedTrackedAnchorLink
 										href={link.href}
 										className="hover:underline"
 										additionalTrackingContext="(header nav link)"
 									>
 										{link.label}
-									</TrackedAnchorLink>
+									</LocalizedTrackedAnchorLink>
 								</li>
 							))}
 						</ul>

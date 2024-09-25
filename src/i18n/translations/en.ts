@@ -1,4 +1,6 @@
-const en = {
+import de from "./de";
+
+const en: Record<keyof typeof de, string> = {
 	"home.title": "Home",
 	"home.h1": "What would you like to do?",
 
@@ -6,9 +8,9 @@ const en = {
 	"header.title": "Fairgnügen",
 	"header.caption": "Experience Berlin fairly and affordably",
 
-	"menuItem.hompage": "Homepage",
+	"menuItem.homepage": "Homepage",
 	"menuItem.map": "Map View",
-	"menuItem.favorits": "Favorites",
+	"menuItem.favorites": "Favorites",
 	"menuItem.senat": "To the Senate Administration",
 	"menuItem.press": "Press",
 	"menuItem.contact": "Contact",
@@ -37,6 +39,16 @@ const en = {
 	"targetAudience.family.label": "Family",
 	"targetAudience.senior.label": "Seniors",
 
+	"button.showAllOffers": "Show all offers",
+	"button.copyAddress": "Copy address",
+	"button.copyAddressCopied": "The address was copied!",
+	"button.copyLink": "Copy link",
+	"button.copyLinkCopied": "The link was copied!",
+
+	"offer.linkToWebsite": "Link to website",
+	"offer.discountDetails": "Discount details",
+	"offer.location": "Location",
+
 	"categories.title": "Categories",
 	"categories.all.name": "All Offers",
 	"categories.all.description": "",
@@ -63,6 +75,8 @@ const en = {
 	"allOffers.offerFound": "Offers found",
 	"allOffers.discoverCategories": "Discover the categories",
 	"allOffers.discoverFurtherCategories": "Discover more categories",
+	"allOffers.for": "for",
+	"allOffers.in": "in",
 
 	discover: "discover",
 	discoverOffers: "Discover offers",

@@ -21,8 +21,8 @@ export default function Index() {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 
-	const { category, categoryDetail } = useCategories();
-	const { categories, categoriesDetails } = useCategories();
+	const { category, categoryDetail, categories, categoriesDetails } =
+		useCategories();
 	const { districts, districtValues } = useDistricts();
 	const { targetAudiences, targetAudienceValues } = useTargetAudiences();
 
@@ -62,12 +62,15 @@ export default function Index() {
 							</div>
 							<p className="text-md text-primary-blue">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
-								{search !== null && search !== "" && ` für "${search}"`}
+								{search !== null &&
+									search !== "" &&
+									` ${i18n["allOffers.for"]} "${search}"`}
 								{categories.length > 0 &&
-									` in "${categoriesDetails.map((c) => i18n[c.name]).join(", ")}"`}
-								{districts.length > 0 && ` in "${districtValues.join(", ")}"`}
+									` ${i18n["allOffers.in"]} "${categoriesDetails.map((c) => i18n[`${c.i18nKey}.name`]).join(", ")}"`}
+								{districts.length > 0 &&
+									` ${i18n["allOffers.in"]} "${districtValues.join(", ")}"`}
 								{targetAudiences.length > 0 &&
-									` für "${targetAudienceValues.map((t) => i18n[t.label]).join(", ")}"`}
+									` ${i18n["allOffers.for"]} "${targetAudienceValues.map((t) => i18n[t.label]).join(", ")}"`}
 							</p>
 						</div>
 					</div>

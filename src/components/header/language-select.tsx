@@ -89,5 +89,11 @@ function getHref({
 		return `${routeWithoutLanguage}${href}`;
 	}
 
-	return `/${language.code}${location.pathname}${href}`;
+	href = `${location.pathname}${href}`;
+
+	if (href.includes(`/${language.code}/`)) {
+		return href;
+	}
+
+	return `/${language.code}${href}`;
 }

@@ -5,8 +5,7 @@ import { offers } from "../content/content";
 import { useCategories } from "./use-categories";
 import { useDistricts } from "./use-districts";
 import { useTargetAudiences } from "./use-target-audiences";
-import { useLanguage } from "./use-language.tsx";
-import { useI18n } from "../i18n/use-i18n.tsx";
+import { useLanguage } from "./use-language";
 
 export function useFilteredAndSortedOffers() {
 	/**
@@ -26,7 +25,6 @@ export function useFilteredAndSortedOffers() {
 	const { targetAudiences, targetAudienceValues } = useTargetAudiences();
 
 	const language = useLanguage();
-	const i18n = useI18n(language);
 
 	const [filteredAndSortedOffers, setFilteredAndSortedOffers] =
 		useState(offers);
@@ -38,7 +36,7 @@ export function useFilteredAndSortedOffers() {
 			.filter(
 				(o) =>
 					categories.length === 0 ||
-					categoriesDetails.map((c) => i18n[c.name]).includes(o.category),
+					categoriesDetails.map((c) => c.name).includes(o.category),
 			)
 			.filter(
 				(o) =>

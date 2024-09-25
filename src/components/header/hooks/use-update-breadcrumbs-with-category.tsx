@@ -26,11 +26,11 @@ export function useUpdateBreadcrumbsWithCategory() {
 					return breadcrumb;
 				}
 
-				const { name } = categoryMap[category];
+				const { i18nKey } = categoryMap[category];
 
 				return {
 					...breadcrumb,
-					label: i18n[name],
+					label: i18n[`${i18nKey}.name`],
 				};
 			},
 		);
