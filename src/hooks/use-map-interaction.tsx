@@ -1,12 +1,62 @@
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { MutableRefObject, useEffect, useState } from "react";
+import {
+	MutableRefObject,
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 import { Offer } from "../content/content";
+
+interface PopupPosition {
+	x: number;
+	y: number;
+}
 
 export function useMapInteraction(
 	map: MutableRefObject<maplibregl.Map | null>,
 ) {
 	const [selectedOffer, setSelectedOffer] = useState<Offer | null>(null);
+	const [selectedOfferPosition, setSelectedOfferPosition] =
+		useState<PopupPosition | null>();
+	const selectedOfferRef = useRef(selectedOffer);
+
+	const trackSelectedOfferPosition = useCallback(() => {
+		if (!map.current) {
+			return;
+		}
+		if (!selectedOfferRef.current) {
+			return;
+		}
+
+		const selectedFeature = map.current.queryRenderedFeatures({
+			layers: ["unclustered-point"],
+			filter: ["==", "id", selectedOfferRef.current.path],
+		})[0];
+
+		if (!selectedFeature) {
+			setSelectedOffer(null);
+			setSelectedOfferPosition(null);
+			return;
+		}
+
+		const pixelPosition = map.current.project(
+			// @ts-expect-error coordinates is not null
+			selectedFeature.geometry.coordinates,
+		);
+
+		setSelectedOfferPosition({ x: pixelPosition.x, y: pixelPosition.y });
+	}, [
+		map.current,
+		selectedOfferRef,
+		setSelectedOffer,
+		setSelectedOfferPosition,
+	]);
+
+	useEffect(() => {
+		selectedOfferRef.current = selectedOffer;
+	}, [selectedOffer]);
 
 	useEffect(() => {
 		if (!map.current) {
@@ -84,6 +134,12 @@ export function useMapInteraction(
 
 			setSelectedOffer(offer);
 
+			const pixelPosition = map.current.project(
+				// @ts-expect-error coordinates is not null
+				e.features[0].geometry.coordinates,
+			);
+			setSelectedOfferPosition({ x: pixelPosition.x, y: pixelPosition.y });
+
 			map.current.easeTo({
 				// @ts-expect-error coordinates is not null
 				center: e.features[0].geometry.coordinates,
@@ -105,14 +161,19 @@ export function useMapInteraction(
 		});
 
 		if (window.innerWidth > 768) {
-			map.current.on("dragstart", () => {
-				if (!map.current) {
-					return;
-				}
-				setSelectedOffer(null);
+			map.current.on("drag", () => {
+				trackSelectedOfferPosition();
 			});
 		}
+
+		map.current.on("zoom", () => {
+			trackSelectedOfferPosition();
+		});
+
+		map.current.on("move", () => {
+			trackSelectedOfferPosition();
+		});
 	}, []);
 
-	return { selectedOffer };
+	return { selectedOffer, selectedOfferPosition };
 }

@@ -29,7 +29,7 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 
 	return (
 		<div
-			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default py-4 border-b md:border-0`}
+			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default-black py-4 border-b md:border-0`}
 			onClick={() => {
 				navigate(offer.path);
 			}}

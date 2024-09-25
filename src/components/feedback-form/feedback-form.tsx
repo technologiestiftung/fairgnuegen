@@ -9,7 +9,9 @@ export const FeedbackForm: React.FC = () => {
 	const i18n = useI18n(language);
 	return (
 		<div className="py-4 bg-berlin-light-green flex flex-col gap-8 px-8 mb-4 text-sm">
-			<div className={`flex flex-row justify-between items-center gap-2`}>
+			<div
+				className={`flex flex-col md:flex-row md:justify-between md:items-center gap-2`}
+			>
 				<div>{i18n["feedback.hint"]}</div>
 				<div className="min-w-[30%]">
 					<TrackedAnchorLink
@@ -20,7 +22,7 @@ export const FeedbackForm: React.FC = () => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<span className="w-min sm:w-auto">{i18n["feedback.link"]}</span>
+						<span>{i18n["feedback.link"]}</span>
 						<LinkIcon></LinkIcon>
 					</TrackedAnchorLink>
 				</div>
