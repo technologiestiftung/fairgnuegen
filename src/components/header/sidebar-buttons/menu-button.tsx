@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { BarsIcon } from "../../icons/bars-icon";
 import MainMenu from "../../menu/main-menu";
+import { useLanguage } from "../../../hooks/use-language";
+import { useI18n } from "../../../i18n/use-i18n";
 
 export function MenuButton() {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -12,7 +17,7 @@ export function MenuButton() {
 				onClick={() => setIsOpen(true)}
 			>
 				<BarsIcon />
-				Menü
+				{i18n["sidebar.menu"]}
 			</button>
 			<MainMenu isOpen={isOpen} close={() => setIsOpen(false)}></MainMenu>
 		</>

@@ -4,23 +4,28 @@ import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
 import { useIsHeaderLogoVisible } from "./hooks/use-is-header-logo-visible";
 import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 export function Header() {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const isHeaderLogoVisible = useIsHeaderLogoVisible();
 	const { isShowingFreeOffersOnly } = useFreeOffersOnly();
 
 	const navLinks = [
 		{
 			href: "/",
-			label: "Startseite",
+			label: i18n["menuItem.hompage"],
 		},
 		{
 			href: `/map/?free=${isShowingFreeOffersOnly ? "true" : "false"}`,
-			label: "Kartenansicht",
+			label: i18n["menuItem.map"],
 		},
 		{
 			href: "/favorites/",
-			label: "Favoriten",
+			label: i18n["menuItem.favorits"],
 		},
 	];
 
@@ -51,17 +56,15 @@ export function Header() {
 					href="/"
 					className="hidden desktop:flex flex-col justify-center px-7 h-24"
 				>
-					<span className="font-bold">
-						Fairgnügen • Berlin fair und günstig erleben
-					</span>
+					<span className="font-bold">{i18n["header.mobile"]}</span>
 				</a>
 
 				<a
 					href="/"
 					className="flex desktop:hidden flex-col justify-center px-7 h-24"
 				>
-					<span className="font-bold text-2xl">Fairgnügen</span>
-					<span className="text-sm">Berlin fair und günstig erleben</span>
+					<span className="font-bold text-2xl"> {i18n["header.title"]}</span>
+					<span className="text-sm"> {i18n["header.caption"]}</span>
 				</a>
 
 				<div className="flex items-center gap-x-[30px]">

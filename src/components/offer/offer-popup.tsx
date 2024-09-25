@@ -5,12 +5,17 @@ import { Pill } from "./pill";
 import { LikeButton } from "../buttons/like-button";
 import { getCategoryDetailsFromName } from "../../content/categories";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 interface OfferPopupProps {
 	offer: Offer;
 }
 
 const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const navigate = useNavigate();
 
 	const MAGIC_CUTOFF_LIMIT = 80;
@@ -46,7 +51,7 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 
 								{offer.isFree && (
 									<div className="flex flex-row gap-2 flex-wrap">
-										<Pill title={"Freier Eintritt"} />
+										<Pill title={i18n["filter.freeEntry"]} />
 									</div>
 								)}
 							</div>

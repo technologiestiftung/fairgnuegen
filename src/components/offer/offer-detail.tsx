@@ -5,12 +5,17 @@ import { Pill } from "./pill";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 import { LikeButton } from "../buttons/like-button.tsx";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 interface OfferDetailProps {
 	offer: Offer;
 }
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const MAGIC_CUTOFF_LIMIT = 165;
 
 	const cutoffDescription = useMemo(() => {
@@ -50,7 +55,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</div>
 					{offer.isFree && (
 						<div className="flex flex-row gap-2 flex-wrap">
-							<Pill title={"Freier Eintritt"} />
+							<Pill title={i18n["filter.freeEntry"]} />
 						</div>
 					)}
 					<div

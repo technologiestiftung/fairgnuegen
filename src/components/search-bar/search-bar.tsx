@@ -5,6 +5,8 @@ import ClearIcon from "../icons/clear-icon";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
 import { trackSiteSearch } from "../../analytics/matomo";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 const SearchBar: React.FC = () => {
 	const { updateSearchParam } = useUpdateSearchParam();
@@ -13,6 +15,9 @@ const SearchBar: React.FC = () => {
 	const navigate = useNavigate();
 	const [search, setSearch] = useState(searchParams.get("search") ?? "");
 	const [hasFocus, setHasFocus] = useState(false);
+
+	const language = useLanguage();
+	const i18n = useI18n(language);
 
 	return (
 		<form
@@ -37,7 +42,7 @@ const SearchBar: React.FC = () => {
 				value={search}
 				type="text"
 				className="relative pl-8 pr-20 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none placeholder-[#9D9D9C]"
-				placeholder="Suchbegriff eingeben"
+				placeholder={i18n["searchbar.placeholder"]}
 				onChange={(e) => setSearch(e.target.value)}
 				onFocus={() => {
 					setHasFocus(true);

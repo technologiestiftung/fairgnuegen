@@ -6,8 +6,13 @@ import { useDistricts } from "../../hooks/use-districts";
 import { useTargetAudiences } from "../../hooks/use-target-audiences";
 import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
 import { trackInteraction } from "../../analytics/matomo.ts";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 const FilterButton: React.FC = () => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const { categories } = useCategories();
 	const { districts } = useDistricts();
 	const { targetAudiences } = useTargetAudiences();
@@ -38,7 +43,7 @@ const FilterButton: React.FC = () => {
 			>
 				<div className="flex flex-row gap-1 items-center">
 					<FilterIcon></FilterIcon>
-					<div>Filter</div>
+					<div>{i18n["filter.title"]}</div>
 				</div>
 				{numActiveFilters > 0 && (
 					<div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-berlin-green flex flex-row items-center justify-center text-white font-bold">

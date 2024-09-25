@@ -1,10 +1,14 @@
 import React from "react";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 interface ResetFilterButtonProps {
 	onClick: () => void;
 }
 
 const ResetFilterButton: React.FC<ResetFilterButtonProps> = ({ onClick }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
 	return (
 		<div className="">
 			<button
@@ -12,7 +16,7 @@ const ResetFilterButton: React.FC<ResetFilterButtonProps> = ({ onClick }) => {
 				onClick={onClick}
 			>
 				<div className="flex flex-row gap-1 items-center">
-					<div>Alle Filter zurücksetzen</div>
+					{i18n["filter.reset"]}
 				</div>
 			</button>
 		</div>

@@ -2,9 +2,14 @@ import React from "react";
 import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
 import Checkbox from "./checkbox";
 import { trackInteraction } from "../../analytics/matomo.ts";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 const FreeOffersCheckbox: React.FC = () => {
-	const label = "Freier Eintritt";
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
+	const label = i18n["filter.freeEntry"];
 	const { isShowingFreeOffersOnly, toggleIsShowingFreeOffersOnly } =
 		useFreeOffersOnly();
 

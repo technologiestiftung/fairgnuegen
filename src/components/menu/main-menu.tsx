@@ -5,6 +5,8 @@ import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 interface MainMenuProps {
 	isOpen: boolean;
@@ -19,11 +21,14 @@ interface MenuItem {
 }
 
 const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const links: MenuItem[] = [
 		{
-			title: "Startseite",
+			title: i18n["menuItem.hompage"],
 			subItems: Object.entries(categoryMap).map(([key, category]) => ({
-				title: category.name,
+				title: i18n[category.name],
 				subItems: [],
 				isExternalLink: false,
 				link: category.isRenderedInCategoryCards
@@ -34,55 +39,55 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 			link: "/",
 		},
 		{
-			title: "Kartenansicht",
+			title: i18n["menuItem.map"],
 			subItems: [],
 			isExternalLink: false,
 			link: "/map/",
 		},
 		{
-			title: "Favoriten",
+			title: i18n["menuItem.favorites"],
 			subItems: [],
 			isExternalLink: false,
 			link: "/favorites/",
 		},
 		{
-			title: "Zur Senatsverwaltung",
+			title: i18n["menuItem.senat"],
 			subItems: [],
 			isExternalLink: true,
 			link: "https://www.berlin.de/sen/asgiva/",
 		},
 		{
-			title: "Presse",
+			title: i18n["menuItem.press"],
 			subItems: [],
 			isExternalLink: true,
 			link: "https://www.berlin.de/sen/asgiva/presse/",
 		},
 		{
-			title: "Kontakt",
+			title: i18n["menuItem.contact"],
 			subItems: [],
 			isExternalLink: true,
 			link: "https://www.berlin.de/sen/asgiva/ueber-uns/formular.541467.php",
 		},
 		{
-			title: "Leitung",
+			title: i18n["menuItem.management"],
 			subItems: [],
 			isExternalLink: true,
 			link: "https://www.berlin.de/sen/asgiva/ueber-uns/leitung/",
 		},
 		{
-			title: "Hier twittert die Senatsverwaltung",
+			title: i18n["menuItem.twitter"],
 			subItems: [],
 			isExternalLink: true,
 			link: "https://twitter.com/SenIAS_Berlin",
 		},
 		{
-			title: "Hier stellt die Senatsverwaltung ihre Videos ein",
+			title: i18n["menuItem.youtube"],
 			subItems: [],
 			isExternalLink: true,
 			link: "https://www.youtube.com/c/SenIASBerlin",
 		},
 		{
-			title: "Hier postet die Senatsverwaltung",
+			title: i18n["menuItem.instagram"],
 			subItems: [],
 			isExternalLink: true,
 			link: "https://www.instagram.com/SenIAS_berlin",
@@ -101,7 +106,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 					</button>
 				</div>
 				{links.map((link) => (
-					<React.Fragment key={link.title}>
+					<React.Fragment key={link.link}>
 						{link.isExternalLink && (
 							<a
 								href={link.link}
