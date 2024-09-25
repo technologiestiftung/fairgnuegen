@@ -2,9 +2,14 @@ import React from "react";
 import MapIcon from "../icons/map-icon";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
 import { useSearchParams } from "react-router-dom";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 interface ShowMapButtonProps {}
 const ShowMapButton: React.FC<ShowMapButtonProps> = () => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const [searchParams] = useSearchParams();
 
 	return (
@@ -15,7 +20,7 @@ const ShowMapButton: React.FC<ShowMapButtonProps> = () => {
 		>
 			<div className="flex flex-row gap-2 items-center">
 				<MapIcon></MapIcon>
-				<div>Kartenansicht</div>
+				<div>{i18n["menuItem.map"]}</div>
 			</div>
 		</TrackedAnchorLink>
 	);

@@ -37,6 +37,7 @@ const de = {
 	"targetAudience.family.label": "Familie",
 	"targetAudience.senior.label": "Senior:innen",
 
+	"categories.title": "Kategorien",
 	"categories.all.name": "Alle Angebote",
 	"categories.all.description": "",
 	"categories.kultur.name": "Kultur",
@@ -55,6 +56,13 @@ const de = {
 	"feedback.hint":
 		"Wie gefällt dir Fairgnügen? Beantworte uns gerne ein paar Fragen.",
 	"feedback.link": "Hier Feedback geben",
+
+	"map.loading": "Kartenansicht wird geladen...",
+
+	"allOffers.title": "Alle Angebote",
+	"allOffers.offerFound": "Angebote gefunden",
+	"allOffers.discoverCategories": "Entdecke die Kategorien",
+	"allOffers.discoverFurtherCategories": "Entdecke weitere Kategorien",
 };
 
 export default de;

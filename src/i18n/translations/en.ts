@@ -37,6 +37,7 @@ const en = {
 	"targetAudience.family.label": "Family",
 	"targetAudience.senior.label": "Seniors",
 
+	"categories.title": "Categories",
 	"categories.all.name": "All Offers",
 	"categories.all.description": "",
 	"categories.kultur.name": "Culture",
@@ -55,6 +56,13 @@ const en = {
 	"feedback.hint":
 		"How do you like Fairgnügen? Feel free to answer a few questions for us.",
 	"feedback.link": "Give feedback here",
+
+	"map.loading": "Loading map...",
+
+	"allOffers.title": "All Offers",
+	"allOffers.offerFound": "Offers found",
+	"allOffers.discoverCategories": "Discover the categories",
+	"allOffers.discoverFurtherCategories": "Discover more categories",
 };
 
 export default en;
