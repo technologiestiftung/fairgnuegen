@@ -65,7 +65,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</div>
 					<div className="flex flex-row w-full justify-start text-primary-blue">
 						<div className="flex flex-row gap-2 items-center">
-							<div>mehr Infos</div>
+							<div>{i18n["moreInfo"]}</div>
 							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 						</div>
 					</div>

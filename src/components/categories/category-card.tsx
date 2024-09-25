@@ -36,7 +36,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 			<div className="flex flex-col justify-between p-4 h-[50%] w-full">
 				<div className="text-xl font-bold">{i18n[category.name]}</div>
 				<div className="text-primary-blue text-left flex flex-row items-center justify-start gap-2 hover:underline">
-					<div>Angebote entdecken</div>
+					<div>{i18n["discoverOffers"]}</div>
 					<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 				</div>
 			</div>

@@ -63,6 +63,12 @@ const en = {
 	"allOffers.offerFound": "Offers found",
 	"allOffers.discoverCategories": "Discover the categories",
 	"allOffers.discoverFurtherCategories": "Discover more categories",
+
+	discover: "discover",
+	discoverOffers: "Discover offers",
+	sort: "Sort",
+	moreInfo: "more info",
+	return: "Return",
 };
 
 export default en;
