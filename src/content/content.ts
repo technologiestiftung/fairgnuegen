@@ -4,6 +4,7 @@ import { detailPagesContent } from "./detail-pages-content.js";
 export type Offer = {
 	language: string;
 	path: string;
+	slug: string;
 	provider: string;
 	providerDescription: string;
 	offerDescription: string;

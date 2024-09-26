@@ -3,14 +3,19 @@ import { Offer } from "../../content/content";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import { Pill } from "./pill";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
-import { LikeButton } from "../buttons/like-button.tsx";
-import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
+import { LikeButton } from "../buttons/like-button";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
 
 interface OfferDetailProps {
 	offer: Offer;
 }
 
 const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const MAGIC_CUTOFF_LIMIT = 165;
 
 	const cutoffDescription = useMemo(() => {
@@ -21,7 +26,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	}, [offer.providerDescription]);
 
 	return (
-		<TrackedAnchorLink
+		<LocalizedTrackedAnchorLink
 			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white px-3`}
 			href={offer.path}
 		>
@@ -50,24 +55,22 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 					</div>
 					{offer.isFree && (
 						<div className="flex flex-row gap-2 flex-wrap">
-							<Pill title={"Freier Eintritt"} />
+							<Pill title={i18n["filter.freeEntry"]} />
 						</div>
 					)}
-					<div
-						className={`break-words text-left cusor-default pr-0 md:pr-[59px]`}
-					>
+					<div className={`break-words text-left pr-0 md:pr-[59px]`}>
 						{cutoffDescription}
 					</div>
 					<div className="flex flex-row w-full justify-start text-primary-blue">
 						<div className="flex flex-row gap-2 items-center">
-							<div>mehr Infos</div>
+							<div>{i18n["moreInfo"]}</div>
 							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="border-b border-berlin-grey-light w-full"></div>
-		</TrackedAnchorLink>
+		</LocalizedTrackedAnchorLink>
 	);
 };
 

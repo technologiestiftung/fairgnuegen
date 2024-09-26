@@ -5,7 +5,7 @@ import { offers } from "../content/content";
 import { useCategories } from "./use-categories";
 import { useDistricts } from "./use-districts";
 import { useTargetAudiences } from "./use-target-audiences";
-import { useLanguage } from "./use-language.tsx";
+import { useLanguage } from "./use-language";
 
 export function useFilteredAndSortedOffers() {
 	/**
@@ -31,7 +31,6 @@ export function useFilteredAndSortedOffers() {
 
 	useEffect(() => {
 		setIsLoading(false);
-
 		const filtered = offers
 			.filter((offer) => offer.language === language)
 			.filter(

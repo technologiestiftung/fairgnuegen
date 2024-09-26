@@ -9,9 +9,14 @@ import { useMap } from "../../hooks/use-map";
 import { useMapHeight } from "../../hooks/use-map-height";
 import { useMapInteraction } from "../../hooks/use-map-interaction";
 import { Layout } from "../../layout/layout";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 import { useIconSizeInterpolation } from "../../hooks/use-icon-size-interpolation";
 
 export default function Index() {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const { calculateIconSize } = useIconSizeInterpolation();
 	const { mapRef, isMapLoading } = useMap();
 	const { selectedOffer, selectedOfferPosition } = useMapInteraction(mapRef);
@@ -80,7 +85,7 @@ export default function Index() {
 						id="map"
 						className="row-start-1 col-start-1 w-full h-full flex flex-row items-center justify-center "
 					>
-						Kartenansicht wird geladen...
+						{i18n["map.loading"]}
 					</div>
 				)}
 			</div>

@@ -16,6 +16,8 @@ import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
 import { useNavigate } from "react-router-dom";
+import { useI18n } from "../../i18n/use-i18n";
+import { useLanguage } from "../../hooks/use-language";
 
 interface FilterRowOption {
 	title: string;
@@ -45,6 +47,9 @@ interface FilterMenuProps {
 }
 
 const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const navigate = useNavigate();
 
 	const { updateManySearchParams } = useUpdateSearchParam();
@@ -76,28 +81,28 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 
 	const filterRows: FilterRow[] = [
 		{
-			title: "Für wen ist das Angebot?",
+			title: i18n["filter.targetAudience"],
 			options: Object.entries(targetAudiencesMap).map(
 				([key, targetAudience]) => ({
-					title: targetAudience.label,
+					title: i18n[targetAudience.label],
 					value: key,
 				}),
 			),
 			urlKey: "target_audience",
 		},
 		{
-			title: "Was interessiert dich?",
+			title: i18n["filter.category"],
 			options: Object.entries(categoryMap)
 				.filter((c) => c[1].isRenderedInCategoryCards)
 				.map(([key, category]) => ({
-					title: category.name,
-					subtitle: category.description,
+					title: i18n[`${category.i18nKey}.name`],
+					subtitle: i18n[`${category.i18nKey}.description`],
 					value: key,
 				})),
 			urlKey: "category",
 		},
 		{
-			title: "Wo suchst du Angebote?",
+			title: i18n["filter.district"],
 			options: Object.entries(districtsMap).map(([key, district]) => ({
 				title: district,
 				value: key,
@@ -175,13 +180,13 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 		<Drawer isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4 shadow-lg">
-					<p className="text-2xl font-bold">Filter</p>
+					<p className="text-2xl font-bold">{i18n["filter.title"]}</p>
 					<button onClick={() => close()}>
 						<CloseIcon></CloseIcon>
 					</button>
 				</div>
 				<div className="text-xl font-bold px-6 py-4">
-					Filtere Angebote nach Zielgruppe, Interesse und Bezirk.
+					{i18n["filter.intro"]}
 				</div>
 				<div className="py-4">
 					<div className="px-6 pb-2">

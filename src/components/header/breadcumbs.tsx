@@ -1,6 +1,7 @@
 import React from "react";
 import { ChevronRight } from "../icons/chevron-right";
 import { useUpdateBreadcrumbsWithCategory } from "./hooks/use-update-breadcrumbs-with-category";
+import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
 
 export function Breadcrumbs() {
 	/**
@@ -15,12 +16,13 @@ export function Breadcrumbs() {
 			{updatedBreadcrumbs?.map(({ label, href }, index) => (
 				<React.Fragment key={label}>
 					{index > 0 && <ChevronRight />}
-					<a
+					<LocalizedTrackedAnchorLink
 						href={href}
 						className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[20vw] sm:max-w-[30vw] md:max-w-[40vw]"
+						additionalTrackingContext="(breadcrumbs)"
 					>
 						{label}
-					</a>
+					</LocalizedTrackedAnchorLink>
 				</React.Fragment>
 			))}
 		</div>

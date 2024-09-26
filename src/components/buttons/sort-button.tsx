@@ -3,8 +3,13 @@ import SortIcon from "../icons/sort-az";
 import { useSearchParams } from "react-router-dom";
 import useUpdateSearchParam from "../../hooks/use-update-search-params";
 import { trackInteraction } from "../../analytics/matomo.ts";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 const FilterButton: React.FC = () => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const sortAscending = (searchParams.get("sort") ?? "asc") === "asc";
@@ -24,7 +29,7 @@ const FilterButton: React.FC = () => {
 		>
 			<div className="flex flex-row gap-1 items-center">
 				<SortIcon ascending={sortAscending}></SortIcon>
-				<div>Sortieren</div>
+				<div>{i18n["sort"]}</div>
 			</div>
 		</button>
 	);

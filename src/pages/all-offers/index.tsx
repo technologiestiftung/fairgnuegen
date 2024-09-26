@@ -14,10 +14,15 @@ import { useCategories } from "../../hooks/use-categories";
 import { useDistricts } from "../../hooks/use-districts";
 import { useTargetAudiences } from "../../hooks/use-target-audiences";
 import { ResponsivePicture } from "../../components/responsive-picture/responsive-picture";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 export default function Index() {
-	const { category, categoryDetail } = useCategories();
-	const { categories, categoriesDetails } = useCategories();
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
+	const { category, categoryDetail, categories, categoriesDetails } =
+		useCategories();
 	const { districts, districtValues } = useDistricts();
 	const { targetAudiences, targetAudienceValues } = useTargetAudiences();
 
@@ -30,7 +35,7 @@ export default function Index() {
 				{categoryDetail && (
 					<ResponsivePicture
 						src={categoryDetail.image}
-						alt={categoryDetail.name}
+						alt={i18n[categoryDetail.name]}
 						loading={"eager"}
 						className="hidden sm:block w-full h-[300px] object-cover"
 					/>
@@ -38,7 +43,7 @@ export default function Index() {
 				<div
 					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
-					{categoryDetail ? categoryDetail.name : "Alle Angebote"}
+					{categoryDetail ? i18n[categoryDetail.name] : i18n["allOffers.title"]}
 				</div>
 
 				<div className="max-w-3xl mx-auto flex flex-col">
@@ -56,13 +61,16 @@ export default function Index() {
 								<RocketIcon></RocketIcon>
 							</div>
 							<p className="text-md text-primary-blue">
-								{filteredAndSortedOffers.length} Angebote gefunden
-								{search !== null && search !== "" && ` für "${search}"`}
+								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
+								{search !== null &&
+									search !== "" &&
+									` ${i18n["allOffers.for"]} "${search}"`}
 								{categories.length > 0 &&
-									` in "${categoriesDetails.map((c) => c.name).join(", ")}"`}
-								{districts.length > 0 && ` in "${districtValues.join(", ")}"`}
+									` ${i18n["allOffers.in"]} "${categoriesDetails.map((c) => i18n[`${c.i18nKey}.name`]).join(", ")}"`}
+								{districts.length > 0 &&
+									` ${i18n["allOffers.in"]} "${districtValues.join(", ")}"`}
 								{targetAudiences.length > 0 &&
-									` für "${targetAudienceValues.map((t) => t.label).join(", ")}"`}
+									` ${i18n["allOffers.for"]} "${targetAudienceValues.map((t) => i18n[t.label]).join(", ")}"`}
 							</p>
 						</div>
 					</div>
@@ -79,8 +87,8 @@ export default function Index() {
 					<div className="my-8 mx-4 md:mx-2 lg:mx-0">
 						<div className="text-xl font-bold my-6">
 							{!category || category === "all"
-								? "Entdecke die Kategorien"
-								: "Entdecke weitere Kategorien"}
+								? i18n["allOffers.discoverCategories"]
+								: i18n["allOffers.discoverFurtherCategories"]}
 						</div>
 						<div
 							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-2 sm:grid-rows-2"}`}

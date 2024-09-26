@@ -2,6 +2,8 @@ import React from "react";
 import LinkIcon from "../icons/link-icon";
 import RocketIconLarge from "../icons/rocket-icon-large";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link.tsx";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 interface InfoBoxProps {
 	showProviderHint: boolean;
@@ -12,6 +14,8 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 	showProviderHint,
 	maxWidth,
 }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
 	return (
 		<div className="w-full py-10 bg-berlin-light-green flex flex-col gap-8 px-4 lg:px-0">
 			<div
@@ -19,16 +23,9 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 			>
 				<div className="grid grid-rows-1 grid-cols-1">
 					<div className="row-start-1 col-start-1 p-8 bg-white flex flex-col gap-4">
-						<h1 className="font-bold text-lg">
-							Freier oder ermäßigter Eintritt nur mit Berechtigungsnachweis!
-						</h1>
+						<h1 className="font-bold text-lg">{i18n["infobox.title"]}</h1>
 
-						<div>
-							Mit dem Berechtigungsnachweis Berlin-Ticket S können Menschen, die
-							Sozialhilfe erhalten, den öffentlichen Nahverkehr sowie Sport-,
-							Bildungs-, Kultur- und Freizeitangebote kostenlos oder vergünstigt
-							nutzen. Viel Spaß!
-						</div>
+						<div>{i18n["infobox.content"]}</div>
 
 						<TrackedAnchorLink
 							href={
@@ -38,9 +35,7 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 							target="_blank"
 							rel="noreferrer"
 						>
-							<span className="w-min md:w-auto">
-								Mehr Infos zum Berechtigungsnachweis
-							</span>
+							<span className="w-min md:w-auto">{i18n["infobox.link"]}</span>
 							<LinkIcon></LinkIcon>
 						</TrackedAnchorLink>
 					</div>
@@ -58,15 +53,13 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 						</div>
 
 						<div>
-							Sie sind Anbieter und möchten sich mit einem Angebot sozial für
-							Berlinerinnen und Berliner engagieren? Schreiben Sie uns gerne an
-							und wir nehmen Ihr Angebot auf. Sie haben noch weitere Fragen?
+							{i18n["infobox.providerHint"]}
 							<br />
 							<TrackedAnchorLink
 								href="mailto:berechtigungsnachweis@jugendkulturservice.de"
 								className="text-link-blue hover:underline"
 							>
-								Kontaktieren Sie uns
+								{i18n["infobox.contact"]}
 							</TrackedAnchorLink>
 						</div>
 					</div>

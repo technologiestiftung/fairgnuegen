@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 interface RouteButtonProps {
 	text: string;
@@ -6,6 +8,8 @@ interface RouteButtonProps {
 
 const CopyToClipboardButton: React.FC<RouteButtonProps> = ({ text }) => {
 	const [showLinkCopied, setShowLinkCopied] = useState(false);
+	const language = useLanguage();
+	const i18n = useI18n(language);
 
 	const onClick = async () => {
 		setShowLinkCopied(true);
@@ -22,12 +26,12 @@ const CopyToClipboardButton: React.FC<RouteButtonProps> = ({ text }) => {
 				onClick={onClick}
 			>
 				<span className="flex flex-row gap-1 items-center">
-					Adresse kopieren
+					{i18n["button.copyAddress"]}
 				</span>
 			</button>
 			{showLinkCopied && (
 				<div className="absolute top-0 left-0 py-2 h-[43px] px-4 w-fit border-2 border-primary-blue bg-primary-blue text-white">
-					Die Adresse wurde kopiert!
+					{i18n["button.copyAddressCopied"]}
 				</div>
 			)}
 		</div>

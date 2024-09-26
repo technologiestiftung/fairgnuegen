@@ -5,230 +5,225 @@ import { FooterLightColumn } from "./footer-light-column.tsx";
 import { HandsIcon } from "../icons/hands-icon.tsx";
 import { EasyLanguageIcon } from "../icons/easy-language-icon.tsx";
 import { SquareArrowIcon } from "../icons/square-arrow-icon.tsx";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 const upperFooterColumns = [
 	{
-		title: "Informationen",
+		title: "upperFooter.info",
 		links: [
 			{
-				label: "Impressum",
+				label: "upperFooter.info.impressum",
+				icon: "",
 				href: "/impressum",
 			},
 			{
-				label: "Kontakt",
+				label: "upperFooter.info.contact",
+				icon: "",
 				href: "/kontakt",
 			},
 			{
-				label: "Datenschutzerklärung",
+				label: "upperFooter.info.dataprivacy",
+				icon: "",
 				href: "/datenschutz",
 			},
 			{
-				label: "Erklärung zur Barrierefreiheit",
+				label: "upperFooter.info.accessibility",
+				icon: "",
 				href: "/erklärung",
 			},
 			{
-				label: (
-					<>
-						<HandsIcon /> DGS
-					</>
-				),
+				label: "upperFooter.info.accessibility",
+				icon: <HandsIcon />,
 				href: "/dgs",
 			},
 			{
-				label: (
-					<>
-						<EasyLanguageIcon /> Leichte Sprache
-					</>
-				),
+				label: "upperFooter.info.easyLanguage",
+				icon: <EasyLanguageIcon />,
 				href: "/leichte-sprache",
 			},
 		],
 	},
 	{
-		title: "Social Media",
+		title: "upperFooter.socialMedia",
 		links: [
 			{
-				label: (
-					<>
-						Instagram <SquareArrowIcon />
-					</>
-				),
+				label: "upperFooter.socialMedia.instagram",
+				icon: <SquareArrowIcon />,
 				href: "/instagram",
 			},
 			{
-				label: (
-					<>
-						LinkedIn <SquareArrowIcon />{" "}
-					</>
-				),
+				label: "upperFooter.socialMedia.linkedin",
+				icon: <SquareArrowIcon />,
 				href: "/linkedin",
 			},
 		],
 	},
 ];
+
 const lowerFooterColumns = [
 	{
-		title: "Service",
+		title: "lowerFooter.service",
 		links: [
 			{
-				label: "Service-App",
+				label: "lowerFooter.service.serviceapp",
 				href: "https://service.berlin.de/app/",
 			},
 			{
-				label: "Termin vereinbaren",
+				label: "lowerFooter.service.appointment",
 				href: "https://service.berlin.de/terminvereinbarung/",
 			},
 			{
-				label: "Bürgertelefon 115",
+				label: "lowerFooter.service.phone",
 				href: "https://service.berlin.de/buergertelefon/",
 			},
 			{
-				label: "Notdienste",
+				label: "lowerFooter.service.emergency",
 				href: "https://www.berlin.de/polizei/service/so-erreichen-sie-uns/artikel.532842.php",
 			},
 			{
-				label: "Gewerbeservice",
+				label: "lowerFooter.service.commercial",
 				href: "https://www.berlin.de/ea/",
 			},
 		],
 	},
 	{
-		title: "Behörden",
+		title: "lowerFooter.authorities",
 		links: [
 			{
-				label: "Behörden A-Z",
+				label: "lowerFooter.authorities.az",
 				href: "https://service.berlin.de/behoerden/",
 			},
 			{
-				label: "Senatsverwaltungen",
+				label: "lowerFooter.authorities.senat",
 				href: "https://service.berlin.de/senatsverwaltungen/",
 			},
 			{
-				label: "Bezirksämter",
+				label: "lowerFooter.authorities.districOffices",
 				href: "https://service.berlin.de/bezirksaemter/",
 			},
 			{
-				label: "Bürgerämter",
+				label: "lowerFooter.authorities.civilOffices",
 				href: "https://service.berlin.de/standorte/buergeraemter/",
 			},
 			{
-				label: "Jobcenter",
+				label: "lowerFooter.authorities.jobcenter",
 				href: "https://service.berlin.de/jobcenter/",
 			},
 			{
-				label: "Einwanderungsamt",
+				label: "lowerFooter",
 				href: "https://www.berlin.de/einwanderung/",
 			},
 		],
 	},
 	{
-		title: "Politik & Verwaltung",
+		title: "lowerFooter.politics",
 		links: [
 			{
-				label: "Landesregierung",
+				label: "lowerFooter.politics.government",
 				href: "https://www.berlin.de/rbmskzl/regierende-buergermeisterin/senat/",
 			},
 			{
-				label: "Karriere im Land Berlin",
+				label: "lowerFooter.politics.career",
 				href: "https://www.berlin.de/karriereportal/",
 			},
 			{
-				label: "Bürgerbeteiligung",
+				label: "lowerFooter.politics.participation",
 				href: "https://mein.berlin.de/",
 			},
 			{
-				label: "Open Data",
+				label: "lowerFooter.politics.openData",
 				href: "https://daten.berlin.de/",
 			},
 			{
-				label: "Vergaben",
+				label: "lowerFooter.politics.allocation",
 				href: "https://www.berlin.de/vergabeplattform/",
 			},
 			{
-				label: "Ehrenamt",
+				label: "lowerFooter.politics.volunteering",
 				href: "https://www.berlin.de/buergeraktiv/",
 			},
 		],
 	},
 	{
-		title: "Aktuelles",
+		title: "lowerFooter.news",
 		links: [
 			{
-				label: "Sofortprogramm des Senats",
+				label: "lowerFooter.news.program",
 				href: "https://www.berlin.de/rbmskzl/politik/sofortprogramm/",
 			},
 			{
-				label: "Ukraine",
+				label: "lowerFooter.news.ukraine",
 				href: "https://www.berlin.de/ukraine/",
 			},
 			{
-				label: "Energiekrise",
+				label: "lowerFooter.news.energy",
 				href: "https://www.berlin.de/energie/",
 			},
 			{
-				label: "Pressemitteilungen",
+				label: "lowerFooter.news.press",
 				href: "https://www.berlin.de/presse/",
 			},
 			{
-				label: "Polizeimeldungen",
+				label: "lowerFooter.news.police",
 				href: "https://www.berlin.de/polizei/polizeimeldungen/",
 			},
 			{
-				label: "Veranstaltungen",
+				label: "lowerFooter.news.events",
 				href: "https://www.berlin.de/land/kalender/",
 			},
 		],
 	},
 	{
-		title: "Themen",
+		title: "lowerFooter.topics",
 		links: [
 			{
-				label: "Gemeinsam Digital",
+				label: "lowerFooter.topics.digital",
 				href: "https://gemeinsamdigital.berlin.de/",
 			},
 			{
-				label: "Grundsteuer",
+				label: "lowerFooter.topics.propertyTax",
 				href: "https://berlin.de/grundsteuer",
 			},
 			{
-				label: "Mobilitätswende",
+				label: "lowerFooter.topics.mobility",
 				href: "https://www.berlin.de/sen/uvk/verkehr/mobilitaetswende/verkehr-888873.php",
 			},
 			{
-				label: "Moderne Verwaltung",
+				label: "lowerFooter.topics.administration",
 				href: "https://www.berlin.de/moderne-verwaltung/",
 			},
 			{
-				label: "Berliner Mauer",
+				label: "lowerFooter.topics.wall",
 				href: "https://www.berlin.de/mauer/",
 			},
 		],
 	},
 	{
-		title: "Weitere Informationen",
+		title: "lowerFooter.moreInfo",
 		links: [
 			{
-				label: "Kultur & Ausgehen",
+				label: "lowerFooter.moreInfo.kultur",
 				href: "https://www.berlin.de/kultur-und-tickets/",
 			},
 			{
-				label: "Tourismus",
+				label: "lowerFooter.moreInfo.tourism",
 				href: "https://www.berlin.de/tourismus/",
 			},
 			{
-				label: "Wirtschaft",
+				label: "lowerFooter.moreInfo.economy",
 				href: "https://www.berlin.de/wirtschaft/",
 			},
 			{
-				label: "Stadtleben",
+				label: "lowerFooter.moreInfo.cityLife",
 				href: "https://www.berlin.de/special/",
 			},
 			{
-				label: "BerlinFinder",
+				label: "lowerFooter.moreInfo.finder",
 				href: "https://www.berlin.de/adressen/",
 			},
 			{
-				label: "Stadtplan",
+				label: "lowerFooter.moreInfo.map",
 				href: "https://www.berlin.de/stadtplan/",
 			},
 		],
@@ -236,6 +231,9 @@ const lowerFooterColumns = [
 ];
 
 export function Footer() {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	return (
 		<footer>
 			<div className="flex items-start justify-between w-full bg-berlin-grey-light desktop:p-6">
@@ -273,7 +271,7 @@ export function Footer() {
 					))}
 				</div>
 				<div className="pl-4 desktop:pl-28 pb-20 pt-6">
-					Berlin.de ist ein Angebot des Landes Berlin.
+					{i18n["lowerFooter.note"]}
 				</div>
 			</div>
 		</footer>
