@@ -1,5 +1,5 @@
 import { Breadcrumbs } from "./breadcumbs";
-import { LanguageSelect } from "./language-select";
+import { LanguageSelect } from "./language-select/language-select";
 import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
 import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
 import { useLanguage } from "../../hooks/use-language";
