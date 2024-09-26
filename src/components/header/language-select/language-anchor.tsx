@@ -1,5 +1,4 @@
 import { TrackedAnchorLink } from "../../anchor-link/tracked-anchor-link";
-import { Location } from "react-router";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { Language } from "./types";
 import { useEffect, useState } from "react";
@@ -15,7 +14,13 @@ export function LanguageAnchor({ language }: LanguageAnchorProps) {
 	const [href, setHref] = useState("");
 
 	useEffect(() => {
-		setHref(getHref({ location, searchParams, language }));
+		setHref(
+			getHref({
+				currentHref: location.pathname,
+				currentSearchParams: searchParams,
+				targetLanguage: language,
+			}),
+		);
 	}, [language, location, searchParams]);
 
 	return (
@@ -32,35 +37,36 @@ export function LanguageAnchor({ language }: LanguageAnchorProps) {
 }
 
 function getHref({
-	location,
-	searchParams,
-	language,
+	currentHref,
+	currentSearchParams,
+	targetLanguage,
 }: {
-	location: Location;
-	searchParams: URLSearchParams;
-	language: { code: string; label: string };
+	currentHref: string;
+	currentSearchParams: URLSearchParams;
+	targetLanguage: { code: string; label: string };
 }) {
-	let href = "";
+	const filterOptions = getFilterOptions(currentSearchParams);
 
-	if (searchParams.toString() !== "") {
-		href = `?${searchParams.toString()}`;
+	const isDefaultLanguage = targetLanguage.code === "de";
+	if (isDefaultLanguage) {
+		const currentHrefWithoutLanguagePrefix = removeLanguagePrefix(currentHref);
+		return `${currentHrefWithoutLanguagePrefix}${filterOptions}`;
 	}
 
-	if (language.code === "de") {
-		const routeWithoutLanguage = location.pathname.replace(
-			/\/[a-zA-Z]{2}\//,
-			"/",
-		);
-		href = `${routeWithoutLanguage}${href}`;
-		return href;
+	const href = `${currentHref}${filterOptions}`;
+
+	const hasLanguagePrefix = href.includes(`/${targetLanguage.code}/`);
+	if (!hasLanguagePrefix) {
+		return `/${targetLanguage.code}${href}`;
 	}
 
-	href = `${location.pathname}${href}`;
-
-	if (href.includes(`/${language.code}/`)) {
-		return href;
-	}
-
-	href = `/${language.code}${href}`;
 	return href;
+}
+
+function removeLanguagePrefix(currentHref: string) {
+	return currentHref.replace(/\/[a-zA-Z]{2}\//, "/");
+}
+
+function getFilterOptions(searchParams: URLSearchParams) {
+	return searchParams.toString() ? `?${searchParams.toString()}` : "";
 }
