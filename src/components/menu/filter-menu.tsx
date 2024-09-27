@@ -136,8 +136,9 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 				};
 			}),
 		);
-		if (window.location.pathname === "/") {
-			navigate("/all-offers/?" + searchParams);
+		if (!window.location.pathname.includes("/all-offers/")) {
+			const languagePrefix = language === "de" ? "" : `/${language}`;
+			navigate(`${languagePrefix}/all-offers/?${searchParams.toString()}`);
 			return;
 		}
 		close();
