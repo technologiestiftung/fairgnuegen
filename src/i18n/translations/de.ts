@@ -34,7 +34,7 @@ const de = {
 
 	"targetAudience.children.label": "Kinder und Jugendliche",
 	"targetAudience.adults.label": "Erwachsene",
-	"targetAudience.family.label": "Familie",
+	"targetAudience.family.label": "Familien",
 	"targetAudience.senior.label": "Senior:innen",
 
 	"button.showAllOffers": "Alle Angebote anzeigen",
@@ -65,7 +65,7 @@ const de = {
 
 	"feedback.hint":
 		"Wie gefällt dir Fairgnügen? Beantworte uns gerne ein paar Fragen.",
-	"feedback.link": "Hier Feedback geben",
+	"feedback.link": "Feedback geben",
 
 	"map.loading": "Kartenansicht wird geladen...",
 
@@ -85,7 +85,7 @@ const de = {
 	toTheTop: "zum Seitenanfang",
 
 	"infobox.title":
-		"Freier oder ermäßigter Eintritt nur mit Berechtigungsnachweis!",
+		"Freier oder ermäßigter Eintritt nur mit Berechtigungsnachweis",
 	"infobox.content":
 		"Mit dem Berechtigungsnachweis Berlin-Ticket S können Menschen, die Sozialhilfe erhalten, den öffentlichen Nahverkehr sowie Sport-, Bildungs-, Kultur- und Freizeitangebote kostenlos oder vergünstigt nutzen. Viel Spaß!",
 	"infobox.link": "Mehr Infos zum Berechtigungsnachweis",
