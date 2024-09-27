@@ -100,7 +100,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 		<Drawer isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4">
-					<p className="text-2xl font-bold">Menü</p>
+					<p className="text-2xl font-bold">{i18n["sidebar.menu"]}</p>
 					<button onClick={() => close()}>
 						<CloseIcon></CloseIcon>
 					</button>

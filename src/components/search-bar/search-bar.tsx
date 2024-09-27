@@ -30,7 +30,8 @@ const SearchBar: React.FC = () => {
 
 				if (!location.pathname.includes("/all-offers/")) {
 					searchParams.set("search", search);
-					navigate(`/all-offers/?${searchParams.toString()}`);
+					const languagePrefix = language === "de" ? "" : `/${language}`;
+					navigate(`${languagePrefix}/all-offers/?${searchParams.toString()}`);
 					return;
 				}
 
