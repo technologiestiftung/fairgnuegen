@@ -34,7 +34,7 @@ const LikeIcon: React.FC<LikeIconProps> = ({ isSelected }) => {
 			viewBox="0 0 43 43"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className="text-black hover:text-[#8991AB] fill-[#E40422] hover:fill-[#F18190]"
+			className="text-[#132458] hover:text-[#8991AB] fill-[#E40422] hover:fill-[#F18190]"
 		>
 			<path
 				d="M21.25 0C9.53003 0 0 9.53003 0 21.25C0 32.97 9.53003 42.5 21.25 42.5C32.97 42.5 42.5 32.97 42.5 21.25C42.5 9.52997 32.97 0 21.25 0Z"
