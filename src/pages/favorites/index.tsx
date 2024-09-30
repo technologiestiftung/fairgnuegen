@@ -1,16 +1,15 @@
 import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import BackButton from "../../components/buttons/back-button";
-import OfferDetail from "../../components/offer/offer-detail";
-import { offers } from "../../content/content";
-import { Layout } from "../../layout/layout";
-import { useFavoritesStore } from "../../store/favorites-store";
 import FilterButton from "../../components/buttons/filter-button";
 import SortButton from "../../components/buttons/sort-button";
-import { useSearchParams } from "react-router-dom";
-import RocketIcon from "../../components/icons/rocket-icon";
 import { InfoBox } from "../../components/info-box/info-box";
+import OfferDetail from "../../components/offer/offer-detail";
+import { offers } from "../../content/content";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
+import { Layout } from "../../layout/layout";
+import { useFavoritesStore } from "../../store/favorites-store";
 
 export default function Index() {
 	const language = useLanguage();
@@ -51,8 +50,7 @@ export default function Index() {
 					</div>
 
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
-						<RocketIcon></RocketIcon>
-						<p className="text-md text-primary-blue">
+						<p className="text-md text-berlin-green">
 							{filteredOffers.length} {i18n["allOffers.offerFound"]}
 						</p>
 					</div>

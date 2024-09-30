@@ -235,7 +235,8 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 													subItem.subtitle ? (
 														<span className="text-normal font-normal">
 															<span className="font-bold">
-																{subItem.title} {"> "}
+																{subItem.title}
+																{": "}
 															</span>
 															<span>{subItem.subtitle}</span>
 														</span>

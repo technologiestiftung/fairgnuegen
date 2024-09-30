@@ -70,7 +70,7 @@ const en: Record<keyof typeof de, string> = {
 	"map.loading": "Loading map...",
 
 	"allOffers.title": "All offers",
-	"allOffers.offerFound": "Offers found",
+	"allOffers.offersFound": "Offers found",
 	"allOffers.discoverCategories": "Discover the categories",
 	"allOffers.discoverFurtherCategories": "Discover more categories",
 	"allOffers.for": "for",

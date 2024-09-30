@@ -69,7 +69,7 @@ const de = {
 	"map.loading": "Kartenansicht wird geladen...",
 
 	"allOffers.title": "Alle Angebote",
-	"allOffers.offerFound": "Angebote gefunden",
+	"allOffers.offersFound": "Angebote gefunden",
 	"allOffers.discoverCategories": "Entdecke die Kategorien",
 	"allOffers.discoverFurtherCategories": "Entdecke weitere Kategorien",
 	"allOffers.for": "für",
