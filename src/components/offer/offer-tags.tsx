@@ -19,7 +19,6 @@ const OfferTags: React.FC<OfferTagsProps> = ({ offer }) => {
 				<Pill
 					title={offer.category}
 					backgroundColor={getCategoryDetailsFromName(offer.category)?.color}
-					textColor={getCategoryDetailsFromName(offer.category)?.textColor}
 				/>
 
 				{offer.isFree && <Pill title={i18n["filter.freeEntry"]} />}
