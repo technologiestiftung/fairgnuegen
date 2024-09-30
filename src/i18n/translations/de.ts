@@ -2,7 +2,6 @@ const de = {
 	"home.title": "Startseite",
 	"home.h1": "Was möchtest du unternehmen?",
 
-	"header.mobile": "Fairgnügen • Berlin fair und günstig erleben",
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin fair und günstig erleben",
 
@@ -70,7 +69,7 @@ const de = {
 	"map.loading": "Kartenansicht wird geladen...",
 
 	"allOffers.title": "Alle Angebote",
-	"allOffers.offerFound": "Angebote gefunden",
+	"allOffers.offersFound": "Angebote gefunden",
 	"allOffers.discoverCategories": "Entdecke die Kategorien",
 	"allOffers.discoverFurtherCategories": "Entdecke weitere Kategorien",
 	"allOffers.for": "für",
@@ -81,6 +80,8 @@ const de = {
 	sort: "Sortieren",
 	moreInfo: "mehr Infos",
 	return: "Zurück",
+	returnToHome: "Zurück zur Startseite",
+
 	listView: "Listenansicht",
 	toTheTop: "zum Seitenanfang",
 

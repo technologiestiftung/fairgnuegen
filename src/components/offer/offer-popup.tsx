@@ -37,9 +37,6 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 									backgroundColor={
 										getCategoryDetailsFromName(offer.category)?.color
 									}
-									textColor={
-										getCategoryDetailsFromName(offer.category)?.textColor
-									}
 								/>
 
 								{offer.isFree && (

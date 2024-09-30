@@ -19,7 +19,6 @@ const MapLegend: React.FC = () => {
 							title={i18n[`${c[1].i18nKey}.name`]}
 							key={c[0]}
 							backgroundColor={c[1].color}
-							textColor={c[1].textColor}
 							textSize="text-xs md:text-base"
 						></Pill>
 					))}

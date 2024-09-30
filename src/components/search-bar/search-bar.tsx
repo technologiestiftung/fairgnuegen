@@ -58,7 +58,7 @@ const SearchBar: React.FC = () => {
 			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pointer-events-none">
 				<button
 					type="button"
-					className="pointer-events-auto"
+					className={`${search === "" ? "hidden" : ""} pointer-events-auto`}
 					onClick={(e) => {
 						e.preventDefault();
 						setSearch("");

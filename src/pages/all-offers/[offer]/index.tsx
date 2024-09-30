@@ -3,8 +3,12 @@ import BackButton from "../../../components/buttons/back-button";
 import OfferFull from "../../../components/offer/offer-full";
 import { content } from "../../../content/content";
 import { Layout } from "../../../layout/layout";
+import { useLanguage } from "../../../hooks/use-language";
+import { useI18n } from "../../../i18n/use-i18n";
 
 export default function Index() {
+	const language = useLanguage();
+	const i18n = useI18n(language);
 	const location = useLocation();
 	const offer = content[location.pathname].offer;
 
@@ -18,7 +22,7 @@ export default function Index() {
 				<div>
 					<OfferFull offer={offer}></OfferFull>
 					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
-						<BackButton></BackButton>
+						<BackButton title={i18n["return"]}></BackButton>
 					</div>
 				</div>
 			</div>

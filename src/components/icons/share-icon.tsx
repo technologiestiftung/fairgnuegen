@@ -14,7 +14,7 @@ const ShareIcon: React.FC<ShareIconProps> = ({ isSelected }) => {
 				viewBox="0 0 43 43"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
-				className={`hover:cursor-pointer text-[#132458] hover:text-[#8991AB]`}
+				className={`hover:cursor-pointer text-black hover:text-[#8991AB]`}
 			>
 				<path
 					fillRule="evenodd"
@@ -34,7 +34,7 @@ const ShareIcon: React.FC<ShareIconProps> = ({ isSelected }) => {
 			viewBox="0 0 43 43"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className={`hover:cursor-pointer text-[#132458] hover:text-[#8991AB]`}
+			className={`hover:cursor-pointer text-black hover:text-[#8991AB]`}
 		>
 			<g id="Group 123">
 				<path

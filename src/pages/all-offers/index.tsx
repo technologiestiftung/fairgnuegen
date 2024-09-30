@@ -1,21 +1,20 @@
 import BackButton from "../../components/buttons/back-button";
 import FilterButton from "../../components/buttons/filter-button";
 import SortButton from "../../components/buttons/sort-button";
-import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
-import RocketIcon from "../../components/icons/rocket-icon";
-import OfferDetail from "../../components/offer/offer-detail";
-import SearchBar from "../../components/search-bar/search-bar";
-import { Layout } from "../../layout/layout";
-import { useFilteredAndSortedOffers } from "../../hooks/use-filtered-and-sorted-offers";
 import { CategoryCard } from "../../components/categories/category-card";
-import { categoryMap } from "../../content/categories";
+import FreeOffersCheckbox from "../../components/checkbox/free-offers-checkbox";
 import { InfoBox } from "../../components/info-box/info-box";
+import OfferDetail from "../../components/offer/offer-detail";
+import { ResponsivePicture } from "../../components/responsive-picture/responsive-picture";
+import SearchBar from "../../components/search-bar/search-bar";
+import { categoryMap } from "../../content/categories";
 import { useCategories } from "../../hooks/use-categories";
 import { useDistricts } from "../../hooks/use-districts";
-import { useTargetAudiences } from "../../hooks/use-target-audiences";
-import { ResponsivePicture } from "../../components/responsive-picture/responsive-picture";
+import { useFilteredAndSortedOffers } from "../../hooks/use-filtered-and-sorted-offers";
 import { useLanguage } from "../../hooks/use-language";
+import { useTargetAudiences } from "../../hooks/use-target-audiences";
 import { useI18n } from "../../i18n/use-i18n";
+import { Layout } from "../../layout/layout";
 
 export default function Index() {
 	const language = useLanguage();
@@ -57,10 +56,7 @@ export default function Index() {
 							<FilterButton></FilterButton>
 						</div>
 						<div className="flex flex-row items-center gap-2 py-3">
-							<div className="min-w-6">
-								<RocketIcon></RocketIcon>
-							</div>
-							<p className="text-md text-primary-blue">
+							<p className="text-md text-berlin-green">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
 								{search !== null &&
 									search !== "" &&
@@ -81,7 +77,7 @@ export default function Index() {
 						))}
 					</div>
 					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
-						<BackButton></BackButton>
+						<BackButton title={i18n["returnToHome"]}></BackButton>
 					</div>
 
 					<div className="my-8 mx-4 md:mx-2 lg:mx-0">
