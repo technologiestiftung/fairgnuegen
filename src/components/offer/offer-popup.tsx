@@ -26,11 +26,8 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 	}, [offer.providerDescription]);
 
 	return (
-		<LocalizedTrackedAnchorLink
-			className={`w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default-black py-4 border-b md:border-0`}
-			href={offer.path}
-		>
-			<div className="flex flex-row gap-2">
+		<LocalizedTrackedAnchorLink href={offer.path}>
+			<div className="w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white md:shadow-default-black py-4 border-b md:border-0 flex flex-row gap-2">
 				<div className="w-full flex flex-col gap-4 px-4">
 					<div className="w-full flex flex-row justify-between gap-4">
 						<div className="h-fit flex flex-col gap-2">
