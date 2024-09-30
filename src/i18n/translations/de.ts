@@ -80,6 +80,8 @@ const de = {
 	sort: "Sortieren",
 	moreInfo: "mehr Infos",
 	return: "Zurück",
+	returnToHome: "Zurück zur Startseite",
+
 	listView: "Listenansicht",
 	toTheTop: "zum Seitenanfang",
 

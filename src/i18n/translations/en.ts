@@ -81,6 +81,7 @@ const en: Record<keyof typeof de, string> = {
 	sort: "Sort",
 	moreInfo: "more info",
 	return: "Return",
+	returnToHome: "Back to home page",
 	listView: "List view",
 	toTheTop: "Back to top",
 

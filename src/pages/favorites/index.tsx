@@ -64,7 +64,7 @@ export default function Index() {
 						))}
 					</div>
 					<div className="mb-10 px-5 lg:px-0">
-						<BackButton></BackButton>
+						<BackButton title={i18n["return"]}></BackButton>
 					</div>
 				</div>
 			</div>

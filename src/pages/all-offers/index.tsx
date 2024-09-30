@@ -81,7 +81,7 @@ export default function Index() {
 						))}
 					</div>
 					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
-						<BackButton></BackButton>
+						<BackButton title={i18n["returnToHome"]}></BackButton>
 					</div>
 
 					<div className="my-8 mx-4 md:mx-2 lg:mx-0">
