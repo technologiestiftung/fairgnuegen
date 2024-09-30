@@ -2,7 +2,6 @@ const de = {
 	"home.title": "Startseite",
 	"home.h1": "Was möchtest du unternehmen?",
 
-	"header.mobile": "Fairgnügen • Berlin fair und günstig erleben",
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin fair und günstig erleben",
 

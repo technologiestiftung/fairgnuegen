@@ -48,17 +48,12 @@ export function Header() {
 			<div className="flex justify-between items-center">
 				<LocalizedTrackedAnchorLink
 					href="/"
-					className="hidden desktop:flex flex-col justify-center px-7 h-24"
+					className="flex flex-col justify-center pl-7 pr-3 h-24"
 				>
-					<span className="font-bold">{i18n["header.mobile"]}</span>
-				</LocalizedTrackedAnchorLink>
-
-				<LocalizedTrackedAnchorLink
-					href="/"
-					className="flex desktop:hidden flex-col justify-center px-7 h-24"
-				>
-					<span className="font-bold text-2xl"> {i18n["header.title"]}</span>
-					<span className="text-sm"> {i18n["header.caption"]}</span>
+					<span className="text-xl md:text-2xl"> {i18n["header.title"]}</span>
+					<span className="font-bold text-sm md:text-lg">
+						{i18n["header.caption"]}
+					</span>
 				</LocalizedTrackedAnchorLink>
 
 				<div className="flex items-center gap-x-[30px]">

@@ -4,7 +4,6 @@ const en: Record<keyof typeof de, string> = {
 	"home.title": "Home",
 	"home.h1": "What would you like to do?",
 
-	"header.mobile": "Fair Fun • Experience Berlin on a budget",
 	"header.title": "Fair Fun",
 	"header.caption": "Experience Berlin on a budget",
 
@@ -65,8 +64,7 @@ const en: Record<keyof typeof de, string> = {
 	"categories.freizeit.description":
 		"Offers for cinemas, restaurants, bars and outdoor activities",
 
-	"feedback.hint":
-		"How do you like Fair Fun? Please answer a few questions.",
+	"feedback.hint": "How do you like Fair Fun? Please answer a few questions.",
 	"feedback.link": "Give feedback",
 
 	"map.loading": "Loading map...",
