@@ -6,11 +6,16 @@ interface BackButtonProps {
 }
 
 const BackButton: React.FC<BackButtonProps> = ({ title }) => {
+	const allOffersPathRegex = /^\/(?:en\/)?all-offers\/$/;
+
 	return (
 		<button
 			className="px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black w-60 h-[43px]"
 			onClick={() => {
-				if (window.location.pathname === "/all-offers/") {
+				const isAllOffersPage = allOffersPathRegex.test(
+					window.location.pathname,
+				);
+				if (isAllOffersPage) {
 					window.location.href = "/";
 					return;
 				}
