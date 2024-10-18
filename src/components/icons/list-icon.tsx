@@ -9,7 +9,6 @@ const ListIcon: React.FC = () => {
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<rect width="14" height="14" fill="#F5F5F5" />
 			<path
 				d="M1.175 1C1.175 0.820508 1.32051 0.675 1.5 0.675H12.5C12.6795 0.675 12.825 0.820507 12.825 1C12.825 1.17949 12.6795 1.325 12.5 1.325H1.5C1.32051 1.325 1.175 1.17949 1.175 1Z"
 				fill="white"

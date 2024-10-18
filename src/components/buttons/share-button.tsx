@@ -58,7 +58,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 		<div className="relative">
 			<button
 				ref={buttonRef}
-				className="opacity-100 hover:opacity-50 flex justify-center items-center text-primary-blue"
+				className="flex justify-center items-center text-primary-blue"
 				onClick={() => {
 					trackInteraction({
 						eventAction: "button click",
@@ -68,7 +68,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 				}}
 			>
 				<div className="flex flex-row gap-1 items-center">
-					<ShareIcon isSelected={showOverlay}></ShareIcon>
+					<ShareIcon isSelected={showOverlay} />
 				</div>
 			</button>
 			{showOverlay && !showLinkCopied && (
@@ -92,7 +92,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 						}}
 					>
 						<span className="flex items-center gap-2 py-2">
-							<ShareLinkIcon></ShareLinkIcon>
+							<ShareLinkIcon />
 							<span>{i18n["button.copyLink"]}</span>
 						</span>
 						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
@@ -105,7 +105,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 						rel="noreferrer"
 					>
 						<span className="flex items-center gap-2 py-2">
-							<ShareWhatsappIcon></ShareWhatsappIcon>
+							<ShareWhatsappIcon />
 							<span>Whatsapp</span>
 						</span>
 						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
@@ -119,7 +119,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 						rel="noreferrer"
 					>
 						<span className="flex items-center gap-2 py-2">
-							<ShareFacebookIcon></ShareFacebookIcon>
+							<ShareFacebookIcon />
 							<span>Facebook</span>
 						</span>
 						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
@@ -131,7 +131,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<ShareMailIcon></ShareMailIcon>
+						<ShareMailIcon />
 						<div>E-Mail</div>
 					</TrackedAnchorLink>
 				</div>
