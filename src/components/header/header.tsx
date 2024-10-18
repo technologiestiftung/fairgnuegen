@@ -48,12 +48,10 @@ export function Header() {
 			<div className="flex justify-between items-center">
 				<LocalizedTrackedAnchorLink
 					href="/"
-					className="flex flex-col justify-center pl-7 pr-3 h-24"
+					className="flex flex-col justify-center pl-7 pr-3 h-24 text-base sm:text-[20px]"
 				>
-					<span className="text-xl md:text-2xl"> {i18n["header.title"]}</span>
-					<span className="font-bold text-sm md:text-lg">
-						{i18n["header.caption"]}
-					</span>
+					<span>{i18n["header.title"]}</span>
+					<span className="font-bold">{i18n["header.caption"]}</span>
 				</LocalizedTrackedAnchorLink>
 
 				<div className="flex items-center gap-x-[30px]">
