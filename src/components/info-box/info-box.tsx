@@ -25,19 +25,22 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 					<div className="row-start-1 col-start-1 p-8 bg-white flex flex-col gap-4">
 						<h1 className="font-bold text-lg">{i18n["infobox.title"]}</h1>
 
-						<div>{i18n["infobox.content"]}</div>
-
-						<TrackedAnchorLink
-							href={
-								"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/"
-							}
-							className="text-link-blue flex flex-row items-center gap-1 justify-start md:justify-end hover:underline"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<span className="w-min md:w-auto">{i18n["infobox.link"]}</span>
-							<LinkIcon></LinkIcon>
-						</TrackedAnchorLink>
+						<p>
+							{i18n["infobox.content"]}{" "}
+							<TrackedAnchorLink
+								href={
+									"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/"
+								}
+								className=""
+								target="_blank"
+								rel="noreferrer"
+							>
+								<span className="inline-flex gap-1 items-center text-link-blue hover:underline">
+									{i18n["infobox.link"]}
+									<LinkIcon />
+								</span>
+							</TrackedAnchorLink>
+						</p>
 					</div>
 					<div className="pointer-events-none row-start-1 col-start-1 w-[50%] border-t-4 border-b-4 border-l-4 border-berlin-pink"></div>
 					<div className="pointer-events-none row-start-1 col-start-1 ml-[50%] w-[50%] border-t-4 border-b-4 border-r-4 border-berlin-green"></div>
