@@ -56,7 +56,12 @@ try {
 			y,
 			language,
 			identifierToBeSlugified,
+			authorised,
 		] = row.split(";");
+
+		if (authorised.toLowerCase().trim() !== "ja") {
+			return;
+		}
 
 		const { path, slug } = generatePath({
 			slug: identifierToBeSlugified,
