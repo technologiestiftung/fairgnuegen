@@ -1,14 +1,14 @@
 import globals from "globals";
 import technologiestiftung from "@technologiestiftung/eslint-config";
-import { plugin as tsbPlugin } from "@technologiestiftung/eslint-plugin";
-import reactRecommended from "eslint-plugin-react/configs/recommended.js";
+import react from "eslint-plugin-react";
 
-// eslint-disable-next-line @technologiestiftung/no-default-export
 export default [
 	...technologiestiftung,
-	reactRecommended,
 	{
 		files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
+		plugins: {
+			react,
+		},
 		languageOptions: {
 			parserOptions: {
 				ecmaFeatures: {
@@ -21,10 +21,8 @@ export default [
 			},
 		},
 		rules: {
-			"@technologiestiftung/no-default-export": "off",
 			// suppress errors for missing 'import React' in files
 			"react/react-in-jsx-scope": "off",
 		},
-		plugins: { "@technologiestiftung": tsbPlugin },
 	},
 ];
