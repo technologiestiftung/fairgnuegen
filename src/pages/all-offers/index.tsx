@@ -56,7 +56,7 @@ export default function Index() {
 							<FilterButton></FilterButton>
 						</div>
 						<div className="flex flex-row items-center gap-2 py-3">
-							<p className="text-md text-berlin-green">
+							<p className="text-md text-berlin-green font-bold">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
 								{search !== null &&
 									search !== "" &&
