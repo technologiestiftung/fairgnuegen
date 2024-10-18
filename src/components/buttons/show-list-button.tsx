@@ -19,7 +19,7 @@ const ShowListButton: React.FC<ShowListButtonProps> = () => {
 			href={`/all-offers/?${searchParams.toString()}`}
 		>
 			<div className="flex flex-row gap-2 items-center">
-				<ListIcon></ListIcon>
+				<ListIcon />
 				<div>{i18n["listView"]}</div>
 			</div>
 		</LocalizedTrackedAnchorLink>
