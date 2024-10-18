@@ -35,7 +35,7 @@ export type Content = {
 
 export const content: Record<string, Content> = {
 	"/": {
-		title: "Fairgnügen • Berlin fair und günstig erleben",
+		title: "Fairgnügen • Berlin fairgünstigt erleben",
 		breadcrumbs: [
 			{
 				href: "/",
