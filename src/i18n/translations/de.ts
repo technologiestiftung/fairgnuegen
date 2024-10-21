@@ -3,7 +3,7 @@ const de = {
 	"home.h1": "Was möchtest du unternehmen?",
 
 	"header.title": "Fairgnügen",
-	"header.caption": "Berlin fairgünstigt erleben",
+	"header.caption": "Berlin vergünstigt erleben",
 
 	"menuItem.homepage": "Startseite",
 	"menuItem.map": "Kartenansicht",
