@@ -30,7 +30,7 @@ const CopyToClipboardButton: React.FC<RouteButtonProps> = ({ text }) => {
 				</span>
 			</button>
 			{showLinkCopied && (
-				<div className="absolute top-0 left-0 py-2 h-[43px] px-4 w-fit border-2 border-primary-blue bg-primary-blue text-white">
+				<div className="absolute top-0 left-0 py-2 h-[43px] px-4 w-fit border-2 border-primary-blue bg-black text-white">
 					{i18n["button.copyAddressCopied"]}
 				</div>
 			)}

@@ -58,7 +58,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 		<div className="relative">
 			<button
 				ref={buttonRef}
-				className="flex justify-center items-center text-primary-blue"
+				className="flex justify-center items-center"
 				onClick={() => {
 					trackInteraction({
 						eventAction: "button click",
@@ -73,7 +73,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 			</button>
 			{showOverlay && !showLinkCopied && (
 				<div
-					className="flex flex-col absolute right-0 top-full bg-white border-[1.5px] border-primary-blue mt-2 w-max"
+					className="flex flex-col absolute right-0 top-full bg-white border-[1.5px] border-black mt-2 w-max"
 					ref={overlayRef}
 				>
 					<button
@@ -137,7 +137,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 				</div>
 			)}
 			{showLinkCopied && (
-				<div className="flex flex-col gap-4 absolute right-0 top-full py-2 px-4 border border-primary-blue mt-2 w-max bg-primary-blue text-white">
+				<div className="flex flex-col gap-4 absolute right-0 top-full py-2 px-4 border border-black mt-2 w-max bg-black text-white">
 					<div>{i18n["button.copyLinkCopied"]}</div>
 				</div>
 			)}
