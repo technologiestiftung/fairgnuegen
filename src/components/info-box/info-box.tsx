@@ -29,7 +29,7 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 							{i18n["infobox.content"]}{" "}
 							<TrackedAnchorLink
 								href={
-									"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/"
+									"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/bn-berlin-ticket-s-faq-1268079.php"
 								}
 								className=""
 								target="_blank"
