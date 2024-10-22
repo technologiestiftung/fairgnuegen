@@ -1,20 +1,20 @@
-import BackButton from "../../buttons/back-button";
-import FilterButton from "../../buttons/filter-button";
-import SortButton from "../../buttons/sort-button";
-import { CategoryCard } from "../../categories/category-card";
-import FreeOffersCheckbox from "../../checkbox/free-offers-checkbox";
-import { InfoBox } from "../../info-box/info-box";
-import OfferDetail from "../../offer/offer-detail";
-import { ResponsivePicture } from "../../responsive-picture/responsive-picture";
-import SearchBar from "../../search-bar/search-bar";
 import { categoryMap } from "../../../content/categories";
+import { offers } from "../../../content/content";
 import { useCategories } from "../../../hooks/use-categories";
 import { useDistricts } from "../../../hooks/use-districts";
 import { useFilteredAndSortedOffers } from "../../../hooks/use-filtered-and-sorted-offers";
 import { useLanguage } from "../../../hooks/use-language";
 import { useTargetAudiences } from "../../../hooks/use-target-audiences";
 import { useI18n } from "../../../i18n/use-i18n";
-import { offers } from "../../../content/content";
+import BackButton from "../../buttons/back-button";
+import FilterButton from "../../buttons/filter-button";
+import ShowMapButton from "../../buttons/show-map-button";
+import { CategoryCard } from "../../categories/category-card";
+import FreeOffersCheckbox from "../../checkbox/free-offers-checkbox";
+import { InfoBox } from "../../info-box/info-box";
+import OfferDetail from "../../offer/offer-detail";
+import { ResponsivePicture } from "../../responsive-picture/responsive-picture";
+import SearchBar from "../../search-bar/search-bar";
 
 export default function Index() {
 	const language = useLanguage();
@@ -42,7 +42,9 @@ export default function Index() {
 				<div
 					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
-					{categoryDetail ? i18n[categoryDetail.name] : i18n["allOffers.title"]}
+					{categoryDetail
+						? i18n[`categories.${categoryDetail.name.toLowerCase()}.name`]
+						: i18n["allOffers.title"]}
 				</div>
 
 				<div className="max-w-3xl mx-auto flex flex-col">
@@ -52,11 +54,11 @@ export default function Index() {
 							<FreeOffersCheckbox />
 						</div>
 						<div className="flex flex-row w-full justify-between mb-6">
-							<SortButton />
 							<FilterButton />
+							<ShowMapButton />
 						</div>
 						<div className="flex flex-row items-center gap-2 py-3">
-							<p className="text-md text-berlin-green font-bold">
+							<p className="text-md text-berlin-grey">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
 								{search !== null &&
 									search !== "" &&
