@@ -36,7 +36,7 @@ export default function Index() {
 						src={categoryDetail.image}
 						alt={i18n[categoryDetail.name]}
 						loading={"eager"}
-						className="hidden sm:block w-full h-[400px] object-cover"
+						className="hidden sm:block w-full h-[448px] object-cover"
 					/>
 				)}
 				<div
