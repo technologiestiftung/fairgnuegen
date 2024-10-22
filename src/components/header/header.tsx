@@ -1,7 +1,6 @@
 import { Breadcrumbs } from "./breadcumbs";
 import { LanguageSelect } from "./language-select/language-select";
 import { SidebarButtons } from "./sidebar-buttons/sidebar-buttons";
-import { useFreeOffersOnly } from "../../hooks/use-free-offers-only";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
 import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
@@ -9,23 +8,6 @@ import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anc
 export function Header() {
 	const language = useLanguage();
 	const i18n = useI18n(language);
-
-	const { isShowingFreeOffersOnly } = useFreeOffersOnly();
-
-	const navLinks = [
-		{
-			href: "/",
-			label: i18n["menuItem.homepage"],
-		},
-		{
-			href: `/map/?free=${isShowingFreeOffersOnly ? "true" : "false"}`,
-			label: i18n["menuItem.map"],
-		},
-		{
-			href: "/favorites/",
-			label: i18n["menuItem.favorites"],
-		},
-	];
 
 	return (
 		<header
@@ -55,22 +37,6 @@ export function Header() {
 				</LocalizedTrackedAnchorLink>
 
 				<div className="flex items-center gap-x-[30px]">
-					<nav className="hidden desktop:block">
-						<ul className="flex justify-center gap-x-[30px]">
-							{navLinks.map((link) => (
-								<li key={link.href}>
-									<LocalizedTrackedAnchorLink
-										href={link.href}
-										className="hover:underline"
-										additionalTrackingContext="(header nav link)"
-									>
-										{link.label}
-									</LocalizedTrackedAnchorLink>
-								</li>
-							))}
-						</ul>
-					</nav>
-
 					<SidebarButtons />
 				</div>
 			</div>
