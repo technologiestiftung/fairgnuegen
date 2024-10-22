@@ -6,7 +6,7 @@ interface DrawerProps {
 	children: React.ReactNode;
 }
 
-export function Drawer({ isOpen, close, children }: DrawerProps) {
+export function DrawerRight({ isOpen, close, children }: DrawerProps) {
 	return (
 		<div
 			className={`overflow-x-hidden overflow-y-hidden fixed top-0 right-0 z-20 w-screen h-screen pointer-events-none`}
