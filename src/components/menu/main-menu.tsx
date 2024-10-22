@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { categoryMap } from "../../content/categories";
-import { Drawer } from "../drawer/drawer";
+import { DrawerRight } from "../drawer/drawer-right";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
@@ -97,7 +97,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
 	return (
-		<Drawer isOpen={isOpen} close={() => close()}>
+		<DrawerRight isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4">
 					<p className="text-2xl font-bold">{i18n["sidebar.menu"]}</p>
@@ -171,7 +171,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 					</React.Fragment>
 				))}
 			</div>
-		</Drawer>
+		</DrawerRight>
 	);
 };
 

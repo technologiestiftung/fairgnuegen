@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Drawer } from "../drawer/drawer";
+import { DrawerRight } from "../drawer/drawer-right";
 import CloseIcon from "../icons/close-icon";
 import { EasyLanguageIcon } from "../icons/easy-language-icon";
 import { HandsIcon } from "../icons/hands-icon";
@@ -15,7 +15,7 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 	close,
 }) => {
 	return (
-		<Drawer isOpen={isOpen} close={() => close()}>
+		<DrawerRight isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col gap-4 px-6 py-4 text-base">
 				<div className="flex flex-row items-center justify-between  mb-6 mt-4">
 					<p className="text-2xl font-bold">Barrierefreiheit</p>
@@ -90,7 +90,7 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 					</a>
 				</div>
 			</div>
-		</Drawer>
+		</DrawerRight>
 	);
 };
 

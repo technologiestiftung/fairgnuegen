@@ -1,14 +1,13 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
-import BackButton from "../../buttons/back-button";
-import FilterButton from "../../buttons/filter-button";
-import SortButton from "../../buttons/sort-button";
-import { InfoBox } from "../../info-box/info-box";
-import OfferDetail from "../../offer/offer-detail";
 import { offers } from "../../../content/content";
 import { useLanguage } from "../../../hooks/use-language";
 import { useI18n } from "../../../i18n/use-i18n";
 import { useFavoritesStore } from "../../../store/favorites-store";
+import BackButton from "../../buttons/back-button";
+import FilterButton from "../../buttons/filter-button";
+import { InfoBox } from "../../info-box/info-box";
+import OfferDetail from "../../offer/offer-detail";
 
 export default function Index() {
 	const language = useLanguage();
@@ -44,7 +43,6 @@ export default function Index() {
 
 				<div className="max-w-3xl mx-auto flex flex-col">
 					<div className="flex flex-row w-full justify-between mb-6 px-4 lg:px-0">
-						<SortButton />
 						<FilterButton />
 					</div>
 
