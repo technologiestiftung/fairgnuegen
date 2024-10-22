@@ -11,13 +11,13 @@ import ResetFilterButton from "../buttons/reset-filter-button";
 import ShowFilteredButton from "../buttons/show-filtered-button";
 import Checkbox from "../checkbox/checkbox";
 import FreeOffersCheckbox from "../checkbox/free-offers-checkbox";
-import { Drawer } from "../drawer/drawer";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 import CloseIcon from "../icons/close-icon";
 import { useNavigate } from "react-router-dom";
 import { useI18n } from "../../i18n/use-i18n";
 import { useLanguage } from "../../hooks/use-language";
+import { DrawerLeft } from "../drawer/drawer-left";
 
 interface FilterRowOption {
 	title: string;
@@ -178,7 +178,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 	};
 
 	return (
-		<Drawer isOpen={isOpen} close={() => close()}>
+		<DrawerLeft isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4 shadow-lg">
 					<p className="text-2xl font-bold">{i18n["filter.title"]}</p>
@@ -262,7 +262,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 					<ShowFilteredButton onClick={onSubmitFilters}></ShowFilteredButton>
 				</div>
 			</div>
-		</Drawer>
+		</DrawerLeft>
 	);
 };
 
