@@ -25,10 +25,6 @@ const baseRoutes: Route[] = [
 		page: "./pages/imprint/index.tsx",
 	},
 	{
-		path: "/imprint/",
-		page: "./pages/imprint/index.tsx",
-	},
-	{
 		path: "/privacy-note/",
 		page: "./pages/privacy-note/index.tsx",
 	},
