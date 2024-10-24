@@ -130,6 +130,32 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
+	"/imprint/": {
+		title: "Impressum",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/imprint/",
+				label: "Impressum",
+			},
+		],
+	},
+	"/en/imprint/": {
+		title: "Imprint",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/imprint/",
+				label: "Imprint",
+			},
+		],
+	},
 	...detailPagesContent,
 };
 

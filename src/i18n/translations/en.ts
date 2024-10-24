@@ -4,6 +4,19 @@ const en: Record<keyof typeof de, string> = {
 	"home.title": "Home",
 	"home.h1": "What would you like to do?",
 
+	"imprint.title": "Imprint",
+	"imprint.foundation.title": "Information about Technologiestiftung Berlin",
+	"imprint.foundation.address":
+		"Technologiestiftung Berlin\nGrunewaldstraße 61-62\n10825 Berlin\nTel.: +49 30 209 69 99 0\ninfo@technologiestiftung-berlin.de",
+	"imprint.foundation.content":
+		"Technologiestiftung Berlin is a non-profit foundation with legal capacity under German civil law. Pursuant to the version dated 11 December 1997 of the Berlin Foundation Act (GVBl. p. 674) it is subject to state supervision which is exercised by the Senate Administration for Justice, Salzburger Str. 21-25, 10825 Berlin.",
+	"imprint.foundation.head.title": "Authorised Board members",
+	"imprint.foundation.head.content":
+		"Nicolas Zimmer (Chairperson), Steffen Döring",
+	"imprint.disclaimer.title": "Disclaimer",
+	"imprint.disclaimer.content":
+		"We do not guarantee that the information provided on this website is complete, accurate or up-to-date.\n\nAlthough we take great care to check content, we do not assume any liability for the contents of external links. We do not have any influence on the current or future shaping of the linked websites. We expressly distance ourselves from all changes to the contents undertaken after the establishment of links to said websites. The providers of said websites are solely responsible for the contents of the linked websites.\nWe reserve the right to change or supplement the information made available without prior notice.\nWe endeavour to comply with all valid copyright laws in all publications. Should there nonetheless be an infringement of copyright law, we shall remove the corresponding item, after being informed, from the relevant publication or render it visible by reference to copyright law.\nAll trademarks and brand names mentioned on websites that may be protected by third parties shall be covered in an unlimited manner by the respective valid labelling legislation and the ownership rights of the respective registered owners.\nThis disclaimer shall be deemed to be part of the internet offering of Technologiestiftung Berlin and the Förderverein Technologiestiftung Berlin e. V. To the extent that parts or individual formulations in this text do not, no longer or do not fully comply with the valid legal situation, this shall not affect the contents and validity of other parts of the document.\nPlease refer to our German website for our data protection policy.",
+
 	"header.title": "Fair Fun",
 	"header.caption": "Experience Berlin on a budget",
 

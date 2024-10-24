@@ -2,6 +2,19 @@ const de = {
 	"home.title": "Startseite",
 	"home.h1": "Was möchtest du unternehmen?",
 
+	"imprint.title": "Impressum",
+	"imprint.foundation.title": "Angaben zur Technologiestiftung Berlin",
+	"imprint.foundation.address":
+		"Technologiestiftung Berlin\nGrunewaldstraße 61-62\n10825 Berlin\nTel.: +49 30 209 69 99 0\ninfo@technologiestiftung-berlin.de",
+	"imprint.foundation.content":
+		"Die Technologiestiftung Berlin ist eine rechtsfähige und gemeinnützige Stiftung bürgerlichen Rechts. Sie unterliegt nach dem Berliner Stiftungsgesetz in der Fassung vom 11. Dezember 1997 (GVBl. S. 674) der Staatsaufsicht, die von der Senatsverwaltung für Justiz, Salzburger Str. 21-25, 10825 Berlin, geführt wird.",
+	"imprint.foundation.head.title": "Vertretungsberechtigter Vorstand",
+	"imprint.foundation.head.content":
+		"Nicolas Zimmer (Vorsitz), Steffen Döring, Prof. Dr. Martina Schraudner",
+	"imprint.disclaimer.title": "Haftungsausschluss",
+	"imprint.disclaimer.content":
+		"Es wird von uns keine Garantie dafür übernommen, dass die auf dieser Website bereitgestellten Informationen vollständig, richtig und in jedem Fall aktuell sind.\nTrotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Wir haben keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung der verlinkten Seiten. Wir distanzieren uns hiermit ausdrücklich von allen inhaltlichen Änderungen, die nach der Linksetzung auf den verlinkten Seiten vorgenommen werden. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.\nWir behalten uns das Recht vor, ohne vorherige Ankündigung Änderungen oder Ergänzungen der bereitgestellten Informationen vorzunehmen.\nWir sind bestrebt, in allen Publikationen geltende Urheberrechte zu beachten. Sollte es trotzdem zu einer Urheberrechtsverletzung kommen, werden wir das entsprechende Objekt nach Benachrichtigung aus seiner Publikation entfernen bzw. mit dem Urheberrecht kenntlich machen.\nAlle auf den Webseiten genannten und gegebenenfalls durch Dritte geschützte Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer.\nDieser Haftungshinweis ist als Teil des Internetangebotes der Technologiestiftung Berlin und des Fördervereins Technologiestiftung Berlin e. V. zu betrachten. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokuments in ihrem Inhalt und ihrer Gültigkeit hiervon unberührt.",
+
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin vergünstigt erleben",
 
