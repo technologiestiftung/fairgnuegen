@@ -43,7 +43,7 @@ export default function Index() {
 					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
 					{categoryDetail
-						? i18n[`categories.${categoryDetail.name.toLowerCase()}.name`]
+						? i18n[`${categoryDetail.i18nKey}.name`]
 						: i18n["allOffers.title"]}
 				</div>
 
