@@ -51,46 +51,16 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 			link: "/favorites/",
 		},
 		{
-			title: i18n["menuItem.senat"],
+			title: i18n["menuItem.faq"],
 			subItems: [],
 			isExternalLink: true,
-			link: "https://www.berlin.de/sen/asgiva/",
+			link: "https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/bn-berlin-ticket-s-faq-1268079.php",
 		},
 		{
-			title: i18n["menuItem.press"],
+			title: i18n["menuItem.about"],
 			subItems: [],
-			isExternalLink: true,
-			link: "https://www.berlin.de/sen/asgiva/presse/",
-		},
-		{
-			title: i18n["menuItem.contact"],
-			subItems: [],
-			isExternalLink: true,
-			link: "https://www.berlin.de/sen/asgiva/ueber-uns/formular.541467.php",
-		},
-		{
-			title: i18n["menuItem.management"],
-			subItems: [],
-			isExternalLink: true,
-			link: "https://www.berlin.de/sen/asgiva/ueber-uns/leitung/",
-		},
-		{
-			title: i18n["menuItem.twitter"],
-			subItems: [],
-			isExternalLink: true,
-			link: "https://twitter.com/SenIAS_Berlin",
-		},
-		{
-			title: i18n["menuItem.youtube"],
-			subItems: [],
-			isExternalLink: true,
-			link: "https://www.youtube.com/c/SenIASBerlin",
-		},
-		{
-			title: i18n["menuItem.instagram"],
-			subItems: [],
-			isExternalLink: true,
-			link: "https://www.instagram.com/SenIAS_berlin",
+			isExternalLink: false,
+			link: "/about/",
 		},
 	];
 
