@@ -47,7 +47,7 @@ export default function Index() {
 						: i18n["allOffers.title"]}
 				</div>
 
-				<div className="max-w-3xl mx-auto flex flex-col">
+				<div className="max-w-[800px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col gap-2 mb-10">
 							<SearchBar />
@@ -109,7 +109,7 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-3xl"></InfoBox>
+			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

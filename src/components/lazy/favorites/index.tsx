@@ -41,7 +41,7 @@ export default function Index() {
 					{i18n["menuItem.favorites"]}
 				</div>
 
-				<div className="max-w-3xl mx-auto flex flex-col">
+				<div className="max-w-[800px] mx-auto flex flex-col">
 					<div className="flex flex-row w-full justify-end mb-6 px-4 lg:px-0">
 						<ShowMapButton />
 					</div>
@@ -67,7 +67,7 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-3xl"></InfoBox>
+			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }
