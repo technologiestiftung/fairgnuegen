@@ -156,6 +156,32 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
+	"/privacy-note/": {
+		title: "Datenschutzerklärung",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/privacy-note/",
+				label: "Datenschutzerklärung",
+			},
+		],
+	},
+	"/en/privacy-note/": {
+		title: "Privacy Note",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/privacy-note/",
+				label: "Privacy Note",
+			},
+		],
+	},
 	...detailPagesContent,
 };
 
