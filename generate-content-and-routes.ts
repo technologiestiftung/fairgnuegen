@@ -1,6 +1,11 @@
 import fs from "fs";
 import slugify from "slugify";
 import { useI18n } from "./src/i18n/use-i18n";
+import { readFileSync } from "node:fs";
+import * as turf from "@turf/turf";
+
+const geojsonFilePath = "./geojson/bezirksgrenzen.geojson";
+const districtGeojson = JSON.parse(readFileSync(geojsonFilePath, "utf8"));
 
 const filePath = "./20240717_Berlinpass-Daten.csv";
 
@@ -48,7 +53,7 @@ try {
 			address,
 			city,
 			zip,
-			district,
+			_district,
 			isFree,
 			category,
 			targetGroups,
@@ -85,6 +90,13 @@ try {
 			},
 		];
 
+		const district = findDistrict({
+			x: Number(x.replace(",", ".")),
+			y: Number(y.replace(",", ".")),
+			provider,
+			originalDistrict: _district,
+		});
+
 		const content = {
 			title: provider,
 			breadcrumbs,
@@ -100,6 +112,7 @@ try {
 				city,
 				zip: parseInt(zip),
 				district,
+				originalDistrict: _district,
 				isFree: isFree === "ja",
 				category,
 				targetGroups: targetGroups
@@ -131,4 +144,32 @@ try {
 	);
 } catch (error) {
 	console.error("Error reading CSV file:", error);
+}
+
+function findDistrict({
+	x,
+	y,
+	provider,
+	originalDistrict,
+}: {
+	x: number;
+	y: number;
+	provider: string;
+	originalDistrict: string;
+}) {
+	for (const { properties, geometry } of districtGeojson.features) {
+		const point = turf.point([x, y]);
+		const polygon = turf.multiPolygon(geometry.coordinates);
+
+		const isOfferInDistrict = turf.booleanPointInPolygon(point, polygon);
+
+		if (isOfferInDistrict) {
+			return properties.Gemeinde_name;
+		}
+	}
+	/* eslint-disable-next-line no-console */
+	console.info(
+		`No district found for ${provider} ${x}, ${y} in ${originalDistrict}`,
+	);
+	return "";
 }
