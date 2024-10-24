@@ -25,7 +25,7 @@ const upperFooterColumns = [
 			{
 				label: "upperFooter.info.dataprivacy",
 				icon: "",
-				href: "/datenschutz",
+				href: "/privacy-note/",
 			},
 			{
 				label: "upperFooter.info.accessibility",

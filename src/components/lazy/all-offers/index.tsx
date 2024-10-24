@@ -43,11 +43,11 @@ export default function Index() {
 					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
 					{categoryDetail
-						? i18n[`categories.${categoryDetail.name.toLowerCase()}.name`]
+						? i18n[`${categoryDetail.i18nKey}.name`]
 						: i18n["allOffers.title"]}
 				</div>
 
-				<div className="max-w-3xl mx-auto flex flex-col">
+				<div className="max-w-[800px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col gap-2 mb-10">
 							<SearchBar />
@@ -109,7 +109,7 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-3xl"></InfoBox>
+			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

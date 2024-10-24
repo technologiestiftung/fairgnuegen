@@ -5,9 +5,9 @@ import { useLanguage } from "../../../hooks/use-language";
 import { useI18n } from "../../../i18n/use-i18n";
 import { useFavoritesStore } from "../../../store/favorites-store";
 import BackButton from "../../buttons/back-button";
-import FilterButton from "../../buttons/filter-button";
 import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
+import ShowMapButton from "../../buttons/show-map-button";
 
 export default function Index() {
 	const language = useLanguage();
@@ -41,9 +41,9 @@ export default function Index() {
 					{i18n["menuItem.favorites"]}
 				</div>
 
-				<div className="max-w-3xl mx-auto flex flex-col">
-					<div className="flex flex-row w-full justify-between mb-6 px-4 lg:px-0">
-						<FilterButton />
+				<div className="max-w-[800px] mx-auto flex flex-col">
+					<div className="flex flex-row w-full justify-end mb-6 px-4 lg:px-0">
+						<ShowMapButton />
 					</div>
 
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
@@ -67,7 +67,7 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-3xl"></InfoBox>
+			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

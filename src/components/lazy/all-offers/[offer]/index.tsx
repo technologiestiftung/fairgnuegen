@@ -17,7 +17,7 @@ export default function Index() {
 
 	return (
 		<>
-			<div className="max-w-3xl mx-auto flex flex-col my-[40px]">
+			<div className="max-w-[800px] mx-auto flex flex-col my-[40px]">
 				<div>
 					<OfferFull offer={offer}></OfferFull>
 					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
