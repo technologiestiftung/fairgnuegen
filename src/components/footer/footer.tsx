@@ -15,7 +15,7 @@ const upperFooterColumns = [
 			{
 				label: "upperFooter.info.impressum",
 				icon: "",
-				href: "/impressum",
+				href: "/imprint/",
 			},
 			{
 				label: "upperFooter.info.contact",
