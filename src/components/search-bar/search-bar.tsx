@@ -68,7 +68,7 @@ const SearchBar: React.FC = () => {
 				</button>
 				<button
 					type="submit"
-					className={`w-fit pointer-events-auto border-l-2 pl-2 pr-2 ${hasFocus ? "border-focus-blue" : " border-l-black"} hover:bg-berlin-grey-light border-2 border-black`}
+					className={`w-fit pointer-events-auto border-l-0 pl-2 pr-2 ${hasFocus ? "border-focus-blue" : " border-l-black"} border-2 border-black`}
 				>
 					<StartSearchIcon></StartSearchIcon>
 				</button>
