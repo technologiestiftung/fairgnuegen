@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/**
+ * This variable is missing in the footer template stylesheets provided by the berlin styleguide.
+ * We manually add it here as long as it missing.
+ */
+:root {
+  --bicon-chevron-right: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20512%22%3E%3C%21--%21Font%20Awesome%20Free%206.5.2%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%2Ffree%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M285.5%20273L91.1%20467.3c-9.4%209.4-24.6%209.4-33.9%200l-22.7-22.7c-9.4-9.4-9.4-24.5%200-33.9L188.5%20256%2034.5%20101.3c-9.3-9.4-9.3-24.5%200-33.9l22.7-22.7c9.4-9.4%2024.6-9.4%2033.9%200L285.5%20239c9.4%209.4%209.4%2024.6%200%2033.9z%22%2F%3E%3C%2Fsvg%3E")
+}
