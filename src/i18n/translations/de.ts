@@ -98,8 +98,11 @@ const de = {
 	"infobox.content":
 		"Berlinerinnen und Berliner, die Sozialleistungen erhalten, können den öffentlichen Nahverkehr sowie Sport-, Bildungs-, Kultur- und Freizeitangebote kostenlos oder vergünstigt nutzen. Viel Spaß beim Durchstöbern der Angebote!",
 	"infobox.link": "Bin ich berechtigt?",
-	"infobox.providerHint":
-		"Sie sind Anbieter und möchten sich mit einem Angebot sozial für Berlinerinnen und Berliner engagieren? Schreiben Sie uns gerne an und wir nehmen Ihr Angebot auf. Sie haben noch weitere Fragen?",
+	"infobox.providerHint.part.1":
+		"Sie sind Anbieter und möchten sich mit einem Angebot sozial für Berlinerinnen und Berliner engagieren? Tragen Sie Ihr Angebot über unser ",
+	"infobox.providerHint.formLinkLabel": "Formular",
+	"infobox.providerHint.part.2":
+		" direkt in unsere Datenbank ein. Sie haben noch weitere Fragen? ",
 	"infobox.contact": "Kontaktieren Sie uns",
 
 	"upperFooter.info": "Informationen",

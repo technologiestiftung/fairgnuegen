@@ -97,9 +97,11 @@ const en: Record<keyof typeof de, string> = {
 	"infobox.content":
 		"Berlin-Ticket S is a ticket for the people of Berlin who receive social benefits. With the Berlin-Ticket S, you can use public transport and plan various cultural and leisure activities for free or with a discount. Find more information about the Berlin-Ticket S on the website of the senate administration for labour, social affairs, equality, integration, diversity and anti-discrimination. Enjoy!",
 	"infobox.link": "More information about the authorization document",
-	"infobox.providerHint":
-		"Are you an organization that would like to offer your services as part of the Berlin-Ticket S? Please contact us so we can add your offer to our website. Do you have any further questions?",
-	"infobox.contact": "Contact us",
+	"infobox.providerHint.part.1":
+		"Do you work for an organisation in Berlin that wants to get involved and offer a discounted activity? Enter your offer directly into our database using our ",
+	"infobox.providerHint.formLinkLabel": "form",
+	"infobox.providerHint.part.2": ". Do you have any further questions? ",
+	"infobox.contact": "Please contact us",
 
 	"upperFooter.info": "Information",
 	"upperFooter.info.impressum": "Imprint",
