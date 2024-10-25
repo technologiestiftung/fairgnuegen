@@ -28,6 +28,10 @@ const baseRoutes: Route[] = [
 		path: "/privacy-note/",
 		page: "./pages/privacy-note/index.tsx",
 	},
+	{
+		path: "/about-project/",
+		page: "./pages/about-project/index.tsx",
+	},
 ];
 
 const i18nRoutes: Route[] = baseRoutes.map(({ path, page }) => ({
