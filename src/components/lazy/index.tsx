@@ -16,7 +16,7 @@ export default function LazyHome() {
 
 	return (
 		<>
-			<div className="max-w-4xl flex flex-col mx-auto">
+			<div className="max-w-[800px] flex flex-col mx-auto">
 				<div className="px-4 lg:px-0">
 					<h1 className="text-2xl font-bold w-full flex flex-row justify-center my-8 text-center">
 						{i18n["home.h1"]}
@@ -52,7 +52,7 @@ export default function LazyHome() {
 
 				<FeedbackForm />
 			</div>
-			<InfoBox showProviderHint={true} maxWidth="max-w-4xl"></InfoBox>
+			<InfoBox showProviderHint={true} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

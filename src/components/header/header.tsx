@@ -41,9 +41,11 @@ export function Header() {
 				</div>
 			</div>
 
-			<div className="flex justify-between bg-berlin-grey-light text-berlin-grey shadow-lg pl-7 pr-9">
-				<Breadcrumbs />
-				<LanguageSelect />
+			<div className="bg-berlin-grey-light text-berlin-grey shadow-lg px-4 lg:px-0">
+				<div className="flex justify-between max-w-[800px] mx-auto">
+					<Breadcrumbs />
+					<LanguageSelect />
+				</div>
 			</div>
 		</header>
 	);
