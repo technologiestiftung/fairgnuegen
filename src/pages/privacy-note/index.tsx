@@ -341,66 +341,6 @@ export default function PrivacyNote() {
 										</div>
 									</div>
 								</li>
-								<li>
-									<h3 className="text-2xl font-bold mb-4">
-										2.3 Einbindung von Diensten und Inhalten Dritter
-									</h3>
-									<div className="flex flex-col gap-4">
-										<div>
-											Die Icons zu Facebook und Twitter auf unserer Hauptseite
-											sind Verlinkungen zu unseren Kanälen auf den jeweiligen
-											Plattformen. Welche Daten dabei übermittelt werden, ist
-											von Ihren Browsereinstellungen abhängig. Eine weitere
-											Datenübermittlung von uns an die beiden Drittanbieter
-											findet nicht statt. Sobald Sie unsere Seite über diese
-											Links verlassen, treten die dortigen
-											Datenschutzbestimmungen in Kraft.
-										</div>
-										<div>
-											Zum aktuellen Zeitpunkt (Stand 23. Mai 2018) setzen wir
-											folgende Plugins für bestimmte Zwecke ein:
-										</div>
-										<ul className="flex flex-col ml-8 list-disc">
-											<li>
-												Kontaktformular Power Mail für die Bestellung der
-												Hacking Box und beim Projekt Digitale Entwicklung des
-												Kulturbereichs
-											</li>
-											<li>
-												Open-Street-Map-Karte zur Information über die Anfahrt
-												sowie zur geografischen Verortung von Projekten
-											</li>
-											<li>
-												Juicer für einen Social-Media-Feed auf
-												www.codingklassenfahrt.de (siehe 3.2)
-											</li>
-											<li>
-												YouTube-Video-Einbindung auf www.codingklassenfahrt.de
-												(siehe 3.2) und www.kultur-b-digtal.de (siehe 3.4)
-											</li>
-										</ul>
-										<div>
-											Durch Nutzung des Power-Mail-Formulars, das eine Extention
-											unseres Content Managementsystems typo3 darstellt und von
-											uns für die Bestellung der Hacking Box angeboten wird,
-											geben Sie uns die Einwilligung nach Art.6 Abs. 1 Lit.A
-											DSGVO, Ihre Daten für den Zweck der Ausleihe zu
-											verarbeiten. Die Daten werden ausschließlich auf unserem
-											Server verarbeitet und von uns genutzt. Nach Ende des
-											Verleihvorgangs werden die Daten gelöscht.
-										</div>
-										<div>
-											Um Ihnen die Anfahrt zu unseren Geschäftsräumen zu
-											erleichtern und um Ihnen an anderen Stellen eine Ortung
-											unserer Projekte zu bieten, haben wir
-											Open-Street-Map-Karten in unseren Auftritt eingebunden.
-											Hierfür nutzen wir das Application Programming Interface
-											Open Layers. Die Verbindung läuft direkt über unserer
-											Content Managementsystem und übermittelt keine
-											persönlichen Daten an Dritte.
-										</div>
-									</div>
-								</li>
 							</ol>
 						</li>
 					</ol>
