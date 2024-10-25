@@ -7,7 +7,6 @@ import { useFavoritesStore } from "../../../store/favorites-store";
 import BackButton from "../../buttons/back-button";
 import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
-import ShowMapButton from "../../buttons/show-map-button";
 
 export default function Index() {
 	const language = useLanguage();
@@ -42,10 +41,6 @@ export default function Index() {
 				</div>
 
 				<div className="max-w-[800px] mx-auto flex flex-col">
-					<div className="flex flex-row w-full justify-end mb-6 px-4 lg:px-0">
-						<ShowMapButton />
-					</div>
-
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
 						<p className="text-md font-bold text-berlin-green">
 							{filteredOffers.length} {i18n["allOffers.offersFound"]}
