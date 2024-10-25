@@ -120,10 +120,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 				};
 			}),
 		);
-		if (window.location.pathname === "/") {
-			navigate("/all-offers/?free=false" + searchParams);
-			return;
-		}
+		navigate(`${window.location.pathname}?free=false&${searchParams}`);
 		close();
 	};
 
@@ -136,7 +133,10 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 				};
 			}),
 		);
-		if (!window.location.pathname.includes("/all-offers/")) {
+		/**
+		 * If we are on the home page, we navigate to the all-offers page
+		 */
+		if (["/", "/en/"].includes(window.location.pathname)) {
 			const languagePrefix = language === "de" ? "" : `/${language}`;
 			navigate(`${languagePrefix}/all-offers/?${searchParams.toString()}`);
 			return;
