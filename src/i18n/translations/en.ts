@@ -109,7 +109,7 @@ const en: typeof de = {
 	"aboutProject.logos.senatskanzlei.alt":
 		"Logo of the Berlin Senate Chancellery",
 
-	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-en.svg",
+	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-en.png",
 	"aboutProject.logos.senasgiva.label": "In cooperation with",
 	"aboutProject.logos.senasgiva.alt": "Logo of the SenASGIVA",
 

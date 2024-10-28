@@ -107,7 +107,7 @@ const de = {
 	"aboutProject.logos.senatskanzlei.label": "Gefördert durch",
 	"aboutProject.logos.senatskanzlei.alt": "Logo der Senatskanzlei Berlin",
 
-	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-de.svg",
+	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-de.png",
 	"aboutProject.logos.senasgiva.label": "In Kooperation mit",
 	"aboutProject.logos.senasgiva.alt":
 		"Logo der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung",
