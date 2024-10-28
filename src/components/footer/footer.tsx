@@ -11,22 +11,18 @@ const upperFooterColumns = [
 		links: [
 			{
 				label: "upperFooter.fairfun.about",
-				icon: "",
 				href: "/about-project/",
 			},
 			{
 				label: "upperFooter.fairfun.impressum",
-				icon: "",
 				href: "/imprint/",
 			},
 			{
 				label: "upperFooter.fairfun.dataprivacy",
-				icon: "",
 				href: "/privacy-note/",
 			},
 			{
 				label: "upperFooter.fairfun.accessibility",
-				icon: "",
 				href: "/dgs/",
 			},
 		],
@@ -36,32 +32,26 @@ const upperFooterColumns = [
 		links: [
 			{
 				label: "upperFooter.content.offer",
-				icon: "",
 				href: "/all-offers/",
 			},
 			{
 				label: "upperFooter.content.culture",
-				icon: "",
 				href: "/all-offers/?category=kultur",
 			},
 			{
 				label: "upperFooter.content.sport",
-				icon: "",
 				href: "/all-offers/?category=sport",
 			},
 			{
 				label: "upperFooter.content.education",
-				icon: "",
 				href: "/all-offers/?category=bildung_beratung",
 			},
 			{
 				label: "upperFooter.content.freetime",
-				icon: "",
 				href: "/all-offers/?category=freizeit",
 			},
 			{
 				label: "upperFooter.content.map",
-				icon: "",
 				href: "/map/",
 			},
 		],

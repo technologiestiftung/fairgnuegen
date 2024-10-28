@@ -1,11 +1,13 @@
-import React from "react";
 import { Collapsible } from "../collapsible/collapsible";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
 
 type FooterColumnProps = {
 	title: string;
-	links: { label: string; icon?: React.ReactNode; href: string }[];
+	links: {
+		label: string;
+		href: string;
+	}[];
 };
 
 export function FooterLightColumn({ title, links }: FooterColumnProps) {
@@ -47,7 +49,6 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 									className={`flex  hover:underline gap-1.5 ${title === "upperFooter.socialMedia" ? "flex-row" : "flex-row-reverse justify-end"}`}
 								>
 									{i18n[link.label]}
-									{link.icon}
 								</a>
 							</li>
 						))}
