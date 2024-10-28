@@ -30,7 +30,7 @@ export default function AboutProject() {
 	];
 
 	return (
-		<div className="max-w-[800px] mx-auto pt-[3rem] pb-24">
+		<div className="max-w-[800px] mx-auto pt-[3rem] pb-24 px-4">
 			<h1 className="text-[27px] leading-[31px] font-bold mb-[1.3rem]">
 				{i18n["aboutProject.title"]}
 			</h1>
@@ -48,10 +48,10 @@ export default function AboutProject() {
 			<p className="mb-[1rem]">{i18n["aboutProject.p3"]}</p>
 			<p className="mb-[1rem]">{i18n["aboutProject.p4"]}</p>
 
-			<div className="flex flex-col md:flex-row mt-[4rem] md:gap-x-10">
+			<div className="flex flex-wrap gap-y-4 md:flex-row mt-[4rem] gap-x-10">
 				{logos.map(({ src, label, alt }) => (
 					<div key={src} className="flex flex-col">
-						<p className="text-center md:text-left pb-5">{label}</p>
+						<p className="text-left pb-5">{label}</p>
 						<img
 							src={`${src}`}
 							alt={alt}
