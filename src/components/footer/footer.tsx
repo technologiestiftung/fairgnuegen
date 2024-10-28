@@ -2,60 +2,67 @@ import { BerlinLogoWhite } from "../icons/berlin-logo-white";
 import { FooterDarkColumn } from "./footer-dark-column";
 import { ScrollToTopButton } from "../buttons/scroll-to-top-button";
 import { FooterLightColumn } from "./footer-light-column.tsx";
-import { HandsIcon } from "../icons/hands-icon.tsx";
-import { EasyLanguageIcon } from "../icons/easy-language-icon.tsx";
-import { SquareArrowIcon } from "../icons/square-arrow-icon.tsx";
 import { useLanguage } from "../../hooks/use-language.tsx";
 import { useI18n } from "../../i18n/use-i18n.tsx";
 
 const upperFooterColumns = [
 	{
-		title: "upperFooter.info",
+		title: "upperFooter.fairfun",
 		links: [
 			{
-				label: "upperFooter.info.impressum",
+				label: "upperFooter.fairfun.about",
+				icon: "",
+				href: "/about-project/",
+			},
+			{
+				label: "upperFooter.fairfun.impressum",
 				icon: "",
 				href: "/imprint/",
 			},
 			{
-				label: "upperFooter.info.contact",
-				icon: "",
-				href: "/kontakt",
-			},
-			{
-				label: "upperFooter.info.dataprivacy",
+				label: "upperFooter.fairfun.dataprivacy",
 				icon: "",
 				href: "/privacy-note/",
 			},
 			{
-				label: "upperFooter.info.accessibility",
+				label: "upperFooter.fairfun.accessibility",
 				icon: "",
-				href: "/erklärung",
-			},
-			{
-				label: "upperFooter.info.accessibility",
-				icon: <HandsIcon />,
-				href: "/dgs",
-			},
-			{
-				label: "upperFooter.info.easyLanguage",
-				icon: <EasyLanguageIcon />,
-				href: "/leichte-sprache",
+				href: "/dgs/",
 			},
 		],
 	},
 	{
-		title: "upperFooter.socialMedia",
+		title: "upperFooter.content",
 		links: [
 			{
-				label: "upperFooter.socialMedia.instagram",
-				icon: <SquareArrowIcon />,
-				href: "/instagram",
+				label: "upperFooter.content.offer",
+				icon: "",
+				href: "/all-offers/",
 			},
 			{
-				label: "upperFooter.socialMedia.linkedin",
-				icon: <SquareArrowIcon />,
-				href: "/linkedin",
+				label: "upperFooter.content.culture",
+				icon: "",
+				href: "/all-offers/?category=kultur",
+			},
+			{
+				label: "upperFooter.content.sport",
+				icon: "",
+				href: "/all-offers/?category=sport",
+			},
+			{
+				label: "upperFooter.content.education",
+				icon: "",
+				href: "/all-offers/?category=bildung_beratung",
+			},
+			{
+				label: "upperFooter.content.freetime",
+				icon: "",
+				href: "/all-offers/?category=freizeit",
+			},
+			{
+				label: "upperFooter.content.map",
+				icon: "",
+				href: "/map/",
 			},
 		],
 	},
@@ -237,7 +244,7 @@ export function Footer() {
 	return (
 		<footer>
 			<div className="flex items-start justify-between w-full bg-berlin-grey-light desktop:p-6">
-				<div className="flex flex-col desktop:flex-row w-full desktop:gap-x-10">
+				<div className="flex flex-col desktop:flex-row w-full desktop:gap-x-10 desktop:pl-28">
 					<div className="desktop:hidden self-end">
 						<ScrollToTopButton />
 					</div>
