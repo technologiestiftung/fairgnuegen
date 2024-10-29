@@ -13,7 +13,7 @@ export function AccessibilityButton() {
 	return (
 		<>
 			<button
-				className="flex flex-col items-center text-[11px]"
+				className="flex flex-col items-center text-[11px] gap-1 leading-3"
 				onClick={() => setIsOpen(true)}
 			>
 				<AccessibilityIcon />
