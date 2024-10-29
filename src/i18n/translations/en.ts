@@ -94,7 +94,7 @@ const en: typeof de = {
 		" gives you a quick overview of what's going on where.",
 	"aboutProject.p3": "Have fun browsing!",
 	"aboutProject.p4":
-		"This project was implemented by CityLAB Berlin in cooperation with the Senate Department for Labour, Social Affairs, Equality, Integration, Diversity and Anti-Discrimination.",
+		"This project was implemented by CityLAB Berlin in cooperation with the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination.",
 
 	"aboutProject.logos.tsb.src": "/logos/tsb-en.svg",
 	"aboutProject.logos.tsb.label": "A project from",
@@ -124,7 +124,7 @@ const en: typeof de = {
 
 	"infobox.title": "Berlin-Ticket S: Free public transport and more",
 	"infobox.content":
-		"Berlin-Ticket S is a ticket for the people of Berlin who receive social benefits. With the Berlin-Ticket S, you can use public transport and plan various cultural and leisure activities for free or with a discount. Find more information about the Berlin-Ticket S on the website of the senate administration for labour, social affairs, equality, integration, diversity and anti-discrimination. Enjoy!",
+		"Berlin-Ticket S is a ticket for the people of Berlin who receive social benefits. With the Berlin-Ticket S, you can use public transport and plan various cultural and leisure activities for free or with a discount. Find more information about the Berlin-Ticket S on the website of the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination. Enjoy!",
 	"infobox.link": "More information about the authorization document",
 	"infobox.providerHint":
 		"Are you an organization that would like to offer your services as part of the Berlin-Ticket S? Please contact us so we can add your offer to our website. Do you have any further questions?",
