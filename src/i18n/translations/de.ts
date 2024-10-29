@@ -83,6 +83,35 @@ const de = {
 	"allOffers.for": "für",
 	"allOffers.in": "in",
 
+	"aboutProject.title": "Über das Projekt",
+	"aboutProject.p1":
+		"Berlinerinnen und Berliner, die Sozialleistungen erhalten, können den öffentlichen Nahverkehr sowie Sport-, Bildungs-, Kultur- und Freizeitangebote kostenlos oder vergünstigt nutzen. Dieses Angebot ist eine freiwillige Dienstleistung des Landes Berlin zur Förderung der Teilhabe.",
+	"aboutProject.p2.part.1":
+		"Mit dieser Anwendung kannst du alle Angebote anhand verschiedener Filter durchsuchen und mehr Informationen z.B. zum Veranstaltungsort, Art der Ermäßigung und Zielgruppe erhalten. Auf unserer ",
+	"aboutProject.p2.part.mapLinkLabel": "Karte",
+	"aboutProject.p2.part.2":
+		" bekommst du einen schnellen Überblick, wo was los ist.",
+	"aboutProject.p3": "Viel Spaß beim Stöbern!",
+	"aboutProject.p4":
+		"Dieses Projekt wurde umgesetzt vom CityLAB Berlin in Kooperation mit der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung.",
+
+	"aboutProject.logos.tsb.src": "/logos/tsb-de.svg",
+	"aboutProject.logos.tsb.label": "Ein Projekt der",
+	"aboutProject.logos.tsb.alt": "Logo der Technologiestiftung Berlin",
+
+	"aboutProject.logos.citylab.src": "/logos/citylab-berlin.svg",
+	"aboutProject.logos.citylab.label": "Durchgeführt von",
+	"aboutProject.logos.citylab.alt": "Logo von CityLAB Berlin",
+
+	"aboutProject.logos.senatskanzlei.src": "/logos/senatskanzlei-de.svg",
+	"aboutProject.logos.senatskanzlei.label": "Gefördert durch",
+	"aboutProject.logos.senatskanzlei.alt": "Logo der Senatskanzlei Berlin",
+
+	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-de.png",
+	"aboutProject.logos.senasgiva.label": "In Kooperation mit",
+	"aboutProject.logos.senasgiva.alt":
+		"Logo der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung",
+
 	discover: "entdecken",
 	discoverOffers: "Angebote entdecken",
 	sort: "Sortieren",

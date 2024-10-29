@@ -1,6 +1,6 @@
 import de from "./de";
 
-const en: Record<keyof typeof de, string> = {
+const en: typeof de = {
 	"home.title": "Home",
 	"home.h1": "What would you like to do?",
 
@@ -84,6 +84,35 @@ const en: Record<keyof typeof de, string> = {
 	"allOffers.for": "for",
 	"allOffers.in": "in",
 
+	"aboutProject.title": "About this project",
+	"aboutProject.p1":
+		"People living in Berlin who receive social benefits can use local public transport as well as sports, educational, cultural and leisure facilities free of charge or at a reduced rate. This offer is a voluntary service provided by the state of Berlin to promote participation.",
+	"aboutProject.p2.part.1":
+		"With this application, you can search through all offers using various filters and get more information, e.g. on the event location, type of discount and target group. Our ",
+	"aboutProject.p2.part.mapLinkLabel": "map",
+	"aboutProject.p2.part.2":
+		" gives you a quick overview of what's going on where.",
+	"aboutProject.p3": "Have fun browsing!",
+	"aboutProject.p4":
+		"This project was implemented by CityLAB Berlin in cooperation with the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination.",
+
+	"aboutProject.logos.tsb.src": "/logos/tsb-en.svg",
+	"aboutProject.logos.tsb.label": "A project from",
+	"aboutProject.logos.tsb.alt": "Logo of the Technology Foundation Berlin",
+
+	"aboutProject.logos.citylab.src": "/logos/citylab-berlin.svg",
+	"aboutProject.logos.citylab.label": "Implemented by",
+	"aboutProject.logos.citylab.alt": "Logo of the CityLAB Berlin",
+
+	"aboutProject.logos.senatskanzlei.src": "/logos/senatskanzlei-en.svg",
+	"aboutProject.logos.senatskanzlei.label": "Funded by",
+	"aboutProject.logos.senatskanzlei.alt":
+		"Logo of the Berlin Senate Chancellery",
+
+	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-en.png",
+	"aboutProject.logos.senasgiva.label": "In cooperation with",
+	"aboutProject.logos.senasgiva.alt": "Logo of the SenASGIVA",
+
 	discover: "discover",
 	discoverOffers: "Discover offers",
 	sort: "Sort",
@@ -95,7 +124,7 @@ const en: Record<keyof typeof de, string> = {
 
 	"infobox.title": "Berlin-Ticket S: Free public transport and more",
 	"infobox.content":
-		"Berlin-Ticket S is a ticket for the people of Berlin who receive social benefits. With the Berlin-Ticket S, you can use public transport and plan various cultural and leisure activities for free or with a discount. Find more information about the Berlin-Ticket S on the website of the senate administration for labour, social affairs, equality, integration, diversity and anti-discrimination. Enjoy!",
+		"Berlin-Ticket S is a ticket for the people of Berlin who receive social benefits. With the Berlin-Ticket S, you can use public transport and plan various cultural and leisure activities for free or with a discount. Find more information about the Berlin-Ticket S on the website of the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination. Enjoy!",
 	"infobox.link": "More information about the authorization document",
 	"infobox.providerHint.part.1":
 		"Do you work for an organisation in Berlin that wants to get involved and offer a discounted activity? Enter your offer directly into our database using our ",

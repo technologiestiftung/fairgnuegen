@@ -60,7 +60,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 			title: i18n["menuItem.about"],
 			subItems: [],
 			isExternalLink: false,
-			link: "/about/",
+			link: "/about-project/",
 		},
 	];
 

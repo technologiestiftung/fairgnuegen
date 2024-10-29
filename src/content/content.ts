@@ -182,6 +182,32 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
+	"/about-project/": {
+		title: "Über das Projekt",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/about-project/",
+				label: "Über das Projekt",
+			},
+		],
+	},
+	"/en/about-project/": {
+		title: "Über das Projekt",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/about-project/",
+				label: "Über das Projekt",
+			},
+		],
+	},
 	...detailPagesContent,
 };
 
