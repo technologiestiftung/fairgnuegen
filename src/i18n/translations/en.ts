@@ -32,6 +32,21 @@ const en: typeof de = {
 
 	"searchbar.placeholder": "Enter search term",
 
+	"accessibilityMenu.title": "Accessibility",
+	"accessibilityMenu.easyLanguage": "Easy Language",
+	"accessibilityMenu.dgs": "DGS",
+	"accessibilityMenu.barrierefreiheit.question":
+		"How accessible is this website?",
+	"accessibilityMenu.barrierefreiheit": "Accessibility statement",
+	"accessibilityMenu.contact.question":
+		"Who can you contact if you have questions, comments or feedback regarding digital accessibility?",
+	"accessibilityMenu.contact":
+		"Contact information for the relevant contact person",
+	"accessibilityMenu.additionalInfo.question":
+		"Where can I find additional information about accessibility in Berlin?",
+	"accessibilityMenu.additionalInfo":
+		"Barrierefreie Informations- und Kommunikationstechnik (IKT)",
+
 	"filter.title": "Filters",
 	"filter.freeEntry": "Free entry",
 	"filter.targetAudience": "Who is this offer for?",
