@@ -113,6 +113,51 @@ const en: typeof de = {
 	"aboutProject.logos.senasgiva.label": "In cooperation with",
 	"aboutProject.logos.senasgiva.alt": "Logo of the SenASGIVA",
 
+	"accessibilityStatement.title": "Erklärung zur Barrierefreiheit",
+	"accessibilityStatement.intro.p1": `Diese Barrierefreiheitserklärung (Stand: 30.10.2024) bezieht sich auf die Subdomain `,
+	"accessibilityStatement.intro.homeLink": "fairgnuegen.berlin.de",
+	"accessibilityStatement.intro.p2":
+		". Sie gilt nicht für andere Seiten auf berlin.de, für die andere Barrierefreiheitserklärungen gelten. Diese Anwendung wird betrieben durch die Technologiestiftung Berlin (",
+	"accessibilityStatement.intro.aboutProjectLinkLabel": "mehr zum Projekt",
+	"accessibilityStatement.intro.p3":
+		"). Sämtliche andere Inhalte werden technisch betrieben von der BerlinOnline Stadtportal GmbH & Co. KG.",
+
+	"accessibilityStatement.howAccessible": "Wie barrierefrei ist das Angebot?",
+	"accessibilityStatement.howAccessible.p1":
+		"Dieser Webauftritt / Diese Anwendung ist nur teilweise barrierefrei. Es werden nur teilweise die Anforderungen der aktuellen BITV erfüllt.",
+
+	"accessibilityStatement.notAccessible":
+		"Welche Bereiche sind nicht barrierefrei?",
+	"accessibilityStatement.notAccessible.p1": "-noch ergänzen-",
+
+	"accessibilityStatement.feedback": "Feedback und Kontakt",
+	"accessibilityStatement.feedback.p1":
+		"Sollten Sie auf unseren Seiten dennoch auf Mängel beim barrierefreien Zugang zu Inhalten stoßen, senden Sie uns bitte eine E-Mail mit einer Beschreibung, wo Ihnen welche Barriere aufgefallen ist, an die folgende Adresse:",
+	"accessibilityStatement.feedback.mail":
+		"E-Mail: info@technologiestiftung-berlin.de",
+
+	"accessibilityStatement.arbitration": "Schlichtungsverfahren",
+	"accessibilityStatement.arbitration.p1": `Wenn nach Ihrem Feedback an den oben genannten Kontakt keine zufriedenstellende Lösung gefunden wurde, können Sie sich an die Schlichtungsstelle nach § 16 des Gesetzes zur Gleichstellung von Menschen mit Behinderungen des Landes Berlin wenden.  Die Schlichtungsstelle BGG hat die Aufgabe, bei Konflikten zum Thema Barrierefreiheit zwischen Menschen mit Behinderungen und öffentlichen Stellen des Bundes eine außergerichtliche Streitbeilegung zu unterstützen.
+	
+	\nDas Schlichtungsverfahren ist kostenlos. Es muss kein Rechtsbeistand eingeschaltet werden.
+	
+	\nWeitere Informationen zum Schlichtungsverfahren und den Möglichkeiten der Antragstellung erhalten Sie auf der Website der Schlichtungsstelle. Die Informationen sind auch in Die Informationen sind auch in Leichter Sprache und in Deutscher Gebärdensprache verfügbar.
+	
+	\nSie erreichen die Schlichtungsstelle unter folgender Adresse:`,
+	"accessibilityStatement.arbitration.p2": `
+
+Schlichtungsstelle nach dem Behindertengleichstellungsgesetz
+bei dem Beauftragten der Bundesregierung für die Belange von Menschen mit Behinderungen  
+Mauerstraße 53  
+10117 Berlin
+`,
+	"accessibilityStatement.arbitration.mail": `
+E-Mail: info(at)schlichtungsstelle-bgg.de`,
+	"accessibilityStatement.arbitration.linkText":
+		"Online-Formular auf der Website der Schlichtungsstelle",
+	"accessibilityStatement.arbitration.p3": `Telefon: 030 185 272 805  
+Fax: 030 185 272 901 `,
+
 	discover: "discover",
 	discoverOffers: "Discover offers",
 	sort: "Sort",
