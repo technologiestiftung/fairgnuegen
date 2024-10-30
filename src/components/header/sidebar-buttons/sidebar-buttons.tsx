@@ -4,7 +4,7 @@ import { MenuButton } from "./menu-button";
 
 export function SidebarButtons() {
 	return (
-		<div className="flex gap-2 pr-9">
+		<div className="flex gap-[16px] pr-8 tracking-normal">
 			<AccessibilityButton />
 			<SearchButton />
 			<MenuButton />
