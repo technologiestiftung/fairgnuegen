@@ -42,7 +42,7 @@ const SearchBar: React.FC = () => {
 			<input
 				value={search}
 				type="text"
-				className="relative pl-8 pr-20 row-start-1 col-start-1 w-full h-[42px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none placeholder-[#9D9D9C]"
+				className="relative pl-10 pr-20 placeholder-berlin-grey row-start-1 col-start-1 w-full h-[47px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none"
 				placeholder={i18n["searchbar.placeholder"]}
 				onChange={(e) => setSearch(e.target.value)}
 				onFocus={() => {
@@ -52,7 +52,7 @@ const SearchBar: React.FC = () => {
 					setHasFocus(false);
 				}}
 			></input>
-			<div className="relative row-start-1 col-start-1 pl-2 pointer-events-none">
+			<div className="relative row-start-1 col-start-1 pl-3 pointer-events-none">
 				<SearchIcon></SearchIcon>
 			</div>
 			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pointer-events-none">
@@ -68,7 +68,7 @@ const SearchBar: React.FC = () => {
 				</button>
 				<button
 					type="submit"
-					className={`w-fit pointer-events-auto border-l-0 pl-2 pr-2 ${hasFocus ? "border-focus-blue" : " border-l-black"} border-2 border-black`}
+					className={`w-fit pointer-events-auto border-l-0 pl-2 pr-2.5 ${hasFocus ? "border-focus-blue" : " border-l-black"} border-2 border-black`}
 				>
 					<StartSearchIcon></StartSearchIcon>
 				</button>
