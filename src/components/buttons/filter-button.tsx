@@ -41,7 +41,7 @@ const FilterButton: React.FC = () => {
 					});
 				}}
 			>
-				<div className="flex flex-row gap-1 items-center">
+				<div className="flex flex-row gap-2 items-center">
 					<FilterIcon></FilterIcon>
 					<div>{i18n["filter.title"]}</div>
 				</div>
