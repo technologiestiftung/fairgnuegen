@@ -28,10 +28,10 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
 
 	return (
 		<LocalizedTrackedAnchorLink
-			className={`${isVisible ? "flex" : "hidden"} items-center w-full bg-berlin-grey-light hover:bg-berlin-grey-hover relative text-left hover:cursor-pointer mb-6 pl-[18px] pr-11 h-[269px]`}
+			className={`${isVisible ? "flex" : "hidden"} items-center w-full bg-berlin-grey-light hover:bg-berlin-grey-hover relative text-left hover:cursor-pointer mb-6 pl-[18px] pr-11 `}
 			href={offer.path}
 		>
-			<div className="flex flex-row gap-4 h-fit">
+			<div className="flex flex-row py-6 md:py-11 gap-4 h-fit">
 				<div
 					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
 					// TODO: remove this and use the actual images as soon as they are available
@@ -59,7 +59,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
 					<div className={`break-words text-left pr-0 md:pr-[59px]`}>
 						{cutoffDescription}
 					</div>
-					<div className="flex flex-row w-full justify-start text-link-blue">
+					<div className="flex flex-row w-full justify-start text-link-blue hover:underline">
 						<div className="flex flex-row gap-[5px] items-center">
 							<div>{i18n["moreInfo"]}</div>
 							<ArrowRightLinkIcon color={"text-link-blue"}></ArrowRightLinkIcon>
