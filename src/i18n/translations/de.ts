@@ -113,7 +113,7 @@ const de = {
 		"Logo der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung",
 
 	"accessibilityStatement.title": "Erklärung zur Barrierefreiheit",
-	"accessibilityStatement.intro.p1": `Diese Barrierefreiheitserklärung (Stand: 30.10.2024) bezieht sich auf die Subdomain `,
+	"accessibilityStatement.intro.p1": `Diese Barrierefreiheitserklärung (Stand: 31.10.2024) bezieht sich auf die Subdomain `,
 	"accessibilityStatement.intro.homeLink": "fairgnuegen.berlin.de",
 	"accessibilityStatement.intro.p2":
 		". Sie gilt nicht für andere Seiten auf berlin.de, für die andere Barrierefreiheitserklärungen gelten. Diese Anwendung wird betrieben durch die Technologiestiftung Berlin (",
@@ -127,7 +127,12 @@ const de = {
 
 	"accessibilityStatement.notAccessible":
 		"Welche Bereiche sind nicht barrierefrei?",
-	"accessibilityStatement.notAccessible.p1": "-noch ergänzen-",
+	"accessibilityStatement.notAccessible.p1": `
+	• Grafische Bedienelemente und informationstragende grafische Elemente halten nicht immer den Mindestkontrast ein und können daher teilweise schwer wahrnehmbar sein.
+	• Links werden nicht immer vom umgebenden Text auf eine Weise unterschieden, die nicht auf Farbe beruht.
+	• Einige Bedienelemente verfügen nicht über die notwendigen Rollen, Namen, Statusangaben und dazugehörige Steuerungskonzepte, was die Bedienung dieser Elemente einschränkt.
+	Wir arbeiten weiterhin daran, die Barrierefreiheit dieser Anwendung zu verbessern.
+`,
 
 	"accessibilityStatement.feedback": "Feedback und Kontakt",
 	"accessibilityStatement.feedback.p1":

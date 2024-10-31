@@ -113,50 +113,47 @@ const en: typeof de = {
 	"aboutProject.logos.senasgiva.label": "In cooperation with",
 	"aboutProject.logos.senasgiva.alt": "Logo of the SenASGIVA",
 
-	"accessibilityStatement.title": "Erklärung zur Barrierefreiheit",
-	"accessibilityStatement.intro.p1": `Diese Barrierefreiheitserklärung (Stand: 30.10.2024) bezieht sich auf die Subdomain `,
+	"accessibilityStatement.title": "Accessibility Statement",
+	"accessibilityStatement.intro.p1":
+		"This accessibility statement (as of 30.10.2024) refers to the subdomain ",
 	"accessibilityStatement.intro.homeLink": "fairgnuegen.berlin.de",
 	"accessibilityStatement.intro.p2":
-		". Sie gilt nicht für andere Seiten auf berlin.de, für die andere Barrierefreiheitserklärungen gelten. Diese Anwendung wird betrieben durch die Technologiestiftung Berlin (",
-	"accessibilityStatement.intro.aboutProjectLinkLabel": "mehr zum Projekt",
+		". It does not apply to other pages on berlin.de, to which other accessibility statements apply. This application is operated by Technologiestiftung Berlin (",
+	"accessibilityStatement.intro.aboutProjectLinkLabel":
+		"more about the project",
 	"accessibilityStatement.intro.p3":
-		"). Sämtliche andere Inhalte werden technisch betrieben von der BerlinOnline Stadtportal GmbH & Co. KG.",
-
-	"accessibilityStatement.howAccessible": "Wie barrierefrei ist das Angebot?",
+		"). All other content is technically operated by BerlinOnline Stadtportal GmbH & Co. KG.",
+	"accessibilityStatement.howAccessible": "How accessible is the offer?",
 	"accessibilityStatement.howAccessible.p1":
-		"Dieser Webauftritt / Diese Anwendung ist nur teilweise barrierefrei. Es werden nur teilweise die Anforderungen der aktuellen BITV erfüllt.",
-
-	"accessibilityStatement.notAccessible":
-		"Welche Bereiche sind nicht barrierefrei?",
-	"accessibilityStatement.notAccessible.p1": "-noch ergänzen-",
-
-	"accessibilityStatement.feedback": "Feedback und Kontakt",
+		"This website / application is only partially accessible. The requirements of the current BITV are only partially met.",
+	"accessibilityStatement.notAccessible": "Which areas are not accessible?",
+	"accessibilityStatement.notAccessible.p1": `
+		• Graphical control elements and information-bearing graphical elements do not always meet the minimum contrast requirements and can therefore be difficult to perceive.
+		• Links are not always distinguishable from the surrounding text in a way that does not rely on color.
+		• Some control elements lack the necessary roles, names, status indications, and associated control concepts, which restricts the usability of these elements.
+		We are continuing to work on improving the accessibility of this application.
+		`,
+	"accessibilityStatement.feedback": "Feedback and Contact",
 	"accessibilityStatement.feedback.p1":
-		"Sollten Sie auf unseren Seiten dennoch auf Mängel beim barrierefreien Zugang zu Inhalten stoßen, senden Sie uns bitte eine E-Mail mit einer Beschreibung, wo Ihnen welche Barriere aufgefallen ist, an die folgende Adresse:",
+		"If you still encounter barriers on our pages that hinder accessible access to content, please send us an email with a description of where and what barrier you noticed, to the following address:",
 	"accessibilityStatement.feedback.mail":
-		"E-Mail: info@technologiestiftung-berlin.de",
+		"Email: info@technologiestiftung-berlin.de",
+	"accessibilityStatement.arbitration": "Arbitration Procedure",
 
-	"accessibilityStatement.arbitration": "Schlichtungsverfahren",
-	"accessibilityStatement.arbitration.p1": `Wenn nach Ihrem Feedback an den oben genannten Kontakt keine zufriedenstellende Lösung gefunden wurde, können Sie sich an die Schlichtungsstelle nach § 16 des Gesetzes zur Gleichstellung von Menschen mit Behinderungen des Landes Berlin wenden.  Die Schlichtungsstelle BGG hat die Aufgabe, bei Konflikten zum Thema Barrierefreiheit zwischen Menschen mit Behinderungen und öffentlichen Stellen des Bundes eine außergerichtliche Streitbeilegung zu unterstützen.
-	
-	\nDas Schlichtungsverfahren ist kostenlos. Es muss kein Rechtsbeistand eingeschaltet werden.
-	
-	\nWeitere Informationen zum Schlichtungsverfahren und den Möglichkeiten der Antragstellung erhalten Sie auf der Website der Schlichtungsstelle. Die Informationen sind auch in Die Informationen sind auch in Leichter Sprache und in Deutscher Gebärdensprache verfügbar.
-	
-	\nSie erreichen die Schlichtungsstelle unter folgender Adresse:`,
+	"accessibilityStatement.arbitration.p1":
+		"If a satisfactory solution has not been found after your feedback to the contact mentioned above, you may contact the arbitration board under § 16 of the Berlin Act on Equal Opportunities for Persons with Disabilities. The BGG arbitration board is responsible for supporting out-of-court dispute resolution in conflicts concerning accessibility between persons with disabilities and federal public authorities.\n\nThe arbitration procedure is free of charge. No legal representation is required.\n\nFurther information on the arbitration procedure and options for submitting an application can be found on the arbitration board's website. Information is also available in Easy Language and in German Sign Language.\n\nYou can reach the arbitration board at the following address:",
 	"accessibilityStatement.arbitration.p2": `
-
 Schlichtungsstelle nach dem Behindertengleichstellungsgesetz
 bei dem Beauftragten der Bundesregierung für die Belange von Menschen mit Behinderungen  
 Mauerstraße 53  
 10117 Berlin
 `,
-	"accessibilityStatement.arbitration.mail": `
-E-Mail: info(at)schlichtungsstelle-bgg.de`,
+	"accessibilityStatement.arbitration.mail":
+		"Email: info(at)schlichtungsstelle-bgg.de",
 	"accessibilityStatement.arbitration.linkText":
-		"Online-Formular auf der Website der Schlichtungsstelle",
-	"accessibilityStatement.arbitration.p3": `Telefon: 030 185 272 805  
-Fax: 030 185 272 901 `,
+		"Online form on the arbitration board's website",
+	"accessibilityStatement.arbitration.p3":
+		"Phone: 030 185 272 805\nFax: 030 185 272 901",
 
 	discover: "discover",
 	discoverOffers: "Discover offers",

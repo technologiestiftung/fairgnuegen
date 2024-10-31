@@ -47,7 +47,11 @@ export default function AccessibilityStatement() {
 					<h2 className="text-xl font-bold w-full flex flex-row mb-4">
 						{i18n["accessibilityStatement.notAccessible"]}
 					</h2>
-					{i18n["accessibilityStatement.notAccessible.p1"]}
+					{i18n["accessibilityStatement.notAccessible.p1"]
+						.split("\n")
+						.map((line) => (
+							<p className="mb-2">{line}</p>
+						))}
 					<p className="mb-4"></p>
 				</div>
 
