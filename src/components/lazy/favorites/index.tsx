@@ -47,7 +47,7 @@ export default function Index() {
 						</p>
 					</div>
 
-					<div className="flex flex-col mb-5">
+					<div className="flex flex-col mb-5 mx-4">
 						{filteredOffers.map((offer, idx) => (
 							<OfferDetail
 								isVisible={true}
