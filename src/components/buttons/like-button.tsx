@@ -19,6 +19,7 @@ export function LikeButton({ offer }: { offer: Offer }) {
 				});
 				toggleFavorite(offer);
 			}}
+			className="size-[44px]"
 		>
 			<LikeIcon isSelected={isFavorite}></LikeIcon>
 		</button>
