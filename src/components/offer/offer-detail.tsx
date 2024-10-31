@@ -28,7 +28,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
 
 	return (
 		<LocalizedTrackedAnchorLink
-			className={`${isVisible ? "flex" : "hidden"} items-center w-full bg-berlin-grey-light relative text-left hover:cursor-pointer mb-6 pl-[18px] pr-11 h-[269px]`}
+			className={`${isVisible ? "flex" : "hidden"} items-center w-full bg-berlin-grey-light hover:bg-berlin-grey-hover relative text-left hover:cursor-pointer mb-6 pl-[18px] pr-11 h-[269px]`}
 			href={offer.path}
 		>
 			<div className="flex flex-row gap-4 h-fit">

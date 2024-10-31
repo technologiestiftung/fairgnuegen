@@ -66,7 +66,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						<LinkIcon></LinkIcon>
 					</a>
 				</div>
-				<div className="hidden max-w-[20%] w-full sm:flex flex-row justify-center items-start gap-2">
+				<div className="hidden max-w-[20%] w-full sm:flex flex-row md:justify-end justify-center items-start gap-2">
 					<LikeButton offer={offer} />
 					<ShareButton offer={offer} />
 				</div>
