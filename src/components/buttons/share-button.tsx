@@ -67,7 +67,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					setShowOverlay(!showOverlay);
 				}}
 			>
-				<div className="flex flex-row gap-1 items-center">
+				<div className="flex flex-row gap-1 items-center size-[44px]">
 					<ShareIcon isSelected={showOverlay} />
 				</div>
 			</button>
