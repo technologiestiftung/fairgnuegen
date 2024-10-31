@@ -72,8 +72,7 @@ export default function Index() {
 							</p>
 						</div>
 					</div>
-					<div className="w-full border-b border-separator mb-5"></div>
-					<div className="flex flex-col pt-4 mb-5">
+					<div className="flex flex-col mb-5">
 						{offers.map((offer, idx) => (
 							<OfferDetail
 								isVisible={filteredAndSortedOffers.some(

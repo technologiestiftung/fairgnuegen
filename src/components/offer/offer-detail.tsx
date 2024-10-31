@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Offer } from "../../content/content";
-import ArrowRightIcon from "../icons/arrow-right-icon";
+import ArrowRightLinkIcon from "../icons/arrow-right-link-icon";
 import { Pill } from "./pill";
 import { allowedOfferPathsWithImagesAllowed } from "../../content/allowed-offers-images";
 import { LikeButton } from "../buttons/like-button";
@@ -28,10 +28,10 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
 
 	return (
 		<LocalizedTrackedAnchorLink
-			className={`${isVisible ? "block" : "hidden"} w-full hover:bg-berlin-grey-light text-left hover:cursor-pointer bg-white px-3`}
+			className={`${isVisible ? "flex" : "hidden"} items-center w-full bg-berlin-grey-light relative text-left hover:cursor-pointer mb-6 pl-[18px] pr-11 h-[269px]`}
 			href={offer.path}
 		>
-			<div className="flex flex-row py-4 mx-2 lg:mx-0 gap-4">
+			<div className="flex flex-row gap-4 h-fit">
 				<div
 					// This is for demonstration purposes only, we randomly select some offers to show the placeholder images
 					// TODO: remove this and use the actual images as soon as they are available
@@ -45,32 +45,32 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
 					<span className="text-xs">© Bildcopyright</span>
 				</div>
 
-				<div className="w-full flex flex-col gap-4">
+				<div className="w-full h-fit flex flex-col gap-4">
 					<div className="flex flex-row justify-between items-start gap-4">
-						<h1 className="font-bold text-xl flex flex-row items-center h-full">
+						<h1 className="font-bold text-[22px] flex flex-row items-center h-full">
 							{offer.provider}
 						</h1>
-						<div className="min-w-[43px] flex justify-center">
-							<LikeButton offer={offer} />
-						</div>
 					</div>
 					{offer.isFree && (
-						<div className="flex flex-row gap-2 flex-wrap">
+						<div className="flex flex-row flex-wrap">
 							<Pill title={i18n["filter.freeEntry"]} />
 						</div>
 					)}
 					<div className={`break-words text-left pr-0 md:pr-[59px]`}>
 						{cutoffDescription}
 					</div>
-					<div className="flex flex-row w-full justify-start text-primary-blue">
-						<div className="flex flex-row gap-2 items-center">
+					<div className="flex flex-row w-full justify-start text-link-blue">
+						<div className="flex flex-row gap-[5px] items-center">
 							<div>{i18n["moreInfo"]}</div>
-							<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
+							<ArrowRightLinkIcon color={"text-link-blue"}></ArrowRightLinkIcon>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="border-b border-berlin-grey-light w-full"></div>
+
+			<div className="min-w-[43px] absolute top-0 right-0 justify-center">
+				<LikeButton offer={offer} />
+			</div>
 		</LocalizedTrackedAnchorLink>
 	);
 };
