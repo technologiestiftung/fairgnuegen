@@ -42,6 +42,7 @@ const SearchBar: React.FC = () => {
 			<input
 				value={search}
 				type="text"
+				id="search"
 				className="relative pl-10 pr-20 placeholder-berlin-grey row-start-1 col-start-1 w-full h-[47px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none"
 				placeholder={i18n["searchbar.placeholder"]}
 				onChange={(e) => setSearch(e.target.value)}
