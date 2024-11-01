@@ -14,7 +14,8 @@ export function useCategories() {
 
 	return {
 		category: categories.length === 1 ? categories[0] : null,
-		categoryDetail: categories.length === 1 ? categoryMap[categories[0]] : null,
+		categoryDetail:
+			categories.length === 1 ? categoryMap[categories[0]] : categoryMap["all"],
 		categories,
 		categoriesDetails: categories.map((category) => categoryMap[category]),
 	};
