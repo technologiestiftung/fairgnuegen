@@ -196,15 +196,41 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/about-project/": {
-		title: "Über das Projekt",
+		title: "About the project",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/about-project/",
+				label: "Über das Projekt",
+			},
+		],
+	},
+	"/accessibility-statement/": {
+		title: "Erklärung zur Barrierefreiheit",
 		breadcrumbs: [
 			{
 				href: "/",
 				label: "Startseite",
 			},
 			{
-				href: "/about-project/",
-				label: "Über das Projekt",
+				href: "/accessibility-statement/",
+				label: "Erklärung zur Barrierefreiheit",
+			},
+		],
+	},
+	"/en/accessibility-statement/": {
+		title: "Accessibility Statement",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/accessibility-statement/",
+				label: "Accessibility Statement",
 			},
 		],
 	},
