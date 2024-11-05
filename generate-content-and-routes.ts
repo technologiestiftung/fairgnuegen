@@ -36,73 +36,42 @@ function generatePath({ slug, language }: { slug: string; language: string }) {
 	return { path, slug: slugTitle };
 }
 
-try {
-	const csvData = fs.readFileSync(filePath, "utf-8");
-	const data = csvData.split("\r\n").slice(1);
+async function fetchGeoCoordinates(fullAddress: string) {
+	try {
+		const response = await fetch(
+			`https://nominatim.openstreetmap.org/search?format=json&q=${fullAddress}`,
+			{
+				headers: {
+					"Content-Type": "application/json",
+				},
+				method: "GET",
+			},
+		);
 
-	const processedContent: Record<string, object> = {};
-	const processedRoutes: { path: string; page: string }[] = [];
-
-	data.forEach((row) => {
-		const [
-			provider,
-			providerDescription,
-			offerDescription,
-			offerInformation,
-			website,
-			address,
-			city,
-			zip,
-			_district,
-			isFree,
-			category,
-			targetGroups,
-			x,
-			y,
-			language,
-			identifierToBeSlugified,
-			authorised,
-		] = row.split(";");
-
-		if (authorised.toLowerCase().trim() !== "ja") {
-			return;
+		const geoCoordinates = await response.json();
+		if (geoCoordinates.length === 0) {
+			throw new Error(`No results found for address: ${fullAddress}`);
 		}
 
-		const { path, slug } = generatePath({
-			slug: identifierToBeSlugified,
-			language,
-		});
+		const { lat, lon } = geoCoordinates[0];
+		return { lat, lon };
+	} catch (error) {
+		console.error("Failed to fetch geo-coordinates:", error);
+		return { lat: "", lon: "" }; // Return null to handle missing coordinates gracefully
+	}
+}
 
-		const t = useI18n(language);
+async function generateContentAndRoutes() {
+	try {
+		const csvData = fs.readFileSync(filePath, "utf-8");
+		const data = csvData.split("\r\n").slice(1);
 
-		const breadcrumbs = [
-			{
-				href: "/",
-				label: t["home.title"],
-			},
-			{
-				href: `/all-offers/?category=${category.toLowerCase()}`,
-				label: category,
-			},
-			{
-				href: path,
-				label: provider,
-			},
-		];
+		const processedContent: Record<string, object> = {};
+		const processedRoutes: { path: string; page: string }[] = [];
 
-		const district = findDistrict({
-			x: Number(x.replace(",", ".")),
-			y: Number(y.replace(",", ".")),
-			provider,
-			originalDistrict: _district,
-		});
-
-		const content = {
-			title: provider,
-			breadcrumbs,
-			offer: {
-				language,
-				path: path,
+		// Array to hold all promises from async operations
+		const promises = data.map(async (row) => {
+			const [
 				provider,
 				providerDescription,
 				offerDescription,
@@ -110,41 +79,132 @@ try {
 				website,
 				address,
 				city,
-				zip: parseInt(zip),
-				district,
-				originalDistrict: _district,
-				isFree: isFree === "ja",
+				zip,
+				_district,
+				isFree,
 				category,
-				targetGroups: targetGroups
-					.split(",")
-					.map((targetGroup) => targetGroup.trim()),
-				x: parseFloat(x.replace(",", ".")),
-				y: parseFloat(y.replace(",", ".")),
-				slug,
-			},
-		};
+				targetGroups,
+				x,
+				y,
+				language,
+				identifierToBeSlugified,
+				authorised,
+			] = row.split(";");
 
-		processedContent[path] = content;
-		processedRoutes.push({
-			path,
-			page: "./pages/all-offers/[offer]/index.tsx",
+			if (authorised.toLowerCase().trim() !== "ja") {
+				return;
+			}
+
+			const { path, slug } = generatePath({
+				slug: identifierToBeSlugified,
+				language,
+			});
+
+			const t = useI18n(language);
+
+			const breadcrumbs = [
+				{
+					href: "/",
+					label: t["home.title"],
+				},
+				{
+					href: `/all-offers/?category=${category.toLowerCase()}`,
+					label: category,
+				},
+				{
+					href: path,
+					label: provider,
+				},
+			];
+
+			let latitude = y || "";
+			let longitude = x || "";
+
+			/*
+			 * If no coordinates are provided, we use the address to fetch the coordinates.
+			 */
+			if (longitude === "" || latitude === "") {
+				if (address === "") {
+					console.info(
+						`Coordinates and address information missing for ${provider}`,
+					);
+					return;
+				}
+
+				const formattedAddress = address.replace(/ /g, "+");
+				const formattedCity = city.replace(/ /g, "+");
+				const formattedZip = zip.replace(/ /g, "+");
+
+				const fullAddress = `${formattedAddress}%2C+${formattedCity}%2C+${formattedZip}`;
+
+				const { lat, lon } = await fetchGeoCoordinates(fullAddress);
+				console.info("Fetched geo-coordinates:", lat, lon, "for", provider);
+
+				latitude = lat;
+				longitude = lon;
+			}
+
+			const district = findDistrict({
+				x: Number(longitude.replace(",", ".")),
+				y: Number(latitude.replace(",", ".")),
+				provider,
+				originalDistrict: _district,
+			});
+
+			const content = {
+				title: provider,
+				breadcrumbs,
+				offer: {
+					language,
+					path: path,
+					provider,
+					providerDescription,
+					offerDescription,
+					offerInformation,
+					website,
+					address,
+					city,
+					zip: parseInt(zip),
+					district,
+					originalDistrict: _district,
+					isFree: isFree === "ja",
+					category,
+					targetGroups: targetGroups
+						.split(",")
+						.map((targetGroup) => targetGroup.trim()),
+					x: parseFloat(longitude.replace(",", ".")),
+					y: parseFloat(latitude.replace(",", ".")),
+					slug,
+				},
+			};
+
+			processedContent[path] = content;
+			processedRoutes.push({
+				path,
+				page: "./pages/all-offers/[offer]/index.tsx",
+			});
 		});
-	});
+		// Wait for all promises to complete
+		await Promise.all(promises);
 
-	fs.writeFileSync(
-		"./src/content/detail-pages-content.ts",
-		`export const detailPagesContent = ${JSON.stringify(processedContent, null, 2)};`,
-		"utf-8",
-	);
+		// Write files only after all async operations are complete
+		fs.writeFileSync(
+			"./src/content/detail-pages-content.ts",
+			`export const detailPagesContent = ${JSON.stringify(processedContent, null, 2)};`,
+			"utf-8",
+		);
 
-	fs.writeFileSync(
-		"./src/routes/detail-pages-routes.ts",
-		`export const detailPagesRoutes = ${JSON.stringify(processedRoutes, null, 2)};`,
-		"utf-8",
-	);
-} catch (error) {
-	console.error("Error reading CSV file:", error);
+		fs.writeFileSync(
+			"./src/routes/detail-pages-routes.ts",
+			`export const detailPagesRoutes = ${JSON.stringify(processedRoutes, null, 2)};`,
+			"utf-8",
+		);
+	} catch (error) {
+		console.error("Error reading CSV file:", error);
+	}
 }
+
+generateContentAndRoutes();
 
 function findDistrict({
 	x,
