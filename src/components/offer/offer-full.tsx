@@ -17,7 +17,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 
-	const fullAddress = `${offer.provider}, ${offer.address}, ${offer.zip} ${offer.city}`;
+	const fullAddress = `${offer.provider}, ${offer.addressWithHouseNumber}, ${offer.cityWithZip}`;
 
 	return (
 		<div className="w-full">
@@ -81,10 +81,8 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				<h2 className="text-lg font-bold">{i18n["offer.location"]}</h2>
 				<div>
 					<p>{offer.provider}</p>
-					<p>{offer.address}</p>
-					<p>
-						{offer.zip} {offer.city}
-					</p>
+					<p>{offer.addressWithHouseNumber}</p>
+					<p>{offer.cityWithZip}</p>
 				</div>
 				<div className="flex flex-row items-center w-full">
 					<CopyToClipboardButton text={fullAddress} />

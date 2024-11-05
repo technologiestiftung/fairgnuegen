@@ -3,13 +3,68 @@ import slugify from "slugify";
 import { useI18n } from "./src/i18n/use-i18n";
 import { readFileSync } from "node:fs";
 import * as turf from "@turf/turf";
+import { translate } from "./generate-translations";
 
 const geojsonFilePath = "./geojson/bezirksgrenzen.geojson";
 const districtGeojson = JSON.parse(readFileSync(geojsonFilePath, "utf8"));
 
-const filePath = "./20240717_Berlinpass-Daten.csv";
-
 const existingPaths: string[] = [];
+
+if (!process.env.FREE_DB_USERNAME || process.env.FREE_DB_USERNAME === "") {
+	throw new Error("env FREE_DB_USERNAME must be defined");
+}
+
+if (!process.env.FREE_DB_PASSWORD || process.env.FREE_DB_PASSWORD === "") {
+	throw new Error("env FREE_DB_PASSWORD must be defined");
+}
+
+async function fetchData() {
+	const url = "https://www.berlin.de/freedb/open.php/index.json";
+	const username = process.env.FREE_DB_USERNAME;
+	const password = process.env.FREE_DB_PASSWORD;
+
+	const response = await fetch(url, {
+		headers: {
+			Authorization:
+				"Basic " + Buffer.from(username + ":" + password).toString("base64"),
+		},
+	});
+
+	if (!response.ok) {
+		throw new Error(`HTTP error! Status: ${response.status}`);
+	}
+
+	const jsonData = await response.json();
+	return jsonData.data.index;
+}
+
+function findDistrict({
+	x,
+	y,
+	provider,
+	originalDistrict,
+}: {
+	x: number;
+	y: number;
+	provider: string;
+	originalDistrict: string;
+}) {
+	for (const { properties, geometry } of districtGeojson.features) {
+		const point = turf.point([x, y]);
+		const polygon = turf.multiPolygon(geometry.coordinates);
+
+		const isOfferInDistrict = turf.booleanPointInPolygon(point, polygon);
+
+		if (isOfferInDistrict) {
+			return properties.Gemeinde_name;
+		}
+	}
+	/* eslint-disable-next-line no-console */
+	console.info(
+		`No district found for ${provider} ${x}, ${y} in ${originalDistrict}`,
+	);
+	return "";
+}
 
 const generateSlug = (input: string) =>
 	slugify(input, {
@@ -63,126 +118,141 @@ async function fetchGeoCoordinates(fullAddress: string) {
 
 async function generateContentAndRoutes() {
 	try {
-		const csvData = fs.readFileSync(filePath, "utf-8");
-		const data = csvData.split("\r\n").slice(1);
+		const data = await fetchData();
 
 		const processedContent: Record<string, object> = {};
 		const processedRoutes: { path: string; page: string }[] = [];
 
 		// Array to hold all promises from async operations
 		const promises = data.map(async (row) => {
-			const [
-				provider,
-				providerDescription,
-				offerDescription,
-				offerInformation,
+			const {
+				anbieter: provider,
+				kurzbeschreibung_des_anbieters: providerDescription,
+				kurzbeschreibung_des_angebots: offerDescription,
+				informationen_zum_angebot: offerInformation,
 				website,
-				address,
-				city,
-				zip,
+				strasse_und_hausnummer_des_angebots: addressWithHouseNumber,
+				plz_und_ort_des_angebots: cityWithZip,
 				_district,
-				isFree,
-				category,
-				targetGroups,
-				x,
-				y,
-				language,
-				identifierToBeSlugified,
-				authorised,
-			] = row.split(";");
+				gratis: isFree,
+				kategorie: category,
+				zielgruppen: targetGroups,
+				anbieter: identifierToBeSlugified,
+				freigabe: authorised,
+			} = row;
 
-			if (authorised.toLowerCase().trim() !== "ja") {
-				return;
-			}
+			// TODO: Enable this check
+			// if (authorised.toLowerCase().trim() !== "ja") {
+			// 	return;
+			// }
 
-			const { path, slug } = generatePath({
-				slug: identifierToBeSlugified,
-				language,
-			});
+			const languages = ["de", "en"];
 
-			const t = useI18n(language);
+			await Promise.all(
+				languages.map(async (language) => {
+					const { path, slug } = generatePath({
+						slug: identifierToBeSlugified,
+						language,
+					});
 
-			const breadcrumbs = [
-				{
-					href: "/",
-					label: t["home.title"],
-				},
-				{
-					href: `/all-offers/?category=${category.toLowerCase()}`,
-					label: category,
-				},
-				{
-					href: path,
-					label: provider,
-				},
-			];
+					const t = useI18n(language);
 
-			let latitude = y || "";
-			let longitude = x || "";
+					const breadcrumbs = [
+						{
+							href: "/",
+							label: t["home.title"],
+						},
+						{
+							href: `/all-offers/?category=${category.toLowerCase()}`,
+							label: category,
+						},
+						{
+							href: path,
+							label: provider,
+						},
+					];
 
-			/*
-			 * If no coordinates are provided, we use the address to fetch the coordinates.
-			 */
-			if (longitude === "" || latitude === "") {
-				if (address === "") {
-					console.info(
-						`Coordinates and address information missing for ${provider}`,
-					);
-					return;
-				}
+					if (addressWithHouseNumber === "") {
+						console.info(
+							`Coordinates and address information missing for ${provider}`,
+						);
+						return;
+					}
 
-				const formattedAddress = address.replace(/ /g, "+");
-				const formattedCity = city.replace(/ /g, "+");
-				const formattedZip = zip.replace(/ /g, "+");
+					const formattedAddress = addressWithHouseNumber.replace(/ /g, "+");
+					const formattedCity = cityWithZip.replace(/ /g, "+");
 
-				const fullAddress = `${formattedAddress}%2C+${formattedCity}%2C+${formattedZip}`;
+					const fullAddress = `${formattedAddress}%2C+${formattedCity}`;
 
-				const { lat, lon } = await fetchGeoCoordinates(fullAddress);
-				console.info("Fetched geo-coordinates:", lat, lon, "for", provider);
+					const { lat, lon } = await fetchGeoCoordinates(fullAddress);
+					console.info("Fetched geo-coordinates:", lat, lon, "for", provider);
 
-				latitude = lat;
-				longitude = lon;
-			}
+					const district = findDistrict({
+						x: Number(lon),
+						y: Number(lat),
+						provider,
+						originalDistrict: _district,
+					});
 
-			const district = findDistrict({
-				x: Number(longitude.replace(",", ".")),
-				y: Number(latitude.replace(",", ".")),
-				provider,
-				originalDistrict: _district,
-			});
+					// German content
+					const content = {
+						title: provider,
+						breadcrumbs,
+						offer: {
+							language: language,
+							path: path,
+							provider,
+							providerDescription,
+							offerDescription,
+							offerInformation,
+							website,
+							addressWithHouseNumber,
+							cityWithZip: cityWithZip,
+							district,
+							originalDistrict: _district,
+							isFree: isFree === "ja",
+							category,
+							targetGroups: targetGroups
+								.replaceAll("[", "")
+								.replaceAll("]", "")
+								.replaceAll('"', "")
+								.split(",")
+								.map((targetGroup) => targetGroup.trim()),
+							x: parseFloat(lon),
+							y: parseFloat(lat),
+							slug,
+						},
+					};
 
-			const content = {
-				title: provider,
-				breadcrumbs,
-				offer: {
-					language,
-					path: path,
-					provider,
-					providerDescription,
-					offerDescription,
-					offerInformation,
-					website,
-					address,
-					city,
-					zip: parseInt(zip),
-					district,
-					originalDistrict: _district,
-					isFree: isFree === "ja",
-					category,
-					targetGroups: targetGroups
-						.split(",")
-						.map((targetGroup) => targetGroup.trim()),
-					x: parseFloat(longitude.replace(",", ".")),
-					y: parseFloat(latitude.replace(",", ".")),
-					slug,
-				},
-			};
+					if (language === "en") {
+						const {
+							provider: translatedProvider,
+							providerDescription: translatedProviderDescription,
+							offerDescription: translatedOfferDescription,
+							offerInformation: translatedOfferInformation,
+						} = await translate(
+							JSON.stringify({
+								provider,
+								providerDescription,
+								offerDescription,
+								offerInformation,
+							}),
+						);
 
-			processedContent[path] = content;
-			processedRoutes.push({
-				path,
-				page: "./pages/all-offers/[offer]/index.tsx",
-			});
+						content.title = translatedProvider;
+						content.offer.provider = translatedProvider;
+						content.offer.providerDescription = translatedProviderDescription;
+						content.offer.offerDescription = translatedOfferDescription;
+						content.offer.offerInformation = translatedOfferInformation;
+					}
+
+					processedContent[path] = content;
+					processedRoutes.push({
+						path,
+						page: "./pages/all-offers/[offer]/index.tsx",
+					});
+				}),
+			);
 		});
 		// Wait for all promises to complete
 		await Promise.all(promises);
@@ -200,36 +270,8 @@ async function generateContentAndRoutes() {
 			"utf-8",
 		);
 	} catch (error) {
-		console.error("Error reading CSV file:", error);
+		console.error("Error processing data", error);
 	}
 }
 
 generateContentAndRoutes();
-
-function findDistrict({
-	x,
-	y,
-	provider,
-	originalDistrict,
-}: {
-	x: number;
-	y: number;
-	provider: string;
-	originalDistrict: string;
-}) {
-	for (const { properties, geometry } of districtGeojson.features) {
-		const point = turf.point([x, y]);
-		const polygon = turf.multiPolygon(geometry.coordinates);
-
-		const isOfferInDistrict = turf.booleanPointInPolygon(point, polygon);
-
-		if (isOfferInDistrict) {
-			return properties.Gemeinde_name;
-		}
-	}
-	/* eslint-disable-next-line no-console */
-	console.info(
-		`No district found for ${provider} ${x}, ${y} in ${originalDistrict}`,
-	);
-	return "";
-}

@@ -10,9 +10,8 @@ export type Offer = {
 	offerDescription: string;
 	offerInformation: string;
 	website: string;
-	address: string;
-	city: string;
-	zip: number | null;
+	addressWithHouseNumber: string;
+	cityWithZip: string;
 	district: string;
 	isFree: boolean;
 	category: string;
