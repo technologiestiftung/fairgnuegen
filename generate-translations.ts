@@ -8,7 +8,25 @@ if (!API_KEY || API_KEY === "") {
 	throw new Error("OPENAI_API_KEY must be defined");
 }
 
-const filePath = "./20240717_Berlinpass-Daten.csv";
+async function fetchData() {
+	const url = "https://www.berlin.de/freedb/open.php/index.json";
+	const username = process.env.FREE_DB_USERNAME;
+	const password = process.env.FREE_DB_PASSWORD;
+
+	const response = await fetch(url, {
+		headers: {
+			Authorization:
+				"Basic " + Buffer.from(username + ":" + password).toString("base64"),
+		},
+	});
+
+	if (!response.ok) {
+		throw new Error(`HTTP error! Status: ${response.status}`);
+	}
+
+	const jsonData = await response.json();
+	return jsonData.data.index;
+}
 
 async function translate(json: string): Promise<{
 	provider: string;
