@@ -2,7 +2,6 @@ import SearchBar from "../search-bar/search-bar";
 import FreeOffersCheckbox from "../checkbox/free-offers-checkbox";
 import { categoryMap } from "../../content/categories";
 import { CategoryHeroCard } from "../categories/category-hero-card";
-import ShowAllButton from "../buttons/show-all-button";
 import { InfoBox } from "../info-box/info-box";
 import { useI18n } from "../../i18n/use-i18n";
 import { useLanguage } from "../../hooks/use-language";
@@ -10,6 +9,7 @@ import { FeedbackForm } from "../feedback-form/feedback-form";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
 import LinkIcon from "../icons/link-icon";
 import { LogoBar } from "../logo-bar/logo-bar";
+import { ShowAllOffersTeaser } from "../sbow-all-offers-teaser/show-all-offers-teaser";
 
 export default function LazyHome() {
 	const language = useLanguage();
@@ -17,7 +17,8 @@ export default function LazyHome() {
 
 	return (
 		<>
-			<div className="max-w-[980px] flex flex-col mx-auto">
+			{/* upper section - intro, search, category cards */}
+			<div className="max-w-[980px] flex flex-col mx-auto mb-16">
 				{/* intro and search section */}
 				<div className="px-4 lg:px-0">
 					<h1 className="text-[27px] font-bold w-full flex flex-row justify-center my-7 text-center">
@@ -65,9 +66,17 @@ export default function LazyHome() {
 							/>
 						))}
 				</div>
-				<div className="w-full flex flex-row justify-end px-4 lg:px-0 mb-12">
-					<ShowAllButton />
+			</div>
+
+			{/* all offers teaser */}
+			<div className="w-full bg-berlin-grey-light py-4 md:py-0">
+				<div className="max-w-[980px] flex flex-col mx-auto">
+					<ShowAllOffersTeaser />
 				</div>
+			</div>
+
+			{/* lower section - feedback form, info box, logo bar */}
+			<div className="max-w-[980px] flex flex-col mx-auto">
 				<FeedbackForm />
 				<InfoBox maxWidth="max-w-[980px]"></InfoBox>
 				<LogoBar isLabelVisible={false} />

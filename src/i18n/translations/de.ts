@@ -6,6 +6,12 @@ const de = {
 	"home.linkEligible": "Bin ich berechtigt?",
 	"home.h2": "Was möchtest du unternehmen?",
 
+	"home.allOffersTeaser.title": "Alle Angebote auf einen Blick",
+	"home.allOffersTeaser.description.p1":
+		"Fairgnügen bietet über 400 Aktivitäten im Bereich Kultur, Sport, Bildung & Beratung und Freizeit.",
+	"home.allOffersTeaser.description.p2":
+		"Nutze kostenlose und ermäßigte Angebote und entdecke die Hauptstadt. Viel Spaß!",
+
 	"imprint.title": "Impressum",
 	"imprint.foundation.title": "Angaben zur Technologiestiftung Berlin",
 	"imprint.foundation.address":
@@ -62,7 +68,6 @@ const de = {
 	"targetAudience.family.label": "Familien",
 	"targetAudience.senior.label": "Senior:innen",
 
-	"button.showAllOffers": "Alle Angebote anzeigen",
 	"button.copyAddress": "Adresse kopieren",
 	"button.copyAddressCopied": "Die Adresse wurde kopiert!",
 	"button.copyLink": "Link kopieren",

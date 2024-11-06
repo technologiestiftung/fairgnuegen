@@ -8,6 +8,12 @@ const en: typeof de = {
 	"home.linkEligible": "Am I eligible?",
 	"home.h2": "What would you like to do?",
 
+	"home.allOffersTeaser.title": "All offers at a glance",
+	"home.allOffersTeaser.description.p1":
+		"Fair Fun has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
+	"home.allOffersTeaser.description.p2":
+		"Take advantage of free and discounted offers and discover the capital. Have fun!",
+
 	"imprint.title": "Imprint",
 	"imprint.foundation.title": "Information about Technologiestiftung Berlin",
 	"imprint.foundation.address":
@@ -65,7 +71,6 @@ const en: typeof de = {
 	"targetAudience.family.label": "Families",
 	"targetAudience.senior.label": "Seniors",
 
-	"button.showAllOffers": "Show all offers",
 	"button.copyAddress": "Copy address",
 	"button.copyAddressCopied": "The address was copied!",
 	"button.copyLink": "Copy link",

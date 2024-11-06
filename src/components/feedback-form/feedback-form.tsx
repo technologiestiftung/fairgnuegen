@@ -8,7 +8,7 @@ export const FeedbackForm: React.FC = () => {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 	return (
-		<div className="py-4 flex flex-col gap-5  px-4 lg:px-0 my-10">
+		<div className="py-4 flex flex-col gap-5  px-4 lg:px-0 mt-10 mb-5">
 			<h2 className="text-[22px] font-bold w-full flex flex-row justify-left">
 				{i18n["feedback.title"]}
 			</h2>
