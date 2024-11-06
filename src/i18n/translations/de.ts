@@ -88,6 +88,7 @@ const de = {
 	"categories.freizeit.description":
 		"Angebote fürs Kino, Restaurants, Bars und Aktivitäten an der freien Luft",
 
+	"feedback.title": "Feedback geben",
 	"feedback.hint":
 		"Wie gefällt dir Fairgnügen? Beantworte uns gerne ein paar Fragen.",
 	"feedback.link": "Feedback geben",

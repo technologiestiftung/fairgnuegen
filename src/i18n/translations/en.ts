@@ -91,6 +91,7 @@ const en: typeof de = {
 	"categories.freizeit.description":
 		"Offers for cinemas, restaurants, bars and outdoor activities",
 
+	"feedback.title": "Give Feedback",
 	"feedback.hint": "How do you like Fair Fun? Please answer a few questions.",
 	"feedback.link": "Give feedback",
 

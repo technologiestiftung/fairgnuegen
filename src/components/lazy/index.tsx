@@ -39,9 +39,9 @@ export default function LazyHome() {
 						</TrackedAnchorLink>
 					</p>
 
-					<h1 className="text-[22px] font-bold w-full flex flex-row justify-left mb-5">
+					<h2 className="text-[22px] font-bold w-full flex flex-row justify-left mb-5">
 						{i18n["home.h2"]}
-					</h1>
+					</h2>
 
 					<div className="flex flex-col gap-3 mb-5">
 						<SearchBar />
@@ -67,9 +67,9 @@ export default function LazyHome() {
 					<ShowAllButton />
 				</div>
 
+				<InfoBox showProviderHint={true} maxWidth="max-w-[800px]"></InfoBox>
 				<FeedbackForm />
 			</div>
-			<InfoBox showProviderHint={true} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }
