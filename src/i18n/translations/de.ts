@@ -117,19 +117,23 @@ const de = {
 	"aboutProject.logos.tsb.src": "/logos/tsb-de.svg",
 	"aboutProject.logos.tsb.label": "Ein Projekt der",
 	"aboutProject.logos.tsb.alt": "Logo der Technologiestiftung Berlin",
+	"aboutProject.logos.tsb.href": "https://www.technologiestiftung-berlin.de/",
 
 	"aboutProject.logos.citylab.src": "/logos/citylab-berlin.svg",
 	"aboutProject.logos.citylab.label": "Durchgeführt von",
 	"aboutProject.logos.citylab.alt": "Logo von CityLAB Berlin",
+	"aboutProject.logos.citylab.href": "https://citylab-berlin.org/",
 
 	"aboutProject.logos.senatskanzlei.src": "/logos/senatskanzlei-de.svg",
 	"aboutProject.logos.senatskanzlei.label": "Gefördert durch",
 	"aboutProject.logos.senatskanzlei.alt": "Logo der Senatskanzlei Berlin",
+	"aboutProject.logos.senatskanzlei.href": "https://www.berlin.de/",
 
 	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-de.png",
 	"aboutProject.logos.senasgiva.label": "In Kooperation mit",
 	"aboutProject.logos.senasgiva.alt":
 		"Logo der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung",
+	"aboutProject.logos.senasgiva.href": "https://www.berlin.de/sen/asgiva/",
 
 	"accessibilityStatement.title": "Erklärung zur Barrierefreiheit",
 	"accessibilityStatement.intro.p1": `Diese Barrierefreiheitserklärung (Stand: 31.10.2024) bezieht sich auf die Subdomain `,

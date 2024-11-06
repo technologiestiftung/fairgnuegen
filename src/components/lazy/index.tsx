@@ -9,6 +9,7 @@ import { useLanguage } from "../../hooks/use-language";
 import { FeedbackForm } from "../feedback-form/feedback-form";
 import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
 import LinkIcon from "../icons/link-icon";
+import { LogoBar } from "../logo-bar/logo-bar";
 
 export default function LazyHome() {
 	const language = useLanguage();
@@ -69,6 +70,7 @@ export default function LazyHome() {
 				</div>
 				<FeedbackForm />
 				<InfoBox maxWidth="max-w-[980px]"></InfoBox>
+				<LogoBar isLabelVisible={false} />
 			</div>
 		</>
 	);

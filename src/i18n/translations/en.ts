@@ -119,19 +119,24 @@ const en: typeof de = {
 	"aboutProject.logos.tsb.src": "/logos/tsb-en.svg",
 	"aboutProject.logos.tsb.label": "A project from",
 	"aboutProject.logos.tsb.alt": "Logo of the Technology Foundation Berlin",
+	"aboutProject.logos.tsb.href":
+		"https://www.technologiestiftung-berlin.de/en/",
 
 	"aboutProject.logos.citylab.src": "/logos/citylab-berlin.svg",
 	"aboutProject.logos.citylab.label": "Implemented by",
 	"aboutProject.logos.citylab.alt": "Logo of the CityLAB Berlin",
+	"aboutProject.logos.citylab.href": "https://citylab-berlin.org/en/start/",
 
 	"aboutProject.logos.senatskanzlei.src": "/logos/senatskanzlei-en.svg",
 	"aboutProject.logos.senatskanzlei.label": "Funded by",
 	"aboutProject.logos.senatskanzlei.alt":
 		"Logo of the Berlin Senate Chancellery",
+	"aboutProject.logos.senatskanzlei.href": "https://www.berlin.de/",
 
 	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-en.png",
 	"aboutProject.logos.senasgiva.label": "In cooperation with",
 	"aboutProject.logos.senasgiva.alt": "Logo of the SenASGIVA",
+	"aboutProject.logos.senasgiva.href": "https://www.berlin.de/sen/asgiva/",
 
 	"accessibilityStatement.title": "Accessibility Statement",
 	"accessibilityStatement.intro.p1":
