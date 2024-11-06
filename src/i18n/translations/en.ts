@@ -2,7 +2,11 @@ import de from "./de";
 
 const en: typeof de = {
 	"home.title": "Home",
-	"home.h1": "What would you like to do?",
+	"home.h1": "Welcome to Fair Fun!",
+	"home.p1":
+		"Discover plenty of free and discounted offers for sports, education and leisure - exclusively for Berliners who receive social benefits.",
+	"home.linkEligible": "Am I eligible?",
+	"home.h2": "What would you like to do?",
 
 	"imprint.title": "Imprint",
 	"imprint.foundation.title": "Information about Technologiestiftung Berlin",

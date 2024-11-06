@@ -1,6 +1,10 @@
 const de = {
 	"home.title": "Startseite",
-	"home.h1": "Was möchtest du unternehmen?",
+	"home.h1": "Willkommen bei Fairgnügen!",
+	"home.p1":
+		"Entdecke zahlreiche kostenlose und ermäßigte Angebote für Sport, Bildung und Freizeit - exklusiv für Berliner:innen, die Sozialhilfe erhalten.",
+	"home.linkEligible": "Bin ich berechtigt?",
+	"home.h2": "Was möchtest du unternehmen?",
 
 	"imprint.title": "Impressum",
 	"imprint.foundation.title": "Angaben zur Technologiestiftung Berlin",
