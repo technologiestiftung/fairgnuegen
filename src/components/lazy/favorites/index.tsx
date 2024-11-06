@@ -61,7 +61,6 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-[980px]"></InfoBox>
 		</>
 	);
 }
