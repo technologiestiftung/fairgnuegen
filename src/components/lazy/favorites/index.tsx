@@ -5,7 +5,6 @@ import { useLanguage } from "../../../hooks/use-language";
 import { useI18n } from "../../../i18n/use-i18n";
 import { useFavoritesStore } from "../../../store/favorites-store";
 import BackButton from "../../buttons/back-button";
-import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
 
 export default function Index() {

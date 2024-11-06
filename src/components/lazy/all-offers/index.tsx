@@ -11,7 +11,6 @@ import FilterButton from "../../buttons/filter-button";
 import ShowMapButton from "../../buttons/show-map-button";
 import { CategoryCard } from "../../categories/category-card";
 import FreeOffersCheckbox from "../../checkbox/free-offers-checkbox";
-import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
 import { ResponsivePicture } from "../../responsive-picture/responsive-picture";
 import SearchBar from "../../search-bar/search-bar";
