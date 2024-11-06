@@ -30,7 +30,7 @@ export default function AboutProject() {
 	];
 
 	return (
-		<div className="max-w-[800px] mx-auto pt-[3rem] pb-24 px-4">
+		<div className="max-w-[980px] mx-auto pt-[3rem] pb-24 px-4">
 			<h1 className="text-[27px] leading-[31px] font-bold mb-[1.3rem]">
 				{i18n["aboutProject.title"]}
 			</h1>

@@ -181,7 +181,7 @@ E-Mail: info(at)schlichtungsstelle-bgg.de`,
 	"accessibilityStatement.arbitration.p3": `Telefon: 030 185 272 805  
 Fax: 030 185 272 901 `,
 
-	discover: "entdecken",
+	discover: "Entdecken",
 	discoverOffers: "Angebote entdecken",
 	sort: "Sortieren",
 	moreInfo: "mehr Infos",

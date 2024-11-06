@@ -175,7 +175,7 @@ Mauerstraße 53
 	"accessibilityStatement.arbitration.p3":
 		"Phone: 030 185 272 805\nFax: 030 185 272 901",
 
-	discover: "discover",
+	discover: "Explore",
 	discoverOffers: "Discover offers",
 	sort: "Sort",
 	moreInfo: "more info",

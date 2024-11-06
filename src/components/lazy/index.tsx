@@ -16,7 +16,8 @@ export default function LazyHome() {
 
 	return (
 		<>
-			<div className="max-w-[800px] flex flex-col mx-auto">
+			<div className="max-w-[980px] flex flex-col mx-auto">
+				{/* intro and search section */}
 				<div className="px-4 lg:px-0">
 					<h1 className="text-[27px] font-bold w-full flex flex-row justify-center my-7 text-center">
 						{i18n["home.h1"]}
@@ -51,7 +52,8 @@ export default function LazyHome() {
 
 				<div className="w-full border-b border-separator mb-12 "></div>
 
-				<div className="w-full grid grid-cols-1 grid-rows-4 gap-x-8 gap-y-8 md:grid-cols-2 md:grid-rows-2 px-4 lg:px-0 lg:gap-x-16">
+				{/* category cards */}
+				<div className="w-full mb-12 flex flex-wrap md:flex-nowrap justify-between gap-y-16 sm:gap-x-3 md:gap-x-4 lg:gap-x-5 px-4 lg:px-0">
 					{Object.entries(categoryMap)
 						.filter(([, category]) => category.isRenderedInCategoryCards)
 						.map(([key, category]) => (
@@ -62,13 +64,11 @@ export default function LazyHome() {
 							/>
 						))}
 				</div>
-				<div className="w-full border-b border-separator mb-12 mt-12"></div>
 				<div className="w-full flex flex-row justify-end px-4 lg:px-0 mb-12">
 					<ShowAllButton />
 				</div>
-
-				<InfoBox showProviderHint={true} maxWidth="max-w-[800px]"></InfoBox>
 				<FeedbackForm />
+				<InfoBox showProviderHint={true} maxWidth="max-w-[980px]"></InfoBox>
 			</div>
 		</>
 	);
