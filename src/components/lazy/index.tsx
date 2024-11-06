@@ -68,7 +68,7 @@ export default function LazyHome() {
 					<ShowAllButton />
 				</div>
 				<FeedbackForm />
-				<InfoBox showProviderHint={true} maxWidth="max-w-[980px]"></InfoBox>
+				<InfoBox maxWidth="max-w-[980px]"></InfoBox>
 			</div>
 		</>
 	);

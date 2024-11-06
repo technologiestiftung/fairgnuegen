@@ -24,7 +24,7 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 
 	return (
 		<LocalizedTrackedAnchorLink
-			className="w-full sm:w-[49%] md:w-[24%] flex flex-col gap-6"
+			className="w-full sm:w-[49%] md:w-[24%] flex flex-col gap-4"
 			additionalTrackingContext="(category hero card)"
 			href={`/all-offers/?category=${identifier}`}
 		>
@@ -38,9 +38,9 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>
-
 				<p className="text-[11px] text-berlin-grey">© Unsplash</p>
 			</div>
+
 			<div className="flex flex-col justify-between">
 				<div className="text-[17px] font-bold mb-1.5">{localizedName}</div>
 				<p className="leading-6">{localizedDescription}</p>
