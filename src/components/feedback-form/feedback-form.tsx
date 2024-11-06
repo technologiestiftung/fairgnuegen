@@ -12,14 +12,14 @@ export const FeedbackForm: React.FC = () => {
 			<h2 className="text-[22px] font-bold w-full flex flex-row justify-left">
 				{i18n["feedback.title"]}
 			</h2>
-			<div className={`flex flex-row justify-start gap-1 `}>
+			<div className={`flex flex-col md:flex-row justify-start gap-1 `}>
 				<div>{i18n["feedback.hint"]}</div>
 				<div className="min-w-[30%]">
 					<TrackedAnchorLink
 						href={
 							"https://citylabberlin.typeform.com/to/kCdnCgvC?product_id=fairgnuegen"
 						}
-						className="text-link-blue flex flex-row items-center gap-1 hover:underline"
+						className="text-link-blue inline-flex gap-1 items-center hover:underline"
 						target="_blank"
 						rel="noreferrer"
 					>
