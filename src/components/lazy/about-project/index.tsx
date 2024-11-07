@@ -26,7 +26,7 @@ export default function AboutProject() {
 			<p className="mb-[1rem]">{i18n["aboutProject.p3"]}</p>
 			<p className="mb-[1rem]">{i18n["aboutProject.p4"]}</p>
 
-			<LogoBar isLabelVisible={true} />
+			<LogoBar />
 		</div>
 	);
 }

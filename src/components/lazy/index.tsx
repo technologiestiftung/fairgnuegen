@@ -79,7 +79,7 @@ export default function LazyHome() {
 			<div className="max-w-[980px] flex flex-col mx-auto">
 				<FeedbackForm />
 				<InfoBox maxWidth="max-w-[980px]"></InfoBox>
-				<LogoBar isLabelVisible={false} />
+				<LogoBar />
 			</div>
 		</>
 	);

@@ -3,11 +3,7 @@ import { TrackedAnchorLink } from "../anchor-link/tracked-anchor-link";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
 
-interface LogoBarProps {
-	isLabelVisible: boolean;
-}
-
-export const LogoBar: React.FC<LogoBarProps> = ({ isLabelVisible }) => {
+export const LogoBar: React.FC = () => {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 
@@ -40,12 +36,11 @@ export const LogoBar: React.FC<LogoBarProps> = ({ isLabelVisible }) => {
 
 	return (
 		<div
-			className={`w-full flex gap-10 md:flex-nowrap flex-wrap md:flex-row mt-10 mb-16  justify-start md:justify-between px-4 lg:px-0
-        ${isLabelVisible ? "items-start" : "items-center"}`}
+			className={`w-full flex gap-y-10 md:gap-x-5 lg:gap-x-10 flex-col md:flex-row mt-10 mb-16  justify-start md:justify-between px-4 lg:px-0 items-start`}
 		>
 			{logos.map(({ src, label, alt, href }) => (
 				<TrackedAnchorLink href={href} key={src} className="flex flex-col">
-					{isLabelVisible && <p className="text-left pb-5">{label}</p>}
+					<p className="text-left pb-5">{label}</p>
 					<img
 						src={`${src}`}
 						alt={alt}
