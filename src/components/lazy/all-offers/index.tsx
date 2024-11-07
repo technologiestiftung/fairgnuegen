@@ -94,12 +94,10 @@ export default function Index() {
 								: i18n["allOffers.discoverFurtherCategories"]}
 						</div>
 						<div
-							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-2 sm:grid-rows-2"}`}
+							className={`w-full grid gap-x-5 gap-y-10 grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2`}
 						>
 							{Object.entries(categoryMap)
-								.filter(
-									([key, c]) => c.isRenderedInCategoryCards && key !== category,
-								)
+								.filter(([key]) => key !== category)
 								.map(([key, c]) => (
 									<CategoryCard key={key} identifier={key} category={c} />
 								))}
