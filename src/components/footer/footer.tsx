@@ -1,10 +1,5 @@
-import { HandsIcon } from "../icons/hands-icon";
-import { EasyLanguageIcon } from "../icons/easy-language-icon";
-import { SquareArrowIcon } from "../icons/square-arrow-icon";
 import { ScrollToTopButton } from "../buttons/scroll-to-top-button";
 import { FooterLightColumn } from "./footer-light-column.tsx";
-import { useLanguage } from "../../hooks/use-language.tsx";
-import { useI18n } from "../../i18n/use-i18n.tsx";
 
 const upperFooterColumns = [
 	{
