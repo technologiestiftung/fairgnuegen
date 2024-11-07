@@ -38,8 +38,8 @@ export const InfoBox: React.FC<InfoBoxProps> = ({ maxWidth }) => {
 						</TrackedAnchorLink>
 						.
 					</div>
-					<div className="pointer-events-none row-start-1 col-start-1 w-[50%] border-t-4 border-b-4 border-l-4 border-berlin-pink"></div>
-					<div className="pointer-events-none row-start-1 col-start-1 ml-[50%] w-[50%] border-t-4 border-b-4 border-r-4 border-berlin-green"></div>
+					<div className="pointer-events-none row-start-1 col-start-1 w-[50%] border-t-4 border-b-4 border-l-4 border-berlin-green"></div>
+					<div className="pointer-events-none row-start-1 col-start-1 ml-[50%] w-[50%] border-t-4 border-b-4 border-r-4 border-berlin-pink"></div>
 				</div>
 			</div>
 		</div>
