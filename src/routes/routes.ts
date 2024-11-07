@@ -20,6 +20,22 @@ const baseRoutes: Route[] = [
 		path: "/map/",
 		page: "./pages/map/index.tsx",
 	},
+	{
+		path: "/imprint/",
+		page: "./pages/imprint/index.tsx",
+	},
+	{
+		path: "/privacy-note/",
+		page: "./pages/privacy-note/index.tsx",
+	},
+	{
+		path: "/about-project/",
+		page: "./pages/about-project/index.tsx",
+	},
+	{
+		path: "/accessibility-statement/",
+		page: "./pages/accessibility-statement/index.tsx",
+	},
 ];
 
 const i18nRoutes: Route[] = baseRoutes.map(({ path, page }) => ({

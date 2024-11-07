@@ -16,7 +16,7 @@ export default function LazyHome() {
 
 	return (
 		<>
-			<div className="max-w-4xl flex flex-col mx-auto">
+			<div className="max-w-[800px] flex flex-col mx-auto">
 				<div className="px-4 lg:px-0">
 					<h1 className="text-2xl font-bold w-full flex flex-row justify-center my-8 text-center">
 						{i18n["home.h1"]}
@@ -30,8 +30,8 @@ export default function LazyHome() {
 				<div className="w-full border-b border-separator mb-12 mt-2"></div>
 
 				<div className="flex flex-row w-full justify-between mb-10 px-4 lg:px-0">
-					<ShowMapButton></ShowMapButton>
 					<FilterButton></FilterButton>
+					<ShowMapButton></ShowMapButton>
 				</div>
 
 				<div className="w-full grid grid-cols-1 grid-rows-4 gap-x-8 gap-y-8 md:grid-cols-2 md:grid-rows-2 px-4 lg:px-0 lg:gap-x-16">
@@ -52,7 +52,7 @@ export default function LazyHome() {
 
 				<FeedbackForm />
 			</div>
-			<InfoBox showProviderHint={true} maxWidth="max-w-4xl"></InfoBox>
+			<InfoBox showProviderHint={true} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

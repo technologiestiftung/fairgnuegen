@@ -56,14 +56,23 @@ export const InfoBox: React.FC<InfoBoxProps> = ({
 						</div>
 
 						<div>
-							{i18n["infobox.providerHint"]}
-							<br />
+							{i18n["infobox.providerHint.part.1"]}
 							<TrackedAnchorLink
-								href="mailto:berechtigungsnachweis@jugendkulturservice.de"
+								href={
+									"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/angebote/neuer-eintrag/formular.1495570.php"
+								}
+								className="text-link-blue hover:underline"
+							>
+								{i18n["infobox.providerHint.formLinkLabel"]}
+							</TrackedAnchorLink>
+							{i18n["infobox.providerHint.part.2"]}
+							<TrackedAnchorLink
+								href="mailto:fairgnuegen@jugendkulturservice.de"
 								className="text-link-blue hover:underline"
 							>
 								{i18n["infobox.contact"]}
 							</TrackedAnchorLink>
+							.
 						</div>
 					</div>
 				</div>

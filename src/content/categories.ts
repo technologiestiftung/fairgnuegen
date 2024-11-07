@@ -23,7 +23,7 @@ export const categoryMap: CategoryMap = {
 		color: "bg-primary-blue",
 		textColor: undefined,
 		name: "Alle Angebote",
-		image: "",
+		image: "all",
 		i18nKey: "categories.all",
 		isRenderedInCategoryCards: false,
 	},

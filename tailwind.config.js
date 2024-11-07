@@ -25,6 +25,7 @@ export default {
 				"berlin-grey-dark": "#545454",
 				"berlin-grey-light": "#f5f5f5", // neutral-100
 				"berlin-grey-medium": "#d9d9d9",
+				"berlin-grey-hover": "#efefef",
 				"berlin-pink": "#F5B4CB", // fuchsia-300
 				"berlin-green": "#67B18D", // emerald-400
 				"berlin-light-green": "#E2F1EB",

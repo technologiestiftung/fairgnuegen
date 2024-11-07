@@ -1,11 +1,14 @@
-import React from "react";
 import { Collapsible } from "../collapsible/collapsible";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
 
 type FooterColumnProps = {
 	title: string;
-	links: { label: string; icon?: React.ReactNode; href: string }[];
+	links: {
+		label: string;
+		href: string;
+	}[];
 };
 
 export function FooterLightColumn({ title, links }: FooterColumnProps) {
@@ -20,13 +23,13 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 					<ul className="flex flex-col">
 						{links.map((link) => (
 							<li key={link.href}>
-								<a
+								<LocalizedTrackedAnchorLink
 									href={link.href}
+									additionalTrackingContext={"(footer)"}
 									className={`flex hover:underline pl-7 gap-x-1.5 py-4 ${title === "upperFooter.socialMedia" ? "flex-row" : "flex-row-reverse  justify-end"}`}
 								>
 									{i18n[link.label]}
-									{link.icon}
-								</a>
+								</LocalizedTrackedAnchorLink>
 							</li>
 						))}
 					</ul>
@@ -42,13 +45,13 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 					<ul className="flex flex-col gap-3.5 bg-inherit">
 						{links.map((link) => (
 							<li key={link.href}>
-								<a
+								<LocalizedTrackedAnchorLink
 									href={link.href}
+									additionalTrackingContext={"(footer)"}
 									className={`flex  hover:underline gap-1.5 ${title === "upperFooter.socialMedia" ? "flex-row" : "flex-row-reverse justify-end"}`}
 								>
 									{i18n[link.label]}
-									{link.icon}
-								</a>
+								</LocalizedTrackedAnchorLink>
 							</li>
 						))}
 					</ul>

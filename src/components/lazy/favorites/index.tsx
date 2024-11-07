@@ -5,7 +5,6 @@ import { useLanguage } from "../../../hooks/use-language";
 import { useI18n } from "../../../i18n/use-i18n";
 import { useFavoritesStore } from "../../../store/favorites-store";
 import BackButton from "../../buttons/back-button";
-import FilterButton from "../../buttons/filter-button";
 import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
 
@@ -41,19 +40,14 @@ export default function Index() {
 					{i18n["menuItem.favorites"]}
 				</div>
 
-				<div className="max-w-3xl mx-auto flex flex-col">
-					<div className="flex flex-row w-full justify-between mb-6 px-4 lg:px-0">
-						<FilterButton />
-					</div>
-
+				<div className="max-w-[800px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
 						<p className="text-md font-bold text-berlin-green">
 							{filteredOffers.length} {i18n["allOffers.offersFound"]}
 						</p>
 					</div>
 
-					<div className="w-full border-b border-separator mb-5"></div>
-					<div className="flex flex-col pt-4 mb-5">
+					<div className="flex flex-col mb-5 mx-4 lg:mx-0">
 						{filteredOffers.map((offer, idx) => (
 							<OfferDetail
 								isVisible={true}
@@ -67,7 +61,7 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-3xl"></InfoBox>
+			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

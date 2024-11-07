@@ -34,7 +34,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					/>
 					<span className="text-xs">© Bildcopyright</span>
 				</div>
-				<div className="w-full sm:w-[80%] sm:max-w-[80%] flex flex-col gap-4 mx-4 lg:mx-0">
+				<div className="w-full max-w-[800px] flex flex-col gap-4 mx-4 lg:mx-0">
 					<div className="hidden sm:flex flex-col gap-2">
 						<h1 className="font-bold text-2xl">{offer.provider}</h1>
 					</div>
@@ -58,7 +58,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					</div>
 					<a
 						href={offer.website}
-						className="text-link-blue flex flex-row items-start gap-1"
+						className="text-link-blue hover:underline flex flex-row items-start gap-1"
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -66,7 +66,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						<LinkIcon></LinkIcon>
 					</a>
 				</div>
-				<div className="hidden max-w-[20%] w-full sm:flex flex-row justify-center items-start gap-2">
+				<div className="hidden max-w-[20%] w-full sm:flex flex-row md:justify-end justify-center items-start gap-2">
 					<LikeButton offer={offer} />
 					<ShareButton offer={offer} />
 				</div>

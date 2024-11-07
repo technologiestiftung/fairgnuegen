@@ -130,6 +130,110 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
+	"/imprint/": {
+		title: "Impressum",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/imprint/",
+				label: "Impressum",
+			},
+		],
+	},
+	"/en/imprint/": {
+		title: "Imprint",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/imprint/",
+				label: "Imprint",
+			},
+		],
+	},
+	"/privacy-note/": {
+		title: "Datenschutzerklärung",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/privacy-note/",
+				label: "Datenschutzerklärung",
+			},
+		],
+	},
+	"/en/privacy-note/": {
+		title: "Privacy Note",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/privacy-note/",
+				label: "Privacy Note",
+			},
+		],
+	},
+	"/about-project/": {
+		title: "Über das Projekt",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/about-project/",
+				label: "Über das Projekt",
+			},
+		],
+	},
+	"/en/about-project/": {
+		title: "About the project",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/about-project/",
+				label: "Über das Projekt",
+			},
+		],
+	},
+	"/accessibility-statement/": {
+		title: "Erklärung zur Barrierefreiheit",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Startseite",
+			},
+			{
+				href: "/accessibility-statement/",
+				label: "Erklärung zur Barrierefreiheit",
+			},
+		],
+	},
+	"/en/accessibility-statement/": {
+		title: "Accessibility Statement",
+		breadcrumbs: [
+			{
+				href: "/",
+				label: "Home",
+			},
+			{
+				href: "/accessibility-statement/",
+				label: "Accessibility Statement",
+			},
+		],
+	},
 	...detailPagesContent,
 };
 

@@ -4,6 +4,8 @@ import { DrawerRight } from "../drawer/drawer-right";
 import CloseIcon from "../icons/close-icon";
 import { EasyLanguageIcon } from "../icons/easy-language-icon";
 import { HandsIcon } from "../icons/hands-icon";
+import { useLanguage } from "../../hooks/use-language";
+import { useI18n } from "../../i18n/use-i18n";
 
 interface AccessibilityMenuProps {
 	isOpen: boolean;
@@ -14,11 +16,16 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 	isOpen,
 	close,
 }) => {
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	return (
 		<DrawerRight isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col gap-4 px-6 py-4 text-base">
 				<div className="flex flex-row items-center justify-between  mb-6 mt-4">
-					<p className="text-2xl font-bold">Barrierefreiheit</p>
+					<p className="text-2xl font-bold">
+						{i18n["accessibilityMenu.title"]}
+					</p>
 					<button onClick={() => close()}>
 						<CloseIcon></CloseIcon>
 					</button>
@@ -32,7 +39,7 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 						target="_blank"
 						rel="noreferrer"
 					>
-						Leichte Sprache
+						{i18n["accessibilityMenu.easyLanguage"]}
 					</a>
 				</div>
 
@@ -44,26 +51,27 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 						target="_blank"
 						rel="noreferrer"
 					>
-						DGS
+						{i18n["accessibilityMenu.dgs"]}
 					</a>
 				</div>
 
 				<div>
-					<p className="font-bold">Wie barrierefrei ist diese Webseite?</p>
+					<p className="font-bold">
+						{i18n["accessibilityMenu.barrierefreiheit.question"]}
+					</p>
 					<a
 						href="https://www.berlin.de/wir-ueber-uns/8100503-4219174-erklaerung-zur-barrierefreiheit.html"
 						className="text-blue-600 hover:underline"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Erklärung zur Barrierefreiheit
+						{i18n["accessibilityMenu.barrierefreiheit"]}
 					</a>
 				</div>
 
 				<div>
 					<p className="font-bold">
-						Haben Sie Anmerkungen oder Fragen zur Barrierefreiheit dieser
-						Webseite?
+						{i18n["accessibilityMenu.contact.question"]}
 					</p>
 					<a
 						className="text-link-blue hover:underline"
@@ -71,14 +79,13 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 						target="_blank"
 						rel="noreferrer"
 					>
-						Kontakt zur Ansprechperson
+						{i18n["accessibilityMenu.contact"]}
 					</a>
 				</div>
 
 				<div>
 					<p className="font-bold">
-						Wo gibt es zusätzliche Informationen zur Barrierefreiheit im Land
-						Berlin?
+						{i18n["accessibilityMenu.additionalInfo.question"]}
 					</p>
 					<a
 						className="text-link-blue hover:underline"
@@ -86,7 +93,7 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 						target="_blank"
 						rel="noreferrer"
 					>
-						Barrierefreie Informations- und Kommunikationstechnik (IKT)
+						{i18n["accessibilityMenu.additionalInfo"]}
 					</a>
 				</div>
 			</div>
