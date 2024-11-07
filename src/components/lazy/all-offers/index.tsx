@@ -87,19 +87,17 @@ export default function Index() {
 						<BackButton title={i18n["returnToHome"]} />
 					</div>
 
-					<div className="my-8 mx-4 md:mx-2 lg:mx-0">
+					<div className="my-8 mx-4 md:mx-4 lg:mx-0">
 						<div className="text-xl font-bold my-6">
 							{!category || category === "all"
 								? i18n["allOffers.discoverCategories"]
 								: i18n["allOffers.discoverFurtherCategories"]}
 						</div>
 						<div
-							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-2 sm:grid-rows-2"}`}
+							className={`w-full grid  gap-x-5 gap-y-10 grid-cols-1 grid-rows-4 sm:grid-cols-4 sm:grid-rows-1`}
 						>
 							{Object.entries(categoryMap)
-								.filter(
-									([key, c]) => c.isRenderedInCategoryCards && key !== category,
-								)
+								.filter(([key]) => key !== category)
 								.map(([key, c]) => (
 									<CategoryCard key={key} identifier={key} category={c} />
 								))}
