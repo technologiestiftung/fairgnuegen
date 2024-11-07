@@ -9,7 +9,7 @@ export default function Imprint() {
 	return (
 		<Layout>
 			<Suspense fallback={<div className="w-svw h-svh" />}>
-				<div className="max-w-[800px] flex flex-col mx-auto px-4 lg:px-0">
+				<div className="max-w-[980px] flex flex-col mx-auto px-4 lg:px-0">
 					<h1 className="text-2xl font-bold w-full flex flex-row my-8">
 						{i18n["imprint.title"]}
 					</h1>

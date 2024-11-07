@@ -11,7 +11,6 @@ import FilterButton from "../../buttons/filter-button";
 import ShowMapButton from "../../buttons/show-map-button";
 import { CategoryCard } from "../../categories/category-card";
 import FreeOffersCheckbox from "../../checkbox/free-offers-checkbox";
-import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
 import { ResponsivePicture } from "../../responsive-picture/responsive-picture";
 import SearchBar from "../../search-bar/search-bar";
@@ -47,7 +46,7 @@ export default function Index() {
 						: i18n["allOffers.title"]}
 				</div>
 
-				<div className="max-w-[800px] mx-auto flex flex-col">
+				<div className="max-w-[980px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col gap-2 mb-10">
 							<SearchBar />
@@ -108,7 +107,6 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

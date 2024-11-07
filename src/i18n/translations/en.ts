@@ -2,7 +2,17 @@ import de from "./de";
 
 const en: typeof de = {
 	"home.title": "Home",
-	"home.h1": "What would you like to do?",
+	"home.h1": "Welcome to Fair Fun!",
+	"home.p1":
+		"Discover plenty of free and discounted offers for sports, education and leisure - exclusively for Berliners who receive social benefits.",
+	"home.linkEligible": "Am I eligible?",
+	"home.h2": "What would you like to do?",
+
+	"home.allOffersTeaser.title": "All offers at a glance",
+	"home.allOffersTeaser.description.p1":
+		"Fair Fun has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
+	"home.allOffersTeaser.description.p2":
+		"Take advantage of free and discounted offers and discover the capital. Have fun!",
 
 	"imprint.title": "Imprint",
 	"imprint.foundation.title": "Information about Technologiestiftung Berlin",
@@ -61,7 +71,6 @@ const en: typeof de = {
 	"targetAudience.family.label": "Families",
 	"targetAudience.senior.label": "Seniors",
 
-	"button.showAllOffers": "Show all offers",
 	"button.copyAddress": "Copy address",
 	"button.copyAddressCopied": "The address was copied!",
 	"button.copyLink": "Copy link",
@@ -87,6 +96,7 @@ const en: typeof de = {
 	"categories.freizeit.description":
 		"Offers for cinemas, restaurants, bars and outdoor activities",
 
+	"feedback.title": "Give Feedback",
 	"feedback.hint": "How do you like Fair Fun? Please answer a few questions.",
 	"feedback.link": "Give feedback",
 
@@ -114,19 +124,24 @@ const en: typeof de = {
 	"aboutProject.logos.tsb.src": "/logos/tsb-en.svg",
 	"aboutProject.logos.tsb.label": "A project from",
 	"aboutProject.logos.tsb.alt": "Logo of the Technology Foundation Berlin",
+	"aboutProject.logos.tsb.href":
+		"https://www.technologiestiftung-berlin.de/en/",
 
 	"aboutProject.logos.citylab.src": "/logos/citylab-berlin.svg",
 	"aboutProject.logos.citylab.label": "Implemented by",
 	"aboutProject.logos.citylab.alt": "Logo of the CityLAB Berlin",
+	"aboutProject.logos.citylab.href": "https://citylab-berlin.org/en/start/",
 
 	"aboutProject.logos.senatskanzlei.src": "/logos/senatskanzlei-en.svg",
 	"aboutProject.logos.senatskanzlei.label": "Funded by",
 	"aboutProject.logos.senatskanzlei.alt":
 		"Logo of the Berlin Senate Chancellery",
+	"aboutProject.logos.senatskanzlei.href": "https://www.berlin.de/",
 
 	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-en.png",
 	"aboutProject.logos.senasgiva.label": "In cooperation with",
 	"aboutProject.logos.senasgiva.alt": "Logo of the SenASGIVA",
+	"aboutProject.logos.senasgiva.href": "https://www.berlin.de/sen/asgiva/",
 
 	"accessibilityStatement.title": "Accessibility Statement",
 	"accessibilityStatement.intro.p1":
@@ -170,7 +185,7 @@ Mauerstraße 53
 	"accessibilityStatement.arbitration.p3":
 		"Phone: 030 185 272 805\nFax: 030 185 272 901",
 
-	discover: "discover",
+	discover: "Explore",
 	discoverOffers: "Discover offers",
 	sort: "Sort",
 	moreInfo: "more info",

@@ -34,7 +34,7 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					/>
 					<span className="text-xs">© Bildcopyright</span>
 				</div>
-				<div className="w-full max-w-[800px] flex flex-col gap-4 mx-4 lg:mx-0">
+				<div className="w-full max-w-[980px] flex flex-col gap-4 mx-4 lg:mx-0">
 					<div className="hidden sm:flex flex-col gap-2">
 						<h1 className="font-bold text-2xl">{offer.provider}</h1>
 					</div>

@@ -1,6 +1,16 @@
 const de = {
 	"home.title": "Startseite",
-	"home.h1": "Was möchtest du unternehmen?",
+	"home.h1": "Willkommen bei Fairgnügen!",
+	"home.p1":
+		"Entdecke zahlreiche kostenlose und ermäßigte Angebote für Sport, Bildung und Freizeit - exklusiv für Berliner:innen, die Sozialhilfe erhalten.",
+	"home.linkEligible": "Bin ich berechtigt?",
+	"home.h2": "Was möchtest du unternehmen?",
+
+	"home.allOffersTeaser.title": "Alle Angebote auf einen Blick",
+	"home.allOffersTeaser.description.p1":
+		"Fairgnügen bietet über 400 Aktivitäten im Bereich Kultur, Sport, Bildung & Beratung und Freizeit.",
+	"home.allOffersTeaser.description.p2":
+		"Nutze kostenlose und ermäßigte Angebote und entdecke die Hauptstadt. Viel Spaß!",
 
 	"imprint.title": "Impressum",
 	"imprint.foundation.title": "Angaben zur Technologiestiftung Berlin",
@@ -58,7 +68,6 @@ const de = {
 	"targetAudience.family.label": "Familien",
 	"targetAudience.senior.label": "Senior:innen",
 
-	"button.showAllOffers": "Alle Angebote anzeigen",
 	"button.copyAddress": "Adresse kopieren",
 	"button.copyAddressCopied": "Die Adresse wurde kopiert!",
 	"button.copyLink": "Link kopieren",
@@ -84,6 +93,7 @@ const de = {
 	"categories.freizeit.description":
 		"Angebote fürs Kino, Restaurants, Bars und Aktivitäten an der freien Luft",
 
+	"feedback.title": "Feedback geben",
 	"feedback.hint":
 		"Wie gefällt dir Fairgnügen? Beantworte uns gerne ein paar Fragen.",
 	"feedback.link": "Feedback geben",
@@ -112,19 +122,23 @@ const de = {
 	"aboutProject.logos.tsb.src": "/logos/tsb-de.svg",
 	"aboutProject.logos.tsb.label": "Ein Projekt der",
 	"aboutProject.logos.tsb.alt": "Logo der Technologiestiftung Berlin",
+	"aboutProject.logos.tsb.href": "https://www.technologiestiftung-berlin.de/",
 
 	"aboutProject.logos.citylab.src": "/logos/citylab-berlin.svg",
 	"aboutProject.logos.citylab.label": "Durchgeführt von",
 	"aboutProject.logos.citylab.alt": "Logo von CityLAB Berlin",
+	"aboutProject.logos.citylab.href": "https://citylab-berlin.org/",
 
 	"aboutProject.logos.senatskanzlei.src": "/logos/senatskanzlei-de.svg",
 	"aboutProject.logos.senatskanzlei.label": "Gefördert durch",
 	"aboutProject.logos.senatskanzlei.alt": "Logo der Senatskanzlei Berlin",
+	"aboutProject.logos.senatskanzlei.href": "https://www.berlin.de/",
 
 	"aboutProject.logos.senasgiva.src": "/logos/senasgiva-de.png",
 	"aboutProject.logos.senasgiva.label": "In Kooperation mit",
 	"aboutProject.logos.senasgiva.alt":
 		"Logo der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung",
+	"aboutProject.logos.senasgiva.href": "https://www.berlin.de/sen/asgiva/",
 
 	"accessibilityStatement.title": "Erklärung zur Barrierefreiheit",
 	"accessibilityStatement.intro.p1": `Diese Barrierefreiheitserklärung (Stand: 31.10.2024) bezieht sich auf die Subdomain `,
@@ -176,7 +190,7 @@ E-Mail: info(at)schlichtungsstelle-bgg.de`,
 	"accessibilityStatement.arbitration.p3": `Telefon: 030 185 272 805  
 Fax: 030 185 272 901 `,
 
-	discover: "entdecken",
+	discover: "Entdecken",
 	discoverOffers: "Angebote entdecken",
 	sort: "Sortieren",
 	moreInfo: "mehr Infos",
