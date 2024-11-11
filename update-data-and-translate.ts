@@ -1,6 +1,6 @@
+import { fetchDataAndAugment } from "./fetch-and-augment-data-from-api";
 import { Offer } from "./src/content/content";
 import fs from "fs";
-import { fetchDataAndAugment } from "./fetch-data-from-api";
 
 const API_KEY = process.env.OPENAI_API_KEY;
 const TARGET_LANGUAGE = "en";
@@ -135,7 +135,7 @@ async function generateTranslations() {
 		};
 
 		combinedData.push(translatedEntry);
-		fs.writeFileSync("test.json", JSON.stringify(combinedData), {
+		fs.writeFileSync(filePath, JSON.stringify(combinedData), {
 			flush: true,
 		});
 	}
