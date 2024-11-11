@@ -114,7 +114,7 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 				gratis,
 				kategorie,
 				zielgruppen,
-				// freigabe,
+				freigabe,
 			} = row;
 
 			const fullAddress = `${strasse_und_hausnummer_des_angebots}, ${plz_und_ort_des_angebots}`;
@@ -122,7 +122,7 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 			const { lat, lon } = await fetchGeoCoordinates(fullAddress);
 			const district = findDistrict({ x: lon, y: lat, provider: anbieter });
 
-			const isAccepted = true; //freigabe.toLowerCase().includes("ja");
+			const isAccepted = freigabe.toLowerCase().includes("ja");
 
 			if (lat !== "" && lon !== "" && district !== "" && isAccepted) {
 				const augmentedRow = {
