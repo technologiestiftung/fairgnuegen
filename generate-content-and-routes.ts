@@ -38,24 +38,23 @@ try {
 	const processedRoutes: { path: string; page: string }[] = [];
 
 	jsonData.forEach((row) => {
-		const [
+		const {
 			provider,
 			providerDescription,
 			offerDescription,
 			offerInformation,
 			website,
-			address,
-			city,
-			zip,
+			addressWithHouseNumber,
+			cityWithZip,
 			district,
 			isFree,
 			category,
 			targetGroups,
-			x,
-			y,
+			lat,
+			lng,
 			language,
-			identifierToBeSlugified,
-		] = row;
+			slug: identifierToBeSlugified,
+		} = row;
 
 		const { path, slug } = generatePath({
 			slug: identifierToBeSlugified,
@@ -90,17 +89,16 @@ try {
 				offerDescription,
 				offerInformation,
 				website,
-				address,
-				city,
-				zip: parseInt(zip),
+				addressWithHouseNumber,
+				cityWithZip,
 				district,
 				isFree: isFree === "ja",
 				category,
 				targetGroups: targetGroups
 					.split(",")
 					.map((targetGroup) => targetGroup.trim()),
-				x: parseFloat(x.replace(",", ".")),
-				y: parseFloat(y.replace(",", ".")),
+				x: parseFloat(lat.replace(",", ".")),
+				y: parseFloat(lng.replace(",", ".")),
 				slug,
 			},
 		};

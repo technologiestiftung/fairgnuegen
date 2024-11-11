@@ -8,7 +8,7 @@
 		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint \"src/**/*\"",
 		"prettier": "prettier --write .",
 		"prettier:ci": "prettier --check .",
-		"build:translations": "tsx generate-translations.ts",
+		"build:update-data-and-translate": "tsx update-data-and-translate.ts",
 		"build:content": "tsx generate-content-and-routes.ts && npx prettier --config prettier.config.js --write src/content/detail-pages-content.ts src/routes/detail-pages-routes.ts",
 		"build:data": "tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/detail-pages-routes.ts src/content/detail-pages-content.ts && tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/routes.ts src/content/content.ts",
 		"build:csr": "tsc -b && vite build",
