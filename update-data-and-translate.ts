@@ -1,6 +1,6 @@
 import { Offer } from "./src/content/content";
 import fs from "fs";
-import { fetchData } from "./pull-data-from-api";
+import { fetchDataAndAugment } from "./fetch-data-from-api";
 
 const API_KEY = process.env.OPENAI_API_KEY;
 const TARGET_LANGUAGE = "en";
@@ -62,8 +62,8 @@ function hasTranslation({
 
 async function generateTranslations() {
 	const existingData: Offer[] = JSON.parse(fs.readFileSync(filePath, "utf8"));
-	const apiData = await fetchData();
-	const combinedData: Offer[] = existingData;
+	const apiData = await fetchDataAndAugment();
+	const combinedData: Offer[] = JSON.parse(JSON.stringify(existingData));
 
 	for (const [index, row] of apiData.entries()) {
 		console.log(`Processing row ${index + 1} of ${apiData.length}`);
@@ -88,8 +88,8 @@ async function generateTranslations() {
 			offerDescription,
 			offerInformation,
 			website,
-			address,
-			zipCodeAndCity,
+			addressWithHouseNumber,
+			cityWithZip,
 			district,
 			isFree,
 			category,
@@ -121,8 +121,8 @@ async function generateTranslations() {
 			offerDescription: translatedOfferDescription,
 			offerInformation: translatedOfferInformation,
 			website,
-			address,
-			zipCodeAndCity,
+			addressWithHouseNumber,
+			cityWithZip,
 			district,
 			isFree,
 			category,
@@ -135,12 +135,10 @@ async function generateTranslations() {
 		};
 
 		combinedData.push(translatedEntry);
-		// fs.writeFileSync(filePath, combinedData.join("\r\n"), { flush: true });
+		fs.writeFileSync("test.json", JSON.stringify(combinedData), {
+			flush: true,
+		});
 	}
-
-	console.log(
-		`done! existingData: ${existingData.length}, combinedData: ${combinedData.length}, apiData: ${apiData.length}`,
-	);
 }
 
 generateTranslations().catch(console.error);
