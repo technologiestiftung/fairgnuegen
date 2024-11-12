@@ -90,6 +90,7 @@ const en: typeof de = {
 	"categories.sport.description":
 		"Offers to stay physically fit or to celebrate sports",
 	"categories.bildung_beratung.name": "Education & counseling",
+	"categories.bildung_beratung.name_short": "Education",
 	"categories.bildung_beratung.description":
 		"Further education and counseling services",
 	"categories.freizeit.name": "Leisure",

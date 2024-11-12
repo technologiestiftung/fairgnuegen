@@ -87,6 +87,7 @@ const de = {
 	"categories.sport.description":
 		"Angebote um körperlich fit zu bleiben oder den Sport zu feiern",
 	"categories.bildung_beratung.name": "Bildung & Beratung",
+	"categories.bildung_beratung.name_short": "Bildung",
 	"categories.bildung_beratung.description":
 		"Weiterbildungs- und Beratungsangebote",
 	"categories.freizeit.name": "Freizeit",
