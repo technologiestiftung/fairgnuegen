@@ -14,6 +14,7 @@ export function useMap() {
 			style: "/map_style.json",
 			center: [13.404954, 52.520008],
 			zoom: 11,
+			attributionControl: false,
 		});
 
 		initMap.on("load", async () => {
