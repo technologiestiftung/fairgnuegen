@@ -1,4 +1,4 @@
-import maplibregl from "maplibre-gl";
+import maplibregl, { AttributionControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
 import { useFilteredAndSortedOffers } from "./use-filtered-and-sorted-offers";
@@ -15,7 +15,12 @@ export function useMap() {
 			center: [13.404954, 52.520008],
 			zoom: 11,
 			attributionControl: false,
-		});
+		}).addControl(
+			new AttributionControl({
+				compact: false,
+			}),
+			"top-right",
+		);
 
 		initMap.on("load", async () => {
 			const markers = [
