@@ -7,6 +7,9 @@ export function useMap() {
 	const [isMapLoading, setIsMapLoading] = useState(true);
 	const { filteredAndSortedOffersAsGeojson } = useFilteredAndSortedOffers();
 	const mapRef = useRef<maplibregl.Map | null>(null);
+	const attributionControlOptions = new AttributionControl({
+		compact: false,
+	});
 
 	useEffect(() => {
 		const initMap = new maplibregl.Map({
@@ -15,12 +18,7 @@ export function useMap() {
 			center: [13.404954, 52.520008],
 			zoom: 11,
 			attributionControl: false,
-		}).addControl(
-			new AttributionControl({
-				compact: false,
-			}),
-			"top-right",
-		);
+		}).addControl(attributionControlOptions, "top-right");
 
 		initMap.on("load", async () => {
 			const markers = [
