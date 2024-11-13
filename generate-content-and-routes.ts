@@ -75,7 +75,7 @@ try {
 			},
 			{
 				href: `/all-offers/?category=${cleanedCategory.toLowerCase()}`,
-				label: category,
+				label: t[`categories.${cleanedCategory.toLowerCase()}.name`],
 			},
 			{
 				href: path,
