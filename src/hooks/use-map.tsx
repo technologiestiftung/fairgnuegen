@@ -1,4 +1,4 @@
-import maplibregl, { AttributionControl } from "maplibre-gl";
+import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
 import { useFilteredAndSortedOffers } from "./use-filtered-and-sorted-offers";
@@ -7,9 +7,6 @@ export function useMap() {
 	const [isMapLoading, setIsMapLoading] = useState(true);
 	const { filteredAndSortedOffersAsGeojson } = useFilteredAndSortedOffers();
 	const mapRef = useRef<maplibregl.Map | null>(null);
-	const attributionControlOptions = new AttributionControl({
-		compact: false,
-	});
 
 	useEffect(() => {
 		const initMap = new maplibregl.Map({
@@ -18,7 +15,12 @@ export function useMap() {
 			center: [13.404954, 52.520008],
 			zoom: 11,
 			attributionControl: false,
-		}).addControl(attributionControlOptions, "top-right");
+		}).addControl(
+			new maplibregl.AttributionControl({
+				compact: false,
+			}),
+			"top-right",
+		);
 
 		initMap.on("load", async () => {
 			const markers = [
