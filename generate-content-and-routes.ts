@@ -65,13 +65,16 @@ try {
 
 		const t = useI18n(language);
 
+		const cleanedCategory =
+			category === "Bildung & Beratung" ? "bildung_beratung" : category;
+
 		const breadcrumbs = [
 			{
 				href: "/",
 				label: t["home.title"],
 			},
 			{
-				href: `/all-offers/?category=${category.toLowerCase()}`,
+				href: `/all-offers/?category=${cleanedCategory.toLowerCase()}`,
 				label: category,
 			},
 			{
