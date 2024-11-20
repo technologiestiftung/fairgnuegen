@@ -97,7 +97,12 @@ export default function Index() {
 							className={`w-full grid  gap-x-5 gap-y-10 grid-cols-1 grid-rows-4 sm:grid-cols-4 sm:grid-rows-1`}
 						>
 							{Object.entries(categoryMap)
-								.filter(([key]) => key !== category)
+								.filter(([key]) => {
+									if (!category || category === "all") {
+										return key !== "all";
+									}
+									return key !== category;
+								})
 								.map(([key, c]) => (
 									<CategoryCard key={key} identifier={key} category={c} />
 								))}

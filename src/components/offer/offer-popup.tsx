@@ -31,6 +31,9 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 				<div className="w-full flex flex-col gap-4 px-4">
 					<div className="w-full flex flex-row justify-between gap-4">
 						<div className="h-fit flex flex-col gap-2">
+							<h3 className="font-bold text-xl flex flex-row items-center h-full">
+								{offer.provider}
+							</h3>
 							<div className="w-fit flex flex-row items-center gap-2">
 								<Pill
 									title={offer.category}
@@ -45,9 +48,6 @@ const OfferPopup: React.FC<OfferPopupProps> = ({ offer }) => {
 									</div>
 								)}
 							</div>
-							<h1 className="font-bold text-xl flex flex-row items-center h-full">
-								{offer.provider}
-							</h1>
 						</div>
 						<div className="min-w-[43px] flex justify-center">
 							<LikeButton offer={offer} />
