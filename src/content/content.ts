@@ -204,7 +204,7 @@ export const content: Record<string, Content> = {
 			},
 			{
 				href: "/about-project/",
-				label: "Über das Projekt",
+				label: "About the project",
 			},
 		],
 	},
