@@ -36,11 +36,11 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				</div>
 				<div className="w-full max-w-[980px] flex flex-col gap-4 mx-4 lg:mx-0">
 					<div className="hidden sm:flex flex-col gap-2">
-						<h1 className="font-bold text-2xl">{offer.provider}</h1>
+						<h3 className="font-bold text-2xl">{offer.provider}</h3>
 					</div>
 					<div className="flex flex-row gap-2 justify-between sm:hidden">
 						<div className="flex flex-col gap-2">
-							<h1 className="font-bold text-2xl ">{offer.provider}</h1>
+							<h3 className="font-bold text-2xl ">{offer.provider}</h3>
 							<OfferTags offer={offer} />
 						</div>
 						<div className="flex flex-col gap-2">
