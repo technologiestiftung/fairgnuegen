@@ -37,25 +37,23 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 			</div>
 
 			{/* Desktop */}
-			<div>
-				<div className="hidden desktop:flex flex-col gap-3.5">
-					<div className="font-bold flex justify-between items-center">
-						<span>{i18n[title]}</span>
-					</div>
-					<ul className="flex flex-col gap-3.5 bg-inherit">
-						{links.map((link) => (
-							<li key={link.href}>
-								<LocalizedTrackedAnchorLink
-									href={link.href}
-									additionalTrackingContext={"(footer)"}
-									className={`flex  hover:underline gap-1.5 ${title === "upperFooter.socialMedia" ? "flex-row" : "flex-row-reverse justify-end"}`}
-								>
-									{i18n[link.label]}
-								</LocalizedTrackedAnchorLink>
-							</li>
-						))}
-					</ul>
+			<div className="hidden desktop:flex flex-col gap-3.5 min-w-[12svw] ml-[3svw]">
+				<div className="font-bold flex justify-between items-center">
+					<span>{i18n[title]}</span>
 				</div>
+				<ul className="flex flex-col gap-2.5 bg-inherit">
+					{links.map((link) => (
+						<li key={link.href}>
+							<LocalizedTrackedAnchorLink
+								href={link.href}
+								additionalTrackingContext={"(footer)"}
+								className={`flex  hover:underline gap-1.5 ${title === "upperFooter.socialMedia" ? "flex-row" : "flex-row-reverse justify-end"}`}
+							>
+								{i18n[link.label]}
+							</LocalizedTrackedAnchorLink>
+						</li>
+					))}
+				</ul>
 			</div>
 		</>
 	);
