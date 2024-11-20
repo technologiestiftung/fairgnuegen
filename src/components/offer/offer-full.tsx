@@ -90,7 +90,6 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					<CopyToClipboardButton text={fullAddress} />
 				</div>
 			</div>
-			<div className="border-b-2 border-[#dddddd] w-full"></div>
 		</div>
 	);
 };
