@@ -83,7 +83,7 @@ export default function Index() {
 							/>
 						))}
 					</div>
-					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
+					<div className="px-4 lg:px-0 pt-4 flex w-full justify-start">
 						<BackButton title={i18n["returnToHome"]} />
 					</div>
 
