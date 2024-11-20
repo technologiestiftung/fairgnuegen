@@ -57,8 +57,8 @@ const upperFooterColumns = [
 export function Footer() {
 	return (
 		<div>
-			<div className="flex items-start justify-between w-full bg-berlin-grey-light desktop:p-6">
-				<div className="flex flex-col desktop:flex-row w-full desktop:gap-x-10 desktop:pl-28">
+			<div className="flex items-start justify-between w-full bg-berlin-grey-light desktop:p-6 ">
+				<div className="flex flex-col desktop:flex-row w-full gap-x-10 desktop:ml-[5%] desktop:pl-[3%]">
 					<div className="desktop:hidden self-end">
 						<ScrollToTopButton />
 					</div>

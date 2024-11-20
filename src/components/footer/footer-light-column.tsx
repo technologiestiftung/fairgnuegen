@@ -40,7 +40,7 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 			<div>
 				<div className="hidden desktop:flex flex-col gap-3.5">
 					<div className="font-bold flex justify-between items-center">
-						<span className="text-lg">{i18n[title]}</span>
+						<span>{i18n[title]}</span>
 					</div>
 					<ul className="flex flex-col gap-3.5 bg-inherit">
 						{links.map((link) => (
