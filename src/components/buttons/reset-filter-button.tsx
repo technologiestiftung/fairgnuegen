@@ -10,16 +10,12 @@ const ResetFilterButton: React.FC<ResetFilterButtonProps> = ({ onClick }) => {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 	return (
-		<div className="">
-			<button
-				className="px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black h-[43px]"
-				onClick={onClick}
-			>
-				<div className="flex flex-row gap-1 items-center">
-					{i18n["filter.reset"]}
-				</div>
-			</button>
-		</div>
+		<button
+			className="text-link-blue flex justify-center items-center w-fit h-[43px] hover:underline"
+			onClick={onClick}
+		>
+			<div className=""> {i18n["filter.reset"]}</div>
+		</button>
 	);
 };
 

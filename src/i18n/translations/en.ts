@@ -95,8 +95,6 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"searchbar.placeholder": "Enter search term",
 
 	"accessibilityMenu.title": "Accessibility",
-	"accessibilityMenu.easyLanguage": "Easy Language",
-	"accessibilityMenu.dgs": "DGS",
 	"accessibilityMenu.barrierefreiheit.question":
 		"How accessible is this website?",
 	"accessibilityMenu.barrierefreiheit": "Accessibility statement",
@@ -114,7 +112,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"filter.targetAudience": "Who is this offer for?",
 	"filter.category": "What interests you?",
 	"filter.district": "Where are you looking for offers?",
-	"filter.reset": "Reset all filters",
+	"filter.reset": "Reset filters",
 	"filter.intro": "Filter offers by target audience, interest and district.",
 	"filter.showOffers": "Show offers",
 
@@ -175,7 +173,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 		"This project was implemented by CityLAB Berlin in cooperation with the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination.",
 
 	"aboutProject.logos.tsb.src": "/logos/tsb-en.svg",
-	"aboutProject.logos.tsb.label": "A project from",
+	"aboutProject.logos.tsb.label": "A project of",
 	"aboutProject.logos.tsb.alt": "Logo of the Technology Foundation Berlin",
 	"aboutProject.logos.tsb.href":
 		"https://www.technologiestiftung-berlin.de/en/",

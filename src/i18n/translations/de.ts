@@ -195,8 +195,6 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"searchbar.placeholder": "Suchbegriff eingeben",
 
 	"accessibilityMenu.title": "Barrierefreiheit",
-	"accessibilityMenu.easyLanguage": "Leichte Sprache",
-	"accessibilityMenu.dgs": "DGS",
 	"accessibilityMenu.barrierefreiheit.question":
 		"Wie barrierefrei ist diese Webseite?",
 	"accessibilityMenu.barrierefreiheit": "Erklärung zur Barrierefreiheit",
@@ -213,7 +211,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"filter.targetAudience": "Für wen ist das Angebot?",
 	"filter.category": "Was interessiert dich?",
 	"filter.district": "Wo suchst du Angebote?",
-	"filter.reset": "Alle Filter zurücksetzen",
+	"filter.reset": "Filter zurücksetzen",
 	"filter.intro": "Filtere Angebote nach Zielgruppe, Interesse und Bezirk.",
 	"filter.showOffers": "Angebote zeigen",
 
