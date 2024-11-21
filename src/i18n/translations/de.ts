@@ -76,6 +76,44 @@ Tel.: (030) 9028-0
 
 E-Mail: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)`,
 
+	"privacy-note": `
+# Datenschutzerklärung
+
+1. Verantwortliche/r
+
+Verantwortliche/r im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze der Mitgliedsstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist:
+
+Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung
+
+E-Mail: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
+
+**Anschrift:**  
+Senatorin für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung, Cansel Kiziltepe  
+Oranienstraße 106  
+10969 Berlin  
+
+2. Name und Anschrift des DSB (Datenschutzbeauftragten)
+
+Der/die Datenschutzbeauftragte des Verantwortlichen ist:
+
+Herr Schwarz (Herr Volke - Stellvertreter)
+
+E-Mail: [datenschutz@senasgiva.berlin.de](datenschutz@senasgiva.berlin.de)
+
+**Anschrift:**  
+Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung  
+Oranienstraße 106  
+10969 Berlin  
+
+3. Nutzung von Cookies
+
+Cookies sind Daten, die auf Ihrem Datenträger beim Besuch von Websites gespeichert werden und im Austausch mit unserer Website bestimmte Daten und Einstellungen speichern.
+
+Sie haben die Möglichkeit, dem Setzen von Cookies über die jeweiligen Browser-Einstellungen oder mit Hilfe anderer Erweiterungen wie Ghostery oder uBlock generell zu widersprechen bzw. diese einzuschränken. Welche Erweiterungen Sie mit Ihrem Internetbrowser nutzen können, finden Sie auf den jeweiligen Hersteller*innenseiten. Sie können bei der erstmaligen Nutzung unserer Online-Dienste eine Entscheidung treffen, ob Sie der Technologiestiftung Berlin erlauben, Cookies zur Verbesserung des Online-Angebots zu setzen oder nicht.
+
+Wir nutzen Cookies ausschließlich für die statistische Auswertung unserer Webauftritte und erheben nur pseudonymisierte Daten.
+`,
+
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin vergünstigt erleben",
 

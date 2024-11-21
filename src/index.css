@@ -15,7 +15,27 @@
 		@apply text-xl font-bold mt-6 mb-2;
 	}
 
+	.markdown-container p {
+		@apply py-2;
+	}
+
 	.markdown-container a {
-		@apply text-link-blue underline;
+		@apply hover:cursor-pointer hover:underline text-[#0047D3];
+	}
+
+	.markdown-container ol {
+		@apply list-decimal list-inside text-xl font-bold mt-6 mb-2;
+	}
+
+	.markdown-container li {
+		@apply text-xl font-bold mb-6;
+	}
+
+	.markdown-container li > p:first-child {
+		@apply text-xl font-bold mb-2;
+	}
+
+	.markdown-container li > p:not(:first-child) {
+		@apply text-base font-normal;
 	}
 }
