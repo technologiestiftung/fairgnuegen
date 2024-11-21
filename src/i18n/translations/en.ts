@@ -43,8 +43,6 @@ const en: typeof de = {
 	"searchbar.placeholder": "Enter search term",
 
 	"accessibilityMenu.title": "Accessibility",
-	"accessibilityMenu.easyLanguage": "Easy Language",
-	"accessibilityMenu.dgs": "DGS",
 	"accessibilityMenu.barrierefreiheit.question":
 		"How accessible is this website?",
 	"accessibilityMenu.barrierefreiheit": "Accessibility statement",
@@ -123,7 +121,7 @@ const en: typeof de = {
 		"This project was implemented by CityLAB Berlin in cooperation with the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination.",
 
 	"aboutProject.logos.tsb.src": "/logos/tsb-en.svg",
-	"aboutProject.logos.tsb.label": "A project from",
+	"aboutProject.logos.tsb.label": "A project of",
 	"aboutProject.logos.tsb.alt": "Logo of the Technology Foundation Berlin",
 	"aboutProject.logos.tsb.href":
 		"https://www.technologiestiftung-berlin.de/en/",

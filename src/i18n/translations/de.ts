@@ -41,8 +41,6 @@ const de = {
 	"searchbar.placeholder": "Suchbegriff eingeben",
 
 	"accessibilityMenu.title": "Barrierefreiheit",
-	"accessibilityMenu.easyLanguage": "Leichte Sprache",
-	"accessibilityMenu.dgs": "DGS",
 	"accessibilityMenu.barrierefreiheit.question":
 		"Wie barrierefrei ist diese Webseite?",
 	"accessibilityMenu.barrierefreiheit": "Erklärung zur Barrierefreiheit",

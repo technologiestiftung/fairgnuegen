@@ -7,7 +7,7 @@ export default function AccessibilityStatement() {
 	const i18n = useI18n(language);
 
 	return (
-		<div className="max-w-[980px] mx-auto pt-[3rem] pb-24 px-4">
+		<div className="max-w-[980px] mx-auto pt-[3rem] pb-24 px-4 scroll-smooth">
 			<h1 className="text-[27px] leading-[31px] font-bold mb-[1.3rem]">
 				{i18n["accessibilityStatement.title"]}
 			</h1>
@@ -55,7 +55,7 @@ export default function AccessibilityStatement() {
 					<p className="mb-4"></p>
 				</div>
 
-				<div>
+				<div id="contact">
 					<h2 className="text-xl font-bold w-full flex flex-row mb-4">
 						{i18n["accessibilityStatement.feedback"]}
 					</h2>
