@@ -208,7 +208,7 @@ export const content: Record<string, Content> = {
 			},
 		],
 	},
-	"/accessibility-statement/": {
+	"/accessibility-statement": {
 		title: "Erklärung zur Barrierefreiheit",
 		breadcrumbs: [
 			{
@@ -216,12 +216,12 @@ export const content: Record<string, Content> = {
 				label: "Startseite",
 			},
 			{
-				href: "/accessibility-statement/",
+				href: "/accessibility-statement",
 				label: "Erklärung zur Barrierefreiheit",
 			},
 		],
 	},
-	"/en/accessibility-statement/": {
+	"/en/accessibility-statement": {
 		title: "Accessibility Statement",
 		breadcrumbs: [
 			{
@@ -229,7 +229,7 @@ export const content: Record<string, Content> = {
 				label: "Home",
 			},
 			{
-				href: "/accessibility-statement/",
+				href: "/accessibility-statement",
 				label: "Accessibility Statement",
 			},
 		],

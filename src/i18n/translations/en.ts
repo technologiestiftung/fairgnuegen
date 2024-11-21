@@ -43,8 +43,6 @@ const en: typeof de = {
 	"searchbar.placeholder": "Enter search term",
 
 	"accessibilityMenu.title": "Accessibility",
-	"accessibilityMenu.easyLanguage": "Easy Language",
-	"accessibilityMenu.dgs": "DGS",
 	"accessibilityMenu.barrierefreiheit.question":
 		"How accessible is this website?",
 	"accessibilityMenu.barrierefreiheit": "Accessibility statement",
