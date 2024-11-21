@@ -1,5 +1,4 @@
 import React from "react";
-import { CheckIcon } from "../icons/check-icon";
 
 interface CheckboxProps {
 	id: string;
@@ -16,7 +15,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
 	return (
 		<label
-			className="flex flex-row items-center text-[22px] font-bold cursor-pointer"
+			className="flex flex-row items-center font-bold cursor-pointer"
 			htmlFor={id}
 		>
 			<input
@@ -24,19 +23,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				id={id}
 				checked={isChecked}
 				onChange={onChange}
-				className="appearance-none focus:outline-none peer w-0"
+				className="size-4 mr-2 "
 			/>
-			<span
-				className={`
-				 w-5 h-5 flex flex-row items-center justify-center rounded-[2px] 
-				 ${!isChecked && "border-2 border-black"} 
-				 ${isChecked ? "bg-focus-blue" : ""}
-				 peer-focus:outline peer-focus:outline-2 peer-focus:outline-blue-500 peer-focus:outline-offset-0
-			 	`}
-			>
-				<CheckIcon></CheckIcon>
-			</span>
-			<span className="ml-3 w-fit">{label}</span>
+			<span className="w-fit">{label}</span>
 		</label>
 	);
 };

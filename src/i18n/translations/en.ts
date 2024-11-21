@@ -60,7 +60,7 @@ const en: typeof de = {
 	"filter.targetAudience": "Who is this offer for?",
 	"filter.category": "What interests you?",
 	"filter.district": "Where are you looking for offers?",
-	"filter.reset": "Reset all filters",
+	"filter.reset": "Reset filters",
 	"filter.intro": "Filter offers by target audience, interest and district.",
 	"filter.showOffers": "Show offers",
 
