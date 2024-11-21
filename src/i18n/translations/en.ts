@@ -256,6 +256,8 @@ Phone: (030) 9028-0
 Email: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	`,
 
+	"privacy-note": "",
+
 	discover: "Explore",
 	discoverOffers: "Discover offers",
 	sort: "Sort",
