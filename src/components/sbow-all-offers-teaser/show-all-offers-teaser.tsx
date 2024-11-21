@@ -15,7 +15,7 @@ export const ShowAllOffersTeaser: React.FC = () => {
 	return (
 		<LocalizedTrackedAnchorLink
 			href={`/all-offers/?${searchParams.toString()}`}
-			className="px-4 lg:px-0 flex flex-col md:flex-row h-fit w-full gap-5"
+			className="sm:px-4 lg:px-0 flex flex-col md:flex-row h-fit w-full gap-5"
 		>
 			<div className="flex flex-col md:w-[40%] w-full relative gap-2 basis-[45%] ">
 				<ResponsivePicture
@@ -24,12 +24,12 @@ export const ShowAllOffersTeaser: React.FC = () => {
 					loading={"eager"}
 					className="object-cover aspect-[4/3]"
 				/>
-				<p className="text-[11px] text-berlin-grey">© Unsplash</p>
+				<p className="text-[11px] text-berlin-grey px-4 sm:px-0">© Unsplash</p>
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>
 			</div>
-			<div className="flex flex-col justify-start basis-[55%]">
+			<div className="flex flex-col justify-start basis-[55%] px-4 sm:px-0">
 				<div className="text-[17px] font-bold mb-1.5">
 					{i18n["home.allOffersTeaser.title"]}
 				</div>

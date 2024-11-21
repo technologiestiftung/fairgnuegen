@@ -38,11 +38,11 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>
-				<p className="text-[11px] text-berlin-grey">© Unsplash</p>
+				<p className="text-[11px] text-berlin-grey px-4 sm:px-0">© Unsplash</p>
 			</div>
 
-			<div className="flex flex-col justify-between">
-				<div className="text-[17px] font-bold mb-1.5">{localizedName}</div>
+			<div className="flex flex-col justify-between px-4 sm:px-0">
+				<h3 className="text-[17px] font-bold mb-1.5">{localizedName}</h3>
 				<p className="leading-6">{localizedDescription}</p>
 				<div className="text-link-blue text-left flex flex-row items-center justify-start gap-1 hover:underline">
 					<div>{i18n["discover"]}</div>
