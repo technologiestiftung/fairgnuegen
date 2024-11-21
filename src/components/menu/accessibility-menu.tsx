@@ -48,7 +48,7 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 						{i18n["accessibilityMenu.contact.question"]}
 					</p>
 					<LocalizedTrackedAnchorLink
-						href="/accessibility-statement/#contact"
+						href="/accessibility-statement/#accessibility-contact"
 						additionalTrackingContext={"(accessibility menu)"}
 						className="text-blue-600 hover:underline"
 					>
