@@ -52,8 +52,6 @@ export default function LazyHome() {
 					</div>
 				</div>
 
-				<div className="w-full border-b border-separator mb-12 "></div>
-
 				{/* category cards */}
 				<div className="w-full mb-12 flex flex-wrap md:flex-nowrap justify-between gap-y-16 sm:gap-x-3 md:gap-x-4 lg:gap-x-5 px-4 lg:px-0">
 					{Object.entries(categoryMap)
