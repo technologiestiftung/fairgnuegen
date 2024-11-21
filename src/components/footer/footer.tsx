@@ -19,7 +19,7 @@ const upperFooterColumns = [
 			},
 			{
 				label: "upperFooter.fairfun.accessibility",
-				href: "/accessibility-statement",
+				href: "/accessibility-statement/",
 			},
 		],
 	},
