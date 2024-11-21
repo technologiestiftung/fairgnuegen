@@ -12,18 +12,69 @@ const de = {
 	"home.allOffersTeaser.description.p2":
 		"Nutze kostenlose und ermäßigte Angebote und entdecke die Hauptstadt. Viel Spaß!",
 
-	"imprint.title": "Impressum",
-	"imprint.foundation.title": "Angaben zur Technologiestiftung Berlin",
-	"imprint.foundation.address":
-		"Technologiestiftung Berlin\nGrunewaldstraße 61-62\n10825 Berlin\nTel.: +49 30 209 69 99 0\ninfo@technologiestiftung-berlin.de",
-	"imprint.foundation.content":
-		"Die Technologiestiftung Berlin ist eine rechtsfähige und gemeinnützige Stiftung bürgerlichen Rechts. Sie unterliegt nach dem Berliner Stiftungsgesetz in der Fassung vom 11. Dezember 1997 (GVBl. S. 674) der Staatsaufsicht, die von der Senatsverwaltung für Justiz, Salzburger Str. 21-25, 10825 Berlin, geführt wird.",
-	"imprint.foundation.head.title": "Vertretungsberechtigter Vorstand",
-	"imprint.foundation.head.content":
-		"Nicolas Zimmer (Vorsitz), Steffen Döring, Prof. Dr. Martina Schraudner",
-	"imprint.disclaimer.title": "Haftungsausschluss",
-	"imprint.disclaimer.content":
-		"Es wird von uns keine Garantie dafür übernommen, dass die auf dieser Website bereitgestellten Informationen vollständig, richtig und in jedem Fall aktuell sind.\nTrotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Wir haben keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung der verlinkten Seiten. Wir distanzieren uns hiermit ausdrücklich von allen inhaltlichen Änderungen, die nach der Linksetzung auf den verlinkten Seiten vorgenommen werden. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.\nWir behalten uns das Recht vor, ohne vorherige Ankündigung Änderungen oder Ergänzungen der bereitgestellten Informationen vorzunehmen.\nWir sind bestrebt, in allen Publikationen geltende Urheberrechte zu beachten. Sollte es trotzdem zu einer Urheberrechtsverletzung kommen, werden wir das entsprechende Objekt nach Benachrichtigung aus seiner Publikation entfernen bzw. mit dem Urheberrecht kenntlich machen.\nAlle auf den Webseiten genannten und gegebenenfalls durch Dritte geschützte Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer.\nDieser Haftungshinweis ist als Teil des Internetangebotes der Technologiestiftung Berlin und des Fördervereins Technologiestiftung Berlin e. V. zu betrachten. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokuments in ihrem Inhalt und ihrer Gültigkeit hiervon unberührt.",
+	imprint: `
+# Impressum
+
+## Herausgeberin
+Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung
+
+Oranienstraße 106
+
+10969 Berlin
+
+## Vertretungsberechtigt
+Senatorin Cansel Kiziltepe
+
+## Publizistisch inhaltlich verantwortlich
+Kontakt: [Stefan Strauß](mailto:stefan.strauss@senasgiva.berlin.de)
+
+Leiter der Presse- und Öffentlichkeitsarbeit
+
+Telefon: (030) 9028-1135
+
+## Webredaktion: Abteilung Soziales
+Kontakt: [Matthias Ropel](mailto:Matthias.Ropel@senasgiva.berlin.de) (koordinierender Redakteur der Abteilung)
+
+Telefon: (030) 9028-1528
+
+Internet: [www.berlin.de/sen/soziales/](www.berlin.de/sen/soziales/)
+
+## Umsatzsteuer-Identifikationsnummer
+USt-IdNr.: DE253862337
+
+## Benutzerhinweise und Barrierefreiheit
+Bitte beachten Sie hierzu die [Erklärung zur Barrierefreiheit](/accessibility-statement/).
+
+## Technischer Betrieb
+Technologiestiftung Berlin
+
+Grunewaldstraße 61-62
+
+10825 Berlin
+
+Tel.: +49 30 209 69 99-0
+
+E-Mail: [info@technologiestiftung-berlin](mailto:info@technologiestiftung-berlin)
+
+## Datenschutz
+Bitte beachten Sie hierzu die [Datenschutzerklärung](/privacy-note/).
+
+## Haftungshinweis
+Die im Angebot der Senatsverwaltung für Integration, Arbeit und Soziales veröffentlichten Inhalte sind mit größter Sorgfalt recherchiert. Dennoch können weder die Senatsverwaltung für Integration, Arbeit und Soziales noch das Land Berlin eine Gewähr für die Aktualität, Korrektheit oder Vollständigkeit der bereitgestellten Informationen übernehmen. Alle Angaben erfolgen ohne Gewähr. Aus der Nutzung dieser Informationen abgeleitete Haftungsansprüche gegen die Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung, das Land Berlin oder den Betreiber von “berlin.de” sind ausgeschlossen. Trotz sorgfältiger inhaltlicher Kontrolle übernimmt die Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung keine Gewähr für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+
+## Urheberrecht
+Das Layout der Seiten der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung, die verwendeten Grafiken sowie die Sammlung der Beiträge sind urheberrechtlich geschützt. Die Seiten dürfen ausschließlich zu privatem Gebrauch vervielfältigt werden. Textliche und grafische Änderungen sowie die öffentliche Verbreitung sind nicht erlaubt.
+
+## Kontakt
+Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung
+
+Oranienstraße 106
+
+10969 Berlin
+
+Tel.: (030) 9028-0
+
+E-Mail: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)`,
 
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin vergünstigt erleben",
