@@ -198,7 +198,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 						<div key={filterRow.title} className="">
 							<div
 								key={filterRow.title}
-								className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 border-b px-6 text-lg font-bold`}
+								className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 border-b px-6 text-normal font-bold`}
 							>
 								<div
 									className="flex flex-row justify-between items-center"
@@ -227,7 +227,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 									filterRow.options.map((subItem) => (
 										<div
 											key={subItem.title}
-											className="px-6 flex flex-row items-start text-normal mt-2"
+											className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
 										>
 											<Checkbox
 												id={subItem.title}
