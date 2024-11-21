@@ -33,7 +33,7 @@ const baseRoutes: Route[] = [
 		page: "./pages/about-project/index.tsx",
 	},
 	{
-		path: "/accessibility-statement/",
+		path: "/accessibility-statement",
 		page: "./pages/accessibility-statement/index.tsx",
 	},
 ];
