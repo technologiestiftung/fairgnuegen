@@ -8,11 +8,11 @@
 	}
 
 	.markdown-container h1 {
-		@apply text-3xl font-bold py-2 my-8;
+		@apply text-[27px] font-bold py-2 my-8;
 	}
 
 	.markdown-container h2 {
-		@apply text-xl font-bold mt-6 mb-2;
+		@apply text-[22px] font-bold mt-6 mb-2;
 	}
 
 	.markdown-container h3 {
