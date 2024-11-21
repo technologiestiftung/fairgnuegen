@@ -231,7 +231,9 @@ The areas listed below are not accessible for the following reasons:
 - Timeline: to be fixed in 2025
 
 We are working on improving the accessibility of this application.
+	`,
 
+	"accessibility-statement.contact": `
 ## Who can you contact with comments or questions about digital accessibility (feedback option)?
 
 Would you like to report information on the implementation of accessibility or existing barriers? You cannot sufficiently perceive, operate or understand something on our website or mobile application? Do you need information in an accessible form? Then please let us know.

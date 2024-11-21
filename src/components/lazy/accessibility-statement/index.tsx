@@ -15,6 +15,12 @@ export default function AccessibilityStatement() {
 			<Markdown className={"markdown-container"}>
 				{i18n["accessibility-statement"]}
 			</Markdown>
+
+			<div id="accessibility-contact">
+				<Markdown className={"markdown-container"}>
+					{i18n["accessibility-statement.contact"]}
+				</Markdown>
+			</div>
 		</div>
 	);
 }

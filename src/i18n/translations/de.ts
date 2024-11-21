@@ -152,7 +152,9 @@ Die nachstehend aufgeführten Bereiche sind aus folgenden Gründen nicht barrier
 - Zeitplan: Behebung in 2025 
 
 Wir arbeiten daran, die Barrierefreiheit dieser Anwendung zu verbessern.
+`,
 
+	"accessibility-statement.contact": `
 ## Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit (Feedbackoption) kontaktieren?
 
 Sie möchten Informationen zur Umsetzung der Barrierefreiheit oder bestehende Barrieren melden? Sie können etwas auf unserer Website oder der mobilen Anwendung nicht ausreichend wahrnehmen, bedienen oder verstehen? Sie benötigen Informationen in einer barrierefreien Form? Dann informieren Sie uns bitte.
