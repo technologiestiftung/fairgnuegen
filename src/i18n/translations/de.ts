@@ -114,6 +114,69 @@ Sie haben die Möglichkeit, dem Setzen von Cookies über die jeweiligen Browser-
 Wir nutzen Cookies ausschließlich für die statistische Auswertung unserer Webauftritte und erheben nur pseudonymisierte Daten.
 `,
 
+	"accessibility-statement": `
+# Erklärung zur Barrierefreiheit
+
+## Öffentliche Stelle / Geltungsbereich
+
+Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung
+
+Wir bemühen uns, unseren Webauftritt barrierefrei zu gestalten. Die Erklärung zur digitalen Barrierefreiheit wird im Gesetz über die barrierefreie Informations- und Kommunikationstechnik Berlin (BIKTG Bln) verlangt. Die technischen Anforderungen zur Barrierefreiheit ergeben sich aus der aktuellen Barrierefreie-Informationstechnik-Verordnung (BITV).
+
+Diese Barrierefreiheitserklärung (Stand: 18.11.2024) bezieht sich auf die Subdomain fairgnuegen.berlin.de. Sie gilt nicht für andere Seiten auf berlin.de, für die andere Barrierefreiheitserklärungen gelten. Diese Anwendung wird betrieben durch die Technologiestiftung Berlin (mehr zum Projekt). Sämtliche andere Inhalte werden technisch betrieben von der BerlinOnline Stadtportal GmbH & Co. KG.
+
+## Wie barrierefrei ist das Angebot?
+
+Dieser Webauftritt / Diese Anwendung ist nur teilweise barrierefrei. Es werden nur teilweise die Anforderungen der aktuellen BITV erfüllt.
+
+## Welche Bereiche sind nicht barrierefrei?
+
+Die nachstehend aufgeführten Bereiche sind aus folgenden Gründen nicht barrierefrei:
+
+### Barriere: Mindestkontrast nicht ausreichend
+
+- Beschreibung: Grafische Bedienelemente und informationstragende grafische Elemente halten nicht immer den Mindestkontrast ein und können daher teilweise schwer wahrnehmbar sein.
+- Maßnahmen: Kontrast der betroffenen Elemente erhöhen
+- Zeitplan: Behebung in 2025
+
+### Barriere: Linktext nicht klar unterscheidbar
+
+- Beschreibung: Links werden nicht immer vom umgebenden Text auf eine Weise unterschieden, die nicht auf Farbe beruht.
+- Maßnahmen: Linktexte unterstreichen
+- Zeitplan: Behebung in 2025
+
+### Barriere: Einschränkung bei Bedienung von Elementen 
+
+- Beschreibung: Einige Bedienelemente verfügen nicht über die notwendigen Rollen, Namen, Statusangaben und dazugehörige Steuerungskonzepte, was die Bedienung dieser Elemente einschränkt.
+- Maßnahmen: Steuerungskonzepte von Bedienelementen hinzufügen
+- Zeitplan: Behebung in 2025 
+
+Wir arbeiten daran, die Barrierefreiheit dieser Anwendung zu verbessern.
+
+## Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit (Feedbackoption) kontaktieren?
+
+Sie möchten Informationen zur Umsetzung der Barrierefreiheit oder bestehende Barrieren melden? Sie können etwas auf unserer Website oder der mobilen Anwendung nicht ausreichend wahrnehmen, bedienen oder verstehen? Sie benötigen Informationen in einer barrierefreien Form? Dann informieren Sie uns bitte.
+
+**Kontakt zur Ansprechperson der öffentlichen Stelle:**  
+
+Name: Susanne Langhammer  
+E-Mail: [Barrierefreiheit@senasgiva.berlin.de](Barrierefreiheit@senasgiva.berlin.de)  
+Telefon: (030) 9028-1210
+
+**Kontakt zur Landesbeauftragten für digitale Barrierefreiheit:**  
+
+Die folgenden Angaben werden in der digitalen Barrierefreiheitserklärung immer ausgegeben: Wenn Ihre Kontaktaufnahme mit der öffentlichen Stelle nicht erfolgreich war, Sie innerhalb von 4 Wochen keine Antwort erhalten haben, oder die Antwort unzureichend war, können Sie sich an die Landesbeauftragte für digitale Barrierefreiheit wenden und ein Durchsetzungsverfahren anstreben. Bitte kontaktieren Sie immer zuerst die betroffene öffentliche Stelle!
+
+[Link zum Kontaktformular](https://www.berlin.de/lb/digitale-barrierefreiheit/includes/formular.1326107.php)
+[Weitere Informationen zur Landesbeauftragten für digitale Barrierefreiheit](https://www.berlin.de/lb/digitale-barrierefreiheit/aufgaben/durchsetzungsverfahren/durchsetzungsverfahren-1305830.php)
+
+**Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung**  
+Oranienstraße 106  
+10969 Berlin  
+Tel.: (030) 9028-0  
+E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
+`,
+
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin vergünstigt erleben",
 
@@ -229,56 +292,6 @@ Wir nutzen Cookies ausschließlich für die statistische Auswertung unserer Weba
 	"aboutProject.logos.senasgiva.alt":
 		"Logo der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung",
 	"aboutProject.logos.senasgiva.href": "https://www.berlin.de/sen/asgiva/",
-
-	"accessibilityStatement.title": "Erklärung zur Barrierefreiheit",
-	"accessibilityStatement.intro.p1": `Diese Barrierefreiheitserklärung (Stand: 31.10.2024) bezieht sich auf die Subdomain `,
-	"accessibilityStatement.intro.homeLink": "fairgnuegen.berlin.de",
-	"accessibilityStatement.intro.p2":
-		". Sie gilt nicht für andere Seiten auf berlin.de, für die andere Barrierefreiheitserklärungen gelten. Diese Anwendung wird betrieben durch die Technologiestiftung Berlin (",
-	"accessibilityStatement.intro.aboutProjectLinkLabel": "mehr zum Projekt",
-	"accessibilityStatement.intro.p3":
-		"). Sämtliche andere Inhalte werden technisch betrieben von der BerlinOnline Stadtportal GmbH & Co. KG.",
-
-	"accessibilityStatement.howAccessible": "Wie barrierefrei ist das Angebot?",
-	"accessibilityStatement.howAccessible.p1":
-		"Dieser Webauftritt / Diese Anwendung ist nur teilweise barrierefrei. Es werden nur teilweise die Anforderungen der aktuellen BITV erfüllt.",
-
-	"accessibilityStatement.notAccessible":
-		"Welche Bereiche sind nicht barrierefrei?",
-	"accessibilityStatement.notAccessible.p1": `
-	• Grafische Bedienelemente und informationstragende grafische Elemente halten nicht immer den Mindestkontrast ein und können daher teilweise schwer wahrnehmbar sein.
-	• Links werden nicht immer vom umgebenden Text auf eine Weise unterschieden, die nicht auf Farbe beruht.
-	• Einige Bedienelemente verfügen nicht über die notwendigen Rollen, Namen, Statusangaben und dazugehörige Steuerungskonzepte, was die Bedienung dieser Elemente einschränkt.
-	Wir arbeiten weiterhin daran, die Barrierefreiheit dieser Anwendung zu verbessern.
-`,
-
-	"accessibilityStatement.feedback": "Feedback und Kontakt",
-	"accessibilityStatement.feedback.p1":
-		"Sollten Sie auf unseren Seiten dennoch auf Mängel beim barrierefreien Zugang zu Inhalten stoßen, senden Sie uns bitte eine E-Mail mit einer Beschreibung, wo Ihnen welche Barriere aufgefallen ist, an die folgende Adresse:",
-	"accessibilityStatement.feedback.mail":
-		"E-Mail: info@technologiestiftung-berlin.de",
-
-	"accessibilityStatement.arbitration": "Schlichtungsverfahren",
-	"accessibilityStatement.arbitration.p1": `Wenn nach Ihrem Feedback an den oben genannten Kontakt keine zufriedenstellende Lösung gefunden wurde, können Sie sich an die Schlichtungsstelle nach § 16 des Gesetzes zur Gleichstellung von Menschen mit Behinderungen des Landes Berlin wenden.  Die Schlichtungsstelle BGG hat die Aufgabe, bei Konflikten zum Thema Barrierefreiheit zwischen Menschen mit Behinderungen und öffentlichen Stellen des Bundes eine außergerichtliche Streitbeilegung zu unterstützen.
-	
-	\nDas Schlichtungsverfahren ist kostenlos. Es muss kein Rechtsbeistand eingeschaltet werden.
-	
-	\nWeitere Informationen zum Schlichtungsverfahren und den Möglichkeiten der Antragstellung erhalten Sie auf der Website der Schlichtungsstelle. Die Informationen sind auch in Die Informationen sind auch in Leichter Sprache und in Deutscher Gebärdensprache verfügbar.
-	
-	\nSie erreichen die Schlichtungsstelle unter folgender Adresse:`,
-	"accessibilityStatement.arbitration.p2": `
-
-Schlichtungsstelle nach dem Behindertengleichstellungsgesetz
-bei dem Beauftragten der Bundesregierung für die Belange von Menschen mit Behinderungen  
-Mauerstraße 53  
-10117 Berlin
-`,
-	"accessibilityStatement.arbitration.mail": `
-E-Mail: info(at)schlichtungsstelle-bgg.de`,
-	"accessibilityStatement.arbitration.linkText":
-		"Online-Formular auf der Website der Schlichtungsstelle",
-	"accessibilityStatement.arbitration.p3": `Telefon: 030 185 272 805  
-Fax: 030 185 272 901 `,
 
 	discover: "Entdecken",
 	discoverOffers: "Angebote entdecken",
