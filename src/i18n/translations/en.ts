@@ -14,18 +14,70 @@ const en: typeof de = {
 	"home.allOffersTeaser.description.p2":
 		"Take advantage of free and discounted offers and discover the capital. Have fun!",
 
-	"imprint.title": "Imprint",
-	"imprint.foundation.title": "Information about Technologiestiftung Berlin",
-	"imprint.foundation.address":
-		"Technologiestiftung Berlin\nGrunewaldstraße 61-62\n10825 Berlin\nTel.: +49 30 209 69 99 0\ninfo@technologiestiftung-berlin.de",
-	"imprint.foundation.content":
-		"Technologiestiftung Berlin is a non-profit foundation with legal capacity under German civil law. Pursuant to the version dated 11 December 1997 of the Berlin Foundation Act (GVBl. p. 674) it is subject to state supervision which is exercised by the Senate Administration for Justice, Salzburger Str. 21-25, 10825 Berlin.",
-	"imprint.foundation.head.title": "Authorised Board members",
-	"imprint.foundation.head.content":
-		"Nicolas Zimmer (Chairperson), Steffen Döring",
-	"imprint.disclaimer.title": "Disclaimer",
-	"imprint.disclaimer.content":
-		"We do not guarantee that the information provided on this website is complete, accurate or up-to-date.\n\nAlthough we take great care to check content, we do not assume any liability for the contents of external links. We do not have any influence on the current or future shaping of the linked websites. We expressly distance ourselves from all changes to the contents undertaken after the establishment of links to said websites. The providers of said websites are solely responsible for the contents of the linked websites.\nWe reserve the right to change or supplement the information made available without prior notice.\nWe endeavour to comply with all valid copyright laws in all publications. Should there nonetheless be an infringement of copyright law, we shall remove the corresponding item, after being informed, from the relevant publication or render it visible by reference to copyright law.\nAll trademarks and brand names mentioned on websites that may be protected by third parties shall be covered in an unlimited manner by the respective valid labelling legislation and the ownership rights of the respective registered owners.\nThis disclaimer shall be deemed to be part of the internet offering of Technologiestiftung Berlin and the Förderverein Technologiestiftung Berlin e. V. To the extent that parts or individual formulations in this text do not, no longer or do not fully comply with the valid legal situation, this shall not affect the contents and validity of other parts of the document.\nPlease refer to our German website for our data protection policy.",
+	imprint: `
+# Imprint
+
+## Editor
+Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination
+
+Oranienstrasse 106
+
+10969 Berlin
+
+## Authorised to represent
+Senator Cansel Kiziltepe
+
+## Responsible for publicity and content
+Contact: [Stefan Strauß](mailto:stefan.strauss@senasgiva.berlin.de)
+
+Head of Press and Public Relations
+
+Telephone: (030) 9028-1135
+
+## Web editing: Social Services Department
+Contact: [Matthias Ropel](mailto:Matthias.Ropel@senasgiva.berlin.de) (coordinating editor of the department)
+
+Telephone: (030) 9028-1528
+
+Internet: www.berlin.de/sen/soziales/
+
+## Value added tax identification number
+VAT identification number: DE253862337
+
+## User information and accessibility
+Please note our [accessibility statement](/accessibility-statement/)
+
+## Technical provider
+Technology Foundation Berlin
+
+Grunewaldstraße 61-62
+
+10825 Berlin
+
+Phone: +49 30 209 69 99-0
+
+Email: [info@technologiestiftung-berlin](mailto:info@technologiestiftung-berlin)
+
+## Data protection
+Please note our [privacy note](/privacy-note/).
+
+## Disclaimer
+The content published on the website of the Senate Department for Integration, Labour and Social Services has been researched with the utmost care. Nevertheless, neither the Senate Department for Integration, Labour and Social Services nor the State of Berlin can accept any liability for the topicality, correctness or completeness of the information provided. All information is provided without guarantee. Liability claims derived from the use of this information against the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination, the State of Berlin or the operator of ‘berlin.de’ are excluded. Despite careful control of the content, the Senate Department for Labour, Social Services, Equality, Integration, Diversity and Anti-Discrimination accepts no liability for the content of external links. The operators of the linked pages are solely responsible for their content.
+
+## Copyright
+The layout of the pages of the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination, the graphics used and the collection of articles are protected by copyright. The pages may only be reproduced for private use. Textual and graphic changes as well as public distribution are not permitted.
+
+## Contact
+Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination
+
+Oranienstrasse 106
+
+10969 Berlin
+
+Tel.: (030) 9028-0
+
+Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
+	`,
 
 	"header.title": "Fair Fun",
 	"header.caption": "Experience Berlin on a budget",
@@ -142,47 +194,69 @@ const en: typeof de = {
 	"aboutProject.logos.senasgiva.alt": "Logo of the SenASGIVA",
 	"aboutProject.logos.senasgiva.href": "https://www.berlin.de/sen/asgiva/",
 
-	"accessibilityStatement.title": "Accessibility Statement",
-	"accessibilityStatement.intro.p1":
-		"This accessibility statement (as of 30.10.2024) refers to the subdomain ",
-	"accessibilityStatement.intro.homeLink": "fairgnuegen.berlin.de",
-	"accessibilityStatement.intro.p2":
-		". It does not apply to other pages on berlin.de, to which other accessibility statements apply. This application is operated by Technologiestiftung Berlin (",
-	"accessibilityStatement.intro.aboutProjectLinkLabel":
-		"more about the project",
-	"accessibilityStatement.intro.p3":
-		"). All other content is technically operated by BerlinOnline Stadtportal GmbH & Co. KG.",
-	"accessibilityStatement.howAccessible": "How accessible is the offer?",
-	"accessibilityStatement.howAccessible.p1":
-		"This website / application is only partially accessible. The requirements of the current BITV are only partially met.",
-	"accessibilityStatement.notAccessible": "Which areas are not accessible?",
-	"accessibilityStatement.notAccessible.p1": `
-		• Graphical control elements and information-bearing graphical elements do not always meet the minimum contrast requirements and can therefore be difficult to perceive.
-		• Links are not always distinguishable from the surrounding text in a way that does not rely on color.
-		• Some control elements lack the necessary roles, names, status indications, and associated control concepts, which restricts the usability of these elements.
-		We are continuing to work on improving the accessibility of this application.
-		`,
-	"accessibilityStatement.feedback": "Feedback and Contact",
-	"accessibilityStatement.feedback.p1":
-		"If you still encounter barriers on our pages that hinder accessible access to content, please send us an email with a description of where and what barrier you noticed, to the following address:",
-	"accessibilityStatement.feedback.mail":
-		"Email: info@technologiestiftung-berlin.de",
-	"accessibilityStatement.arbitration": "Arbitration Procedure",
+	"accessibility-statement": `
+# Accessibility Statement
 
-	"accessibilityStatement.arbitration.p1":
-		"If a satisfactory solution has not been found after your feedback to the contact mentioned above, you may contact the arbitration board under § 16 of the Berlin Act on Equal Opportunities for Persons with Disabilities. The BGG arbitration board is responsible for supporting out-of-court dispute resolution in conflicts concerning accessibility between persons with disabilities and federal public authorities.\n\nThe arbitration procedure is free of charge. No legal representation is required.\n\nFurther information on the arbitration procedure and options for submitting an application can be found on the arbitration board's website. Information is also available in Easy Language and in German Sign Language.\n\nYou can reach the arbitration board at the following address:",
-	"accessibilityStatement.arbitration.p2": `
-Schlichtungsstelle nach dem Behindertengleichstellungsgesetz
-bei dem Beauftragten der Bundesregierung für die Belange von Menschen mit Behinderungen  
-Mauerstraße 53  
-10117 Berlin
-`,
-	"accessibilityStatement.arbitration.mail":
-		"Email: info(at)schlichtungsstelle-bgg.de",
-	"accessibilityStatement.arbitration.linkText":
-		"Online form on the arbitration board's website",
-	"accessibilityStatement.arbitration.p3":
-		"Phone: 030 185 272 805\nFax: 030 185 272 901",
+## Public body
+
+Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination
+
+We endeavour to make our website accessible. The declaration on digital accessibility is required by the Berlin Act on Accessible Information and Communication Technology (BIKTG Bln). The technical requirements for accessibility are set out in the current Barrier-free Information Technology Ordinance (BITV).
+
+This accessibility statement (as of 18 November 2024) refers to the subdomain fairgnuegen.berlin.de. It does not apply to other pages on berlin.de to which other accessibility statements apply. This application is operated by Technologiestiftung Berlin (more about the project). All other content is technically operated by BerlinOnline Stadtportal GmbH & Co. KG.
+
+## How accessible is the website?
+
+This website/application is only partially accessible. It only partially fulfils the requirements of the current BITV.
+
+## Which areas are not accessible?
+
+The areas listed below are not accessible for the following reasons:
+
+### Barrier: Minimum contrast not sufficient
+- Description: Graphic control elements and information-bearing graphic elements do not always maintain the minimum contrast and can therefore be difficult to perceive in some cases.
+- Measures: Increase the contrast of the affected elements
+- Timeline: to be fixed in 2025
+
+### Barrier: Link text not clearly distinguishable
+- Description: Links are not always distinguished from the surrounding text in a way that is not based on colour.
+- Measures: Underline link texts
+- Timeline: to be fixed in 2025
+ 
+### Barrier: Restriction in the operation of elements 
+- Description: Some operating elements do not have the necessary roles, names, status information and associated control concepts, which restricts the operation of these elements.
+- Measures: Add control concepts for operating elements
+- Timeline: to be fixed in 2025
+
+We are working on improving the accessibility of this application.
+	`,
+
+	"accessibility-statement.contact": `
+## Who can you contact with comments or questions about digital accessibility (feedback option)?
+
+Would you like to report information on the implementation of accessibility or existing barriers? You cannot sufficiently perceive, operate or understand something on our website or mobile application? Do you need information in an accessible form? Then please let us know.
+
+**Contact the contact person at the public body:**  
+
+Name: Susanne Langhammer  
+Email: [Barrierefreiheit@senasgiva.berlin.de](Barrierefreiheit@senasgiva.berlin.de)  
+Telephone: (030) 9028-1210  
+
+**Contact the State Commissioner for Digital Accessibility:**  
+
+The following information is always provided in the digital accessibility statement: If your contact with the public body was unsuccessful, you have not received a response within 4 weeks, or the response was inadequate, you can contact the State Commissioner for Digital Accessibility and seek enforcement proceedings. Please always contact the public body concerned first!
+
+[Link to the contact form](https://www.berlin.de/lb/digitale-barrierefreiheit/includes/formular.1326107.php)  
+[Further information on the State Commissioner for Digital Accessibility](https://www.berlin.de/lb/digitale-barrierefreiheit/aufgaben/durchsetzungsverfahren/durchsetzungsverfahren-1305830.php)
+
+**Senate Department for Labour, Social Affairs, Equality, Integration, Diversity and Anti-Discrimination**  
+Oranienstrasse 106  
+10969 Berlin  
+Phone: (030) 9028-0  
+Email: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
+	`,
+
+	"privacy-note": "",
 
 	discover: "Explore",
 	discoverOffers: "Discover offers",

@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	.markdown-container {
+		@apply mb-8;
+	}
+
+	.markdown-container h1 {
+		@apply text-[27px] font-bold py-2 my-8;
+	}
+
+	.markdown-container h2 {
+		@apply text-[22px] font-bold mt-6 mb-2;
+	}
+
+	.markdown-container h3 {
+		@apply text-base font-bold mt-6 mb-2;
+	}
+
+	.markdown-container p {
+		@apply py-2;
+	}
+
+	.markdown-container a {
+		@apply hover:cursor-pointer hover:underline text-[#0047D3];
+	}
+
+	.markdown-container ol {
+		@apply list-decimal list-inside text-xl font-bold mt-6 mb-2;
+	}
+
+	.markdown-container ol > li {
+		@apply text-xl font-bold mb-2;
+	}
+
+	.markdown-container ul {
+		@apply list-disc list-inside text-xl font-bold mt-6 mb-2;
+	}
+
+	.markdown-container ul > li {
+		@apply text-base font-normal mb-2;
+	}
+
+	.markdown-container li > p:first-child {
+		@apply text-xl font-bold mb-2;
+	}
+
+	.markdown-container li > p:not(:first-child) {
+		@apply text-base font-normal;
+	}
+}
