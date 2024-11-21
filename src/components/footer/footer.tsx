@@ -58,8 +58,8 @@ export function Footer() {
 	return (
 		<div>
 			<div className="flex items-start justify-between w-full bg-berlin-grey-light desktop:p-6">
-				<div className="desktop:pl-[5%] flex items-start justify-between w-full">
-					<div className="flex flex-col desktop:flex-row desktop:max-w-[210px]">
+				<div className="desktop:pl-[5%] flex desktop:items-start justify-between w-full">
+					<div className="flex flex-col desktop:flex-row desktop:max-w-[210px] w-full">
 						<div className="desktop:hidden self-end">
 							<ScrollToTopButton />
 						</div>
