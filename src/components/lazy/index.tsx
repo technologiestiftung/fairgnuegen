@@ -18,7 +18,7 @@ export default function LazyHome() {
 	return (
 		<>
 			{/* upper section - intro, search, category cards */}
-			<div className="max-w-[980px] flex flex-col mx-auto mb-16">
+			<div className="max-w-[980px] flex flex-col mx-auto">
 				{/* intro and search section */}
 				<div className="px-4 lg:px-0">
 					<h1 className="text-[27px] font-bold w-full flex flex-row justify-center my-7 text-center">

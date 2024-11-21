@@ -87,8 +87,8 @@ export default function Index() {
 						<BackButton title={i18n["returnToHome"]} />
 					</div>
 
-					<div className="my-8 mx-4 md:mx-4 lg:mx-0">
-						<div className="text-xl font-bold my-6">
+					<div className="my-8 sm:mx-4 lg:mx-0">
+						<div className="text-xl font-bold my-6 mx-4 sm:mx-0">
 							{!category || category === "all"
 								? i18n["allOffers.discoverCategories"]
 								: i18n["allOffers.discoverFurtherCategories"]}
