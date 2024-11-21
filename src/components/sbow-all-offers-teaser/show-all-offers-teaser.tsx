@@ -30,9 +30,9 @@ export const ShowAllOffersTeaser: React.FC = () => {
 				</div>
 			</div>
 			<div className="flex flex-col justify-start basis-[55%] px-4 sm:px-0">
-				<div className="text-[17px] font-bold mb-1.5">
+				<h3 className="text-[17px] font-bold mb-1.5">
 					{i18n["home.allOffersTeaser.title"]}
-				</div>
+				</h3>
 				<p>{i18n["home.allOffersTeaser.description.p1"]}</p>
 				<p className="mt-5">{i18n["home.allOffersTeaser.description.p2"]}</p>
 				<div className="text-link-blue text-left flex flex-row items-center justify-start gap-1 hover:underline">
