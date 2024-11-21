@@ -18,7 +18,7 @@ export default function LazyHome() {
 	return (
 		<>
 			{/* upper section - intro, search, category cards */}
-			<div className="max-w-[980px] flex flex-col mx-auto mb-16">
+			<div className="max-w-[980px] flex flex-col mx-auto">
 				{/* intro and search section */}
 				<div className="px-4 lg:px-0">
 					<h1 className="text-[27px] font-bold w-full flex flex-row justify-center my-7 text-center">
@@ -52,10 +52,11 @@ export default function LazyHome() {
 					</div>
 				</div>
 
-				<div className="w-full border-b border-separator mb-12 "></div>
-
 				{/* category cards */}
-				<div className="w-full mb-12 flex flex-wrap md:flex-nowrap justify-between gap-y-16 sm:gap-x-3 md:gap-x-4 lg:gap-x-5 px-4 lg:px-0">
+				<h2 className="text-[22px] font-bold mb-4 mt-7 px-4 lg:px-0">
+					{i18n["categories.teaser"]}
+				</h2>
+				<div className="w-full mb-12 flex flex-wrap md:flex-nowrap justify-between gap-y-16 sm:gap-x-3 md:gap-x-4 lg:gap-x-5 sm:px-4 lg:px-0">
 					{Object.entries(categoryMap)
 						.filter(([, category]) => category.isRenderedInCategoryCards)
 						.map(([key, category]) => (
@@ -69,7 +70,7 @@ export default function LazyHome() {
 			</div>
 
 			{/* all offers teaser */}
-			<div className="w-full bg-berlin-grey-light py-4 md:py-0">
+			<div className="w-full py-4 md:py-0">
 				<div className="max-w-[980px] flex flex-col mx-auto">
 					<ShowAllOffersTeaser />
 				</div>

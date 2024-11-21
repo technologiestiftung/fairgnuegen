@@ -229,6 +229,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"offer.discountDetails": "Ermäßigung",
 	"offer.location": "Ort",
 
+	"categories.teaser": "Entdecke die Kategorien",
 	"categories.title": "Kategorien",
 	"categories.all.name": "Alle Angebote",
 	"categories.all.description": "",

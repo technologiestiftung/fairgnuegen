@@ -41,10 +41,10 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>
-				<p className="text-[11px] text-berlin-grey">© Unsplash</p>
+				<p className="text-[11px] text-berlin-grey mx-4 sm:mx-0">© Unsplash</p>
 			</div>
 
-			<div className="flex flex-col justify-between">
+			<div className="flex flex-col justify-between mx-4 sm:mx-0">
 				<div className="text-[17px] font-bold mb-1.5">{localizedName}</div>
 				<div className="text-link-blue text-left flex flex-row items-center justify-start gap-1 hover:underline">
 					<div>{i18n["discover"]}</div>
