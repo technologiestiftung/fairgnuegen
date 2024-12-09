@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { fetchDataAndAugment } from "./fetch-and-augment-data-from-api";
-import { Offer } from "./src/content/content";
+import { Offer } from "../src/content/content";
 import fs from "fs";
 
 const API_KEY = process.env.OPENAI_API_KEY;

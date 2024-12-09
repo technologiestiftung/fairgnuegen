@@ -1,7 +1,7 @@
 import * as turf from "@turf/turf";
 import { backOff } from "exponential-backoff";
 import { readFileSync, writeFileSync } from "node:fs";
-import { Offer } from "./src/content/content";
+import { Offer } from "../src/content/content";
 
 const geojsonFilePath = "./geojson/bezirksgrenzen.geojson";
 const districtGeojson = JSON.parse(readFileSync(geojsonFilePath, "utf8"));
