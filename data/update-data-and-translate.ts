@@ -31,7 +31,7 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 			const fullAddress = `${strasse_und_hausnummer_des_angebots}, ${plz_und_ort_des_angebots}`;
 
 			const { lat, lon } = await fetchGeoCoordinates(fullAddress);
-			const district = findDistrict(lon, lat);
+			const district = findDistrict(lat, lon);
 
 			const isAccepted = !freigabe.toLowerCase().includes("nein");
 			const providerName = name_anbieter.trim();
@@ -59,8 +59,8 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 						.replace(/"/g, "")
 						.split(",")
 						.map((targetGroup) => targetGroup.trim()),
-					x: lat,
-					y: lon,
+					x: lon,
+					y: lat,
 					language: "de",
 					identifierToBeSlugified: providerName,
 					path: "",

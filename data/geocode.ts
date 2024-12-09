@@ -1,7 +1,7 @@
 import { districts } from "./geojson/bezirksgrenzen";
 import * as turf from "@turf/turf";
 
-export function findDistrict(lon: number, lat: number) {
+export function findDistrict(lat: number, lon: number) {
 	for (const { properties, geometry } of districts.features) {
 		const point = turf.point([lon, lat]);
 		const polygon = turf.multiPolygon(geometry.coordinates);
