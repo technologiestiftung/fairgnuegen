@@ -2,6 +2,8 @@ name: Update data and translate
 
 on:
   workflow_dispatch:  # This allows the workflow to be triggered manually  
+  push:
+    branches: [feat/use-free-db-as-source]
 
 jobs:
   update-data-and-translate:
