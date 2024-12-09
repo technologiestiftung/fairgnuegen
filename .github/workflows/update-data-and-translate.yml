@@ -16,6 +16,10 @@ jobs:
         run: npm install
       - name: update-data-and-translate
         run: npm run build:update-data-and-translate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FREE_DB_USERNAME: ${{ secrets.FREE_DB_USERNAME }}
+          FREE_DB_PASSWORD: ${{ secrets.FREE_DB_PASSWORD }}
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: added new data and updated changed data incl. translations"
