@@ -47,9 +47,9 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
 
 				<div className="w-full h-fit flex flex-col gap-4">
 					<div className="flex flex-row justify-between items-start gap-4">
-						<h1 className="font-bold text-[22px] flex flex-row items-center h-full">
+						<h3 className="font-bold text-[22px] flex flex-row items-center h-full">
 							{offer.provider}
-						</h1>
+						</h3>
 					</div>
 					{offer.isFree && (
 						<div className="flex flex-row flex-wrap">

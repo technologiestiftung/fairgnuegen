@@ -1,10 +1,11 @@
 import React from "react";
-import ArrowRightIcon from "../../components/icons/arrow-right-icon";
 import { CategoryDetails } from "../../content/categories";
 import { ResponsivePicture } from "../responsive-picture/responsive-picture";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
 import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
+import ImageArrowIcon from "../icons/image-arrow-icon";
+import ArrowRightLinkIcon from "../icons/arrow-right-link-icon";
 
 interface CategoryCardProps {
 	identifier: string;
@@ -19,30 +20,35 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 	const i18n = useI18n(language);
 
 	const localizedName = i18n[`${category.i18nKey}.name`];
+	const href =
+		identifier === "all"
+			? "/all-offers/"
+			: `/all-offers/?category=${identifier}`;
 
 	return (
 		<LocalizedTrackedAnchorLink
-			className="h-56 flex flex-col gap-0 shadow-md w-full border border-berlin-grey-light hover:bg-berlin-grey-light"
-			href={`/all-offers/?category=${identifier}`}
+			className="w-full flex flex-col gap-2"
+			href={href}
 			additionalTrackingContext={"(category card)"}
 		>
-			<div className="h-[50%] w-full flex flex-row">
-				<div className={`${category.color} w-[5%] h-full`}></div>
-				<div className="w-[95%] h-full">
-					<ResponsivePicture
-						src={category.image}
-						alt={localizedName}
-						loading={"lazy"}
-						className="object-cover h-full w-full"
-					/>
+			<div className="flex flex-col gap-2 relative">
+				<ResponsivePicture
+					src={category.image}
+					alt={localizedName}
+					loading={"lazy"}
+					className="object-cover aspect-[4/3]"
+				/>
+				<div className="absolute top-0 right-0">
+					<ImageArrowIcon />
 				</div>
+				<p className="text-[11px] text-berlin-grey mx-4 sm:mx-0">© Unsplash</p>
 			</div>
 
-			<div className="flex flex-col justify-between p-4 h-[50%] w-full">
-				<div className="text-xl font-bold">{localizedName}</div>
-				<div className="text-primary-blue text-left flex flex-row items-center justify-start gap-2 hover:underline">
-					<div>{i18n["discoverOffers"]}</div>
-					<ArrowRightIcon color={"text-primary-red"}></ArrowRightIcon>
+			<div className="flex flex-col justify-between mx-4 sm:mx-0">
+				<div className="text-[17px] font-bold mb-1.5">{localizedName}</div>
+				<div className="text-link-blue text-left flex flex-row items-center justify-start gap-1 hover:underline">
+					<div>{i18n["discover"]}</div>
+					<ArrowRightLinkIcon color={"text-link-blue"}></ArrowRightLinkIcon>
 				</div>
 			</div>
 		</LocalizedTrackedAnchorLink>

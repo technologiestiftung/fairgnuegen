@@ -16,7 +16,10 @@ const MapLegend: React.FC = () => {
 					.filter((c) => c[1].isRenderedInCategoryCards)
 					.map((c) => (
 						<Pill
-							title={i18n[`${c[1].i18nKey}.name`]}
+							title={
+								i18n[`${c[1].i18nKey}.name_short`] ??
+								i18n[`${c[1].i18nKey}.name`]
+							}
 							key={c[0]}
 							backgroundColor={c[1].color}
 							textSize="text-xs md:text-base"

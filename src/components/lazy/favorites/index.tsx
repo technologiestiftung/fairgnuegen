@@ -5,7 +5,6 @@ import { useLanguage } from "../../../hooks/use-language";
 import { useI18n } from "../../../i18n/use-i18n";
 import { useFavoritesStore } from "../../../store/favorites-store";
 import BackButton from "../../buttons/back-button";
-import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
 
 export default function Index() {
@@ -40,7 +39,7 @@ export default function Index() {
 					{i18n["menuItem.favorites"]}
 				</div>
 
-				<div className="max-w-[800px] mx-auto flex flex-col">
+				<div className="max-w-[980px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
 						<p className="text-md font-bold text-berlin-green">
 							{filteredOffers.length} {i18n["allOffers.offersFound"]}
@@ -61,7 +60,6 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }

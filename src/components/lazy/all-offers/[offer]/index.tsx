@@ -17,10 +17,10 @@ export default function Index() {
 
 	return (
 		<>
-			<div className="max-w-[800px] mx-auto flex flex-col my-[40px]">
+			<div className="max-w-[980px] mx-auto flex flex-col my-[40px]">
 				<div>
 					<OfferFull offer={offer}></OfferFull>
-					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
+					<div className="px-4 lg:px-0 pt-4 flex w-full">
 						<BackButton title={i18n["return"]}></BackButton>
 					</div>
 				</div>

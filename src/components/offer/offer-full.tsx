@@ -34,13 +34,13 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					/>
 					<span className="text-xs">© Bildcopyright</span>
 				</div>
-				<div className="w-full max-w-[800px] flex flex-col gap-4 mx-4 lg:mx-0">
+				<div className="w-full max-w-[980px] flex flex-col gap-4 mx-4 lg:mx-0">
 					<div className="hidden sm:flex flex-col gap-2">
-						<h1 className="font-bold text-2xl">{offer.provider}</h1>
+						<h3 className="font-bold text-2xl">{offer.provider}</h3>
 					</div>
 					<div className="flex flex-row gap-2 justify-between sm:hidden">
 						<div className="flex flex-col gap-2">
-							<h1 className="font-bold text-2xl ">{offer.provider}</h1>
+							<h3 className="font-bold text-2xl ">{offer.provider}</h3>
 							<OfferTags offer={offer} />
 						</div>
 						<div className="flex flex-col gap-2">
@@ -88,7 +88,6 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					<CopyToClipboardButton text={fullAddress} />
 				</div>
 			</div>
-			<div className="border-b-2 border-[#dddddd] w-full"></div>
 		</div>
 	);
 };

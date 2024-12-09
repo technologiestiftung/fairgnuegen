@@ -181,14 +181,14 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 		<DrawerLeft isOpen={isOpen} close={() => close()}>
 			<div className="flex flex-col text-base ">
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4 shadow-lg">
-					<p className="text-2xl font-bold">{i18n["filter.title"]}</p>
+					<h2 className="text-[22px] font-bold">{i18n["filter.title"]}</h2>
 					<button onClick={() => close()}>
 						<CloseIcon></CloseIcon>
 					</button>
 				</div>
-				<div className="text-xl font-bold px-6 py-4">
+				<h2 className="text-[22px] font-bold px-6 py-4">
 					{i18n["filter.intro"]}
-				</div>
+				</h2>
 				<div className="py-4">
 					<div className="px-6 pb-2">
 						<FreeOffersCheckbox></FreeOffersCheckbox>
@@ -198,7 +198,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 						<div key={filterRow.title} className="">
 							<div
 								key={filterRow.title}
-								className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 border-b px-6 text-lg font-bold`}
+								className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 border-b px-6 text-normal font-bold`}
 							>
 								<div
 									className="flex flex-row justify-between items-center"
@@ -227,7 +227,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 									filterRow.options.map((subItem) => (
 										<div
 											key={subItem.title}
-											className="px-6 flex flex-row items-start text-lg mt-2"
+											className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
 										>
 											<Checkbox
 												id={subItem.title}

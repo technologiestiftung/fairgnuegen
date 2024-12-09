@@ -17,7 +17,18 @@ const { detailPagesRoutes } = await import(
 );
 const { content } = await import("./dist/assets/content/content.js");
 
+async function getFooterHtml() {
+	const fetchResponse = await fetch(
+		"https://www.berlin.de/rbmskzl/aktuelles/__i9/std/landesfooter.inc",
+	);
+	const html = await fetchResponse.text();
+
+	return html;
+}
+
 async function generateStaticPages() {
+	const footerHtml = await getFooterHtml();
+
 	for (const { path } of routes.concat(detailPagesRoutes)) {
 		console.log("path:", path);
 
@@ -26,7 +37,8 @@ async function generateStaticPages() {
 
 		const html = template
 			.replace("<title></title>", `<title>${pageTitle}</title>`)
-			.replace(`<!--app-html-->`, appHtml);
+			.replace(`<!--app-html-->`, appHtml)
+			.replace("<!-- placeholder footer -->", footerHtml);
 
 		const filePath = `dist${path}index.html`;
 		writeFileSyncRecursive(toAbsolute(filePath), html);

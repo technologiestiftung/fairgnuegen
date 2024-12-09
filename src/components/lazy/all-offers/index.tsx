@@ -11,7 +11,6 @@ import FilterButton from "../../buttons/filter-button";
 import ShowMapButton from "../../buttons/show-map-button";
 import { CategoryCard } from "../../categories/category-card";
 import FreeOffersCheckbox from "../../checkbox/free-offers-checkbox";
-import { InfoBox } from "../../info-box/info-box";
 import OfferDetail from "../../offer/offer-detail";
 import { ResponsivePicture } from "../../responsive-picture/responsive-picture";
 import SearchBar from "../../search-bar/search-bar";
@@ -47,7 +46,7 @@ export default function Index() {
 						: i18n["allOffers.title"]}
 				</div>
 
-				<div className="max-w-[800px] mx-auto flex flex-col">
+				<div className="max-w-[980px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col gap-2 mb-10">
 							<SearchBar />
@@ -84,23 +83,26 @@ export default function Index() {
 							/>
 						))}
 					</div>
-					<div className="px-4 lg:px-0 pt-4 flex w-full md:justify-end justify-start">
+					<div className="px-4 lg:px-0 pt-4 flex w-full justify-start">
 						<BackButton title={i18n["returnToHome"]} />
 					</div>
 
-					<div className="my-8 mx-4 md:mx-2 lg:mx-0">
-						<div className="text-xl font-bold my-6">
+					<div className="my-8 sm:mx-4 lg:mx-0">
+						<div className="text-xl font-bold my-6 mx-4 sm:mx-0">
 							{!category || category === "all"
 								? i18n["allOffers.discoverCategories"]
 								: i18n["allOffers.discoverFurtherCategories"]}
 						</div>
 						<div
-							className={`w-full grid gap-4 ${category === "all" ? "grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-2" : "grid-rows-3 grid-cols-1 sm:grid-cols-2 sm:grid-rows-2"}`}
+							className={`w-full grid  gap-x-5 gap-y-10 grid-cols-1 grid-rows-4 sm:grid-cols-4 sm:grid-rows-1`}
 						>
 							{Object.entries(categoryMap)
-								.filter(
-									([key, c]) => c.isRenderedInCategoryCards && key !== category,
-								)
+								.filter(([key]) => {
+									if (!category || category === "all") {
+										return key !== "all";
+									}
+									return key !== category;
+								})
 								.map(([key, c]) => (
 									<CategoryCard key={key} identifier={key} category={c} />
 								))}
@@ -108,7 +110,6 @@ export default function Index() {
 					</div>
 				</div>
 			</div>
-			<InfoBox showProviderHint={false} maxWidth="max-w-[800px]"></InfoBox>
 		</>
 	);
 }
