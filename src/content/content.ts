@@ -2,6 +2,7 @@
 import { detailPagesContent } from "./detail-pages-content.js";
 
 export type Offer = {
+	id: string;
 	language: string;
 	path: string;
 	slug: string;

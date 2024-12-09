@@ -2,7 +2,7 @@ import fs from "fs";
 import slugify from "slugify";
 import { useI18n } from "./src/i18n/use-i18n";
 
-const filePath = "./berlinpass_data.json";
+const filePath = "./data/berlinpass_data.json";
 
 const existingPaths: string[] = [];
 
@@ -39,6 +39,7 @@ try {
 
 	jsonData.forEach((row) => {
 		const {
+			id,
 			provider,
 			providerDescription,
 			offerDescription,
@@ -50,8 +51,8 @@ try {
 			isFree,
 			category,
 			targetGroups,
-			lat,
-			lng,
+			x,
+			y,
 			language,
 			slug: identifierToBeSlugified,
 		} = row;
@@ -85,6 +86,7 @@ try {
 			title: provider,
 			breadcrumbs,
 			offer: {
+				id: id,
 				language,
 				path: path,
 				provider,
@@ -95,13 +97,11 @@ try {
 				addressWithHouseNumber,
 				cityWithZip,
 				district,
-				isFree: isFree === "ja",
+				isFree: isFree,
 				category,
-				targetGroups: targetGroups
-					.split(",")
-					.map((targetGroup) => targetGroup.trim()),
-				x: parseFloat(lat.replace(",", ".")),
-				y: parseFloat(lng.replace(",", ".")),
+				targetGroups: targetGroups,
+				x: parseFloat(x),
+				y: parseFloat(y),
 				slug,
 			},
 		};

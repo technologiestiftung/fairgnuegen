@@ -1,5 +1,6 @@
 import * as turf from "@turf/turf";
-import { readFileSync } from "node:fs";
+import { backOff } from "exponential-backoff";
+import { readFileSync, writeFileSync } from "node:fs";
 import { Offer } from "./src/content/content";
 
 const geojsonFilePath = "./geojson/bezirksgrenzen.geojson";
@@ -14,10 +15,11 @@ if (!process.env.FREE_DB_PASSWORD || process.env.FREE_DB_PASSWORD === "") {
 }
 
 interface ApiRow {
-	anbieter: string;
+	id: string;
+	name_anbieter: string;
 	kurzbeschreibung_des_anbieters: string;
 	kurzbeschreibung_des_angebots: string;
-	informationen_zum_angebot: string;
+	art_der_ermaessigung: string;
 	website: string;
 	strasse_und_hausnummer_des_angebots: string;
 	plz_und_ort_des_angebots: string;
@@ -27,35 +29,58 @@ interface ApiRow {
 	freigabe: string;
 }
 
-export async function fetchData(): Promise<ApiRow[]> {
-	const url = "https://www.berlin.de/freedb/open.php/index.json";
+export async function fetchPaginatedData(
+	page: number,
+	accumulatedData: ApiRow[] | null,
+): Promise<ApiRow[]> {
+	const url = `https://www.berlin.de/freedb/open.php/index.json?page=${page}`;
+
+	console.log(`fetching: [${url}]`);
+
 	const username = process.env.FREE_DB_USERNAME;
 	const password = process.env.FREE_DB_PASSWORD;
 
-	const response = await fetch(url, {
+	let response = await fetch(url, {
 		headers: {
 			Authorization:
 				"Basic " + Buffer.from(username + ":" + password).toString("base64"),
+			page: page.toString(),
 		},
 	});
 
-	if (!response.ok) {
-		throw new Error(`HTTP error! Status: ${response.status}`);
+	if (response.status === 425) {
+		response = await backOff(async () => {
+			const newResponse = await fetch(url, {
+				headers: {
+					Authorization:
+						"Basic " +
+						Buffer.from(username + ":" + password).toString("base64"),
+				},
+			});
+			if (!newResponse.ok) {
+				throw new Error("API is blocking the request due to rate limiting...");
+			}
+			return newResponse;
+		});
 	}
 
 	const jsonData = await response.json();
-	return jsonData.data.index as ApiRow[];
+	const data = jsonData.data.index as ApiRow[];
+
+	if (data.length === 0) {
+		const filePath = "./accumulatedData.json";
+		writeFileSync(filePath, JSON.stringify(accumulatedData, null, 2));
+		return accumulatedData || [];
+	}
+
+	const newAccumulatedData = accumulatedData
+		? accumulatedData.concat(data)
+		: data;
+
+	return fetchPaginatedData(page + 1, newAccumulatedData);
 }
 
-function findDistrict({
-	x,
-	y,
-	provider,
-}: {
-	x: number;
-	y: number;
-	provider: string;
-}) {
+function findDistrict({ x, y }: { x: number; y: number }) {
 	for (const { properties, geometry } of districtGeojson.features) {
 		const point = turf.point([x, y]);
 		const polygon = turf.multiPolygon(geometry.coordinates);
@@ -66,8 +91,6 @@ function findDistrict({
 			return properties.Gemeinde_name;
 		}
 	}
-	/* eslint-disable-next-line no-console */
-	console.info(`No district found for ${provider} ${x}, ${y}`);
 	return "";
 }
 
@@ -91,7 +114,6 @@ async function fetchGeoCoordinates(fullAddress: string) {
 		const { lat, lon } = geoCoordinates[0];
 		return { lat, lon };
 	} catch (error) {
-		console.info("Failed to fetch geo-coordinates:", error);
 		return { lat: "", lon: "" }; // Return null to handle missing coordinates gracefully
 	}
 }
@@ -100,14 +122,15 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 	try {
 		const augmentedData: Offer[] = [];
 
-		const data = await fetchData();
+		const data = await fetchPaginatedData(1, null);
 
 		for (const row of data) {
 			const {
-				anbieter,
+				id,
+				name_anbieter,
 				kurzbeschreibung_des_anbieters,
 				kurzbeschreibung_des_angebots,
-				informationen_zum_angebot,
+				art_der_ermaessigung,
 				website,
 				strasse_und_hausnummer_des_angebots,
 				plz_und_ort_des_angebots,
@@ -120,37 +143,52 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 			const fullAddress = `${strasse_und_hausnummer_des_angebots}, ${plz_und_ort_des_angebots}`;
 
 			const { lat, lon } = await fetchGeoCoordinates(fullAddress);
-			const district = findDistrict({ x: lon, y: lat, provider: anbieter });
+			const district = findDistrict({
+				x: lon,
+				y: lat,
+			});
 
-			const isAccepted = freigabe.toLowerCase().includes("ja");
+			const isAccepted = !freigabe.toLowerCase().includes("nein");
+			const providerName = name_anbieter.trim();
 
 			if (lat !== "" && lon !== "" && district !== "" && isAccepted) {
+				console.log(`augmented: [${providerName}]`);
 				const augmentedRow = {
-					provider: anbieter,
-					providerDescription: kurzbeschreibung_des_anbieters,
-					offerDescription: kurzbeschreibung_des_angebots,
-					offerInformation: informationen_zum_angebot,
-					website,
-					addressWithHouseNumber: strasse_und_hausnummer_des_angebots,
-					cityWithZip: plz_und_ort_des_angebots,
-					district: district,
+					id: `${id}`,
+					provider: providerName,
+					providerDescription: kurzbeschreibung_des_anbieters.trim(),
+					offerDescription: kurzbeschreibung_des_angebots.trim(),
+					offerInformation: art_der_ermaessigung.trim(),
+					website: website.trim(),
+					addressWithHouseNumber: strasse_und_hausnummer_des_angebots.trim(),
+					cityWithZip: plz_und_ort_des_angebots.trim(),
+					district: district.trim(),
 					isFree: gratis ? gratis.toLowerCase().includes("ja") : false,
-					category: kategorie,
+					category:
+						kategorie.trim().split(",").length > 1
+							? kategorie.trim().split(",")[0]
+							: kategorie.trim(),
 					targetGroups: zielgruppen
 						.replace("[", "")
 						.replace("]", "")
 						.replace(/"/g, "")
-						.split(","),
+						.split(",")
+						.map((targetGroup) => targetGroup.trim()),
 					x: lat,
 					y: lon,
 					language: "de",
-					identifierToBeSlugified: anbieter,
+					identifierToBeSlugified: providerName,
 					path: "",
-					slug: "",
+					slug: providerName,
 				};
 
 				augmentedData.push(augmentedRow);
+				continue;
 			}
+
+			console.log(
+				`skipping: [${providerName}] (one or more properties are incomplete: lat=${lat}, lon=${lon}, district=${district}, isAccepted=${isAccepted}, fullAddress=${fullAddress})`,
+			);
 		}
 
 		return augmentedData;
@@ -159,5 +197,3 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 		return [];
 	}
 }
-
-fetchDataAndAugment();
