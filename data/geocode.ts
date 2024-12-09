@@ -28,14 +28,13 @@ export async function fetchGeoCoordinates(fullAddress: string) {
 		);
 
 		const geoCoordinates = await response.json();
-		const mostImportantGeoCoordinates = geoCoordinates.sort((a, b) => {
-			return b.importance - a.importance;
+		const orderedGeoCoordinates = geoCoordinates.sort((a, b) => {
+			return a.place_id - b.place_id;
 		});
-		if (mostImportantGeoCoordinates.length === 0) {
+		if (orderedGeoCoordinates.length === 0) {
 			return { lat: "", lon: "" }; // Return null to handle missing coordinates gracefully
 		}
-
-		const { lat, lon } = mostImportantGeoCoordinates[0];
+		const { lat, lon } = orderedGeoCoordinates[0];
 		return { lat, lon };
 	} catch {
 		return { lat: "", lon: "" }; // Return null to handle missing coordinates gracefully
