@@ -1,90 +1,96 @@
 /* eslint-disable no-console */
-import { fetchDataAndAugment } from "./fetch-and-augment-data-from-api";
 import { Offer } from "../src/content/content";
 import fs from "fs";
+import { existsIdenticallyInData } from "./utils";
+import { translateViaOpenAi } from "./translate";
+import { fetchPaginatedData } from "./fetch-data";
+import { fetchGeoCoordinates, findDistrict } from "./geocode";
 
-const API_KEY = process.env.OPENAI_API_KEY;
+export async function fetchDataAndAugment(): Promise<Offer[]> {
+	try {
+		const augmentedData: Offer[] = [];
 
-if (!API_KEY || API_KEY === "") {
-	throw new Error("OPENAI_API_KEY must be defined");
-}
+		const data = await fetchPaginatedData(1, null);
 
-const filePath = "./berlinpass_data.json";
+		for (const row of data) {
+			const {
+				id,
+				name_anbieter,
+				kurzbeschreibung_des_anbieters,
+				kurzbeschreibung_des_angebots,
+				art_der_ermaessigung,
+				website,
+				strasse_und_hausnummer_des_angebots,
+				plz_und_ort_des_angebots,
+				gratis,
+				kategorie,
+				zielgruppen,
+				freigabe,
+			} = row;
 
-async function translate(json: string): Promise<{
-	provider: string;
-	providerDescription: string;
-	offerDescription: string;
-	offerInformation: string;
-}> {
-	const response = await fetch("https://api.openai.com/v1/chat/completions", {
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${API_KEY}`,
-		},
-		method: "POST",
-		body: JSON.stringify({
-			model: "gpt-4o-mini",
-			messages: [
-				{
-					role: "system",
-					content:
-						"Translate the following json to English and only return json as response, DO NOT use semicolons.",
-				},
-				{
-					role: "user",
-					content: json,
-				},
-			],
-		}),
-	});
+			const fullAddress = `${strasse_und_hausnummer_des_angebots}, ${plz_und_ort_des_angebots}`;
 
-	const body = await response.json();
+			const { lat, lon } = await fetchGeoCoordinates(fullAddress);
+			const district = findDistrict(lon, lat);
 
-	const translation = JSON.parse(body.choices[0].message.content);
-	return translation;
-}
+			const isAccepted = !freigabe.toLowerCase().includes("nein");
+			const providerName = name_anbieter.trim();
 
-interface FoundOffer {
-	isIdentical: boolean;
-	offerDe: Offer | undefined;
-	offerEn: Offer | undefined;
-}
-function existsIdenticallyInData(
-	offer: Offer,
-	existingData: Offer[],
-): FoundOffer {
-	const foundDe = existingData.find((row) => {
-		return row.id === offer.id;
-	});
-	if (!foundDe) {
-		return {
-			isIdentical: false,
-			offerDe: undefined,
-			offerEn: undefined,
-		};
+			if (lat !== "" && lon !== "" && district !== "" && isAccepted) {
+				console.info(`augmented: [${providerName}]`);
+				const augmentedRow = {
+					id: `${id}`,
+					provider: providerName,
+					providerDescription: kurzbeschreibung_des_anbieters.trim(),
+					offerDescription: kurzbeschreibung_des_angebots.trim(),
+					offerInformation: art_der_ermaessigung.trim(),
+					website: website.trim(),
+					addressWithHouseNumber: strasse_und_hausnummer_des_angebots.trim(),
+					cityWithZip: plz_und_ort_des_angebots.trim(),
+					district: district.trim(),
+					isFree: gratis ? gratis.toLowerCase().includes("ja") : false,
+					category:
+						kategorie.trim().split(",").length > 1
+							? kategorie.trim().split(",")[0]
+							: kategorie.trim(),
+					targetGroups: zielgruppen
+						.replace("[", "")
+						.replace("]", "")
+						.replace(/"/g, "")
+						.split(",")
+						.map((targetGroup) => targetGroup.trim()),
+					x: lat,
+					y: lon,
+					language: "de",
+					identifierToBeSlugified: providerName,
+					path: "",
+					slug: providerName,
+				};
+
+				augmentedData.push(augmentedRow);
+				continue;
+			}
+
+			console.info(
+				`skipping: [${providerName}] (one or more properties are incomplete: lat=${lat}, lon=${lon}, district=${district}, isAccepted=${isAccepted}, fullAddress=${fullAddress})`,
+			);
+		}
+
+		return augmentedData;
+	} catch (error) {
+		console.error("Error processing data", error);
+		return [];
 	}
-	const isIdentical = JSON.stringify(offer) === JSON.stringify(foundDe);
-	const foundEn = existingData.find((row) => {
-		return row.id === `${offer.id}_en`;
-	});
-
-	if (isIdentical) {
-		return {
-			isIdentical: true,
-			offerDe: foundDe,
-			offerEn: foundEn,
-		};
-	}
-
-	return {
-		isIdentical: false,
-		offerDe: undefined,
-		offerEn: undefined,
-	};
 }
 
-async function generateTranslations() {
+async function updateAndTranslateData() {
+	const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+	const filePath = "./berlinpass_data.json";
+
+	if (!OPENAI_API_KEY || OPENAI_API_KEY === "") {
+		throw new Error("OPENAI_API_KEY must be defined");
+	}
+
 	const apiData = await fetchDataAndAugment();
 	const resultingData: Offer[] = [];
 	const existingData: Offer[] = JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -123,20 +129,21 @@ async function generateTranslations() {
 			slug,
 		} = row;
 
-		console.log(`translating: [${provider}]`);
+		console.info(`translating: [${provider}]`);
 
 		const {
 			provider: translatedProvider,
 			providerDescription: translatedProviderDescription,
 			offerDescription: translatedOfferDescription,
 			offerInformation: translatedOfferInformation,
-		} = await translate(
+		} = await translateViaOpenAi(
 			JSON.stringify({
 				provider,
 				providerDescription,
 				offerDescription,
 				offerInformation,
 			}),
+			OPENAI_API_KEY,
 		);
 
 		const translatedEntry = {
@@ -167,4 +174,4 @@ async function generateTranslations() {
 	});
 }
 
-generateTranslations().catch(console.error);
+updateAndTranslateData().catch(console.error);

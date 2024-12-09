@@ -125,5 +125,5 @@ try {
 		"utf-8",
 	);
 } catch (error) {
-	console.error("Error reading CSV file:", error);
+	console.error("Error reading JSON file:", error);
 }
