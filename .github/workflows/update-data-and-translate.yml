@@ -1,0 +1,30 @@
+name: Update data and translate
+
+on:
+  workflow_dispatch:  # This allows the workflow to be triggered manually  
+  repository_dispatch:
+    # This action can be triggered via Github API webook (see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch)
+    types: [berlinpass-update-data]
+      
+jobs:
+  update-data-and-translate:
+    environment: production
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: npm-install
+        run: npm install
+      - name: update-data-and-translate
+        run: npm run build:update-data-and-translate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FREE_DB_USERNAME: ${{ secrets.FREE_DB_USERNAME }}
+          FREE_DB_PASSWORD: ${{ secrets.FREE_DB_PASSWORD }}
+          MAPBOX_ACCESS_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: added new data and updated changed data incl. translations"
+          file_pattern: "data/berlinpass_data.json"
+          branch: "main"

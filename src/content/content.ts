@@ -2,6 +2,7 @@
 import { detailPagesContent } from "./detail-pages-content.js";
 
 export type Offer = {
+	id: string;
 	language: string;
 	path: string;
 	slug: string;
@@ -10,15 +11,14 @@ export type Offer = {
 	offerDescription: string;
 	offerInformation: string;
 	website: string;
-	address: string;
-	city: string;
-	zip: number | null;
-	district: string;
+	addressWithHouseNumber: string;
+	cityWithZip: string;
+	district: string | null;
 	isFree: boolean;
 	category: string;
 	targetGroups: string[];
-	x: number | null;
-	y: number | null;
+	lat: number | null;
+	lon: number | null;
 };
 
 export type Breadcrumb = {

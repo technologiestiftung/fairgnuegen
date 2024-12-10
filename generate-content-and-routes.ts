@@ -2,7 +2,7 @@ import fs from "fs";
 import slugify from "slugify";
 import { useI18n } from "./src/i18n/use-i18n";
 
-const filePath = "./20240717_Berlinpass-Daten.csv";
+const filePath = "./data/berlinpass_data.json";
 
 const existingPaths: string[] = [];
 
@@ -32,31 +32,30 @@ function generatePath({ slug, language }: { slug: string; language: string }) {
 }
 
 try {
-	const csvData = fs.readFileSync(filePath, "utf-8");
-	const data = csvData.split("\r\n").slice(1);
+	const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 	const processedContent: Record<string, object> = {};
 	const processedRoutes: { path: string; page: string }[] = [];
 
-	data.forEach((row) => {
-		const [
+	jsonData.forEach((row) => {
+		const {
+			id,
 			provider,
 			providerDescription,
 			offerDescription,
 			offerInformation,
 			website,
-			address,
-			city,
-			zip,
+			addressWithHouseNumber,
+			cityWithZip,
 			district,
 			isFree,
 			category,
 			targetGroups,
-			x,
-			y,
+			lon,
+			lat,
 			language,
-			identifierToBeSlugified,
-		] = row.split(";");
+			slug: identifierToBeSlugified,
+		} = row;
 
 		const { path, slug } = generatePath({
 			slug: identifierToBeSlugified,
@@ -87,6 +86,7 @@ try {
 			title: provider,
 			breadcrumbs,
 			offer: {
+				id: id,
 				language,
 				path: path,
 				provider,
@@ -94,17 +94,14 @@ try {
 				offerDescription,
 				offerInformation,
 				website,
-				address,
-				city,
-				zip: parseInt(zip),
+				addressWithHouseNumber,
+				cityWithZip,
 				district,
-				isFree: isFree === "ja",
+				isFree: isFree,
 				category,
-				targetGroups: targetGroups
-					.split(",")
-					.map((targetGroup) => targetGroup.trim()),
-				x: parseFloat(x.replace(",", ".")),
-				y: parseFloat(y.replace(",", ".")),
+				targetGroups: targetGroups,
+				lon: lon,
+				lat: lat,
 				slug,
 			},
 		};
@@ -128,5 +125,5 @@ try {
 		"utf-8",
 	);
 } catch (error) {
-	console.error("Error reading CSV file:", error);
+	console.error("Error reading JSON file:", error);
 }
