@@ -52,7 +52,9 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 						providerDescription: kurzbeschreibung_des_anbieters.trim(),
 						offerDescription: kurzbeschreibung_des_angebots.trim(),
 						offerInformation: art_der_ermaessigung.trim(),
-						website: website.trim(),
+						website: website.trim().startsWith("www")
+							? `https://${website.trim()}`
+							: website.trim(),
 						addressWithHouseNumber: strasse_und_hausnummer_des_angebots.trim(),
 						cityWithZip: plz_und_ort_des_angebots.trim(),
 						district: district ? district.trim() : null,
