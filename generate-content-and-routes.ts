@@ -100,8 +100,8 @@ try {
 				isFree: isFree,
 				category,
 				targetGroups: targetGroups,
-				lon: parseFloat(lon),
-				lat: parseFloat(lat),
+				lon: lon,
+				lat: lat,
 				slug,
 			},
 		};

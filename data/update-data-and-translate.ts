@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
-import { Offer } from "../src/content/content";
 import fs from "fs";
-import { existsIdenticallyInData } from "./utils";
-import { translateViaOpenAi } from "./translate";
+import { Offer } from "../src/content/content";
 import { fetchPaginatedData } from "./fetch-data";
-import { fetchGeoCoordinates, findDistrict } from "./geocode";
+import { geocodeViaMapbox, findDistrict } from "./geocode";
+import { translateViaOpenAi } from "./translate";
+import { existsIdenticallyInData } from "./utils";
 
 export async function fetchDataAndAugment(): Promise<Offer[]> {
 	try {
@@ -30,7 +30,7 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 
 			const fullAddress = `${strasse_und_hausnummer_des_angebots}, ${plz_und_ort_des_angebots}`;
 
-			const { lat, lon } = await fetchGeoCoordinates(fullAddress);
+			const { lat, lon } = await geocodeViaMapbox(fullAddress);
 			const district =
 				lat === null || lon === null ? null : findDistrict(lat, lon);
 
@@ -96,78 +96,87 @@ async function updateAndTranslateData() {
 	const resultingData: Offer[] = [];
 	const existingData: Offer[] = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
-	for (const [_, row] of apiData.entries()) {
-		const existsIdentically = existsIdenticallyInData(row, existingData);
+	const batchSize = 20;
+	const numBatches = Math.ceil(apiData.length / batchSize);
+	const batches = Array.from({ length: numBatches }, (_, i) =>
+		apiData.slice(i * batchSize, i * batchSize + batchSize),
+	);
 
-		if (
-			existsIdentically.isIdentical &&
-			existsIdentically.offerDe &&
-			existsIdentically.offerEn
-		) {
-			console.info(`exists: [${row.provider}]`);
-
-			resultingData.push(existsIdentically.offerDe);
-			resultingData.push(existsIdentically.offerEn);
-			continue;
-		}
-
-		resultingData.push(row);
-
-		const {
-			provider,
-			providerDescription,
-			offerDescription,
-			offerInformation,
-			website,
-			addressWithHouseNumber,
-			cityWithZip,
-			district,
-			isFree,
-			category,
-			targetGroups,
-			lat,
-			lon,
-			slug,
-		} = row;
-
-		console.info(`translating: [${provider}]`);
-
-		const {
-			provider: translatedProvider,
-			providerDescription: translatedProviderDescription,
-			offerDescription: translatedOfferDescription,
-			offerInformation: translatedOfferInformation,
-		} = await translateViaOpenAi(
-			JSON.stringify({
-				provider,
-				providerDescription,
-				offerDescription,
-				offerInformation,
-			}),
-			OPENAI_API_KEY,
+	for (const [index, batch] of batches.entries()) {
+		console.log(
+			`Processing batch ${index + 1} / ${numBatches} [batch_size=${batch.length}]`,
 		);
+		const batchResults = await Promise.all(
+			batch.flatMap(async (row) => {
+				const existsIdentically = existsIdenticallyInData(row, existingData);
 
-		const translatedEntry = {
-			id: `${row.id}_en`,
-			provider: translatedProvider,
-			providerDescription: translatedProviderDescription,
-			offerDescription: translatedOfferDescription,
-			offerInformation: translatedOfferInformation,
-			website,
-			addressWithHouseNumber,
-			cityWithZip,
-			district,
-			isFree,
-			category,
-			targetGroups,
-			lat,
-			lon,
-			language: "en",
-			slug,
-			path: slug,
-		};
+				if (
+					existsIdentically.isIdentical &&
+					existsIdentically.offerDe &&
+					existsIdentically.offerEn
+				) {
+					console.info(`exists: [${row.provider}]`);
+					return [existsIdentically.offerDe, existsIdentically.offerEn];
+				}
 
-		resultingData.push(translatedEntry);
+				const {
+					provider,
+					providerDescription,
+					offerDescription,
+					offerInformation,
+					website,
+					addressWithHouseNumber,
+					cityWithZip,
+					district,
+					isFree,
+					category,
+					targetGroups,
+					lat,
+					lon,
+					slug,
+				} = row;
+
+				console.info(`translating: [${provider}]`);
+
+				const {
+					provider: translatedProvider,
+					providerDescription: translatedProviderDescription,
+					offerDescription: translatedOfferDescription,
+					offerInformation: translatedOfferInformation,
+				} = await translateViaOpenAi(
+					JSON.stringify({
+						provider,
+						providerDescription,
+						offerDescription,
+						offerInformation,
+					}),
+					OPENAI_API_KEY,
+				);
+
+				const translatedEntry = {
+					id: `${row.id}_en`,
+					provider: translatedProvider,
+					providerDescription: translatedProviderDescription,
+					offerDescription: translatedOfferDescription,
+					offerInformation: translatedOfferInformation,
+					website,
+					addressWithHouseNumber,
+					cityWithZip,
+					district,
+					isFree,
+					category,
+					targetGroups,
+					lat,
+					lon,
+					language: "en",
+					slug,
+					path: slug,
+				};
+
+				return [row, translatedEntry];
+			}),
+		);
+		resultingData.push(...batchResults.flat());
 	}
 
 	fs.writeFileSync(filePath, JSON.stringify(resultingData), {

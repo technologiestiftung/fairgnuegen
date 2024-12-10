@@ -24,6 +24,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FREE_DB_USERNAME: ${{ secrets.FREE_DB_USERNAME }}
           FREE_DB_PASSWORD: ${{ secrets.FREE_DB_PASSWORD }}
+          MAPBOX_ACCESS_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: added new data and updated changed data incl. translations"
