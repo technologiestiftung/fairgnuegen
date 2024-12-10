@@ -44,7 +44,9 @@ export function useFilteredAndSortedOffers() {
 			)
 			.filter((o) => !showFreeOffersOnly || o.isFree)
 			.filter(
-				(o) => districts.length === 0 || districtValues.includes(o.district),
+				(o) =>
+					districts.length === 0 ||
+					(o.district && districtValues.includes(o.district)),
 			)
 			.filter(
 				(o) =>
@@ -82,7 +84,7 @@ export function useFilteredAndSortedOffers() {
 				},
 				geometry: {
 					type: "Point",
-					coordinates: [offer.x, offer.y],
+					coordinates: [offer.lon, offer.lat],
 				},
 			};
 		});

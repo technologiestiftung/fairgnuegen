@@ -51,8 +51,8 @@ try {
 			isFree,
 			category,
 			targetGroups,
-			x,
-			y,
+			lon,
+			lat,
 			language,
 			slug: identifierToBeSlugified,
 		} = row;
@@ -100,8 +100,8 @@ try {
 				isFree: isFree,
 				category,
 				targetGroups: targetGroups,
-				x: parseFloat(x),
-				y: parseFloat(y),
+				lon: parseFloat(lon),
+				lat: parseFloat(lat),
 				slug,
 			},
 		};

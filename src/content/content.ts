@@ -13,12 +13,12 @@ export type Offer = {
 	website: string;
 	addressWithHouseNumber: string;
 	cityWithZip: string;
-	district: string;
+	district: string | null;
 	isFree: boolean;
 	category: string;
 	targetGroups: string[];
-	x: number | null;
-	y: number | null;
+	lat: number | null;
+	lon: number | null;
 };
 
 export type Breadcrumb = {

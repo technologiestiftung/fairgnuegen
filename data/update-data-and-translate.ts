@@ -31,12 +31,13 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 			const fullAddress = `${strasse_und_hausnummer_des_angebots}, ${plz_und_ort_des_angebots}`;
 
 			const { lat, lon } = await fetchGeoCoordinates(fullAddress);
-			const district = findDistrict(lat, lon);
+			const district =
+				lat === null || lon === null ? null : findDistrict(lat, lon);
 
 			const isAccepted = !freigabe.toLowerCase().includes("nein");
 			const providerName = name_anbieter.trim();
 
-			if (lat !== "" && lon !== "" && district !== "" && isAccepted) {
+			if (isAccepted) {
 				console.info(`augmented: [${providerName}]`);
 				const augmentedRow = {
 					id: `${id}`,
@@ -47,7 +48,7 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 					website: website.trim(),
 					addressWithHouseNumber: strasse_und_hausnummer_des_angebots.trim(),
 					cityWithZip: plz_und_ort_des_angebots.trim(),
-					district: district.trim(),
+					district: district ? district.trim() : null,
 					isFree: gratis ? gratis.toLowerCase().includes("ja") : false,
 					category:
 						kategorie.trim().split(",").length > 1
@@ -59,8 +60,8 @@ export async function fetchDataAndAugment(): Promise<Offer[]> {
 						.replace(/"/g, "")
 						.split(",")
 						.map((targetGroup) => targetGroup.trim()),
-					x: lon,
-					y: lat,
+					lon: lon,
+					lat: lat,
 					language: "de",
 					identifierToBeSlugified: providerName,
 					path: "",
@@ -124,8 +125,8 @@ async function updateAndTranslateData() {
 			isFree,
 			category,
 			targetGroups,
-			x,
-			y,
+			lat,
+			lon,
 			slug,
 		} = row;
 
@@ -159,8 +160,8 @@ async function updateAndTranslateData() {
 			isFree,
 			category,
 			targetGroups,
-			x,
-			y,
+			lat,
+			lon,
 			language: "en",
 			slug,
 			path: slug,

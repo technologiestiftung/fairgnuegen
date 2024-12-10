@@ -12,7 +12,7 @@ export function findDistrict(lat: number, lon: number) {
 			return properties.Gemeinde_name;
 		}
 	}
-	return "";
+	return null;
 }
 
 export async function fetchGeoCoordinates(fullAddress: string) {
@@ -32,11 +32,11 @@ export async function fetchGeoCoordinates(fullAddress: string) {
 			return a.place_id - b.place_id;
 		});
 		if (orderedGeoCoordinates.length === 0) {
-			return { lat: "", lon: "" }; // Return null to handle missing coordinates gracefully
+			return { lat: null, lon: null }; // Return null to handle missing coordinates gracefully
 		}
 		const { lat, lon } = orderedGeoCoordinates[0];
 		return { lat, lon };
 	} catch {
-		return { lat: "", lon: "" }; // Return null to handle missing coordinates gracefully
+		return { lat: null, lon: null }; // Return null to handle missing coordinates gracefully
 	}
 }
