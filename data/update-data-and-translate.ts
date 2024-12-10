@@ -1,88 +1,9 @@
 /* eslint-disable no-console */
 import fs from "fs";
 import { Offer } from "../src/content/content";
-import { fetchPaginatedData } from "./fetch-data";
-import { geocodeViaMapbox, findDistrict } from "./geocode";
+import { fetchDataAndAugment } from "./fetch-and-augment";
 import { translateViaOpenAi } from "./translate";
 import { existsIdenticallyInData } from "./utils";
-
-export async function fetchDataAndAugment(): Promise<Offer[]> {
-	try {
-		const augmentedData: Offer[] = [];
-
-		const data = await fetchPaginatedData(1, null);
-
-		for (const row of data) {
-			const {
-				id,
-				name_anbieter,
-				kurzbeschreibung_des_anbieters,
-				kurzbeschreibung_des_angebots,
-				art_der_ermaessigung,
-				website,
-				strasse_und_hausnummer_des_angebots,
-				plz_und_ort_des_angebots,
-				gratis,
-				kategorie,
-				zielgruppen,
-				freigabe,
-			} = row;
-
-			const fullAddress = `${strasse_und_hausnummer_des_angebots}, ${plz_und_ort_des_angebots}`;
-
-			const { lat, lon } = await geocodeViaMapbox(fullAddress);
-			const district =
-				lat === null || lon === null ? null : findDistrict(lat, lon);
-
-			const isAccepted = !freigabe.toLowerCase().includes("nein");
-			const providerName = name_anbieter.trim();
-
-			if (isAccepted) {
-				console.info(`augmented: [${providerName}]`);
-				const augmentedRow = {
-					id: `${id}`,
-					provider: providerName,
-					providerDescription: kurzbeschreibung_des_anbieters.trim(),
-					offerDescription: kurzbeschreibung_des_angebots.trim(),
-					offerInformation: art_der_ermaessigung.trim(),
-					website: website.trim(),
-					addressWithHouseNumber: strasse_und_hausnummer_des_angebots.trim(),
-					cityWithZip: plz_und_ort_des_angebots.trim(),
-					district: district ? district.trim() : null,
-					isFree: gratis ? gratis.toLowerCase().includes("ja") : false,
-					category:
-						kategorie.trim().split(",").length > 1
-							? kategorie.trim().split(",")[0]
-							: kategorie.trim(),
-					targetGroups: zielgruppen
-						.replace("[", "")
-						.replace("]", "")
-						.replace(/"/g, "")
-						.split(",")
-						.map((targetGroup) => targetGroup.trim()),
-					lon: lon,
-					lat: lat,
-					language: "de",
-					identifierToBeSlugified: providerName,
-					path: "",
-					slug: providerName,
-				};
-
-				augmentedData.push(augmentedRow);
-				continue;
-			}
-
-			console.info(
-				`skipping: [${providerName}] (one or more properties are incomplete: lat=${lat}, lon=${lon}, district=${district}, isAccepted=${isAccepted}, fullAddress=${fullAddress})`,
-			);
-		}
-
-		return augmentedData;
-	} catch (error) {
-		console.error("Error processing data", error);
-		return [];
-	}
-}
 
 async function updateAndTranslateData() {
 	const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
