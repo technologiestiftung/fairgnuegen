@@ -15,32 +15,6 @@ export function findDistrict(lat: number, lon: number) {
 	return null;
 }
 
-export async function geocodeViaNominatim(fullAddress: string) {
-	try {
-		const response = await fetch(
-			`https://nominatim.openstreetmap.org/search?format=json&q=${fullAddress}`,
-			{
-				headers: {
-					"Content-Type": "application/json",
-				},
-				method: "GET",
-			},
-		);
-
-		const geoCoordinates = await response.json();
-		const orderedGeoCoordinates = geoCoordinates.sort((a, b) => {
-			return a.place_id - b.place_id;
-		});
-		if (orderedGeoCoordinates.length === 0) {
-			return { lat: null, lon: null };
-		}
-		const { lat, lon } = orderedGeoCoordinates[0];
-		return { lat, lon };
-	} catch {
-		return { lat: null, lon: null };
-	}
-}
-
 export async function geocodeViaMapbox(fullAddress: string) {
 	const token = process.env.MAPBOX_ACCESS_TOKEN;
 	try {
@@ -62,7 +36,8 @@ export async function geocodeViaMapbox(fullAddress: string) {
 		const lon = features[0].geometry.coordinates[0];
 		const lat = features[0].geometry.coordinates[1];
 		return { lat, lon };
-	} catch {
-		return { lat: null, lon: null };
+	} catch (e) {
+		console.error(e);
+		throw new Error(`Error fetching geocoding data for ${fullAddress}`);
 	}
 }

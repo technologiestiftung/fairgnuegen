@@ -96,7 +96,10 @@ async function updateAndTranslateData() {
 
 				return [row, translatedEntry];
 			}),
-		);
+		).catch((e) => {
+			console.error(e);
+			process.exit(1);
+		});
 		resultingData.push(...batchResults.flat());
 	}
 
@@ -105,4 +108,7 @@ async function updateAndTranslateData() {
 	});
 }
 
-updateAndTranslateData().catch(console.error);
+updateAndTranslateData().catch((e) => {
+	console.error(e);
+	process.exit(1);
+});
