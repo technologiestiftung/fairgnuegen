@@ -16,6 +16,11 @@ export async function translateViaOpenAi(
 			method: "POST",
 			body: JSON.stringify({
 				model: "gpt-4o-mini",
+				// https://platform.openai.com/docs/api-reference/chat
+				// seed feature is in Beta. If specified, our system will make a best effort to
+				// sample deterministically, such that repeated requests with the same seed and
+				// parameters should return the same result. Determinism is not guaranteed.
+				seed: 1024,
 				messages: [
 					{
 						role: "system",
