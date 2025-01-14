@@ -41,7 +41,7 @@ export default function Index() {
 
 				<div className="max-w-[980px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
-						<p className="text-md font-bold text-berlin-green">
+						<p className="text-md text-berlin-grey">
 							{filteredOffers.length} {i18n["allOffers.offersFound"]}
 						</p>
 					</div>
