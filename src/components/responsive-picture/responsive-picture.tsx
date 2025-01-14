@@ -11,7 +11,9 @@ export function ResponsivePicture({
 	loading,
 	className,
 }: ResponsivePictureProps) {
-	const sizes = [640, 1024, 1920];
+	const sizes = [640, 1024];
+	const defaultSize = 1920;
+
 	return (
 		<picture>
 			{sizes.map((size) => (
@@ -25,9 +27,11 @@ export function ResponsivePicture({
 				/>
 			))}
 			<img
-				src={`/${src}-original.webp`}
+				src={`/${src}-${defaultSize}w.webp`}
 				alt={alt}
 				loading={loading}
+				width={defaultSize}
+				height={defaultSize / 1.5}
 				className={className}
 			/>
 		</picture>
