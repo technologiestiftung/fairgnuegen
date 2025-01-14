@@ -2,7 +2,7 @@ const de = {
 	"home.title": "Startseite",
 	"home.h1": "Willkommen bei Fairgnügen!",
 	"home.p1":
-		"Entdecke zahlreiche kostenlose und ermäßigte Angebote für Sport, Bildung und Freizeit - exklusiv für Berliner:innen, die Sozialhilfe erhalten.",
+		"Entdecke zahlreiche kostenlose und ermäßigte Angebote für Sport, Bildung und Freizeit - exklusiv für Berliner:innen, die Sozialleistungen erhalten.",
 	"home.linkEligible": "Bin ich berechtigt?",
 	"home.h2": "Was möchtest du unternehmen?",
 
@@ -302,7 +302,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	returnToHome: "Zurück zur Startseite",
 
 	listView: "Listenansicht",
-	toTheTop: "zum Seitenanfang",
+	toTheTop: "Zum Seitenanfang",
 
 	"infobox.title":
 		"Freier oder ermäßigter Eintritt nur für Menschen mit staatlicher Hilfe",
