@@ -1,4 +1,5 @@
 import React from "react";
+import { useOnEscape } from "../../hooks/use-on-escape";
 
 interface DrawerProps {
 	isOpen: boolean;
@@ -7,6 +8,8 @@ interface DrawerProps {
 }
 
 export function DrawerLeft({ isOpen, close, children }: DrawerProps) {
+	useOnEscape(close);
+
 	return (
 		<div
 			className={`overflow-x-hidden overflow-y-hidden fixed top-0 left-0 z-20 w-screen h-screen pointer-events-none`}

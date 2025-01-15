@@ -7,6 +7,8 @@ import CloseIcon from "../icons/close-icon";
 import { useLanguage } from "../../hooks/use-language";
 import { useI18n } from "../../i18n/use-i18n";
 import { LocalizedTrackedAnchorLink } from "../anchor-link/localized-tracked-anchor-link";
+import LinkIcon from "../icons/link-icon";
+import { useLocation } from "react-router-dom";
 
 interface MainMenuProps {
 	isOpen: boolean;
@@ -22,6 +24,7 @@ interface MenuItem {
 
 const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 	const language = useLanguage();
+	const location = useLocation();
 	const i18n = useI18n(language);
 
 	const links: MenuItem[] = [
@@ -67,12 +70,14 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
 	return (
-		<DrawerRight isOpen={isOpen} close={() => close()}>
-			<div className="flex flex-col text-base ">
-				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4">
-					<p className="text-2xl font-bold">{i18n["sidebar.menu"]}</p>
-					<button onClick={() => close()}>
-						<CloseIcon></CloseIcon>
+		<DrawerRight isOpen={isOpen} close={close}>
+			<nav className="flex flex-col text-base ">
+				<div className="flex flex-row items-center justify-between px-3 pt-[0.95rem] pb-[1.5rem] lg:px-6 lg:pt-[1.45rem] lg:pb-[2.5rem]">
+					<p className="text-[1.375rem] leading-[1.182rem] font-bold">
+						{i18n["sidebar.menu"]}
+					</p>
+					<button onClick={close} className="pr-4">
+						<CloseIcon />
 					</button>
 				</div>
 				{links.map((link) => (
@@ -80,11 +85,12 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 						{link.isExternalLink && (
 							<a
 								href={link.link}
-								className="text-link-blue hover:underline py-4 px-6 border-b"
+								className="flex items-center gap-x-1 text-link-blue hover:underline py-[1rem] lg:py-[1.175rem] px-3 lg:px-6 border-b"
 								target="_blank"
 								rel="noreferrer"
 							>
 								{link.title}
+								<LinkIcon />
 							</a>
 						)}
 
@@ -92,7 +98,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 							<LocalizedTrackedAnchorLink
 								href={link.link}
 								additionalTrackingContext={"(drawer menu)"}
-								className="hover:bg-berlin-grey-light py-4 px-6 border-b"
+								className="py-[1rem] lg:py-[1.175rem] px-3 lg:px-6 border-b hover:underline"
 							>
 								{link.title}
 							</LocalizedTrackedAnchorLink>
@@ -101,10 +107,10 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 						{!link.isExternalLink && link.subItems.length > 0 && (
 							<>
 								<div
-									className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 px-6 border-b`}
+									className={`hover:cursor-pointer py-[0.8rem] lg:py-[1rem] border-b border-t hover:underline`}
 								>
-									<div
-										className="flex flex-row justify-between items-center"
+									<button
+										className="w-full flex flex-row justify-between items-center"
 										onClick={() => {
 											if (selectedCategory === link.title) {
 												setSelectedCategory(null);
@@ -113,34 +119,46 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 											}
 										}}
 									>
-										<div>{link.title}</div>
-										{selectedCategory === link.title ? (
-											<ChevronUp></ChevronUp>
-										) : (
-											<ChevronDown></ChevronDown>
-										)}
-									</div>
+										<span className="px-3 lg:px-7">{link.title}</span>
+										<div className="border-l py-2 pr-5 pl-4">
+											{selectedCategory === link.title ? (
+												<ChevronUp className="size-[0.9rem]" />
+											) : (
+												<ChevronDown className="size-[0.9rem]" />
+											)}
+										</div>
+									</button>
 								</div>
 
 								{selectedCategory === link.title && (
-									<div className="flex flex-col">
-										{link.subItems.map((subItem) => (
-											<LocalizedTrackedAnchorLink
-												key={subItem.link}
-												href={subItem.link}
-												additionalTrackingContext={"(drawer menu)"}
-												className="px-12 py-4 bg-berlin-grey-light hover:bg-berlin-grey-medium"
-											>
-												{subItem.title}
-											</LocalizedTrackedAnchorLink>
-										))}
-									</div>
+									<ul className="flex flex-col border-b">
+										{link.subItems.map((subItem, index) => {
+											const isLast = index === link.subItems.length - 1;
+											const isCurrentLocation =
+												location.pathname === subItem.link;
+											return (
+												<li className="flex flex-col w-full">
+													<LocalizedTrackedAnchorLink
+														key={subItem.link}
+														href={subItem.link}
+														additionalTrackingContext={"(drawer menu)"}
+														className={`
+														pl-8 lg:pl-11 py-4 lg:py-[1.19rem] bg-berlin-grey-light hover:underline 
+														${!isLast && "border-b"} 
+														${isCurrentLocation && "font-bold"}`}
+													>
+														{subItem.title}
+													</LocalizedTrackedAnchorLink>
+												</li>
+											);
+										})}
+									</ul>
 								)}
 							</>
 						)}
 					</React.Fragment>
 				))}
-			</div>
+			</nav>
 		</DrawerRight>
 	);
 };

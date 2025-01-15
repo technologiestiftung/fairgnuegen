@@ -1,4 +1,4 @@
-export function ChevronUp() {
+export function ChevronUp({ className }: { className?: string }) {
 	return (
 		<svg
 			width="19"
@@ -6,6 +6,7 @@ export function ChevronUp() {
 			viewBox="0 0 19 11"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
+			className={className}
 		>
 			<path
 				d="M17.5 9.87084L9.5 2.12891L1.5 9.87084"
