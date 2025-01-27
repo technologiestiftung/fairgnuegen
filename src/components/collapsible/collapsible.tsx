@@ -5,12 +5,17 @@ type CollapsibleProps = {
 	title: string;
 	titleClassName?: string;
 	children: string | ReactNode;
+	openByDefault?: boolean;
 };
 
 let timeout: ReturnType<typeof setTimeout>;
 
-export function Collapsible({ title, children }: CollapsibleProps) {
-	const [isOpen, setIsOpen] = useState(false);
+export function Collapsible({
+	title,
+	children,
+	openByDefault = false,
+}: CollapsibleProps) {
+	const [isOpen, setIsOpen] = useState(openByDefault);
 	const [isShadowVisible, setIsShadowVisible] = useState(false);
 
 	useEffect(() => {
