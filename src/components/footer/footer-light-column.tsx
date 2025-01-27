@@ -9,9 +9,14 @@ type FooterColumnProps = {
 		label: string;
 		href: string;
 	}[];
+	openByDefault?: boolean;
 };
 
-export function FooterLightColumn({ title, links }: FooterColumnProps) {
+export function FooterLightColumn({
+	title,
+	links,
+	openByDefault = false,
+}: FooterColumnProps) {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 
@@ -19,7 +24,7 @@ export function FooterLightColumn({ title, links }: FooterColumnProps) {
 		<>
 			{/* Mobile */}
 			<div className="flex flex-col desktop:hidden">
-				<Collapsible title={i18n[title]}>
+				<Collapsible title={i18n[title]} openByDefault={openByDefault}>
 					<ul className="flex flex-col">
 						{links.map((link) => (
 							<li key={link.href}>

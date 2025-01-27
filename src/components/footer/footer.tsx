@@ -69,6 +69,7 @@ export function Footer() {
 								key={column.title}
 								title={column.title}
 								links={column.links}
+								openByDefault={column.title === "upperFooter.fairfun"}
 							/>
 						))}
 					</div>
