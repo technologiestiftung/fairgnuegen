@@ -4,6 +4,7 @@ import { useCloseOnClickOutside } from "../hooks/use-close-on-click-outside";
 import { useLanguage } from "../../../hooks/use-language";
 import { LanguageAnchor } from "./language-anchor";
 import { Language } from "./types.ts";
+import { ChevronUp } from "../../icons/chevron-up";
 
 export function LanguageSelect() {
 	const currentLanguage = useLanguage();
@@ -27,16 +28,20 @@ export function LanguageSelect() {
 					className="flex items-center"
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					<span className="flex text-sm bg-berlin-pink size-8 justify-center items-center">
+					<span className="flex text-[11px] font-bold bg-berlin-pink size-6 justify-center items-center">
 						{currentLanguage}
 					</span>
-					<div className="flex size-8 justify-center items-center">
-						<ChevronDown className="text-berlin-green" />
-					</div>
+					<span className="flex size-8 justify-center items-center pointer-events-none">
+						{isOpen ? (
+							<ChevronUp className="text-berlin-green" />
+						) : (
+							<ChevronDown className="text-berlin-green" />
+						)}
+					</span>
 				</button>
 
 				<div
-					className={`${isOpen ? "block" : "hidden"} absolute top-0 right-0 bg-white shadow-lg text-[18px]`}
+					className={`${isOpen ? "block" : "hidden"} absolute top-8 right-0 bg-white shadow-lg`}
 				>
 					<ul>
 						{languages.map((language) => (

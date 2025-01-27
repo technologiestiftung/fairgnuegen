@@ -10,7 +10,7 @@ export function ChevronUp({ className }: { className?: string }) {
 		>
 			<path
 				d="M17.5 9.87084L9.5 2.12891L1.5 9.87084"
-				stroke="black"
+				stroke="currentColor"
 				strokeWidth="3"
 			/>
 		</svg>
