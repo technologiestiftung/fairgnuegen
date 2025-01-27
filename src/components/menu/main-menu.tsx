@@ -120,7 +120,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 										}}
 									>
 										<span className="px-3 lg:px-7">{link.title}</span>
-										<div className="border-l py-2 pr-5 pl-4">
+										<div className="border-l border-l-black py-2 pr-5 pl-4">
 											{selectedCategory === link.title ? (
 												<ChevronUp className="size-[0.9rem]" />
 											) : (
