@@ -28,10 +28,10 @@ export function LanguageAnchor({ language }: LanguageAnchorProps) {
 			className="flex gap-x-2 w-full text-left px-2 py-1 items-center"
 			href={href}
 		>
-			<span className="flex size-8 bg-berlin-pink italic justify-center items-center">
+			<span className="flex text-[11px] size-6 font-bold bg-berlin-pink justify-center items-center">
 				{language.code}
 			</span>
-			<span>{language.label}</span>
+			<span className="text-base hover:underline">{language.label}</span>
 		</TrackedAnchorLink>
 	);
 }
