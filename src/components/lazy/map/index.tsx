@@ -108,8 +108,8 @@ export default function Index() {
 				</div>
 
 				<div className="flex lg:hidden lg:opacity-0 flex-row gap-4">
-					<ShowListButton></ShowListButton>
 					<FilterButton></FilterButton>
+					<ShowListButton></ShowListButton>
 				</div>
 
 				<div className="flex lg:hidden">
