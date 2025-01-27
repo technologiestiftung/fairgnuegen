@@ -18,7 +18,10 @@ export function Breadcrumbs() {
 					{index > 0 && <ChevronRight />}
 					<LocalizedTrackedAnchorLink
 						href={href}
-						className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[20vw] sm:max-w-[30vw] md:max-w-[40vw]"
+						className={`
+						whitespace-nowrap overflow-hidden text-ellipsis max-w-[20vw] sm:max-w-[30vw] md:max-w-[40vw]
+						${index === updatedBreadcrumbs.length - 1 ? "text-black" : "text-[#454545]"}
+						`}
 						additionalTrackingContext="(breadcrumbs)"
 					>
 						{label}
