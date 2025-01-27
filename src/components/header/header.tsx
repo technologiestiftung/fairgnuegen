@@ -14,7 +14,7 @@ export function Header() {
 			id="header"
 			className={`sticky top-0 z-[20] bg-white text-xl leading-[122.2%] tracking-[0.3px]`}
 		>
-			<div className={`"h-11 border-b py-[0.25em] px-6 `}>
+			<div className={`"h-11 border-b py-[0.25em] px-4`}>
 				<div className={`opacity-1 motion-safe:transition-opacity`}>
 					<a href="https://www.berlin.de">
 						<img
@@ -30,7 +30,7 @@ export function Header() {
 			<div className="flex justify-between items-center">
 				<LocalizedTrackedAnchorLink
 					href="/"
-					className="flex flex-col justify-center pl-[27px] pr-3 h-[86px] text-base sm:text-[20px]"
+					className="flex flex-col justify-center px-4 h-[86px] text-base sm:text-[20px]"
 				>
 					<span>{i18n["header.title"]}</span>
 					<span className="font-bold">{i18n["header.caption"]}</span>
@@ -41,7 +41,7 @@ export function Header() {
 				</div>
 			</div>
 
-			<div className="bg-berlin-grey-light text-berlin-grey shadow-lg px-4 lg:px-0">
+			<div className="bg-berlin-grey-light shadow-inner px-4 lg:px-0">
 				<div className="flex justify-between max-w-[980px] mx-auto">
 					<Breadcrumbs />
 					<LanguageSelect />
