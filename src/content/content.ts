@@ -39,7 +39,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 		],
 	},
@@ -57,7 +57,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/all-offers",
@@ -83,7 +83,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/favorites/",
@@ -109,7 +109,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/map/",
@@ -135,7 +135,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/imprint/",
@@ -161,7 +161,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/privacy-note/",
@@ -187,7 +187,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/about-project/",
@@ -213,7 +213,7 @@ export const content: Record<string, Content> = {
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Startseite",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/accessibility-statement/",

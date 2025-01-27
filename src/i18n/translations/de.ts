@@ -1,5 +1,5 @@
 const de = {
-	"home.title": "Startseite",
+	"home.title": "Fairgnügen",
 	"home.h1": "Willkommen bei Fairgnügen!",
 	"home.p1":
 		"Entdecke zahlreiche kostenlose und ermäßigte Angebote für Sport, Bildung und Freizeit - exklusiv für Berliner:innen, die Sozialleistungen erhalten.",
@@ -170,6 +170,7 @@ Telefon: (030) 9028-1210
 Die folgenden Angaben werden in der digitalen Barrierefreiheitserklärung immer ausgegeben: Wenn Ihre Kontaktaufnahme mit der öffentlichen Stelle nicht erfolgreich war, Sie innerhalb von 4 Wochen keine Antwort erhalten haben, oder die Antwort unzureichend war, können Sie sich an die Landesbeauftragte für digitale Barrierefreiheit wenden und ein Durchsetzungsverfahren anstreben. Bitte kontaktieren Sie immer zuerst die betroffene öffentliche Stelle!
 
 [Link zum Kontaktformular](https://www.berlin.de/lb/digitale-barrierefreiheit/includes/formular.1326107.php)
+
 [Weitere Informationen zur Landesbeauftragten für digitale Barrierefreiheit](https://www.berlin.de/lb/digitale-barrierefreiheit/aufgaben/durchsetzungsverfahren/durchsetzungsverfahren-1305830.php)
 
 **Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung**  
@@ -182,7 +183,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"header.title": "Fairgnügen",
 	"header.caption": "Berlin vergünstigt erleben",
 
-	"menuItem.homepage": "Startseite",
+	"menuItem.homepage": "Alle Angebote",
 	"menuItem.map": "Kartenansicht",
 	"menuItem.favorites": "Favoriten",
 	"menuItem.faq": "FAQ zur Nutzung der Angebote",

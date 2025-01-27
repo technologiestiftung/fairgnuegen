@@ -1,7 +1,7 @@
 import de from "./de";
 
 const en: typeof de = {
-	"home.title": "Home",
+	"home.title": "Fair Fun",
 	"home.h1": "Welcome to Fair Fun!",
 	"home.p1":
 		"Discover plenty of free and discounted offers for sports, education and leisure - exclusively for Berliners who receive social benefits.",
@@ -247,7 +247,8 @@ Telephone: (030) 9028-1210
 
 The following information is always provided in the digital accessibility statement: If your contact with the public body was unsuccessful, you have not received a response within 4 weeks, or the response was inadequate, you can contact the State Commissioner for Digital Accessibility and seek enforcement proceedings. Please always contact the public body concerned first!
 
-[Link to the contact form](https://www.berlin.de/lb/digitale-barrierefreiheit/includes/formular.1326107.php)  
+[Link to the contact form](https://www.berlin.de/lb/digitale-barrierefreiheit/includes/formular.1326107.php)
+  
 [Further information on the State Commissioner for Digital Accessibility](https://www.berlin.de/lb/digitale-barrierefreiheit/aufgaben/durchsetzungsverfahren/durchsetzungsverfahren-1305830.php)
 
 **Senate Department for Labour, Social Affairs, Equality, Integration, Diversity and Anti-Discrimination**  
