@@ -30,14 +30,16 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 	const links: MenuItem[] = [
 		{
 			title: i18n["menuItem.homepage"],
-			subItems: Object.entries(categoryMap).map(([key, category]) => ({
-				title: i18n[`${category.i18nKey}.name`],
-				subItems: [],
-				isExternalLink: false,
-				link: category.isRenderedInCategoryCards
-					? `/all-offers/?category=${key}`
-					: "/all-offers/",
-			})),
+			subItems: Object.entries(categoryMap)
+				.filter(([key]) => key !== "all")
+				.map(([key, category]) => ({
+					title: i18n[`${category.i18nKey}.name`],
+					subItems: [],
+					isExternalLink: false,
+					link: category.isRenderedInCategoryCards
+						? `/all-offers/?category=${key}`
+						: "/all-offers/",
+				})),
 			isExternalLink: false,
 			link: "/",
 		},
@@ -68,6 +70,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 	];
 
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+	const currentLocation = `${location.pathname}${location.search}`;
 
 	return (
 		<DrawerRight isOpen={isOpen} close={close}>
@@ -109,25 +113,30 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 								<div
 									className={`hover:cursor-pointer py-[0.8rem] lg:py-[1rem] border-b border-t hover:underline`}
 								>
-									<button
-										className="w-full flex flex-row justify-between items-center"
-										onClick={() => {
-											if (selectedCategory === link.title) {
-												setSelectedCategory(null);
-											} else {
-												setSelectedCategory(link.title);
-											}
-										}}
-									>
-										<span className="px-3 lg:px-7">{link.title}</span>
-										<div className="border-l border-l-black py-2 pr-5 pl-4">
+									<div className="w-full flex flex-row justify-between items-center">
+										<a
+											href={link.link}
+											className={`${currentLocation === link.link && "font-bold"} w-full px-3 lg:px-7`}
+										>
+											{link.title}
+										</a>
+										<button
+											className="border-l border-l-black py-2 pr-5 pl-4"
+											onClick={() => {
+												if (selectedCategory === link.title) {
+													setSelectedCategory(null);
+												} else {
+													setSelectedCategory(link.title);
+												}
+											}}
+										>
 											{selectedCategory === link.title ? (
 												<ChevronUp className="size-[0.9rem]" />
 											) : (
 												<ChevronDown className="size-[0.9rem]" />
 											)}
-										</div>
-									</button>
+										</button>
+									</div>
 								</div>
 
 								{selectedCategory === link.title && (
@@ -135,9 +144,12 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 										{link.subItems.map((subItem, index) => {
 											const isLast = index === link.subItems.length - 1;
 											const isCurrentLocation =
-												location.pathname === subItem.link;
+												currentLocation === subItem.link;
 											return (
-												<li className="flex flex-col w-full">
+												<li
+													key={subItem.title}
+													className="flex flex-col w-full"
+												>
 													<LocalizedTrackedAnchorLink
 														key={subItem.link}
 														href={subItem.link}
