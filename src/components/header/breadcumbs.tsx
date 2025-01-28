@@ -13,21 +13,28 @@ export function Breadcrumbs() {
 
 	return (
 		<div className="text-sm items-center gap-x-3 flex flex-row">
-			{updatedBreadcrumbs?.map(({ label, href }, index) => (
-				<React.Fragment key={label}>
-					{index > 0 && <ChevronRight />}
-					<LocalizedTrackedAnchorLink
-						href={href}
-						className={`
+			{updatedBreadcrumbs?.map(({ label, href }, index) => {
+				const isLast = index === updatedBreadcrumbs.length - 1;
+				return (
+					<React.Fragment key={label}>
+						{index > 0 && (
+							<ChevronRight
+								className={isLast ? "text-black" : "text-[#454545]"}
+							/>
+						)}
+						<LocalizedTrackedAnchorLink
+							href={href}
+							className={`
 						whitespace-nowrap overflow-hidden text-ellipsis max-w-[20vw] sm:max-w-[30vw] md:max-w-[40vw]
-						${index === updatedBreadcrumbs.length - 1 ? "text-black" : "text-[#454545]"}
+						${isLast ? "text-black" : "text-[#454545]"}
 						`}
-						additionalTrackingContext="(breadcrumbs)"
-					>
-						{label}
-					</LocalizedTrackedAnchorLink>
-				</React.Fragment>
-			))}
+							additionalTrackingContext="(breadcrumbs)"
+						>
+							{label}
+						</LocalizedTrackedAnchorLink>
+					</React.Fragment>
+				);
+			})}
 		</div>
 	);
 }
