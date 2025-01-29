@@ -29,7 +29,7 @@ export default function LazyHome() {
 						{i18n["home.p1"]}{" "}
 						<TrackedAnchorLink
 							href={
-								"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/bn-berlin-ticket-s-faq-1268079.php"
+								"https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/angebote-faq-1524266.php"
 							}
 							className=""
 							target="_blank"

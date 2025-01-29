@@ -59,7 +59,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 			title: i18n["menuItem.faq"],
 			subItems: [],
 			isExternalLink: true,
-			link: "https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/bn-berlin-ticket-s-faq-1268079.php",
+			link: "https://www.berlin.de/sen/soziales/soziale-sicherung/bn-berlin-ticket-s/angebote-faq-1524266.php",
 		},
 		{
 			title: i18n["menuItem.about"],
