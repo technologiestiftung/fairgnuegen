@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 export function useCloseOnClickOutside(
-	languageSelectRef: React.RefObject<HTMLDivElement>,
+	languageSelectRef: React.RefObject<HTMLDivElement | null>,
 	setIsOpen: (isOpen: boolean) => void,
 ) {
 	useEffect(() => {
