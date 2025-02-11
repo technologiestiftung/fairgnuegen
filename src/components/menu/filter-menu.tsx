@@ -52,7 +52,6 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 	const navigate = useNavigate();
 
 	const { updateManySearchParams } = useUpdateSearchParam();
-	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
 	const { categories } = useCategories();
 	const { districts } = useDistricts();
@@ -193,34 +192,46 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 						<FreeOffersCheckbox />
 					</div>
 
-					{filterRows.map((filterRow) => (
-						<Accordion key={filterRow.title} title={filterRow.title}>
-							{filterRow.options.map((subItem) => (
-								<div
-									key={subItem.title}
-									className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
-								>
-									<Checkbox
-										id={subItem.title}
-										label={
-											subItem.subtitle ? (
-												<span className="text-normal font-normal">
-													<span className="font-bold">{subItem.title}: </span>
-													{subItem.subtitle}
-												</span>
-											) : (
-												subItem.title
-											)
-										}
-										isChecked={selectedFilters[
-											filterRow.urlKey as FilterIdentifier
-										].values.includes(subItem.value)}
-										onChange={() => toggleFilterOption(filterRow, subItem)}
-									/>
-								</div>
-							))}
-						</Accordion>
-					))}
+					{filterRows.map((filterRow) => {
+						const isExpanded =
+							selectedFilters[filterRow.urlKey as FilterIdentifier].values
+								.length > 0;
+
+						return (
+							<Accordion
+								key={filterRow.title}
+								title={filterRow.title}
+								isExpanded={isExpanded}
+							>
+								{filterRow.options.map((subItem) => (
+									<div
+										key={subItem.title}
+										className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
+									>
+										<Checkbox
+											id={subItem.title}
+											label={
+												subItem.subtitle ? (
+													<span className="text-normal font-normal">
+														<span className="font-bold">{subItem.title}: </span>
+														{subItem.subtitle}
+													</span>
+												) : (
+													<span className="text-normal font-normal">
+														{subItem.title}
+													</span>
+												)
+											}
+											isChecked={selectedFilters[
+												filterRow.urlKey as FilterIdentifier
+											].values.includes(subItem.value)}
+											onChange={() => toggleFilterOption(filterRow, subItem)}
+										/>
+									</div>
+								))}
+							</Accordion>
+						);
+					})}
 				</div>
 				<div className="w-full flex flex-col gap-8 md:gap-2 justify-end px-4 items-end md:flex-row md:justify-between md:items-center py-8">
 					<ResetFilterButton onClick={onResetFilters} />

@@ -1,27 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronDown } from "../icons/chevron-down";
 import { ChevronUp } from "../icons/chevron-up";
 
 interface AccordionProps {
 	title: string;
 	children: React.ReactNode;
+	isExpanded?: boolean;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
-	const [isOpen, setIsOpen] = useState(false);
+const Accordion: React.FC<AccordionProps> = ({
+	title,
+	children,
+	isExpanded = false,
+}) => {
+	const [isOpen, setIsOpen] = useState(isExpanded);
+
+	// Sync with external changes
+	useEffect(() => {
+		setIsOpen(isExpanded);
+	}, [isExpanded]);
 
 	return (
-		<div className="border-b">
+		<>
 			<button
-				className="flex justify-between items-center w-full px-6 py-4 text-left font-bold hover:bg-gray-100"
+				className="flex justify-between items-center w-full hover:bg-berlin-grey-light hover:cursor-pointer py-4 border-b px-6 text-normal font-bold"
 				onClick={() => setIsOpen((prev) => !prev)}
 				aria-expanded={isOpen}
 			>
 				{title}
 				{isOpen ? <ChevronUp /> : <ChevronDown />}
 			</button>
-			{isOpen && <div className="px-6 py-2">{children}</div>}
-		</div>
+			{isOpen && <div>{children}</div>}
+		</>
 	);
 };
 
