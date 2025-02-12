@@ -26,14 +26,13 @@ export default function Index() {
 
 	const { filteredAndSortedOffers, search, isLoading } =
 		useFilteredAndSortedOffers();
-
 	return (
 		<>
 			<div className={isLoading ? "invisible" : "visible"}>
 				{categoryDetail && (
 					<ResponsivePicture
 						src={categoryDetail.image}
-						alt={categoryDetail.name}
+						alt={i18n[`${categoryDetail.i18nKey}.imageAltText`]}
 						loading={"eager"}
 						className="hidden sm:block w-full h-[448px] object-cover"
 					/>
