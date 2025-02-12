@@ -11,12 +11,12 @@ import ResetFilterButton from "../buttons/reset-filter-button";
 import ShowFilteredButton from "../buttons/show-filtered-button";
 import Checkbox from "../checkbox/checkbox";
 import FreeOffersCheckbox from "../checkbox/free-offers-checkbox";
-import Accordion from "../accordion/accordion";
 import CloseIcon from "../icons/close-icon";
 import { useNavigate } from "react-router-dom";
 import { useI18n } from "../../i18n/use-i18n";
 import { useLanguage } from "../../hooks/use-language";
 import { DrawerLeft } from "../drawer/drawer-left";
+import { Collapsible } from "../collapsible/collapsible";
 
 interface FilterRowOption {
 	title: string;
@@ -193,15 +193,18 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 					</div>
 
 					{filterRows.map((filterRow) => {
+						// isExpanded is true if any checkbox within the current filter row is selected.
 						const isExpanded =
 							selectedFilters[filterRow.urlKey as FilterIdentifier].values
 								.length > 0;
 
 						return (
-							<Accordion
+							<Collapsible
 								key={filterRow.title}
 								title={filterRow.title}
-								isExpanded={isExpanded}
+								classNames="hover:bg-berlin-grey-light hover:cursor-pointer shadow-none border-t-0 border-b px-6"
+								titleClassNames="text-normal font-bold"
+								forceOpen={isExpanded} //remain open is any checkbox is selected
 							>
 								{filterRow.options.map((subItem) => (
 									<div
@@ -229,7 +232,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 										/>
 									</div>
 								))}
-							</Accordion>
+							</Collapsible>
 						);
 					})}
 				</div>
