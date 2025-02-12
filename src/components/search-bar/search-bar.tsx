@@ -54,24 +54,26 @@ const SearchBar: React.FC = () => {
 				}}
 			></input>
 			<div className="relative row-start-1 col-start-1 pl-3 pointer-events-none">
-				<SearchIcon></SearchIcon>
+				<SearchIcon />
 			</div>
 			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pointer-events-none">
 				<button
 					type="button"
-					className={`${search === "" ? "hidden" : ""} pointer-events-auto`}
+					className={`${search === "" ? "hidden" : ""} pointer-events-auto p-1.5`}
 					onClick={(e) => {
 						e.preventDefault();
 						setSearch("");
 					}}
+					aria-label={i18n["button.name.clear"]}
 				>
-					<ClearIcon></ClearIcon>
+					<ClearIcon />
 				</button>
 				<button
 					type="submit"
+					aria-label={i18n["button.name.submit"]}
 					className={`w-fit pointer-events-auto border-l-0 pl-2 pr-2.5 ${hasFocus ? "border-focus-blue" : " border-l-black"} border-2 border-black`}
 				>
-					<StartSearchIcon></StartSearchIcon>
+					<StartSearchIcon />
 				</button>
 			</div>
 		</form>

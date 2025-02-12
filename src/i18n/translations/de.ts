@@ -225,6 +225,12 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"button.copyAddressCopied": "Die Adresse wurde kopiert!",
 	"button.copyLink": "Link kopieren",
 	"button.copyLinkCopied": "Der Link wurde kopiert!",
+	"button.name.close": "Schließen",
+	"button.name.clear": "Zurücksetzen",
+	"button.name.submit": "Absenden",
+	"button.name.like": "Gefällt mir",
+	"button.name.expand": "Mehr anzeigen",
+	"button.name.collapse": "Weniger anzeigen",
 
 	"offer.linkToWebsite": "Zur Webseite",
 	"offer.discountDetails": "Ermäßigung",

@@ -1,5 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { ChevronDown } from "../icons/chevron-down.tsx";
+import { useLanguage } from "../../hooks/use-language.tsx";
+import { useI18n } from "../../i18n/use-i18n.tsx";
 
 type CollapsibleProps = {
 	title: string;
@@ -20,6 +22,8 @@ export function Collapsible({
 	isDefaultOpen = false,
 	forceOpen = false,
 }: CollapsibleProps) {
+	const language = useLanguage();
+	const i18n = useI18n(language);
 	const [isOpen, setIsOpen] = useState(isDefaultOpen);
 	const [isShadowVisible, setIsShadowVisible] = useState(false);
 
@@ -50,11 +54,15 @@ export function Collapsible({
 		<div className="flex flex-col">
 			<button
 				className={`
-          font-bold flex justify-between items-center border-t-[0.5px] p-4 
-          ${isShadowVisible ? "shadow-[0_4px_4px_rgba(144,144,144,.5)]" : "shadow-none"}
-          ${classNames}
-        `}
+					font-bold flex justify-between items-center border-t-[0.5px] p-4 
+					${isShadowVisible ? "shadow-[0_4px_4px_rgba(144,144,144,.5)]" : "shadow-none"}
+					${classNames}
+					`}
 				onClick={() => setIsOpen(!isOpen)}
+				aria-label={
+					isOpen ? i18n["button.name.collapse"] : i18n["button.name.expand"]
+				}
+				aria-expanded={isOpen}
 			>
 				<span className={titleClassNames}>{title}</span>
 				<div className={`transition ${isOpen ? "-rotate-180" : "rotate-0"}`}>

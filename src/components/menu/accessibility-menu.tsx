@@ -25,8 +25,11 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 					<p className="text-2xl font-bold">
 						{i18n["accessibilityMenu.title"]}
 					</p>
-					<button onClick={() => close()}>
-						<CloseIcon></CloseIcon>
+					<button
+						onClick={() => close()}
+						aria-label={i18n["button.name.close"]}
+					>
+						<CloseIcon />
 					</button>
 				</div>
 
