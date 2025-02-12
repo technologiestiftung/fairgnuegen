@@ -155,7 +155,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 														href={subItem.link}
 														additionalTrackingContext={"(drawer menu)"}
 														className={`
-														pl-8 lg:pl-11 py-4 lg:py-[1.19rem] bg-berlin-grey-light hover:underline 
+														pl-8 lg:pl-11 py-4 lg:py-[1.19rem] bg-berlin-grey-light hover:underline focus:relative
 														${!isLast && "border-b"} 
 														${isCurrentLocation && "font-bold"}`}
 													>
