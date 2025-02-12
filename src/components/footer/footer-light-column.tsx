@@ -26,7 +26,7 @@ export function FooterLightColumn({
 			<div className="flex flex-col desktop:hidden">
 				<Collapsible
 					title={i18n[title]}
-					openByDefault={openByDefault}
+					isDefaultOpen={openByDefault}
 					titleClassNames="text-lg"
 				>
 					<ul className="flex flex-col">

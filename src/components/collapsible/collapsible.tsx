@@ -6,7 +6,7 @@ type CollapsibleProps = {
 	classNames?: string;
 	titleClassNames?: string;
 	children: string | ReactNode;
-	openByDefault?: boolean;
+	isDefaultOpen?: boolean;
 	forceOpen?: boolean;
 };
 
@@ -17,10 +17,10 @@ export function Collapsible({
 	children,
 	classNames,
 	titleClassNames,
-	openByDefault = false,
+	isDefaultOpen = false,
 	forceOpen = false,
 }: CollapsibleProps) {
-	const [isOpen, setIsOpen] = useState(openByDefault);
+	const [isOpen, setIsOpen] = useState(isDefaultOpen);
 	const [isShadowVisible, setIsShadowVisible] = useState(false);
 
 	// Keeps the collapsible open when forceOpen is true.
