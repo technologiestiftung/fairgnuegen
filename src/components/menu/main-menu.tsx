@@ -80,7 +80,11 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 					<p className="text-[1.375rem] leading-[1.182rem] font-bold">
 						{i18n["sidebar.menu"]}
 					</p>
-					<button onClick={close} className="pr-4">
+					<button
+						onClick={close}
+						className="pr-4"
+						aria-label={i18n["button.name.close"]}
+					>
 						<CloseIcon />
 					</button>
 				</div>
@@ -121,7 +125,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 											{link.title}
 										</a>
 										<button
-											className="border-l border-l-black py-2 pr-5 pl-4"
+											className="border-l border-l-black py-2 pr-5 pl-4 border-b"
 											onClick={() => {
 												if (selectedCategory === link.title) {
 													setSelectedCategory(null);
@@ -129,6 +133,12 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 													setSelectedCategory(link.title);
 												}
 											}}
+											aria-label={
+												isOpen
+													? i18n["button.name.collapse"]
+													: i18n["button.name.expand"]
+											}
+											aria-expanded={isOpen}
 										>
 											{selectedCategory === link.title ? (
 												<ChevronUp className="size-[0.9rem]" />
