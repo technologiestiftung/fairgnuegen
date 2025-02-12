@@ -192,7 +192,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 				</h2>
 				<div className="py-4">
 					<div className="px-6 pb-2">
-						<FreeOffersCheckbox />
+						<FreeOffersCheckbox id={"free-only-filter-menu"} />
 					</div>
 
 					{filterRows.map((filterRow) => {

@@ -33,7 +33,7 @@ export default function Index() {
 				{categoryDetail && (
 					<ResponsivePicture
 						src={categoryDetail.image}
-						alt={i18n[categoryDetail.name]}
+						alt={categoryDetail.name}
 						loading={"eager"}
 						className="hidden sm:block w-full h-[448px] object-cover"
 					/>
@@ -50,7 +50,7 @@ export default function Index() {
 					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col gap-2 mb-10">
 							<SearchBar />
-							<FreeOffersCheckbox />
+							<FreeOffersCheckbox id={"free-only"} />
 						</div>
 						<div className="flex flex-row w-full justify-between mb-6">
 							<FilterButton />

@@ -6,6 +6,7 @@ const de = {
 	"home.linkEligible": "Bin ich berechtigt?",
 	"home.h2": "Was möchtest du unternehmen?",
 
+	"home.allOffersTeaser.imageAltText": "Zu allen Angeboten",
 	"home.allOffersTeaser.title": "Alle Angebote auf einen Blick",
 	"home.allOffersTeaser.description.p1":
 		"Fairgnügen bietet über 400 Aktivitäten im Bereich Kultur, Sport, Bildung & Beratung und Freizeit.",
@@ -231,6 +232,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"button.name.like": "Gefällt mir",
 	"button.name.expand": "Mehr anzeigen",
 	"button.name.collapse": "Weniger anzeigen",
+	"button.name.share": "Teilen",
 
 	"offer.linkToWebsite": "Zur Webseite",
 	"offer.discountDetails": "Ermäßigung",

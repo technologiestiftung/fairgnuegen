@@ -8,6 +8,7 @@ const en: typeof de = {
 	"home.linkEligible": "Am I eligible?",
 	"home.h2": "What would you like to do?",
 
+	"home.allOffersTeaser.imageAltText": "to all offers",
 	"home.allOffersTeaser.title": "All offers at a glance",
 	"home.allOffersTeaser.description.p1":
 		"Fair Fun has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
@@ -131,6 +132,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"button.name.like": "Like",
 	"button.name.expand": "Expand",
 	"button.name.collapse": "Collapse",
+	"button.name.share": "Teilen",
 
 	"offer.linkToWebsite": "Link to website",
 	"offer.discountDetails": "Discount details",
