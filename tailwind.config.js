@@ -23,6 +23,7 @@ export default {
 				separator: "#dddddd",
 				"berlin-grey": "#777777",
 				"berlin-grey-dark": "#545454",
+				"berlin-grey-darker": "#454545", // #454545
 				"berlin-grey-light": "#f5f5f5", // neutral-100
 				"berlin-grey-medium": "#d9d9d9",
 				"berlin-grey-hover": "#efefef",
