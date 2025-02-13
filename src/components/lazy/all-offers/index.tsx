@@ -56,7 +56,7 @@ export default function Index() {
 							<ShowMapButton />
 						</div>
 						<div className="flex flex-row items-center gap-2 py-3">
-							<p className="text-md text-berlin-grey">
+							<p className="text-md text-berlin-grey-dark">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
 								{search !== null &&
 									search !== "" &&

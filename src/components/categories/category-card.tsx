@@ -41,7 +41,9 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>
-				<p className="text-[11px] text-berlin-grey mx-4 sm:mx-0">© Unsplash</p>
+				<p className="text-[11px] text-berlin-grey-darker mx-4 sm:mx-0">
+					© Unsplash
+				</p>
 			</div>
 
 			<div className="flex flex-col justify-between mx-4 sm:mx-0">

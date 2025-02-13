@@ -24,7 +24,9 @@ export const ShowAllOffersTeaser: React.FC = () => {
 					loading={"eager"}
 					className="object-cover aspect-[4/3]"
 				/>
-				<p className="text-[11px] text-berlin-grey px-4 sm:px-0">© Unsplash</p>
+				<p className="text-[11px] text-berlin-grey-darker px-4 sm:px-0">
+					© Unsplash
+				</p>
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>
