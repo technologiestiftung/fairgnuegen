@@ -19,9 +19,8 @@ export function AccessibilityButton() {
 				<AccessibilityIcon />
 				{i18n["sidebar.accessibility"]}
 			</button>
-			{isOpen && (
-				<AccessibilityMenu isOpen={isOpen} close={() => setIsOpen(false)} />
-			)}
+
+			<AccessibilityMenu isOpen={isOpen} close={() => setIsOpen(false)} />
 		</>
 	);
 }

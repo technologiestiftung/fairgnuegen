@@ -51,7 +51,7 @@ const FilterButton: React.FC = () => {
 					</div>
 				)}
 			</button>
-			{isOpen && <FilterMenu isOpen={isOpen} close={() => setIsOpen(false)} />}
+			<FilterMenu isOpen={isOpen} close={() => setIsOpen(false)} />
 		</>
 	);
 };

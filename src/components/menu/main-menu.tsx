@@ -75,7 +75,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ isOpen, close }) => {
 
 	return (
 		<DrawerRight isOpen={isOpen} close={close}>
-			<nav className="flex flex-col text-base ">
+			<nav className={`${isOpen ? "flex" : "hidden"} flex-col text-base`}>
 				<div className="flex flex-row items-center justify-between px-3 pt-[0.95rem] pb-[1.5rem] lg:px-6 lg:pt-[1.45rem] lg:pb-[2.5rem]">
 					<p className="text-[1.375rem] leading-[1.182rem] font-bold">
 						{i18n["sidebar.menu"]}
