@@ -45,25 +45,26 @@ export const useFocusTrap = (isOpen: boolean, close: () => void) => {
 
 		// Handles focus trapping inside the container
 		const handleKeyDown = (event: KeyboardEvent) => {
-			if (!containerRef.current) return;
+			if (!containerRef.current || !focusableElements.length) {
+				return;
+			}
+
+			const firstElement = focusableElements[0];
+			const lastElement = focusableElements[focusableElements.length - 1];
 
 			if (event.key === "Tab") {
-				const firstElement = focusableElements[0];
-				const lastElement = focusableElements[focusableElements.length - 1];
+				const isShiftTab =
+					event.shiftKey && document.activeElement === firstElement;
+				const isTab = !event.shiftKey && document.activeElement === lastElement;
 
-				if (!firstElement || !lastElement) return;
-
-				if (event.shiftKey && document.activeElement === firstElement) {
-					// Shift + Tab: Move focus to the last element
+				// Prevent focus from escaping the container
+				if (isShiftTab || isTab) {
 					event.preventDefault();
-					lastElement.focus();
-				} else if (!event.shiftKey && document.activeElement === lastElement) {
-					// Tab: Move focus to the first element
-					event.preventDefault();
-					firstElement.focus();
+					(isShiftTab ? lastElement : firstElement).focus();
 				}
-			} else if (event.key === "Escape") {
-				// Close the container when Escape key is pressed
+			}
+			// Close the container when the Escape key is pressed
+			if (event.key === "Escape") {
 				close();
 			}
 		};
@@ -77,5 +78,6 @@ export const useFocusTrap = (isOpen: boolean, close: () => void) => {
 		};
 	}, [isOpen, close]);
 
+	// Return the ref to be attached to the focus-trapped container
 	return containerRef;
 };
