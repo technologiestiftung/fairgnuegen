@@ -48,7 +48,7 @@ export default function LazyHome() {
 
 					<div className="flex flex-col gap-3 mb-5">
 						<SearchBar />
-						<FreeOffersCheckbox />
+						<FreeOffersCheckbox id={"free-only"} />
 					</div>
 				</div>
 

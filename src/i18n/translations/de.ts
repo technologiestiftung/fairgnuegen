@@ -6,6 +6,7 @@ const de = {
 	"home.linkEligible": "Bin ich berechtigt?",
 	"home.h2": "Was möchtest du unternehmen?",
 
+	"home.allOffersTeaser.imageAltText": "Zu allen Angeboten",
 	"home.allOffersTeaser.title": "Alle Angebote auf einen Blick",
 	"home.allOffersTeaser.description.p1":
 		"Fairgnügen bietet über 400 Aktivitäten im Bereich Kultur, Sport, Bildung & Beratung und Freizeit.",
@@ -231,6 +232,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"button.name.like": "Gefällt mir",
 	"button.name.expand": "Mehr anzeigen",
 	"button.name.collapse": "Weniger anzeigen",
+	"button.name.share": "Teilen",
 
 	"offer.linkToWebsite": "Zur Webseite",
 	"offer.discountDetails": "Ermäßigung",
@@ -239,18 +241,28 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"categories.teaser": "Entdecke die Kategorien",
 	"categories.title": "Kategorien",
 	"categories.all.name": "Alle Angebote",
+	"categories.all.imageAltText":
+		"Ein Bild von Seifenblasen, die vor dem Brandenburger Tor schweben, als Symbolbild für alle Kategorien",
 	"categories.all.description": "",
 	"categories.kultur.name": "Kultur",
+	"categories.kultur.imageAltText":
+		"Ein Bild einer Skulptur aus weißem Marmor als Symbolbild für die Kategorie Kultur",
 	"categories.kultur.description":
 		"Angebote fürs Museum, Theater, Konzerte und vieles mehr",
 	"categories.sport.name": "Sport",
+	"categories.sport.imageAltText":
+		"Ein Bild eines Fußballspielers, der im Sprung den Ball vor dem Tor trifft, als Symbolbild für die Kategorie Sport.",
 	"categories.sport.description":
 		"Angebote um körperlich fit zu bleiben oder den Sport zu feiern",
 	"categories.bildung_beratung.name": "Bildung & Beratung",
+	"categories.bildung_beratung.imageAltText":
+		"Ein Bild des Arms einer Person, die mit einem Stift auf Papier schreibt, mit einem Notizbuch und einer Kaffeetasse in der Nähe als symbolisches Bild für die Kategorie Bildung und Beratung.",
 	"categories.bildung_beratung.name_short": "Bildung",
 	"categories.bildung_beratung.description":
 		"Weiterbildungs- und Beratungsangebote",
 	"categories.freizeit.name": "Freizeit",
+	"categories.freizeit.imageAltText":
+		"Ein Bild eines bunten Riesenrads mit mehreren Fahrgastkabinen vor einem blauen Himmel als Symbolbild für die Kategorie Freizeit.",
 	"categories.freizeit.description":
 		"Angebote fürs Kino, Restaurants, Bars und Aktivitäten an der freien Luft",
 

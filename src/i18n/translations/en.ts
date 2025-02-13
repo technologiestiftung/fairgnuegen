@@ -8,6 +8,7 @@ const en: typeof de = {
 	"home.linkEligible": "Am I eligible?",
 	"home.h2": "What would you like to do?",
 
+	"home.allOffersTeaser.imageAltText": "to all offers",
 	"home.allOffersTeaser.title": "All offers at a glance",
 	"home.allOffersTeaser.description.p1":
 		"Fair Fun has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
@@ -131,6 +132,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"button.name.like": "Like",
 	"button.name.expand": "Expand",
 	"button.name.collapse": "Collapse",
+	"button.name.share": "Teilen",
 
 	"offer.linkToWebsite": "Link to website",
 	"offer.discountDetails": "Discount details",
@@ -139,18 +141,28 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"categories.teaser": "Explore the categories",
 	"categories.title": "Categories",
 	"categories.all.name": "All offers",
+	"categories.all.imageAltText":
+		"A picture of Bubbles floating in front of the Brandenburg Gate as a symbolic image for all categories.",
 	"categories.all.description": "",
 	"categories.kultur.name": "Culture",
+	"categories.kultur.imageAltText":
+		"A picture of a white marble sculpture as a symbolic image for the culture category",
 	"categories.kultur.description":
 		"Offers for museums, theaters, concerts, and much more",
 	"categories.sport.name": "Sports",
+	"categories.sport.imageAltText":
+		"A picture of a soccer player leaping to kick the ball in front of the goal as a symbolic image for the sport category",
 	"categories.sport.description":
 		"Offers to stay physically fit or to celebrate sports",
 	"categories.bildung_beratung.name": "Education & counseling",
+	"categories.bildung_beratung.imageAltText":
+		"A picture of the arm of a person while writing with a pen on paper, with a notebook and a coffee cup nearby as a symbolic image for the Education and counseling category.",
 	"categories.bildung_beratung.name_short": "Education",
 	"categories.bildung_beratung.description":
 		"Further education and counseling services",
 	"categories.freizeit.name": "Leisure",
+	"categories.freizeit.imageAltText":
+		"A picture of Colorful Ferris wheel with several passenger cabins against a blue sky as a symbolic image for the category Leisure.",
 	"categories.freizeit.description":
 		"Offers for cinemas, restaurants, bars and outdoor activities",
 

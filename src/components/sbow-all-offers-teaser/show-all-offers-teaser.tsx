@@ -20,7 +20,7 @@ export const ShowAllOffersTeaser: React.FC = () => {
 			<div className="flex flex-col md:w-[40%] w-full relative gap-2 basis-[45%] ">
 				<ResponsivePicture
 					src="all"
-					alt={i18n["Alle Angebote"]}
+					alt={i18n["home.allOffersTeaser.imageAltText"]}
 					loading={"eager"}
 					className="object-cover aspect-[4/3]"
 				/>

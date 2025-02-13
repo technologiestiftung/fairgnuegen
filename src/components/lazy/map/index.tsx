@@ -98,13 +98,13 @@ export default function Index() {
 				</div>
 
 				<div className="hidden lg:flex flex-row gap-4 items-center justify-end">
-					<FreeOffersCheckbox></FreeOffersCheckbox>
+					<FreeOffersCheckbox id={"free-only-desktop"} />
 					<FilterButton></FilterButton>
 					<ShowListButton></ShowListButton>
 				</div>
 
 				<div className="flex lg:hidden lg:opacity-0">
-					<FreeOffersCheckbox></FreeOffersCheckbox>
+					<FreeOffersCheckbox id={"free-only-mobile"} />
 				</div>
 
 				<div className="flex lg:hidden lg:opacity-0 flex-row gap-4">
