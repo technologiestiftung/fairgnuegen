@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import fs from "fs";
-import { Offer } from "../src/content/content";
+import { type Offer } from "~/content/content.ts";
 import { fetchDataAndAugment } from "./fetch-and-augment";
 import { translateViaOpenAi } from "./translate";
 import { existsIdenticallyInData } from "./utils";

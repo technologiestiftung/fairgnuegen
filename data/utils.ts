@@ -1,4 +1,4 @@
-import { Offer } from "../src/content/content";
+import { type Offer } from "~/content/content.ts";
 
 export interface FoundOffer {
 	isIdentical: boolean;

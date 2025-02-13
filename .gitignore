@@ -1,6 +1,6 @@
 # Auto-generated files which should not be committed
-src/content/detail-pages-content.ts
-src/routes/detail-pages-routes.ts
+app/content/detail-pages-content.ts
+app/routes/detail-pages-routes.ts
 
 # Logs
 logs
@@ -28,9 +28,12 @@ dist-ssr
 *.sw?
 
 .env
+build
+.react-router
 
 # Playwright
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
