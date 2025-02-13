@@ -288,8 +288,18 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"aboutProject.p2.part.mapLinkLabel": "Karte",
 	"aboutProject.p2.part.2":
 		" bekommst du einen schnellen Überblick, wo was los ist.",
-	"aboutProject.p3": "Viel Spaß beim Stöbern!",
-	"aboutProject.p4":
+	"aboutProject.p3.part.1":
+		"Wenn du einen Blick hinter die Kulissen werfen möchtest, findest du den offenen Datensatz im ",
+	"aboutProject.p3.dataPortalLinkLabel": "Berlin Open Data Portal",
+	"aboutProject.p3.dataPortalLink":
+		"https://daten.berlin.de/datensaetze/simple_search_wwwberlindesensozialessozialesicherungbnberlinticketsangebote",
+	"aboutProject.p3.part.2": " und den dazugehörigen Quellcode kannst du auf ",
+	"aboutProject.p3.githubLinkLabel": "Github ",
+	"aboutProject.p3.githubLink":
+		"https://github.com/technologiestiftung/berlinpass",
+	"aboutProject.p3.part.3": "einsehen.",
+	"aboutProject.p4": "Viel Spaß beim Stöbern!",
+	"aboutProject.p5":
 		"Dieses Projekt wurde umgesetzt vom CityLAB Berlin in Kooperation mit der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung.",
 
 	"aboutProject.logos.tsb.src": "/logos/tsb-de.svg",
