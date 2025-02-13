@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { backOff } from "exponential-backoff";
-import { ApiRow } from "./utils";
+import { type ApiRow } from "./utils";
 
 export async function fetchPaginatedData(
 	page: number,

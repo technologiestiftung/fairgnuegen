@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line @technologiestiftung/no-default-export
 export default {
-	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+	content: ["./app/**/*.{js,ts,jsx,tsx}"],
 	// https://github.com/tailwindlabs/tailwindcss/pull/8394
 	future: {
 		hoverOnlyWhenSupported: true,
