@@ -11,13 +11,12 @@ import ResetFilterButton from "~/components/buttons/reset-filter-button";
 import ShowFilteredButton from "~/components/buttons/show-filtered-button";
 import Checkbox from "~/components/checkbox/checkbox";
 import FreeOffersCheckbox from "~/components/checkbox/free-offers-checkbox";
-import { ChevronDown } from "~/components/icons/chevron-down";
-import { ChevronUp } from "~/components/icons/chevron-up";
 import CloseIcon from "~/components/icons/close-icon";
 import { useNavigate } from "react-router";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { DrawerLeft } from "~/components/drawer/drawer-left.tsx";
+import { Collapsible } from "~/components/collapsible/collapsible.tsx";
 
 interface FilterRowOption {
 	title: string;
@@ -53,7 +52,6 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 	const navigate = useNavigate();
 
 	const { updateManySearchParams } = useUpdateSearchParam();
-	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
 	const { categories } = useCategories();
 	const { districts } = useDistricts();
@@ -179,11 +177,14 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 
 	return (
 		<DrawerLeft isOpen={isOpen} close={() => close()}>
-			<div className="flex flex-col text-base ">
+			<div className={`${isOpen ? "flex" : "hidden"} flex-col text-base`}>
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4 shadow-lg">
 					<h2 className="text-[22px] font-bold">{i18n["filter.title"]}</h2>
-					<button onClick={() => close()}>
-						<CloseIcon></CloseIcon>
+					<button
+						onClick={() => close()}
+						aria-label={i18n["button.name.close"]}
+					>
+						<CloseIcon />
 					</button>
 				</div>
 				<h2 className="text-[22px] font-bold px-6 py-4">
@@ -191,75 +192,56 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 				</h2>
 				<div className="py-4">
 					<div className="px-6 pb-2">
-						<FreeOffersCheckbox></FreeOffersCheckbox>
+						<FreeOffersCheckbox id={"free-only-filter-menu"} />
 					</div>
 
-					{filterRows.map((filterRow) => (
-						<div key={filterRow.title} className="">
-							<div
+					{filterRows.map((filterRow) => {
+						// isExpanded is true if any checkbox within the current filter row is selected.
+						const isExpanded =
+							selectedFilters[filterRow.urlKey as FilterIdentifier].values
+								.length > 0;
+
+						return (
+							<Collapsible
 								key={filterRow.title}
-								className={`hover:bg-berlin-grey-light hover:cursor-pointer py-4 border-b px-6 text-normal font-bold`}
+								title={filterRow.title}
+								classNames="hover:bg-berlin-grey-light hover:cursor-pointer shadow-none border-t-0 border-b px-6"
+								titleClassNames="text-normal font-bold"
+								forceOpen={isExpanded} //remain open is any checkbox is selected
 							>
-								<div
-									className="flex flex-row justify-between items-center"
-									onClick={() => {
-										if (selectedCategories.includes(filterRow.title)) {
-											setSelectedCategories(
-												selectedCategories.filter((v) => v !== filterRow.title),
-											);
-										} else {
-											setSelectedCategories(
-												selectedCategories.concat([filterRow.title]),
-											);
-										}
-									}}
-								>
-									<div>{filterRow.title}</div>
-									{selectedCategories.includes(filterRow.title) ? (
-										<ChevronUp></ChevronUp>
-									) : (
-										<ChevronDown></ChevronDown>
-									)}
-								</div>
-							</div>
-							<div>
-								{selectedCategories.includes(filterRow.title) &&
-									filterRow.options.map((subItem) => (
-										<div
-											key={subItem.title}
-											className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
-										>
-											<Checkbox
-												id={subItem.title}
-												label={
-													subItem.subtitle ? (
-														<span className="text-normal font-normal">
-															<span className="font-bold">
-																{subItem.title}
-																{": "}
-															</span>
-															<span>{subItem.subtitle}</span>
-														</span>
-													) : (
-														<span className="text-normal font-normal">
-															{subItem.title}
-														</span>
-													)
-												}
-												isChecked={selectedFilters[
-													filterRow.urlKey as FilterIdentifier
-												].values.includes(subItem.value)}
-												onChange={() => toggleFilterOption(filterRow, subItem)}
-											></Checkbox>
-										</div>
-									))}
-							</div>
-						</div>
-					))}
+								{filterRow.options.map((subItem) => (
+									<div
+										key={subItem.title}
+										className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
+									>
+										<Checkbox
+											id={subItem.title}
+											label={
+												subItem.subtitle ? (
+													<span className="text-normal font-normal">
+														<span className="font-bold">{subItem.title}: </span>
+														{subItem.subtitle}
+													</span>
+												) : (
+													<span className="text-normal font-normal">
+														{subItem.title}
+													</span>
+												)
+											}
+											isChecked={selectedFilters[
+												filterRow.urlKey as FilterIdentifier
+											].values.includes(subItem.value)}
+											onChange={() => toggleFilterOption(filterRow, subItem)}
+										/>
+									</div>
+								))}
+							</Collapsible>
+						);
+					})}
 				</div>
 				<div className="w-full flex flex-col gap-8 md:gap-2 justify-end px-4 items-end md:flex-row md:justify-between md:items-center py-8">
-					<ResetFilterButton onClick={onResetFilters}></ResetFilterButton>
-					<ShowFilteredButton onClick={onSubmitFilters}></ShowFilteredButton>
+					<ResetFilterButton onClick={onResetFilters} />
+					<ShowFilteredButton onClick={onSubmitFilters} />
 				</div>
 			</div>
 		</DrawerLeft>

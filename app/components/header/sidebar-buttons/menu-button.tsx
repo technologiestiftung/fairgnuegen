@@ -19,6 +19,7 @@ export function MenuButton() {
 				<BarsIcon />
 				{i18n["sidebar.menu"]}
 			</button>
+
 			<MainMenu isOpen={isOpen} close={() => setIsOpen(false)}></MainMenu>
 		</>
 	);

@@ -8,6 +8,7 @@ const en: typeof de = {
 	"home.linkEligible": "Am I eligible?",
 	"home.h2": "What would you like to do?",
 
+	"home.allOffersTeaser.imageAltText": "to all offers",
 	"home.allOffersTeaser.title": "All offers at a glance",
 	"home.allOffersTeaser.description.p1":
 		"Fair Fun has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
@@ -125,6 +126,13 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"button.copyAddressCopied": "The address was copied!",
 	"button.copyLink": "Copy link",
 	"button.copyLinkCopied": "The link was copied!",
+	"button.name.close": "Close",
+	"button.name.clear": "Clear",
+	"button.name.submit": "Submit",
+	"button.name.like": "Like",
+	"button.name.expand": "Expand",
+	"button.name.collapse": "Collapse",
+	"button.name.share": "Teilen",
 
 	"offer.linkToWebsite": "Link to website",
 	"offer.discountDetails": "Discount details",
@@ -133,18 +141,28 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"categories.teaser": "Explore the categories",
 	"categories.title": "Categories",
 	"categories.all.name": "All offers",
+	"categories.all.imageAltText":
+		"A picture of Bubbles floating in front of the Brandenburg Gate as a symbolic image for all categories.",
 	"categories.all.description": "",
 	"categories.kultur.name": "Culture",
+	"categories.kultur.imageAltText":
+		"A picture of a white marble sculpture as a symbolic image for the culture category",
 	"categories.kultur.description":
 		"Offers for museums, theaters, concerts, and much more",
 	"categories.sport.name": "Sports",
+	"categories.sport.imageAltText":
+		"A picture of a soccer player leaping to kick the ball in front of the goal as a symbolic image for the sport category",
 	"categories.sport.description":
 		"Offers to stay physically fit or to celebrate sports",
 	"categories.bildung_beratung.name": "Education & counseling",
+	"categories.bildung_beratung.imageAltText":
+		"A picture of the arm of a person while writing with a pen on paper, with a notebook and a coffee cup nearby as a symbolic image for the Education and counseling category.",
 	"categories.bildung_beratung.name_short": "Education",
 	"categories.bildung_beratung.description":
 		"Further education and counseling services",
 	"categories.freizeit.name": "Leisure",
+	"categories.freizeit.imageAltText":
+		"A picture of Colorful Ferris wheel with several passenger cabins against a blue sky as a symbolic image for the category Leisure.",
 	"categories.freizeit.description":
 		"Offers for cinemas, restaurants, bars and outdoor activities",
 
@@ -169,8 +187,19 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"aboutProject.p2.part.mapLinkLabel": "map",
 	"aboutProject.p2.part.2":
 		" gives you a quick overview of what's going on where.",
-	"aboutProject.p3": "Have fun browsing!",
-	"aboutProject.p4":
+	"aboutProject.p3.part.1":
+		"If you'd like a behind-the-scenes look, you'll find the open dataset on the ",
+	"aboutProject.p3.dataPortalLinkLabel": "Berlin Open Data Portal",
+	"aboutProject.p3.dataPortalLink":
+		"https://daten.berlin.de/datensaetze/simple_search_wwwberlindesensozialessozialesicherungbnberlinticketsangebote",
+	"aboutProject.p3.part.2":
+		" and you can check out the corresponding source code on ",
+	"aboutProject.p3.githubLinkLabel": "Github",
+	"aboutProject.p3.githubLink":
+		"https://github.com/technologiestiftung/berlinpass",
+	"aboutProject.p3.part.3": ".",
+	"aboutProject.p4": "Have fun browsing!",
+	"aboutProject.p5":
 		"This project was implemented by CityLAB Berlin in cooperation with the Senate Department for Labour, Social Services, Gender Equality, Integration, Diversity and Anti-Discrimination.",
 
 	"aboutProject.logos.tsb.src": "/logos/tsb-en.svg",

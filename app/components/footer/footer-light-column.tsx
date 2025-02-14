@@ -24,7 +24,11 @@ export function FooterLightColumn({
 		<>
 			{/* Mobile */}
 			<div className="flex flex-col desktop:hidden">
-				<Collapsible title={i18n[title]} openByDefault={openByDefault}>
+				<Collapsible
+					title={i18n[title]}
+					isDefaultOpen={openByDefault}
+					titleClassNames="text-lg"
+				>
 					<ul className="flex flex-col">
 						{links.map((link) => (
 							<li key={link.href}>

@@ -20,11 +20,13 @@ export const ShowAllOffersTeaser: React.FC = () => {
 			<div className="flex flex-col md:w-[40%] w-full relative gap-2 basis-[45%] ">
 				<ResponsivePicture
 					src="all"
-					alt={i18n["Alle Angebote"]}
+					alt={i18n["home.allOffersTeaser.imageAltText"]}
 					loading={"eager"}
 					className="object-cover aspect-[4/3]"
 				/>
-				<p className="text-[11px] text-berlin-grey px-4 sm:px-0">© Unsplash</p>
+				<p className="text-[11px] text-berlin-grey-darker px-4 sm:px-0">
+					© Unsplash
+				</p>
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>

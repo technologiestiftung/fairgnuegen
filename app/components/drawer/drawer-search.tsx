@@ -1,5 +1,6 @@
 import React from "react";
 import { useOnEscape } from "~/hooks/use-on-escape.tsx";
+import { useFocusTrap } from "~/hooks/use-focus-trap.tsx";
 
 interface DrawerSearchProps {
 	isOpen: boolean;
@@ -9,9 +10,11 @@ interface DrawerSearchProps {
 
 export function DrawerSearch({ isOpen, close, children }: DrawerSearchProps) {
 	useOnEscape(close);
+	const menuRef = useFocusTrap(isOpen, close);
 
 	return (
 		<div
+			ref={menuRef}
 			className={`${isOpen ? "visible" : "invisible"} overflow-x-hidden absolute top-0 right-0 z-20 w-screen h-screen`}
 			onClick={close}
 		>

@@ -5,9 +5,11 @@ import { useLanguage } from "~/hooks/use-language.tsx";
 import { LanguageAnchor } from "~/components/header/language-select/language-anchor.tsx";
 import { type Language } from "~/components/header/language-select/types.ts";
 import { ChevronUp } from "~/components/icons/chevron-up.tsx";
+import { useI18n } from "../../../i18n/use-i18n.tsx";
 
 export function LanguageSelect() {
 	const currentLanguage = useLanguage();
+	const i18n = useI18n(currentLanguage);
 	const [isOpen, setIsOpen] = useState(false);
 	const languageSelectRef = useRef<HTMLDivElement>(null);
 
@@ -27,6 +29,10 @@ export function LanguageSelect() {
 				<button
 					className="flex items-center"
 					onClick={() => setIsOpen(!isOpen)}
+					aria-label={
+						isOpen ? i18n["button.name.collapse"] : i18n["button.name.expand"]
+					}
+					aria-expanded={isOpen}
 				>
 					<span className="flex text-[11px] font-bold bg-berlin-pink size-6 justify-center items-center">
 						{currentLanguage}

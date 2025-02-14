@@ -66,6 +66,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					});
 					setShowOverlay(!showOverlay);
 				}}
+				aria-label={i18n["button.name.share"]}
 			>
 				<div className="size-[44px]">
 					<ShareIcon isSelected={showOverlay} />

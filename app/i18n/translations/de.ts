@@ -6,6 +6,7 @@ const de = {
 	"home.linkEligible": "Bin ich berechtigt?",
 	"home.h2": "Was möchtest du unternehmen?",
 
+	"home.allOffersTeaser.imageAltText": "Zu allen Angeboten",
 	"home.allOffersTeaser.title": "Alle Angebote auf einen Blick",
 	"home.allOffersTeaser.description.p1":
 		"Fairgnügen bietet über 400 Aktivitäten im Bereich Kultur, Sport, Bildung & Beratung und Freizeit.",
@@ -225,6 +226,13 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"button.copyAddressCopied": "Die Adresse wurde kopiert!",
 	"button.copyLink": "Link kopieren",
 	"button.copyLinkCopied": "Der Link wurde kopiert!",
+	"button.name.close": "Schließen",
+	"button.name.clear": "Zurücksetzen",
+	"button.name.submit": "Absenden",
+	"button.name.like": "Gefällt mir",
+	"button.name.expand": "Mehr anzeigen",
+	"button.name.collapse": "Weniger anzeigen",
+	"button.name.share": "Teilen",
 
 	"offer.linkToWebsite": "Zur Webseite",
 	"offer.discountDetails": "Ermäßigung",
@@ -233,18 +241,28 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"categories.teaser": "Entdecke die Kategorien",
 	"categories.title": "Kategorien",
 	"categories.all.name": "Alle Angebote",
+	"categories.all.imageAltText":
+		"Ein Bild von Seifenblasen, die vor dem Brandenburger Tor schweben, als Symbolbild für alle Kategorien",
 	"categories.all.description": "",
 	"categories.kultur.name": "Kultur",
+	"categories.kultur.imageAltText":
+		"Ein Bild einer Skulptur aus weißem Marmor als Symbolbild für die Kategorie Kultur",
 	"categories.kultur.description":
 		"Angebote fürs Museum, Theater, Konzerte und vieles mehr",
 	"categories.sport.name": "Sport",
+	"categories.sport.imageAltText":
+		"Ein Bild eines Fußballspielers, der im Sprung den Ball vor dem Tor trifft, als Symbolbild für die Kategorie Sport.",
 	"categories.sport.description":
 		"Angebote um körperlich fit zu bleiben oder den Sport zu feiern",
 	"categories.bildung_beratung.name": "Bildung & Beratung",
+	"categories.bildung_beratung.imageAltText":
+		"Ein Bild des Arms einer Person, die mit einem Stift auf Papier schreibt, mit einem Notizbuch und einer Kaffeetasse in der Nähe als symbolisches Bild für die Kategorie Bildung und Beratung.",
 	"categories.bildung_beratung.name_short": "Bildung",
 	"categories.bildung_beratung.description":
 		"Weiterbildungs- und Beratungsangebote",
 	"categories.freizeit.name": "Freizeit",
+	"categories.freizeit.imageAltText":
+		"Ein Bild eines bunten Riesenrads mit mehreren Fahrgastkabinen vor einem blauen Himmel als Symbolbild für die Kategorie Freizeit.",
 	"categories.freizeit.description":
 		"Angebote fürs Kino, Restaurants, Bars und Aktivitäten an der freien Luft",
 
@@ -270,8 +288,18 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"aboutProject.p2.part.mapLinkLabel": "Karte",
 	"aboutProject.p2.part.2":
 		" bekommst du einen schnellen Überblick, wo was los ist.",
-	"aboutProject.p3": "Viel Spaß beim Stöbern!",
-	"aboutProject.p4":
+	"aboutProject.p3.part.1":
+		"Wenn du einen Blick hinter die Kulissen werfen möchtest, findest du den offenen Datensatz im ",
+	"aboutProject.p3.dataPortalLinkLabel": "Berlin Open Data Portal",
+	"aboutProject.p3.dataPortalLink":
+		"https://daten.berlin.de/datensaetze/simple_search_wwwberlindesensozialessozialesicherungbnberlinticketsangebote",
+	"aboutProject.p3.part.2": " und den dazugehörigen Quellcode kannst du auf ",
+	"aboutProject.p3.githubLinkLabel": "Github ",
+	"aboutProject.p3.githubLink":
+		"https://github.com/technologiestiftung/berlinpass",
+	"aboutProject.p3.part.3": "einsehen.",
+	"aboutProject.p4": "Viel Spaß beim Stöbern!",
+	"aboutProject.p5":
 		"Dieses Projekt wurde umgesetzt vom CityLAB Berlin in Kooperation mit der Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt und Antidiskriminierung.",
 
 	"aboutProject.logos.tsb.src": "/logos/tsb-de.svg",

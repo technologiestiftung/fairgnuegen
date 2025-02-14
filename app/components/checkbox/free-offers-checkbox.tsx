@@ -5,7 +5,11 @@ import Checkbox from "~/components/checkbox/checkbox.tsx";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 
-const FreeOffersCheckbox: React.FC = () => {
+interface FreeOffersCheckboxProps {
+	id: string;
+}
+
+const FreeOffersCheckbox: React.FC<FreeOffersCheckboxProps> = ({ id }) => {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 
@@ -23,7 +27,7 @@ const FreeOffersCheckbox: React.FC = () => {
 
 	return (
 		<Checkbox
-			id={"free-only"}
+			id={id}
 			label={label}
 			onChange={onChange}
 			isChecked={isShowingFreeOffersOnly}

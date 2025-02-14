@@ -1,5 +1,6 @@
 import React from "react";
 import { useOnEscape } from "~/hooks/use-on-escape.tsx";
+import { useFocusTrap } from "~/hooks/use-focus-trap";
 
 interface DrawerProps {
 	isOpen: boolean;
@@ -9,9 +10,11 @@ interface DrawerProps {
 
 export function DrawerRight({ isOpen, close, children }: DrawerProps) {
 	useOnEscape(close);
+	const menuRef = useFocusTrap(isOpen, close);
 
 	return (
 		<div
+			ref={menuRef}
 			className={`overflow-x-hidden overflow-y-hidden fixed top-0 right-0 z-20 w-screen h-screen pointer-events-none`}
 			onClick={close}
 		>

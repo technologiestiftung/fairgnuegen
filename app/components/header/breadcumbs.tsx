@@ -19,14 +19,14 @@ export function Breadcrumbs() {
 					<React.Fragment key={label}>
 						{index > 0 && (
 							<ChevronRight
-								className={isLast ? "text-black" : "text-[#454545]"}
+								className={isLast ? "text-black" : "text-berlin-grey-darker"}
 							/>
 						)}
 						<LocalizedTrackedAnchorLink
 							href={href}
 							className={`
 						whitespace-nowrap overflow-hidden text-ellipsis max-w-[20vw] sm:max-w-[30vw] md:max-w-[40vw]
-						${isLast ? "text-black" : "text-[#454545]"}
+						${isLast ? "text-black" : "text-berlin-grey-darker"}
 						`}
 							additionalTrackingContext="(breadcrumbs)"
 						>

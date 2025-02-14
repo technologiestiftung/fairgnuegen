@@ -38,7 +38,9 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 				<div className="absolute top-0 right-0">
 					<ImageArrowIcon />
 				</div>
-				<p className="text-[11px] text-berlin-grey px-4 sm:px-0">© Unsplash</p>
+				<p className="text-[11px] text-berlin-grey-darker px-4 sm:px-0">
+					© Unsplash
+				</p>
 			</div>
 
 			<div className="flex flex-col justify-between px-4 sm:px-0">

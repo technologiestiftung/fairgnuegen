@@ -26,14 +26,13 @@ export default function Index() {
 
 	const { filteredAndSortedOffers, search, isLoading } =
 		useFilteredAndSortedOffers();
-
 	return (
 		<>
 			<div className={isLoading ? "invisible" : "visible"}>
 				{categoryDetail && (
 					<ResponsivePicture
 						src={categoryDetail.image}
-						alt={i18n[categoryDetail.name]}
+						alt={i18n[`${categoryDetail.i18nKey}.imageAltText`]}
 						loading={"eager"}
 						className="hidden sm:block w-full h-[448px] object-cover"
 					/>
@@ -50,14 +49,14 @@ export default function Index() {
 					<div className="mx-4 lg:mx-0">
 						<div className="flex flex-col gap-2 mb-10">
 							<SearchBar />
-							<FreeOffersCheckbox />
+							<FreeOffersCheckbox id={"free-only"} />
 						</div>
 						<div className="flex flex-row w-full justify-between mb-6">
 							<FilterButton />
 							<ShowMapButton />
 						</div>
 						<div className="flex flex-row items-center gap-2 py-3">
-							<p className="text-md text-berlin-grey">
+							<p className="text-md text-berlin-grey-dark">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
 								{search !== null &&
 									search !== "" &&

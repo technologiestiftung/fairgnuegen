@@ -20,13 +20,18 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 
 	return (
 		<DrawerRight isOpen={isOpen} close={() => close()}>
-			<div className="flex flex-col gap-4 px-6 py-4 text-base">
+			<div
+				className={`${isOpen ? "flex" : "hidden"} flex-col gap-4 px-6 py-4 text-base`}
+			>
 				<div className="flex flex-row items-center justify-between  mb-6 mt-4">
 					<p className="text-2xl font-bold">
 						{i18n["accessibilityMenu.title"]}
 					</p>
-					<button onClick={() => close()}>
-						<CloseIcon></CloseIcon>
+					<button
+						onClick={() => close()}
+						aria-label={i18n["button.name.close"]}
+					>
+						<CloseIcon />
 					</button>
 				</div>
 
