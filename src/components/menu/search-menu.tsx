@@ -17,7 +17,9 @@ const SearchMenu: React.FC<SearchMenuProps> = ({ isOpen, close }) => {
 
 	return (
 		<DrawerSearch isOpen={isOpen} close={() => close()}>
-			<div className="flex flex-col gap-4 px-6 py-4 text-base">
+			<div
+				className={`${isOpen ? "flex" : "hidden"} flex-col gap-4 px-6 py-4 text-base`}
+			>
 				<div className="flex flex-row items-center justify-end  mb-6 mt-4">
 					<button
 						onClick={() => close()}

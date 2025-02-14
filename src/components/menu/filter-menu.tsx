@@ -177,7 +177,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 
 	return (
 		<DrawerLeft isOpen={isOpen} close={() => close()}>
-			<div className="flex flex-col text-base">
+			<div className={`${isOpen ? "flex" : "hidden"} flex-col text-base`}>
 				<div className="flex flex-row items-center justify-between mb-6 mt-4 px-6 py-4 shadow-lg">
 					<h2 className="text-[22px] font-bold">{i18n["filter.title"]}</h2>
 					<button
