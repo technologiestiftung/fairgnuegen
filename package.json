@@ -10,7 +10,7 @@
 		"prettier": "prettier --write .",
 		"prettier:ci": "prettier --check .",
 		"build:update-data-and-translate": "cd data && tsx --tsconfig ./tsconfig.app.json update-data-and-translate.ts && prettier --config ../prettier.config.js --write berlinpass_data.json",
-		"build:content": "tsx --tsconfig ./tsconfig.app.json generate-content-and-routes.ts && prettier --config prettier.config.js --write app/content/detail-pages-content.ts react-router.config.ts",
+		"build:content": "tsx --tsconfig ./tsconfig.app.json data/generate-content-and-routes.ts && prettier --config prettier.config.js --write app/content/detail-pages-content.ts react-router.config.ts",
 		"build": "NODE_ENV=production npm run build:content && react-router build",
 		"preview": "serve build/client",
 		"test:visual": "playwright test --config=tests/visual/playwright.config.ts"

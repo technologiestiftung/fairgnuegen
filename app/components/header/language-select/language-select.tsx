@@ -5,7 +5,7 @@ import { useLanguage } from "~/hooks/use-language.tsx";
 import { LanguageAnchor } from "~/components/header/language-select/language-anchor.tsx";
 import { type Language } from "~/components/header/language-select/types.ts";
 import { ChevronUp } from "~/components/icons/chevron-up.tsx";
-import { useI18n } from "../../../i18n/use-i18n.tsx";
+import { useI18n } from "~/i18n/use-i18n.tsx";
 
 export function LanguageSelect() {
 	const currentLanguage = useLanguage();

@@ -26,7 +26,9 @@ export const useFocusTrap = (isOpen: boolean, close: () => void) => {
 	const previouslyFocusedElement = useRef<HTMLElement | null>(null);
 
 	useEffect(() => {
-		if (!isOpen || !containerRef.current) return;
+		if (!isOpen || !containerRef.current) {
+			return () => {};
+		}
 
 		// Store the previously focused element to restore it later
 		previouslyFocusedElement.current = document.activeElement as HTMLElement;
