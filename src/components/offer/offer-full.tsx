@@ -53,14 +53,14 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 						<OfferTags offer={offer} />
 					</div>
 					{offer.offerDescription && (
-						<div className={`break-words text-left`}>
+						<p className={`break-words text-left`}>
 							{offer.offerDescription} <br></br>
-						</div>
+						</p>
 					)}
 					{offer.providerDescription && (
-						<div className={`break-words text-left`}>
+						<p className={`break-words text-left`}>
 							{offer.providerDescription} <br></br>
-						</div>
+						</p>
 					)}
 					<a
 						href={offer.website}
