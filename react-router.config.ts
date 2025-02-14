@@ -855,6 +855,14 @@ export default {
 			"/en/all-offers/flughafen_tempelhof_oder_veranstaltungsreihe_thfx/",
 			"/all-offers/flughafen_tempelhof_oder_thf_tower/",
 			"/en/all-offers/flughafen_tempelhof_oder_thf_tower/",
+			"/all-offers/hochschule_fuer_schauspielkunst_ernst_busch/",
+			"/en/all-offers/hochschule_fuer_schauspielkunst_ernst_busch/",
+			"/all-offers/luftschloss_tempelhofer_feld/",
+			"/en/all-offers/luftschloss_tempelhofer_feld/",
+			"/all-offers/citylab_berlin/",
+			"/en/all-offers/citylab_berlin/",
+			"/all-offers/futurium/",
+			"/en/all-offers/futurium/",
 		];
 	},
 } satisfies Config;
