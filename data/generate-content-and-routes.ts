@@ -144,13 +144,21 @@ export default {
 \tasync prerender() {
 \t\treturn [
 \t\t\t"/",
+\t\t\t"/en/",
 \t\t\t"/all-offers/",
+\t\t\t"/en/all-offers/",
 \t\t\t"/favorites/",
+\t\t\t"/en/favorites/",
 \t\t\t"/map/",
+\t\t\t"/en/map/",
 \t\t\t"/imprint/",
+\t\t\t"/en/imprint/",
 \t\t\t"/privacy-note/",
+\t\t\t"/en/privacy-note/",
 \t\t\t"/about-project/",
+\t\t\t"/en/about-project/",
 \t\t\t"/accessibility-statement/",
+\t\t\t"/en/accessibility-statement/",
 ${processedRoutes.map((route) => `\t\t\t"${route}",`).join("\n")}
 \t\t];
 \t},
