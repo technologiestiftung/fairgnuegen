@@ -1,4 +1,4 @@
-import LikeIcon from "../icons/like-icon";
+import LikeIcon from "~/components/icons/like-icon";
 import { type Offer } from "~/content/content.ts";
 import { useFavoritesStore } from "~/store/favorites-store.ts";
 import { useIsFavorite } from "~/hooks/use-is-favorite.tsx";

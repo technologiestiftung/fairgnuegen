@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "./breadcumbs";
+import { Breadcrumbs } from "~/components/header/breadcumbs";
 import { LanguageSelect } from "~/components/header/language-select/language-select.tsx";
 import { SidebarButtons } from "~/components/header/sidebar-buttons/sidebar-buttons.tsx";
 import { useLanguage } from "~/hooks/use-language.tsx";

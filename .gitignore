@@ -28,8 +28,6 @@ dist-ssr
 *.sw?
 
 .env
-build
-.react-router
 
 # Playwright
 /test-results/
@@ -37,3 +35,5 @@ build
 /blob-report/
 /playwright/.cache/
 
+build
+.react-router
