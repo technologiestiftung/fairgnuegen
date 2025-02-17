@@ -14,6 +14,7 @@ import { Main } from "~/components/main/main";
 import { Footer } from "~/components/footer/footer";
 import { getBerlinFooter } from "~/external-templates/berlin-footer.ts";
 import { content } from "~/content/content";
+import { useLanguage } from "~/hooks/use-language.tsx";
 
 export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
@@ -28,9 +29,10 @@ export function meta() {
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const berlinFooter = useRouteLoaderData("root");
+	const language = useLanguage();
 
 	return (
-		<html lang="de">
+		<html lang={language}>
 			<head>
 				<meta charSet="utf-8" />
 				<link rel="icon" type="image/svg+xml" href="/berlin_de.svg" />
