@@ -4,7 +4,6 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev_old": "npm run build:content && vite",
 		"dev": "npm run build:content && react-router dev",
 		"start": "react-router-serve ./build/server/index.js",
 		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint \"app/**/*\"",
