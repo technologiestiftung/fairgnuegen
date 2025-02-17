@@ -1,5 +1,5 @@
 import React from "react";
-import { useFocusTrap } from "~/hooks/use-focus-trap.ts";
+import { useFocusTrap } from "~/hooks/use-focus-trap.tsx";
 import { useOnEscape } from "~/hooks/use-on-escape.tsx";
 
 interface DrawerSearchProps {
