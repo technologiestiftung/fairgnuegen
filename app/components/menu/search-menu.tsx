@@ -1,9 +1,9 @@
 import React from "react";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
 import { DrawerSearch } from "~/components/drawer/drawer-search.tsx";
 import CloseIcon from "~/components/icons/close-icon";
 import SearchBar from "~/components/search-bar/search-bar";
+import { useI18n } from "~/i18n/use-i18n";
+import { useLanguage } from "~/hooks/use-language";
 
 interface SearchMenuProps {
 	isOpen: boolean;

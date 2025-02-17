@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev_old": "npm run build:content && vite",
-		"dev": "react-router dev",
+		"dev": "npm run build:content && react-router dev",
 		"start": "react-router-serve ./build/server/index.js",
 		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint \"app/**/*\"",
 		"prettier": "prettier --write .",
@@ -16,8 +16,8 @@
 		"build:data": "tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/detail-pages-routes.ts src/content/detail-pages-content.ts && tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/routes.ts src/content/content.ts",
 		"build:csr": "tsc -b && vite build",
 		"build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-		"test:visual": "playwright test --config=tests/visual/playwright.config.ts",
-		"preview": "serve build/client"
+		"preview": "serve build/client",
+		"test:visual": "playwright test --config=tests/visual/playwright.config.ts"
 	},
 	"dependencies": {
 		"@react-router/node": "7.1.5",
@@ -31,6 +31,7 @@
 		"zustand": "5.0.3"
 	},
 	"devDependencies": {
+		"@react-router/dev": "7.1.5",
 		"@playwright/test": "1.50.1",
 		"@react-router/dev": "7.1.5",
 		"@technologiestiftung/eslint-config": "0.3.1",

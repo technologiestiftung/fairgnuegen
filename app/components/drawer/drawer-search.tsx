@@ -1,6 +1,6 @@
 import React from "react";
-import { useFocusTrap } from "~/hooks/use-focus-trap.tsx";
 import { useOnEscape } from "~/hooks/use-on-escape.tsx";
+import { useFocusTrap } from "~/hooks/use-focus-trap.tsx";
 
 interface DrawerSearchProps {
 	isOpen: boolean;

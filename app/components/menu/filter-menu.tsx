@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Collapsible } from "~/components/collapsible/collapsible.tsx";
 import { categoryMap } from "~/content/categories.ts";
 import { districtsMap } from "~/content/districts.ts";
 import { targetAudiencesMap } from "~/content/target-audiences.ts";
@@ -17,6 +16,7 @@ import { useNavigate } from "react-router";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { DrawerLeft } from "~/components/drawer/drawer-left.tsx";
+import { Collapsible } from "~/components/collapsible/collapsible.tsx";
 
 interface FilterRowOption {
 	title: string;
