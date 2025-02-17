@@ -39,7 +39,7 @@ export const useFocusTrap = (isOpen: boolean, close: () => void) => {
 		const focusableElements = Array.from(
 			containerRef.current.querySelectorAll<HTMLElement>(focusableSelector),
 		);
-    
+
 		// Delay focusing the first element to allow animations to start first
 		const timeout = setTimeout(() => {
 			// Focus the first focusable element
