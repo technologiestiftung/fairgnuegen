@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { categoryMap, getCategory } from "~/content/categories.ts";
 import { type Breadcrumb, content } from "~/content/content.ts";
 import { useLocation, useSearchParams } from "react-router";
@@ -13,9 +13,8 @@ export function useUpdateBreadcrumbsWithCategory() {
 	const [searchParams] = useSearchParams();
 	const { breadcrumbs: defaultBreadcrumbs } = content[location.pathname];
 
-	const [updatedBreadcrumbs, setUpdatedBreadcrumbs] = React.useState<
-		Breadcrumb[] | undefined
-	>(defaultBreadcrumbs);
+	const [updatedBreadcrumbs, setUpdatedBreadcrumbs] =
+		useState<Breadcrumb[]>(defaultBreadcrumbs);
 
 	const category = getCategory(searchParams.get("category"));
 

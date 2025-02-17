@@ -102,7 +102,6 @@ try {
 		];
 
 		const content = {
-			title: provider,
 			breadcrumbs,
 			offer: {
 				id: id,

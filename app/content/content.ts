@@ -24,36 +24,35 @@ export type Offer = {
 export type Breadcrumb = {
 	href: string;
 	label: string;
+	optionalTitleLabel?: string;
 };
 
 export type Content = {
-	title: string;
-	breadcrumbs?: Breadcrumb[];
+	breadcrumbs: Breadcrumb[];
 	offer?: Offer;
 	category?: string;
 };
 
 export const content: Record<string, Content> = {
 	"/": {
-		title: "Fairgnügen • Berlin vergünstigt erleben",
 		breadcrumbs: [
 			{
 				href: "/",
 				label: "Fairgnügen",
+				optionalTitleLabel: "Berlin vergünstigt erleben",
 			},
 		],
 	},
 	"/en/": {
-		title: "Fairgnügen • Experience Berlin fairly and cheaply",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
+				optionalTitleLabel: "Experience Berlin fairly and cheaply",
 			},
 		],
 	},
 	"/all-offers/": {
-		title: "Alle Angebote",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -66,11 +65,10 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/all-offers/": {
-		title: "All Offers",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/all-offers",
@@ -79,7 +77,6 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/favorites/": {
-		title: "Favoriten",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -92,11 +89,10 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/favorites/": {
-		title: "Favorites",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/favorites/",
@@ -105,7 +101,6 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/map/": {
-		title: "Kartenansicht",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -118,11 +113,10 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/map/": {
-		title: "Map",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/map/",
@@ -131,7 +125,6 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/imprint/": {
-		title: "Impressum",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -144,11 +137,10 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/imprint/": {
-		title: "Imprint",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/imprint/",
@@ -157,7 +149,6 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/privacy-note/": {
-		title: "Datenschutzerklärung",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -170,11 +161,10 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/privacy-note/": {
-		title: "Privacy Note",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/privacy-note/",
@@ -183,7 +173,6 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/about-project/": {
-		title: "Über das Projekt",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -196,11 +185,10 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/about-project/": {
-		title: "About the project",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/about-project/",
@@ -209,7 +197,6 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/accessibility-statement/": {
-		title: "Erklärung zur Barrierefreiheit",
 		breadcrumbs: [
 			{
 				href: "/",
@@ -222,11 +209,10 @@ export const content: Record<string, Content> = {
 		],
 	},
 	"/en/accessibility-statement/": {
-		title: "Accessibility Statement",
 		breadcrumbs: [
 			{
 				href: "/",
-				label: "Home",
+				label: "Fairgnügen",
 			},
 			{
 				href: "/accessibility-statement/",
