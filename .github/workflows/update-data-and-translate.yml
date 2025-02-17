@@ -1,11 +1,11 @@
 name: Update data and translate
 
 on:
-  workflow_dispatch:  # This allows the workflow to be triggered manually  
+  workflow_dispatch: # This allows the workflow to be triggered manually
   repository_dispatch:
     # This action can be triggered via Github API webook (see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch)
     types: [berlinpass-update-data]
-      
+
 jobs:
   update-data-and-translate:
     environment: production

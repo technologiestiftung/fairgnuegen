@@ -8,7 +8,6 @@
 
 # berlinpass
 
-
 ## Prerequisites
 
 You need node with the version specified in the [.nvmrc](.nvmrc) file.
