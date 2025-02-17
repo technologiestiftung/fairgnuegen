@@ -29,6 +29,7 @@ export function useUpdateBreadcrumbsWithCategory() {
 
 				return {
 					...breadcrumb,
+					href: `${breadcrumb.href}?category=${category}`,
 					label: i18n[`${i18nKey}.name`],
 				};
 			},
