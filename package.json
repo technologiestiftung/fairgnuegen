@@ -13,9 +13,6 @@
 		"build:update-data-and-translate": "cd data && tsx --tsconfig ../tsconfig.app.json update-data-and-translate.ts && prettier --config ../prettier.config.js --write berlinpass_data.json",
 		"build:content": "tsx --tsconfig ./tsconfig.app.json data/generate-content-and-routes.ts && prettier --config prettier.config.js --write app/content/detail-pages-content.ts react-router.config.ts",
 		"build": "NODE_ENV=production npm run build:content && react-router build",
-		"build:data": "tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/detail-pages-routes.ts src/content/detail-pages-content.ts && tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/routes.ts src/content/content.ts",
-		"build:csr": "tsc -b && vite build",
-		"build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
 		"preview": "serve build/client",
 		"test:visual": "playwright test --config=tests/visual/playwright.config.ts"
 	},
