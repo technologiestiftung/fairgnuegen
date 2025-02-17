@@ -6,15 +6,14 @@ import {
 	Outlet,
 	Scripts,
 	useRouteLoaderData,
-	useLocation,
 } from "react-router";
 import stylesheet from "~/index.css?url";
 import { Header } from "~/components/header/header";
 import { Main } from "~/components/main/main";
 import { Footer } from "~/components/footer/footer";
-import { getBerlinFooter } from "~/external-templates/berlin-footer.ts";
-import { content } from "~/content/content";
-import { useLanguage } from "~/hooks/use-language.tsx";
+import { getBerlinFooter } from "~/external-templates/berlin-footer";
+import { useLanguage } from "~/hooks/use-language";
+import { usePageTitle } from "~/hooks/use-page-title";
 
 export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
@@ -23,8 +22,9 @@ export async function loader() {
 }
 
 export function meta() {
-	const location = useLocation();
-	return [{ title: content[location.pathname]?.title }];
+	const title = usePageTitle();
+
+	return [{ title }];
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

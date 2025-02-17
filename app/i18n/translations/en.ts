@@ -1,8 +1,8 @@
 import type de from "~/i18n/translations/de.ts";
 
 const en: typeof de = {
-	"home.title": "Fair Fun",
-	"home.h1": "Welcome to Fair Fun!",
+	"home.title": "Fairgnügen",
+	"home.h1": "Welcome to Fairgnügen!",
 	"home.p1":
 		"Discover plenty of free and discounted offers for sports, education and leisure - exclusively for Berliners who receive social benefits.",
 	"home.linkEligible": "Am I eligible?",
@@ -11,7 +11,7 @@ const en: typeof de = {
 	"home.allOffersTeaser.imageAltText": "to all offers",
 	"home.allOffersTeaser.title": "All offers at a glance",
 	"home.allOffersTeaser.description.p1":
-		"Fair Fun has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
+		"Fairgnügen has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
 	"home.allOffersTeaser.description.p2":
 		"Take advantage of free and discounted offers and discover the capital. Have fun!",
 
@@ -80,7 +80,7 @@ Tel.: (030) 9028-0
 Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	`,
 
-	"header.title": "Fair Fun",
+	"header.title": "Fairgnügen",
 	"header.caption": "Experience Berlin on a budget",
 
 	"menuItem.homepage": "Homepage",
@@ -167,7 +167,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 		"Offers for cinemas, restaurants, bars and outdoor activities",
 
 	"feedback.title": "Give Feedback",
-	"feedback.hint": "How do you like Fair Fun? Please answer a few questions.",
+	"feedback.hint": "How do you like Fairgnügen? Please answer a few questions.",
 	"feedback.link": "Give feedback",
 
 	"map.loading": "Loading map...",
@@ -308,7 +308,7 @@ Email: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"infobox.providerHint.part.2": ". Do you have any further questions? ",
 	"infobox.contact": "Please contact us",
 
-	"upperFooter.fairfun": "Fair Fun",
+	"upperFooter.fairfun": "Fairgnügen",
 	"upperFooter.fairfun.about": "About the project",
 	"upperFooter.fairfun.impressum": "Imprint",
 	"upperFooter.fairfun.dataprivacy": "Privacy notice",
