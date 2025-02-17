@@ -4,29 +4,30 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "npm run build:content && vite",
-		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint \"src/**/*\"",
+		"dev": "npm run build:content && react-router dev",
+		"start": "react-router-serve ./build/server/index.js",
+		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint \"app/**/*\"",
 		"prettier": "prettier --write .",
 		"prettier:ci": "prettier --check .",
-		"build:update-data-and-translate": "cd data && npx tsx update-data-and-translate.ts && npx prettier --config ../prettier.config.js --write berlinpass_data.json",
-		"build:content": "tsx generate-content-and-routes.ts && npx prettier --config prettier.config.js --write src/content/detail-pages-content.ts src/routes/detail-pages-routes.ts",
-		"build:data": "tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/detail-pages-routes.ts src/content/detail-pages-content.ts && tsc --module es6 --skipLibCheck --outDir dist/assets src/routes/routes.ts src/content/content.ts",
-		"build:csr": "tsc -b && vite build",
-		"build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-		"build": "npm run build:content && npm run build:csr && npm run build:data && npm run build:ssr && tsx generate-html.ts",
-		"preview": "npx serve dist",
+		"build:update-data-and-translate": "cd data && tsx --tsconfig ../tsconfig.app.json update-data-and-translate.ts && prettier --config ../prettier.config.js --write berlinpass_data.json",
+		"build:content": "tsx --tsconfig ./tsconfig.app.json data/generate-content-and-routes.ts && prettier --config prettier.config.js --write app/content/detail-pages-content.ts react-router.config.ts",
+		"build": "NODE_ENV=production npm run build:content && react-router build",
+		"preview": "serve build/client",
 		"test:visual": "playwright test --config=tests/visual/playwright.config.ts"
 	},
 	"dependencies": {
+		"@react-router/node": "7.1.5",
 		"exponential-backoff": "3.1.2",
+		"isbot": "^5",
 		"maplibre-gl": "5.1.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"react-markdown": "9.0.3",
-		"react-router-dom": "6.29.0",
+		"react-router": "7.1.5",
 		"zustand": "5.0.3"
 	},
 	"devDependencies": {
+		"@react-router/dev": "7.1.5",
 		"@playwright/test": "1.50.1",
 		"@technologiestiftung/eslint-config": "0.3.1",
 		"@technologiestiftung/prettier-config": "1.0.0",
@@ -43,13 +44,16 @@
 		"eslint-plugin-react": "7.37.4",
 		"eslint-plugin-react-hooks": "5.1.0",
 		"eslint-plugin-react-refresh": "0.4.19",
+		"geojson": "0.5.0",
 		"globals": "15.14.0",
 		"postcss": "8.5.2",
 		"prettier": "3.5.0",
+		"serve": "14.2.4",
 		"slugify": "1.6.6",
 		"tailwindcss": "3.4.17",
 		"tsx": "4.19.2",
 		"typescript": "5.7.3",
-		"vite": "6.1.0"
+		"vite": "6.1.0",
+		"vite-tsconfig-paths": "5.1.4"
 	}
 }
