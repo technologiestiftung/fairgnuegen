@@ -39,11 +39,14 @@ export const useFocusTrap = (isOpen: boolean, close: () => void) => {
 		const focusableElements = Array.from(
 			containerRef.current.querySelectorAll<HTMLElement>(focusableSelector),
 		);
-
-		// Focus the first focusable element
-		if (focusableElements.length > 0) {
-			focusableElements[0].focus();
-		}
+    
+		// Delay focusing the first element to allow animations to start first
+		const timeout = setTimeout(() => {
+			// Focus the first focusable element
+			if (focusableElements.length > 0) {
+				focusableElements[0].focus();
+			}
+		}, 100); // Small delay to let animation complete
 
 		// Handles focus trapping inside the container
 		const handleKeyDown = (event: KeyboardEvent) => {
@@ -85,6 +88,7 @@ export const useFocusTrap = (isOpen: boolean, close: () => void) => {
 		document.addEventListener("keydown", handleKeyDown);
 
 		return () => {
+			clearTimeout(timeout);
 			// Restore focus to the previously focused element
 			previouslyFocusedElement.current?.focus();
 			document.removeEventListener("keydown", handleKeyDown);
