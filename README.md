@@ -6,8 +6,14 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# berlinpass
+# Fairgnügen
 
+People living in Berlin who receive social benefits can use local public transport as well as sports, educational,
+cultural and leisure facilities free of charge or at a reduced rate. This offer is a voluntary service provided by
+the state of Berlin to promote participation.
+
+With this application, you can search through all offers using various filters and get more information, e.g. on
+the event location, type of discount and target group. Our map gives you a quick overview of what's going on where.
 
 ## Prerequisites
 
@@ -19,19 +25,19 @@ You need node with the version specified in the [.nvmrc](.nvmrc) file.
 npm ci
 ```
 
-## Development (Client-Side-Rendering)
+## Development
 
 ```
 npm run dev
 ```
 
-## Build the static pages (Static-Site-Generation)
+## Build the static pages
 
 ```
 npm run build
 ```
 
-## Preview serving the static pages (Static-Site-Generation)
+## Preview serving the static pages
 
 ```
 npm run preview

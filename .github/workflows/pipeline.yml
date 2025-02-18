@@ -1,0 +1,44 @@
+name: Build, Prettier, Lint, Test
+permissions:
+  contents: write
+  packages: write
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code ⬇️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js using .nvmrc ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+
+      - name: Cache npm dependencies 💾
+        id: cache-npm-deps
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies 📦
+        if: steps.cache-npm-deps.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Check Build 🏗️
+        run: npm run build
+
+      - name: Check Prettier 🧹
+        run: npm run prettier:ci
+
+      - name: Check Lint 🔎
+        run: npm run lint

@@ -1,11 +1,11 @@
 name: Update data and translate
 
 on:
-  workflow_dispatch:  # This allows the workflow to be triggered manually  
+  workflow_dispatch: # This allows the workflow to be triggered manually
   repository_dispatch:
     # This action can be triggered via Github API webook (see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch)
-    types: [berlinpass-update-data]
-      
+    types: [fairgnuegen-update-data]
+
 jobs:
   update-data-and-translate:
     environment: production
@@ -26,5 +26,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: added new data and updated changed data incl. translations"
-          file_pattern: "data/berlinpass_data.json"
+          file_pattern: "data/fairgnuegen_data.json"
           branch: "main"
