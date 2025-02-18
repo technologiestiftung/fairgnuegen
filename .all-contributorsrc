@@ -1,36 +1,35 @@
 {
-  "projectName": "fairgnuegen",
-  "projectOwner": "technologiestiftung",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "files": ["README.md"],
-  "imageSize": 64,
-  "commit": true,
-  "commitConvention": "angular",
-  "contributors": [
-    {
-      "login": "raphael-arce",
-      "name": "Raphael.A",
-      "avatar_url": "https://avatars.githubusercontent.com/u/8709861?v=4",
-      "profile": "https://github.com/raphael-arce",
-      "contributions": ["code", "maintenance", "infra", "a11y", "doc"]
-    },
-    {
-      "login": "aeschi",
-      "name": "aeschi",
-      "avatar_url": "https://avatars.githubusercontent.com/u/56318362?v=4",
-      "profile": "https://github.com/aeschi",
-      "contributions": ["code", "design", "maintenance", "infra"]
-    },
-    {
-      "login": "zainab-tariq",
-      "name": "Zainab Tariq",
-      "avatar_url": "https://avatars.githubusercontent.com/u/15946816?v=4",
-      "profile": "https://github.com/zainab-tariq",
-      "contributions": ["code", "maintenance", "a11y"]
-    }
-  ],
-  "contributorsPerLine": 7,
-  "skipCi": true
+	"projectName": "fairgnuegen",
+	"projectOwner": "technologiestiftung",
+	"repoType": "github",
+	"repoHost": "https://github.com",
+	"files": ["README.md"],
+	"imageSize": 64,
+	"commit": true,
+	"commitConvention": "angular",
+	"contributors": [
+		{
+			"login": "raphael-arce",
+			"name": "Raphael.A",
+			"avatar_url": "https://avatars.githubusercontent.com/u/8709861?v=4",
+			"profile": "https://github.com/raphael-arce",
+			"contributions": ["code", "maintenance", "infra", "a11y", "doc"]
+		},
+		{
+			"login": "aeschi",
+			"name": "aeschi",
+			"avatar_url": "https://avatars.githubusercontent.com/u/56318362?v=4",
+			"profile": "https://github.com/aeschi",
+			"contributions": ["code", "design", "maintenance", "infra"]
+		},
+		{
+			"login": "zainab-tariq",
+			"name": "Zainab Tariq",
+			"avatar_url": "https://avatars.githubusercontent.com/u/15946816?v=4",
+			"profile": "https://github.com/zainab-tariq",
+			"contributions": ["code", "maintenance", "a11y"]
+		}
+	],
+	"contributorsPerLine": 7,
+	"skipCi": true
 }
-
