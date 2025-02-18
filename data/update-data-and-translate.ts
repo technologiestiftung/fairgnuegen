@@ -7,7 +7,7 @@ import { existsIdenticallyInData } from "./utils";
 
 async function updateAndTranslateData() {
 	const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-	const filePath = "./berlinpass_data.json";
+	const filePath = "./fairgnuegen_data.json";
 
 	if (!OPENAI_API_KEY || OPENAI_API_KEY === "") {
 		throw new Error("OPENAI_API_KEY must be defined");

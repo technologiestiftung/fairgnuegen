@@ -196,7 +196,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 		" and you can check out the corresponding source code on ",
 	"aboutProject.p3.githubLinkLabel": "Github",
 	"aboutProject.p3.githubLink":
-		"https://github.com/technologiestiftung/berlinpass",
+		"https://github.com/technologiestiftung/fairgnuegen",
 	"aboutProject.p3.part.3": ".",
 	"aboutProject.p4": "Have fun browsing!",
 	"aboutProject.p5":

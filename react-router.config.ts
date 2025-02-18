@@ -863,6 +863,8 @@ export default {
 			"/en/all-offers/citylab_berlin/",
 			"/all-offers/futurium/",
 			"/en/all-offers/futurium/",
+			"/all-offers/artcafe_aviator/",
+			"/en/all-offers/artcafe_aviator/",
 		];
 	},
 } satisfies Config;
