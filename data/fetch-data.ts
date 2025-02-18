@@ -14,7 +14,11 @@ export async function fetchPaginatedData(
 		throw new Error("env FREE_DB_PASSWORD must be defined");
 	}
 
-	const url = `https://www.berlin.de/freedb/open.php/index.json?page=${page}&ipp=500`;
+	if (!process.env.FREE_DB_URL || process.env.FREE_DB_URL === "") {
+		throw new Error("env FREE_DB_URL must be defined");
+	}
+
+	const url = `${process.env.FREE_DB_URL}?page=${page}&ipp=500`;
 
 	console.info(`fetching: [${url}]`);
 
