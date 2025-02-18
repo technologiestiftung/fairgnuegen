@@ -296,7 +296,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"aboutProject.p3.part.2": " und den dazugehörigen Quellcode kannst du auf ",
 	"aboutProject.p3.githubLinkLabel": "Github ",
 	"aboutProject.p3.githubLink":
-		"https://github.com/technologiestiftung/berlinpass",
+		"https://github.com/technologiestiftung/fairgnuegen",
 	"aboutProject.p3.part.3": "einsehen.",
 	"aboutProject.p4": "Viel Spaß beim Stöbern!",
 	"aboutProject.p5":

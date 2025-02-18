@@ -2,7 +2,7 @@ import fs from "fs";
 import slugify from "slugify";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 
-const filePath = "./data/berlinpass_data.json";
+const filePath = "./data/fairgnuegen_data.json";
 
 const existingPaths: string[] = [];
 
