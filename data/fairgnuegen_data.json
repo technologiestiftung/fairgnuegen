@@ -16555,5 +16555,54 @@
 		"language": "en",
 		"slug": "Art-Café Aviator",
 		"path": "Art-Café Aviator"
+	},
+	{
+		"id": "508",
+		"provider": "HOI Productions Germany GmbH",
+		"providerDescription": "HOLIDAY ON ICE, das sind über 80 Jahre fantastische Erfolge & Magie. Und 2024/25 geht es weiter – mit HORIZONS. Unter dem Motto „Feel the City Beat“ entführt HORIZONS das Publikum in eine urbane, magische Welt voller Energie & Faszination. Die Show kombiniert bewährte Spitzenleistungen im Eiskunstlauf mit atemberaubender Akrobatik, innovativer Technik & einer neuen, dynamischen Story, die den Puls der Stadt spürbar macht. Licht, Klang und Bewegung verschmelzen zu einem unvergesslichen Erlebnis.",
+		"offerDescription": "Fairgnügen Berlin-Special: Tickets für 18,25€ bei ausgewählten Shows von HOLIDAY ON ICE im Tempodrom Berlin",
+		"offerInformation": "https://bit.ly/hoiber25fair\r\nDie verfügbaren Plätze sind bereits jetzt über den Buchungslink einsehbar.\r\nDie Vorstellungen sind jeweils ab 7 Tage vorher buchbar (online, per Tel. 01805-4414 oder an der Tages/Abendkasse im Tempodrom ab 1 Stunde vor Showbeginn).\r\nDie Zahlung erfolgt sofort bei Ticketkauf.\r\nDie Karten werden generell an der Tages/Abendkasse des Tempodroms ab 1 Stunde vor der jeweiligen Show ausgegeben, dort muss ein Nachweis zur Berechtigung vorgezeigt werden.",
+		"website": "https://bit.ly/hoiber25fair",
+		"addressWithHouseNumber": "Möckernstraße 10",
+		"cityWithZip": "10963 Berlin",
+		"district": "Friedrichshain-Kreuzberg",
+		"isFree": false,
+		"category": "Kultur",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lon": 13.381782,
+		"lat": 52.50152,
+		"language": "de",
+		"identifierToBeSlugified": "HOI Productions Germany GmbH",
+		"path": "",
+		"slug": "HOI Productions Germany GmbH"
+	},
+	{
+		"id": "508_en",
+		"provider": "HOI Productions Germany GmbH",
+		"providerDescription": "HOLIDAY ON ICE, this means over 80 years of fantastic successes and magic. And in 2024/25 it continues - with HORIZONS. Under the motto 'Feel the City Beat,' HORIZONS takes the audience into an urban, magical world full of energy and fascination. The show combines proven top performances in figure skating with breathtaking acrobatics, innovative technology, and a new, dynamic story that makes the pulse of the city palpable. Light, sound, and movement merge into an unforgettable experience.",
+		"offerDescription": "Fair enjoyment Berlin-Special: Tickets for €18.25 at selected shows of HOLIDAY ON ICE at the Tempodrom Berlin",
+		"offerInformation": "https://bit.ly/hoiber25fair The available seats can already be viewed through the booking link. The performances can be booked online, by phone at 01805-4414, or at the day/evening box office at the Tempodrom starting 1 hour before the show begins. Payment is required immediately upon ticket purchase. Tickets are generally issued at the day/evening box office of the Tempodrom starting 1 hour before each show, where proof of entitlement must be presented.",
+		"website": "https://bit.ly/hoiber25fair",
+		"addressWithHouseNumber": "Möckernstraße 10",
+		"cityWithZip": "10963 Berlin",
+		"district": "Friedrichshain-Kreuzberg",
+		"isFree": false,
+		"category": "Kultur",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lat": 52.50152,
+		"lon": 13.381782,
+		"language": "en",
+		"slug": "HOI Productions Germany GmbH",
+		"path": "HOI Productions Germany GmbH"
 	}
 ]
