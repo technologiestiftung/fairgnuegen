@@ -52,10 +52,16 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					<div className="hidden sm:flex">
 						<OfferTags offer={offer} />
 					</div>
-
-					<div className={`break-words text-left`}>
-						{offer.providerDescription} <br></br>
-					</div>
+					{offer.providerDescription && (
+						<p className={`break-words text-left`}>
+							{offer.providerDescription} <br></br>
+						</p>
+					)}
+					{offer.offerDescription && (
+						<p className={`break-words text-left`}>
+							{offer.offerDescription} <br></br>
+						</p>
+					)}
 					<a
 						href={offer.website}
 						className="text-link-blue hover:underline flex flex-row items-start gap-1"
