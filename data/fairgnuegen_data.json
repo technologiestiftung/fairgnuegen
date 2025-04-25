@@ -5266,7 +5266,7 @@
 	},
 	{
 		"id": "148",
-		"provider": "JugendKulturService gGmbH",
+		"provider": "JugendKulturService gGmbH - Berliner FamilienPass",
 		"providerDescription": "Beim JugendKulturService finden Kinder, Jugendliche und Familien ein umfangreiches Serviceangebot in Kultur, Sport und weiteren Bereichen des Berliner Stadtlebens.",
 		"offerDescription": "",
 		"offerInformation": "ermäßigter Eintritt für Familienkonzerte mit dem Berliner FamilienPass",
@@ -5280,16 +5280,16 @@
 		"lon": 13.422257,
 		"lat": 52.489797,
 		"language": "de",
-		"identifierToBeSlugified": "JugendKulturService gGmbH",
+		"identifierToBeSlugified": "JugendKulturService gGmbH - Berliner FamilienPass",
 		"path": "",
-		"slug": "JugendKulturService gGmbH"
+		"slug": "JugendKulturService gGmbH - Berliner FamilienPass"
 	},
 	{
 		"id": "148_en",
-		"provider": "Youth Culture Service gGmbH",
-		"providerDescription": "At the Youth Culture Service, children, young people, and families find a comprehensive range of services in culture, sports, and other areas of city life in Berlin.",
+		"provider": "Youth Culture Service gGmbH - Berlin Family Pass",
+		"providerDescription": "At the Youth Culture Service, children, teenagers, and families find a wide range of services in culture, sports, and other areas of Berlin city life.",
 		"offerDescription": "",
-		"offerInformation": "discounted admission for family concerts with the Berlin Family Pass",
+		"offerInformation": "reduced admission for family concerts with the Berlin Family Pass",
 		"website": "https://www.jugendkulturservice.de/de/konzerte/konzerte/",
 		"addressWithHouseNumber": "Urbanstr. 100",
 		"cityWithZip": "10967 Berlin",
@@ -5300,8 +5300,8 @@
 		"lat": 52.489797,
 		"lon": 13.422257,
 		"language": "en",
-		"slug": "JugendKulturService gGmbH",
-		"path": "JugendKulturService gGmbH"
+		"slug": "JugendKulturService gGmbH - Berliner FamilienPass",
+		"path": "JugendKulturService gGmbH - Berliner FamilienPass"
 	},
 	{
 		"id": "149",
@@ -9750,45 +9750,6 @@
 		"path": "Staatsoper Unter den Linden"
 	},
 	{
-		"id": "271",
-		"provider": "Staatsoper Unter den Linden",
-		"providerDescription": "Das klassische Opernhaus, das nach dem Zweiten Weltkrieg neu erbaut wurde, präsentiert ein vielseitiges Repertoire aus Ballett und Opernaufführungen.",
-		"offerDescription": "",
-		"offerInformation": "\"3 Euro Ticket\"\" an der Abendkasse, 30 Minuten vor Vorstellungsbeginn, begrenztes Kontingent, keine Reservierungen, keine Premieren, Sonder- und Fremdveranstaltungen, nicht bei F-, G-, H- und Sonderpreisen\"",
-		"website": "https://www.staatsoper-berlin.de",
-		"addressWithHouseNumber": "Unter den Linden 7",
-		"cityWithZip": "10117 Berlin",
-		"district": "Mitte",
-		"isFree": false,
-		"category": "Kultur",
-		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lon": 13.394685,
-		"lat": 52.517066,
-		"language": "de",
-		"identifierToBeSlugified": "Staatsoper Unter den Linden",
-		"path": "",
-		"slug": "Staatsoper Unter den Linden"
-	},
-	{
-		"id": "271_en",
-		"provider": "State Opera Unter den Linden",
-		"providerDescription": "The classic opera house, rebuilt after World War II, presents a diverse repertoire of ballet and opera performances.",
-		"offerDescription": "",
-		"offerInformation": "\"3 Euro Ticket\" at the box office, 30 minutes before the performance starts, limited availability, no reservations, no premieres, special and external events, not applicable to F-, G-, H-, and special prices",
-		"website": "https://www.staatsoper-berlin.de",
-		"addressWithHouseNumber": "Unter den Linden 7",
-		"cityWithZip": "10117 Berlin",
-		"district": "Mitte",
-		"isFree": false,
-		"category": "Kultur",
-		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lat": 52.517066,
-		"lon": 13.394685,
-		"language": "en",
-		"slug": "Staatsoper Unter den Linden",
-		"path": "Staatsoper Unter den Linden"
-	},
-	{
 		"id": "272",
 		"provider": "Stadtbibliothek Friedrichshain-Kreuzberg",
 		"providerDescription": "Die Stadtbibliothek Friedrichshain-Kreuzberg ist ein öffentliches Bibliothekssystem in Trägerschaft des Bezirks Friedrichshain-Kreuzbergvon Berlin.",
@@ -10609,7 +10570,7 @@
 	},
 	{
 		"id": "296",
-		"provider": "tuesday coworking space berlin",
+		"provider": "tuesday coworking space berlin - Schöneberg",
 		"providerDescription": "Der tuesday coworking space bietet Arbeits- und Meetingräume und setzt einen Fokus auf Freelancer.",
 		"offerDescription": "",
 		"offerInformation": "ermäßigte Angebote  - 10% Nachlass",
@@ -10623,13 +10584,13 @@
 		"lon": 13.346893,
 		"lat": 52.485082,
 		"language": "de",
-		"identifierToBeSlugified": "tuesday coworking space berlin",
+		"identifierToBeSlugified": "tuesday coworking space berlin - Schöneberg",
 		"path": "",
-		"slug": "tuesday coworking space berlin"
+		"slug": "tuesday coworking space berlin - Schöneberg"
 	},
 	{
 		"id": "296_en",
-		"provider": "tuesday coworking space berlin",
+		"provider": "tuesday coworking space berlin - Schöneberg",
 		"providerDescription": "The tuesday coworking space offers work and meeting rooms and focuses on freelancers.",
 		"offerDescription": "",
 		"offerInformation": "discounted offers - 10% discount",
@@ -10643,12 +10604,12 @@
 		"lat": 52.485082,
 		"lon": 13.346893,
 		"language": "en",
-		"slug": "tuesday coworking space berlin",
-		"path": "tuesday coworking space berlin"
+		"slug": "tuesday coworking space berlin - Schöneberg",
+		"path": "tuesday coworking space berlin - Schöneberg"
 	},
 	{
 		"id": "297",
-		"provider": "tuesday coworking space berlin",
+		"provider": "tuesday coworking space berlin -Charlottenburg Wilmersdorf",
 		"providerDescription": "Der tuesday coworking space bietet Arbeits- und Meetingräume und setzt einen Fokus auf Freelancer.",
 		"offerDescription": "",
 		"offerInformation": "ermäßigte Angebote  - 10% Nachlass",
@@ -10662,13 +10623,13 @@
 		"lon": 13.331386,
 		"lat": 52.489292,
 		"language": "de",
-		"identifierToBeSlugified": "tuesday coworking space berlin",
+		"identifierToBeSlugified": "tuesday coworking space berlin -Charlottenburg Wilmersdorf",
 		"path": "",
-		"slug": "tuesday coworking space berlin"
+		"slug": "tuesday coworking space berlin -Charlottenburg Wilmersdorf"
 	},
 	{
 		"id": "297_en",
-		"provider": "tuesday coworking space berlin",
+		"provider": "tuesday coworking space berlin - Charlottenburg Wilmersdorf",
 		"providerDescription": "The tuesday coworking space offers work and meeting rooms and focuses on freelancers.",
 		"offerDescription": "",
 		"offerInformation": "discounted offers - 10% discount",
@@ -10682,12 +10643,12 @@
 		"lat": 52.489292,
 		"lon": 13.331386,
 		"language": "en",
-		"slug": "tuesday coworking space berlin",
-		"path": "tuesday coworking space berlin"
+		"slug": "tuesday coworking space berlin -Charlottenburg Wilmersdorf",
+		"path": "tuesday coworking space berlin -Charlottenburg Wilmersdorf"
 	},
 	{
 		"id": "298",
-		"provider": "tuesday coworking space berlin",
+		"provider": "tuesday coworking space berlin - Tempelhof-Schöneberg",
 		"providerDescription": "Der tuesday coworking space bietet Arbeits- und Meetingräume und setzt einen Fokus auf Freelancer.",
 		"offerDescription": "",
 		"offerInformation": "ermäßigte Angebote  - 10% Nachlass",
@@ -10701,13 +10662,13 @@
 		"lon": 13.353654,
 		"lat": 52.483018,
 		"language": "de",
-		"identifierToBeSlugified": "tuesday coworking space berlin",
+		"identifierToBeSlugified": "tuesday coworking space berlin - Tempelhof-Schöneberg",
 		"path": "",
-		"slug": "tuesday coworking space berlin"
+		"slug": "tuesday coworking space berlin - Tempelhof-Schöneberg"
 	},
 	{
 		"id": "298_en",
-		"provider": "tuesday coworking space berlin",
+		"provider": "tuesday coworking space berlin - Tempelhof-Schöneberg",
 		"providerDescription": "The tuesday coworking space offers work and meeting rooms and focuses on freelancers.",
 		"offerDescription": "",
 		"offerInformation": "discounted offers - 10% discount",
@@ -10721,8 +10682,8 @@
 		"lat": 52.483018,
 		"lon": 13.353654,
 		"language": "en",
-		"slug": "tuesday coworking space berlin",
-		"path": "tuesday coworking space berlin"
+		"slug": "tuesday coworking space berlin - Tempelhof-Schöneberg",
+		"path": "tuesday coworking space berlin - Tempelhof-Schöneberg"
 	},
 	{
 		"id": "299",
@@ -12453,8 +12414,8 @@
 		"isFree": false,
 		"category": "Freizeit",
 		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lon": 13.467214,
-		"lat": 52.427109,
+		"lon": 13.47158,
+		"lat": 52.429673,
 		"language": "de",
 		"identifierToBeSlugified": "Kombibad Gropiusstadt",
 		"path": "",
@@ -12473,8 +12434,8 @@
 		"isFree": false,
 		"category": "Freizeit",
 		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lat": 52.427109,
-		"lon": 13.467214,
+		"lat": 52.429673,
+		"lon": 13.47158,
 		"language": "en",
 		"slug": "Kombibad Gropiusstadt",
 		"path": "Kombibad Gropiusstadt"
@@ -12793,7 +12754,7 @@
 	},
 	{
 		"id": "356",
-		"provider": "Schwimhalle Finckensteinallee",
+		"provider": "Schwimmhalle Finckensteinallee",
 		"providerDescription": "Empfängerinnen und Empfänger von Arbeitslosengeld II, Sozialgeld, Sozialhilfe, Leistungen zur Grundsicherung im Alter, bei Erwerbsminderungen oder nach dem Asylbewerberleistungsgesetz (Nachweis erforderlich)",
 		"offerDescription": "",
 		"offerInformation": "Ermäßigungstarife",
@@ -12807,9 +12768,9 @@
 		"lon": 13.297921,
 		"lat": 52.432251,
 		"language": "de",
-		"identifierToBeSlugified": "Schwimhalle Finckensteinallee",
+		"identifierToBeSlugified": "Schwimmhalle Finckensteinallee",
 		"path": "",
-		"slug": "Schwimhalle Finckensteinallee"
+		"slug": "Schwimmhalle Finckensteinallee"
 	},
 	{
 		"id": "356_en",
@@ -12827,8 +12788,8 @@
 		"lat": 52.432251,
 		"lon": 13.297921,
 		"language": "en",
-		"slug": "Schwimhalle Finckensteinallee",
-		"path": "Schwimhalle Finckensteinallee"
+		"slug": "Schwimmhalle Finckensteinallee",
+		"path": "Schwimmhalle Finckensteinallee"
 	},
 	{
 		"id": "357",
@@ -13701,8 +13662,8 @@
 		"isFree": false,
 		"category": "Freizeit",
 		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lon": 13.467214,
-		"lat": 52.427109,
+		"lon": 13.47158,
+		"lat": 52.429673,
 		"language": "de",
 		"identifierToBeSlugified": "Kombibad Gropiusstadt - Sommerbad",
 		"path": "",
@@ -13711,7 +13672,7 @@
 	{
 		"id": "379_en",
 		"provider": "Kombibad Gropiusstadt - Summer Pool",
-		"providerDescription": "Recipients of unemployment benefit II, social benefit, social assistance, benefits for basic security in old age, in case of reduced earning capacity or under the Asylum Seekers' Benefits Act (proof required)",
+		"providerDescription": "Recipients of unemployment benefit II, social allowance, social assistance, benefits for basic security in old age, in case of reduced earning capacity or under the Asylum Seekers' Benefits Act (proof required)",
 		"offerDescription": "",
 		"offerInformation": "Discount rates",
 		"website": "https://www.berlinerbaeder.de/",
@@ -13721,8 +13682,8 @@
 		"isFree": false,
 		"category": "Freizeit",
 		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lat": 52.427109,
-		"lon": 13.467214,
+		"lat": 52.429673,
+		"lon": 13.47158,
 		"language": "en",
 		"slug": "Kombibad Gropiusstadt - Sommerbad",
 		"path": "Kombibad Gropiusstadt - Sommerbad"
@@ -14831,7 +14792,7 @@
 	},
 	{
 		"id": "451",
-		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Husemannstr. 12",
 		"providerDescription": "Die Begegnungsstätte für Jung und Alt ist ein einladender Ort, an dem Menschen unterschiedlichen Alters zusammenkommen. Hier haben sie die Möglichkeit, sich zu treffen, miteinander zu reden und gemeinsam Aktivitäten zu genießen. Es werden oft Spiele, Workshops und Veranstaltungen angeboten, die für alle spannend sind. Die Begegnungsstätte ist für jeden offen. \r\n\r\nDie Öffnungszeiten sind:\r\nMo. bis Do.: 9:00 bis 17:00 Uhr\r\nFr: 9:00 bis 16:00 Uhr\r\n\r\nKommen Sie vorbei und erleben Sie die Gemeinschaft!",
 		"offerDescription": "Mal- und Zeichenkurse\r\nSport- und Bewegungskurse\r\nSprachkurse\r\nHandarbeit\r\nFrühstück\r\nBeratung\r\nTanzen\r\nWandergruppe \r\njahreszeitliche Angebote\r\nu.v.w.",
 		"offerInformation": "kostenlos oder ermäßigt",
@@ -14845,16 +14806,16 @@
 		"lon": 13.417757,
 		"lat": 52.537694,
 		"language": "de",
-		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Husemannstr. 12",
 		"path": "",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Husemannstr. 12"
 	},
 	{
 		"id": "451_en",
-		"provider": "District Office Pankow Meeting Place for Young and Old",
-		"providerDescription": "The meeting place for young and old is an inviting place where people of different ages come together. Here, they have the opportunity to meet, talk to each other, and enjoy activities together. Games, workshops, and events are often offered that are exciting for everyone. The meeting place is open to everyone.\n\nThe opening hours are:\nMon to Thu: 9:00 AM to 5:00 PM\nFri: 9:00 AM to 4:00 PM\n\nCome by and experience the community!",
-		"offerDescription": "Painting and drawing courses\nSports and movement courses\nLanguage courses\nHandcraft\nBreakfast\nCounseling\nDancing\nHiking group\nSeasonal offers\nand much more.",
-		"offerInformation": "free or discounted",
+		"provider": "District Office Pankow Meeting Place for Young and Old - Husemannstr. 12",
+		"providerDescription": "The meeting place for young and old is an inviting space where people of different ages come together. Here, they have the opportunity to meet, talk to each other, and enjoy activities together. Games, workshops, and events are often offered that appeal to everyone. The meeting place is open to all. The opening hours are: Mon to Thu: 9:00 AM to 5:00 PM Fri: 9:00 AM to 4:00 PM Come by and experience the community!",
+		"offerDescription": "Painting and drawing courses Sports and movement courses Language courses Handicrafts Breakfast Counseling Dancing Hiking group Seasonal offers and more",
+		"offerInformation": "free or reduced rate",
 		"website": "http://www.berlin.de/ba-pankow/senioren",
 		"addressWithHouseNumber": "Husemannstraße 12",
 		"cityWithZip": "10435 Berlin",
@@ -14865,12 +14826,12 @@
 		"lat": 52.537694,
 		"lon": 13.417757,
 		"language": "en",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
-		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Husemannstr. 12",
+		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Husemannstr. 12"
 	},
 	{
 		"id": "454",
-		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Schönholzer Str. 10A",
 		"providerDescription": "Die Begegnungsstätte für Jung und Alt ist ein einladender Ort, an dem Menschen unterschiedlichen Alters zusammenkommen. Hier haben sie die Möglichkeit, sich zu treffen, miteinander zu reden und gemeinsam Aktivitäten zu genießen. Es werden oft Spiele, Workshops und Veranstaltungen angeboten, die für alle spannend sind. Die Begegnungsstätte ist für jeden offen. \r\n\r\nDie Öffnungszeiten sind:\r\nMo. bis Do.: 9:00 bis 17:00 Uhr\r\nFr: 9:00 bis 16:00 Uhr\r\n\r\nKommen Sie vorbei und erleben Sie die Gemeinschaft!",
 		"offerDescription": "Mal- und Zeichenkurse\r\nSport- und Bewegungskurse\r\nSprachkurse\r\nHandarbeit\r\nFrühstück\r\nBeratung\r\nTanzen\r\nWandergruppe \r\njahreszeitliche Angebote\r\nu.v.w.",
 		"offerInformation": "kostenlos oder ermäßigt",
@@ -14884,16 +14845,16 @@
 		"lon": 13.399551,
 		"lat": 52.570035,
 		"language": "de",
-		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Schönholzer Str. 10A",
 		"path": "",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Schönholzer Str. 10A"
 	},
 	{
 		"id": "454_en",
-		"provider": "District Office Pankow Meeting Place for Young and Old",
-		"providerDescription": "The meeting place for young and old is an inviting place where people of different ages come together. Here, they have the opportunity to meet, talk to each other, and enjoy activities together. Games, workshops, and events that are exciting for everyone are often offered. The meeting place is open to everyone.\n\nThe opening hours are:\nMon to Thu: 9:00 AM to 5:00 PM\nFri: 9:00 AM to 4:00 PM\n\nCome by and experience the community!",
-		"offerDescription": "Painting and drawing courses\nSports and movement courses\nLanguage courses\nHandcraft\nBreakfast\nCounseling\nDancing\nHiking group\nSeasonal offers\nand much more.",
-		"offerInformation": "free or reduced",
+		"provider": "District Office Pankow Meeting Place for Young and Old - Schönholzer Str. 10A",
+		"providerDescription": "The meeting place for young and old is an inviting place where people of different ages come together. Here they have the opportunity to meet, talk, and enjoy activities together. Games, workshops, and events that are exciting for everyone are often offered. The meeting place is open to everyone. The opening hours are: Mon to Thu: 9:00 AM to 5:00 PM Fri: 9:00 AM to 4:00 PM Come by and experience the community!",
+		"offerDescription": "Drawing and painting courses, Sports and movement courses, Language courses, Handicrafts, Breakfast, Counseling, Dance, Hiking group, Seasonal offers, etc.",
+		"offerInformation": "free or reduced price",
 		"website": "http://www.berlin.de/ba-pankow/senioren",
 		"addressWithHouseNumber": "Schönholzer Str. 10A",
 		"cityWithZip": "13187 Berlin",
@@ -14904,12 +14865,12 @@
 		"lat": 52.570035,
 		"lon": 13.399551,
 		"language": "en",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
-		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Schönholzer Str. 10A",
+		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Schönholzer Str. 10A"
 	},
 	{
 		"id": "457",
-		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Paul-Robeson-Str. 15",
 		"providerDescription": "Die Begegnungsstätte für Jung und Alt ist ein einladender Ort, an dem Menschen unterschiedlichen Alters zusammenkommen. Hier haben sie die Möglichkeit, sich zu treffen, miteinander zu reden und gemeinsam Aktivitäten zu genießen. Es werden oft Spiele, Workshops und Veranstaltungen angeboten, die für alle spannend sind. Die Begegnungsstätte ist für jeden offen. \r\n\r\nDie Öffnungszeiten sind:\r\nMo. bis Do.: 9:00 bis 17:00 Uhr\r\nFr: 9:00 bis 16:00 Uhr\r\n\r\nKommen Sie vorbei und erleben Sie die Gemeinschaft",
 		"offerDescription": "Mal- und Zeichenkurse\r\nSport- und Bewegungskurse\r\nSprachkurse\r\nHandarbeit\r\nFrühstück\r\nBeratung\r\nTanzen\r\nWandergruppe \r\njahreszeitliche Angebote\r\nu.v.w.",
 		"offerInformation": "kostenlos oder ermäßigt",
@@ -14923,15 +14884,15 @@
 		"lon": 13.408037,
 		"lat": 52.552726,
 		"language": "de",
-		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Paul-Robeson-Str. 15",
 		"path": "",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Paul-Robeson-Str. 15"
 	},
 	{
 		"id": "457_en",
-		"provider": "District Office Pankow Meeting Place for Young and Old",
-		"providerDescription": "The meeting place for young and old is an inviting location where people of different ages come together. Here they have the opportunity to meet, talk with each other, and enjoy activities together. Games, workshops, and events are often offered that are exciting for everyone. The meeting place is open to everyone. The opening hours are: Mon to Thu: 9:00 AM to 5:00 PM Fri: 9:00 AM to 4:00 PM Come by and experience the community",
-		"offerDescription": "Drawing and painting courses Sports and exercise courses Language courses Handicrafts Breakfast Counseling Dancing Hiking group Seasonal offers etc.",
+		"provider": "District Office Pankow Meeting Place for Young and Old - Paul-Robeson-Str. 15",
+		"providerDescription": "The meeting place for young and old is an inviting location where people of different ages come together. Here they have the opportunity to meet, talk to each other, and enjoy activities together. Games, workshops, and events are often offered that are exciting for everyone. The meeting place is open to everyone.\n\nThe opening hours are:\nMon. to Thu.: 9:00 AM to 5:00 PM\nFri: 9:00 AM to 4:00 PM\n\nCome by and experience the community",
+		"offerDescription": "Painting and drawing courses\nSports and movement courses\nLanguage courses\nHandicrafts\nBreakfast\nCounseling\nDancing\nHiking group\nSeasonal offers\nand much more",
 		"offerInformation": "free or reduced",
 		"website": "http://www.berlin.de/ba-pankow/senioren",
 		"addressWithHouseNumber": "Paul-Robson-Straße 15",
@@ -14943,12 +14904,12 @@
 		"lat": 52.552726,
 		"lon": 13.408037,
 		"language": "en",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
-		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Paul-Robeson-Str. 15",
+		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Paul-Robeson-Str. 15"
 	},
 	{
 		"id": "460",
-		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Am Friedrichshain 15",
 		"providerDescription": "Die Begegnungsstätte für Jung und Alt ist ein einladender Ort, an dem Menschen unterschiedlichen Alters zusammenkommen. Hier haben sie die Möglichkeit, sich zu treffen, miteinander zu reden und gemeinsam Aktivitäten zu genießen. Es werden oft Spiele, Workshops und Veranstaltungen angeboten, die für alle spannend sind. Die Begegnungsstätte ist für jeden offen. \r\n\r\nDie Öffnungszeiten sind:\r\nMo. bis Do.: 9:00 bis 17:00 Uhr\r\nFr: 9:00 bis 16:00 Uhr\r\n\r\nKommen Sie vorbei und erleben Sie die Gemeinschaft!",
 		"offerDescription": "Mal- und Zeichenkurse\r\nSport- und Bewegungskurse\r\nSprachkurse\r\nHandarbeit\r\nFrühstück\r\nBeratung\r\nTanzen\r\nWandergruppe \r\njahreszeitliche Angebote\r\nu.v.w.",
 		"offerInformation": "kostenlos oder ermäßigt",
@@ -14962,16 +14923,16 @@
 		"lon": 13.431446,
 		"lat": 52.529072,
 		"language": "de",
-		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Am Friedrichshain 15",
 		"path": "",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Am Friedrichshain 15"
 	},
 	{
 		"id": "460_en",
-		"provider": "District Office Pankow Meeting Place for Young and Old",
-		"providerDescription": "The meeting place for young and old is an inviting place where people of different ages come together. Here, they have the opportunity to meet, talk to each other, and enjoy activities together. Games, workshops, and events are often offered that are exciting for everyone. The meeting place is open to everyone.\n\nThe opening hours are:\nMon to Thu: 9:00 AM to 5:00 PM\nFri: 9:00 AM to 4:00 PM\n\nCome by and experience the community!",
-		"offerDescription": "Painting and drawing courses\nSports and movement courses\nLanguage courses\nHandcraft\nBreakfast\nCounseling\nDancing\nHiking group\nSeasonal offers\nand much more.",
-		"offerInformation": "free or discounted",
+		"provider": "District Office Pankow Meeting Place for Young and Old - Am Friedrichshain 15",
+		"providerDescription": "The meeting place for young and old is an inviting space where people of different ages come together. Here, they have the opportunity to meet, talk, and enjoy activities together. Games, workshops, and events are often offered that are exciting for everyone. The meeting place is open to everyone.\n\nThe opening hours are:\nMon to Thu: 9:00 AM to 5:00 PM\nFri: 9:00 AM to 4:00 PM\n\nCome by and experience the community!",
+		"offerDescription": "Painting and drawing courses\nSports and movement courses\nLanguage courses\nHandicrafts\nBreakfast\nCounseling\nDancing\nHiking group\nSeasonal offers\nand more",
+		"offerInformation": "free or reduced",
 		"website": "http://www.berlin.de/ba-pankow/senioren",
 		"addressWithHouseNumber": "Am Friedrichshain 15",
 		"cityWithZip": "10407 Berlin",
@@ -14982,12 +14943,12 @@
 		"lat": 52.529072,
 		"lon": 13.431446,
 		"language": "en",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
-		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Am Friedrichshain 15",
+		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Am Friedrichshain 15"
 	},
 	{
 		"id": "463",
-		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"provider": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Tollerstr.5",
 		"providerDescription": "Die Begegnungsstätte für Jung und Alt ist ein einladender Ort, an dem Menschen unterschiedlichen Alters zusammenkommen. Hier haben sie die Möglichkeit, sich zu treffen, miteinander zu reden und gemeinsam Aktivitäten zu genießen. Es werden oft Spiele, Workshops und Veranstaltungen angeboten, die für alle spannend sind. Die Begegnungsstätte ist für jeden offen. \r\n\r\nDie Öffnungszeiten sind:\r\nMo. bis Do.: 9:00 bis 17:00 Uhr\r\nFr: 9:00 bis 16:00 Uhr\r\n\r\nKommen Sie vorbei und erleben Sie die Gemeinschaft!",
 		"offerDescription": "Mal- und Zeichenkurse\r\nSport- und Bewegungskurse\r\nSprachkurse\r\nHandarbeit\r\nFrühstück\r\nBeratung\r\nTanzen\r\nWandergruppe \r\njahreszeitliche Angebote\r\nu.v.w.",
 		"offerInformation": "kostenlos oder ermäßigt",
@@ -15001,16 +14962,16 @@
 		"lon": 13.367462,
 		"lat": 52.583482,
 		"language": "de",
-		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
+		"identifierToBeSlugified": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Tollerstr.5",
 		"path": "",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Tollerstr.5"
 	},
 	{
 		"id": "463_en",
-		"provider": "District Office Pankow Meeting Place for Young and Old",
-		"providerDescription": "The meeting place for young and old is an inviting place where people of different ages come together. Here, they have the opportunity to meet, talk to each other, and enjoy activities together. Games, workshops, and events are often offered that are exciting for everyone. The meeting place is open to everyone.\n\nThe opening hours are:\nMon to Thu: 9:00 AM to 5:00 PM\nFri: 9:00 AM to 4:00 PM\n\nCome by and experience the community!",
-		"offerDescription": "Painting and drawing courses\nSports and movement courses\nLanguage courses\nHandcraft\nBreakfast\nCounseling\nDancing\nHiking group\nSeasonal offers\nand much more.",
-		"offerInformation": "free or discounted",
+		"provider": "District Office Pankow Meeting Place for Young and Old - Tollerstr.5",
+		"providerDescription": "The meeting place for young and old is an inviting location where people of different ages come together. Here they have the opportunity to meet, talk, and enjoy activities together. Games, workshops, and events are often offered that are exciting for everyone. The meeting place is open to everyone. \n\nThe opening hours are: \nMon. to Thu.: 9:00 AM to 5:00 PM \nFri: 9:00 AM to 4:00 PM \n\nCome by and experience the community!",
+		"offerDescription": "Painting and drawing courses \nSports and movement courses \nLanguage courses \nHandicrafts \nBreakfast \nCounseling \nDancing \nHiking group \nSeasonal offers \nand much more.",
+		"offerInformation": "free or reduced",
 		"website": "http://www.berlin.de/ba-pankow/senioren",
 		"addressWithHouseNumber": "Tollerstraße 5",
 		"cityWithZip": "13158 Berlin",
@@ -15021,8 +14982,8 @@
 		"lat": 52.583482,
 		"lon": 13.367462,
 		"language": "en",
-		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt",
-		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt"
+		"slug": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Tollerstr.5",
+		"path": "Bezirksamt Pankow Begegnungsstätte für Jung und Alt - Tollerstr.5"
 	},
 	{
 		"id": "466",
