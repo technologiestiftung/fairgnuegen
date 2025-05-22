@@ -16999,5 +16999,54 @@
 		"language": "en",
 		"slug": "Tanzfabrik Berlin",
 		"path": "Tanzfabrik Berlin"
+	},
+	{
+		"id": "649",
+		"provider": "Kino Colosseum",
+		"providerDescription": "Charmantes Kino im Prenzlauer Berg mit Arthouse und Mainstreamfilmen.",
+		"offerDescription": "ermäßigter Eintritt",
+		"offerInformation": "5,00 Euro",
+		"website": "https://colosseum.premiumkino.de",
+		"addressWithHouseNumber": "Schönhauser Allee 123",
+		"cityWithZip": "10437 Berlin",
+		"district": "Pankow",
+		"isFree": false,
+		"category": "Kultur",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lon": 13.413073,
+		"lat": 52.547891,
+		"language": "de",
+		"identifierToBeSlugified": "Kino Colosseum",
+		"path": "",
+		"slug": "Kino Colosseum"
+	},
+	{
+		"id": "649_en",
+		"provider": "Kino Colosseum",
+		"providerDescription": "Charming cinema in Prenzlauer Berg with arthouse and mainstream films",
+		"offerDescription": "discounted admission",
+		"offerInformation": "5.00 euros",
+		"website": "https://colosseum.premiumkino.de",
+		"addressWithHouseNumber": "Schönhauser Allee 123",
+		"cityWithZip": "10437 Berlin",
+		"district": "Pankow",
+		"isFree": false,
+		"category": "Kultur",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lat": 52.547891,
+		"lon": 13.413073,
+		"language": "en",
+		"slug": "Kino Colosseum",
+		"path": "Kino Colosseum"
 	}
 ]
