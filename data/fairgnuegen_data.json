@@ -17165,5 +17165,54 @@
 		"language": "en",
 		"slug": "Kino Toni",
 		"path": "Kino Toni"
+	},
+	{
+		"id": "661",
+		"provider": "Bibliotheken in Mitte",
+		"providerDescription": "Die Stadtbibliothek Berlin-Mitte ist ein öffentliches Bibliothekssystem in Trägerschaft des Bezirks Mitte von Berlin.",
+		"offerDescription": "",
+		"offerInformation": "kostenloser Bibliotheksausweis",
+		"website": "https://www.berlin.de/stadtbibliothek-mitte/",
+		"addressWithHouseNumber": "Brunnenstr. 181",
+		"cityWithZip": "10119 Berlin",
+		"district": "Mitte",
+		"isFree": true,
+		"category": "Bildung & Beratung",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lon": 13.39931,
+		"lat": 52.531714,
+		"language": "de",
+		"identifierToBeSlugified": "Bibliotheken in Mitte",
+		"path": "",
+		"slug": "Bibliotheken in Mitte"
+	},
+	{
+		"id": "661_en",
+		"provider": "Libraries in Mitte",
+		"providerDescription": "The city library Berlin-Mitte is a public library system operated by the district of Mitte in Berlin.",
+		"offerDescription": "",
+		"offerInformation": "free library card",
+		"website": "https://www.berlin.de/stadtbibliothek-mitte/",
+		"addressWithHouseNumber": "Brunnenstr. 181",
+		"cityWithZip": "10119 Berlin",
+		"district": "Mitte",
+		"isFree": true,
+		"category": "Bildung & Beratung",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lat": 52.531714,
+		"lon": 13.39931,
+		"language": "en",
+		"slug": "Bibliotheken in Mitte",
+		"path": "Bibliotheken in Mitte"
 	}
 ]
