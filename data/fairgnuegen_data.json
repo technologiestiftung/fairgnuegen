@@ -1639,7 +1639,7 @@
 	},
 	{
 		"id": "46",
-		"provider": "Stadtbibliothek Reinickendorf\r\nHumboldt-Bibliothek",
+		"provider": "Stadtbibliothek Reinickendorf",
 		"providerDescription": "Die Stadtbibliothek Reinickendorf ist ein öffentliches Bibliothekssystem mit 5 Standorten und 2 Fahrbibliotheken in Trägerschaft des Bezirks Reinickendorf von Berlin.",
 		"offerDescription": "",
 		"offerInformation": "kostenloser Bibliotheksausweis für Kinder, Schüler*innen und Empfänger*innen von staatlichen Transferleistungen (nur bei Anmeldungen vor Ort)",
@@ -1653,16 +1653,16 @@
 		"lon": 13.281159,
 		"lat": 52.592066,
 		"language": "de",
-		"identifierToBeSlugified": "Stadtbibliothek Reinickendorf\r\nHumboldt-Bibliothek",
+		"identifierToBeSlugified": "Stadtbibliothek Reinickendorf",
 		"path": "",
-		"slug": "Stadtbibliothek Reinickendorf\r\nHumboldt-Bibliothek"
+		"slug": "Stadtbibliothek Reinickendorf"
 	},
 	{
 		"id": "46_en",
-		"provider": "City Library Reinickendorf\nHumboldt Library",
-		"providerDescription": "The City Library Reinickendorf is a public library system with 5 locations and 2 mobile libraries operated by the Reinickendorf district of Berlin.",
+		"provider": "Reinickendorf City Library",
+		"providerDescription": "The Reinickendorf City Library is a public library system with 5 locations and 2 mobile libraries operated by the Reinickendorf district of Berlin.",
 		"offerDescription": "",
-		"offerInformation": "free library card for children, students, and recipients of state benefits (only for registrations on-site)",
+		"offerInformation": "free library card for children, students, and recipients of state transfer benefits (only for on-site registrations)",
 		"website": "https://www.berlin.de/stadtbibliothek-reinickendorf/",
 		"addressWithHouseNumber": "Karolinenstr. 19",
 		"cityWithZip": "13507 Berlin",
@@ -1673,8 +1673,8 @@
 		"lat": 52.592066,
 		"lon": 13.281159,
 		"language": "en",
-		"slug": "Stadtbibliothek Reinickendorf\r\nHumboldt-Bibliothek",
-		"path": "Stadtbibliothek Reinickendorf\r\nHumboldt-Bibliothek"
+		"slug": "Stadtbibliothek Reinickendorf",
+		"path": "Stadtbibliothek Reinickendorf"
 	},
 	{
 		"id": "47",
