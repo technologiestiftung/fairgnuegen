@@ -1,4 +1,4 @@
-import { type Offer } from "~/content/content.ts";
+import { type Offer, type Breadcrumb } from "~/content/types.ts";
 
 export interface FoundOffer {
 	isIdentical: boolean;
@@ -19,6 +19,11 @@ export interface ApiRow {
 	kategorie: string;
 	zielgruppen: string;
 	freigabe: string;
+}
+
+export interface ContentItem {
+	breadcrumbs: Breadcrumb[];
+	offer: Offer;
 }
 
 export function existsIdenticallyInData(
