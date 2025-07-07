@@ -1,37 +1,6 @@
 // This file is auto-generated and present only after you run `npx tsx create-data-and-routes.ts`
 import { detailPagesContent } from "~/content/detail-pages-content.ts";
-
-export type Offer = {
-	id: string;
-	language: string;
-	path: string;
-	slug: string;
-	provider: string;
-	providerDescription: string;
-	offerDescription: string;
-	offerInformation: string;
-	website: string;
-	addressWithHouseNumber: string;
-	cityWithZip: string;
-	district: string | null;
-	isFree: boolean;
-	category: string;
-	targetGroups: string[];
-	lat: number | null;
-	lon: number | null;
-};
-
-export type Breadcrumb = {
-	href: string;
-	label: string;
-	optionalTitleLabel?: string;
-};
-
-export type Content = {
-	breadcrumbs: Breadcrumb[];
-	offer?: Offer;
-	category?: string;
-};
+import { type Content } from "./types.ts";
 
 export const content: Record<string, Content> = {
 	"/": {

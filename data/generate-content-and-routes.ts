@@ -1,9 +1,9 @@
 import fs from "fs";
 import slugify from "slugify";
 import { useI18n } from "~/i18n/use-i18n.tsx";
+import { type ContentItem } from "./utils.ts";
 
 const filePath = "./data/fairgnuegen_data.json";
-
 const existingPaths: string[] = [];
 
 const generateSlug = (input: string) =>
@@ -15,6 +15,17 @@ const generateSlug = (input: string) =>
 		locale: "de",
 		trim: true,
 	});
+
+function sortContentByProvider(content: Record<string, ContentItem>) {
+	const sortedContent = Object.entries(content).sort(
+		([, firstContentItem], [, secondContentItem]) => {
+			const firstProvider = firstContentItem.offer.provider;
+			const secondProvider = secondContentItem.offer.provider;
+			return firstProvider.localeCompare(secondProvider);
+		},
+	);
+	return Object.fromEntries(sortedContent);
+}
 
 function generatePath({ slug, language }: { slug: string; language: string }) {
 	const slugTitle = generateSlug(slug);
@@ -53,7 +64,7 @@ try {
 		slug: string;
 	}[];
 
-	const processedContent: Record<string, object> = {};
+	const processedContent: Record<string, ContentItem> = {};
 	const processedRoutes: string[] = [];
 
 	jsonData.forEach((row) => {
@@ -127,10 +138,11 @@ try {
 		processedContent[path] = content;
 		processedRoutes.push(path);
 	});
+	const sortedContent = sortContentByProvider(processedContent);
 
 	fs.writeFileSync(
 		"./app/content/detail-pages-content.ts",
-		`export const detailPagesContent = ${JSON.stringify(processedContent, null, 2)};`,
+		`export const detailPagesContent = ${JSON.stringify(sortedContent, null, 2)};`,
 		"utf-8",
 	);
 
