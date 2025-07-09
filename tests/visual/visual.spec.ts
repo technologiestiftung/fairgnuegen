@@ -72,6 +72,18 @@ test.beforeEach(async ({ context }) => {
 for (const { route, isFullPageScreenshot } of routes) {
 	test(`Visual regression for ${route}`, async ({ page }) => {
 		await page.goto(route);
+		if (route === "/all-offers/") {
+			await page.waitForSelector('img[src="/all-1920w.webp"]', {
+				timeout: 10000,
+				state: "attached",
+			});
+			await page.waitForLoadState("networkidle");
+		}
+		if (route.includes("/map/")) {
+			await page.waitForSelector(".maplibregl-ctrl-attrib-inner", {
+				timeout: 10000,
+			});
+		}
 		await expect(page).toHaveScreenshot({ fullPage: isFullPageScreenshot });
 	});
 }
