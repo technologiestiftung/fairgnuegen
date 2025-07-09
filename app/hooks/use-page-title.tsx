@@ -3,8 +3,7 @@ import type { Breadcrumb } from "~/content/content.ts";
 
 export function usePageTitle() {
 	const [breadcrumbs] = useUpdateBreadcrumbsWithCategory();
-
-	const titleSegments = breadcrumbs.toReversed().map(toTitleSegment);
+	const titleSegments = breadcrumbs.reverse().map(toTitleSegment);
 
 	titleSegments.push("Berlin.de");
 
