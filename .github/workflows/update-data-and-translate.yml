@@ -47,7 +47,7 @@ jobs:
           FREE_DB_PASSWORD: ${{ secrets.FREE_DB_PASSWORD }}
           MAPBOX_ACCESS_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: added new data and updated changed data incl. translations"
           file_pattern: "data/fairgnuegen_data.json"
