@@ -278,7 +278,7 @@
 		"providerDescription": "Das AlliiertenMuseum ist ein Museum in Berlin. Es dokumentiert das Engagement und die Rolle der Westalliierten in der Bundesrepublik Deutschland und West-Berlin in der Zeit von 1945 bis 1994 und deren Beitrag zur Freiheit Berlins.",
 		"offerDescription": "",
 		"offerInformation": "freier Eintritt, Offene Führung jeden 1. Sonntag um 15 Uhr",
-		"website": "https://www.alliiertenmuseum.de",
+		"website": "https://www.alliiertenmuseum.de/veranstaltung/",
 		"addressWithHouseNumber": "Clayallee 135",
 		"cityWithZip": "14195 Berlin",
 		"district": "Steglitz-Zehlendorf",
@@ -298,7 +298,7 @@
 		"providerDescription": "The Allied Museum is a museum in Berlin. It documents the commitment and role of the Western Allies in the Federal Republic of Germany and West Berlin from 1945 to 1994 and their contribution to the freedom of Berlin.",
 		"offerDescription": "",
 		"offerInformation": "free admission, Open tour every 1st Sunday at 3 PM",
-		"website": "https://www.alliiertenmuseum.de",
+		"website": "https://www.alliiertenmuseum.de/veranstaltung/",
 		"addressWithHouseNumber": "Clayallee 135",
 		"cityWithZip": "14195 Berlin",
 		"district": "Steglitz-Zehlendorf",
@@ -17170,5 +17170,54 @@
 		"language": "en",
 		"slug": "Stadtbibliothek Neukölln",
 		"path": "Stadtbibliothek Neukölln"
+	},
+	{
+		"id": "832",
+		"provider": "Stadtlichter. Internationale Filmnächte",
+		"providerDescription": "Seit 2016 realisieren wir mit Stadtlichter. Internationale Filmnächte sorgfältig sowie liebevoll kuratierte Film -und Kulturprogramme mit dem Fokus auf Städtepartnerschaften in Lichtenberg. Wir ermöglichen kulturelle Einblicke, Perspektivenwechsel, künstlerische sowie interkulturelle Begegnungen sowie Dialogformate und tragen zum Sichtbarwerden dieser Partnerschaften nicht nur in der Lichtenberger Bevölkerung bei.",
+		"offerDescription": "Am 17. und 18. Oktober 2025 findet die Stadtlichter-Jubiläumsausgabe „CineLuzes“ in den B.L.O.-Ateliers statt. Mit Ausstellung, Kinderfilmprogramm, Dokumentationen, Kurzfilmrolle und Konzert.",
+		"offerInformation": "kostenlos",
+		"website": "https://www.stadtlichter.berlin/programm-stadtlichter-cineluzes/",
+		"addressWithHouseNumber": "Kaskelstraße 55",
+		"cityWithZip": "10317 Berlin",
+		"district": "Lichtenberg",
+		"isFree": true,
+		"category": "Kultur",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lon": 13.483329,
+		"lat": 52.503891,
+		"language": "de",
+		"identifierToBeSlugified": "Stadtlichter. Internationale Filmnächte",
+		"path": "",
+		"slug": "Stadtlichter. Internationale Filmnächte"
+	},
+	{
+		"id": "832_en",
+		"provider": "City Lights. International Film Nights",
+		"providerDescription": "Since 2016, we have been realizing carefully and lovingly curated film and cultural programs with a focus on city partnerships in Lichtenberg. We enable cultural insights, perspective changes, artistic and intercultural encounters, as well as dialogue formats, and contribute to making these partnerships visible not only among the Lichtenberg population.",
+		"offerDescription": "On October 17 and 18, 2025, the City Lights anniversary edition 'CineLuzes' will take place at the B.L.O. Studios. With an exhibition, children's film program, documentaries, short film roll, and concert.",
+		"offerInformation": "free",
+		"website": "https://www.stadtlichter.berlin/programm-stadtlichter-cineluzes/",
+		"addressWithHouseNumber": "Kaskelstraße 55",
+		"cityWithZip": "10317 Berlin",
+		"district": "Lichtenberg",
+		"isFree": true,
+		"category": "Kultur",
+		"targetGroups": [
+			"Kinder und Jugendliche",
+			"Erwachsene",
+			"Familien",
+			"SeniorInnen"
+		],
+		"lat": 52.503891,
+		"lon": 13.483329,
+		"language": "en",
+		"slug": "Stadtlichter. Internationale Filmnächte",
+		"path": "Stadtlichter. Internationale Filmnächte"
 	}
 ]
