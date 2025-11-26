@@ -5,7 +5,6 @@ import { type CategoryIdentifier, categoryMap } from "~/content/categories.ts";
 export function useCategories() {
 	const location = useLocation();
 
-	// Parse categories directly from URL search string for SSR compatibility
 	const categories = useMemo(() => {
 		const searchParams = new URLSearchParams(location.search);
 		const rawCategory = searchParams.get("category");
