@@ -53,10 +53,10 @@
 }
 
 @layer components {
-	  .spinner {
+	.spinner {
 		animation: rotate 2s linear infinite !important;
-	  }
-	  .spinner::after {
+	}
+	.spinner::after {
 		content: "";
 		width: 38px;
 		height: 38px;
@@ -64,15 +64,15 @@
 		border-top-color: transparent;
 		border-radius: 50%;
 		animation: loading 1s ease infinite;
-	  }
-	  @keyframes loading {
+	}
+	@keyframes loading {
 		to {
-		  transform: rotate(1turn);
+			transform: rotate(1turn);
 		}
-	  }
-	  @keyframes rotate {
+	}
+	@keyframes rotate {
 		100% {
-		  transform: rotate(360deg);
+			transform: rotate(360deg);
 		}
-	  }
+	}
 }

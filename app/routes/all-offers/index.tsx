@@ -72,7 +72,7 @@ export default function Index() {
 						</div>
 					</div>
 
-					<div className={isLoading ? "visible" : "invisible"}>
+					<div className={isLoading ? "visible" : "hidden"}>
 						<div className="flex flex-col items-center justify-center py-8">
 							<div className="spinner relative flex items-center justify-center size-[50px] bg-berlin-green rounded-full" />
 							<p className="mt-4 text-center text-xl font-bold text-berlin-green">
