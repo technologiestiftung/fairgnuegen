@@ -73,8 +73,11 @@ export default function Index() {
 					</div>
 
 					<div className={isLoading ? "visible" : "invisible"}>
-						<div className="text-center text-lg font-bold">
-							{i18n["allOffers.loading"]}
+						<div className="flex flex-col items-center justify-center py-8">
+							<div className="spinner relative flex items-center justify-center size-[50px] bg-berlin-green rounded-full" />
+							<p className="mt-4 text-center text-xl font-bold text-berlin-green">
+								{i18n["allOffers.loading"]}
+							</p>
 						</div>
 					</div>
 					<div

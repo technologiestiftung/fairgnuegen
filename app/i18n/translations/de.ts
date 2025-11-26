@@ -279,7 +279,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"allOffers.discoverFurtherCategories": "Entdecke weitere Kategorien",
 	"allOffers.for": "für",
 	"allOffers.in": "in",
-	"allOffers.loading": "Angebote werden geladen...",
+	"allOffers.loading": "Angebote werden geladen",
 
 	"aboutProject.title": "Über das Projekt",
 	"aboutProject.p1":
