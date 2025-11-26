@@ -1,5 +1,4 @@
 import { categoryMap } from "~/content/categories.ts";
-import { offers } from "~/content/content.ts";
 import { useCategories } from "~/hooks/use-categories.tsx";
 import { useDistricts } from "~/hooks/use-districts.tsx";
 import { useFilteredAndSortedOffers } from "~/hooks/use-filtered-and-sorted-offers.tsx";
@@ -71,15 +70,8 @@ export default function Index() {
 						</div>
 					</div>
 					<div className="flex flex-col mb-5 mx-4 lg:mx-0">
-						{offers.map((offer, idx) => (
-							<OfferDetail
-								isVisible={filteredAndSortedOffers.some(
-									({ slug }) =>
-										slug === offer.slug && offer.language === language,
-								)}
-								offer={offer}
-								key={`${idx}-${offer.provider}`}
-							/>
+						{filteredAndSortedOffers.map((offer, idx) => (
+							<OfferDetail offer={offer} key={`${idx}-${offer.provider}`} />
 						))}
 					</div>
 					<div className="px-4 lg:px-0 pt-4 flex w-full justify-start">
