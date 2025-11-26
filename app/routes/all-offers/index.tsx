@@ -27,7 +27,7 @@ export default function Index() {
 		useFilteredAndSortedOffers();
 	return (
 		<>
-			<div className={isLoading ? "invisible" : "visible"}>
+			<div>
 				{categoryDetail && (
 					<ResponsivePicture
 						src={categoryDetail.image}
@@ -54,7 +54,9 @@ export default function Index() {
 							<FilterButton />
 							<ShowMapButton />
 						</div>
-						<div className="flex flex-row items-center gap-2 py-3">
+						<div
+							className={`flex flex-row items-center gap-2 py-3 ${isLoading ? "invisible" : "visible"}`}
+						>
 							<p className="text-md text-berlin-grey-dark">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
 								{search !== null &&
@@ -69,7 +71,15 @@ export default function Index() {
 							</p>
 						</div>
 					</div>
-					<div className="flex flex-col mb-5 mx-4 lg:mx-0">
+
+					<div className={isLoading ? "visible" : "invisible"}>
+						<div className="text-center text-lg font-bold">
+							{i18n["allOffers.loading"]}
+						</div>
+					</div>
+					<div
+						className={`flex flex-col mb-5 mx-4 lg:mx-0 ${isLoading ? "invisible" : "visible"}`}
+					>
 						{filteredAndSortedOffers.map((offer, idx) => (
 							<OfferDetail offer={offer} key={`${idx}-${offer.provider}`} />
 						))}

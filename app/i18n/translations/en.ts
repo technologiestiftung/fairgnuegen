@@ -178,6 +178,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"allOffers.discoverFurtherCategories": "Discover more categories",
 	"allOffers.for": "for",
 	"allOffers.in": "in",
+	"allOffers.loading": "Loading offers...",
 
 	"aboutProject.title": "About this project",
 	"aboutProject.p1":
