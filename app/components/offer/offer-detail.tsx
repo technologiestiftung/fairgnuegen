@@ -10,10 +10,9 @@ import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-t
 
 interface OfferDetailProps {
 	offer: Offer;
-	isVisible: boolean;
 }
 
-const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
+const OfferDetail: React.FC<OfferDetailProps> = ({ offer }) => {
 	const language = useLanguage();
 	const i18n = useI18n(language);
 
@@ -28,7 +27,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({ offer, isVisible }) => {
 
 	return (
 		<LocalizedTrackedAnchorLink
-			className={`${isVisible ? "flex" : "hidden"} items-center w-full bg-berlin-grey-light hover:bg-berlin-grey-hover relative text-left hover:cursor-pointer mb-6 pl-[18px] pr-11 `}
+			className={`flex items-center w-full bg-berlin-grey-light hover:bg-berlin-grey-hover relative text-left hover:cursor-pointer mb-6 pl-[18px] pr-11 `}
 			href={offer.path}
 		>
 			<div className="flex flex-row py-6 md:py-11 gap-4 h-fit">

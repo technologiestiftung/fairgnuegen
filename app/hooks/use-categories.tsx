@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
+import { useMemo } from "react";
+import { useLocation } from "react-router";
 import { type CategoryIdentifier, categoryMap } from "~/content/categories.ts";
 
 export function useCategories() {
-	const [searchParams] = useSearchParams();
-	const [categories, setCategories] = useState<CategoryIdentifier[]>([]);
+	const location = useLocation();
 
-	useEffect(() => {
+	const categories = useMemo(() => {
+		const searchParams = new URLSearchParams(location.search);
 		const rawCategory = searchParams.get("category");
 		const parsedCategories = rawCategory ? rawCategory.split(",") : [];
-		setCategories(parsedCategories as CategoryIdentifier[]);
-	}, [searchParams]);
+		return parsedCategories as CategoryIdentifier[];
+	}, [location.search]);
 
 	return {
 		category: categories.length === 1 ? categories[0] : null,
