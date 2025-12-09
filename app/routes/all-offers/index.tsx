@@ -1,5 +1,4 @@
 import { categoryMap } from "~/content/categories.ts";
-import { offers } from "~/content/content.ts";
 import { useCategories } from "~/hooks/use-categories.tsx";
 import { useDistricts } from "~/hooks/use-districts.tsx";
 import { useFilteredAndSortedOffers } from "~/hooks/use-filtered-and-sorted-offers.tsx";
@@ -28,7 +27,7 @@ export default function Index() {
 		useFilteredAndSortedOffers();
 	return (
 		<>
-			<div className={isLoading ? "invisible" : "visible"}>
+			<div>
 				{categoryDetail && (
 					<ResponsivePicture
 						src={categoryDetail.image}
@@ -55,7 +54,9 @@ export default function Index() {
 							<FilterButton />
 							<ShowMapButton />
 						</div>
-						<div className="flex flex-row items-center gap-2 py-3">
+						<div
+							className={`flex flex-row items-center gap-2 py-3 ${isLoading ? "invisible" : "visible"}`}
+						>
 							<p className="text-md text-berlin-grey-dark">
 								{filteredAndSortedOffers.length} {i18n["allOffers.offersFound"]}
 								{search !== null &&
@@ -70,16 +71,20 @@ export default function Index() {
 							</p>
 						</div>
 					</div>
-					<div className="flex flex-col mb-5 mx-4 lg:mx-0">
-						{offers.map((offer, idx) => (
-							<OfferDetail
-								isVisible={filteredAndSortedOffers.some(
-									({ slug }) =>
-										slug === offer.slug && offer.language === language,
-								)}
-								offer={offer}
-								key={`${idx}-${offer.provider}`}
-							/>
+
+					<div className={isLoading ? "visible" : "hidden"}>
+						<div className="flex flex-col items-center justify-center py-8">
+							<div className="spinner relative flex items-center justify-center size-[50px] bg-berlin-green rounded-full" />
+							<p className="mt-4 text-center text-xl font-bold text-berlin-green">
+								{i18n["allOffers.loading"]}
+							</p>
+						</div>
+					</div>
+					<div
+						className={`flex flex-col mb-5 mx-4 lg:mx-0 ${isLoading ? "invisible" : "visible"}`}
+					>
+						{filteredAndSortedOffers.map((offer, idx) => (
+							<OfferDetail offer={offer} key={`${idx}-${offer.provider}`} />
 						))}
 					</div>
 					<div className="px-4 lg:px-0 pt-4 flex w-full justify-start">
