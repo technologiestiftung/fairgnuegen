@@ -97,7 +97,7 @@ Oranienstraße 106
 
 Der/die Datenschutzbeauftragte des Verantwortlichen ist:
 
-Herr Schwarz (Herr Volke - Stellvertreter)
+Herr Volke
 
 E-Mail: [datenschutz@senasgiva.berlin.de](datenschutz@senasgiva.berlin.de)
 
@@ -106,14 +106,9 @@ Senatsverwaltung für Arbeit, Soziales, Gleichstellung, Integration, Vielfalt un
 Oranienstraße 106  
 10969 Berlin  
 
-3. Nutzung von Cookies
+3. Nutzung externer Dienste
 
-Cookies sind Daten, die auf Ihrem Datenträger beim Besuch von Websites gespeichert werden und im Austausch mit unserer Website bestimmte Daten und Einstellungen speichern.
-
-Sie haben die Möglichkeit, dem Setzen von Cookies über die jeweiligen Browser-Einstellungen oder mit Hilfe anderer Erweiterungen wie Ghostery oder uBlock generell zu widersprechen bzw. diese einzuschränken. Welche Erweiterungen Sie mit Ihrem Internetbrowser nutzen können, finden Sie auf den jeweiligen Hersteller*innenseiten. Sie können bei der erstmaligen Nutzung unserer Online-Dienste eine Entscheidung treffen, ob Sie der Technologiestiftung Berlin erlauben, Cookies zur Verbesserung des Online-Angebots zu setzen oder nicht.
-
-Wir nutzen Cookies ausschließlich für die statistische Auswertung unserer Webauftritte und erheben nur pseudonymisierte Daten.
-`,
+Die Bereitstellung der Anwendung läuft über den Dienst Vercel. Für die [Kartenansicht](/map/) wird der Kartendienst von [basemap.de](https://basemap.de) verwendet. Des weiteren nutzen wir Matomo für die statistische Auswertung unseres Webauftrittes. Dafür werden ausschließlich anonymisierte Daten erhoben. Das Teilen von Angeboten über social media wird durch eine Weiterleitung an die Dienste Facebook und WhatsApp ermöglicht. Hierbei werden keine Daten an die jeweiligen Plattformen weitergeleitet.`,
 
 	"accessibility-statement": `
 # Erklärung zur Barrierefreiheit
