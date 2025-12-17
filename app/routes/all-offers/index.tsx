@@ -37,7 +37,7 @@ export default function Index() {
 					/>
 				)}
 				<div
-					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
+					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} flex flex-row justify-center items-center text-black p-3 mb-10 font-bold text-xl`}
 				>
 					{categoryDetail
 						? i18n[`${categoryDetail.i18nKey}.name`]
