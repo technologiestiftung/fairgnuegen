@@ -141,6 +141,7 @@ Email: [post@senasgiva.berlin.de](mailto:post@senasgiva.berlin.de)
 	"categories.teaser": "Explore the categories",
 	"categories.title": "Categories",
 	"categories.all.name": "All offers",
+	"categories.all.imageCredit": "Image: Unsplash",
 	"categories.all.imageAltText":
 		"A picture of Bubbles floating in front of the Brandenburg Gate as a symbolic image for all categories.",
 	"categories.all.description": "",
