@@ -29,12 +29,17 @@ export default function Index() {
 		<>
 			<div>
 				{categoryDetail && (
-					<ResponsivePicture
-						src={categoryDetail.image}
-						alt={i18n[`${categoryDetail.i18nKey}.imageAltText`]}
-						loading={"eager"}
-						className="hidden sm:block w-full h-[448px] object-cover"
-					/>
+					<div className="relative">
+						<ResponsivePicture
+							src={categoryDetail.image}
+							alt={i18n[`${categoryDetail.i18nKey}.imageAltText`]}
+							loading={"eager"}
+							className="hidden sm:block w-full h-[448px] object-cover"
+						/>
+						<p className="text-[11px] text-white/40 absolute bottom-[5px] right-[7px] z-10">
+							{i18n["categories.all.imageCredit"]}
+						</p>
+					</div>
 				)}
 				<div
 					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} ${categoryDetail?.textColor ?? "text-white"} flex flex-row justify-center items-center text-black p-3 mb-10 font-bold text-xl`}

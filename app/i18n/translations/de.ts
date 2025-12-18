@@ -241,6 +241,7 @@ E-Mail: [post@senasgiva.berlin.de](post@senasgiva.berlin.de)
 	"categories.teaser": "Entdecke die Kategorien",
 	"categories.title": "Kategorien",
 	"categories.all.name": "Alle Angebote",
+	"categories.all.imageCredit": "Bild: Unsplash",
 	"categories.all.imageAltText":
 		"Ein Bild von Seifenblasen, die vor dem Brandenburger Tor schweben, als Symbolbild für alle Kategorien",
 	"categories.all.description": "",
