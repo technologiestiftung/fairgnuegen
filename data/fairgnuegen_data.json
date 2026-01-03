@@ -6240,45 +6240,6 @@
 		"path": "Museum Neukölln"
 	},
 	{
-		"id": "209",
-		"provider": "Museum Nikolaikirche",
-		"providerDescription": "Seit fast 800 Jahren prägt die Nikolaikirche das Zentrum Berlins. Seit 1987 ist das älteste erhaltene Kirchengebäude der Stadt ein Museum.",
-		"offerDescription": "",
-		"offerInformation": "ermäßigter Eintritt, Do-So 10-18 Uhr (letzter Einlass 17 Uhr), 5 Euro, erm. 3 Euro (inkl. Audioguide), bis 18 Jahre Eintritt frei für Kinder und Jugendliche. Preisänderungen vorbehalten.",
-		"website": "http://www.stadtmuseum.de",
-		"addressWithHouseNumber": "Nikolaikirchpl.",
-		"cityWithZip": "10178 Berlin",
-		"district": "Mitte",
-		"isFree": false,
-		"category": "Kultur",
-		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lon": 13.407778,
-		"lat": 52.516639,
-		"language": "de",
-		"identifierToBeSlugified": "Museum Nikolaikirche",
-		"path": "",
-		"slug": "Museum Nikolaikirche"
-	},
-	{
-		"id": "209_en",
-		"provider": "Museum Nikolaikirche",
-		"providerDescription": "For almost 800 years, Nikolaikirche has shaped the center of Berlin. Since 1987, the oldest preserved church building in the city has been a museum.",
-		"offerDescription": "",
-		"offerInformation": "reduced admission, Thu-Sun 10 AM-6 PM (last entry at 5 PM), 5 Euros, reduced 3 Euros (including audio guide), free entry for children and teenagers up to 18 years. Price changes reserved.",
-		"website": "http://www.stadtmuseum.de",
-		"addressWithHouseNumber": "Nikolaikirchpl.",
-		"cityWithZip": "10178 Berlin",
-		"district": "Mitte",
-		"isFree": false,
-		"category": "Kultur",
-		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lat": 52.516639,
-		"lon": 13.407778,
-		"language": "en",
-		"slug": "Museum Nikolaikirche",
-		"path": "Museum Nikolaikirche"
-	},
-	{
 		"id": "210",
 		"provider": "Museum Pankow und Ausstellung StadtGut Blankenfelde",
 		"providerDescription": "Seit fast 800 Jahren prägt die Nikolaikirche das Zentrum Berlins. Seit 1987 ist das älteste erhaltene Kirchengebäude der Stadt ein Museum.",
@@ -11623,10 +11584,10 @@
 	},
 	{
 		"id": "376",
-		"provider": "FEZ-Berlin in der Wuhlheide",
-		"providerDescription": "Empfängerinnen und Empfänger von Arbeitslosengeld II, Sozialgeld, Sozialhilfe, Leistungen zur Grundsicherung im Alter, bei Erwerbsminderungen oder nach dem Asylbewerberleistungsgesetz (Nachweis erforderlich)",
+		"provider": "FEZ",
+		"providerDescription": "Fez- Berlin in der Wuhlheide\r\nBäder im FEZ",
 		"offerDescription": "",
-		"offerInformation": "Ermäßigungstarife",
+		"offerInformation": "Ermäßigungstarife\r\nEmpfängerinnen und Empfänger von Arbeitslosengeld II, Sozialgeld, Sozialhilfe, Leistungen zur Grundsicherung im Alter, bei Erwerbsminderungen oder nach dem Asylbewerberleistungsgesetz (Nachweis erforderlich)",
 		"website": "https://www.berlinerbaeder.de/",
 		"addressWithHouseNumber": "Straße zum FEZ 2",
 		"cityWithZip": "12459 Berlin",
@@ -11637,16 +11598,16 @@
 		"lon": 13.548915,
 		"lat": 52.460908,
 		"language": "de",
-		"identifierToBeSlugified": "FEZ-Berlin in der Wuhlheide",
+		"identifierToBeSlugified": "FEZ",
 		"path": "",
-		"slug": "FEZ-Berlin in der Wuhlheide"
+		"slug": "FEZ"
 	},
 	{
 		"id": "376_en",
-		"provider": "FEZ-Berlin in the Wuhlheide",
-		"providerDescription": "Recipients of unemployment benefit II, social benefits, social assistance, basic security benefits in old age, in case of reduced earning capacity, or under the Asylum Seekers' Benefits Act (proof required)",
+		"provider": "FEZ",
+		"providerDescription": "Fez- Berlin in Wuhlheide\nBaths in FEZ",
 		"offerDescription": "",
-		"offerInformation": "Discount rates",
+		"offerInformation": "Discount rates\nRecipients of unemployment benefit II, social benefits, social assistance, basic old-age security benefits, disability benefits, or benefits under the Asylum Seekers' Benefits Act (proof required)",
 		"website": "https://www.berlinerbaeder.de/",
 		"addressWithHouseNumber": "Straße zum FEZ 2",
 		"cityWithZip": "12459 Berlin",
@@ -11657,8 +11618,8 @@
 		"lat": 52.460908,
 		"lon": 13.548915,
 		"language": "en",
-		"slug": "FEZ-Berlin in der Wuhlheide",
-		"path": "FEZ-Berlin in der Wuhlheide"
+		"slug": "FEZ",
+		"path": "FEZ"
 	},
 	{
 		"id": "377",
@@ -17381,7 +17342,7 @@
 	},
 	{
 		"id": "913",
-		"provider": "Caroline Bernhardt",
+		"provider": "Caroline Bernhardt - Theaterpädagogik und Gesangsunterricht",
 		"providerDescription": "Ich habe klassischen Gesang an der UdK Berlin (Bachelor) und Theater- und Filmwissenschaft an der FU Berlin (Master) studiert und arbeite als selbständige Theaterpädagogin sowie im Büro der tanzcompany. Neben meinen Theaterkursen für Kinder von 4 bis 10 Jahren und Theater-AGs an Grundschulen und Kitas biete ich individuelles Gesangscoaching für Erwachsene an. In meinem Unterricht verbinde ich Schauspiel, Tanz und Musik.",
 		"offerDescription": "Theaterpädagogische Angebote für Kinder (4 -10 Jahre) und Gesangsunterricht. In den Kursen und AGs steht die Begeisterung für darstellerischen, tänzerischen und musikalischen Ausdruck im Mittelpunkt.",
 		"offerInformation": "20 % Rabatt auf Kursentgelt",
@@ -17395,15 +17356,15 @@
 		"lon": 13.4041,
 		"lat": 52.563008,
 		"language": "de",
-		"identifierToBeSlugified": "Caroline Bernhardt",
+		"identifierToBeSlugified": "Caroline Bernhardt - Theaterpädagogik und Gesangsunterricht",
 		"path": "",
-		"slug": "Caroline Bernhardt"
+		"slug": "Caroline Bernhardt - Theaterpädagogik und Gesangsunterricht"
 	},
 	{
 		"id": "913_en",
-		"provider": "Caroline Bernhardt",
-		"providerDescription": "I studied classical singing at the UdK Berlin (Bachelor) and theater and film studies at the FU Berlin (Master) and work as a freelance theater educator as well as in the office of the dance company. In addition to my theater classes for children aged 4 to 10 and theater clubs at elementary schools and daycare centers, I offer individual singing coaching for adults. In my teaching, I combine acting, dance, and music.",
-		"offerDescription": "Theater educational offerings for children (4-10 years) and singing lessons. The focus of the courses and clubs is on the enthusiasm for expressive acting, dancing, and musical expression.",
+		"provider": "Caroline Bernhardt - Theater Pedagogy and Vocal Instruction",
+		"providerDescription": "I studied classical singing at UdK Berlin (Bachelor) and Theater and Film Studies at FU Berlin (Master) and work as a freelance theater educator as well as in the office of the dance company. In addition to my theater classes for children aged 4 to 10 and theater extracurricular activities at primary schools and daycare centers, I offer individual vocal coaching for adults. In my lessons, I combine acting, dance, and music.",
+		"offerDescription": "Theater pedagogical offerings for children (4 - 10 years) and vocal instruction. In the courses and extracurricular activities, the enthusiasm for expressive, dance, and musical expression is the focus.",
 		"offerInformation": "20% discount on course fees",
 		"website": "gesang.me",
 		"addressWithHouseNumber": "Florapromenade 14",
@@ -17415,7 +17376,7 @@
 		"lat": 52.563008,
 		"lon": 13.4041,
 		"language": "en",
-		"slug": "Caroline Bernhardt",
-		"path": "Caroline Bernhardt"
+		"slug": "Caroline Bernhardt - Theaterpädagogik und Gesangsunterricht",
+		"path": "Caroline Bernhardt - Theaterpädagogik und Gesangsunterricht"
 	}
 ]
