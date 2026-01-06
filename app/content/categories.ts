@@ -21,7 +21,7 @@ export type CategoryMap = {
 export const categoryMap: CategoryMap = {
 	all: {
 		color: "bg-primary-blue",
-		textColor: undefined,
+		textColor: "text-white",
 		name: "Alle Angebote",
 		image: "all",
 		i18nKey: "categories.all",
@@ -29,7 +29,7 @@ export const categoryMap: CategoryMap = {
 	},
 	kultur: {
 		color: "bg-culture",
-		textColor: "text-white",
+		textColor: "text-black",
 		name: "Kultur",
 		image: "kultur",
 		i18nKey: "categories.kultur",
