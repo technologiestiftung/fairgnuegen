@@ -11194,9 +11194,9 @@
 	},
 	{
 		"id": "366",
-		"provider": "Sportforum Hohneschönhausen",
-		"providerDescription": "Empfängerinnen und Empfänger von Arbeitslosengeld II, Sozialgeld, Sozialhilfe, Leistungen zur Grundsicherung im Alter, bei Erwerbsminderungen oder nach dem Asylbewerberleistungsgesetz (Nachweis erforderlich)",
-		"offerDescription": "",
+		"provider": "Sportforum Berlin Hohenschönhausen",
+		"providerDescription": "Berliner Bäder",
+		"offerDescription": "Empfängerinnen und Empfänger von Arbeitslosengeld II, Sozialgeld, Sozialhilfe, Leistungen zur Grundsicherung im Alter, bei Erwerbsminderungen oder nach dem Asylbewerberleistungsgesetz (Nachweis erforderlich)",
 		"offerInformation": "Ermäßigungstarife",
 		"website": "https://www.berlinerbaeder.de/",
 		"addressWithHouseNumber": "Fritz-Lesch-Straße 24",
@@ -11208,15 +11208,15 @@
 		"lon": 13.473456,
 		"lat": 52.541419,
 		"language": "de",
-		"identifierToBeSlugified": "Sportforum Hohneschönhausen",
+		"identifierToBeSlugified": "Sportforum Berlin Hohenschönhausen",
 		"path": "",
-		"slug": "Sportforum Hohneschönhausen"
+		"slug": "Sportforum Berlin Hohenschönhausen"
 	},
 	{
 		"id": "366_en",
-		"provider": "Sportforum Hohneschönhausen",
-		"providerDescription": "Recipients of unemployment benefit II, social benefit, social assistance, benefits for basic security in old age, in case of reduced earning capacity or under the Asylum Seekers Benefits Act (proof required)",
-		"offerDescription": "",
+		"provider": "Sportforum Berlin Hohenschönhausen",
+		"providerDescription": "Berlin Pools",
+		"offerDescription": "Recipients of unemployment benefit II, social allowance, social assistance, benefits for basic security in old age, in cases of reduced earning capacity, or under the Asylum Seekers Benefits Act (proof required)",
 		"offerInformation": "Discount rates",
 		"website": "https://www.berlinerbaeder.de/",
 		"addressWithHouseNumber": "Fritz-Lesch-Straße 24",
@@ -11228,8 +11228,8 @@
 		"lat": 52.541419,
 		"lon": 13.473456,
 		"language": "en",
-		"slug": "Sportforum Hohneschönhausen",
-		"path": "Sportforum Hohneschönhausen"
+		"slug": "Sportforum Berlin Hohenschönhausen",
+		"path": "Sportforum Berlin Hohenschönhausen"
 	},
 	{
 		"id": "367",
