@@ -17,10 +17,10 @@ const ShowListButton: React.FC = () => {
 			additionalTrackingContext={"(button Listenansicht)"}
 			href={`/all-offers/?${searchParams.toString()}`}
 		>
-			<div className="flex flex-row gap-2 items-center">
+			<span className="flex flex-row gap-2 items-center">
 				<ListIcon />
-				<div>{i18n["listView"]}</div>
-			</div>
+				<span>{i18n["listView"]}</span>
+			</span>
 		</LocalizedTrackedAnchorLink>
 	);
 };

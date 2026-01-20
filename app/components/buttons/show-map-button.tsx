@@ -17,10 +17,10 @@ const ShowMapButton: React.FC = () => {
 			additionalTrackingContext="(button Kartenansicht)"
 			href={`/map/?${searchParams.toString()}`}
 		>
-			<div className="flex flex-row gap-2 items-center">
+			<span className="flex flex-row gap-2 items-center">
 				<MapIcon></MapIcon>
-				<div>{i18n["menuItem.map"]}</div>
-			</div>
+				<span>{i18n["menuItem.map"]}</span>
+			</span>
 		</LocalizedTrackedAnchorLink>
 	);
 };
