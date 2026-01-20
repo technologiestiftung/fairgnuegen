@@ -215,7 +215,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 										className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
 									>
 										<Checkbox
-											id={subItem.title}
+											id={subItem.value}
 											label={
 												subItem.subtitle ? (
 													<span className="text-normal font-normal">
