@@ -28,12 +28,12 @@ const BackButton: React.FC<BackButtonProps> = ({ title }) => {
 				window.history.back();
 			}}
 		>
-			<div className="col-start-1 row-start-1 flex flex-row gap-2 items-center">
-				<div className="scale-75">
+			<span className="col-start-1 row-start-1 flex flex-row gap-2 items-center">
+				<span className="scale-75">
 					<ArrowLeftIcon></ArrowLeftIcon>
-				</div>
-				<div className="">{title}</div>
-			</div>
+				</span>
+				<span>{title}</span>
+			</span>
 		</button>
 	);
 };

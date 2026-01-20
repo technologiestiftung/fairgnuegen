@@ -41,14 +41,14 @@ const FilterButton: React.FC = () => {
 					});
 				}}
 			>
-				<div className="flex flex-row gap-2 items-center">
+				<span className="flex flex-row gap-2 items-center">
 					<FilterIcon></FilterIcon>
-					<div>{i18n["filter.title"]}</div>
-				</div>
+					<span>{i18n["filter.title"]}</span>
+				</span>
 				{numActiveFilters > 0 && (
-					<div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-berlin-green flex flex-row items-center justify-center text-black font-bold">
+					<span className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-berlin-green flex flex-row items-center justify-center text-black font-bold">
 						{numActiveFilters}
-					</div>
+					</span>
 				)}
 			</button>
 			<FilterMenu isOpen={isOpen} close={() => setIsOpen(false)} />
