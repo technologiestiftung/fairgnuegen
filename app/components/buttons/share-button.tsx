@@ -4,7 +4,7 @@ import ShareIcon from "~/components/icons/share-icon";
 import ShareLinkIcon from "~/components/icons/share-link-icon";
 import ShareMailIcon from "~/components/icons/share-mail-icon";
 import ShareWhatsappIcon from "~/components/icons/share-whatsapp-icon";
-import { type Offer } from "~/content/content.ts";
+import { type Offer } from "~/content/types";
 import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.tsx";
 import { trackInteraction } from "~/analytics/matomo.ts";
 import { useLanguage } from "~/hooks/use-language.tsx";

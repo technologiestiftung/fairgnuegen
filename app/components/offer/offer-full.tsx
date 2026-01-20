@@ -1,6 +1,6 @@
 import React from "react";
 import { allowedOfferPathsWithImagesAllowed } from "~/content/allowed-offers-images.ts";
-import { type Offer } from "~/content/content.ts";
+import { type Offer } from "~/content/types";
 import { LikeButton } from "~/components/buttons/like-button.tsx";
 import ShareButton from "~/components/buttons/share-button";
 import LinkIcon from "~/components/icons/link-icon";

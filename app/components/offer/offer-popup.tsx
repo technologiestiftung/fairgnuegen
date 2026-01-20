@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { type Offer } from "~/content/content.ts";
+import { type Offer } from "~/content/types";
 import ArrowRightIcon from "~/components/icons/arrow-right-icon";
 import { Pill } from "~/components/offer/pill";
 import { LikeButton } from "~/components/buttons/like-button.tsx";
