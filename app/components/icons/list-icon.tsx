@@ -16,7 +16,7 @@ const ListIcon: React.FC = () => {
 				/>
 			</g>
 			<defs>
-				<clipPath id="clip0_5910_42262">
+				<clipPath>
 					<rect width="21" height="21" fill="white" />
 				</clipPath>
 			</defs>

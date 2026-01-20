@@ -8,7 +8,6 @@ const LikeIcon: React.FC<LikeIconProps> = ({ isSelected }) => {
 	if (!isSelected) {
 		return (
 			<svg
-				id="like-icon"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 44 44"
 				className="text-black hover:text-[#999999]"
@@ -140,7 +139,6 @@ const LikeIcon: React.FC<LikeIconProps> = ({ isSelected }) => {
 
 	return (
 		<svg
-			id="like-icon"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 44 44"
 			className="group"
@@ -276,22 +274,3 @@ const LikeIcon: React.FC<LikeIconProps> = ({ isSelected }) => {
 };
 
 export default LikeIcon;
-
-/* <svg
-	id="Ebene_1"
-	data-name="Ebene 1"
-	xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 44 44"
-	className="group"
->
-	<circle
-		className="fill-white group-hover:fill-[#999999]"
-		cx="22"
-		cy="22"
-		r="18.2222"
-	/>
-	<path
-		className="fill-[#E40422] group-hover:fill-[#F18190]"
-		d="M23.2845,30.79356l.1064-.0978,7.452-6.9204c1.3059-1.2122,2.046-2.9136,2.046-4.6958v-.1404c0-2.9944-2.1268-5.5635-5.0702-6.125-1.6758-.3233-3.39.0638-4.7554,1.0251-.3828.2722-.7401.587-1.0633.9485-.1787-.2041-.3701-.3913-.5742-.5657-.1574-.1361-.3191-.2637-.4892-.3828-1.3654-.9613-3.0795-1.3484-4.7554-1.0293-2.9434.5614-5.0701,3.1348-5.0701,6.1292v.1404c0,1.7822.7401,3.4836,2.0459,4.6958l7.4521,6.9204.1063.0978c.3488.3233.8082.5062,1.2846.5062s.9357-.1786,1.2845-.5062Z"
-	/>
-</svg>; */

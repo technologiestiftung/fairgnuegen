@@ -8,7 +8,6 @@ const ShareIcon: React.FC<ShareIconProps> = ({ isSelected }) => {
 	if (isSelected) {
 		return (
 			<svg
-				id="share-icon"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 44 44"
 				className="text-white group"
@@ -145,7 +144,6 @@ const ShareIcon: React.FC<ShareIconProps> = ({ isSelected }) => {
 
 	return (
 		<svg
-			id="share-icon"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 44 44"
 			className="text-black hover:text-[#999999]"

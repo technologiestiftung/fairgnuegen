@@ -16,7 +16,7 @@ const FilterIcon: React.FC = () => {
 				/>
 			</g>
 			<defs>
-				<clipPath id="clip0_5800_53394">
+				<clipPath>
 					<rect width="21" height="21" fill="white" />
 				</clipPath>
 			</defs>
