@@ -24,7 +24,7 @@ export function BerlinLogoWhite() {
 				/>
 			</g>
 			<defs>
-				<clipPath id="clip0_3099_22066">
+				<clipPath>
 					<rect
 						width="120"
 						height="40"

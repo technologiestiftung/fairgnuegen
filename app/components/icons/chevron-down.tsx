@@ -9,7 +9,6 @@ export function ChevronDown({ className }: { className?: string }) {
 			className={className}
 		>
 			<path
-				id="Rectangle 128"
 				d="M1.5 1.12916L9.5 8.87109L17.5 1.12916"
 				stroke="currentColor"
 				strokeWidth="3"

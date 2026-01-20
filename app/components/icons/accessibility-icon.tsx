@@ -14,7 +14,7 @@ export function AccessibilityIcon() {
 				/>
 			</g>
 			<defs>
-				<clipPath id="clip0_5860_38194">
+				<clipPath>
 					<rect width="32" height="32" fill="white" />
 				</clipPath>
 			</defs>
