@@ -12,7 +12,7 @@ export default function PrivacyNote() {
 			href?: string;
 		},
 	) => {
-		const { href, children, ...restProps } = props;
+		const { href, children } = props;
 		const isExternal = href?.startsWith("http");
 		return (
 			<a
@@ -20,7 +20,6 @@ export default function PrivacyNote() {
 				href={href}
 				target={isExternal ? "_blank" : undefined}
 				rel={isExternal ? "noopener noreferrer" : undefined}
-				{...restProps}
 			>
 				{children}
 			</a>
