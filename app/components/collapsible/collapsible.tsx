@@ -65,9 +65,9 @@ export function Collapsible({
 				aria-expanded={isOpen}
 			>
 				<span className={titleClassNames}>{title}</span>
-				<div className={`transition ${isOpen ? "-rotate-180" : "rotate-0"}`}>
+				<span className={`transition ${isOpen ? "-rotate-180" : "rotate-0"}`}>
 					<ChevronDown />
-				</div>
+				</span>
 			</button>
 
 			<div
