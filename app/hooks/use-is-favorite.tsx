@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { type Offer } from "~/content/content.ts";
+import { type Offer } from "~/content/types";
 import { useFavoritesStore } from "~/store/favorites-store.ts";
 
 export function useIsFavorite(offer: Offer) {

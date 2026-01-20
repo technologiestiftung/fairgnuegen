@@ -1,6 +1,6 @@
 import React from "react";
 import { getCategoryDetailsFromName } from "~/content/categories.ts";
-import { type Offer } from "~/content/content.ts";
+import { type Offer } from "~/content/types";
 import { Pill } from "~/components/offer/pill";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { useI18n } from "~/i18n/use-i18n.tsx";

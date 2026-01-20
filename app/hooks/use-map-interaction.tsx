@@ -7,7 +7,7 @@ import {
 	useRef,
 	useState,
 } from "react";
-import { type Offer } from "~/content/content.ts";
+import { type Offer } from "~/content/types";
 
 interface PopupPosition {
 	x: number;
