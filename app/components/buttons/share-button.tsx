@@ -68,9 +68,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 				}}
 				aria-label={i18n["button.name.share"]}
 			>
-				<div className="size-[44px]">
+				<span className="size-[44px]">
 					<ShareIcon isSelected={showOverlay} />
-				</div>
+				</span>
 			</button>
 			{showOverlay && !showLinkCopied && (
 				<div
