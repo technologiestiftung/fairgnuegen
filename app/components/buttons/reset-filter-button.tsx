@@ -14,7 +14,7 @@ const ResetFilterButton: React.FC<ResetFilterButtonProps> = ({ onClick }) => {
 			className="text-link-blue flex justify-center items-center w-fit h-[43px] hover:underline"
 			onClick={onClick}
 		>
-			<div className=""> {i18n["filter.reset"]}</div>
+			{i18n["filter.reset"]}
 		</button>
 	);
 };
