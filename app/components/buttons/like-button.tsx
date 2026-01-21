@@ -24,7 +24,13 @@ export function LikeButton({ offer }: { offer: Offer }) {
 				toggleFavorite(offer);
 			}}
 			aria-label={i18n["button.name.like"]}
-			className="size-[44px]"
+			className={`
+				size-[44px]
+				focus-visible:outline focus-visible:outline-3 
+				focus-visible:outline-berlin-blue 
+				focus-visible:outline-offset-0 
+				focus-visible:shadow-default-button-focus-shadow
+			`}
 		>
 			<LikeIcon isSelected={isFavorite}></LikeIcon>
 		</button>

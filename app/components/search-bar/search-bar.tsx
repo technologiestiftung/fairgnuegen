@@ -69,7 +69,13 @@ const SearchBar: React.FC<{ postSubmit?: () => void }> = ({ postSubmit }) => {
 			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pointer-events-none">
 				<button
 					type="button"
-					className={`${searchInputValue === "" ? "hidden" : ""} pointer-events-auto p-1.5`}
+					className={`
+						${searchInputValue === "" ? "hidden" : ""} pointer-events-auto p-1.5
+						focus-visible:outline focus-visible:outline-3 
+						focus-visible:outline-berlin-blue 
+						focus-visible:outline-offset-0 
+						focus-visible:shadow-default-button-focus-shadow
+					`}
 					onClick={(e) => {
 						e.preventDefault();
 						setSearchInputValue("");
@@ -81,7 +87,13 @@ const SearchBar: React.FC<{ postSubmit?: () => void }> = ({ postSubmit }) => {
 				<button
 					type="submit"
 					aria-label={i18n["button.name.submit"]}
-					className={`w-fit pointer-events-auto border-l-0 pl-2 pr-2.5 ${hasFocus ? "border-focus-blue" : " border-l-black"} border-2 border-black`}
+					className={`
+						w-fit pointer-events-auto border-l-0 pl-2 pr-2.5 ${hasFocus ? "border-focus-blue" : " border-l-black"} border-2 border-black
+						focus-visible:outline focus-visible:outline-3 
+						focus-visible:outline-berlin-blue 
+						focus-visible:outline-offset-0 
+						focus-visible:shadow-default-button-focus-shadow
+					`}
 				>
 					<StartSearchIcon />
 				</button>

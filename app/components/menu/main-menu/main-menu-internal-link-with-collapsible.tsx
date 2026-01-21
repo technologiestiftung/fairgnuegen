@@ -43,7 +43,13 @@ export function MainMenuInternalLinkWithCollapsible({
 						{menuItem.title}
 					</a>
 					<button
-						className="border-l border-l-black py-2 pr-5 pl-4 border-b"
+						className={`
+							border-l border-l-black py-2 pr-5 pl-4 border-b
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 						onClick={toggleCollapsible}
 						aria-label={
 							isCollapsibleOpen

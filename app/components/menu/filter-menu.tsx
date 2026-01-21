@@ -183,6 +183,12 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 					<button
 						onClick={() => close()}
 						aria-label={i18n["button.name.close"]}
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 					>
 						<CloseIcon />
 					</button>

@@ -27,7 +27,13 @@ export function LanguageSelect() {
 		<>
 			<div className="relative text-black z-[10]" ref={languageSelectRef}>
 				<button
-					className="flex items-center"
+					className={`
+						flex items-center
+						focus-visible:outline focus-visible:outline-3 
+						focus-visible:outline-berlin-blue 
+						focus-visible:outline-offset-0 
+						focus-visible:shadow-default-button-focus-shadow
+					`}
 					onClick={() => setIsOpen(!isOpen)}
 					aria-label={
 						isOpen ? i18n["button.name.collapse"] : i18n["button.name.expand"]

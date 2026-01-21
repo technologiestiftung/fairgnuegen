@@ -24,6 +24,12 @@ const SearchMenu: React.FC<SearchMenuProps> = ({ isOpen, close }) => {
 						onClick={() => close()}
 						type="button"
 						aria-label={i18n["button.name.close"]}
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 					>
 						<CloseIcon />
 					</button>

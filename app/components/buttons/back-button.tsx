@@ -14,7 +14,13 @@ const BackButton: React.FC<BackButtonProps> = ({ title }) => {
 
 	return (
 		<button
-			className="text-link-blue flex justify-center items-center w-fit h-[43px] hover:underline"
+			className={`
+				text-link-blue flex justify-center items-center w-fit h-[43px] hover:underline
+				focus-visible:outline focus-visible:outline-3 
+				focus-visible:outline-berlin-blue 
+				focus-visible:outline-offset-0 
+				focus-visible:shadow-default-button-focus-shadow
+			`}
 			onClick={() => {
 				const isAllOffersPage = allOffersPathRegex.test(
 					window.location.pathname,

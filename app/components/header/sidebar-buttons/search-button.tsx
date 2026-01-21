@@ -13,7 +13,13 @@ export function SearchButton() {
 	return (
 		<>
 			<button
-				className="flex flex-col items-center text-[11px] gap-1 leading-3"
+				className={`
+					flex flex-col items-center text-[11px] gap-1 leading-3
+					focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow
+				`}
 				onClick={() => setIsOpen(true)}
 			>
 				<SearchIconLarge />

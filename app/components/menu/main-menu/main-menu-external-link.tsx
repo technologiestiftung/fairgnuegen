@@ -10,7 +10,13 @@ export function MainMenuExternalLink({
 	return (
 		<a
 			href={link}
-			className="flex items-center gap-x-1 text-link-blue hover:underline py-[1rem] lg:py-[1.175rem] px-3 lg:px-6 border-b"
+			className={`
+				flex items-center gap-x-1 text-link-blue hover:underline py-[1rem] lg:py-[1.175rem] px-3 lg:px-6 border-b
+				focus-visible:outline focus-visible:outline-3 
+				focus-visible:outline-berlin-blue 
+				focus-visible:outline-offset-0 
+				focus-visible:shadow-default-button-focus-shadow
+			`}
 			target="_blank"
 			rel="noreferrer"
 		>

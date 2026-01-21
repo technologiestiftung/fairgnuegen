@@ -23,7 +23,13 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				id={id}
 				checked={isChecked}
 				onChange={onChange}
-				className="size-4 mr-2 "
+				className={`
+					size-4 mr-2
+					focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow
+			`}
 			/>
 			<span className="w-fit">{label}</span>
 		</label>
