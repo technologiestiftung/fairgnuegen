@@ -1,9 +1,9 @@
 import React from "react";
 import { useSearchParams } from "react-router";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { ResponsivePicture } from "~/components/responsive-picture/responsive-picture.tsx";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { ResponsivePicture } from "~/components/responsive-picture/responsive-picture";
 import ImageArrowIcon from "~/components/icons/image-arrow-icon";
 import ArrowRightLinkIcon from "~/components/icons/arrow-right-link-icon";
 

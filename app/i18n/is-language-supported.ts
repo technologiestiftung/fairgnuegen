@@ -1,4 +1,4 @@
-import { type AvailableLanguages, translations } from "~/i18n/translations.ts";
+import { type AvailableLanguages, translations } from "~/i18n/translations";
 
 export function isLanguageSupported(
 	language: string,

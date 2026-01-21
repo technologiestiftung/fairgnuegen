@@ -1,9 +1,9 @@
 import React from "react";
-import { type CategoryDetails } from "~/content/categories.ts";
-import { ResponsivePicture } from "~/components/responsive-picture/responsive-picture.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { type CategoryDetails } from "~/content/categories";
+import { ResponsivePicture } from "~/components/responsive-picture/responsive-picture";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 import ImageArrowIcon from "~/components/icons/image-arrow-icon";
 import ArrowRightLinkIcon from "~/components/icons/arrow-right-link-icon";
 

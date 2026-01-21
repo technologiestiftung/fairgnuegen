@@ -1,15 +1,15 @@
 import { useLanguage } from "~/hooks/use-language";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.tsx";
-import LinkIcon from "~/components/icons/link-icon.tsx";
-import SearchBar from "~/components/search-bar/search-bar.tsx";
-import FreeOffersCheckbox from "~/components/checkbox/free-offers-checkbox.tsx";
-import { categoryMap } from "~/content/categories.ts";
-import { CategoryHeroCard } from "~/components/categories/category-hero-card.tsx";
-import { ShowAllOffersTeaser } from "~/components/show-all-offers-teaser/show-all-offers-teaser.tsx";
-import { FeedbackForm } from "~/components/feedback-form/feedback-form.tsx";
-import { InfoBox } from "~/components/info-box/info-box.tsx";
-import { LogoBar } from "~/components/logo-bar/logo-bar.tsx";
+import { useI18n } from "~/i18n/use-i18n";
+import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link";
+import LinkIcon from "~/components/icons/link-icon";
+import SearchBar from "~/components/search-bar/search-bar";
+import FreeOffersCheckbox from "~/components/checkbox/free-offers-checkbox";
+import { categoryMap } from "~/content/categories";
+import { CategoryHeroCard } from "~/components/categories/category-hero-card";
+import { ShowAllOffersTeaser } from "~/components/show-all-offers-teaser/show-all-offers-teaser";
+import { FeedbackForm } from "~/components/feedback-form/feedback-form";
+import { InfoBox } from "~/components/info-box/info-box";
+import { LogoBar } from "~/components/logo-bar/logo-bar";
 
 export default function Index() {
 	const language = useLanguage();

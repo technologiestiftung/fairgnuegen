@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { AccessibilityIcon } from "~/components/icons/accessibility-icon.tsx";
+import { AccessibilityIcon } from "~/components/icons/accessibility-icon";
 import AccessibilityMenu from "~/components/menu/accessibility-menu";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 export function AccessibilityButton() {
 	const language = useLanguage();

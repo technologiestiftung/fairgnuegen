@@ -1,11 +1,11 @@
 import { type GeoJSON } from "geojson";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router";
-import { offers } from "~/content/content.ts";
-import { useCategories } from "~/hooks/use-categories.tsx";
-import { useDistricts } from "~/hooks/use-districts.tsx";
-import { useTargetAudiences } from "~/hooks/use-target-audiences.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
+import { offers } from "~/content/content";
+import { useCategories } from "~/hooks/use-categories";
+import { useDistricts } from "~/hooks/use-districts";
+import { useTargetAudiences } from "~/hooks/use-target-audiences";
+import { useLanguage } from "~/hooks/use-language";
 
 export function useFilteredAndSortedOffers() {
 	/**

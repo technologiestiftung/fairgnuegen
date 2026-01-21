@@ -1,14 +1,14 @@
 import React, { useMemo } from "react";
 import FilterMenu from "~/components/menu/filter-menu";
 import FilterIcon from "~/components/icons/filter-icon";
-import { useCategories } from "~/hooks/use-categories.tsx";
-import { useDistricts } from "~/hooks/use-districts.tsx";
-import { useTargetAudiences } from "~/hooks/use-target-audiences.tsx";
-import { useFreeOffersOnly } from "~/hooks/use-free-offers-only.tsx";
-import { trackInteraction } from "~/analytics/matomo.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { Button } from "~/components/buttons/button.tsx";
+import { useCategories } from "~/hooks/use-categories";
+import { useDistricts } from "~/hooks/use-districts";
+import { useTargetAudiences } from "~/hooks/use-target-audiences";
+import { useFreeOffersOnly } from "~/hooks/use-free-offers-only";
+import { trackInteraction } from "~/analytics/matomo";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { Button } from "~/components/buttons/button";
 
 const FilterButton: React.FC = () => {
 	const language = useLanguage();

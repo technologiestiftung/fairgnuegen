@@ -1,4 +1,4 @@
-import { type AvailableLanguages } from "~/i18n/translations.ts";
+import { type AvailableLanguages } from "~/i18n/translations";
 
 export type Language = {
 	code: AvailableLanguages;

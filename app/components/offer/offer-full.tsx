@@ -1,13 +1,13 @@
 import React from "react";
-import { allowedOfferPathsWithImagesAllowed } from "~/content/allowed-offers-images.ts";
+import { allowedOfferPathsWithImagesAllowed } from "~/content/allowed-offers-images";
 import { type Offer } from "~/content/types";
-import { LikeButton } from "~/components/buttons/like-button.tsx";
+import { LikeButton } from "~/components/buttons/like-button";
 import ShareButton from "~/components/buttons/share-button";
 import LinkIcon from "~/components/icons/link-icon";
 import OfferTags from "~/components/offer/offer-tags";
 import CopyToClipboardButton from "~/components/buttons/copy-to-clipboard-button";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 interface OfferFullProps {
 	offer: Offer;

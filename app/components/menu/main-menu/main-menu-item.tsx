@@ -1,7 +1,7 @@
-import { MainMenuExternalLink } from "~/components/menu/main-menu/main-menu-external-link.tsx";
-import { MainMenuInternalLink } from "~/components/menu/main-menu/main-menu-internal-link.tsx";
-import { MainMenuInternalLinkWithCollapsible } from "~/components/menu/main-menu/main-menu-internal-link-with-collapsible.tsx";
-import type { MenuItem } from "~/components/menu/main-menu/types.ts";
+import { MainMenuExternalLink } from "~/components/menu/main-menu/main-menu-external-link";
+import { MainMenuInternalLink } from "~/components/menu/main-menu/main-menu-internal-link";
+import { MainMenuInternalLinkWithCollapsible } from "~/components/menu/main-menu/main-menu-internal-link-with-collapsible";
+import type { MenuItem } from "~/components/menu/main-menu/types";
 
 export function MainMenuItem({ menuItem }: { menuItem: MenuItem }) {
 	if (menuItem.isExternalLink) {

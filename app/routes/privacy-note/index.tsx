@@ -1,7 +1,7 @@
 import React from "react";
-import { useLanguage } from "~/hooks/use-language.tsx";
+import { useLanguage } from "~/hooks/use-language";
 import Markdown from "react-markdown";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useI18n } from "~/i18n/use-i18n";
 
 export default function PrivacyNote() {
 	const language = useLanguage();

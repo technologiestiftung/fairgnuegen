@@ -765,8 +765,6 @@ export default {
 			"/en/all-offers/berliner_kriminal_theater/",
 			"/all-offers/museum_fuer_naturkunde_berlin/",
 			"/en/all-offers/museum_fuer_naturkunde_berlin/",
-			"/all-offers/europaeische_jugendkarte/",
-			"/en/all-offers/europaeische_jugendkarte/",
 			"/all-offers/maedchensportzentrum_kreafithaus_krea_maedchenklub_gesellschaft_fuer_sport_und_jugendsozialarbeit_ggmbh/",
 			"/en/all-offers/maedchensportzentrum_kreafithaus_krea_maedchenklub_gesellschaft_fuer_sport_und_jugendsozialarbeit_ggmbh/",
 			"/all-offers/broehan_museum_jugendstil_kunst_design/",
@@ -877,6 +875,8 @@ export default {
 			"/en/all-offers/caroline_bernhardt_theaterpaedagogik_und_gesangsunterricht/",
 			"/all-offers/deutsche_kinemathek/",
 			"/en/all-offers/deutsche_kinemathek/",
+			"/all-offers/berlin_youth_card_co_europaeische_jugendkarte/",
+			"/en/all-offers/berlin_youth_card_co_europaeische_jugendkarte/",
 		];
 	},
 } satisfies Config;

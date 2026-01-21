@@ -1,7 +1,7 @@
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { ArrowUpIcon } from "~/components/icons/arrow-up-icon.tsx";
-import { Button } from "~/components/buttons/button.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { ArrowUpIcon } from "~/components/icons/arrow-up-icon";
+import { Button } from "~/components/buttons/button";
 
 export function ScrollToTopButton() {
 	const language = useLanguage();

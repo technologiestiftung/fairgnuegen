@@ -2,11 +2,11 @@ import React, { useMemo } from "react";
 import { type Offer } from "~/content/types";
 import ArrowRightIcon from "~/components/icons/arrow-right-icon";
 import { Pill } from "~/components/offer/pill";
-import { LikeButton } from "~/components/buttons/like-button.tsx";
-import { getCategoryDetailsFromName } from "~/content/categories.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { LikeButton } from "~/components/buttons/like-button";
+import { getCategoryDetailsFromName } from "~/content/categories";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 interface OfferPopupProps {
 	offer: Offer;

@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
-import { type Offer } from "~/content/types.ts";
+import { type Offer } from "~/content/types";
 import ArrowRightLinkIcon from "~/components/icons/arrow-right-link-icon";
 import { Pill } from "~/components/offer/pill";
-import { allowedOfferPathsWithImagesAllowed } from "~/content/allowed-offers-images.ts";
-import { LikeButton } from "~/components/buttons/like-button.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { allowedOfferPathsWithImagesAllowed } from "~/content/allowed-offers-images";
+import { LikeButton } from "~/components/buttons/like-button";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 interface OfferDetailProps {
 	offer: Offer;

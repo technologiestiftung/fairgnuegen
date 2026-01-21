@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useLocation } from "react-router";
-import { type CategoryIdentifier, categoryMap } from "~/content/categories.ts";
+import { type CategoryIdentifier, categoryMap } from "~/content/categories";
 
 export function useCategories() {
 	const location = useLocation();

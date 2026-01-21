@@ -1,6 +1,6 @@
 import React from "react";
-import ArrowLeftIcon from "~/components/icons/arrow-left-icon.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
+import ArrowLeftIcon from "~/components/icons/arrow-left-icon";
+import { useLanguage } from "~/hooks/use-language";
 import { useNavigate } from "react-router";
 import { Button } from "~/components/buttons/button.tsx";
 

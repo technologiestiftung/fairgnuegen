@@ -1,9 +1,9 @@
 import { Breadcrumbs } from "~/components/header/breadcumbs";
-import { LanguageSelect } from "~/components/header/language-select/language-select.tsx";
-import { SidebarButtons } from "~/components/header/sidebar-buttons/sidebar-buttons.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { LanguageSelect } from "~/components/header/language-select/language-select";
+import { SidebarButtons } from "~/components/header/sidebar-buttons/sidebar-buttons";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 export function Header() {
 	const language = useLanguage();

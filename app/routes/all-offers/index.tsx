@@ -1,17 +1,17 @@
-import { categoryMap } from "~/content/categories.ts";
-import { useCategories } from "~/hooks/use-categories.tsx";
-import { useDistricts } from "~/hooks/use-districts.tsx";
-import { useFilteredAndSortedOffers } from "~/hooks/use-filtered-and-sorted-offers.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useTargetAudiences } from "~/hooks/use-target-audiences.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { categoryMap } from "~/content/categories";
+import { useCategories } from "~/hooks/use-categories";
+import { useDistricts } from "~/hooks/use-districts";
+import { useFilteredAndSortedOffers } from "~/hooks/use-filtered-and-sorted-offers";
+import { useLanguage } from "~/hooks/use-language";
+import { useTargetAudiences } from "~/hooks/use-target-audiences";
+import { useI18n } from "~/i18n/use-i18n";
 import BackButton from "~/components/buttons/back-button";
 import FilterButton from "~/components/buttons/filter-button";
 import ShowMapButton from "~/components/buttons/show-map-button";
 import { CategoryCard } from "~/components/categories/category-card";
 import FreeOffersCheckbox from "~/components/checkbox/free-offers-checkbox";
 import OfferDetail from "~/components/offer/offer-detail";
-import { ResponsivePicture } from "~/components/responsive-picture/responsive-picture.tsx";
+import { ResponsivePicture } from "~/components/responsive-picture/responsive-picture";
 import SearchBar from "~/components/search-bar/search-bar";
 
 export default function Index() {

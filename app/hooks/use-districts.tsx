@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
-import { type DistrictIdentifier, districtsMap } from "~/content/districts.ts";
+import { type DistrictIdentifier, districtsMap } from "~/content/districts";
 
 export function useDistricts() {
 	const [searchParams] = useSearchParams();

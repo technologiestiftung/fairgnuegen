@@ -1,7 +1,7 @@
 import fs from "fs";
 import slugify from "slugify";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { type ContentItem } from "./utils.ts";
+import { useI18n } from "~/i18n/use-i18n";
+import { type ContentItem } from "./utils";
 
 const filePath = "./data/fairgnuegen_data.json";
 const existingPaths: string[] = [];

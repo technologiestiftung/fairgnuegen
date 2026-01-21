@@ -1,8 +1,8 @@
 import React from "react";
-import { Pill } from "~/components/offer/pill.tsx";
-import { categoryMap } from "~/content/categories.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { Pill } from "~/components/offer/pill";
+import { categoryMap } from "~/content/categories";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 const MapLegend: React.FC = () => {
 	const language = useLanguage();
