@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router";
 import {
 	type TargetAudienceIdentifier,
 	targetAudiencesMap,
-} from "~/content/target-audiences.ts";
+} from "~/content/target-audiences";
 
 export function useTargetAudiences() {
 	const [searchParams] = useSearchParams();

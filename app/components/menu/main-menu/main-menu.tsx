@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import { categoryMap } from "~/content/categories.ts";
-import { DrawerRight } from "~/components/drawer/drawer-right.tsx";
-import CloseIcon from "~/components/icons/close-icon.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { MainMenuItem } from "~/components/menu/main-menu/main-menu-item.tsx";
-import type { MenuItem } from "~/components/menu/main-menu/types.ts";
+import { categoryMap } from "~/content/categories";
+import { DrawerRight } from "~/components/drawer/drawer-right";
+import CloseIcon from "~/components/icons/close-icon";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { MainMenuItem } from "~/components/menu/main-menu/main-menu-item";
+import type { MenuItem } from "~/components/menu/main-menu/types";
 
 interface MainMenuProps {
 	isOpen: boolean;

@@ -1,4 +1,4 @@
-import { type Offer, type Breadcrumb } from "~/content/types.ts";
+import { type Offer, type Breadcrumb } from "~/content/types";
 
 export interface FoundOffer {
 	isIdentical: boolean;

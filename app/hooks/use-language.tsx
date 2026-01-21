@@ -1,5 +1,5 @@
 import { useLocation } from "react-router";
-import { isLanguageSupported } from "~/i18n/is-language-supported.ts";
+import { isLanguageSupported } from "~/i18n/is-language-supported";
 
 export function useLanguage() {
 	const location = useLocation();

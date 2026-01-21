@@ -1,6 +1,6 @@
 // This file is auto-generated and present only after you run `npx tsx create-data-and-routes.ts`
-import { detailPagesContent } from "~/content/detail-pages-content.ts";
-import { type Content } from "./types.ts";
+import { detailPagesContent } from "~/content/detail-pages-content";
+import { type Content } from "./types";
 
 export const content: Record<string, Content> = {
 	"/": {

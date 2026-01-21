@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { type Offer } from "~/content/types";
-import { useFavoritesStore } from "~/store/favorites-store.ts";
+import { useFavoritesStore } from "~/store/favorites-store";
 
 export function useIsFavorite(offer: Offer) {
 	const { favorites, isFavorite: isFavoriteInLocalStorage } =

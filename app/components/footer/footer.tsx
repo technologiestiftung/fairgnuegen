@@ -1,5 +1,5 @@
-import { ScrollToTopButton } from "~/components/buttons/scroll-to-top-button.tsx";
-import { FooterLightColumn } from "~/components/footer/footer-light-column.tsx";
+import { ScrollToTopButton } from "~/components/buttons/scroll-to-top-button";
+import { FooterLightColumn } from "~/components/footer/footer-light-column";
 
 const upperFooterColumns = [
 	{

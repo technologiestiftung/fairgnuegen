@@ -1,8 +1,8 @@
 import React from "react";
 import LinkIcon from "~/components/icons/link-icon";
-import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 interface InfoBoxProps {
 	maxWidth: string;

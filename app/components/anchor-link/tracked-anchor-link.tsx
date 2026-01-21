@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { trackInteraction } from "~/analytics/matomo.ts";
+import { trackInteraction } from "~/analytics/matomo";
 
 type AnchorLinkProps = {
 	href: string;

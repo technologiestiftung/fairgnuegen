@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { BarsIcon } from "~/components/icons/bars-icon.tsx";
-import MainMenu from "~/components/menu/main-menu/main-menu.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { BarsIcon } from "~/components/icons/bars-icon";
+import MainMenu from "~/components/menu/main-menu/main-menu";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 export function MenuButton() {
 	const language = useLanguage();

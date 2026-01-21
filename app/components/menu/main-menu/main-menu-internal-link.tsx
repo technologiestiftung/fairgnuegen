@@ -1,4 +1,4 @@
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 export function MainMenuInternalLink({
 	link,

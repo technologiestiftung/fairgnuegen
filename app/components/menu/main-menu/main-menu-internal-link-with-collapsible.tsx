@@ -1,11 +1,11 @@
-import { ChevronUp } from "~/components/icons/chevron-up.tsx";
-import { ChevronDown } from "~/components/icons/chevron-down.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
-import type { MenuItem } from "~/components/menu/main-menu/types.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { ChevronUp } from "~/components/icons/chevron-up";
+import { ChevronDown } from "~/components/icons/chevron-down";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
+import type { MenuItem } from "~/components/menu/main-menu/types";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 import { useState } from "react";
-import { useCategories } from "~/hooks/use-categories.tsx";
+import { useCategories } from "~/hooks/use-categories";
 import { useLocation } from "react-router";
 
 export function MainMenuInternalLinkWithCollapsible({

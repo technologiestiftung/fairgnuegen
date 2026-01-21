@@ -1,10 +1,10 @@
 import React from "react";
 
-import { DrawerRight } from "~/components/drawer/drawer-right.tsx";
+import { DrawerRight } from "~/components/drawer/drawer-right";
 import CloseIcon from "~/components/icons/close-icon";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 interface AccessibilityMenuProps {
 	isOpen: boolean;

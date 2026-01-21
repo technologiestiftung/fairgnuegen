@@ -1,7 +1,7 @@
 import { type ReactNode, useEffect, useState } from "react";
-import { ChevronDown } from "~/components/icons/chevron-down.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { ChevronDown } from "~/components/icons/chevron-down";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 type CollapsibleProps = {
 	title: string;

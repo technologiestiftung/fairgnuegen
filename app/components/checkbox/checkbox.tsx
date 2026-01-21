@@ -29,7 +29,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 					focus-visible:outline-berlin-blue 
 					focus-visible:outline-offset-0 
 					focus-visible:shadow-default-button-focus-shadow
-			`}
+				`}
 			/>
 			<span className="w-fit">{label}</span>
 		</label>

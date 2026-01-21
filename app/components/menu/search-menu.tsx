@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerSearch } from "~/components/drawer/drawer-search.tsx";
+import { DrawerSearch } from "~/components/drawer/drawer-search";
 import CloseIcon from "~/components/icons/close-icon";
 import SearchBar from "~/components/search-bar/search-bar";
 import { useI18n } from "~/i18n/use-i18n";

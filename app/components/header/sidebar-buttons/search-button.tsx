@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { SearchIconLarge } from "~/components/icons/search-icon-large.tsx";
+import { SearchIconLarge } from "~/components/icons/search-icon-large";
 import SearchMenu from "~/components/menu/search-menu";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 export function SearchButton() {
 	const language = useLanguage();

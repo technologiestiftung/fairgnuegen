@@ -4,10 +4,10 @@ import StartSearchIcon from "~/components/icons/start-search-icon";
 import ClearIcon from "~/components/icons/clear-icon";
 import { useLocation, useNavigate, useSearchParams } from "react-router";
 import useUpdateSearchParam from "~/hooks/use-update-search-params";
-import { trackSiteSearch } from "~/analytics/matomo.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { useUpdateSearchInput } from "~/hooks/use-update-search-input.tsx";
+import { trackSiteSearch } from "~/analytics/matomo";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { useUpdateSearchInput } from "~/hooks/use-update-search-input";
 
 const SearchBar: React.FC<{ postSubmit?: () => void }> = ({ postSubmit }) => {
 	const { updateSearchParam } = useUpdateSearchParam();
@@ -53,7 +53,14 @@ const SearchBar: React.FC<{ postSubmit?: () => void }> = ({ postSubmit }) => {
 				value={searchInputValue}
 				type="text"
 				name="search"
-				className="relative pl-10 pr-20 placeholder-berlin-grey row-start-1 col-start-1 w-full h-[47px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none"
+				className={`
+					relative pl-10 pr-20 placeholder-berlin-grey row-start-1 col-start-1 
+					w-full h-[47px] border-2 border-black px-4 rounded-none
+				 	focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow
+				`}
 				placeholder={i18n["searchbar.placeholder"]}
 				onChange={(e) => setSearchInputValue(e.target.value)}
 				onFocus={() => {

@@ -1,4 +1,4 @@
-import type de from "~/i18n/translations/de.ts";
+import type de from "~/i18n/translations/de";
 
 const en: typeof de = {
 	"home.title": "Fairgnügen",

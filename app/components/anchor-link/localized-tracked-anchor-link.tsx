@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
-import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
+import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link";
+import { useLanguage } from "~/hooks/use-language";
 
 type AnchorLinkProps = {
 	href: string;

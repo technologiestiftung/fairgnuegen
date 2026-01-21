@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { type Offer } from "~/content/types.ts";
+import { type Offer } from "~/content/types";
 import { fetchPaginatedData } from "./fetch-data";
 import { findDistrict, geocodeViaMapbox } from "./geocode";
 

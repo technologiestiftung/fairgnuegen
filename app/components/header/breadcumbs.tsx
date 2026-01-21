@@ -1,7 +1,7 @@
 import React from "react";
-import { ChevronRight } from "~/components/icons/chevron-right.tsx";
-import { useUpdateBreadcrumbsWithCategory } from "~/hooks/use-update-breadcrumbs-with-category.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { ChevronRight } from "~/components/icons/chevron-right";
+import { useUpdateBreadcrumbsWithCategory } from "~/hooks/use-update-breadcrumbs-with-category";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 export function Breadcrumbs() {
 	/**

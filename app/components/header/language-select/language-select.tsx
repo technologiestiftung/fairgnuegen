@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
-import { ChevronDown } from "~/components/icons/chevron-down.tsx";
-import { useCloseOnClickOutside } from "~/components/header/hooks/use-close-on-click-outside.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { LanguageAnchor } from "~/components/header/language-select/language-anchor.tsx";
-import { type Language } from "~/components/header/language-select/types.ts";
-import { ChevronUp } from "~/components/icons/chevron-up.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { ChevronDown } from "~/components/icons/chevron-down";
+import { useCloseOnClickOutside } from "~/components/header/hooks/use-close-on-click-outside";
+import { useLanguage } from "~/hooks/use-language";
+import { LanguageAnchor } from "~/components/header/language-select/language-anchor";
+import { type Language } from "~/components/header/language-select/types";
+import { ChevronUp } from "~/components/icons/chevron-up";
+import { useI18n } from "~/i18n/use-i18n";
 
 export function LanguageSelect() {
 	const currentLanguage = useLanguage();

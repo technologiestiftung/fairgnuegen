@@ -1,4 +1,4 @@
-import LinkIcon from "~/components/icons/link-icon.tsx";
+import LinkIcon from "~/components/icons/link-icon";
 
 export function MainMenuExternalLink({
 	link,

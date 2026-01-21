@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { type Offer } from "~/content/types.ts";
+import { type Offer } from "~/content/types";
 
 interface FavoritesState {
 	favorites: string[];

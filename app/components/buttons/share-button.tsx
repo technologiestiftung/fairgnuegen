@@ -5,11 +5,11 @@ import ShareLinkIcon from "~/components/icons/share-link-icon";
 import ShareMailIcon from "~/components/icons/share-mail-icon";
 import ShareWhatsappIcon from "~/components/icons/share-whatsapp-icon";
 import { type Offer } from "~/content/types";
-import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.tsx";
-import { trackInteraction } from "~/analytics/matomo.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { Button } from "~/components/buttons/button.tsx";
+import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link";
+import { trackInteraction } from "~/analytics/matomo";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { Button } from "~/components/buttons/button";
 
 interface ShareButtonProps {
 	offer: Offer;

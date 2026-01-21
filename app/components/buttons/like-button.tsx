@@ -1,11 +1,11 @@
 import LikeIcon from "~/components/icons/like-icon";
-import type { Offer } from "~/content/types.ts";
-import { useFavoritesStore } from "~/store/favorites-store.ts";
-import { useIsFavorite } from "~/hooks/use-is-favorite.tsx";
-import { trackInteraction } from "~/analytics/matomo.ts";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { Button } from "~/components/buttons/button.tsx";
+import type { Offer } from "~/content/types";
+import { useFavoritesStore } from "~/store/favorites-store";
+import { useIsFavorite } from "~/hooks/use-is-favorite";
+import { trackInteraction } from "~/analytics/matomo";
+import { useI18n } from "~/i18n/use-i18n";
+import { useLanguage } from "~/hooks/use-language";
+import { Button } from "~/components/buttons/button";
 
 export function LikeButton({ offer }: { offer: Offer }) {
 	const { toggleFavorite } = useFavoritesStore();
