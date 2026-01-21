@@ -7,17 +7,25 @@ import useUpdateSearchParam from "~/hooks/use-update-search-params";
 import { trackSiteSearch } from "~/analytics/matomo.ts";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useUpdateSearchInput } from "~/hooks/use-update-search-input.tsx";
 
-const SearchBar: React.FC = () => {
+const SearchBar: React.FC<{ postSubmit: () => void }> = ({ postSubmit }) => {
 	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const location = useLocation();
 	const navigate = useNavigate();
-	const [search, setSearch] = useState(searchParams.get("search") ?? "");
+	const searchURLQueryValue = searchParams.get("search") ?? "";
+	const [searchInputValue, setSearchInputValue] = useState(searchURLQueryValue);
 	const [hasFocus, setHasFocus] = useState(false);
 
 	const language = useLanguage();
 	const i18n = useI18n(language);
+
+	useUpdateSearchInput({
+		searchURLQueryValue,
+		searchInputValue,
+		setSearchInputValue,
+	});
 
 	return (
 		<form
@@ -25,27 +33,29 @@ const SearchBar: React.FC = () => {
 				e.preventDefault();
 
 				trackSiteSearch({
-					searchTerm: search,
+					searchTerm: searchInputValue,
 				});
 
+				postSubmit();
+
 				if (!location.pathname.includes("/all-offers/")) {
-					searchParams.set("search", search);
+					searchParams.set("search", searchInputValue);
 					const languagePrefix = language === "de" ? "" : `/${language}`;
 					navigate(`${languagePrefix}/all-offers/?${searchParams.toString()}`);
 					return;
 				}
 
-				updateSearchParam("search", search);
+				updateSearchParam("search", searchInputValue);
 			}}
 			className="group grid grid-cols-1 grid-rows-1 items-center z-[10]"
 		>
 			<input
-				value={search}
+				value={searchInputValue}
 				type="text"
 				name="search"
 				className="relative pl-10 pr-20 placeholder-berlin-grey row-start-1 col-start-1 w-full h-[47px] border-2 border-black px-4 focus:outline-none focus:border-focus-blue focus:shadow-default rounded-none"
 				placeholder={i18n["searchbar.placeholder"]}
-				onChange={(e) => setSearch(e.target.value)}
+				onChange={(e) => setSearchInputValue(e.target.value)}
 				onFocus={() => {
 					setHasFocus(true);
 				}}
@@ -59,10 +69,10 @@ const SearchBar: React.FC = () => {
 			<div className="relative row-start-1 col-start-1 w-full h-full flex flex-row gap-2 justify-end pointer-events-none">
 				<button
 					type="button"
-					className={`${search === "" ? "hidden" : ""} pointer-events-auto p-1.5`}
+					className={`${searchInputValue === "" ? "hidden" : ""} pointer-events-auto p-1.5`}
 					onClick={(e) => {
 						e.preventDefault();
-						setSearch("");
+						setSearchInputValue("");
 					}}
 					aria-label={i18n["button.name.clear"]}
 				>

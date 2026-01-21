@@ -37,7 +37,7 @@ const SearchMenu: React.FC<SearchMenuProps> = ({ isOpen, close }) => {
 							{'"'}Fairgnügen{'"'}
 						</span>
 					</h1>
-					<SearchBar />
+					<SearchBar postSubmit={close} />
 				</div>
 			</div>
 		</DrawerSearch>
