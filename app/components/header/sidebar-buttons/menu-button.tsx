@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BarsIcon } from "~/components/icons/bars-icon.tsx";
-import MainMenu from "~/components/menu/main-menu";
+import MainMenu from "~/components/menu/main-menu/main-menu.tsx";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 
