@@ -14,7 +14,14 @@ const ShowFilteredButton: React.FC<ShowFilteredButtonProps> = ({ onClick }) => {
 	const { filteredAndSortedOffers } = useFilteredAndSortedOffers();
 	return (
 		<button
-			className="h-[43px] border-black border-2 opacity-100 flex justify-center items-center w-[250px]"
+			className={`
+					h-[43px] border-black border-2 opacity-100 
+					flex justify-center items-center w-[250px]
+					focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow
+					`}
 			onClick={onClick}
 		>
 			<span className="flex flex-row justify-end items-center h-full w-full hover:bg-berlin-grey-light">

@@ -58,7 +58,13 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 		<div className="relative">
 			<button
 				ref={buttonRef}
-				className="flex justify-center items-center text-black"
+				className={`
+					flex justify-center items-center text-black
+					focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow
+				`}
 				onClick={() => {
 					trackInteraction({
 						eventAction: "button click",
@@ -78,7 +84,13 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 					ref={overlayRef}
 				>
 					<button
-						className="flex flex-col items-center hover:bg-separator px-4"
+						className={`
+							flex flex-col items-center hover:bg-separator px-4
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 						onClick={async () => {
 							trackInteraction({
 								eventAction: "button click",

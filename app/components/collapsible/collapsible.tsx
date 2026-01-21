@@ -56,8 +56,12 @@ export function Collapsible({
 				className={`
 					font-bold flex justify-between items-center border-t-[0.5px] p-4 
 					${isShadowVisible ? "shadow-[0_4px_4px_rgba(144,144,144,.5)]" : "shadow-none"}
+					focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow
 					${classNames}
-					`}
+				`}
 				onClick={() => setIsOpen(!isOpen)}
 				aria-label={
 					isOpen ? i18n["button.name.collapse"] : i18n["button.name.expand"]

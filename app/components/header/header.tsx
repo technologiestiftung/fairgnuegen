@@ -16,7 +16,15 @@ export function Header() {
 		>
 			<div className={`"h-11 border-b py-[0.25em] px-4`}>
 				<div className={`opacity-1 motion-safe:transition-opacity`}>
-					<a href="https://www.berlin.de">
+					<a
+						href="https://www.berlin.de"
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
+					>
 						<img
 							title="Zur Startseite"
 							src="/images/logo_berlin_m_srgb.svg"

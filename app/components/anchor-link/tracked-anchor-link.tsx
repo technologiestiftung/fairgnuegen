@@ -21,7 +21,13 @@ export function TrackedAnchorLink({
 	return (
 		<a
 			href={href}
-			className={className}
+			className={`
+				${className}
+				focus-visible:outline focus-visible:outline-3 
+				focus-visible:outline-berlin-blue 
+				focus-visible:outline-offset-0 
+				focus-visible:shadow-default-button-focus-shadow
+			`}
 			target={target}
 			rel={rel}
 			onClick={() =>

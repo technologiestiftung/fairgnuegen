@@ -64,7 +64,13 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					)}
 					<a
 						href={offer.website}
-						className="text-link-blue hover:underline flex flex-row items-start gap-1"
+						className={`
+							text-link-blue hover:underline flex flex-row items-start gap-1
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 						target="_blank"
 						rel="noreferrer"
 					>

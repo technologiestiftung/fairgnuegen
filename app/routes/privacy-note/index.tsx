@@ -16,7 +16,13 @@ export default function PrivacyNote() {
 		const isExternal = href?.startsWith("http");
 		return (
 			<a
-				className="hover:cursor-pointer hover:underline text-[#0047D3]"
+				className={`
+                  hover:cursor-pointer hover:underline text-[#0047D3]
+                  focus-visible:outline focus-visible:outline-3 
+                  focus-visible:outline-berlin-blue 
+                  focus-visible:outline-offset-0 
+                  focus-visible:shadow-default-button-focus-shadow
+                `}
 				href={href}
 				target={isExternal ? "_blank" : undefined}
 				rel={isExternal ? "noopener noreferrer" : undefined}

@@ -22,7 +22,13 @@ const CopyToClipboardButton: React.FC<RouteButtonProps> = ({ text }) => {
 	return (
 		<div className="relative w-full">
 			<button
-				className="px-4 py-2 border-black w-fit border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black h-[43px]"
+				className={`
+					px-4 py-2 border-black w-fit border-2 opacity-100 
+					hover:opacity-50 flex justify-center items-center text-black h-[43px]
+					focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow`}
 				onClick={onClick}
 			>
 				<span className="flex flex-row gap-1 items-center">
