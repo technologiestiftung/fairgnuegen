@@ -133,19 +133,19 @@ Die nachstehend aufgeführten Bereiche sind aus folgenden Gründen nicht barrier
 
 - Beschreibung: Grafische Bedienelemente und informationstragende grafische Elemente halten nicht immer den Mindestkontrast ein und können daher teilweise schwer wahrnehmbar sein.
 - Maßnahmen: Kontrast der betroffenen Elemente erhöhen
-- Zeitplan: Behebung in 2025
+- Zeitplan: Behebung in 2026
 
 ### Barriere: Linktext nicht klar unterscheidbar
 
 - Beschreibung: Links werden nicht immer vom umgebenden Text auf eine Weise unterschieden, die nicht auf Farbe beruht.
 - Maßnahmen: Linktexte unterstreichen
-- Zeitplan: Behebung in 2025
+- Zeitplan: Behebung in 2026
 
 ### Barriere: Einschränkung bei Bedienung von Elementen 
 
 - Beschreibung: Einige Bedienelemente verfügen nicht über die notwendigen Rollen, Namen, Statusangaben und dazugehörige Steuerungskonzepte, was die Bedienung dieser Elemente einschränkt.
 - Maßnahmen: Steuerungskonzepte von Bedienelementen hinzufügen
-- Zeitplan: Behebung in 2025 
+- Zeitplan: Behebung in 2026
 
 Wir arbeiten daran, die Barrierefreiheit dieser Anwendung zu verbessern.
 `,

@@ -2,7 +2,7 @@ import React from "react";
 import ArrowLeftIcon from "~/components/icons/arrow-left-icon";
 import { useLanguage } from "~/hooks/use-language";
 import { useNavigate } from "react-router";
-import { Button } from "~/components/buttons/button.tsx";
+import { Button } from "~/components/buttons/button";
 
 interface BackButtonProps {
 	title: string;
