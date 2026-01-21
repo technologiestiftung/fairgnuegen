@@ -41,13 +41,13 @@ export default function Index() {
 						</p>
 					</div>
 				)}
-				<div
+				<h1
 					className={`w-full ${categoryDetail?.color ?? "bg-primary-blue"} ${categoryDetail?.textColor ?? "text-white"} flex flex-row justify-center items-center text-black p-3 mb-10 font-bold text-xl`}
 				>
 					{categoryDetail
 						? i18n[`${categoryDetail.i18nKey}.name`]
 						: i18n["allOffers.title"]}
-				</div>
+				</h1>
 
 				<div className="max-w-[980px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0">

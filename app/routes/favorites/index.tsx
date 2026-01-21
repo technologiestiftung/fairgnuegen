@@ -33,11 +33,11 @@ export default function Index() {
 	return (
 		<>
 			<div>
-				<div
+				<h1
 					className={`w-full bg-primary-blue flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
 					{i18n["menuItem.favorites"]}
-				</div>
+				</h1>
 
 				<div className="max-w-[980px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">
