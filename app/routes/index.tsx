@@ -47,7 +47,7 @@ export default function Index() {
 					</h2>
 
 					<div className="flex flex-col gap-3 mb-5">
-						<SearchBar postSubmit={() => {}} />
+						<SearchBar />
 						<FreeOffersCheckbox id={"free-only"} />
 					</div>
 				</div>

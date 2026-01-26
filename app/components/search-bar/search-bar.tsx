@@ -9,7 +9,7 @@ import { useLanguage } from "~/hooks/use-language.tsx";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 import { useUpdateSearchInput } from "~/hooks/use-update-search-input.tsx";
 
-const SearchBar: React.FC<{ postSubmit: () => void }> = ({ postSubmit }) => {
+const SearchBar: React.FC<{ postSubmit?: () => void }> = ({ postSubmit }) => {
 	const { updateSearchParam } = useUpdateSearchParam();
 	const [searchParams] = useSearchParams();
 	const location = useLocation();
@@ -36,9 +36,9 @@ const SearchBar: React.FC<{ postSubmit: () => void }> = ({ postSubmit }) => {
 					searchTerm: searchInputValue,
 				});
 
-				postSubmit();
+				postSubmit?.();
 
-				if (!location.pathname.includes("/all-offers/")) {
+				if (location.pathname !== "/all-offers/") {
 					searchParams.set("search", searchInputValue);
 					const languagePrefix = language === "de" ? "" : `/${language}`;
 					navigate(`${languagePrefix}/all-offers/?${searchParams.toString()}`);
