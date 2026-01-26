@@ -5,6 +5,7 @@ import { useIsFavorite } from "~/hooks/use-is-favorite.tsx";
 import { trackInteraction } from "~/analytics/matomo.ts";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 import { useLanguage } from "~/hooks/use-language.tsx";
+import { Button } from "~/components/buttons/button.tsx";
 
 export function LikeButton({ offer }: { offer: Offer }) {
 	const { toggleFavorite } = useFavoritesStore();
@@ -13,7 +14,7 @@ export function LikeButton({ offer }: { offer: Offer }) {
 	const i18n = useI18n(language);
 
 	return (
-		<button
+		<Button
 			onClick={(e) => {
 				e.stopPropagation();
 				e.preventDefault();
@@ -24,15 +25,9 @@ export function LikeButton({ offer }: { offer: Offer }) {
 				toggleFavorite(offer);
 			}}
 			aria-label={i18n["button.name.like"]}
-			className={`
-				size-[44px]
-				focus-visible:outline focus-visible:outline-3 
-				focus-visible:outline-berlin-blue 
-				focus-visible:outline-offset-0 
-				focus-visible:shadow-default-button-focus-shadow
-			`}
+			className="size-[44px]"
 		>
 			<LikeIcon isSelected={isFavorite}></LikeIcon>
-		</button>
+		</Button>
 	);
 }

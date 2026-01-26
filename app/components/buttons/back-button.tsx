@@ -2,6 +2,7 @@ import React from "react";
 import ArrowLeftIcon from "~/components/icons/arrow-left-icon.tsx";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { useNavigate } from "react-router";
+import { Button } from "~/components/buttons/button.tsx";
 
 interface BackButtonProps {
 	title: string;
@@ -13,13 +14,9 @@ const BackButton: React.FC<BackButtonProps> = ({ title }) => {
 	const language = useLanguage();
 
 	return (
-		<button
+		<Button
 			className={`
 				text-link-blue flex justify-center items-center w-fit h-[43px] hover:underline
-				focus-visible:outline focus-visible:outline-3 
-				focus-visible:outline-berlin-blue 
-				focus-visible:outline-offset-0 
-				focus-visible:shadow-default-button-focus-shadow
 			`}
 			onClick={() => {
 				const isAllOffersPage = allOffersPathRegex.test(
@@ -40,7 +37,7 @@ const BackButton: React.FC<BackButtonProps> = ({ title }) => {
 				</span>
 				<span>{title}</span>
 			</span>
-		</button>
+		</Button>
 	);
 };
 

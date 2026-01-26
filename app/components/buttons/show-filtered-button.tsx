@@ -3,6 +3,7 @@ import ArrowRightIcon from "~/components/icons/arrow-right-icon";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { useI18n } from "~/i18n/use-i18n.tsx";
 import { useFilteredAndSortedOffers } from "~/hooks/use-filtered-and-sorted-offers.tsx";
+import { Button } from "~/components/buttons/button.tsx";
 
 interface ShowFilteredButtonProps {
 	onClick: () => void;
@@ -13,14 +14,10 @@ const ShowFilteredButton: React.FC<ShowFilteredButtonProps> = ({ onClick }) => {
 	const i18n = useI18n(language);
 	const { filteredAndSortedOffers } = useFilteredAndSortedOffers();
 	return (
-		<button
+		<Button
 			className={`
 					h-[43px] border-black border-2 opacity-100 
 					flex justify-center items-center w-[250px]
-					focus-visible:outline focus-visible:outline-3 
-					focus-visible:outline-berlin-blue 
-					focus-visible:outline-offset-0 
-					focus-visible:shadow-default-button-focus-shadow
 					`}
 			onClick={onClick}
 		>
@@ -32,7 +29,7 @@ const ShowFilteredButton: React.FC<ShowFilteredButtonProps> = ({ onClick }) => {
 					<ArrowRightIcon color="text-white"></ArrowRightIcon>
 				</span>
 			</span>
-		</button>
+		</Button>
 	);
 };
 
