@@ -9,6 +9,7 @@ import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.
 import { trackInteraction } from "~/analytics/matomo.ts";
 import { useLanguage } from "~/hooks/use-language.tsx";
 import { useI18n } from "~/i18n/use-i18n.tsx";
+import { Button } from "~/components/buttons/button.tsx";
 
 interface ShareButtonProps {
 	offer: Offer;
@@ -56,15 +57,9 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 
 	return (
 		<div className="relative">
-			<button
+			<Button
 				ref={buttonRef}
-				className={`
-					flex justify-center items-center text-black
-					focus-visible:outline focus-visible:outline-3 
-					focus-visible:outline-berlin-blue 
-					focus-visible:outline-offset-0 
-					focus-visible:shadow-default-button-focus-shadow
-				`}
+				className="flex justify-center items-center text-black focus-visible:outline focus-visible:outline-3"
 				onClick={() => {
 					trackInteraction({
 						eventAction: "button click",
@@ -77,20 +72,14 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 				<span className="size-[44px]">
 					<ShareIcon isSelected={showOverlay} />
 				</span>
-			</button>
+			</Button>
 			{showOverlay && !showLinkCopied && (
 				<div
 					className="flex flex-col absolute right-0 top-full bg-white border-[1.5px] border-black mt-2 w-max"
 					ref={overlayRef}
 				>
-					<button
-						className={`
-							flex flex-col items-center hover:bg-separator px-4
-							focus-visible:outline focus-visible:outline-3 
-							focus-visible:outline-berlin-blue 
-							focus-visible:outline-offset-0 
-							focus-visible:shadow-default-button-focus-shadow
-						`}
+					<Button
+						className="flex flex-col items-center hover:bg-separator px-4"
 						onClick={async () => {
 							trackInteraction({
 								eventAction: "button click",
@@ -109,7 +98,7 @@ const ShareButton: React.FC<ShareButtonProps> = ({ offer }) => {
 							<span>{i18n["button.copyLink"]}</span>
 						</span>
 						<span className="border-b-[1.5px] border-b-separator mx-4 w-full self-center"></span>
-					</button>
+					</Button>
 
 					<TrackedAnchorLink
 						className="flex flex-col hover:bg-separator px-4 -mt-[1.5px] border-t-[1.5px] border-t-transparent"
