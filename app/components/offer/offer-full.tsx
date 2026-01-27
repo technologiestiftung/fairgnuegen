@@ -1,13 +1,13 @@
 import React from "react";
-import { allowedOfferPathsWithImagesAllowed } from "~/content/allowed-offers-images.ts";
-import { type Offer } from "~/content/content.ts";
-import { LikeButton } from "~/components/buttons/like-button.tsx";
+import { allowedOfferPathsWithImagesAllowed } from "~/content/allowed-offers-images";
+import { type Offer } from "~/content/types";
+import { LikeButton } from "~/components/buttons/like-button";
 import ShareButton from "~/components/buttons/share-button";
 import LinkIcon from "~/components/icons/link-icon";
 import OfferTags from "~/components/offer/offer-tags";
 import CopyToClipboardButton from "~/components/buttons/copy-to-clipboard-button";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 interface OfferFullProps {
 	offer: Offer;
@@ -36,11 +36,11 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 				</div>
 				<div className="w-full max-w-[980px] flex flex-col gap-4 mx-4 lg:mx-0">
 					<div className="hidden sm:flex flex-col gap-2">
-						<h3 className="font-bold text-2xl">{offer.provider}</h3>
+						<h1 className="font-bold text-2xl">{offer.provider}</h1>
 					</div>
 					<div className="flex flex-row gap-2 justify-between sm:hidden">
 						<div className="flex flex-col gap-2">
-							<h3 className="font-bold text-2xl ">{offer.provider}</h3>
+							<h1 className="font-bold text-2xl ">{offer.provider}</h1>
 							<OfferTags offer={offer} />
 						</div>
 						<div className="flex flex-col gap-2">
@@ -64,7 +64,13 @@ const OfferFull: React.FC<OfferFullProps> = ({ offer }) => {
 					)}
 					<a
 						href={offer.website}
-						className="text-link-blue hover:underline flex flex-row items-start gap-1"
+						className={`
+							text-link-blue hover:underline flex flex-row items-start gap-1
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 						target="_blank"
 						rel="noreferrer"
 					>

@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router";
-import { offers } from "~/content/content.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { useFavoritesStore } from "~/store/favorites-store.ts";
+import { offers } from "~/content/content";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { useFavoritesStore } from "~/store/favorites-store";
 import BackButton from "~/components/buttons/back-button";
 import OfferDetail from "~/components/offer/offer-detail";
 
@@ -33,11 +33,11 @@ export default function Index() {
 	return (
 		<>
 			<div>
-				<div
+				<h1
 					className={`w-full bg-primary-blue flex flex-row justify-center items-center text-[#ffffff] p-3 mb-10 font-bold text-xl`}
 				>
 					{i18n["menuItem.favorites"]}
-				</div>
+				</h1>
 
 				<div className="max-w-[980px] mx-auto flex flex-col">
 					<div className="mx-4 lg:mx-0 flex flex-row items-center gap-2 py-3">

@@ -6,11 +6,11 @@ import FreeOffersCheckbox from "~/components/checkbox/free-offers-checkbox";
 import MapLegend from "~/components/map/map-legend";
 import OfferPopup from "~/components/offer/offer-popup";
 import { useMap } from "~/hooks/use-map";
-import { useMapHeight } from "~/hooks/use-map-height.tsx";
-import { useMapInteraction } from "~/hooks/use-map-interaction.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { useIconSizeInterpolation } from "~/hooks/use-icon-size-interpolation.tsx";
+import { useMapHeight } from "~/hooks/use-map-height";
+import { useMapInteraction } from "~/hooks/use-map-interaction";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { useIconSizeInterpolation } from "~/hooks/use-icon-size-interpolation";
 
 export default function Index() {
 	const language = useLanguage();

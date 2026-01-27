@@ -1,7 +1,8 @@
 import React from "react";
-import ArrowLeftIcon from "~/components/icons/arrow-left-icon.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
+import ArrowLeftIcon from "~/components/icons/arrow-left-icon";
+import { useLanguage } from "~/hooks/use-language";
 import { useNavigate } from "react-router";
+import { Button } from "~/components/buttons/button";
 
 interface BackButtonProps {
 	title: string;
@@ -13,8 +14,10 @@ const BackButton: React.FC<BackButtonProps> = ({ title }) => {
 	const language = useLanguage();
 
 	return (
-		<button
-			className="text-link-blue flex justify-center items-center w-fit h-[43px] hover:underline"
+		<Button
+			className={`
+				text-link-blue flex justify-center items-center w-fit h-[43px] hover:underline
+			`}
 			onClick={() => {
 				const isAllOffersPage = allOffersPathRegex.test(
 					window.location.pathname,
@@ -28,13 +31,13 @@ const BackButton: React.FC<BackButtonProps> = ({ title }) => {
 				window.history.back();
 			}}
 		>
-			<div className="col-start-1 row-start-1 flex flex-row gap-2 items-center">
-				<div className="scale-75">
+			<span className="col-start-1 row-start-1 flex flex-row gap-2 items-center">
+				<span className="scale-75">
 					<ArrowLeftIcon></ArrowLeftIcon>
-				</div>
-				<div className="">{title}</div>
-			</div>
-		</button>
+				</span>
+				<span>{title}</span>
+			</span>
+		</Button>
 	);
 };
 

@@ -1,9 +1,9 @@
 import { useLocation } from "react-router";
 import BackButton from "~/components/buttons/back-button";
 import OfferFull from "~/components/offer/offer-full";
-import { content } from "~/content/content.ts";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { content } from "~/content/content";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 export default function Index() {
 	const language = useLanguage();

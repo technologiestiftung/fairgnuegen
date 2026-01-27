@@ -1,9 +1,9 @@
 import { Breadcrumbs } from "~/components/header/breadcumbs";
-import { LanguageSelect } from "~/components/header/language-select/language-select.tsx";
-import { SidebarButtons } from "~/components/header/sidebar-buttons/sidebar-buttons.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { LanguageSelect } from "~/components/header/language-select/language-select";
+import { SidebarButtons } from "~/components/header/sidebar-buttons/sidebar-buttons";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 export function Header() {
 	const language = useLanguage();
@@ -16,7 +16,15 @@ export function Header() {
 		>
 			<div className={`"h-11 border-b py-[0.25em] px-4`}>
 				<div className={`opacity-1 motion-safe:transition-opacity`}>
-					<a href="https://www.berlin.de">
+					<a
+						href="https://www.berlin.de"
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
+					>
 						<img
 							title="Zur Startseite"
 							src="/images/logo_berlin_m_srgb.svg"

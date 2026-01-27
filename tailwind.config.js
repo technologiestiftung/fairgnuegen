@@ -29,6 +29,7 @@ export default {
 				"berlin-pink": "#F5B4CB", // fuchsia-300
 				"berlin-green": "#67B18D", // emerald-400
 				"berlin-light-green": "#E2F1EB",
+				"berlin-blue": "#0076dd",
 			},
 			screens: {
 				desktop: "1181px",
@@ -36,6 +37,10 @@ export default {
 			boxShadow: {
 				default: "0 0 5px 1px rgba(23, 111, 193, 0.3)",
 				"default-black": "0 0 5px 1px rgba(0, 0, 0, 0.25)",
+				"default-button-focus-shadow": "0px 0px 0 5px #ffffff",
+			},
+			outlineWidth: {
+				3: "3px",
 			},
 		},
 	},

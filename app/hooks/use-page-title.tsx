@@ -1,5 +1,5 @@
-import { useUpdateBreadcrumbsWithCategory } from "~/hooks/use-update-breadcrumbs-with-category.tsx";
-import type { Breadcrumb } from "~/content/content.ts";
+import { useUpdateBreadcrumbsWithCategory } from "~/hooks/use-update-breadcrumbs-with-category";
+import type { Breadcrumb } from "~/content/types";
 
 export function usePageTitle() {
 	const [breadcrumbs] = useUpdateBreadcrumbsWithCategory();

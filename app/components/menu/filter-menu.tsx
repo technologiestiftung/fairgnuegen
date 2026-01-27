@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { categoryMap } from "~/content/categories.ts";
-import { districtsMap } from "~/content/districts.ts";
-import { targetAudiencesMap } from "~/content/target-audiences.ts";
-import { useCategories } from "~/hooks/use-categories.tsx";
-import { useDistricts } from "~/hooks/use-districts.tsx";
-import { useTargetAudiences } from "~/hooks/use-target-audiences.tsx";
+import { categoryMap } from "~/content/categories";
+import { districtsMap } from "~/content/districts";
+import { targetAudiencesMap } from "~/content/target-audiences";
+import { useCategories } from "~/hooks/use-categories";
+import { useDistricts } from "~/hooks/use-districts";
+import { useTargetAudiences } from "~/hooks/use-target-audiences";
 import useUpdateSearchParam from "~/hooks/use-update-search-params";
 import ResetFilterButton from "~/components/buttons/reset-filter-button";
 import ShowFilteredButton from "~/components/buttons/show-filtered-button";
@@ -13,10 +13,10 @@ import Checkbox from "~/components/checkbox/checkbox";
 import FreeOffersCheckbox from "~/components/checkbox/free-offers-checkbox";
 import CloseIcon from "~/components/icons/close-icon";
 import { useNavigate } from "react-router";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { DrawerLeft } from "~/components/drawer/drawer-left.tsx";
-import { Collapsible } from "~/components/collapsible/collapsible.tsx";
+import { useI18n } from "~/i18n/use-i18n";
+import { useLanguage } from "~/hooks/use-language";
+import { DrawerLeft } from "~/components/drawer/drawer-left";
+import { Collapsible } from "~/components/collapsible/collapsible";
 
 interface FilterRowOption {
 	title: string;
@@ -183,6 +183,12 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 					<button
 						onClick={() => close()}
 						aria-label={i18n["button.name.close"]}
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 					>
 						<CloseIcon />
 					</button>
@@ -215,7 +221,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({ isOpen, close }) => {
 										className="px-6 flex flex-row items-start text-normal mt-2 last:mb-4"
 									>
 										<Checkbox
-											id={subItem.title}
+											id={subItem.value}
 											label={
 												subItem.subtitle ? (
 													<span className="text-normal font-normal">

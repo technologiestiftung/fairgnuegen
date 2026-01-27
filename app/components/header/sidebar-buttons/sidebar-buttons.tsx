@@ -1,6 +1,6 @@
-import { AccessibilityButton } from "~/components/header/sidebar-buttons/accessibility-button.tsx";
-import { SearchButton } from "~/components/header/sidebar-buttons/search-button.tsx";
-import { MenuButton } from "~/components/header/sidebar-buttons/menu-button.tsx";
+import { AccessibilityButton } from "~/components/header/sidebar-buttons/accessibility-button";
+import { SearchButton } from "~/components/header/sidebar-buttons/search-button";
+import { MenuButton } from "~/components/header/sidebar-buttons/menu-button";
 
 export function SidebarButtons() {
 	return (

@@ -1,9 +1,9 @@
 import React from "react";
 import ListIcon from "~/components/icons/list-icon";
 import { useSearchParams } from "react-router";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 const ShowListButton: React.FC = () => {
 	const language = useLanguage();
@@ -13,14 +13,17 @@ const ShowListButton: React.FC = () => {
 
 	return (
 		<LocalizedTrackedAnchorLink
-			className="px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex justify-center items-center text-black h-[43px]"
+			className={`
+				px-3 py-1 border-black border-2 opacity-100 hover:opacity-50 flex
+			 	justify-center items-center text-black h-[43px]
+			`}
 			additionalTrackingContext={"(button Listenansicht)"}
 			href={`/all-offers/?${searchParams.toString()}`}
 		>
-			<div className="flex flex-row gap-2 items-center">
+			<span className="flex flex-row gap-2 items-center">
 				<ListIcon />
-				<div>{i18n["listView"]}</div>
-			</div>
+				<span>{i18n["listView"]}</span>
+			</span>
 		</LocalizedTrackedAnchorLink>
 	);
 };

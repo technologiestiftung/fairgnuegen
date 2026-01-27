@@ -1,5 +1,5 @@
 import React from "react";
-import { DrawerSearch } from "~/components/drawer/drawer-search.tsx";
+import { DrawerSearch } from "~/components/drawer/drawer-search";
 import CloseIcon from "~/components/icons/close-icon";
 import SearchBar from "~/components/search-bar/search-bar";
 import { useI18n } from "~/i18n/use-i18n";
@@ -24,6 +24,12 @@ const SearchMenu: React.FC<SearchMenuProps> = ({ isOpen, close }) => {
 						onClick={() => close()}
 						type="button"
 						aria-label={i18n["button.name.close"]}
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 					>
 						<CloseIcon />
 					</button>
@@ -37,7 +43,7 @@ const SearchMenu: React.FC<SearchMenuProps> = ({ isOpen, close }) => {
 							{'"'}Fairgnügen{'"'}
 						</span>
 					</h1>
-					<SearchBar />
+					<SearchBar postSubmit={close} />
 				</div>
 			</div>
 		</DrawerSearch>

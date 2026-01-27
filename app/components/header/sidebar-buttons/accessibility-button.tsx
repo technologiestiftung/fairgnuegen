@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { AccessibilityIcon } from "~/components/icons/accessibility-icon.tsx";
+import { AccessibilityIcon } from "~/components/icons/accessibility-icon";
 import AccessibilityMenu from "~/components/menu/accessibility-menu";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 export function AccessibilityButton() {
 	const language = useLanguage();
@@ -13,7 +13,13 @@ export function AccessibilityButton() {
 	return (
 		<>
 			<button
-				className="flex flex-col items-center text-[11px] gap-1 leading-3"
+				className={`
+					flex flex-col items-center text-[11px] gap-1 leading-3
+					focus-visible:outline focus-visible:outline-3 
+					focus-visible:outline-berlin-blue 
+					focus-visible:outline-offset-0 
+					focus-visible:shadow-default-button-focus-shadow
+				`}
 				onClick={() => setIsOpen(true)}
 			>
 				<AccessibilityIcon />

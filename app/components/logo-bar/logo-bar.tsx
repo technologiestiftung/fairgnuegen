@@ -1,7 +1,7 @@
 import React from "react";
-import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 export const LogoBar: React.FC = () => {
 	const language = useLanguage();

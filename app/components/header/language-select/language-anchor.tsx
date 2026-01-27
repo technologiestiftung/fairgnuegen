@@ -1,6 +1,6 @@
-import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link.tsx";
+import { TrackedAnchorLink } from "~/components/anchor-link/tracked-anchor-link";
 import { useLocation, useSearchParams } from "react-router";
-import { type Language } from "~/components/header/language-select/types.ts";
+import { type Language } from "~/components/header/language-select/types";
 import { useEffect, useState } from "react";
 
 type LanguageAnchorProps = {

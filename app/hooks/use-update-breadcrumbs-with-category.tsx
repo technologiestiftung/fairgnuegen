@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { categoryMap, getCategory } from "~/content/categories.ts";
-import { type Breadcrumb, content } from "~/content/content.ts";
+import { categoryMap, getCategory } from "~/content/categories";
+import { content } from "~/content/content";
+import { type Breadcrumb } from "~/content/types";
 import { useLocation, useSearchParams } from "react-router";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 export function useUpdateBreadcrumbsWithCategory() {
 	const language = useLanguage();

@@ -1,9 +1,9 @@
 import React from "react";
-import { useFreeOffersOnly } from "~/hooks/use-free-offers-only.tsx";
-import { trackInteraction } from "~/analytics/matomo.ts";
-import Checkbox from "~/components/checkbox/checkbox.tsx";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
+import { useFreeOffersOnly } from "~/hooks/use-free-offers-only";
+import { trackInteraction } from "~/analytics/matomo";
+import Checkbox from "~/components/checkbox/checkbox";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
 
 interface FreeOffersCheckboxProps {
 	id: string;

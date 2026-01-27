@@ -1,10 +1,10 @@
 import React from "react";
 
-import { DrawerRight } from "~/components/drawer/drawer-right.tsx";
+import { DrawerRight } from "~/components/drawer/drawer-right";
 import CloseIcon from "~/components/icons/close-icon";
-import { useLanguage } from "~/hooks/use-language.tsx";
-import { useI18n } from "~/i18n/use-i18n.tsx";
-import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link.tsx";
+import { useLanguage } from "~/hooks/use-language";
+import { useI18n } from "~/i18n/use-i18n";
+import { LocalizedTrackedAnchorLink } from "~/components/anchor-link/localized-tracked-anchor-link";
 
 interface AccessibilityMenuProps {
 	isOpen: boolean;
@@ -30,6 +30,12 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 					<button
 						onClick={() => close()}
 						aria-label={i18n["button.name.close"]}
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 					>
 						<CloseIcon />
 					</button>
@@ -66,7 +72,12 @@ const AccessibilityMenu: React.FC<AccessibilityMenuProps> = ({
 						{i18n["accessibilityMenu.additionalInfo.question"]}
 					</p>
 					<a
-						className="text-link-blue hover:underline"
+						className={`
+							focus-visible:outline focus-visible:outline-3 
+							focus-visible:outline-berlin-blue 
+							focus-visible:outline-offset-0 
+							focus-visible:shadow-default-button-focus-shadow
+						`}
 						href="https://www.berlin.de/moderne-verwaltung/barrierefreie-it/anlaufstellen/kompetenzstelle/artikel.988002.php"
 						target="_blank"
 						rel="noreferrer"

@@ -22,7 +22,7 @@ export function ResponsivePicture({
 					srcSet={`/${src}-${size}w.webp`}
 					type="image/webp"
 					width={size}
-					height={size / 1.5}
+					height={Math.round(size / 1.5)}
 					media={`(max-width: ${size}px)`}
 				/>
 			))}
