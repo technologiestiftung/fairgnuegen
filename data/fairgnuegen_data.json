@@ -12024,8 +12024,8 @@
 		"isFree": false,
 		"category": "Freizeit",
 		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lon": 13.262167,
-		"lat": 52.593211,
+		"lon": 13.26157,
+		"lat": 52.592766,
 		"language": "de",
 		"identifierToBeSlugified": "Strandbad Tegeler See",
 		"path": "",
@@ -12044,8 +12044,8 @@
 		"isFree": false,
 		"category": "Freizeit",
 		"targetGroups": ["Erwachsene", "Senioren", "Familie"],
-		"lat": 52.593211,
-		"lon": 13.262167,
+		"lat": 52.592766,
+		"lon": 13.26157,
 		"language": "en",
 		"slug": "Strandbad Tegeler See",
 		"path": "Strandbad Tegeler See"
@@ -16928,7 +16928,7 @@
 			"Familien",
 			"SeniorInnen"
 		],
-		"lon": 13.403238,
+		"lon": 13.403239,
 		"lat": 52.516759,
 		"language": "de",
 		"identifierToBeSlugified": "Berlin Ausstellung im Humboldt Forum",
@@ -16940,7 +16940,7 @@
 		"provider": "Berlin Exhibition at Humboldt Forum",
 		"providerDescription": "City Museum",
 		"offerDescription": "On the first floor of the Humboldt Forum, the experiential exhibition BERLIN GLOBAL showcases the exchange between Berlin and the world.",
-		"offerInformation": "Entry 0 Euro (reduced) | 9 Euro (regular) Open hours Mon + Wed – Sun | 10:30 AM – 6:30 PM, Tue | closed",
+		"offerInformation": "Entry 0 Euro (reduced) | 9 Euro (regular) Opening hours Mon + Wed – Sun | 10:30 AM – 6:30 PM, Tue | closed",
 		"website": "https://www.stadtmuseum.de/museum/berlin-ausstellung-im-humboldt-forum",
 		"addressWithHouseNumber": "Schloßplatz",
 		"cityWithZip": "10178 Berlin",
@@ -16954,7 +16954,7 @@
 			"SeniorInnen"
 		],
 		"lat": 52.516759,
-		"lon": 13.403238,
+		"lon": 13.403239,
 		"language": "en",
 		"slug": "Berlin Ausstellung im Humboldt Forum",
 		"path": "Berlin Ausstellung im Humboldt Forum"
