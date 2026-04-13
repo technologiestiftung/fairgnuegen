@@ -240,28 +240,7 @@ This accessibility statement (as of 18 November 2024) refers to the subdomain fa
 ## How accessible is the website?
 
 This website/application is only partially accessible. It only partially fulfils the requirements of the current BITV.
-
-## Which areas are not accessible?
-
-The areas listed below are not accessible for the following reasons:
-
-### Barrier: Minimum contrast not sufficient
-- Description: Graphic control elements and information-bearing graphic elements do not always maintain the minimum contrast and can therefore be difficult to perceive in some cases.
-- Measures: Increase the contrast of the affected elements
-- Timeline: to be fixed in 2026
-
-### Barrier: Link text not clearly distinguishable
-- Description: Links are not always distinguished from the surrounding text in a way that is not based on colour.
-- Measures: Underline link texts
-- Timeline: to be fixed in 2026
- 
-### Barrier: Restriction in the operation of elements 
-- Description: Some operating elements do not have the necessary roles, names, status information and associated control concepts, which restricts the operation of these elements.
-- Measures: Add control concepts for operating elements
-- Timeline: to be fixed in 2026
-
-We are working on improving the accessibility of this application.
-	`,
+`,
 
 	"accessibility-statement.contact": `
 ## Who can you contact with comments or questions about digital accessibility (feedback option)?
