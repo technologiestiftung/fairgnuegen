@@ -8,10 +8,6 @@ export default function Index() {
 
 	return (
 		<div className="max-w-[980px] mx-auto pt-[3rem] pb-24 px-4 scroll-smooth">
-			<h1 className="text-[27px] leading-[31px] font-bold mb-[1.3rem]">
-				{i18n["accessibilityStatement.title"]}
-			</h1>
-
 			<Markdown className={"markdown-container"}>
 				{i18n["accessibility-statement"]}
 			</Markdown>
