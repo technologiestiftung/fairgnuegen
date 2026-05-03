@@ -16157,7 +16157,7 @@
 			"Familien",
 			"SeniorInnen"
 		],
-		"lon": 13.403239,
+		"lon": 13.403238,
 		"lat": 52.516759,
 		"language": "de",
 		"identifierToBeSlugified": "Berlin Ausstellung im Humboldt Forum",
@@ -16168,8 +16168,8 @@
 		"id": "892_en",
 		"provider": "Berlin Exhibition at Humboldt Forum",
 		"providerDescription": "City Museum",
-		"offerDescription": "On the first floor of the Humboldt Forum, the experiential exhibition BERLIN GLOBAL showcases the exchange between Berlin and the world.",
-		"offerInformation": "Entry 0 Euro (reduced) | 9 Euro (regular) Opening hours Mon + Wed – Sun | 10:30 AM – 6:30 PM, Tue | closed",
+		"offerDescription": "On the first floor of the Humboldt Forum, the experiential exhibition BERLIN GLOBAL showcases the exchange between Berlin and the world",
+		"offerInformation": "Admission 0 Euro (reduced) | 9 Euro (regular) Open hours Mon + Wed – Sun | 10:30 AM – 6:30 PM, Tue | closed",
 		"website": "https://www.stadtmuseum.de/museum/berlin-ausstellung-im-humboldt-forum",
 		"addressWithHouseNumber": "Schloßplatz",
 		"cityWithZip": "10178 Berlin",
@@ -16183,7 +16183,7 @@
 			"SeniorInnen"
 		],
 		"lat": 52.516759,
-		"lon": 13.403239,
+		"lon": 13.403238,
 		"language": "en",
 		"slug": "Berlin Ausstellung im Humboldt Forum",
 		"path": "Berlin Ausstellung im Humboldt Forum"
