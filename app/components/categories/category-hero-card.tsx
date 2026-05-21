@@ -20,6 +20,7 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 	const i18n = useI18n(language);
 
 	const localizedName = i18n[`${category.i18nKey}.name`];
+	const imgAlt = i18n[`${category.i18nKey}.imageAltText`];
 	const localizedDescription = i18n[`${category.i18nKey}.description`];
 
 	return (
@@ -31,7 +32,7 @@ export const CategoryHeroCard: React.FC<CategoryHeroCardProps> = ({
 			<div className="flex flex-col gap-2 relative">
 				<ResponsivePicture
 					src={category.image}
-					alt={localizedName}
+					alt={imgAlt}
 					loading={"lazy"}
 					className="object-cover aspect-[4/3]"
 				/>
