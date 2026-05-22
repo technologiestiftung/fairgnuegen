@@ -1,10 +1,12 @@
 import React from "react";
 import {
+	data,
 	isRouteErrorResponse,
 	Links,
 	Meta,
 	Outlet,
 	Scripts,
+	useRouteError,
 	useRouteLoaderData,
 } from "react-router";
 import stylesheet from "~/index.css?url";
@@ -14,12 +16,39 @@ import { Footer } from "~/components/footer/footer";
 import { getBerlinFooter } from "~/external-templates/berlin-footer";
 import { useLanguage } from "~/hooks/use-language";
 import { usePageTitle } from "~/hooks/use-page-title";
+import NotFound from "~/routes/404";
 
 export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
-export async function loader() {
+export async function loader(args: { params: { lang?: string } }) {
+	const lang = args.params.lang ?? "";
+	const isLangParamSupported = ["", "en", "404"].includes(lang);
+
+	if (!isLangParamSupported) {
+		throw data("Page Not Found", { status: 404 });
+	}
+
 	return await getBerlinFooter();
 }
+
+export async function clientLoader({
+	params,
+	serverLoader,
+}: {
+	params: { lang?: string };
+	serverLoader: () => Promise<unknown>;
+}) {
+	const lang = params.lang ?? "";
+	const isLangParamSupported = ["", "en", "404"].includes(lang);
+
+	if (!isLangParamSupported) {
+		throw data("Page Not Found", { status: 404 });
+	}
+
+	return await serverLoader();
+}
+
+clientLoader.hydrate = true as const;
 
 export function meta() {
 	const title = usePageTitle();
@@ -76,32 +105,31 @@ export default function App() {
 	return <Outlet />;
 }
 
-export function ErrorBoundary({
-	// @ts-expect-error just for testing
-	error,
-}) {
-	let message = "Oops!";
-	let details = "An unexpected error occurred.";
-	let stack: string | undefined;
-
-	if (isRouteErrorResponse(error)) {
-		message = error.status === 404 ? "404" : "Error";
-		details =
-			error.status === 404
-				? "The requested page could not be found."
-				: error.statusText || details;
-	} else if (import.meta.env.DEV && error && error instanceof Error) {
-		details = error.message;
-		stack = error.stack;
+export function ErrorBoundary() {
+	const error = useRouteError();
+	if (isRouteErrorResponse(error) && error.status === 404) {
+		return <NotFound />;
 	}
 
+	const statusCode = 500;
+	const message = "Ein unerwarteter Fehler ist aufgetreten.";
+
 	return (
-		<main className="pt-16 p-4 container mx-auto">
-			<h1>{message}</h1>
-			<p>{details}</p>
-			{stack && (
-				<pre className="w-full p-4 overflow-x-auto">
-					<code>{stack}</code>
+		<main className="container mx-auto px-4 py-16">
+			<div className="max-w-2xl mx-auto text-center">
+				<h1 className="text-6xl font-bold mb-4">{statusCode}</h1>
+				<h2 className="text-2xl font-bold mb-6">Ein Fehler ist aufgetreten</h2>
+				<p className="text-lg mb-8">{message}</p>
+				<a
+					href="/"
+					className="inline-block bg-[#1a1a1a] text-white px-6 py-3 font-bold hover:bg-[#333] transition-colors"
+				>
+					Zur Startseite
+				</a>
+			</div>
+			{import.meta.env.DEV && error instanceof Error && error.stack && (
+				<pre className="mt-8 w-full p-4 overflow-x-auto bg-gray-100 text-sm">
+					<code>{error.stack}</code>
 				</pre>
 			)}
 		</main>

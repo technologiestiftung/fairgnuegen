@@ -12,7 +12,9 @@ export function useUpdateBreadcrumbsWithCategory() {
 
 	const location = useLocation();
 	const [searchParams] = useSearchParams();
-	const { breadcrumbs: defaultBreadcrumbs } = content[location.pathname];
+	const { breadcrumbs: defaultBreadcrumbs } = content[location.pathname] || {
+		breadcrumbs: [],
+	};
 
 	const [updatedBreadcrumbs, setUpdatedBreadcrumbs] =
 		useState<Breadcrumb[]>(defaultBreadcrumbs);

@@ -156,6 +156,8 @@ export default {
 \t\treturn [
 \t\t\t"/",
 \t\t\t"/en/",
+\t\t\t"/404/",
+\t\t\t"/en/404/",
 \t\t\t"/all-offers/",
 \t\t\t"/en/all-offers/",
 \t\t\t"/favorites/",
