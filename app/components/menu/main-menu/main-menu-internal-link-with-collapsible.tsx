@@ -5,7 +5,6 @@ import type { MenuItem } from "~/components/menu/main-menu/types";
 import { useLanguage } from "~/hooks/use-language";
 import { useI18n } from "~/i18n/use-i18n";
 import { useState } from "react";
-import { useCategories } from "~/hooks/use-categories";
 import { useLocation } from "react-router";
 
 export function MainMenuInternalLinkWithCollapsible({
@@ -16,13 +15,8 @@ export function MainMenuInternalLinkWithCollapsible({
 	const language = useLanguage();
 	const location = useLocation();
 	const i18n = useI18n(language);
-	const { category } = useCategories();
 
-	const initialCollapsibleState = category !== null;
-
-	const [isCollapsibleOpen, setIsCollapsibleOpen] = useState<boolean>(
-		initialCollapsibleState,
-	);
+	const [isCollapsibleOpen, setIsCollapsibleOpen] = useState<boolean>(true);
 
 	const toggleCollapsible = () => {
 		setIsCollapsibleOpen(!isCollapsibleOpen);
