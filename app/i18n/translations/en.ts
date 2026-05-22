@@ -15,6 +15,12 @@ const en: typeof de = {
 	"home.allOffersTeaser.description.p2":
 		"Take advantage of free and discounted offers and discover the capital. Have fun!",
 
+	"404.h1": "Page not found",
+	"404.h2": "Error code 404",
+	"404.p":
+		"The page you requested does not exist or no longer exists. The page may have been moved or deleted. Please check the URL or return to the homepage.",
+	"404.link.label": "Go to homepage",
+
 	imprint: `
 # Imprint
 

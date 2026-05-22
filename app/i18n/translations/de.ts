@@ -13,6 +13,12 @@ const de = {
 	"home.allOffersTeaser.description.p2":
 		"Nutze kostenlose und ermäßigte Angebote und entdecke die Hauptstadt. Viel Spaß!",
 
+	"404.h1": "Die Seite wurde nicht gefunden",
+	"404.h2": "Fehlercode 404",
+	"404.p":
+		"Die von Ihnen angeforderte Seite existiert nicht oder nicht mehr. Möglicherweise wurde die Seite verschoben oder gelöscht. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.",
+	"404.link.label": "Zur Startseite",
+
 	imprint: `
 # Impressum
 
