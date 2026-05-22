@@ -1,5 +1,3 @@
-import { Breadcrumbs } from "~/components/header/breadcumbs";
-import { LanguageSelect } from "~/components/header/language-select/language-select";
 import { SidebarButtons } from "~/components/header/sidebar-buttons/sidebar-buttons";
 import { useLanguage } from "~/hooks/use-language";
 import { useI18n } from "~/i18n/use-i18n";
@@ -46,13 +44,6 @@ export function Header() {
 
 				<div className="flex items-center gap-x-[30px]">
 					<SidebarButtons />
-				</div>
-			</div>
-
-			<div className="bg-berlin-grey-light shadow-inner px-4 lg:px-0">
-				<div className="flex justify-between max-w-[980px] mx-auto">
-					<Breadcrumbs />
-					<LanguageSelect />
 				</div>
 			</div>
 		</header>
