@@ -38,7 +38,7 @@ export function MainMenuInternalLinkWithCollapsible({
 					</a>
 					<button
 						className={`
-							border-l border-l-black py-2 pr-5 pl-4 border-b
+							border-l border-l-black py-2 pr-5 pl-4
 							focus-visible:outline focus-visible:outline-3 
 							focus-visible:outline-berlin-blue 
 							focus-visible:outline-offset-0 
