@@ -19,6 +19,9 @@ const de = {
 		"Die von Ihnen angeforderte Seite existiert nicht oder nicht mehr. Möglicherweise wurde die Seite verschoben oder gelöscht. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.",
 	"404.link.label": "Zur Startseite",
 
+	"500.p": "Ein unerwarteter Fehler ist aufgetreten.",
+	"500.link.label": "Zur Startseite",
+
 	imprint: `
 # Impressum
 

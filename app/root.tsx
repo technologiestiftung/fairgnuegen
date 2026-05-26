@@ -17,6 +17,7 @@ import { getBerlinFooter } from "~/external-templates/berlin-footer";
 import { useLanguage } from "~/hooks/use-language";
 import { usePageTitle } from "~/hooks/use-page-title";
 import NotFound from "~/routes/404";
+import { useI18n } from "~/i18n/use-i18n";
 
 export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
@@ -107,24 +108,25 @@ export default function App() {
 
 export function ErrorBoundary() {
 	const error = useRouteError();
+	const language = useLanguage();
+	const i18n = useI18n(language);
+
 	if (isRouteErrorResponse(error) && error.status === 404) {
 		return <NotFound />;
 	}
 
 	const statusCode = 500;
-	const message = "Ein unerwarteter Fehler ist aufgetreten.";
 
 	return (
 		<main className="container mx-auto px-4 py-16">
 			<div className="max-w-2xl mx-auto text-center">
 				<h1 className="text-6xl font-bold mb-4">{statusCode}</h1>
-				<h2 className="text-2xl font-bold mb-6">Ein Fehler ist aufgetreten</h2>
-				<p className="text-lg mb-8">{message}</p>
+				<p className="text-lg mb-8">{i18n["500.p"]}</p>
 				<a
 					href="/"
 					className="inline-block bg-[#1a1a1a] text-white px-6 py-3 font-bold hover:bg-[#333] transition-colors"
 				>
-					Zur Startseite
+					{i18n["500.link.label"]}
 				</a>
 			</div>
 			{import.meta.env.DEV && error instanceof Error && error.stack && (
