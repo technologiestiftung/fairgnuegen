@@ -21,6 +21,9 @@ const en: typeof de = {
 		"The page you requested does not exist or no longer exists. The page may have been moved or deleted. Please check the URL or return to the homepage.",
 	"404.link.label": "Go to homepage",
 
+	"500.p": "An unexpected error has occurred.",
+	"500.link.label": "Go to homepage",
+
 	imprint: `
 # Imprint
 
