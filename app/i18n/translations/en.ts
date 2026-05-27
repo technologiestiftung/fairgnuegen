@@ -8,7 +8,8 @@ const en: typeof de = {
 	"home.linkEligible": "Am I eligible?",
 	"home.h2": "What would you like to do?",
 
-	"home.allOffersTeaser.imageAltText": "to all offers",
+	"home.allOffersTeaser.imageAltText":
+		"A picture of soap bubbles floating in front of the Brandenburg Gate, as a symbolic image for all categories.",
 	"home.allOffersTeaser.title": "All offers at a glance",
 	"home.allOffersTeaser.description.p1":
 		"Fairgnügen has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
