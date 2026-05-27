@@ -6,7 +6,8 @@ const de = {
 	"home.linkEligible": "Bin ich berechtigt?",
 	"home.h2": "Was möchtest du unternehmen?",
 
-	"home.allOffersTeaser.imageAltText": "Zu allen Angeboten",
+	"home.allOffersTeaser.imageAltText":
+		"Ein Bild von Seifenblasen, die vor dem Brandenburger Tor schweben, als Symbolbild für alle Kategorien.",
 	"home.allOffersTeaser.title": "Alle Angebote auf einen Blick",
 	"home.allOffersTeaser.description.p1":
 		"Fairgnügen bietet über 400 Aktivitäten im Bereich Kultur, Sport, Bildung & Beratung und Freizeit.",
