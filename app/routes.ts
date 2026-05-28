@@ -1,6 +1,7 @@
 import { type RouteConfig, route } from "@react-router/dev/routes";
 
 export default [
+	route(":lang?/404/", "./routes/404.tsx"),
 	route(":lang?/", "./routes/index.tsx"),
 	route(":lang?/about-project/", "./routes/about-project/index.tsx"),
 	route(

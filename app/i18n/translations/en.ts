@@ -8,12 +8,22 @@ const en: typeof de = {
 	"home.linkEligible": "Am I eligible?",
 	"home.h2": "What would you like to do?",
 
-	"home.allOffersTeaser.imageAltText": "to all offers",
+	"home.allOffersTeaser.imageAltText":
+		"A picture of soap bubbles floating in front of the Brandenburg Gate, as a symbolic image for all categories.",
 	"home.allOffersTeaser.title": "All offers at a glance",
 	"home.allOffersTeaser.description.p1":
 		"Fairgnügen has over 400 offers for activities in culture, sports, education & counselling and leisure in Berlin.",
 	"home.allOffersTeaser.description.p2":
 		"Take advantage of free and discounted offers and discover the capital. Have fun!",
+
+	"404.h1": "Page not found",
+	"404.h2": "Error code 404",
+	"404.p":
+		"The page you requested does not exist or no longer exists. The page may have been moved or deleted. Please check the URL or return to the homepage.",
+	"404.link.label": "Go to homepage",
+
+	"500.p": "An unexpected error has occurred.",
+	"500.link.label": "Go to homepage",
 
 	imprint: `
 # Imprint

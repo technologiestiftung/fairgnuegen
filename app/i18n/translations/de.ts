@@ -6,12 +6,22 @@ const de = {
 	"home.linkEligible": "Bin ich berechtigt?",
 	"home.h2": "Was möchtest du unternehmen?",
 
-	"home.allOffersTeaser.imageAltText": "Zu allen Angeboten",
+	"home.allOffersTeaser.imageAltText":
+		"Ein Bild von Seifenblasen, die vor dem Brandenburger Tor schweben, als Symbolbild für alle Kategorien.",
 	"home.allOffersTeaser.title": "Alle Angebote auf einen Blick",
 	"home.allOffersTeaser.description.p1":
 		"Fairgnügen bietet über 400 Aktivitäten im Bereich Kultur, Sport, Bildung & Beratung und Freizeit.",
 	"home.allOffersTeaser.description.p2":
 		"Nutze kostenlose und ermäßigte Angebote und entdecke die Hauptstadt. Viel Spaß!",
+
+	"404.h1": "Die Seite wurde nicht gefunden",
+	"404.h2": "Fehlercode 404",
+	"404.p":
+		"Die von Ihnen angeforderte Seite existiert nicht oder nicht mehr. Möglicherweise wurde die Seite verschoben oder gelöscht. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.",
+	"404.link.label": "Zur Startseite",
+
+	"500.p": "Ein unerwarteter Fehler ist aufgetreten.",
+	"500.link.label": "Zur Startseite",
 
 	imprint: `
 # Impressum
