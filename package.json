@@ -16,7 +16,7 @@
 		"test:visual": "playwright test --config=tests/visual/playwright.config.ts"
 	},
 	"dependencies": {
-		"@react-router/node": "7.1.5",
+		"@react-router/node": "7.9.4",
 		"exponential-backoff": "3.1.2",
 		"isbot": "5.1.33",
 		"maplibre-gl": "5.1.0",
