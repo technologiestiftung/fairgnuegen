@@ -19,7 +19,7 @@
 		"@react-router/node": "7.1.5",
 		"exponential-backoff": "3.1.2",
 		"isbot": "5.1.33",
-		"maplibre-gl": "5.1.0",
+		"maplibre-gl": "6.4.1",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"react-markdown": "9.0.3",
